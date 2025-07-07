@@ -13,7 +13,7 @@ body {
 .website-container {
   width: 100% !important;
 }
-.navbar {
+.navbars {
     background-color: var(--primary-color) !important;
     padding: 1rem 0;
     border-radius: 50px;

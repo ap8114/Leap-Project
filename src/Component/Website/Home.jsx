@@ -7,7 +7,7 @@ const Home = () => {
         <>
             <div className="website-container">
                 {/* Navigation */}
-                <nav className="navbar navbar-expand-lg navbar-dark">
+                <nav className="navbars navbar-expand-lg navbar-dark">
                     <div className="container">
                         <a className="navbar-brand" href="#">
                             <i className="fas fa-cube me-2" />
@@ -78,10 +78,10 @@ const Home = () => {
                             {/* Buttons */}
                             <div className="d-flex flex-column flex-sm-row gap-3 mb-4 justify-content-center justify-content-lg-start">
                                 <button className="btn btn-dark btn-lg">
-                                    ▶️ Watch Demo Video
+                                    Watch Demo Video
                                 </button>
                                 <button className="btn btn-outline-dark btn-lg">
-                                    📅 Schedule Live Demo
+                                    Schedule Live Demo
                                 </button>
                             </div>
 
