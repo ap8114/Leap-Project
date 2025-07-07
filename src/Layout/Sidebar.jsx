@@ -27,15 +27,18 @@ const Sidebar = ({ collapsed, menuItemClick }) => {
 
   // Only admin menu items
   const adminMenuItems = [
-    { path: "/dashboard", icon: "fa-tachometer-alt", text: "Dashboard" },
-    { path: "/managecustomer", icon: "fa-users", text: "Manage Customers" },
-    { path: "/fundrequest", icon: "fa-hand-holding-usd", text: "Fund Requests" },
-    { path: "/paymenttracking", icon: "fa-bell", text: "Payment Tracking" },
-    { path: "/balancetracker", icon: "fa-receipt", text: "Funding Balance Tracker" },
-    { path: "/payoff", icon: "fa-comments-dollar", text: "Payoff Management" },
-    { path: "/creditupgraderequests", icon: "fa-arrow-up", text: "Credit Upgrade Requests" },
-    { path: "/reportdownload", icon: "fa-file-download", text: "Reports & Download" }
-  ];
+  { path: "/dashboard", icon: "fa-solid fa-tachometer-alt", text: "Dashboard" },           // Dashboard
+  { path: "/matter", icon: "fa-solid fa-briefcase", text: "Matters" },             // Legal cases / Matters
+  { path: "/document", icon: "fa-solid fa-file-alt", text: "Documents" },               // Documents
+  { path: "/calendar", icon: "fa-solid fa-calendar-days", text: "Calendar" },       // Calendar
+  { path: "/timebilling", icon: "fa-solid fa-clock", text: "Time & Billing" },          // Time Tracking
+  { path: "/client", icon: "fa-solid fa-user", text: "Clients" },                          // Clients
+  { path: "/creditupgraderequests", icon: "fa-solid fa-user-tie", text: "CRM" },           // CRM
+  { path: "/reportdownload", icon: "fa-solid fa-robot", text: "AI & Workflow" },           // AI & Workflow
+  { path: "/accounting", icon: "fa-solid fa-file-invoice-dollar", text: "Accounting" },    // Accounting
+  { path: "/admin", icon: "fa-solid fa-user-gear", text: "Admin" }                         // Admin
+];
+
 
   return (
     <div className={`sidebar-container ${collapsed ? "collapsed" : ""}`}>
