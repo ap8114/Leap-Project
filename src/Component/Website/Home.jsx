@@ -1,5 +1,5 @@
 import React from 'react'
-import { Route, Routes } from 'react-router-dom';
+import { Link, Route, Routes } from 'react-router-dom';
 import './Website.css'; // Assuming you have a CSS file for styling
 
 const Home = () => {
@@ -7,12 +7,15 @@ const Home = () => {
         <>
             <div className="website-container">
                 {/* Navigation */}
-                <nav className="navbars navbar-expand-lg navbar-dark">
-                    <div className="container">
-                        <a className="navbar-brand" href="#">
-                            <i className="fas fa-cube me-2" />
-                            tech
+                <nav className="navbars navbar-expand-lg navbar-dark me-2 ms-2">
+                    <div className="d-flex align-items-center justify-content-between p-1 me-4 ms-4">
+
+                        {/* Logo */}
+                        <a className="navbar-brand d-flex align-items-center" href="#">
+                            <img src="https://i.ibb.co/Q7Vb1g8j/download-1.png" alt="Logo" height="40" />
                         </a>
+
+                        {/* Toggler */}
                         <button
                             className="navbar-toggler"
                             type="button"
@@ -21,41 +24,33 @@ const Home = () => {
                         >
                             <span className="navbar-toggler-icon" />
                         </button>
-                        <div className="collapse navbar-collapse" id="navbarNav">
-                            <ul className="navbar-nav mx-auto">
+
+                        {/* Links and Buttons */}
+                        <div className="collapse navbar-collapse justify-content-between align-items-center" id="navbarNav">
+
+                            {/* Nav Links */}
+                            <ul className="navbar-nav mx-auto text-center align-items-center">
                                 <li className="nav-item">
-                                    <a className="nav-link" href="#features">
-                                        Features
-                                    </a>
+                                    <a className="nav-link" href="#features">Features</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="#solutions">
-                                        Solutions
-                                    </a>
+                                    <a className="nav-link" href="#solutions">Solutions</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="#company">
-                                        Company
-                                    </a>
+                                    <a className="nav-link" href="#company">Company</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="#resources">
-                                        Resources
-                                    </a>
+                                    <a className="nav-link" href="#resources">Resources</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="#contact">
-                                        Contact
-                                    </a>
+                                    <a className="nav-link" href="#contact">Contact</a>
                                 </li>
                             </ul>
-                            <div className="d-flex">
-                                <a href="#" className="btn btn-outline-light me-3">
-                                    Login
-                                </a>
-                                <a href="#demo" className="btn btn-demo">
-                                    Request Demo
-                                </a>
+
+                            {/* Buttons */}
+                            <div className="d-flex align-items-center gap-3 justify-content-center">
+                                <Link to="/dashboard" className="btn btn-outline-light">Login</Link>
+                                <Link to="#demo" className="btn btn-demo">Request Demo</Link>
                             </div>
                         </div>
                     </div>
@@ -128,7 +123,7 @@ const Home = () => {
                 </div>
 
                 {/* Features & Demo Section */}
-                <section className="features-section" id="demo">
+                <section className="features-section">
                     <div className="container">
                         <div className="row">
                             <div className="col-lg-6">
