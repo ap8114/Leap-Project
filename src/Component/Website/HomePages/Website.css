@@ -25,12 +25,6 @@ body {
   padding: 10px;
 }
 
-
-.navbar-brand img {
-  height: 30px;
-  margin: 0%;
-}
-
 .navbar-brand {
   color: white !important;
   font-weight: bold;
@@ -359,4 +353,32 @@ body {
     .demo-form {
         padding: 30px 20px;
     }
+}
+
+.custom-orange-outline {
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  background-color: transparent;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  border-radius: 6px;
+}
+
+.custom-orange-outline:hover {
+  background-color: #f76b1c;
+  color: #fff;
+}
+
+.custom-orange-outline1 {
+  color: #2c3e50;
+  border: 2px solid #2c3e50;
+  background-color: transparent;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  border-radius: 6px;
+}
+
+.custom-orange-outline1:hover {
+  background-color: #f76b1c;
+  color: #fff;
 }
