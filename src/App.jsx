@@ -8,6 +8,7 @@ import ForgotPassword from "./Auth/ForgotPassword";
 
 import { useState } from "react";
 import Dashboard from "./Component/AdminDashboard/Dashboard/Dashboard";
+import Home from "./Component/Website/Home";
 
 
 
@@ -28,7 +29,7 @@ function App() {
   };
   const location = useLocation();
   // Inside component
-  const noLayoutRoutes = ["/", "/signup", "/forgotpassword"];
+  const noLayoutRoutes = ["/", "/signup", "/forgotpassword" , "/login" ];
   const isNoLayoutPage = noLayoutRoutes.includes(location.pathname);
   // Hide layout (navbar/sidebar) only on login page
   const hideLayout = location.pathname === "/" || location.pathname === "/forgotpassword" || location.pathname === "/signup";
@@ -40,14 +41,19 @@ function App() {
       {/* sidebar start */}
       <div className={`main-content${hideLayout ? "" : ""}`}>
         {!hideLayout && (
-          <Sidebar  collapsed={isSidebarCollapsed}  menuItemClick={menuItemClick}/>
+          <Sidebar collapsed={isSidebarCollapsed} menuItemClick={menuItemClick} />
         )}
         {/* sidebar end */}
         {/* right side  */}
         <>
           {isNoLayoutPage ? (
             <Routes>
-              <Route path="/" element={<Login />} />
+
+              {/* Website Routes Starts */}
+              <Route path="/" element={<Home />} />
+              {/* Website Routes Ends */}
+
+              <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<Signup />} />
               <Route path="/forgotpassword" element={<ForgotPassword />} />
             </Routes>
