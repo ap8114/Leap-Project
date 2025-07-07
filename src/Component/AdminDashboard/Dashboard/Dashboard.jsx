@@ -1,16 +1,573 @@
-import React from 'react'
+import React, { useState } from 'react';
+import * as echarts from 'echarts';
 
-function Dashboard() {
+const Dashboard = () => {
+const [dateRange, setDateRange] = useState({
+  start: '2025-06-01',
+  end: '2025-07-07'
+});
+
+const [viewMode, setViewMode] = useState('grid');
+const [expandedCard, setExpandedCard] = useState(null);
+
+
+
+  // Current date for display
+  const currentDate = new Date('2025-07-07');
+  const formattedDate = currentDate.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  });
+
+  // Initialize charts after component mounts
+  React.useEffect(() => {
+    // Case Progress Chart
+    const caseProgressChart = echarts.init(document.getElementById('case-progress-chart'));
+    const caseProgressOption = {
+      animation: false,
+      series: [
+        {
+          type: 'gauge',
+          startAngle: 90,
+          endAngle: -270,
+          pointer: { show: false },
+          progress: {
+            show: true,
+            overlap: false,
+            roundCap: true,
+            clip: false,
+            itemStyle: {
+              color: '#4ade80'
+            }
+          },
+          axisLine: {
+            lineStyle: {
+              width: 18,
+              color: [[1, '#e5e7eb']]
+            }
+          },
+          splitLine: { show: false },
+          axisTick: { show: false },
+          axisLabel: { show: false },
+          detail: {
+            valueAnimation: false,
+            fontSize: 24,
+            offsetCenter: [0, '0%'],
+            formatter: '{value}%',
+            color: 'inherit'
+          },
+          data: [{ value: 78, name: 'Completion' }]
+        }
+      ]
+    };
+    caseProgressChart.setOption(caseProgressOption);
+
+    // Billing Chart
+    const billingChart = echarts.init(document.getElementById('billing-chart'));
+    const billingOption = {
+      animation: false,
+      tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+          type: 'shadow'
+        }
+      },
+      grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+      },
+      xAxis: [
+        {
+          type: 'category',
+          data: ['Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
+          axisTick: {
+            alignWithLabel: true
+          }
+        }
+      ],
+      yAxis: [
+        {
+          type: 'value'
+        }
+      ],
+      series: [
+        {
+          name: 'Billing',
+          type: 'bar',
+          barWidth: '60%',
+          data: [
+            { value: 32000, itemStyle: { color: '#60a5fa' } },
+            { value: 45000, itemStyle: { color: '#60a5fa' } },
+            { value: 38000, itemStyle: { color: '#60a5fa' } },
+            { value: 52000, itemStyle: { color: '#60a5fa' } },
+            { value: 48000, itemStyle: { color: '#60a5fa' } },
+            { value: 68000, itemStyle: { color: '#3b82f6' } }
+          ]
+        }
+      ]
+    };
+    billingChart.setOption(billingOption);
+
+    // WIP Chart
+    const wipChart = echarts.init(document.getElementById('wip-chart'));
+    const wipOption = {
+      animation: false,
+      tooltip: {
+        trigger: 'axis'
+      },
+      grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+      },
+      xAxis: {
+        type: 'category',
+        boundaryGap: false,
+        data: ['Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul']
+      },
+      yAxis: {
+        type: 'value'
+      },
+      series: [
+        {
+          name: 'WIP',
+          type: 'line',
+          smooth: true,
+          lineStyle: {
+            width: 3,
+            color: '#8b5cf6'
+          },
+          areaStyle: {
+            color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+              {
+                offset: 0,
+                color: 'rgba(139, 92, 246, 0.5)'
+              },
+              {
+                offset: 1,
+                color: 'rgba(139, 92, 246, 0.1)'
+              }
+            ])
+          },
+          data: [125000, 140000, 165000, 178000, 195000, 210000]
+        }
+      ]
+    };
+    wipChart.setOption(wipOption);
+
+    // Handle resize
+    const handleResize = () => {
+      caseProgressChart.resize();
+      billingChart.resize();
+      wipChart.resize();
+    };
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      caseProgressChart.dispose();
+      billingChart.dispose();
+      wipChart.dispose();
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+ const handleDateRangeChange = (e, type) => {
+  setDateRange(prev => ({
+    ...prev,
+    [type]: e.target.value
+  }));
+};
+
+
+  const toggleView = () => {
+    setViewMode(prev => (prev === 'grid' ? 'list' : 'grid'));
+  };
+
+ const toggleCardExpand = (cardId) => {
+  setExpandedCard(prev => (prev === cardId ? null : cardId));
+};
+
+
   return (
-    <>
-    <div>Dashboard</div>
-    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima explicabo aliquam mollitia possimus saepe, enim a inventore iure repellendus tempora omnis fugit temporibus vel voluptatem deserunt corrupti sint ipsum. Culpa.
-    Qui, laboriosam nisi quis ipsa magni temporibus ullam, voluptas ratione praesentium deserunt perferendis consequatur at! Molestias minima dolorum consequuntur officia earum repellat itaque blanditiis quia autem nostrum exercitationem, eos qui.
-    Ex, reiciendis, laudantium perferendis porro voluptas magni, minus minima tenetur debitis molestias provident itaque suscipit voluptatum! Aspernatur, a numquam praesentium iure perspiciatis sequi libero? Facilis eaque porro aliquam necessitatibus in!
-    Numquam adipisci, quia ratione sunt totam itaque? Sunt non, cum placeat aliquid natus sequi minus, nulla blanditiis amet alias labore ratione veniam consequatur sit. Neque itaque molestias magni omnis nulla?
-    Omnis dolore tempora quia corrupti consequatur fuga iure quam! Quos sunt corrupti ut. Et laborum a similique nesciunt nostrum, commodi necessitatibus quas? Id, consequatur. Reprehenderit libero facere ratione ullam aliquam.</p>
-    </>
-  )
-}
+    <div className="min-vh-100 bg-light p-4">
+      <div className="container">
+        <div className="mb-4">
+          <h1 className="display-6 fw-bold mb-2">    Dashboard</h1>
+          <p className="text-muted">Overview of cases, tasks, deadlines and performance metrics</p>
+        </div>
+
+        {/* Control Strip */}
+       <div className="card mb-4">
+  <div className="card-body">
+    <div className="row gy-3 gx-0 align-items-center">
+      {/* Date Range: From & To */}
+      <div className="col-12 col-md d-flex flex-column flex-sm-row align-items-start align-items-sm-center gap-2">
+        <div className="d-flex align-items-center w-100 w-sm-auto">
+          <label className="me-2 fw-semibold">From:</label>
+          <input
+            type="date"
+            value={dateRange.start}
+            onChange={(e) => handleDateRangeChange(e, 'start')}
+            className="form-control form-control-sm"
+          />
+        </div>
+        <div className="d-flex align-items-center w-100 w-sm-auto">
+          <label className="me-2 fw-semibold">To:</label>
+          <input
+            type="date"
+            value={dateRange.end}
+            onChange={(e) => handleDateRangeChange(e, 'end')}
+            className="form-control form-control-sm"
+          />
+        </div>
+      </div>
+
+      {/* Action Buttons */}
+      <div className="col-12 col-md-auto d-flex flex-wrap justify-content-start justify-content-md-end gap-2">
+        <div className="dropdown">
+          <button
+            className="btn btn-sm btn-outline-secondary dropdown-toggle"
+            type="button"
+            id="exportDropdown"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <i className="fas fa-download me-2"></i>
+            Export
+          </button>
+          <ul className="dropdown-menu" aria-labelledby="exportDropdown">
+            <li><button className="dropdown-item"><i className="fas fa-file-pdf text-danger me-2"></i>Export as PDF</button></li>
+            <li><button className="dropdown-item"><i className="fas fa-file-excel text-success me-2"></i>Export as Excel</button></li>
+            <li><button className="dropdown-item"><i className="fas fa-file-csv text-primary me-2"></i>Export as CSV</button></li>
+          </ul>
+        </div>
+        <button className="btn btn-sm btn-outline-secondary">
+          <i className="fas fa-sync-alt"></i>
+        </button>
+        <button onClick={toggleView} className="btn btn-sm btn-outline-secondary">
+          <i className={`fas ${viewMode === 'grid' ? 'fa-list' : 'fa-th-large'}`}></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+        {/* Main Dashboard Content */}
+        <div className={`row ${viewMode === 'grid' ? 'row-cols-1 row-cols-md-2' : 'row-cols-1'} g-4`}>
+          {/* Case Progress Card */}
+         <div className={`col ${expandedCard === 'case-progress' ? 'col-12' : 'col-md-6'}`}>
+  <div className="card h-100">
+    {/* Header */}
+    <div className="card-header d-flex justify-content-between align-items-center">
+      <h5 className="mb-0">Case Progress</h5>
+      <div>
+        <button
+          onClick={() => toggleCardExpand('case-progress')}
+          className="btn btn-sm btn-link text-secondary"
+        >
+          <i className={`fas ${expandedCard === 'case-progress' ? 'fa-compress-alt' : 'fa-expand-alt'}`}></i>
+        </button>
+        <button className="btn btn-sm btn-link text-secondary">
+          <i className="fas fa-ellipsis-v"></i>
+        </button>
+      </div>
+    </div>
+
+    {/* Body */}
+    <div className="card-body">
+      <div className="row g-3 align-items-center">
+        {/* Chart */}
+        <div className="col-12 col-md-6 d-flex justify-content-center">
+          <div id="case-progress-chart" style={{ width: '100%', height: '240px' }}></div>
+        </div>
+
+        {/* Stats Cards */}
+        <div className="col-12 col-md-6">
+          <div className="row g-3">
+            {/* Active Cases */}
+            <div className="col-12 col-sm-6 col-lg-4">
+              <div className="p-3 bg-primary bg-opacity-10 rounded h-100">
+                <div className="text-primary small mb-1 fw-semibold">Active Cases</div>
+                <div className="h4 fw-bold">248</div>
+                <div className="text-primary small mt-1 d-flex align-items-center">
+                  <i className="fas fa-arrow-up me-1"></i> 12 new this month
+                </div>
+              </div>
+            </div>
+
+            {/* Tasks Completed */}
+            <div className="col-12 col-sm-6 col-lg-4">
+              <div className="p-3 bg-success bg-opacity-10 rounded h-100">
+                <div className="text-success small mb-1 fw-semibold">Tasks Completed</div>
+                <div className="h4 fw-bold text-success">193</div>
+                <div className="text-success small mt-1 d-flex align-items-center">
+                  <i className="fas fa-check me-1"></i> 15 today
+                </div>
+              </div>
+            </div>
+
+            {/* Upcoming Deadlines */}
+            <div className="col-12 col-sm-6 col-lg-4">
+              <div className="p-3 bg-warning bg-opacity-10 rounded h-100">
+                <div className="text-warning small mb-1 fw-semibold">Upcoming Deadlines</div>
+                <div className="h4 fw-bold text-warning">8</div>
+                <div className="text-warning small mt-1 d-flex align-items-center">
+                  <i className="fas fa-clock me-1"></i> Next in 2 days
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Legend */}
+      <div className="row mt-4 g-2 justify-content-center text-center">
+        <div className="col-4 d-flex justify-content-center align-items-center">
+          <span className="badge bg-success me-2" style={{ width: '12px', height: '12px' }}></span>
+          <span className="small text-muted">Complete (78%)</span>
+        </div>
+        <div className="col-4 d-flex justify-content-center align-items-center">
+          <span className="badge bg-warning me-2" style={{ width: '12px', height: '12px' }}></span>
+          <span className="small text-muted">In Progress (17%)</span>
+        </div>
+        <div className="col-4 d-flex justify-content-center align-items-center">
+          <span className="badge bg-danger me-2" style={{ width: '12px', height: '12px' }}></span>
+          <span className="small text-muted">Delayed (5%)</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+          {/* Billing Overview Card */}
+          <div className={`col ${expandedCard === 'billing' ? 'col-12' : ''}`}>
+            <div className="card h-100">
+              <div className="card-header d-flex justify-content-between align-items-center">
+                <h5 className="mb-0">Billing Overview</h5>
+                <div>
+                  <button onClick={() => toggleCardExpand('billing')} className="btn btn-sm btn-link text-secondary">
+                    <i className={`fas ${expandedCard === 'billing' ? 'fa-compress-alt' : 'fa-expand-alt'}`}></i>
+                  </button>
+                  <button className="btn btn-sm btn-link text-secondary">
+                    <i className="fas fa-ellipsis-v"></i>
+                  </button>
+                </div>
+              </div>
+              <div className="card-body">
+                <div className="d-flex flex-wrap mb-3">
+                  <button className="btn btn-sm btn-primary me-2 mb-2">Last 6 Months</button>
+                  <button className="btn btn-sm btn-outline-secondary me-2 mb-2">Last Year</button>
+                  <button className="btn btn-sm btn-outline-secondary me-2 mb-2">All Time</button>
+                </div>
+                <div id="billing-chart" style={{ width: '100%', height: '240px' }}></div>
+                <div className="row mt-3 g-3">
+                  <div className="col-md-3">
+                    <div className="p-3 bg-purple bg-opacity-10 rounded">
+                      <div className="text-purple small mb-1">Trust Balance</div>
+                      <div className="h4">$156,789</div>
+                      <div className="text-purple small mt-1">
+                        <i className="fas fa-wallet me-1"></i>Updated today
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-md-3">
+                    <div className="p-3 bg-primary bg-opacity-10 rounded">
+                      <div className="text-primary small mb-1">Time Logged</div>
+                      <div className="h4">182.5h</div>
+                      <div className="text-primary small mt-1">
+                        <i className="fas fa-clock me-1"></i>This month
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-md-3">
+                    <div className="p-3 bg-success bg-opacity-10 rounded">
+                      <div className="text-success small mb-1">WIP Total</div>
+                      <div className="h4">$210,000</div>
+                      <div className="text-success small mt-1">
+                        <i className="fas fa-chart-line me-1"></i>+7.7% MTD
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-md-3">
+                    <div className="p-3 bg-warning bg-opacity-10 rounded">
+                      <div className="text-warning small mb-1">Open Matters</div>
+                      <div className="h4">42</div>
+                      <div className="text-warning small mt-1">
+                        <i className="fas fa-folder-open me-1"></i>Active cases
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* WIP Card */}
+          <div className={`col ${expandedCard === 'wip' ? 'col-12' : ''}`}>
+            <div className="card h-100">
+              <div className="card-header d-flex justify-content-between align-items-center">
+                <h5 className="mb-0">Work in Progress (WIP)</h5>
+                <div>
+                  <button onClick={() => toggleCardExpand('wip')} className="btn btn-sm btn-link text-secondary">
+                    <i className={`fas ${expandedCard === 'wip' ? 'fa-compress-alt' : 'fa-expand-alt'}`}></i>
+                  </button>
+                  <button className="btn btn-sm btn-link text-secondary">
+                    <i className="fas fa-ellipsis-v"></i>
+                  </button>
+                </div>
+              </div>
+              <div className="card-body">
+                <div id="wip-chart" style={{ width: '100%', height: '240px' }}></div>
+                <div className="row mt-3 g-3">
+                  <div className="col-md-6">
+                    <div className="p-3 bg-purple bg-opacity-10 rounded">
+                      <div className="text-purple small mb-1">Current WIP</div>
+                      <div className="h3">$210,000</div>
+                      <div className="text-success small mt-1">
+                        <i className="fas fa-arrow-up me-1"></i>
+                        7.7% from last month
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-md-6">
+                    <div className="p-3 bg-light rounded">
+                      <div className="text-muted small mb-1">Resource Utilization</div>
+                      <div className="mb-2">
+                        <div className="d-flex justify-content-between mb-1">
+                          <span className="small text-muted">Attorneys</span>
+                          <span className="small">92%</span>
+                        </div>
+                        <div className="progress" style={{ height: '8px' }}>
+                          <div className="progress-bar bg-success" style={{ width: '92%' }}></div>
+                        </div>
+                      </div>
+                      <div>
+                        <div className="d-flex justify-content-between mb-1">
+                          <span className="small text-muted">Paralegals</span>
+                          <span className="small">78%</span>
+                        </div>
+                        <div className="progress" style={{ height: '8px' }}>
+                          <div className="progress-bar bg-primary" style={{ width: '78%' }}></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Trust Account Card */}
+          <div className={`col ${expandedCard === 'trust' ? 'col-12' : ''}`}>
+            <div className="card h-100">
+              <div className="card-header d-flex justify-content-between align-items-center">
+                <h5 className="mb-0">Trust Account</h5>
+                <div>
+                  <button onClick={() => toggleCardExpand('trust')} className="btn btn-sm btn-link text-secondary">
+                    <i className={`fas ${expandedCard === 'trust' ? 'fa-compress-alt' : 'fa-expand-alt'}`}></i>
+                  </button>
+                  <button className="btn btn-sm btn-link text-secondary">
+                    <i className="fas fa-ellipsis-v"></i>
+                  </button>
+                </div>
+              </div>
+              <div className="card-body">
+                <div className="row">
+                  <div className="col-md-4 mb-3 mb-md-0">
+                    <div className="p-3 bg-success bg-opacity-10 rounded mb-3">
+                      <div className="text-success small mb-1">Current Balance</div>
+                      <div className="h2">$156,789</div>
+                    </div>
+                    <div className="p-3 bg-warning bg-opacity-10 rounded mb-3">
+                      <div className="text-warning small mb-1">Low Balance Alert</div>
+                      <div className="small">
+                        <i className="fas fa-exclamation-triangle text-warning me-1"></i>
+                        3 accounts below minimum
+                      </div>
+                    </div>
+                    <div className="p-3 bg-primary bg-opacity-10 rounded">
+                      <div className="text-primary small mb-1">Pending Transactions</div>
+                      <div className="h3">$23,450</div>
+                    </div>
+                  </div>
+                  <div className="col-md-8">
+                    <div className="small fw-bold text-muted mb-2">Recent Transactions</div>
+                    <div className="bg-light rounded overflow-hidden">
+                      <div className="table-responsive" style={{ maxHeight: '256px' }}>
+                        <table className="table table-sm table-hover mb-0">
+                          <thead className="bg-light">
+                            <tr>
+                              <th className="small text-muted text-uppercase">Date</th>
+                              <th className="small text-muted text-uppercase">Description</th>
+                              <th className="small text-muted text-uppercase text-end">Amount</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td className="small">Jul 05, 2025</td>
+                              <td className="small">Client Deposit - Johnson Case</td>
+                              <td className="small text-success text-end">+$12,500.00</td>
+                            </tr>
+                            <tr>
+                              <td className="small">Jul 03, 2025</td>
+                              <td className="small">Filing Fee - Smith v. ABC Corp</td>
+                              <td className="small text-danger text-end">-$350.00</td>
+                            </tr>
+                            <tr>
+                              <td className="small">Jun 28, 2025</td>
+                              <td className="small">Client Deposit - Williams Trust</td>
+                              <td className="small text-success text-end">+$25,000.00</td>
+                            </tr>
+                            <tr>
+                              <td className="small">Jun 25, 2025</td>
+                              <td className="small">Expert Witness Payment</td>
+                              <td className="small text-danger text-end">-$4,750.00</td>
+                            </tr>
+                            <tr>
+                              <td className="small">Jun 22, 2025</td>
+                              <td className="small">Client Deposit - Martinez Case</td>
+                              <td className="small text-success text-end">+$8,000.00</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Data Refresh Section */}
+        <div className="card mt-4">
+          <div className="card-body py-2 d-flex flex-column flex-md-row justify-content-between align-items-center">
+            <div className="d-flex align-items-center mb-2 mb-md-0">
+              <i className="fas fa-clock me-2 text-muted"></i>
+              <span className="small text-muted">Last updated: {formattedDate}, 09:45 AM</span>
+            </div>
+            <div className="d-flex align-items-center">
+              <span className="me-3 small text-muted">
+                <i className="fas fa-check-circle text-success me-1"></i>
+                Power BI sync complete
+              </span>
+              <div className="d-flex align-items-center">
+                <span className="me-2 small text-muted">Data refresh</span>
+                <div className="progress" style={{ width: '96px', height: '8px' }}>
+                  <div className="progress-bar" style={{ width: '100%' }}></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 export default Dashboard;

@@ -86,9 +86,10 @@ const Navbar = ({ toggleSidebar }) => {
           />
           {/* Mobile search icon */}
           <button
-            className="btn btn-link text-white d-block d-md-none"
+            className="btn btn-link text-white d-block d-md-none ms-1"
             style={{ fontSize: 22 }}
             aria-label="Search"
+            
           >
             <i className="fa-solid fa-magnifying-glass"></i>
           </button>
@@ -99,7 +100,7 @@ const Navbar = ({ toggleSidebar }) => {
           {/* Notification bell */}
           <div className="position-relative">
             <button
-              className="btn btn-sm p-0 border-0 bg-transparent"
+              className="btn btn-sm p-0 border-0  me-4 bg-transparent"
               onClick={() => setShowNotification(!showNotification)}
               aria-label="Notifications"
             >
@@ -126,7 +127,7 @@ const Navbar = ({ toggleSidebar }) => {
               data-bs-toggle="dropdown"
               aria-expanded="false"
             >
-              <div className="avatar online">
+              <div className="avatar online me-4">
                 <i className="fa-solid fa-circle-user fs-2"></i>
               </div>
             </div>

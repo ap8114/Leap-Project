@@ -8,7 +8,17 @@ import ForgotPassword from "./Auth/ForgotPassword";
 
 import { useState } from "react";
 import Dashboard from "./Component/AdminDashboard/Dashboard/Dashboard";
+import Matter from "./Component/AdminDashboard/Matters/Matter";
 import Home from "./Component/Website/HomePages/Home";
+import ClientsCRM from "./Component/AdminDashboard/Clients/ClientsCRM";
+import Document from "./Component/AdminDashboard/Documents/Document";
+import Calendar from "./Component/AdminDashboard/Calendar/Calendar";
+import Timebilling from "./Component/AdminDashboard/TimeBilling/Timebilling";
+
+
+
+
+
 import ClientAndMatterManagement from "./Component/Website/Pages/ClientAndMatterManagement";
 import DocumentAutomation from "./Component/Website/Pages/DocumentAutomation";
 
@@ -51,7 +61,7 @@ function App() {
             <Routes>
 
               {/* Website Routes Starts */}
-              <Route path="/" element={<Home />} />
+              <Route path="/" element={<Home/>} />
               <Route path="/client-and-matter-management" element={<ClientAndMatterManagement />} />
               <Route path="/document-automation" element={<DocumentAutomation />} />
               {/* Website Routes Ends */}
@@ -65,9 +75,12 @@ function App() {
               <Routes>
                 {/* AdminDashboard */}
                 <Route path="/dashboard" element={<Dashboard />} />
-                {/*<Route path="/managecustomer" element={<Managecustomer />} />
-                <Route path="/fundrequest" element={<FundRequest />} />
-                <Route path="/balancetracker" element={<FundingBalanceTracker />} /> */}
+                 <Route path="/matter" element={<Matter/>} />
+                 <Route path="/document" element={<Document/>} />
+                 <Route path="/client" element={<ClientsCRM/>} />
+                 <Route path="/calendar" element={<Calendar/>} />
+                 <Route path="/timebilling" element={<Timebilling/>} />
+             
               </Routes>
             </div>
           )}
