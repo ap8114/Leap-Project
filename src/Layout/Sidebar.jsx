@@ -106,7 +106,7 @@ const Sidebar = ({ collapsed, menuItemClick }) => {
         <span className="sidebar-dot sidebar-dot-active"></span>
         <span className="sidebar-dot"></span>
       </div> */}
-      fdjfgjsdhfjdfjdshifydsjbfndrfyhefndfvb
+      
     </div>
   );
 };
