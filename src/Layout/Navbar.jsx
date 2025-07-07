@@ -50,7 +50,7 @@ const Navbar = ({ toggleSidebar }) => {
 
   return (
     <nav className="navbar custom-navbar p-0">
-      <div className="container-fluid px-3">
+      <div className="container-fluid px-0">
         {/* Left: Logo and Sidebar Toggle */}
         <div className="d-flex align-items-center">
           <Link to="/" className="navbar-brand d-flex align-items-center me-3">

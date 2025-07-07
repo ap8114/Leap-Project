@@ -1,46 +1,52 @@
+/* --- Sidebar Container --- */
 .sidebar-container {
   width: 270px;
-  height: 89vh;
+  height: 100vh;
   overflow-y: auto;
   transition: width 0.3s ease;
-  margin-top: 95px;
-  z-index: 1;
+  z-index: 1000;
   position: fixed;
   background-color: #0d3559;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   scrollbar-width: none;
+  top: 95px;
+  left: 0;
 }
 
+/* Collapsed Sidebar */
 .sidebar-container.collapsed {
   width: 70px;
 }
+@media (max-width: 768px) {
+  .sidebar-container {
+    width: 220px;      /* Mobile par open sidebar ki width */
+    min-width: 0;
+    transition: width 0.3s;
+    z-index: 1050;
+  }
+  .sidebar-container.collapsed {
+    width: 0;          /* Collapse par sidebar hide ho */
+    min-width: 0;
+  }
+}
 
-.sidebar-container.collapsed .submenu .submenu-item {
-  /* opacity: 0; */
-  visibility: hidden;
-}
-.sidebar-container.collapsed .menu .menu-text {
-  opacity: 0;
-  visibility: hidden;
-}
-.sidebar {
-  padding: 10px;
-}
-
+/* Sidebar Menu */
 .menu {
   list-style-type: none;
   padding: 0;
   margin: 0;
 }
-
 .menu-item {
   margin-bottom: 10px;
   border-radius: 12px;
   font-size: 19px;
   font-weight: 700;
   margin-top: 20px;
+  width: 100%;              /* Add this */
+  overflow: hidden;         /* Add this for rounded effect */
 }
 
+/* Sidebar Menu Link */
 .menu-link {
   display: flex;
   align-items: center;
@@ -48,7 +54,7 @@
   text-decoration: none;
   color: white;
   cursor: pointer;
-  transition: 
+  transition:
     background 0.3s cubic-bezier(0.4,0,0.2,1),
     color 0.3s cubic-bezier(0.4,0,0.2,1),
     box-shadow 0.3s cubic-bezier(0.4,0,0.2,1),
@@ -56,8 +62,10 @@
   position: relative;
   overflow: hidden;
   z-index: 1;
+  border-radius: 12px;      /* Make sure this is here */
+  width: 100%;              /* Add this */
+  box-sizing: border-box;   /* Add this */
 }
-
 .menu-link::before {
   content: "";
   position: absolute;
@@ -72,13 +80,11 @@
   transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
   opacity: 0.15;
 }
-
 .menu-link:hover::before,
 .menu-item.active .menu-link::before {
   transform: translateY(-0%) scaleY(1);
   opacity: 1;
 }
-
 .menu-link:hover {
   background-color: #90caf9;
   border-radius: 12px;
@@ -87,7 +93,6 @@
   box-shadow: 0 2px 12px 0 #90caf933;
   transform: translateX(4px) scale(1.03);
 }
-
 .menu-item.active .menu-link {
   background-color: #1976d2;
   color: #fff;
@@ -98,27 +103,24 @@
   font-weight: bold;
   letter-spacing: 1px;
 }
-
 .menu-item.active .menu-link i,
 .menu-link:hover i {
   color: #fff !important;
   transition: color 0.3s cubic-bezier(0.4,0,0.2,1);
 }
-
 .menu-link i {
   transition: color 0.3s cubic-bezier(0.4,0,0.2,1), transform 0.3s cubic-bezier(0.4,0,0.2,1);
 }
-
 .menu-link:hover i,
 .menu-item.active .menu-link i {
-  transform: scale(1.2); /* Only scale, no rotate */
+  transform: scale(1.2);
 }
-
 .menu-text {
   margin-left: 10px;
   transition: color 0.3s cubic-bezier(0.4,0,0.2,1);
 }
 
+/* Submenu */
 .submenu {
   list-style-type: none;
   margin: 0;
@@ -126,12 +128,10 @@
   overflow: hidden;
   transition: max-height 0.3s ease;
 }
-
 .submenu.collapsed {
   max-height: 0;
   visibility: hidden;
 }
-
 .submenu.expanded {
   max-height: 410px;
   visibility: visible;
@@ -140,121 +140,53 @@
   font-weight: 700;
   padding-left: 10px;
 }
-
-.submenu-item i {
-  padding: 0 5px;
-}
 .submenu-item {
   padding: 10px 0;
   cursor: pointer;
-}
-.submenu-item{
   color: #578E7E;
 }
-
-.submenu-arrow {
-  margin-left: auto;
-  transition: transform 0.3s ease;
-}
-
-.submenu-arrow.rotated {
-  transform: rotate(360deg);
-}
-.menu-item.active .menu-link {
-  background-color: #1976d2 ; 
-  color: white; /* Active text color */
-  border-radius: 12px;
-  border-left: 6px solid #90caf9;
-}
-.sidebar-container.collapsed .submenu .submenu-item i{
-  visibility: visible !important;
-  opacity: 1 !important;
-  padding-left: 0px !important;
-}
-
 .submenu-item.active {
   background-color: #578E7E;
   color: white;
   border-radius: 12px;
   padding-left: 20px;
 }
+.submenu-item i {
+  padding: 0 5px;
+}
+.submenu-arrow {
+  margin-left: auto;
+  transition: transform 0.3s ease;
+}
+.submenu-arrow.rotated {
+  transform: rotate(360deg);
+}
 
+/* Hide submenu in collapsed state */
+/* .sidebar-container.collapsed .submenu,
+.sidebar-container.collapsed .menu {
+  display: none;
+} */
+.sidebar-container.collapsed .menu-text {
+  display: none;
+}
+
+/* Optionally, submenu bhi collapse par hide karni ho toh: */
+.sidebar-container.collapsed .submenu {
+  display: none;
+}
+
+/* Responsive: Hide sidebar on mobile */
 @media (max-width: 768px) {
+  .sidebar-container {
+    width: 220px;      /* Mobile par open sidebar ki width */
+    min-width: 0;
+    transition: width 0.3s;
+    z-index: 1050;
+  }
   .sidebar-container.collapsed {
-    width: 0px;
+    width: 0;          /* Collapse par sidebar hide ho */
+    min-width: 0;
   }
-}
-@media (max-width: 768px) {
-  .sidebar-container.collapsed .menu,
-  .sidebar-container.collapsed .submenu {
-    display: none;
-  }
-}
-
-.sidebar-container.sidebar-modern {
-  width: 76px;
-  background: #0d3559!important;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0;
-  box-shadow: 2px 0 8px rgba(21, 101, 192, 0.06);
-}
-
-.sidebar-modern-menu {
-  flex: 1;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 24px;
-}
-
-.sidebar-modern-menu ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  width: 100%;
-}
-
-.sidebar-modern-item {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 18px 0;
-}
-
-.sidebar-modern-item i {
-  color: #90caf9;
-  font-size: 1.6rem;
-  opacity: 0.7;
-  transition: color 0.2s, opacity 0.2s;
-}
-
-.sidebar-modern-item:hover i {
-  color: #fff;
-  opacity: 1;
-}
-
-.sidebar-modern-footer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 18px;
-  gap: 12px;
-}
-
-.sidebar-dot {
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  background: #e0e0e0;
-  display: block;
-}
-
-.sidebar-dot-active {
-  background: #1976d2;
 }
 
