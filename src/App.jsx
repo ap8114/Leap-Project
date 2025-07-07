@@ -8,11 +8,9 @@ import ForgotPassword from "./Auth/ForgotPassword";
 
 import { useState } from "react";
 import Dashboard from "./Component/AdminDashboard/Dashboard/Dashboard";
-import Home from "./Component/Website/Home";
-
-
-
-
+import Home from "./Component/Website/HomePages/Home";
+import ClientAndMatterManagement from "./Component/Website/Pages/ClientAndMatterManagement";
+import DocumentAutomation from "./Component/Website/Pages/DocumentAutomation";
 
 
 function App() {
@@ -29,10 +27,13 @@ function App() {
   };
   const location = useLocation();
   // Inside component
-  const noLayoutRoutes = ["/", "/signup", "/forgotpassword" , "/login" ];
+  const noLayoutRoutes = ["/", "/signup", "/forgotpassword", "/login", "/client-and-matter-management" , "/document-automation"];
   const isNoLayoutPage = noLayoutRoutes.includes(location.pathname);
   // Hide layout (navbar/sidebar) only on login page
-  const hideLayout = location.pathname === "/" || location.pathname === "/forgotpassword" || location.pathname === "/signup";
+  // ...existing code...
+  // Hide layout (navbar/sidebar) only on login, signup, forgotpassword, and client-and-matter-management pages
+  const hideLayout = location.pathname === "/" || location.pathname === "/forgotpassword" || location.pathname === "/signup" || location.pathname === "/client-and-matter-management" || location.pathname === "/document-automation";
+  // ...existing code...
   return (
     <>
       {/* navbar */}
@@ -51,6 +52,8 @@ function App() {
 
               {/* Website Routes Starts */}
               <Route path="/" element={<Home />} />
+              <Route path="/client-and-matter-management" element={<ClientAndMatterManagement />} />
+              <Route path="/document-automation" element={<DocumentAutomation />} />
               {/* Website Routes Ends */}
 
               <Route path="/login" element={<Login />} />
