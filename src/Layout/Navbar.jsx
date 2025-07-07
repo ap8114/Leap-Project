@@ -1,26 +1,27 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { RiMenuUnfold2Line } from "react-icons/ri";
-// import logo from "../assets/logo.png"; // Adjust the path as needed
+import "./Navbar.css"; // Import your CSS file for styling
+
 const Navbar = ({ toggleSidebar }) => {
   const navigate = useNavigate();
   const [userName, setUserName] = useState("");
   const [showNotification, setShowNotification] = useState(false);
   const notificationRef = useRef(null);
-useEffect(() => {
-  const storedDetail = localStorage.getItem("login-detail");
-  if (storedDetail) {
-    try {
-      const parsedDetail = JSON.parse(storedDetail);
-      setUserName(parsedDetail.customerName || "Admin");
-    } catch (err) {
-      console.error("Failed to parse login-detail:", err);
+
+  useEffect(() => {
+    const storedDetail = localStorage.getItem("login-detail");
+    if (storedDetail) {
+      try {
+        const parsedDetail = JSON.parse(storedDetail);
+        setUserName(parsedDetail.customerName || "Admin");
+      } catch (err) {
+        setUserName("User");
+      }
+    } else {
       setUserName("User");
     }
-  } else {
-    setUserName("User");
-  }
-}, []);
+  }, []);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -44,156 +45,111 @@ useEffect(() => {
     localStorage.removeItem("token");
     localStorage.removeItem("login-detail");
     localStorage.removeItem("userRole");
-      navigate("/");
+    navigate("/");
   };
 
   return (
-    <nav className="navbar navbar-light p-1">
-      <div className="container-fluid">
-        <div className="d-flex justify-content-between w-100 align-items-center">
-          {/* Left side */}
-          <div className="d-flex align-items-center justify-content-center ms-3">
-            {/* Logo */}
-            <Link to="/" className="d-flex align-items-center ">
-              <img
-                src=""
-                alt="Ladybug Lending Logo"
-                style={{ height: 80, width: "auto", objectFit: "contain" }}
-                className="me-3"
-              />
-            </Link>
-            {/* Sidebar Toggle */}
-            <div
-              className="nav-toggle-icon ms-5 mt-2 " 
-              onClick={toggleSidebar}
-              style={{ cursor: "pointer" }}
-            >
-              <div>
-                <RiMenuUnfold2Line size={28} />
-              </div>
-            </div>
+    <nav className="navbar custom-navbar p-0">
+      <div className="container-fluid px-3">
+        {/* Left: Logo and Sidebar Toggle */}
+        <div className="d-flex align-items-center">
+          <Link to="/" className="navbar-brand d-flex align-items-center me-3">
+            <img
+              src="/vite.svg" // replace with your logo path if needed
+              alt="Ladybug Lending Logo"
+              style={{
+                height: 40,
+                width: 40,
+                objectFit: "contain",
+                marginRight: 10,
+              }}
+            />
+            Clio
+          </Link>
+          <div
+            className="nav-toggle-icon ms-2"
+            onClick={toggleSidebar}
+            style={{ cursor: "pointer" }}
+          >
+            <RiMenuUnfold2Line size={28} />
           </div>
+        </div>
 
-          {/* Middle spacer */}
-          <div className="flex-grow-1 d-none d-lg-block"></div>
+        {/* Center: Search Bar or Icon */}
+        <div className="flex-grow-1 d-flex justify-content-center align-items-center">
+          {/* Desktop search bar */}
+          <input
+            type="text"
+            className="search-bar d-none d-md-block"
+            placeholder="Search"
+            style={{ minWidth: 200, maxWidth: 350 }}
+          />
+          {/* Mobile search icon */}
+          <button
+            className="btn btn-link text-white d-block d-md-none"
+            style={{ fontSize: 22 }}
+            aria-label="Search"
+          >
+            <i className="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </div>
 
-          {/* Right side */}
-          <div className="d-flex align-items-center position-relative">
-            {/* Notification bell */}
-            <div className="position-relative me-3">
-              <button
-                className="btn btn-sm p-0 border-0 bg-transparent"
-                onClick={() => setShowNotification(!showNotification)}
-              >
-                <i className="fa-regular fa-bell fs-4 text-success"></i>
-              </button>
-
-              {/* Notification Card */}
-              {showNotification && (
-                <div
-                  ref={notificationRef}
-                  className="position-absolute end-0 mt-2 shadow-sm rounded-3 border border-success bg-white"
-                  style={{ width: "280px", zIndex: 1000 }}
-                >
-                  <div className="border-bottom px-3 py-2 d-flex justify-content-between align-items-center bg-success bg-opacity-10 rounded-top">
-                    <strong className="text-white">Notifications</strong>
-                    <button
-                      className="btn-close"
-                      onClick={() => setShowNotification(false)}
-                      style={{ fontSize: "0.8rem" }}
-                    ></button>
-                  </div>
-
-                  <div className="p-3">
-                    <div className="d-flex align-items-start gap-2 mb-3">
-                      <i className="fas fa-bell mt-1 text-success"></i>
-                      <div className="small text-dark">
-                        <div className="fw-semibold">
-                          3 new transaction alerts
-                        </div>
-                        <div className="text-muted small">Just now</div>
-                      </div>
-                    </div>
-
-                    <div className="d-flex align-items-start gap-2 mb-3">
-                      <i className="fas fa-check-circle mt-1 text-success"></i>
-                      <div className="small text-dark">
-                        <div className="fw-semibold">
-                          Withdrawal approved
-                        </div>
-                        <div className="text-muted small">15 minutes ago</div>
-                      </div>
-                    </div>
-
-                    <div className="d-flex align-items-start gap-2">
-                      <i className="fas fa-file-alt mt-1 text-success"></i>
-                      <div className="small text-dark">
-                        <div className="fw-semibold">
-                          Monthly report available
-                        </div>
-                        <div className="text-muted small">1 hour ago</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              )}
-            </div>
-
-            {/* Profile dropdown */}
-            <div className="dropdown">
+        {/* Right: Actions (always in one line) */}
+        <div className="d-flex align-items-center right-actions ms-2 gap-2 flex-nowrap">
+          {/* Notification bell */}
+          <div className="position-relative">
+            <button
+              className="btn btn-sm p-0 border-0 bg-transparent"
+              onClick={() => setShowNotification(!showNotification)}
+              aria-label="Notifications"
+            >
+              <i className="fa-regular fa-bell fs-4 text-white"></i>
+            </button>
+            {showNotification && (
               <div
-                className="d-flex align-items-center gap-2"
-                style={{ cursor: "pointer" }}
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
+                ref={notificationRef}
+                className="notification-dropdown"
               >
-                <div className="avatar online">
-                  <i className="fa-solid fa-circle-user fs-2 text-success"></i>
+                <div className="fw-bold mb-2" style={{ color: "#1976d2" }}>Notifications</div>
+                <div style={{ color: "#333", fontSize: "0.97rem" }}>
+                  {/* Example notification */}
+                  <div className="mb-2">No new notifications.</div>
                 </div>
               </div>
-
-              <ul className="dropdown-menu dropdown-menu-end shadow-lg border-0 rounded-3 p-2 mt-2">
-                <li>
-                  <h6 className="dropdown-header small px-3 py-1 fw-bold text-success">
-                    ACCOUNT
-                  </h6>
-                </li>
-
-                <li className="mb-2">
-                  <Link
-                    className="dropdown-item d-flex align-items-center gap-2 px-3 py-2 rounded-2 text-success"
-                    to="/updateprofile"
-                  >
-                    <i className="fas fa-user-pen text-success"></i>
-                    Profile
-                  </Link>
-                </li>
-
-                <li className="mb-2">
-                  <Link
-                    className="dropdown-item d-flex align-items-center gap-2 px-3 py-2 rounded-2 text-success"
-                    to="/changepassword"
-                  >
-                    <i className="fas fa-user-pen text-success"></i>
-                    Change Password
-                  </Link>
-                </li>
-
-                <li>
-                  <hr className="dropdown-divider my-2" />
-                </li>
-
-                <li className="mb-1">
-                  <button
-                    className="dropdown-item d-flex align-items-center gap-2 px-3 py-2 rounded-2 text-success border-0"
-                    onClick={handleLogout}
-                  >
-                    <i className="fas fa-sign-out-alt text-success"></i>
-                    Logout
-                  </button>
-                </li>
-              </ul>
+            )}
+          </div>
+          {/* Profile dropdown */}
+          <div className="dropdown">
+            <div
+              className="d-flex align-items-center gap-2"
+              style={{ cursor: "pointer" }}
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <div className="avatar online">
+                <i className="fa-solid fa-circle-user fs-2"></i>
+              </div>
             </div>
+            <ul className="dropdown-menu dropdown-menu-end shadow-lg border-0 rounded-3 p-2 mt-2">
+              <li>
+                <a className="dropdown-item d-flex align-items-center gap-2" href="/profile">
+                  <i className="bi bi-person-circle"></i> Profile
+                </a>
+              </li>
+              <li>
+                <a className="dropdown-item d-flex align-items-center gap-2" href="/settings">
+                  <i className="bi bi-gear"></i> Settings
+                </a>
+              </li>
+              <li>
+                <hr className="dropdown-divider" />
+              </li>
+              <li>
+                <button className="dropdown-item d-flex align-items-center gap-2 text-danger" onClick={handleLogout}>
+                  <i className="bi bi-box-arrow-right"></i> Logout
+                </button>
+              </li>
+            </ul>
           </div>
         </div>
       </div>

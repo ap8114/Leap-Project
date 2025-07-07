@@ -1,0 +1,83 @@
+/* Navbar.css */
+.custom-navbar {
+  background: #1565c0 !important; /* Clio blue */
+  min-height: 64px;
+  box-shadow: 0 2px 8px rgba(21, 101, 192, 0.06);
+  z-index: 100;
+}
+.custom-navbar .navbar-brand {
+  color: #fff !important;
+  font-weight: bold;
+  font-size: 1.6rem;
+  letter-spacing: 1px;
+}
+.custom-navbar .nav-toggle-icon {
+  color: #fff !important;
+}
+.custom-navbar .search-bar {
+  background: #0d47a1;
+  border-radius: 6px;
+  border: none;
+  color: #fff;
+  padding: 6px 16px;
+  width: 320px;
+  max-width: 100%;
+}
+.custom-navbar .search-bar::placeholder {
+  color: #bbdefb;
+}
+.custom-navbar .right-actions .btn,
+.custom-navbar .right-actions .dropdown-toggle {
+  background: #fff;
+  color: #1565c0;
+  border: none;
+  font-weight: 500;
+  border-radius: 6px;
+  margin-left: 12px;
+}
+.custom-navbar .right-actions .btn:hover {
+  background: #e3f2fd;
+}
+.custom-navbar .avatar i {
+  color: #1565c0 !important;
+  background: #fff;
+  border-radius: 50%;
+  padding: 2px;
+}
+
+/* Add to your Navbar.css or global CSS */
+.navbar .dropdown-menu,
+.navbar .notification-dropdown {
+  right: 0 !important;
+  left: auto !important;
+  z-index: 2000 !important;
+  min-width: 240px;
+  background: #fff;
+  border: 1.5px solid #1976d2;
+  box-shadow: 0 4px 24px 0 #1976d244;
+  border-radius: 12px;
+  padding: 0.5rem 0.75rem;
+}
+
+.navbar .notification-dropdown {
+  position: absolute;
+  top: 48px;
+  right: 0;
+  background: #fff;
+  border: 1.5px solid #1976d2;
+  box-shadow: 0 4px 24px 0 #1976d244;
+  border-radius: 12px;
+  z-index: 2100;
+  min-width: 260px;
+  padding: 0.75rem 1rem;
+}
+
+.navbar .dropdown-menu li a {
+  color: #1565c0;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+.navbar .dropdown-menu li a:hover {
+  background: #e3f2fd;
+  color: #1976d2;
+}

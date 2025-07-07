@@ -54,6 +54,15 @@ const Sidebar = ({ collapsed, menuItemClick }) => {
     { path: "/refer", icon: "fa-user-friends", text: "Refer a Friend" }
   ];
 
+  const sidebarMenu = [
+    { icon: "fa-solid fa-bars" },
+    { icon: "fa-regular fa-calendar" },
+    { icon: "fa-regular fa-user" },
+    { icon: "fa-regular fa-briefcase" },
+    { icon: "fa-solid fa-chart-bar" },
+    { icon: "fa-regular fa-folder" },
+  ];
+
   return (
     <div className={`sidebar-container ${collapsed ? "collapsed" : ""}`}>
       <div className="sidebar">
@@ -65,9 +74,9 @@ const Sidebar = ({ collapsed, menuItemClick }) => {
               style={{ width: "100%" }}
             >
               <div
-                className="menu-link d-flex align-items-center"
+                className="menu-link d-flex align-items-center "
                 style={{
-                  padding: "12px 16px",
+                  padding: "12px 16px ",
                   cursor: "pointer",
                   justifyContent: collapsed ? "center" : "flex-start",
                   width: "100%",
@@ -80,7 +89,7 @@ const Sidebar = ({ collapsed, menuItemClick }) => {
                     fontSize: "1.25rem",
                     minWidth: "24px",
                     textAlign: "center",
-                    color: isActive(item.path) ? "white" : "#222",
+                    color: isActive(item.path) ? "white" : "white",
                   }}
                 ></i>
                 {!collapsed && (
@@ -93,6 +102,11 @@ const Sidebar = ({ collapsed, menuItemClick }) => {
           ))}
         </ul>
       </div>
+      {/* <div className="sidebar-modern-footer">
+        <span className="sidebar-dot sidebar-dot-active"></span>
+        <span className="sidebar-dot"></span>
+      </div> */}
+      fdjfgjsdhfjdfjdshifydsjbfndrfyhefndfvb
     </div>
   );
 };
