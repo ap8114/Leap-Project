@@ -53,10 +53,10 @@ const Family = () => {
   };
 
   return (
-    <div className=" min-vh-100">
+    <div className=" W-100">
 
         <Header/>
-    <div className="">
+    <div className="W-100">
       {/* Navigation */}
     
 
