@@ -33,7 +33,7 @@ const activity = {
 const Document = () => {
   const [showTemplateModal, setShowTemplateModal] = useState(false);
   const [templateSearch, setTemplateSearch] = useState('');
-const [viewMode, setViewMode] = useState('grid'); // 'grid' or 'list'
+  const [viewMode, setViewMode] = useState('grid'); // 'grid' or 'list'
   const [selectedFilter, setSelectedFilter] = useState('all');
   const [showBriefTab, setShowBriefTab] = useState(false);
   const [showESignTab, setShowESignTab] = useState(false);
@@ -43,43 +43,43 @@ const [viewMode, setViewMode] = useState('grid'); // 'grid' or 'list'
   const [signTitle, setSignTitle] = useState('');
   const [signature, setSignature] = useState('');
 
-const templates = [
-  {
-    name: 'Contract Template',
-    category: 'Legal',
-    id: 1,
-    description: 'Standard contract template with customizable terms and conditions',
-    imageUrl: 'https://readdy.ai/api/search-image?query=professional%20legal%20document%20template%20with%20clean%20layout%20contract%20style%20design%20business%20paper%20on%20white%20background%20perfect%20for%20corporate%20presentation&width=300&height=200&seq=temp1&orientation=landscape'
-  },
-  {
-    name: 'Invoice Template',
-    category: 'Finance',
-    id: 2,
-    description: 'Professional invoice template with automatic calculations',
-    imageUrl: 'https://readdy.ai/api/search-image?query=modern%20invoice%20template%20design%20with%20clean%20layout%20financial%20document%20style%20business%20paper%20on%20white%20background%20perfect%20for%20corporate%20billing&width=300&height=200&seq=temp2&orientation=landscape'
-  },
-  {
-    name: 'NDA Template',
-    category: 'Legal',
-    id: 3,
-    description: 'Comprehensive non-disclosure agreement template',
-    imageUrl: 'https://readdy.ai/api/search-image?query=confidential%20legal%20document%20template%20with%20professional%20layout%20non%20disclosure%20agreement%20style%20paper%20on%20white%20background%20perfect%20for%20business%20contracts&width=300&height=200&seq=temp3&orientation=landscape'
-  },
-  {
-    name: 'Report Template',
-    category: 'Business',
-    id: 4,
-    description: 'Business report template with pre-formatted sections',
-    imageUrl: 'https://readdy.ai/api/search-image?query=business%20report%20template%20with%20data%20visualization%20clean%20modern%20layout%20professional%20document%20style%20on%20white%20background%20perfect%20for%20corporate%20reports&width=300&height=200&seq=temp4&orientation=landscape'
-  },
-  {
-    name: 'Proposal Template',
-    category: 'Sales',
-    id: 5,
-    description: 'Sales proposal template with compelling layout',
-    imageUrl: 'https://readdy.ai/api/search-image?query=sales%20proposal%20template%20design%20with%20modern%20layout%20marketing%20document%20style%20business%20paper%20on%20white%20background%20perfect%20for%20corporate%20proposals&width=300&height=200&seq=temp5&orientation=landscape'
-  },
-];
+  const templates = [
+    {
+      name: 'Contract Template',
+      category: 'Legal',
+      id: 1,
+      description: 'Standard contract template with customizable terms and conditions',
+      imageUrl: 'https://readdy.ai/api/search-image?query=professional%20legal%20document%20template%20with%20clean%20layout%20contract%20style%20design%20business%20paper%20on%20white%20background%20perfect%20for%20corporate%20presentation&width=300&height=200&seq=temp1&orientation=landscape'
+    },
+    {
+      name: 'Invoice Template',
+      category: 'Finance',
+      id: 2,
+      description: 'Professional invoice template with automatic calculations',
+      imageUrl: 'https://readdy.ai/api/search-image?query=modern%20invoice%20template%20design%20with%20clean%20layout%20financial%20document%20style%20business%20paper%20on%20white%20background%20perfect%20for%20corporate%20billing&width=300&height=200&seq=temp2&orientation=landscape'
+    },
+    {
+      name: 'NDA Template',
+      category: 'Legal',
+      id: 3,
+      description: 'Comprehensive non-disclosure agreement template',
+      imageUrl: 'https://readdy.ai/api/search-image?query=confidential%20legal%20document%20template%20with%20professional%20layout%20non%20disclosure%20agreement%20style%20paper%20on%20white%20background%20perfect%20for%20business%20contracts&width=300&height=200&seq=temp3&orientation=landscape'
+    },
+    {
+      name: 'Report Template',
+      category: 'Business',
+      id: 4,
+      description: 'Business report template with pre-formatted sections',
+      imageUrl: 'https://readdy.ai/api/search-image?query=business%20report%20template%20with%20data%20visualization%20clean%20modern%20layout%20professional%20document%20style%20on%20white%20background%20perfect%20for%20corporate%20reports&width=300&height=200&seq=temp4&orientation=landscape'
+    },
+    {
+      name: 'Proposal Template',
+      category: 'Sales',
+      id: 5,
+      description: 'Sales proposal template with compelling layout',
+      imageUrl: 'https://readdy.ai/api/search-image?query=sales%20proposal%20template%20design%20with%20modern%20layout%20marketing%20document%20style%20business%20paper%20on%20white%20background%20perfect%20for%20corporate%20proposals&width=300&height=200&seq=temp5&orientation=landscape'
+    },
+  ];
 
 
   const documents = [
@@ -115,48 +115,50 @@ const templates = [
     { type: 'sign', document: 'Partner Agreement.pdf', user: 'Mike Johnson', timestamp: '5 hours ago' }
   ];
 
-const getActivityIcon = (type) => {
-  switch (type) {
-    case 'upload':
-      return 'bg-success text-white';
-    case 'edit':
-      return 'bg-primary text-white';
-    case 'sign':
-      return 'bg-info text-white';
-    default:
-      return 'bg-secondary text-white';
-  }
-};
+  const getActivityIcon = (type) => {
+    switch (type) {
+      case 'upload':
+        return 'bg-success text-white';
+      case 'edit':
+        return 'bg-primary text-white';
+      case 'sign':
+        return 'bg-info text-white';
+      default:
+        return 'bg-secondary text-white';
+    }
+  };
 
 
   return (
     <div className="p-3">
-        
+
       <div className="">
-        <div className="mb-4">
-          <h1 className="display-6 fw-bold mb-2">Documents</h1>
-       
+        <div className="">
+          <h1 className="display-6 fw-bold">Documents</h1>
         </div>
         {/* Search and Filters */}
-        <div className="mb-4 w-100">
-            <div className="w-100">
-              <input
-                type="text"
-                className="form-control mt-3 p-2"
-                placeholder="Search..."
-                aria-label="Search"
-              />
-            </div>
-          <div className="d-flex gap-2">
-            <Button variant="light" className="d-flex align-items-center gap-2">
+        <div className="row g-2 align-items-center">
+          {/* Search Input */}
+          <div className="col-md-8 col-12">
+            <input
+              type="text"
+              className="form-control mt-4"
+              placeholder="Search..."
+              aria-label="Search"
+            />
+          </div>
+
+          {/* Filter Buttons */}
+          <div className="col-md-4 col-12 d-flex gap-2">
+            <button className="btn btn-light d-flex align-items-center gap-2 p-2">
               <FaFilter /> Filter
-            </Button>
-            <Button variant="light" className="d-flex align-items-center gap-2">
+            </button>
+            <button className="btn btn-light d-flex align-items-center gap-2 p-2">
               <FaTags /> Tags
-            </Button>
-            <Button variant="link" className="text-secondary">
+            </button>
+            <button className="btn btn-link text-secondary text-nowrap">
               Clear Filters
-            </Button>
+            </button>
           </div>
         </div>
 
@@ -165,15 +167,15 @@ const getActivityIcon = (type) => {
           <Button variant="primary" className="d-flex align-items-center gap-2">
             <FaUpload /> Upload Document
           </Button>
-          <Button 
-            variant="outline-primary" 
+          <Button
+            variant="outline-primary"
             className="d-flex align-items-center gap-2"
             onClick={() => setShowTemplateModal(true)}
           >
             <FaFileAlt /> Create from Template
           </Button>
-          <Button 
-            variant={showBriefTab ? 'primary' : 'outline-primary'} 
+          <Button
+            variant={showBriefTab ? 'primary' : 'outline-primary'}
             className="d-flex align-items-center gap-2"
             onClick={() => {
               setShowBriefTab(true);
@@ -182,8 +184,8 @@ const getActivityIcon = (type) => {
           >
             <FaBook /> Generate Brief
           </Button>
-          <Button 
-            variant={showESignTab ? 'primary' : 'outline-primary'} 
+          <Button
+            variant={showESignTab ? 'primary' : 'outline-primary'}
             className="d-flex align-items-center gap-2"
             onClick={() => {
               setShowESignTab(true);
@@ -221,15 +223,15 @@ const getActivityIcon = (type) => {
         <div className="d-flex justify-content-between align-items-center mb-3">
           <h2 className="h4 mb-0">Documents</h2>
           <div className="btn-group">
-            <Button 
-              variant={viewMode === 'grid' ? 'primary' : 'light'} 
+            <Button
+              variant={viewMode === 'grid' ? 'primary' : 'light'}
               size="sm"
               onClick={() => setViewMode('grid')}
             >
               <FaThLarge />
             </Button>
-            <Button 
-              variant={viewMode === 'list' ? 'primary' : 'light'} 
+            <Button
+              variant={viewMode === 'list' ? 'primary' : 'light'}
               size="sm"
               onClick={() => setViewMode('list')}
             >
@@ -304,8 +306,8 @@ const getActivityIcon = (type) => {
           <Form>
             <Form.Group className="mb-3">
               <Form.Label>Brief Title</Form.Label>
-              <Form.Control 
-                type="text" 
+              <Form.Control
+                type="text"
                 value={briefTitle}
                 onChange={(e) => setBriefTitle(e.target.value)}
                 placeholder="Enter brief title"
@@ -313,8 +315,8 @@ const getActivityIcon = (type) => {
             </Form.Group>
             <Form.Group className="mb-3">
               <Form.Label>Description</Form.Label>
-              <Form.Control 
-                as="textarea" 
+              <Form.Control
+                as="textarea"
                 rows={5}
                 value={briefDescription}
                 onChange={(e) => setBriefDescription(e.target.value)}
@@ -337,8 +339,8 @@ const getActivityIcon = (type) => {
           <Form>
             <Form.Group className="mb-3">
               <Form.Label>Full Name</Form.Label>
-              <Form.Control 
-                type="text" 
+              <Form.Control
+                type="text"
                 value={signName}
                 onChange={(e) => setSignName(e.target.value)}
                 placeholder="Enter your full name"
@@ -346,8 +348,8 @@ const getActivityIcon = (type) => {
             </Form.Group>
             <Form.Group className="mb-3">
               <Form.Label>Title</Form.Label>
-              <Form.Control 
-                type="text" 
+              <Form.Control
+                type="text"
                 value={signTitle}
                 onChange={(e) => setSignTitle(e.target.value)}
                 placeholder="Enter your title"
@@ -377,7 +379,7 @@ const getActivityIcon = (type) => {
             <InputGroup.Text>
               <FaSearch />
             </InputGroup.Text>
-            <FormControl 
+            <FormControl
               placeholder="Search templates..."
               value={templateSearch}
               onChange={(e) => setTemplateSearch(e.target.value)}
@@ -398,9 +400,9 @@ const getActivityIcon = (type) => {
                       <Card.Title className="h6">{template.name}</Card.Title>
                       <Card.Subtitle className="mb-2 text-muted small">{template.category}</Card.Subtitle>
                       <Card.Text className="small text-muted">{template.description}</Card.Text>
-                      <Button 
-                        variant="primary" 
-                        size="sm" 
+                      <Button
+                        variant="primary"
+                        size="sm"
                         className="w-100"
                         onClick={() => {
                           // Handle template selection
