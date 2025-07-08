@@ -55,16 +55,17 @@ const Navbar = ({ toggleSidebar }) => {
         <div className="d-flex align-items-center">
           <Link to="/" className="navbar-brand d-flex align-items-center me-3">
             <img
-              src="/vite.svg" // replace with your logo path if needed
-              alt="Ladybug Lending Logo"
-              style={{
-                height: 40,
-                width: 40,
-                objectFit: "contain",
-                marginRight: 10,
-              }}
-            />
-            Clio
+  src="https://i.postimg.cc/sgpJBshm/Whats-App-Image-2025-07-08-at-13-19-04-3a7fcb47.jpg"
+  alt="clio logo"
+  style={{
+    height: "40px", // fix height to 40px
+    width: "auto",  // allow width to auto-scale
+    objectFit: "contain",
+    marginRight: 10,
+  }}
+/>
+
+            
           </Link>
           <div
             className="nav-toggle-icon ms-2"

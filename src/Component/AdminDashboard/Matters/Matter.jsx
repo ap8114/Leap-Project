@@ -76,9 +76,9 @@ const Matter = () => {
       dueDate: !newMatter.dueDate,
       assignee: !newMatter.assignee
     };
-    
+
     setFormErrors(errors);
-    
+
     if (Object.values(errors).some(error => error)) {
       return;
     }
@@ -122,7 +122,7 @@ const Matter = () => {
 
   // Function to get status color
   const getStatusColor = (status) => {
-    switch(status) {
+    switch (status) {
       case 'Active':
         return 'bg-success';
       case 'Pending':

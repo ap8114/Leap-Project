@@ -130,9 +130,9 @@ const getActivityIcon = (type) => {
 
 
   return (
-    <div className="min-vh-100 bg-light p-4 container-fluid">
+    <div className="p-3">
         
-      <Container className="max-w-7xl mx-auto bg-white p-4 rounded shadow-sm mb-4 mt-3 container-fluid">
+      <div className="">
         <div className="mb-4">
           <h1 className="display-6 fw-bold mb-2">Documents</h1>
        
@@ -201,10 +201,10 @@ const getActivityIcon = (type) => {
             <FaSignature /> E-Sign
           </Button>
         </div>
-      </Container>
+      </div>
 
       {/* Templates Section */}
-      <Container className="max-w-7xl mx-auto bg-white p-4 rounded shadow-sm mb-4">
+      <div className=" mx-auto bg-white p-4 rounded shadow-sm mb-4">
         <h2 className="h4 mb-3">Templates</h2>
         <div className="d-flex overflow-auto pb-2 gap-3">
           {templates.map(template => (
@@ -222,10 +222,10 @@ const getActivityIcon = (type) => {
             </Card>
           ))}
         </div>
-      </Container>
+      </div>
 
       {/* Documents Grid/List */}
-      <Container className="max-w-7xl mx-auto bg-white p-4 rounded shadow-sm mb-4">
+      <div className=" mx-auto bg-white p-4 rounded shadow-sm mb-4">
         <div className="d-flex justify-content-between align-items-center mb-3">
           <h2 className="h4 mb-0">Documents</h2>
           <div className="btn-group">
@@ -279,10 +279,10 @@ const getActivityIcon = (type) => {
             </Col>
           ))}
         </Row>
-      </Container>
+      </div>
 
       {/* Recent Activities */}
-      <Container className="max-w-7xl mx-auto bg-white p-4 rounded shadow-sm">
+      <div className="mx-auto bg-white p-4 rounded shadow-sm">
         <h2 className="h4 mb-3">Recent Activities</h2>
         <div className="list-group">
           {recentActivities.map((activity, index) => (
@@ -301,7 +301,7 @@ const getActivityIcon = (type) => {
             </div>
           ))}
         </div>
-      </Container>
+      </div>
 
       {/* Brief Generator Modal */}
       <Modal show={showBriefTab} onHide={() => setShowBriefTab(false)} centered>

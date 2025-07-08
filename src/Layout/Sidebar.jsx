@@ -27,21 +27,17 @@ const Sidebar = ({ collapsed, menuItemClick }) => {
 
   // Only admin menu items
   const adminMenuItems = [
-  { path: "/dashboard", icon: "fa-solid fa-gauge", text: "Dashboard" },                          // Dashboard
-  { path: "/matter", icon: "fa-solid fa-scale-balanced", text: "Matters" },                      // Legal cases / Matters
-  { path: "/document", icon: "fa-solid fa-file-lines", text: "Documents" },                      // Documents
-  { path: "/calendar", icon: "fa-solid fa-calendar-check", text: "Calendar" },                   // Calendar
-  { path: "/timebilling", icon: "fa-solid fa-stopwatch", text: "Time & Billing" },               // Time Tracking
-  { path: "/client", icon: "fa-solid fa-handshake", text: "Clients & CRM" },                     // Clients & CRM
-  { path: "/reportdownload", icon: "fa-solid fa-brain", text: "AI Tool" },                       // AI Tool
-  { path: "/accounting", icon: "fa-solid fa-file-invoice", text: "Accounting" },                 // Accounting
-  { path: "/admin", icon: "fa-solid fa-user-shield", text: "Admin" },                            // Admin
-  { path: "/user-management", icon: "fa-solid fa-users-cog", text: "User Management" },          // User Management
-  { path: "/integrations", icon: "fa-solid fa-plug", text: "Integrations" },                     // Integrations
-  { path: "/settings", icon: "fa-solid fa-gear", text: "Settings" },                             // Settings
-  { path: "/reports-analytics", icon: "fa-solid fa-chart-line", text: "Reports & Analytics" },   // Reports & Analytics
-  { path: "/workflow", icon: "fa-solid fa-diagram-project", text: "Workflow" }                   // Workflow
-];
+    { path: "/dashboard", icon: "fa-solid fa-gauge", text: "Dashboard" },                          // Dashboard
+    { path: "/matter", icon: "fa-solid fa-scale-balanced", text: "Matters" },                      // Matters
+    { path: "/client", icon: "fa-solid fa-handshake", text: "Clients & CRM" },                     // Clients / CRM
+    { path: "/document", icon: "fa-solid fa-file-lines", text: "Documents" },                      // Documents
+    { path: "/calendar", icon: "fa-solid fa-calendar-check", text: "Calendar" },                   // Calendar
+    { path: "/tasksworkflow", icon: "fa-solid fa-diagram-project", text: "Tasks & Workflow" },     // Tasks & Workflow
+    { path: "/timebilling", icon: "fa-solid fa-stopwatch", text: "Time & Billing" },               // Time & Billing
+    { path: "/reportsanalytics", icon: "fa-solid fa-chart-line", text: "Reports & Analytics" },   // Reports & Analytics
+    { path: "/adminpage", icon: "fa-solid fa-user-shield", text: "Admin" },                            // Admin
+    { path: "/setting", icon: "fa-solid fa-gear", text: "Settings" }                              // Settings
+  ];
 
   return (
     <div className={`sidebar-container ${collapsed ? "collapsed" : ""}`}>
@@ -51,7 +47,6 @@ const Sidebar = ({ collapsed, menuItemClick }) => {
             <li
               key={item.path}
               className={`menu-item ${isActive(item.path) ? "active" : ""}`}
-              style={{ width: "100%" }}
             >
               <div
                 className="menu-link d-flex align-items-center"
