@@ -42,7 +42,7 @@ const PersonalInjury = () => {
                 secure document management, and automated client communication tools designed for modern law firms.
               </p>
               <div className="d-flex flex-column flex-sm-row gap-3">
-                <button className="btn btn-warning text-white px-4 py-3 fw-semibold">
+                <button className="text-white px-4 py-3 fw-semibold" style={{backgroundColor: '#f76b1c' , color: 'white'}}>
                   Start Free Trial
                 </button>
                 <button className="btn btn-outline-dark px-4 py-3 fw-semibold">

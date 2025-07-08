@@ -106,27 +106,33 @@ const Header = () => {
                       </div>
                     </Link>
 
-
-                    <Link to="/reporting" className="text-decoration-none text-dark">
-                    <div className="mb-2">
-                      <div className="fw-semibold">Reporting</div>
-                      <div className="small text-muted">
-                        Gain quick insights into your data to make intelligent
-                        decisions across your firm
+                    <Link
+                      to="/reporting"
+                      className="text-decoration-none text-dark"
+                    >
+                      <div className="mb-2">
+                        <div className="fw-semibold">Reporting</div>
+                        <div className="small text-muted">
+                          Gain quick insights into your data to make intelligent
+                          decisions across your firm
+                        </div>
                       </div>
-                    </div>
                     </Link>
 
-                    <Link to="/clientservice" className="text-decoration-none text-dark">
-                    <div>
-                      <div className="fw-semibold">Client service</div>
-                      <div className="small text-muted">
-                        Connect, communicate and collaborate with clients online
+                    <Link
+                      to="/clientservice"
+                      className="text-decoration-none text-dark"
+                    >
+                      <div>
+                        <div className="fw-semibold">Client service</div>
+                        <div className="small text-muted">
+                          Connect, communicate and collaborate with clients
+                          online
+                        </div>
                       </div>
-                    </div>
                     </Link>
                   </div>
-                 
+
                   <div className="col-4 border-start">
                     <div className="mb-4 d-flex align-items-start">
                       <img
@@ -187,15 +193,39 @@ const Header = () => {
                 <div className="row">
                   {/* Areas of Law */}
                   <div className="col-5">
-                   <div className="row">
-  <div className="col-12"> {/* Changed to single column for better mobile display */}
-<Link to="/conveyancing" className="dropdown-item ">Conveyancing </Link>
-    <Link to="/family" className="dropdown-item" href="#family">Family</Link>
-    <Link to="/employment" className="dropdown-item" href="#employment">Employment</Link>
-    <Link to="/personalinjury" className="dropdown-item" href="#personal-injury">Personal injury</Link>
-    <a className="dropdown-item" href="#estates">Estates and probate</a>
-  </div>
-</div>
+                    <div className="row">
+                      <div className="col-12">
+                        {" "}
+                        {/* Changed to single column for better mobile display */}
+                        <Link to="/conveyancing" className="dropdown-item ">
+                          Conveyancing{" "}
+                        </Link>
+                        <Link
+                          to="/family"
+                          className="dropdown-item"
+                          href="#family"
+                        >
+                          Family
+                        </Link>
+                        <Link
+                          to="/employment"
+                          className="dropdown-item"
+                          href="#employment"
+                        >
+                          Employment
+                        </Link>
+                        <Link
+                          to="/personalinjury"
+                          className="dropdown-item"
+                          href="#personal-injury"
+                        >
+                          Personal injury
+                        </Link>
+                        <Link to="/estateprobate" className="dropdown-item">
+                          Estates and probate
+                        </Link>
+                      </div>
+                    </div>
                   </div>
                   {/* Images and Info */}
                   <div className="col-4 border-start">
@@ -385,7 +415,7 @@ const Header = () => {
                       person across the UK
                     </div>
                   </div>
-                 
+
                   {/* Help Centre */}
                   <div className="col-3 border-start">
                     <div className="mb-3">
@@ -461,7 +491,9 @@ const Header = () => {
                     <Link to="/reporting" className="dropdown-item">
                       Reporting
                     </Link>
-                    <Link to="/clientservice" className="dropdown-item">Client service</Link>
+                    <Link to="/clientservice" className="dropdown-item">
+                      Client service
+                    </Link>
                     <div className="dropdown-item">Security and compliance</div>
                     <div className="dropdown-item">Legal accounting</div>
                     <div className="dropdown-item">NEW: Matter AI</div>
