@@ -326,7 +326,11 @@ select.form-input {
 .user-icon:hover {
   color: #578E7E;
 }
-
+.btn-custom {
+  background-color: #f75c3c !important;
+  border-color: #f75c3c !important;
+  color: #fff !important;
+}
 /* navbar end  */
 .right-side-content {
   width: 100%;

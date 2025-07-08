@@ -1,5 +1,5 @@
 body{
-    background-color: #e7f7ed!important;
+    background-color: #f5f7fa!important;
     overflow-x: hidden;
 }
 
@@ -270,4 +270,19 @@ body{
   min-height: 100vh!important;
 }
 
+/* index.css or App.css */
+
+.btn-custom {
+  background-color: #f75c3c !important;
+  border-color: #f75c3c !important;
+  color: #fff !important;
+}
+
+.btn-custom:hover,
+.btn-custom:focus,
+.btn-custom:active {
+  background-color: #e55334 !important; /* Slightly darker on hover */
+  border-color: #e55334 !important;
+  color: #fff !important;
+}
 

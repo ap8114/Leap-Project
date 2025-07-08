@@ -49,24 +49,23 @@ const Navbar = ({ toggleSidebar }) => {
   };
 
   return (
-    <nav className="navbar custom-navbar p-0">
-      <div className="container-fluid px-0">
+    <nav className="navbar custom-navbar p-0 shadow-sm">
+      <div className="container-fluid d-flex flex-nowrap justify-content-between align-items-center px-2">
+
         {/* Left: Logo and Sidebar Toggle */}
         <div className="d-flex align-items-center">
-          <Link to="/" className="navbar-brand d-flex align-items-center me-3">
-            <img
-  src="https://i.postimg.cc/sgpJBshm/Whats-App-Image-2025-07-08-at-13-19-04-3a7fcb47.jpg"
-  alt="clio logo"
-  style={{
-    height: "40px", // fix height to 40px
-    width: "auto",  // allow width to auto-scale
-    objectFit: "contain",
-    marginRight: 10,
-  }}
-/>
-
-            
-          </Link>
+      <Link to="/" className="navbar-brand d-flex align-items-center me-2">
+  <img
+    src="https://i.postimg.cc/RVJPy6VB/Whats-App-Image-2025-07-08-at-18-18-06-42bff2fc-removebg-preview.png"
+    alt="clio logo"
+    style={{
+      height: "60px", // controlled height
+      width: "auto",
+      objectFit: "contain",
+      marginRight: 8,
+    }}
+  />
+</Link>
           <div
             className="nav-toggle-icon ms-2"
             onClick={toggleSidebar}
@@ -105,14 +104,14 @@ const Navbar = ({ toggleSidebar }) => {
               onClick={() => setShowNotification(!showNotification)}
               aria-label="Notifications"
             >
-              <i className="fa-regular fa-bell fs-4 text-white"></i>
+              <i className="fa-regular fa-bell fs-4 "></i>
             </button>
             {showNotification && (
               <div
                 ref={notificationRef}
                 className="notification-dropdown"
               >
-                <div className="fw-bold mb-2 text-light" style={{ color: "#1976d2" }}>Notifications</div>
+                <div className="fw-bold mb-2 text-dark" style={{ color: "black" }}>Notifications</div>
                 <div style={{ color: "#333", fontSize: "0.97rem" }}>
                   {/* Example notification */}
                   <div className="mb-2 text-muted">No new notifications.</div>
@@ -148,7 +147,7 @@ const Navbar = ({ toggleSidebar }) => {
               </li>
               <li>
                 <button className="dropdown-item d-flex align-items-center gap-2 text-dark " onClick={handleLogout}>
-                  <i className="bi bi-box-arrow-right "></i> Logout
+                  <i className="bi bi-box-arrow-right text-dark"></i> Logout
                 </button>
               </li>
             </ul>
