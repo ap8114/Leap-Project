@@ -30,6 +30,8 @@ import EstateProbate from "./Component/Website/Pages/Solutions/EstateProbate";
 import Family from "./Component/Website/Pages/Solutions/Family.JSX";
 import Employment from "./Component/Website/Pages/Solutions/Employment";
 import PersonalInjury from "./Component/Website/Pages/Solutions/PersonalInjury";
+import ContactUs from "./Component/Website/ContactUs/ContactUs";
+import TheLawSociety from "./Component/Website/Pages/Company/TheLawSociety";
 
 
 function App() {
@@ -61,6 +63,8 @@ function App() {
     "/family",
     "/employment",
     "/personalinjury",
+    "/contactus",
+    "/thelawsociety",
   ];
   const isNoLayoutPage = noLayoutRoutes.includes(location.pathname);
   // Hide layout (navbar/sidebar) only on login page
@@ -75,12 +79,14 @@ function App() {
     location.pathname === "/timerecordingbilling" ||
     location.pathname === "/reporting" ||
     location.pathname === "/clientservice" ||
-      location.pathname === "/conveyancing" ||
-location.pathname === "/estateprobate" ||
+    location.pathname === "/conveyancing" ||
+    location.pathname === "/estateprobate" ||
     location.pathname === "/family" ||
     location.pathname === "/employment" ||
-     location.pathname === "/personalinjury";
-   
+    location.pathname === "/personalinjury" ||
+    location.pathname === "/contactus" ||
+     location.pathname === "/thelawsociety";
+
   // ...existing code...
   return (
     <>
@@ -112,14 +118,16 @@ location.pathname === "/estateprobate" ||
               />
               <Route
                 path="/timerecordingbilling"
-                element={<TimeRecordingBilling />}/>
+                element={<TimeRecordingBilling />} />
               <Route path="/reporting" element={<Reporting />} />
               <Route path="/clientservice" element={<ClientService />} />
-              <Route path="/conveyancing" element={<Conveyancing/>} />
-              <Route path="/estateprobate" element={<EstateProbate/>} />
-                <Route path="/family" element={< Family/>} />
-                   <Route path="/employment" element={< Employment/>} />
-                       <Route path="/personalinjury" element={< PersonalInjury/>} />
+              <Route path="/conveyancing" element={<Conveyancing />} />
+              <Route path="/estateprobate" element={<EstateProbate />} />
+              <Route path="/family" element={< Family />} />
+              <Route path="/employment" element={< Employment />} />
+              <Route path="/personalinjury" element={< PersonalInjury />} />
+              <Route path="/contactus" element={< ContactUs />} />
+               <Route path="/thelawsociety" element={<TheLawSociety />} />
 
               {/* Website Routes Ends */}
 
@@ -129,9 +137,8 @@ location.pathname === "/estateprobate" ||
             </Routes>
           ) : (
             <div
-              className={`right-side-content${
-                isSidebarCollapsed ? " collapsed" : ""
-              }`}
+              className={`right-side-content${isSidebarCollapsed ? " collapsed" : ""
+                }`}
             >
               <Routes>
                 {/* AdminDashboard */}
