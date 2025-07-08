@@ -107,7 +107,7 @@ const Client = () => {
     <div className="container-fluid py-4">
       <div className="row mb-4">
         <div className="col">
-          <h1 className="display-6">Client Management</h1>
+           <h1 className="display-6 fw-bold mb-2">Client</h1>
           <p className="text-muted">Manage your clients and their information</p>
         </div>
       </div>

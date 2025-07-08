@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { Form, Button, Row, Col } from 'react-bootstrap';
+import { Form, Button, Row, Col, Container } from 'react-bootstrap';
 
 const Settings = () => {
   const logoInputRef = useRef(null);
@@ -18,50 +18,66 @@ const Settings = () => {
   };
 
   return (
-    <div className="container py-4">
-      <h4 className="mb-4 fw-bold">Settings</h4>
+    <div className="p-4">
+      <h1 className="display-6 fw-bold mb-2">Settings</h1>
 
       {/* Firm Information */}
-      <div className="border rounded p-4 mb-4 bg-light">
+      <div className="border rounded bg-light p-4 mb-4">
         <h5 className="mb-3">Firm Information</h5>
-        <Row className="mb-3">
-          <Col md={4} className="text-center">
-            <div className="border rounded p-3 bg-white">
-              <p className="mb-1">Upload Logo</p>
-              <Button variant="outline-secondary" size="sm" onClick={handleLogoClick}>Click to upload logo</Button>
-              <Form.Control 
-                type="file" 
-                ref={logoInputRef} 
-                style={{ display: 'none' }} 
-                onChange={handleLogoUpload} 
+        <div className="row">
+          {/* Upload Logo */}
+          <div className="col-md-4 text-center mb-3 mb-md-0">
+            <div className="border rounded bg-white p-3 h-100">
+              <p className="mt-5 fw-semibold">Upload Logo</p>
+              <button
+                type="button"
+                className="btn btn-outline-secondary btn-sm"
+                onClick={handleLogoClick}
+              >
+                Click to Upload Logo
+              </button>
+              <input
+                type="file"
+                ref={logoInputRef}
+                className="d-none"
+                onChange={handleLogoUpload}
               />
             </div>
-          </Col>
-          <Col md={8}>
-            <Form.Group className="mb-3">
-              <Form.Label>Company Name</Form.Label>
-              <Form.Control type="text" />
-            </Form.Group>
-            <Row>
-              <Col>
-                <Form.Group className="mb-3">
-                  <Form.Label>Email Address</Form.Label>
-                  <Form.Control type="email" />
-                </Form.Group>
-              </Col>
-              <Col>
-                <Form.Group className="mb-3">
-                  <Form.Label>Contact Number</Form.Label>
-                  <Form.Control type="text" />
-                </Form.Group>
-              </Col>
-            </Row>
-          </Col>
-        </Row>
+          </div>
+
+          {/* Company Info */}
+          <div className="col-md-8">
+            <div className="mb-3">
+              <label htmlFor="companyName" className="form-label">
+                Company Name
+              </label>
+              <input type="text" id="companyName" className="form-control" />
+            </div>
+            <div className="row">
+              <div className="col">
+                <div className="mb-3">
+                  <label htmlFor="companyEmail" className="form-label">
+                    Email Address
+                  </label>
+                  <input type="email" id="companyEmail" className="form-control" />
+                </div>
+              </div>
+              <div className="col">
+                <div className="mb-3">
+                  <label htmlFor="contactNumber" className="form-label">
+                    Contact Number
+                  </label>
+                  <input type="text" id="contactNumber" className="form-control" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
+
       {/* Email & Notification Settings */}
-      <div className="border rounded p-4 mb-4 bg-light">
+      <div className="border rounded bg-light p-4 mb-4">
         <h5 className="mb-3">Email & Notification Settings</h5>
         <Row className="mb-3">
           <Col>
@@ -90,7 +106,7 @@ const Settings = () => {
       </div>
 
       {/* Document Template Setup */}
-      <div className="border rounded p-4 mb-4 bg-light">
+      <div className="border rounded bg-light p-4 mb-4">
         <h5 className="mb-3">Document Template Setup</h5>
         <Row>
           <Col md={6}>
@@ -113,7 +129,7 @@ const Settings = () => {
       </div>
 
       {/* Basic Preferences */}
-      <div className="border rounded p-4 mb-4 bg-light">
+      <div className="border rounded bg-light p-4 mb-4">
         <h5 className="mb-3">Basic Preferences</h5>
         <Row>
           <Col md={4}>
@@ -149,7 +165,9 @@ const Settings = () => {
 
       {/* Save Button */}
       <div className="text-center">
-        <Button variant="primary">Save Changes</Button>
+        <Button variant="primary" size="lg">
+          Save Changes
+        </Button>
       </div>
     </div>
   );

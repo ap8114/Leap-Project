@@ -92,7 +92,8 @@ const ReportsAnalytics= () => {
     <div className="min-vh-100 bg-light py-4 px-3">
       <div className="container-fluid">
         <div className="mb-4">
-          <h1 className="display-6 fw-bold text-dark">Reports & Analytics</h1>
+          <h1 className="display-6 fw-bold mb-2 ">Reports & Analytics</h1>
+         
           <p className="lead text-muted">
             Monitor your firm's performance with comprehensive analytics and reports
           </p>

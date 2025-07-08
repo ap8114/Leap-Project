@@ -95,7 +95,7 @@ const AdminPage= () => {
   return (
     <div className="min-vh-100 bg-light p-4">
       <div className="container-fluid">
-        <h1 className="display-5 fw-bold text-dark mb-4">Admin Panel</h1>
+        <h1 className="display-6 fw-bold  mb-2">Admin Panel</h1>
         
         {/* User Management Section */}
         <div className="card shadow-sm mb-4">

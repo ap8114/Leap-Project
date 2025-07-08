@@ -145,7 +145,9 @@ const Matter = () => {
       <div className="p-4">
         {/* Page Title & Actions */}
         <div className="">
-          <h4 className="display-6 fw-bold">Matters</h4>
+
+
+           <h1 className="display-6 fw-bold mb-2">Matters</h1>
         </div>
         <div className="">
 
