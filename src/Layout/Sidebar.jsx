@@ -27,18 +27,21 @@ const Sidebar = ({ collapsed, menuItemClick }) => {
 
   // Only admin menu items
   const adminMenuItems = [
-  { path: "/dashboard", icon: "fa-solid fa-tachometer-alt", text: "Dashboard" },           // Dashboard
-  { path: "/matter", icon: "fa-solid fa-briefcase", text: "Matters" },             // Legal cases / Matters
-  { path: "/document", icon: "fa-solid fa-file-alt", text: "Documents" },               // Documents
-  { path: "/calendar", icon: "fa-solid fa-calendar-days", text: "Calendar" },       // Calendar
-  { path: "/timebilling", icon: "fa-solid fa-clock", text: "Time & Billing" },          // Time Tracking
-  { path: "/client", icon: "fa-solid fa-user", text: "Clients" },                          // Clients
-  { path: "/creditupgraderequests", icon: "fa-solid fa-user-tie", text: "CRM" },           // CRM
-  { path: "/reportdownload", icon: "fa-solid fa-robot", text: "AI & Workflow" },           // AI & Workflow
-  { path: "/accounting", icon: "fa-solid fa-file-invoice-dollar", text: "Accounting" },    // Accounting
-  { path: "/admin", icon: "fa-solid fa-user-gear", text: "Admin" }                         // Admin
+  { path: "/dashboard", icon: "fa-solid fa-gauge", text: "Dashboard" },                          // Dashboard
+  { path: "/matter", icon: "fa-solid fa-scale-balanced", text: "Matters" },                      // Legal cases / Matters
+  { path: "/document", icon: "fa-solid fa-file-lines", text: "Documents" },                      // Documents
+  { path: "/calendar", icon: "fa-solid fa-calendar-check", text: "Calendar" },                   // Calendar
+  { path: "/timebilling", icon: "fa-solid fa-stopwatch", text: "Time & Billing" },               // Time Tracking
+  { path: "/client", icon: "fa-solid fa-handshake", text: "Clients & CRM" },                     // Clients & CRM
+  { path: "/reportdownload", icon: "fa-solid fa-brain", text: "AI Tool" },                       // AI Tool
+  { path: "/accounting", icon: "fa-solid fa-file-invoice", text: "Accounting" },                 // Accounting
+  { path: "/admin", icon: "fa-solid fa-user-shield", text: "Admin" },                            // Admin
+  { path: "/user-management", icon: "fa-solid fa-users-cog", text: "User Management" },          // User Management
+  { path: "/integrations", icon: "fa-solid fa-plug", text: "Integrations" },                     // Integrations
+  { path: "/settings", icon: "fa-solid fa-gear", text: "Settings" },                             // Settings
+  { path: "/reports-analytics", icon: "fa-solid fa-chart-line", text: "Reports & Analytics" },   // Reports & Analytics
+  { path: "/workflow", icon: "fa-solid fa-diagram-project", text: "Workflow" }                   // Workflow
 ];
-
 
   return (
     <div className={`sidebar-container ${collapsed ? "collapsed" : ""}`}>

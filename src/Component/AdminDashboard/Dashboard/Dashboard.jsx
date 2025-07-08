@@ -205,26 +205,28 @@ const [expandedCard, setExpandedCard] = useState(null);
   <div className="card-body">
     <div className="row gy-3 gx-0 align-items-center">
       {/* Date Range: From & To */}
-      <div className="col-12 col-md d-flex flex-column flex-sm-row align-items-start align-items-sm-center gap-2">
-        <div className="d-flex align-items-center w-100 w-sm-auto">
-          <label className="me-2 fw-semibold">From:</label>
-          <input
-            type="date"
-            value={dateRange.start}
-            onChange={(e) => handleDateRangeChange(e, 'start')}
-            className="form-control form-control-sm"
-          />
-        </div>
-        <div className="d-flex align-items-center w-100 w-sm-auto">
-          <label className="me-2 fw-semibold">To:</label>
-          <input
-            type="date"
-            value={dateRange.end}
-            onChange={(e) => handleDateRangeChange(e, 'end')}
-            className="form-control form-control-sm"
-          />
-        </div>
-      </div>
+      <div className="col-12 col-md d-flex flex-wrap flex-md-nowrap gap-2">
+  <div className="flex-grow-1 flex-md-grow-0 d-flex align-items-center mb-2 mb-sm-0" style={{ minWidth: 0 }}>
+    <label className="me-2 fw-semibold mb-0">From:</label>
+    <input
+      type="date"
+      value={dateRange.start}
+      onChange={(e) => handleDateRangeChange(e, 'start')}
+      className="form-control form-control-sm flex-grow-1"
+      style={{ minWidth: 0 }}
+    />
+  </div>
+  <div className="flex-grow-1 flex-md-grow-0 d-flex align-items-center" style={{ minWidth: 0 }}>
+    <label className="me-2 fw-semibold mb-0">To:</label>
+    <input
+      type="date"
+      value={dateRange.end}
+      onChange={(e) => handleDateRangeChange(e, 'end')}
+      className="form-control form-control-sm flex-grow-1"
+      style={{ minWidth: 0 }}
+    />
+  </div>
+</div>
 
       {/* Action Buttons */}
       <div className="col-12 col-md-auto d-flex flex-wrap justify-content-start justify-content-md-end gap-2">
