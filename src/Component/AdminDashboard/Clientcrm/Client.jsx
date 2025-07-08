@@ -117,15 +117,14 @@ const Client = () => {
           <div className="row mb-4">
             <div className="col-md-6">
               <div className="input-group">
-                <span className="input-group-text">
-                  <i className="fas fa-search"></i>
-                </span>
+               
                 <input
                   type="text"
                   className="form-control"
                   placeholder="Search clients..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
+                
                 />
               </div>
             </div>
@@ -235,100 +234,94 @@ const Client = () => {
 {/* add modal */}
     {showAddForm && (
   <>
-    <div className="modal fade show d-block" tabIndex="-1" style={{ backgroundColor: 'rgba(0,0,0,0.5)' }}>
-  <div className="modal-dialog modal-dialog-centered modal-lg" role="document">
-    <div className="modal-content">
-
-          <div className="modal-header">
-            <h5 className="modal-title">Add New Client</h5>
-            <button
-              type="button"
-              className="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-              onClick={() => setShowAddForm(false)}
-            ></button>
+    <div className="modal fade show d-block mt-5 " tabIndex="-1" style={{ backgroundColor: 'rgba(0,0,0,0.5)' }}>
+  <div className="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg mt-3" role="document">
+    <div className="modal-content" style={{ maxHeight: '90vh', overflowY: 'auto' }}>
+      <div className="modal-header">
+        <h5 className="modal-title">Add New Client</h5>
+        <button
+          type="button"
+          className="btn-close"
+          aria-label="Close"
+          onClick={() => setShowAddForm(false)}
+        ></button>
+      </div>
+      <div className="modal-body">
+        <form>
+          <div className="row g-3">
+            <div className="col-12 col-md-6">
+              <label htmlFor="name" className="form-label">Full Name</label>
+              <input
+                type="text"
+                className="form-control"
+                id="name"
+                value={newClient.name}
+                onChange={(e) => setNewClient({ ...newClient, name: e.target.value })}
+              />
+            </div>
+            <div className="col-12 col-md-6">
+              <label htmlFor="email" className="form-label">Email Address</label>
+              <input
+                type="email"
+                className="form-control"
+                id="email"
+                value={newClient.email}
+                onChange={(e) => setNewClient({ ...newClient, email: e.target.value })}
+              />
+            </div>
+            <div className="col-12 col-md-6">
+              <label htmlFor="phone" className="form-label">Phone Number</label>
+              <input
+                type="text"
+                className="form-control"
+                id="phone"
+                value={newClient.phone}
+                onChange={(e) => setNewClient({ ...newClient, phone: e.target.value })}
+              />
+            </div>
+            <div className="col-12 col-md-6">
+              <label htmlFor="address" className="form-label">Address</label>
+              <input
+                type="text"
+                className="form-control"
+                id="address"
+                value={newClient.address}
+                onChange={(e) => setNewClient({ ...newClient, address: e.target.value })}
+              />
+            </div>
+            <div className="col-12">
+              <label className="form-label">Status</label>
+              <div className="btn-group w-100 gap-2" role="group">
+                <button
+                  type="button"
+                  className={`btn ${newClient.status === 'Active' ? 'btn-success' : 'btn-outline-success '}`}
+                  onClick={() => setNewClient({ ...newClient, status: 'Active' })}
+                >
+                  Active
+                </button>
+                <button
+                  type="button"
+                  className={`btn ${newClient.status === 'Pending' ? 'btn-warning' : 'btn-outline-warning'}`}
+                  onClick={() => setNewClient({ ...newClient, status: 'Pending' })}
+                >
+                  Pending
+                </button>
+              </div>
+            </div>
           </div>
-
-          <div className="modal-body">
-            <form>
-              <div className="mb-3">
-                <label htmlFor="name" className="form-label">Full Name</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="name"
-                  value={newClient.name}
-                  onChange={(e) => setNewClient({ ...newClient, name: e.target.value })}
-                />
-              </div>
-
-              <div className="mb-3">
-                <label htmlFor="email" className="form-label">Email Address</label>
-                <input
-                  type="email"
-                  className="form-control"
-                  id="email"
-                  value={newClient.email}
-                  onChange={(e) => setNewClient({ ...newClient, email: e.target.value })}
-                />
-              </div>
-
-              <div className="mb-3">
-                <label htmlFor="phone" className="form-label">Phone Number</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="phone"
-                  value={newClient.phone}
-                  onChange={(e) => setNewClient({ ...newClient, phone: e.target.value })}
-                />
-              </div>
-
-              <div className="mb-3">
-                <label htmlFor="address" className="form-label">Address</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="address"
-                  value={newClient.address}
-                  onChange={(e) => setNewClient({ ...newClient, address: e.target.value })}
-                />
-              </div>
-
-              <div className="mb-3">
-                <label className="form-label">Status</label>
-                <div className="btn-group w-100" role="group">
-                  <button
-                    type="button"
-                    className={`btn ${newClient.status === 'Active' ? 'btn-success' : 'btn-outline-success'}`}
-                    onClick={() => setNewClient({ ...newClient, status: 'Active' })}
-                  >
-                    Active
-                  </button>
-                  <button
-                    type="button"
-                    className={`btn ${newClient.status === 'Pending' ? 'btn-warning' : 'btn-outline-warning'}`}
-                    onClick={() => setNewClient({ ...newClient, status: 'Pending' })}
-                  >
-                    Pending
-                  </button>
-                </div>
-              </div>
-            </form>
-          </div>
-
-          <div className="modal-footer">
-            <button type="button" className="btn btn-secondary" onClick={() => setShowAddForm(false)}>
-              Cancel
-            </button>
-            <button type="button" className="btn btn-primary" onClick={handleAddClient}>
-              Save Client
-            </button>
-          </div>
-        </div>
+        </form>
+      </div>
+      <div className="modal-footer flex-column flex-sm-row gap-2">
+        <button type="button" className="btn btn-secondary w-100 w-sm-auto" onClick={() => setShowAddForm(false)}>
+          Cancel
+        </button>
+        <button type="button" className="btn btn-primary w-100 w-sm-auto" onClick={handleAddClient}>
+          Save Client
+        </button>
       </div>
     </div>
+  </div>
+</div>
 
     {/* Backdrop */}
     <div className="modal-backdrop fade show"></div>
@@ -339,13 +332,12 @@ const Client = () => {
       {/* Edit Client Modal */}
  {editingClient && (
   <>
-    <div className="modal fade show d-block" tabIndex="-1" style={{ backgroundColor: 'rgba(0,0,0,0.5)' }}>
-      <div className="modal-dialog modal-dialog-centered modal-lg">
+    <div className="modal fade show d-block mt-5 py-5" tabIndex="-1" style={{ backgroundColor: 'rgba(0,0,0,0.5)' }}>
+      <div className="modal-dialog modal-dialog-centered modal-dialog-scrollable">
         <div className="modal-content">
-
-          {/* Header */}
+          {/* Modal Header */}
           <div className="modal-header">
-            <h5 className="modal-title">Edit Client</h5>
+            <h5 className="modal-title fs-5">Edit Client</h5>
             <button
               type="button"
               className="btn-close"
@@ -354,14 +346,14 @@ const Client = () => {
             ></button>
           </div>
 
-          {/* Body */}
+          {/* Modal Body - Mobile Optimized Form */}
           <div className="modal-body">
             <form>
               <div className="mb-3">
                 <label htmlFor="edit-name" className="form-label">Full Name</label>
                 <input
                   type="text"
-                  className="form-control"
+                  className="form-control form-control-lg"
                   id="edit-name"
                   value={editingClient.name}
                   onChange={(e) => setEditingClient({ ...editingClient, name: e.target.value })}
@@ -372,7 +364,7 @@ const Client = () => {
                 <label htmlFor="edit-email" className="form-label">Email Address</label>
                 <input
                   type="email"
-                  className="form-control"
+                  className="form-control form-control-lg"
                   id="edit-email"
                   value={editingClient.email}
                   onChange={(e) => setEditingClient({ ...editingClient, email: e.target.value })}
@@ -382,8 +374,8 @@ const Client = () => {
               <div className="mb-3">
                 <label htmlFor="edit-phone" className="form-label">Phone Number</label>
                 <input
-                  type="text"
-                  className="form-control"
+                  type="tel"
+                  className="form-control form-control-lg"
                   id="edit-phone"
                   value={editingClient.phone}
                   onChange={(e) => setEditingClient({ ...editingClient, phone: e.target.value })}
@@ -394,7 +386,7 @@ const Client = () => {
                 <label htmlFor="edit-address" className="form-label">Address</label>
                 <input
                   type="text"
-                  className="form-control"
+                  className="form-control form-control-lg"
                   id="edit-address"
                   value={editingClient.address}
                   onChange={(e) => setEditingClient({ ...editingClient, address: e.target.value })}
@@ -403,17 +395,17 @@ const Client = () => {
 
               <div className="mb-3">
                 <label className="form-label">Status</label>
-                <div className="btn-group w-100" role="group">
+                <div className="d-grid gap-2 d-md-block">
                   <button
                     type="button"
-                    className={`btn ${editingClient.status === 'Active' ? 'btn-success' : 'btn-outline-success'}`}
+                    className={`btn ${editingClient.status === 'Active' ? 'btn-success' : 'btn-outline-success'} w-100 mb-2`}
                     onClick={() => setEditingClient({ ...editingClient, status: 'Active' })}
                   >
                     Active
                   </button>
                   <button
                     type="button"
-                    className={`btn ${editingClient.status === 'Pending' ? 'btn-warning' : 'btn-outline-warning'}`}
+                    className={`btn ${editingClient.status === 'Pending' ? 'btn-warning' : 'btn-outline-warning'} w-100`}
                     onClick={() => setEditingClient({ ...editingClient, status: 'Pending' })}
                   >
                     Pending
@@ -423,24 +415,23 @@ const Client = () => {
             </form>
           </div>
 
-          {/* Footer */}
-          <div className="modal-footer">
+          {/* Modal Footer - Mobile Friendly Buttons */}
+          <div className="modal-footer d-block d-md-flex">
             <button
               type="button"
-              className="btn btn-secondary"
+              className="btn btn-secondary w-100 mb-2 mb-md-0 me-md-2"
               onClick={() => setEditingClient(null)}
             >
               Cancel
             </button>
             <button
               type="button"
-              className="btn btn-primary"
+              className="btn btn-primary w-100"
               onClick={handleUpdateClient}
             >
               Update Client
             </button>
           </div>
-
         </div>
       </div>
     </div>
