@@ -23,6 +23,7 @@ import TimeRecordingBilling from "./Component/Website/Pages/Features/TimeRecordi
 import ClientAndMatterManagement from "./Component/Website/Pages/Features/ClientAndMatterManagement";
 import DocumentAutomation from "./Component/Website/Pages/Features/DocumentAutomation";
 import Home from "./Component/Website/HomePages/Home";
+import Reporting from "./Component/Website/Pages/Features/Reporting";
 
 
 function App() {
@@ -46,7 +47,8 @@ function App() {
     "/login",
     "/client-and-matter-management",
     "/document-automation",
-    "/timerecordingbilling"
+    "/timerecordingbilling",
+    "/reporting"
   ];
   const isNoLayoutPage = noLayoutRoutes.includes(location.pathname);
   // Hide layout (navbar/sidebar) only on login page
@@ -58,7 +60,8 @@ function App() {
     location.pathname === "/signup" ||
     location.pathname === "/client-and-matter-management" ||
     location.pathname === "/document-automation" ||
-     location.pathname === "/timerecordingbilling"
+     location.pathname === "/timerecordingbilling" ||
+    location.pathname === "/reporting";
 
   // ...existing code...
   return (
@@ -84,6 +87,8 @@ function App() {
               <Route path="/client-and-matter-management" element={<ClientAndMatterManagement />} />
               <Route path="/document-automation" element={<DocumentAutomation />} />
               <Route path="/timerecordingbilling" element={<TimeRecordingBilling />} />
+                 <Route path="/reporting" element={<Reporting />} />
+
 
               {/* Website Routes Ends */}
 
