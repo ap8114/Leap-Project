@@ -138,33 +138,25 @@ const getActivityIcon = (type) => {
        
         </div>
         {/* Search and Filters */}
-        <div className="mb-4">
-          <div className="row g-2 align-items-stretch">
-            {/* Search Input */}
-            <div className="col-12 col-md-6">
-              <InputGroup className="mb-2 mb-md-0 w-100">
-                <InputGroup.Text>
-                  <FaSearch />
-                </InputGroup.Text>
-                <FormControl
-                  placeholder="Search documents..."
-                  aria-label="Search documents"
-                  className="w-100"
-                />
-              </InputGroup>
+        <div className="mb-4 w-100">
+            <div className="w-100">
+              <input
+                type="text"
+                className="form-control mt-3 p-2"
+                placeholder="Search..."
+                aria-label="Search"
+              />
             </div>
-            {/* Filter Buttons */}
-            <div className="col-12 col-md-6 py-4 d-flex flex-wrap flex-md-nowrap gap-2 justify-content-md-end">
-              <Button variant="light" className="d-flex align-items-center gap-2 flex-grow-1 flex-md-grow-0">
-                <FaFilter /> Filter
-              </Button>
-              <Button variant="light" className="d-flex align-items-center gap-2 flex-grow-1 flex-md-grow-0">
-                <FaTags /> Tags
-              </Button>
-              <Button variant="link" className="text-secondary flex-grow-1 flex-md-grow-0">
-                Clear Filters
-              </Button>
-            </div>
+          <div className="d-flex gap-2">
+            <Button variant="light" className="d-flex align-items-center gap-2">
+              <FaFilter /> Filter
+            </Button>
+            <Button variant="light" className="d-flex align-items-center gap-2">
+              <FaTags /> Tags
+            </Button>
+            <Button variant="link" className="text-secondary">
+              Clear Filters
+            </Button>
           </div>
         </div>
 
@@ -423,11 +415,6 @@ const getActivityIcon = (type) => {
               ))}
           </Row>
         </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={() => setShowTemplateModal(false)}>
-            Cancel
-          </Button>
-        </Modal.Footer>
       </Modal>
     </div>
   );

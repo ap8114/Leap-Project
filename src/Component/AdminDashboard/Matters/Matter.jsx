@@ -142,39 +142,35 @@ const Matter = () => {
 
   return (
     <div className="min-vh-100 bg-white">
-      <div className="container-fluid p-3 p-md-4">
+      <div className="p-4">
         {/* Page Title & Actions */}
-        <div className="mb-4">
-          <h1 className="display-6 fw-bold mb-2">Matters</h1>
+        <div className="">
+          <h4 className="display-6 fw-bold">Matters</h4>
         </div>
-      <div className="d-flex flex-column flex-md-row justify-content-between align-items-stretch align-items-md-center mb-4 gap-3 px-2">
-  {/* Left side: Search & Button group */}
-  <div className="d-flex flex-column flex-sm-row    w-md-auto gap-3">
-    {/* Search Box */}
-    <div className="position-relative flex-grow-1">
-      <input
-        type="text"
-        placeholder="Search matters..."
-        className="form-control ps-5"
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
-      />
-      <i className="fas fa-search position-absolute top-50 start-0 translate-middle-y ms-3 text-muted"></i>
-    </div>
+        <div className="">
 
-   
-  </div>
+          <div className="d-flex flex-column flex-sm-row align-items-center align-items-sm-center w-100 gap-3 mt-2">
+            {/* Search Box */}
+            <div className=""
+              style={{ flex: 1, maxWidth: '1200px' }}>
+              <input
+                type="text"
+                className="form-control mt-3 p-2"
+                placeholder="Search..."
+                aria-label="Search"
+              />
+            </div>
 
-   {/* Create Button */}
-    <button
-      onClick={() => setIsModalOpen(true)}
-      className="btn btn-primary mb-4 py-3 align-items-end  justify-content-center  px-3 "
-    >
-      <i className="fas fa-plus me-2"></i>
-      Create Matter
-    </button>
-</div>
-
+            {/* Create Button */}
+            <button
+              onClick={() => setIsModalOpen(true)}
+              className="btn btn-primary p-2"
+            >
+              <i className="fas fa-plus me-2"></i>
+              Create Matter
+            </button>
+          </div>
+        </div>
 
         {/* Filter Bar */}
         <div className="bg-light p-3 p-md-4 rounded mb-4">
@@ -228,7 +224,7 @@ const Matter = () => {
               <div key={matter.id} className="col">
                 <div className="card h-100 border-light shadow-sm">
                   <div className="card-body">
-                    <div className="d-flex flex-column flex-sm-row justify-content-between align-items-start mb-3 gap-2">
+                    <div className="d-flex justify-content-between align-items-start mb-3">
                       <h3 className="h5 card-title mb-0">{matter.title}</h3>
                       <div className="d-flex align-items-center">
                         <span
@@ -241,7 +237,7 @@ const Matter = () => {
                     <div className="mb-3">
                       <span className="badge bg-light text-dark">{matter.type}</span>
                     </div>
-                    <div className="d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center mb-3 gap-2">
+                    <div className="d-flex justify-content-between align-items-center mb-3">
                       <div className="text-muted small">
                         <i className="far fa-calendar-alt me-2"></i>
                         Due: {formatDate(matter.dueDate)}
@@ -257,7 +253,7 @@ const Matter = () => {
                       </div>
                     </div>
                     <div className="border-top pt-3">
-                      <div className="d-flex flex-wrap gap-3">
+                      <div className="d-flex gap-3">
                         <button className="btn btn-sm btn-link text-muted p-0">
                           <i className="far fa-file-alt me-1"></i>
                           <span className="small">Documents</span>
@@ -301,22 +297,17 @@ const Matter = () => {
         )}
       </div>
 
+
       {/* Create Matter Modal */}
       {isModalOpen && (
         <>
           {/* Modal Backdrop */}
-          <div className="modal-backdrop fade show"></div>
+          <div className="modal-backdrop fade show mt-5"></div>
+
           {/* Modal Dialog */}
-          <div
-            className="modal fade show d-block mt-5"
-            tabIndex="-1"
-            role="dialog"
-            aria-modal="true"
-            style={{ background: "rgba(0,0,0,0.2)" }}
-          
-          >
-            <div className="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg mt-5 mt-md-0" role="document">
-              <div className="modal-content" style={{ maxHeight: "90vh", overflow: "auto" }}>
+          <div className="modal fade show d-block" tabIndex="-1" role="dialog" aria-modal="true">
+            <div className="modal-dialog modal-dialog-centered" role="document">
+              <div className="modal-content">
                 <div className="modal-header">
                   <h5 className="modal-title">Create New Matter</h5>
                   <button
@@ -327,90 +318,93 @@ const Matter = () => {
                   ></button>
                 </div>
                 <div className="modal-body">
-                  <div className="row g-3">
-                    {/* Title */}
-                    <div className="col-12 col-md-6">
-                      <label htmlFor="matter-title" className="form-label">Title</label>
-                      <input
-                        type="text"
-                        id="matter-title"
-                        className={`form-control ${formErrors.title ? 'is-invalid' : ''}`}
-                        value={newMatter.title}
-                        onChange={(e) => setNewMatter({ ...newMatter, title: e.target.value })}
-                      />
-                      {formErrors.title && <div className="invalid-feedback">Title is required</div>}
-                    </div>
-                    {/* Type */}
-                    <div className="col-12 col-md-6">
-                      <label htmlFor="matter-type" className="form-label">Type</label>
-                      <select
-                        id="matter-type"
-                        className={`form-select ${formErrors.type ? 'is-invalid' : ''}`}
-                        value={newMatter.type}
-                        onChange={(e) => setNewMatter({ ...newMatter, type: e.target.value })}
-                      >
-                        <option value="">Select Type</option>
-                        {types.filter(type => type !== 'All').map(type => (
-                          <option key={type} value={type}>{type}</option>
-                        ))}
-                      </select>
-                      {formErrors.type && <div className="invalid-feedback">Type is required</div>}
-                    </div>
-                    {/* Status */}
-                    <div className="col-12 col-md-6">
-                      <label htmlFor="matter-status" className="form-label">Status</label>
-                      <select
-                        id="matter-status"
-                        className="form-select"
-                        value={newMatter.status}
-                        onChange={(e) => setNewMatter({ ...newMatter, status: e.target.value })}
-                      >
-                        {statuses.filter(status => status !== 'All').map(status => (
-                          <option key={status} value={status}>{status}</option>
-                        ))}
-                      </select>
-                    </div>
-                    {/* Due Date */}
-                    <div className="col-12 col-md-6">
-                      <label htmlFor="matter-due-date" className="form-label">Due Date</label>
-                      <input
-                        type="date"
-                        id="matter-due-date"
-                        className={`form-control ${formErrors.dueDate ? 'is-invalid' : ''}`}
-                        value={newMatter.dueDate}
-                        onChange={(e) => setNewMatter({ ...newMatter, dueDate: e.target.value })}
-                      />
-                      {formErrors.dueDate && <div className="invalid-feedback">Due date is required</div>}
-                    </div>
-                    {/* Assignee */}
-                    <div className="col-12">
-                      <label htmlFor="matter-assignee" className="form-label">Assignee</label>
-                      <select
-                        id="matter-assignee"
-                        className={`form-select ${formErrors.assignee ? 'is-invalid' : ''}`}
-                        value={newMatter.assignee}
-                        onChange={(e) => setNewMatter({ ...newMatter, assignee: e.target.value })}
-                      >
-                        <option value="">Select Assignee</option>
-                        {assignees.filter(a => a !== 'All').map(a => (
-                          <option key={a} value={a}>{a}</option>
-                        ))}
-                      </select>
-                      {formErrors.assignee && <div className="invalid-feedback">Assignee is required</div>}
-                    </div>
+                  {/* Title */}
+                  <div className="mb-3">
+                    <label htmlFor="matter-title" className="form-label">Title</label>
+                    <input
+                      type="text"
+                      id="matter-title"
+                      className={`form-control ${formErrors.title ? 'is-invalid' : ''}`}
+                      value={newMatter.title}
+                      onChange={(e) => setNewMatter({ ...newMatter, title: e.target.value })}
+                    />
+                    {formErrors.title && <div className="invalid-feedback">Title is required</div>}
+                  </div>
+
+                  {/* Type */}
+                  <div className="mb-3">
+                    <label htmlFor="matter-type" className="form-label">Type</label>
+                    <select
+                      id="matter-type"
+                      className={`form-select ${formErrors.type ? 'is-invalid' : ''}`}
+                      value={newMatter.type}
+                      onChange={(e) => setNewMatter({ ...newMatter, type: e.target.value })}
+                    >
+                      <option value="">Select Type</option>
+                      {types.filter(type => type !== 'All').map(type => (
+                        <option key={type} value={type}>{type}</option>
+                      ))}
+                    </select>
+                    {formErrors.type && <div className="invalid-feedback">Type is required</div>}
+                  </div>
+
+                  {/* Status */}
+                  <div className="mb-3">
+                    <label htmlFor="matter-status" className="form-label">Status</label>
+                    <select
+                      id="matter-status"
+                      className="form-select"
+                      value={newMatter.status}
+                      onChange={(e) => setNewMatter({ ...newMatter, status: e.target.value })}
+                    >
+                      {statuses.filter(status => status !== 'All').map(status => (
+                        <option key={status} value={status}>{status}</option>
+                      ))}
+                    </select>
+                  </div>
+
+                  {/* Due Date */}
+                  <div className="mb-3">
+                    <label htmlFor="matter-due-date" className="form-label">Due Date</label>
+                    <input
+                      type="date"
+                      id="matter-due-date"
+                      className={`form-control ${formErrors.dueDate ? 'is-invalid' : ''}`}
+                      value={newMatter.dueDate}
+                      onChange={(e) => setNewMatter({ ...newMatter, dueDate: e.target.value })}
+                    />
+                    {formErrors.dueDate && <div className="invalid-feedback">Due date is required</div>}
+                  </div>
+
+                  {/* Assignee */}
+                  <div className="mb-3">
+                    <label htmlFor="matter-assignee" className="form-label">Assignee</label>
+                    <select
+                      id="matter-assignee"
+                      className={`form-select ${formErrors.assignee ? 'is-invalid' : ''}`}
+                      value={newMatter.assignee}
+                      onChange={(e) => setNewMatter({ ...newMatter, assignee: e.target.value })}
+                    >
+                      <option value="">Select Assignee</option>
+                      {assignees.filter(a => a !== 'All').map(a => (
+                        <option key={a} value={a}>{a}</option>
+                      ))}
+                    </select>
+                    {formErrors.assignee && <div className="invalid-feedback">Assignee is required</div>}
                   </div>
                 </div>
-                <div className="modal-footer flex-column flex-sm-row gap-2">
+
+                <div className="modal-footer">
                   <button
                     type="button"
-                    className="btn btn-outline-secondary w-100 w-sm-auto"
+                    className="btn btn-outline-secondary"
                     onClick={() => setIsModalOpen(false)}
                   >
                     Cancel
                   </button>
                   <button
                     type="button"
-                    className="btn btn-primary w-100 w-sm-auto"
+                    className="btn btn-primary"
                     onClick={handleCreateMatter}
                   >
                     Create Matter
@@ -421,6 +415,7 @@ const Matter = () => {
           </div>
         </>
       )}
+
     </div>
   );
 };
