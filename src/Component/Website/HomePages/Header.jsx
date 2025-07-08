@@ -233,24 +233,24 @@ const Header = () => {
                             </div>
                         </li>
                         {/* Company Dropdown */}
+                        <Link to="/company" className="text-decoration-none">
                         <li className="nav-item dropdown position-static">
-                            <a
-                                className="nav-link dropdown-toggle"
+                            <div
+                                className="nav-link"
                                 href="#company"
-                                id="companyDropdown"
+                              
                                 role="button"
-                                data-bs-toggle="dropdown"
-                                aria-expanded="false"
+                                
                             >
                                 Company
-                            </a>
-                            <div
+                            </div>
+                            {/* <div
                                 className="dropdown-menu shadow border-0 mt-2 p-4 rounded-4"
                                 aria-labelledby="companyDropdown"
                                 style={{ minWidth: "950px", maxWidth: "1100px" }}
                             >
                                 <div className="row">
-                                    {/* Company */}
+                                   
                                     <div className="col-3">
                                         <h6 className="dropdown-header text-primary">COMPANY</h6>
                                         <a className="dropdown-item fw-semibold" href="#leadership">
@@ -270,7 +270,7 @@ const Header = () => {
                                             the globe
                                         </div>
                                     </div>
-                                    {/* Business Partners */}
+                                  
                                     <div className="col-3 border-start">
                                         <h6 className="dropdown-header text-primary">
                                             BUSINESS PARTNERS
@@ -303,7 +303,7 @@ const Header = () => {
                                         </Link>
                                        
                                     </div>
-                                    {/* Ideas Hub */}
+                                   
                                     <div className="col-3 border-start">
                                         <div className="mb-3">
                                             <img
@@ -324,8 +324,9 @@ const Header = () => {
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> */}
                         </li>
+                        </Link>
                         {/* Resources Dropdown */}
                         <li className="nav-item dropdown position-static">
                             <a
@@ -508,6 +509,7 @@ const Header = () => {
                             </li>
                             {/* Company Mobile Dropdown */}
                             <li className="nav-item">
+                               <Link to="/company" className="text-decoration-none">
                                 <button
                                     className="nav-link text-light w-100 text-start bg-transparent border-0"
                                     onClick={() =>
@@ -518,7 +520,8 @@ const Header = () => {
                                 >
                                     Company
                                 </button>
-                                {openMobileDropdown === "company" && (
+                               </Link>
+                                {/* {openMobileDropdown === "company" && (
                                     <div className="ps-3 text-white">
                                         <div className="dropdown-item">Leadership</div>
                                         <div className="dropdown-item">Careers</div>
@@ -535,7 +538,7 @@ const Header = () => {
                                         <div className="dropdown-item">The Law Society</div>
                                         <div className="dropdown-item">Ideas Hub</div>
                                     </div>
-                                )}
+                                )} */}
                             </li>
                             {/* Resources Mobile Dropdown */}
                             <li className="nav-item">
