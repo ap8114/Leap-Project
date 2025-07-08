@@ -158,286 +158,345 @@ const TasksWorkflow = () => {
             </div>
 
             {/* Task List */}
-            <div className="table-responsive">
-              <table className="table table-hover">
-                <thead className="table-light">
-                  <tr>
-                    <th scope="col">Task</th>
-                    <th scope="col">Matter</th>
-                    <th scope="col">Assignee</th>
-                    <th scope="col">Due Date</th>
-                    <th scope="col">Status</th>
-                    <th scope="col">Priority</th>
-                    <th scope="col" className="text-end">Actions</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {filteredTasks.map((task) => (
-                    <tr key={task.id}>
-                      <td className="fw-medium">{task.name}</td>
-                      <td>{task.matter}</td>
-                      <td>{task.assignee}</td>
-                      <td>{new Date(task.dueDate).toLocaleDateString()}</td>
-                      <td>
-                        <span className={`badge ${getStatusColor(task.status)}`}>
-                          {task.status}
-                        </span>
-                      </td>
-                      <td>
-                        <span className={`fw-medium ${getPriorityColor(task.priority)}`}>
-                          {task.priority}
-                        </span>
-                      </td>
-                      <td className="text-end">
-                        <button
-                          className="btn btn-link text-primary me-2"
-                          onClick={() => handleEditClick(task)}
-                        >
-                          <i className="fas fa-edit"></i>
-                        </button>
-                        <button className="btn btn-link text-danger">
-                          <i className="fas fa-trash-alt"></i>
-                        </button>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
+         <div className="card mt-4">
+  <div className="table-responsive">
+    <table className="table table-hover mb-0">
+      <thead className="table-light">
+        <tr>
+          <th scope="col">Task</th>
+          <th scope="col">Matter</th>
+          <th scope="col">Assignee</th>
+          <th scope="col">Due Date</th>
+          <th scope="col">Status</th>
+          <th scope="col">Priority</th>
+          <th scope="col" className="text-end">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {filteredTasks.map((task) => (
+          <tr key={task.id}>
+            <td className="fw-medium">{task.name}</td>
+            <td>{task.matter}</td>
+            <td>{task.assignee}</td>
+            <td>{new Date(task.dueDate).toLocaleDateString()}</td>
+            <td>
+              <span className={`badge ${getStatusColor(task.status)}`}>
+                {task.status}
+              </span>
+            </td>
+            <td>
+              <span className={`fw-medium ${getPriorityColor(task.priority)}`}>
+                {task.priority}
+              </span>
+            </td>
+            <td className="text-end">
+              <button
+                className="btn btn-link text-primary me-2"
+                onClick={() => handleEditClick(task)}
+              >
+                <i className="fas fa-edit"></i>
+              </button>
+              <button className="btn btn-link text-danger">
+                <i className="fas fa-trash-alt"></i>
+              </button>
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+
+  {/* Static Pagination Footer */}
+  <div className="card-footer bg-white border-top d-flex flex-column flex-md-row justify-content-between align-items-center py-3">
+    <div className="text-muted small mb-2 mb-md-0">
+      Showing <span className="fw-medium">1</span> to <span className="fw-medium">5</span> of <span className="fw-medium">24</span> entries
+    </div>
+    <ul className="pagination mb-0">
+      <li className="page-item disabled">
+        <a className="page-link">Previous</a>
+      </li>
+      <li className="page-item active">
+        <a className="page-link">1</a>
+      </li>
+      <li className="page-item">
+        <a className="page-link">2</a>
+      </li>
+      <li className="page-item">
+        <a className="page-link">3</a>
+      </li>
+      <li className="page-item">
+        <a className="page-link">Next</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
             {filteredTasks.length === 0 && (
               <div className="text-center py-5 text-muted">
                 No tasks match your current filters
               </div>
             )}
+            
           </div>
         </div>
       </div>
 
       {/* New Task Modal */}
-      {isNewTaskModalOpen && (
-        <div className="modal fade show d-block" tabIndex={-1} role="dialog" style={{ backgroundColor: 'rgba(0,0,0,0.5)' }}>
-          <div className="modal-dialog modal-dialog-centered">
-            <div className="modal-content">
-              <div className="modal-header">
-                <h5 className="modal-title">Create New Task</h5>
-                <button
-                  type="button"
-                  className="btn-close"
-                  onClick={() => setIsNewTaskModalOpen(false)}
-                  aria-label="Close"
-                ></button>
-              </div>
-              <form onSubmit={handleCreateTask}>
-                <div className="modal-body">
-                  <div className="mb-3">
-                    <label className="form-label">Task Name</label>
-                    <input
-                      type="text"
-                      required
-                      className="form-control"
-                      value={newTask.name}
-                      onChange={(e) => setNewTask({ ...newTask, name: e.target.value })}
-                    />
-                  </div>
-                  <div className="mb-3">
-                    <label className="form-label">Matter</label>
-                    <select
-                      required
-                      className="form-select"
-                      value={newTask.matter}
-                      onChange={(e) => setNewTask({ ...newTask, matter: e.target.value })}
-                    >
-                      <option value="">Select Matter</option>
-                      <option value="Smith vs. Jones">Smith vs. Jones</option>
-                      <option value="Corporate Merger">Corporate Merger</option>
-                      <option value="Estate Planning">Estate Planning</option>
-                    </select>
-                  </div>
-                  <div className="mb-3">
-                    <label className="form-label">Assignee</label>
-                    <select
-                      required
-                      className="form-select"
-                      value={newTask.assignee}
-                      onChange={(e) => setNewTask({ ...newTask, assignee: e.target.value })}
-                    >
-                      <option value="">Select Assignee</option>
-                      <option value="John Doe">John Doe</option>
-                      <option value="Jane Smith">Jane Smith</option>
-                      <option value="Robert Johnson">Robert Johnson</option>
-                    </select>
-                  </div>
-                  <div className="mb-3">
-                    <label className="form-label">Due Date</label>
-                    <input
-                      type="date"
-                      required
-                      className="form-control"
-                      value={newTask.dueDate}
-                      onChange={(e) => setNewTask({ ...newTask, dueDate: e.target.value })}
-                    />
-                  </div>
-                  <div className="mb-3">
-                    <label className="form-label">Status</label>
-                    <select
-                      className="form-select"
-                      value={newTask.status}
-                      onChange={(e) => setNewTask({ ...newTask, status: e.target.value })}
-                    >
-                      <option value="Not Started">Not Started</option>
-                      <option value="In Progress">In Progress</option>
-                      <option value="Completed">Completed</option>
-                    </select>
-                  </div>
-                  <div className="mb-3">
-                    <label className="form-label">Priority</label>
-                    <select
-                      className="form-select"
-                      value={newTask.priority}
-                      onChange={(e) => setNewTask({ ...newTask, priority: e.target.value })}
-                    >
-                      <option value="Low">Low</option>
-                      <option value="Medium">Medium</option>
-                      <option value="High">High</option>
-                    </select>
-                  </div>
-                </div>
-                <div className="modal-footer">
-                  <button
-                    type="button"
-                    onClick={() => setIsNewTaskModalOpen(false)}
-                    className="btn btn-outline-secondary"
-                  >
-                    Cancel
-                  </button>
-                  <button
-                    type="submit"
-                    className="btn btn-primary"
-                  >
-                    Create Task
-                  </button>
-                </div>
-              </form>
+    {isNewTaskModalOpen && (
+  <div
+    className="modal fade show d-block mt-5"
+    tabIndex="-1"
+    role="dialog"
+    style={{
+      backgroundColor: 'rgba(0,0,0,0.5)',
+      position: 'fixed',
+      top: 0,
+      left: 0,
+      width: '100%',
+      height: '100%',
+      zIndex: 1050,
+      overflowY: 'auto',
+    }}
+  >
+    <div className="modal-dialog modal-dialog-centered">
+      <div className="modal-content">
+        <div className="modal-header">
+          <h5 className="modal-title">Create New Task</h5>
+          <button
+            type="button"
+            className="btn-close"
+            onClick={() => setIsNewTaskModalOpen(false)}
+            aria-label="Close"
+          ></button>
+        </div>
+        <form onSubmit={handleCreateTask}>
+          <div className="modal-body">
+            <div className="mb-3">
+              <label className="form-label">Task Name</label>
+              <input
+                type="text"
+                required
+                className="form-control"
+                value={newTask.name}
+                onChange={(e) => setNewTask({ ...newTask, name: e.target.value })}
+              />
+            </div>
+            <div className="mb-3">
+              <label className="form-label">Matter</label>
+              <select
+                required
+                className="form-select"
+                value={newTask.matter}
+                onChange={(e) => setNewTask({ ...newTask, matter: e.target.value })}
+              >
+                <option value="">Select Matter</option>
+                <option value="Smith vs. Jones">Smith vs. Jones</option>
+                <option value="Corporate Merger">Corporate Merger</option>
+                <option value="Estate Planning">Estate Planning</option>
+              </select>
+            </div>
+            <div className="mb-3">
+              <label className="form-label">Assignee</label>
+              <select
+                required
+                className="form-select"
+                value={newTask.assignee}
+                onChange={(e) => setNewTask({ ...newTask, assignee: e.target.value })}
+              >
+                <option value="">Select Assignee</option>
+                <option value="John Doe">John Doe</option>
+                <option value="Jane Smith">Jane Smith</option>
+                <option value="Robert Johnson">Robert Johnson</option>
+              </select>
+            </div>
+            <div className="mb-3">
+              <label className="form-label">Due Date</label>
+              <input
+                type="date"
+                required
+                className="form-control"
+                value={newTask.dueDate}
+                onChange={(e) => setNewTask({ ...newTask, dueDate: e.target.value })}
+              />
+            </div>
+            <div className="mb-3">
+              <label className="form-label">Status</label>
+              <select
+                className="form-select"
+                value={newTask.status}
+                onChange={(e) => setNewTask({ ...newTask, status: e.target.value })}
+              >
+                <option value="Not Started">Not Started</option>
+                <option value="In Progress">In Progress</option>
+                <option value="Completed">Completed</option>
+              </select>
+            </div>
+            <div className="mb-3">
+              <label className="form-label">Priority</label>
+              <select
+                className="form-select"
+                value={newTask.priority}
+                onChange={(e) => setNewTask({ ...newTask, priority: e.target.value })}
+              >
+                <option value="Low">Low</option>
+                <option value="Medium">Medium</option>
+                <option value="High">High</option>
+              </select>
             </div>
           </div>
-        </div>
-      )}
+          <div className="modal-footer">
+            <button
+              type="button"
+              onClick={() => setIsNewTaskModalOpen(false)}
+              className="btn btn-outline-secondary"
+            >
+              Cancel
+            </button>
+            <button type="submit" className="btn btn-primary">
+              Create Task
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+)}
+
 
       {/* Edit Task Modal */}
-      {isEditModalOpen && editTask && (
-        <div className="modal fade show d-block" tabIndex={-1} role="dialog" style={{ backgroundColor: 'rgba(0,0,0,0.5)' }}>
-          <div className="modal-dialog modal-dialog-centered">
-            <div className="modal-content">
-              <div className="modal-header">
-                <h5 className="modal-title">Edit Task</h5>
-                <button
-                  type="button"
-                  className="btn-close"
-                  onClick={() => setIsEditModalOpen(false)}
-                  aria-label="Close"
-                ></button>
-              </div>
-              <form onSubmit={handleEditSave}>
-                <div className="modal-body">
-                  <div className="mb-3">
-                    <label className="form-label">Task Name</label>
-                    <input
-                      type="text"
-                      required
-                      className="form-control"
-                      name="name"
-                      value={editTask.name}
-                      onChange={handleEditChange}
-                    />
-                  </div>
-                  <div className="mb-3">
-                    <label className="form-label">Matter</label>
-                    <select
-                      required
-                      className="form-select"
-                      name="matter"
-                      value={editTask.matter}
-                      onChange={handleEditChange}
-                    >
-                      <option value="">Select Matter</option>
-                      <option value="Smith vs. Jones">Smith vs. Jones</option>
-                      <option value="Corporate Merger">Corporate Merger</option>
-                      <option value="Estate Planning">Estate Planning</option>
-                    </select>
-                  </div>
-                  <div className="mb-3">
-                    <label className="form-label">Assignee</label>
-                    <select
-                      required
-                      className="form-select"
-                      name="assignee"
-                      value={editTask.assignee}
-                      onChange={handleEditChange}
-                    >
-                      <option value="">Select Assignee</option>
-                      <option value="John Doe">John Doe</option>
-                      <option value="Jane Smith">Jane Smith</option>
-                      <option value="Robert Johnson">Robert Johnson</option>
-                    </select>
-                  </div>
-                  <div className="mb-3">
-                    <label className="form-label">Due Date</label>
-                    <input
-                      type="date"
-                      required
-                      className="form-control"
-                      name="dueDate"
-                      value={editTask.dueDate}
-                      onChange={handleEditChange}
-                    />
-                  </div>
-                  <div className="mb-3">
-                    <label className="form-label">Status</label>
-                    <select
-                      className="form-select"
-                      name="status"
-                      value={editTask.status}
-                      onChange={handleEditChange}
-                    >
-                      <option value="Not Started">Not Started</option>
-                      <option value="In Progress">In Progress</option>
-                      <option value="Completed">Completed</option>
-                    </select>
-                  </div>
-                  <div className="mb-3">
-                    <label className="form-label">Priority</label>
-                    <select
-                      className="form-select"
-                      name="priority"
-                      value={editTask.priority}
-                      onChange={handleEditChange}
-                    >
-                      <option value="Low">Low</option>
-                      <option value="Medium">Medium</option>
-                      <option value="High">High</option>
-                    </select>
-                  </div>
-                </div>
-                <div className="modal-footer">
-                  <button
-                    type="button"
-                    onClick={() => setIsEditModalOpen(false)}
-                    className="btn btn-outline-secondary"
-                  >
-                    Cancel
-                  </button>
-                  <button
-                    type="submit"
-                    className="btn btn-primary"
-                  >
-                    Save Changes
-                  </button>
-                </div>
-              </form>
+     {isEditModalOpen && editTask && (
+  <div
+    className="modal fade show d-block mt-5"
+    tabIndex="-1"
+    role="dialog"
+    style={{
+      backgroundColor: 'rgba(0,0,0,0.5)',
+      position: 'fixed',
+      top: 0,
+      left: 0,
+      width: '100%',
+      height: '100%',
+      zIndex: 1050,
+      overflowY: 'auto',
+    }}
+  >
+    <div className="modal-dialog modal-dialog-centered">
+      <div className="modal-content">
+        <div className="modal-header">
+          <h5 className="modal-title">Edit Task</h5>
+          <button
+            type="button"
+            className="btn-close"
+            aria-label="Close"
+            onClick={() => setIsEditModalOpen(false)}
+          ></button>
+        </div>
+        <form onSubmit={handleEditSave}>
+          <div className="modal-body">
+            <div className="mb-3">
+              <label className="form-label">Task Name</label>
+              <input
+                type="text"
+                required
+                className="form-control"
+                name="name"
+                value={editTask.name}
+                onChange={handleEditChange}
+              />
+            </div>
+
+            <div className="mb-3">
+              <label className="form-label">Matter</label>
+              <select
+                required
+                className="form-select"
+                name="matter"
+                value={editTask.matter}
+                onChange={handleEditChange}
+              >
+                <option value="">Select Matter</option>
+                <option value="Smith vs. Jones">Smith vs. Jones</option>
+                <option value="Corporate Merger">Corporate Merger</option>
+                <option value="Estate Planning">Estate Planning</option>
+              </select>
+            </div>
+
+            <div className="mb-3">
+              <label className="form-label">Assignee</label>
+              <select
+                required
+                className="form-select"
+                name="assignee"
+                value={editTask.assignee}
+                onChange={handleEditChange}
+              >
+                <option value="">Select Assignee</option>
+                <option value="John Doe">John Doe</option>
+                <option value="Jane Smith">Jane Smith</option>
+                <option value="Robert Johnson">Robert Johnson</option>
+              </select>
+            </div>
+
+            <div className="mb-3">
+              <label className="form-label">Due Date</label>
+              <input
+                type="date"
+                required
+                className="form-control"
+                name="dueDate"
+                value={editTask.dueDate}
+                onChange={handleEditChange}
+              />
+            </div>
+
+            <div className="mb-3">
+              <label className="form-label">Status</label>
+              <select
+                className="form-select"
+                name="status"
+                value={editTask.status}
+                onChange={handleEditChange}
+              >
+                <option value="Not Started">Not Started</option>
+                <option value="In Progress">In Progress</option>
+                <option value="Completed">Completed</option>
+              </select>
+            </div>
+
+            <div className="mb-3">
+              <label className="form-label">Priority</label>
+              <select
+                className="form-select"
+                name="priority"
+                value={editTask.priority}
+                onChange={handleEditChange}
+              >
+                <option value="Low">Low</option>
+                <option value="Medium">Medium</option>
+                <option value="High">High</option>
+              </select>
             </div>
           </div>
-        </div>
-      )}
+
+          <div className="modal-footer">
+            <button
+              type="button"
+              className="btn btn-outline-secondary"
+              onClick={() => setIsEditModalOpen(false)}
+            >
+              Cancel
+            </button>
+            <button type="submit" className="btn btn-primary">
+              Save Changes
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+)}
+
     </div>
   );
 };

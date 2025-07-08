@@ -255,3 +255,19 @@ body{
   transition: 0.2s;
 }
 
+.modal-dialog {
+  margin-top: 100px!important;
+  margin-bottom: auto!important;
+}
+
+
+
+.modal-dialog {
+  margin-top: auto!important;
+  margin-bottom: auto!important;
+  display: flex!important;
+  align-items: center!important;
+  min-height: 100vh!important;
+}
+
+

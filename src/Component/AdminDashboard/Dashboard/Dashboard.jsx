@@ -23,45 +23,45 @@ const Dashboard = () => {
   // Initialize charts after component mounts
   React.useEffect(() => {
     // Case Progress Chart
-    const caseProgressChart = echarts.init(document.getElementById('case-progress-chart'));
-    const caseProgressOption = {
-      animation: false,
-      series: [
-        {
-          type: 'gauge',
-          startAngle: 90,
-          endAngle: -270,
-          pointer: { show: false },
-          progress: {
-            show: true,
-            overlap: false,
-            roundCap: true,
-            clip: false,
-            itemStyle: {
-              color: '#4ade80'
-            }
-          },
-          axisLine: {
-            lineStyle: {
-              width: 18,
-              color: [[1, '#e5e7eb']]
-            }
-          },
-          splitLine: { show: false },
-          axisTick: { show: false },
-          axisLabel: { show: false },
-          detail: {
-            valueAnimation: false,
-            fontSize: 24,
-            offsetCenter: [0, '0%'],
-            formatter: '{value}%',
-            color: 'inherit'
-          },
-          data: [{ value: 78, name: 'Completion' }]
-        }
-      ]
-    };
-    caseProgressChart.setOption(caseProgressOption);
+      const caseProgressChart = echarts.init(document.getElementById('case-progress-chart'));
+      const caseProgressOption = {
+        animation: false,
+        series: [
+          {
+            type: 'gauge',
+            startAngle: 90,
+            endAngle: -270,
+            pointer: { show: false },
+            progress: {
+              show: true,
+              overlap: false,
+              roundCap: true,
+              clip: false,
+              itemStyle: {
+                color: '#4ade80'
+              }
+            },
+            axisLine: {
+              lineStyle: {
+                width: 18,
+                color: [[1, '#e5e7eb']]
+              }
+            },
+            splitLine: { show: false },
+            axisTick: { show: false },
+            axisLabel: { show: false },
+            detail: {
+              valueAnimation: false,
+              fontSize: 24,
+              offsetCenter: [0, '0%'],
+              formatter: '{value}%',
+              color: 'inherit'
+            },
+            data: [{ value: 78, name: 'Completion' }]
+          }
+        ]
+      };
+      caseProgressChart.setOption(caseProgressOption);
 
     // Billing Chart
     const billingChart = echarts.init(document.getElementById('billing-chart'));
@@ -194,7 +194,7 @@ const Dashboard = () => {
 
   return (
     <div className="min-vh-100 bg-light p-4">
-      <div className="container-fluid">
+      <div className="container-fluid p-4">
         <div className="mb-4">
           <h1 className="display-6 fw-bold mb-2">Dashboard</h1>
           <p className="text-muted">Overview of cases, tasks, deadlines and performance metrics</p>

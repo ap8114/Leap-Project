@@ -90,6 +90,9 @@ const Calendar = () => {
       <div className="container-fluid px-0 px-md-3">
         <div className="mb-4 mt-3 px-3 px-md-0">
           <h1 className="display-6 fw-bold mb-2">Calendar</h1>
+           <p className="text-muted">
+    Keep track of meetings, court dates, deadlines, and team availability — all in one organized view.
+  </p>
         </div>  
         
         <div className="row g-3">

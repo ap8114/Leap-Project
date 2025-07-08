@@ -94,8 +94,11 @@ const AdminPage= () => {
 
   return (
     <div className="min-vh-100 bg-light p-4">
-      <div className="container-fluid">
+      <div className="container-fluid p-4">
         <h1 className="display-6 fw-bold  mb-2">Admin Panel</h1>
+        <p className="text-muted mb-3">
+  Manage users, assign roles and permissions, and monitor system activity with access to logs and controls.
+</p>
         
         {/* User Management Section */}
         <div className="card shadow-sm mb-4">
@@ -124,8 +127,8 @@ const AdminPage= () => {
             
             {/* Edit User Modal */}
             {showEditModal && editingUser && (
-              <div className="modal fade show d-block" tabIndex={-1} style={{backgroundColor: 'rgba(0,0,0,0.5)'}}>
-                <div className="modal-dialog">
+              <div className="modal fade show d-block " tabIndex={-1} style={{backgroundColor: 'rgba(0,0,0,0.5)'}}>
+                <div className="modal-dialog ">
                   <div className="modal-content">
                     <div className="modal-header">
                       <h5 className="modal-title">Edit User</h5>

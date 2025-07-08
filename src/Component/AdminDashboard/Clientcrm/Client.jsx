@@ -104,8 +104,8 @@ const Client = () => {
   };
 
   return (
-    <div className="container-fluid py-4">
-      <div className="row mb-4">
+    <div className="container-fluid p-4">
+      <div className="p-4">
         <div className="col">
            <h1 className="display-6 fw-bold mb-2">Client</h1>
           <p className="text-muted">Manage your clients and their information</p>
@@ -187,26 +187,21 @@ const Client = () => {
                         <div className="d-flex justify-content-end gap-2">
                           <button 
                             onClick={() => setEditingClient(client)}
-                            className="btn btn-sm btn-outline-primary"
+                            className="btn btn-link text-primary"
                             title="Edit Client"
                           >
                             <i className="fas fa-edit"></i>
                           </button>
                           <button 
-                            className="btn btn-sm btn-outline-info"
+                            className="btn btn-link text-info"
                             title="View Details"
                           >
                             <i className="fas fa-eye"></i>
                           </button>
-                          <button 
-                            className="btn btn-sm btn-outline-success"
-                            title="Communication Log"
-                          >
-                            <i className="fas fa-comment-alt"></i>
-                          </button>
+                         
                           <button 
                             onClick={() => handleDeleteClient(client.id)}
-                            className="btn btn-sm btn-outline-danger"
+                            className="btn btn-link text-danger"
                             title="Delete Client"
                           >
                             <i className="fas fa-trash-alt"></i>

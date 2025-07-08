@@ -141,163 +141,162 @@ const Matter = () => {
   };
 
   return (
-    <div className="min-vh-100 bg-white">
-      <div className="p-4">
-        {/* Page Title & Actions */}
-        <div className="">
+    <div className="min-vh-100 bg-white p-4">
+     <div className="container-fluid p-3 p-md-4">
+  {/* Title & Description */}
+  <div className="mb-3">
+    <h1 className="h1 fw-bold mb-2">Matters</h1>
+    <p className="text-muted">
+      Review the progress and details of your legal matters, track due dates, and stay updated with assigned legal professionals.
+    </p>
+  </div>
 
+  {/* Search & Create Button */}
+  <div className="row align-items-stretch g-3 mb-3">
+    <div className="col-12 col-sm-9">
+      <input
+        type="text"
+        className="form-control h-100"
+        placeholder="Search..."
+        aria-label="Search"
+      />
+    </div>
+    <div className="col-12 col-sm-3 d-grid">
+      <button
+        onClick={() => setIsModalOpen(true)}
+        className="btn btn-primary"
+      >
+        <i className="fas fa-plus me-2"></i>
+        Create Matter
+      </button>
+    </div>
+  </div>
 
-           <h1 className="display-6 fw-bold mb-2">Matters</h1>
-        </div>
-        <div className="">
+  {/* Filters */}
+  <div className="bg-light p-3 p-md-4 rounded mb-4">
+    <div className="row g-3">
+      <div className="col-12 col-md-4">
+        <select
+          className="form-select"
+          value={statusFilter}
+          onChange={(e) => setStatusFilter(e.target.value)}
+        >
+          {statuses.map((status) => (
+            <option key={status} value={status}>
+              {status === "All" ? "All Statuses" : status}
+            </option>
+          ))}
+        </select>
+      </div>
+      <div className="col-12 col-md-4">
+        <select
+          className="form-select"
+          value={typeFilter}
+          onChange={(e) => setTypeFilter(e.target.value)}
+        >
+          {types.map((type) => (
+            <option key={type} value={type}>
+              {type === "All" ? "All Matter Types" : type}
+            </option>
+          ))}
+        </select>
+      </div>
+      <div className="col-12 col-md-4">
+        <select
+          className="form-select"
+          value={assigneeFilter}
+          onChange={(e) => setAssigneeFilter(e.target.value)}
+        >
+          {assignees.map((assignee) => (
+            <option key={assignee} value={assignee}>
+              {assignee === "All" ? "All Assignees" : assignee}
+            </option>
+          ))}
+        </select>
+      </div>
+    </div>
+  </div>
 
-          <div className="d-flex flex-column flex-sm-row align-items-center align-items-sm-center w-100 gap-3 mt-2">
-            {/* Search Box */}
-            <div className=""
-              style={{ flex: 1, maxWidth: '1200px' }}>
-              <input
-                type="text"
-                className="form-control mt-3 p-2"
-                placeholder="Search..."
-                aria-label="Search"
-              />
-            </div>
-
-            {/* Create Button */}
-            <button
-              onClick={() => setIsModalOpen(true)}
-              className="btn btn-primary p-2"
-            >
-              <i className="fas fa-plus me-2"></i>
-              Create Matter
-            </button>
-          </div>
-        </div>
-
-        {/* Filter Bar */}
-        <div className="bg-light p-3 p-md-4 rounded mb-4">
-          <div className="row g-3">
-            <div className="col-12 col-sm-4">
-              <select
-                className="form-select"
-                value={statusFilter}
-                onChange={(e) => setStatusFilter(e.target.value)}
-              >
-                {statuses.map((status) => (
-                  <option key={status} value={status}>
-                    {status === "All" ? "All Statuses" : status}
-                  </option>
-                ))}
-              </select>
-            </div>
-            <div className="col-12 col-sm-4">
-              <select
-                className="form-select"
-                value={typeFilter}
-                onChange={(e) => setTypeFilter(e.target.value)}
-              >
-                {types.map((type) => (
-                  <option key={type} value={type}>
-                    {type === "All" ? "All Matter Types" : type}
-                  </option>
-                ))}
-              </select>
-            </div>
-            <div className="col-12 col-sm-4">
-              <select
-                className="form-select"
-                value={assigneeFilter}
-                onChange={(e) => setAssigneeFilter(e.target.value)}
-              >
-                {assignees.map((assignee) => (
-                  <option key={assignee} value={assignee}>
-                    {assignee === "All" ? "All Assignees" : assignee}
-                  </option>
-                ))}
-              </select>
-            </div>
-          </div>
-        </div>
-
-        {/* Matter Cards Grid */}
-        {filteredMatters.length > 0 ? (
-          <div className="row row-cols-1 row-cols-md-2 g-4">
-            {filteredMatters.map((matter) => (
-              <div key={matter.id} className="col">
-                <div className="card h-100 border-light shadow-sm">
-                  <div className="card-body">
-                    <div className="d-flex justify-content-between align-items-start mb-3">
-                      <h3 className="h5 card-title mb-0">{matter.title}</h3>
-                      <div className="d-flex align-items-center">
-                        <span
-                          className={`rounded-circle ${getStatusColor(matter.status)} d-inline-block me-2`}
-                          style={{ width: "10px", height: "10px" }}
-                        ></span>
-                        <span className="text-muted small">{matter.status}</span>
-                      </div>
-                    </div>
-                    <div className="mb-3">
-                      <span className="badge bg-light text-dark">{matter.type}</span>
-                    </div>
-                    <div className="d-flex justify-content-between align-items-center mb-3">
-                      <div className="text-muted small">
-                        <i className="far fa-calendar-alt me-2"></i>
-                        Due: {formatDate(matter.dueDate)}
-                      </div>
-                      <div className="d-flex align-items-center">
-                        <img
-                          src={matter.assignee.avatar}
-                          alt={matter.assignee.name}
-                          className="rounded-circle me-2"
-                          style={{ width: "24px", height: "24px", objectFit: "cover" }}
-                        />
-                        <span className="small">{matter.assignee.name}</span>
-                      </div>
-                    </div>
-                    <div className="border-top pt-3">
-                      <div className="d-flex gap-3">
-                        <button className="btn btn-sm btn-link text-muted p-0">
-                          <i className="far fa-file-alt me-1"></i>
-                          <span className="small">Documents</span>
-                        </button>
-                        <button className="btn btn-sm btn-link text-muted p-0">
-                          <i className="far fa-sticky-note me-1"></i>
-                          <span className="small">Notes</span>
-                        </button>
-                        <button className="btn btn-sm btn-link text-muted p-0">
-                          <i className="fas fa-history me-1"></i>
-                          <span className="small">History</span>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
+  {/* Matters Grid */}
+  {filteredMatters.length > 0 ? (
+    <div className="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4">
+      {filteredMatters.map((matter) => (
+        <div key={matter.id} className="col">
+          <div className="card h-100 border-light shadow-sm">
+            <div className="card-body">
+              <div className="d-flex justify-content-between align-items-start mb-3">
+                <h3 className="h6 card-title mb-0">{matter.title}</h3>
+                <div className="d-flex align-items-center">
+                  <span
+                    className={`rounded-circle ${getStatusColor(matter.status)} d-inline-block me-2`}
+                    style={{ width: "10px", height: "10px" }}
+                  ></span>
+                  <span className="text-muted small">{matter.status}</span>
                 </div>
               </div>
-            ))}
-          </div>
-        ) : (
-          <div className="d-flex flex-column align-items-center justify-content-center py-5 px-4 text-center">
-            <div className="mb-4 text-muted">
-              <i className="fas fa-folder-open fa-4x"></i>
+              <div className="mb-3">
+                <span className="badge bg-light text-dark">{matter.type}</span>
+              </div>
+              <div className="d-flex justify-content-between align-items-center mb-3">
+                <div className="text-muted small">
+                  <i className="far fa-calendar-alt me-2"></i>
+                  Due: {formatDate(matter.dueDate)}
+                </div>
+                <div className="d-flex align-items-center">
+                  <img
+                    src={matter.assignee.avatar}
+                    alt={matter.assignee.name}
+                    className="rounded-circle me-2"
+                    style={{ width: "24px", height: "24px", objectFit: "cover" }}
+                  />
+                  <span className="small">{matter.assignee.name}</span>
+                </div>
+              </div>
+              <div className="border-top pt-3">
+                <div className="d-flex flex-wrap gap-3">
+                  <button className="btn btn-sm btn-link text-muted p-0">
+                    <i className="far fa-file-alt me-1"></i>
+                    <span className="small">Documents</span>
+                  </button>
+                  <button className="btn btn-sm btn-link text-muted p-0">
+                    <i className="far fa-sticky-note me-1"></i>
+                    <span className="small">Notes</span>
+                  </button>
+                  <button className="btn btn-sm btn-link text-muted p-0">
+                    <i className="fas fa-history me-1"></i>
+                    <span className="small">History</span>
+                  </button>
+                </div>
+              </div>
             </div>
-            <h3 className="h4 mb-2">No matters found</h3>
-            <p className="text-muted mb-4" style={{ maxWidth: "500px" }}>
-              {searchTerm || statusFilter !== "All" || typeFilter !== "All" || assigneeFilter !== "All"
-                ? "Try adjusting your filters or search terms to find what you're looking for."
-                : "Get started by creating your first matter to begin tracking your legal work."}
-            </p>
-            {!(searchTerm || statusFilter !== "All" || typeFilter !== "All" || assigneeFilter !== "All") && (
-              <button
-                onClick={() => setIsModalOpen(true)}
-                className="btn btn-primary d-flex align-items-center"
-              >
-                <i className="fas fa-plus me-2"></i>
-                Create your first matter
-              </button>
-            )}
           </div>
-        )}
+        </div>
+      ))}
+    </div>
+  ) : (
+    <div className="d-flex flex-column align-items-center justify-content-center py-5 px-4 text-center">
+      <div className="mb-4 text-muted">
+        <i className="fas fa-folder-open fa-4x"></i>
       </div>
+      <h3 className="h4 mb-2">No matters found</h3>
+      <p className="text-muted mb-4" style={{ maxWidth: "500px" }}>
+        {searchTerm || statusFilter !== "All" || typeFilter !== "All" || assigneeFilter !== "All"
+          ? "Try adjusting your filters or search terms to find what you're looking for."
+          : "Get started by creating your first matter to begin tracking your legal work."}
+      </p>
+      {!(searchTerm || statusFilter !== "All" || typeFilter !== "All" || assigneeFilter !== "All") && (
+        <button
+          onClick={() => setIsModalOpen(true)}
+          className="btn btn-primary d-flex align-items-center"
+        >
+          <i className="fas fa-plus me-2"></i>
+          Create your first matter
+        </button>
+      )}
+    </div>
+  )}
+</div>
+
 
 
       {/* Create Matter Modal */}
