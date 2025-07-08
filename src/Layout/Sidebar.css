@@ -24,6 +24,7 @@
   overflow-y: auto;
   padding-top: 18px;
   padding-bottom: 12px;
+  
 }
 
 /* Optional scroll styling */
@@ -37,7 +38,7 @@
 
 /* Space between menu items */
 .menu-item {
-  margin-bottom: 8px;
+  margin-bottom: 10px !important;
 }
 
 @media (max-width: 768px) {

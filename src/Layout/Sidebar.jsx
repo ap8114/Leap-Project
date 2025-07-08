@@ -32,7 +32,7 @@ const Sidebar = ({ collapsed, menuItemClick }) => {
     { path: "/client", icon: "fa-solid fa-handshake", text: "Clients & CRM" },                     // Clients / CRM
     { path: "/document", icon: "fa-solid fa-file-lines", text: "Documents" },                      // Documents
     { path: "/calendar", icon: "fa-solid fa-calendar-check", text: "Calendar" },                   // Calendar
-    { path: "/workflow", icon: "fa-solid fa-diagram-project", text: "Tasks / Workflow" },          // Tasks / Workflow
+    { path: "/workflow", icon: "fa-solid fa-diagram-project", text: "Tasks & Workflow" },          // Tasks / Workflow
     { path: "/timebilling", icon: "fa-solid fa-stopwatch", text: "Time & Billing" },               // Time & Billing
     { path: "/accounting", icon: "fa-solid fa-file-invoice", text: "Accounting" },                 // Accounting
     { path: "/reports-analytics", icon: "fa-solid fa-chart-line", text: "Reports & Analytics" },   // Reports & Analytics
