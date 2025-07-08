@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'font-awesome/css/font-awesome.min.css';
+
 import Header from '../../HomePages/Header';
 import FooterSection from '../../HomePages/FooterSection';
 
@@ -86,7 +85,7 @@ const Employment = () => {
                 <button className="btn btn-warning btn-lg px-4 py-3 fw-semibold text-white">
                   Start Free Trial
                 </button>
-                <button className="btn btn-outline-primary btn-lg px-4 py-3 fw-semibold">
+                <button className="btn btn-outline-custom btn-lg px-4 py-3 fw-semibold">
                   Watch Demo
                 </button>
               </div>
@@ -94,7 +93,7 @@ const Employment = () => {
                 <div className="d-flex align-items-center gap-2">
                   <div className="d-flex">
                     <div className="rounded-circle bg-warning d-flex align-items-center justify-content-center text-white fw-bold" style={{width: '32px', height: '32px'}}>A</div>
-                    <div className="rounded-circle bg-primary d-flex align-items-center justify-content-center text-white fw-bold ms-n2" style={{width: '32px', height: '32px'}}>B</div>
+                    <div className="rounded-circle bg-custom d-flex align-items-center justify-content-center text-white fw-bold ms-n2" style={{width: '32px', height: '32px'}}>B</div>
                     <div className="rounded-circle bg-success d-flex align-items-center justify-content-center text-white fw-bold ms-n2" style={{width: '32px', height: '32px'}}>C</div>
                   </div>
                   <span className="small text-muted">1000+ satisfied customers</span>
@@ -190,7 +189,7 @@ const Employment = () => {
       </section>
 
       {/* Statistics Section */}
-      <section className="py-5 bg-primary text-white">
+      <section className="py-5 bg-custom text-white">
         <div className="container py-5">
           <div className="text-center mb-5">
             <h2 className="display-5 fw-bold mb-3">Trusted by Property Professionals Worldwide</h2>

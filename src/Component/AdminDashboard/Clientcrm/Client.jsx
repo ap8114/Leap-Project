@@ -131,7 +131,7 @@ const Client = () => {
             <div className="col-md-6 text-md-end">
               <button
                 onClick={() => setShowAddForm(true)}
-                className="btn btn-primary"
+                className="btn btn-custom"
               >
                 <i className="fas fa-plus me-2"></i>
                 Add New Client
@@ -156,8 +156,8 @@ const Client = () => {
                     <tr key={client.id}>
                       <td>
                         <div className="d-flex align-items-center">
-                          <div className="bg-primary bg-opacity-10 rounded-circle p-2 me-3">
-                            <span className="text-primary fw-medium">
+                          <div className="bg-custom bg-opacity-10 rounded-circle p-2 me-3">
+                            <span className="text-custom fw-medium">
                               {client.name.split(' ').map(n => n[0]).join('')}
                             </span>
                           </div>
@@ -187,7 +187,7 @@ const Client = () => {
                         <div className="d-flex justify-content-end gap-2">
                           <button 
                             onClick={() => setEditingClient(client)}
-                            className="btn btn-link text-primary"
+                            className="btn btn-link text-custom"
                             title="Edit Client"
                           >
                             <i className="fas fa-edit"></i>
@@ -310,7 +310,7 @@ const Client = () => {
         <button type="button" className="btn btn-secondary w-100 w-sm-auto" onClick={() => setShowAddForm(false)}>
           Cancel
         </button>
-        <button type="button" className="btn btn-primary w-100 w-sm-auto" onClick={handleAddClient}>
+        <button type="button" className="btn btn-custom w-100 w-sm-auto" onClick={handleAddClient}>
           Save Client
         </button>
       </div>
@@ -421,7 +421,7 @@ const Client = () => {
             </button>
             <button
               type="button"
-              className="btn btn-primary w-100"
+              className="btn btn-custom w-100"
               onClick={handleUpdateClient}
             >
               Update Client

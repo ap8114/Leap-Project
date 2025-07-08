@@ -109,7 +109,7 @@ const ReportsAnalytics= () => {
                     <h2 className="h4 fw-bold text-dark">Matter Summary Report</h2>
                     <p className="text-muted mb-0">Overview of all matters by practice area</p>
                   </div>
-                  <span className="text-primary">
+                  <span className="text-custom">
                     <i className="fas fa-briefcase fs-4"></i>
                   </span>
                 </div>
@@ -133,7 +133,7 @@ const ReportsAnalytics= () => {
 
                 <div className="mt-3 d-flex justify-content-between align-items-center small">
                   <div className="text-muted">Last updated: July 8, 2025</div>
-                  <button className="btn btn-link text-primary fw-medium p-0 border-0">
+                  <button className="btn btn-link text-custom fw-medium p-0 border-0">
                     View Full Report <i className="fas fa-arrow-right ms-2"></i>
                   </button>
                 </div>
@@ -160,14 +160,14 @@ const ReportsAnalytics= () => {
                     <button
                       type="button"
                       onClick={() => setBillingView('client')}
-                      className={`btn btn-sm ${billingView === 'client' ? 'btn-primary' : 'btn-outline-secondary'}`}
+                      className={`btn btn-sm ${billingView === 'client' ? 'btn-custom' : 'btn-outline-secondary'}`}
                     >
                       By Client
                     </button>
                     <button
                       type="button"
                       onClick={() => setBillingView('period')}
-                      className={`btn btn-sm ${billingView === 'period' ? 'btn-primary' : 'btn-outline-secondary'}`}
+                      className={`btn btn-sm ${billingView === 'period' ? 'btn-custom' : 'btn-outline-secondary'}`}
                     >
                       By Period
                     </button>
@@ -195,7 +195,7 @@ const ReportsAnalytics= () => {
 
                 <div className="mt-3 d-flex justify-content-between align-items-center small">
                   <div className="text-muted">Last updated: July 8, 2025</div>
-                  <button className="btn btn-link text-primary fw-medium p-0 border-0">
+                  <button className="btn btn-link text-custom fw-medium p-0 border-0">
                     View Full Report <i className="fas fa-arrow-right ms-2"></i>
                   </button>
                 </div>
@@ -288,7 +288,7 @@ const ReportsAnalytics= () => {
       {/* Footer */}
       <div className="mt-3 d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center small">
         <div className="text-muted mb-2 mb-sm-0">Last updated: July 8, 2025</div>
-        <button className="btn btn-link text-primary fw-medium p-0 border-0">
+        <button className="btn btn-link text-custom fw-medium p-0 border-0">
           View Full Report <i className="fas fa-arrow-right ms-2"></i>
         </button>
       </div>
@@ -333,7 +333,7 @@ const ReportsAnalytics= () => {
 
                 <div className="mt-3 d-flex justify-content-between align-items-center small">
                   <div className="text-muted">Last updated: July 8, 2025</div>
-                  <button className="btn btn-link text-primary fw-medium p-0 border-0">
+                  <button className="btn btn-link text-custom fw-medium p-0 border-0">
                     View Full Report <i className="fas fa-arrow-right ms-2"></i>
                   </button>
                 </div>
@@ -347,7 +347,7 @@ const ReportsAnalytics= () => {
             <button className="btn btn-outline-secondary me-2">
               <i className="fas fa-file-export me-2"></i> Export All Reports
             </button>
-            <button className="btn btn-primary">
+            <button className="btn btn-custom">
               <i className="fas fa-print me-2"></i> Print Dashboard
             </button>
           </div>

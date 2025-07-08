@@ -130,7 +130,7 @@ const Matter = () => {
       case 'Closed':
         return 'bg-secondary';
       default:
-        return 'bg-primary';
+        return 'bg-custom';
     }
   };
 
@@ -164,7 +164,8 @@ const Matter = () => {
     <div className="col-12 col-sm-3 d-grid">
       <button
         onClick={() => setIsModalOpen(true)}
-        className="btn btn-primary"
+
+        className="btn btn-custom"
       >
         <i className="fas fa-plus me-2"></i>
         Create Matter
@@ -222,7 +223,7 @@ const Matter = () => {
     <div className="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4">
       {filteredMatters.map((matter) => (
         <div key={matter.id} className="col">
-          <div className="card h-100 border-light shadow-sm">
+          <div className="card h-100 border-light shadow-lg ">
             <div className="card-body">
               <div className="d-flex justify-content-between align-items-start mb-3">
                 <h3 className="h6 card-title mb-0">{matter.title}</h3>
@@ -287,7 +288,7 @@ const Matter = () => {
       {!(searchTerm || statusFilter !== "All" || typeFilter !== "All" || assigneeFilter !== "All") && (
         <button
           onClick={() => setIsModalOpen(true)}
-          className="btn btn-primary d-flex align-items-center"
+          className="btn btn-custom d-flex align-items-center"
         >
           <i className="fas fa-plus me-2"></i>
           Create your first matter
@@ -302,10 +303,10 @@ const Matter = () => {
       {/* Create Matter Modal */}
       {isModalOpen && (
         <>
-          {/* Modal Backdrop */}
+      
           <div className="modal-backdrop fade show mt-5"></div>
 
-          {/* Modal Dialog */}
+       
           <div className="modal fade show d-block" tabIndex="-1" role="dialog" aria-modal="true">
             <div className="modal-dialog modal-dialog-centered" role="document">
               <div className="modal-content">
@@ -319,7 +320,7 @@ const Matter = () => {
                   ></button>
                 </div>
                 <div className="modal-body">
-                  {/* Title */}
+                 
                   <div className="mb-3">
                     <label htmlFor="matter-title" className="form-label">Title</label>
                     <input
@@ -332,7 +333,7 @@ const Matter = () => {
                     {formErrors.title && <div className="invalid-feedback">Title is required</div>}
                   </div>
 
-                  {/* Type */}
+                  
                   <div className="mb-3">
                     <label htmlFor="matter-type" className="form-label">Type</label>
                     <select
@@ -349,7 +350,7 @@ const Matter = () => {
                     {formErrors.type && <div className="invalid-feedback">Type is required</div>}
                   </div>
 
-                  {/* Status */}
+                  
                   <div className="mb-3">
                     <label htmlFor="matter-status" className="form-label">Status</label>
                     <select
@@ -364,7 +365,7 @@ const Matter = () => {
                     </select>
                   </div>
 
-                  {/* Due Date */}
+                  
                   <div className="mb-3">
                     <label htmlFor="matter-due-date" className="form-label">Due Date</label>
                     <input
@@ -377,7 +378,7 @@ const Matter = () => {
                     {formErrors.dueDate && <div className="invalid-feedback">Due date is required</div>}
                   </div>
 
-                  {/* Assignee */}
+                 
                   <div className="mb-3">
                     <label htmlFor="matter-assignee" className="form-label">Assignee</label>
                     <select
@@ -405,7 +406,7 @@ const Matter = () => {
                   </button>
                   <button
                     type="button"
-                    className="btn btn-primary"
+                    className= " btn btn-custom "
                     onClick={handleCreateMatter}
                   >
                     Create Matter

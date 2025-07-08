@@ -123,8 +123,8 @@ const DocumentAutomation = () => {
                             {features.map((feature, index) => (
                                 <div key={index} className="col-12 col-md-6 col-lg-4">
                                     <div className="bg-white p-4 rounded-4 shadow-sm border h-100 d-flex flex-column hover-shadow transition">
-                                        <div className="d-flex align-items-center justify-content-center bg-primary bg-opacity-10 rounded-3 mb-4" style={{ width: '48px', height: '48px' }}>
-                                            <i className={`${feature.icon} text-primary fs-4`}></i>
+                                        <div className="d-flex align-items-center justify-content-center bg-custom bg-opacity-10 rounded-3 mb-4" style={{ width: '48px', height: '48px' }}>
+                                            <i className={`${feature.icon} text-custom fs-4`}></i>
                                         </div>
                                         <h3 className="h5 fw-bold text-dark mb-3">{feature.title}</h3>
                                         <p className="text-muted mb-0">{feature.description}</p>
@@ -142,7 +142,7 @@ const DocumentAutomation = () => {
                         <div className="row align-items-center g-5">
                             {/* Left Content */}
                             <div className="col-lg-6">
-                                <div className="d-inline-block bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-pill fw-semibold small mb-4">
+                                <div className="d-inline-block bg-custom bg-opacity-10 text-custom px-3 py-1 rounded-pill fw-semibold small mb-4">
                                     Matter AI
                                 </div>
                                 <h2 className="display-6 fw-bold text-dark mb-4">
@@ -153,7 +153,7 @@ const DocumentAutomation = () => {
                                     It examines your correspondence to identify important data and give a detailed response in seconds,
                                     generating professional-quality documents in a fraction of the time. Ask it anything.
                                 </p>
-                                <button className="btn btn-primary px-4 py-2 fw-semibold">
+                                <button className="btn btn-custom px-4 py-2 fw-semibold">
                                     Find out more about Matter AI
                                 </button>
                             </div>

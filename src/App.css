@@ -69,13 +69,13 @@ main {
 }
 
 
-.btn-outline-primary {
+.btn-outline-custom {
   color: #578e7e;
   border-color: #578e7e;
   background-color: white;
 }
 
-.btn-outline-primary:hover {
+.btn-outline-custom:hover {
   background-color: #578e7e;
   color: white;
   border-color: #578e7e;
@@ -977,3 +977,65 @@ select.form-input {
   justify-content: space-between;
 }
 
+/* reusable-button */
+.btn-custom {
+  background-color: #1A2744 !important;
+  border-color: #1A2744 !important;
+  color: #fff !important;
+}
+
+.btn-custom:hover,
+.btn-custom:focus,
+.btn-custom:active {
+  background-color: #111a2f !important; /* Slightly darker navy */
+  border-color: #111a2f !important;
+  color: #fff !important;
+}
+/* paghination resubale class */
+
+.pagination-custom .page-link {
+  color: #1A2744;
+  background-color: #fff;
+  border: 1px solid #1A2744;
+}
+
+.pagination-custom .page-link:hover {
+  background-color: #1A2744;
+  color: #fff;
+  border-color: #1A2744;
+}
+
+.pagination-custom .page-item.active .page-link {
+  background-color: #1A2744;
+  border-color: #1A2744;
+  color: #fff;
+}
+
+.pagination-custom .page-item.disabled .page-link {
+  color: #6c757d;
+  background-color: #f8f9fa;
+  border-color: #dee2e6;
+}
+.pagination-custom .page-link {
+  color: #1A2744;
+  background-color: #fff;
+  border: 1px solid #1A2744;
+}
+
+.pagination-custom .page-link:hover {
+  background-color: #1A2744;
+  color: #fff;
+  border-color: #1A2744;
+}
+
+.pagination-custom .page-item.active .page-link {
+  background-color: #1A2744;
+  border-color: #1A2744;
+  color: #fff;
+}
+
+.pagination-custom .page-item.disabled .page-link {
+  color: #6c757d;
+  background-color: #f8f9fa;
+  border-color: #dee2e6;
+}

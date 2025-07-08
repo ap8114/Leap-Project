@@ -53,19 +53,19 @@ const TimeRecordingBilling = () => {
                         <nav className="nav nav-tabs border-0 gap-3">
                             <button
                                 onClick={() => setActiveTab('features')}
-                                className={`nav-link ${activeTab === 'features' ? 'active border-primary text-primary' : 'text-secondary'}`}
+                                className={`nav-link ${activeTab === 'features' ? 'active border-custom text-custom' : 'text-secondary'}`}
                             >
                                 Key Features
                             </button>
                             <button
                                 onClick={() => setActiveTab('billing')}
-                                className={`nav-link ${activeTab === 'billing' ? 'active border-primary text-primary' : 'text-secondary'}`}
+                                className={`nav-link ${activeTab === 'billing' ? 'active border-custom text-custom' : 'text-secondary'}`}
                             >
                                 Billing Solutions
                             </button>
                             <button
                                 onClick={() => setActiveTab('integrations')}
-                                className={`nav-link ${activeTab === 'integrations' ? 'active border-primary text-primary' : 'text-secondary'}`}
+                                className={`nav-link ${activeTab === 'integrations' ? 'active border-custom text-custom' : 'text-secondary'}`}
                             >
                                 Integrations
                             </button>
@@ -79,7 +79,7 @@ const TimeRecordingBilling = () => {
                         {/* Feature 1 */}
                         <div className="row align-items-center mb-5 mb-lg-6">
                             <div className="col-lg-6 mb-4 mb-lg-0">
-                                <div className="text-primary text-uppercase small fw-semibold">Time tracking</div>
+                                <div className="text-custom text-uppercase small fw-semibold">Time tracking</div>
                                 <h2 className="mt-2 display-5 fw-bold">Capture everything</h2>
                                 <p className="mt-3 fs-5 text-secondary">
                                     Clio's intelligent time capture tool eliminates the need for timers to capture your billable time.
@@ -87,7 +87,7 @@ const TimeRecordingBilling = () => {
                                     making you more profitable.
                                 </p>
                                 <div className="mt-4">
-                                    <button className="btn btn-link text-primary fw-medium p-0 text-decoration-none">
+                                    <button className="btn btn-link text-custom fw-medium p-0 text-decoration-none">
                                         Learn more about time tracking
                                         <i className="fas fa-arrow-right ms-2"></i>
                                     </button>
@@ -105,7 +105,7 @@ const TimeRecordingBilling = () => {
                         {/* Feature 2 */}
                         <div className="row align-items-center mb-5 mb-lg-6">
                             <div className="col-lg-6 order-lg-2 mb-4 mb-lg-0">
-                                <div className="text-primary text-uppercase small fw-semibold">Invoicing</div>
+                                <div className="text-custom text-uppercase small fw-semibold">Invoicing</div>
                                 <h2 className="mt-2 display-5 fw-bold">Simplified billing</h2>
                                 <p className="mt-3 fs-5 text-secondary">
                                     Clio's intelligent billing engine effortlessly captures all billable time, fees and disbursements
@@ -113,7 +113,7 @@ const TimeRecordingBilling = () => {
                                     online gives your client complete transparency over their liability.
                                 </p>
                                 <div className="mt-4">
-                                    <button className="btn btn-link text-primary fw-medium p-0 text-decoration-none">
+                                    <button className="btn btn-link text-custom fw-medium p-0 text-decoration-none">
                                         Explore billing features
                                         <i className="fas fa-arrow-right ms-2"></i>
                                     </button>
@@ -131,7 +131,7 @@ const TimeRecordingBilling = () => {
                         {/* Feature 3 */}
                         <div className="row align-items-center">
                             <div className="col-lg-6 mb-4 mb-lg-0">
-                                <div className="text-primary text-uppercase small fw-semibold">Online payments</div>
+                                <div className="text-custom text-uppercase small fw-semibold">Online payments</div>
                                 <h2 className="mt-2 display-5 fw-bold">A smarter way to get paid</h2>
                                 <p className="mt-3 fs-5 text-secondary">
                                     Improve your cash flow by getting paid on time with Clio online payments powered by FeeWise.
@@ -139,7 +139,7 @@ const TimeRecordingBilling = () => {
                                     your bills will be paid on time.
                                 </p>
                                 <div className="mt-4">
-                                    <button className="btn btn-link text-primary fw-medium p-0 text-decoration-none">
+                                    <button className="btn btn-link text-custom fw-medium p-0 text-decoration-none">
                                         Learn more about Clio Online Payments
                                         <i className="fas fa-arrow-right ms-2"></i>
                                     </button>
@@ -162,13 +162,13 @@ const TimeRecordingBilling = () => {
                         <div className="d-lg-flex justify-content-between align-items-center">
                             <h2 className="display-5 fw-bold text-white mb-4 mb-lg-0">
                                 <span className="d-block">Ready to streamline your billing?</span>
-                                <span className="d-block text-primary-light">Start your free trial today.</span>
+                                <span className="d-block text-custom-light">Start your free trial today.</span>
                             </h2>
                             <div className="d-flex gap-3">
                                 <button className="btn btn-warning text-white px-5 py-3 fw-medium">
                                     Get started
                                 </button>
-                                <button className="btn btn-light text-primary px-5 py-3 fw-medium">
+                                <button className="btn btn-light text-custom px-5 py-3 fw-medium">
                                     Book a demo
                                 </button>
                             </div>
@@ -180,7 +180,7 @@ const TimeRecordingBilling = () => {
                 <div className="bg-white py-5 py-sm-6">
                     <div className="container">
                         <div className="text-center">
-                            <h2 className="text-primary text-uppercase small fw-semibold">Testimonials</h2>
+                            <h2 className="text-custom text-uppercase small fw-semibold">Testimonials</h2>
                             <p className="mt-3 display-5 fw-bold">
                                 Trusted by law firms worldwide
                             </p>
@@ -195,8 +195,8 @@ const TimeRecordingBilling = () => {
                                 <div className="col-md-6 col-lg-4">
                                     <div className="bg-light rounded shadow-sm p-4 h-100">
                                         <div className="d-flex align-items-center mb-3">
-                                            <div className="rounded-circle bg-primary-light d-flex align-items-center justify-content-center" style={{ width: '48px', height: '48px' }}>
-                                                <i className="fas fa-user text-primary fs-5"></i>
+                                            <div className="rounded-circle bg-custom-light d-flex align-items-center justify-content-center" style={{ width: '48px', height: '48px' }}>
+                                                <i className="fas fa-user text-custom fs-5"></i>
                                             </div>
                                             <div className="ms-3">
                                                 <h3 className="h5 fw-medium mb-0">Sarah Johnson</h3>
@@ -221,8 +221,8 @@ const TimeRecordingBilling = () => {
                                 <div className="col-md-6 col-lg-4">
                                     <div className="bg-light rounded shadow-sm p-4 h-100">
                                         <div className="d-flex align-items-center mb-3">
-                                            <div className="rounded-circle bg-primary-light d-flex align-items-center justify-content-center" style={{ width: '48px', height: '48px' }}>
-                                                <i className="fas fa-user text-primary fs-5"></i>
+                                            <div className="rounded-circle bg-custom-light d-flex align-items-center justify-content-center" style={{ width: '48px', height: '48px' }}>
+                                                <i className="fas fa-user text-custom fs-5"></i>
                                             </div>
                                             <div className="ms-3">
                                                 <h3 className="h5 fw-medium mb-0">Michael Chen</h3>
@@ -247,8 +247,8 @@ const TimeRecordingBilling = () => {
                                 <div className="col-md-6 col-lg-4">
                                     <div className="bg-light rounded shadow-sm p-4 h-100">
                                         <div className="d-flex align-items-center mb-3">
-                                            <div className="rounded-circle bg-primary-light d-flex align-items-center justify-content-center" style={{ width: '48px', height: '48px' }}>
-                                                <i className="fas fa-user text-primary fs-5"></i>
+                                            <div className="rounded-circle bg-custom-light d-flex align-items-center justify-content-center" style={{ width: '48px', height: '48px' }}>
+                                                <i className="fas fa-user text-custom fs-5"></i>
                                             </div>
                                             <div className="ms-3">
                                                 <h3 className="h5 fw-medium mb-0">Emily Rodriguez</h3>

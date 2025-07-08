@@ -62,7 +62,7 @@ const EstateProbate = () => {
                     <div className="bg-warning bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3" style={{ width: '64px', height: '64px' }}>
                       <i className="fas fa-chart-line fs-3" style={{color: '#f76b1c'}}></i>
                     </div>
-                    <h3 className="h4 fw-bold text-primary mb-3">Transaction Tracking</h3>
+                    <h3 className="h4 fw-bold text-custom mb-3">Transaction Tracking</h3>
                     <p className="text-muted">
                       Real-time monitoring of all your property transactions in one place
                     </p>
@@ -77,7 +77,7 @@ const EstateProbate = () => {
                     <div className="bg-warning bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3" style={{ width: '64px', height: '64px' }}>
                       <i className="fas fa-file-signature fs-3" style={{color: '#f76b1c'}}></i>
                     </div>
-                    <h3 className="h4 fw-bold text-primary mb-3">Document Management</h3>
+                    <h3 className="h4 fw-bold text-custom mb-3">Document Management</h3>
                     <p className="text-muted">
                       Secure storage and easy access to all property-related documents
                     </p>
@@ -92,7 +92,7 @@ const EstateProbate = () => {
                     <div className="bg-warning bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3" style={{ width: '64px', height: '64px' }}>
                       <i className="fas fa-users fs-3" style={{color: '#f76b1c'}}></i>
                     </div>
-                    <h3 className="h4 fw-bold text-primary mb-3">Team Collaboration</h3>
+                    <h3 className="h4 fw-bold text-custom mb-3">Team Collaboration</h3>
                     <p className="text-muted">
                       Seamless communication and workflow management for your team
                     </p>

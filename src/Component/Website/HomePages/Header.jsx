@@ -56,7 +56,7 @@ const Header = () => {
                                 <div className="row">
                                     {/* Column 1: Features List */}
                                     <div className="col-4">
-                                        <h6 className="dropdown-header text-primary">FEATURES</h6>
+                                        <h6 className="dropdown-header text-custom">FEATURES</h6>
 
                                         <Link
                                             to="/client-and-matter-management"
@@ -133,7 +133,7 @@ const Header = () => {
                                                 style={{ width: 90, height: 70, objectFit: "cover" }}
                                             />
                                             <div>
-                                                <div className="text-primary fw-semibold small mb-1">
+                                                <div className="text-custom fw-semibold small mb-1">
                                                     MOBILE WORKING
                                                 </div>
                                                 <div className="small text-muted">
@@ -150,7 +150,7 @@ const Header = () => {
                                                 style={{ width: 90, height: 70, objectFit: "cover" }}
                                             />
                                             <div>
-                                                <div className="text-primary fw-semibold small mb-1">
+                                                <div className="text-custom fw-semibold small mb-1">
                                                     APPS & INTEGRATIONS
                                                 </div>
                                                 <div className="small text-muted">
@@ -204,7 +204,7 @@ const Header = () => {
                                                 style={{ width: 70, height: 70, objectFit: "cover" }}
                                             />
                                             <div>
-                                                <div className="text-primary fw-semibold small mb-1">
+                                                <div className="text-custom fw-semibold small mb-1">
                                                     LEGAL AID
                                                 </div>
                                                 <div className="small text-muted">
@@ -220,7 +220,7 @@ const Header = () => {
                                                 style={{ width: 70, height: 70, objectFit: "cover" }}
                                             />
                                             <div>
-                                                <div className="text-primary fw-semibold small mb-1">
+                                                <div className="text-custom fw-semibold small mb-1">
                                                     SWITCH TO LEAP
                                                 </div>
                                                 <div className="small text-muted">
@@ -252,7 +252,7 @@ const Header = () => {
                                 <div className="row">
                                    
                                     <div className="col-3">
-                                        <h6 className="dropdown-header text-primary">COMPANY</h6>
+                                        <h6 className="dropdown-header text-custom">COMPANY</h6>
                                         <a className="dropdown-item fw-semibold" href="#leadership">
                                             Leadership
                                         </a>
@@ -272,7 +272,7 @@ const Header = () => {
                                     </div>
                                   
                                     <div className="col-3 border-start">
-                                        <h6 className="dropdown-header text-primary">
+                                        <h6 className="dropdown-header text-custom">
                                             BUSINESS PARTNERS
                                         </h6>
                                         <a className="dropdown-item fw-semibold" href="#partners">
@@ -314,7 +314,7 @@ const Header = () => {
                                             />
                                         </div>
                                         <div>
-                                            <div className="text-primary fw-semibold small mb-1">
+                                            <div className="text-custom fw-semibold small mb-1">
                                                 IDEAS HUB
                                             </div>
                                             <div className="small text-muted">
@@ -347,7 +347,7 @@ const Header = () => {
                                 <div className="row">
                                     {/* Resources */}
                                     <div className="col-3">
-                                        <h6 className="dropdown-header text-primary">RESOURCES</h6>
+                                        <h6 className="dropdown-header text-custom">RESOURCES</h6>
                                         <a
                                             className="dropdown-item fw-semibold"
                                             href="#testimonials"
@@ -376,7 +376,7 @@ const Header = () => {
                                     </div>
                                     {/* Webinars & Events */}
                                     <div className="col-3 border-start">
-                                        <h6 className="dropdown-header text-primary">
+                                        <h6 className="dropdown-header text-custom">
                                             WEBINARS & EVENTS
                                         </h6>
                                         <a className="dropdown-item fw-semibold" href="#events">
@@ -399,7 +399,7 @@ const Header = () => {
                                             />
                                         </div>
                                         <div>
-                                            <div className="text-primary fw-semibold small mb-1">
+                                            <div className="text-custom fw-semibold small mb-1">
                                                 LEAP HELP CENTRE
                                             </div>
                                             <div className="small text-muted">

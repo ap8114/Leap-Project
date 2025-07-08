@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'font-awesome/css/font-awesome.min.css';
+
 import Home from '../../HomePages/Home';
 import FooterSection from '../../HomePages/FooterSection';
 

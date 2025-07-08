@@ -75,7 +75,7 @@ const Family = () => {
                 specifically for divorce, custody, and domestic relations cases.
               </p>
               <div className="d-flex flex-column flex-sm-row gap-3">
-                <Button variant="primary" size="lg">Get Started Free</Button>
+                <Button variant="custom" size="lg">Get Started Free</Button>
                 <Button variant="outline-dark" size="lg">Schedule Demo</Button>
               </div>
             </Col>
@@ -137,10 +137,10 @@ const Family = () => {
                         <Card.Body>
                           <div className="d-flex justify-content-between align-items-center">
                             <div>
-                              <p className="text-primary mb-1">Active Cases</p>
+                              <p className="text-custom mb-1">Active Cases</p>
                               <h3 className="mb-0">24</h3>
                             </div>
-                            <i className="fas fa-briefcase text-primary fs-3"></i>
+                            <i className="fas fa-briefcase text-custom fs-3"></i>
                           </div>
                         </Card.Body>
                       </Card>
@@ -245,7 +245,7 @@ const Family = () => {
                     <i className="fas fa-cloud-upload-alt text-muted fs-1 mb-3"></i>
                     <h3 className="h4 mb-2">Upload Documents</h3>
                     <p className="text-muted mb-4">Drag and drop files here, or click to browse</p>
-                    <Button variant="primary" onClick={simulateUpload}>
+                    <Button variant="custom" onClick={simulateUpload}>
                       Choose Files
                     </Button>
                     {uploadProgress > 0 && (
@@ -276,7 +276,7 @@ const Family = () => {
                             </div>
                             <div className="d-flex justify-content-between align-items-center p-3 bg-light rounded">
                               <div className="d-flex align-items-center">
-                                <i className="fas fa-file-word text-primary me-3 fs-4"></i>
+                                <i className="fas fa-file-word text-custom me-3 fs-4"></i>
                                 <div>
                                   <div className="fw-bold">Custody Agreement.docx</div>
                                   <small className="text-muted">Uploaded yesterday</small>
@@ -304,7 +304,7 @@ const Family = () => {
                             </div>
                             <div className="d-flex justify-content-between align-items-center">
                               <div className="d-flex align-items-center">
-                                <i className="fas fa-folder text-primary me-3 fs-4"></i>
+                                <i className="fas fa-folder text-custom me-3 fs-4"></i>
                                 <span>Discovery</span>
                               </div>
                               <small className="text-muted">8 files</small>
@@ -346,12 +346,12 @@ const Family = () => {
                               </div>
                               <i className="fas fa-clock text-warning fs-4"></i>
                             </div>
-                            <div className="d-flex align-items-center p-3 bg-primary bg-opacity-10 border-start border-primary border-4 rounded">
+                            <div className="d-flex align-items-center p-3 bg-custom bg-opacity-10 border-start border-custom border-4 rounded">
                               <div className="flex-grow-1">
-                                <div className="fw-bold text-primary">Court Hearing</div>
-                                <small className="text-primary">Davis Property Division - Dec 20, 2024</small>
+                                <div className="fw-bold text-custom">Court Hearing</div>
+                                <small className="text-custom">Davis Property Division - Dec 20, 2024</small>
                               </div>
-                              <i className="fas fa-gavel text-primary fs-4"></i>
+                              <i className="fas fa-gavel text-custom fs-4"></i>
                             </div>
                           </div>
                         </Card.Body>
@@ -363,15 +363,15 @@ const Family = () => {
                           <h3 className="h5 mb-3">Quick Actions</h3>
                           <div className="d-flex flex-column gap-3">
                             <Button variant="outline-secondary" className="text-start">
-                              <i className="fas fa-plus me-2 text-primary"></i>
+                              <i className="fas fa-plus me-2 text-custom"></i>
                               New Case
                             </Button>
                             <Button variant="outline-secondary" className="text-start">
-                              <i className="fas fa-calendar-plus me-2 text-primary"></i>
+                              <i className="fas fa-calendar-plus me-2 text-custom"></i>
                               Schedule Meeting
                             </Button>
                             <Button variant="outline-secondary" className="text-start">
-                              <i className="fas fa-file-upload me-2 text-primary"></i>
+                              <i className="fas fa-file-upload me-2 text-custom"></i>
                               Upload Document
                             </Button>
                           </div>
@@ -403,7 +403,7 @@ const Family = () => {
             <Col md={6} lg={4}>
               <Card className="h-100 shadow-sm border-0">
                 <Card.Body>
-                  <div className="bg-primary text-white rounded p-3 mb-4 d-inline-flex">
+                  <div className="bg-custom text-white rounded p-3 mb-4 d-inline-flex">
                     <i className="fas fa-shield-alt fs-4"></i>
                   </div>
                   <h3 className="h4 mb-3">Secure Document Management</h3>
@@ -431,7 +431,7 @@ const Family = () => {
             <Col md={6} lg={4}>
               <Card className="h-100 shadow-sm border-0">
                 <Card.Body>
-                  <div className="bg-primary text-white rounded p-3 mb-4 d-inline-flex">
+                  <div className="bg-custom text-white rounded p-3 mb-4 d-inline-flex">
                     <i className="fas fa-calendar-check fs-4"></i>
                   </div>
                   <h3 className="h4 mb-3">Deadline Tracking</h3>
@@ -459,7 +459,7 @@ const Family = () => {
             <Col md={6} lg={4}>
               <Card className="h-100 shadow-sm border-0">
                 <Card.Body>
-                  <div className="bg-primary text-white rounded p-3 mb-4 d-inline-flex">
+                  <div className="bg-custom text-white rounded p-3 mb-4 d-inline-flex">
                     <i className="fas fa-comments fs-4"></i>
                   </div>
                   <h3 className="h4 mb-3">Communication Hub</h3>
@@ -500,19 +500,19 @@ const Family = () => {
               </p>
               <ul className="list-unstyled">
                 <li className="mb-3">
-                  <i className="fas fa-check-circle text-primary me-2"></i>
+                  <i className="fas fa-check-circle text-custom me-2"></i>
                   <span>30-day free trial with full access</span>
                 </li>
                 <li className="mb-3">
-                  <i className="fas fa-check-circle text-primary me-2"></i>
+                  <i className="fas fa-check-circle text-custom me-2"></i>
                   <span>No setup fees or hidden costs</span>
                 </li>
                 <li className="mb-3">
-                  <i className="fas fa-check-circle text-primary me-2"></i>
+                  <i className="fas fa-check-circle text-custom me-2"></i>
                   <span>24/7 customer support</span>
                 </li>
                 <li>
-                  <i className="fas fa-check-circle text-primary me-2"></i>
+                  <i className="fas fa-check-circle text-custom me-2"></i>
                   <span>Data migration assistance</span>
                 </li>
               </ul>
@@ -565,13 +565,13 @@ const Family = () => {
                         placeholder="Tell us about your practice needs"
                       />
                     </Form.Group>
-                    <Button type="submit" variant="primary" size="lg" className="w-100">
+                    <Button type="submit" variant="custom" size="lg" className="w-100">
                       Start Free Trial
                     </Button>
                     <p className="text-muted small mt-3 text-center">
                       By submitting this form, you agree to our{' '}
-                      <a href="#" className="text-primary">Terms of Service</a> and{' '}
-                      <a href="#" className="text-primary">Privacy Policy</a>
+                      <a href="#" className="text-custom">Terms of Service</a> and{' '}
+                      <a href="#" className="text-custom">Privacy Policy</a>
                     </p>
                   </Form>
                 </Card.Body>

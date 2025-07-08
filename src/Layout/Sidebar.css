@@ -5,7 +5,9 @@
   transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 1000;
   position: fixed;
-  background: linear-gradient(180deg, #0d1b3a 60%, #172554 100%);
+  /* Sidebar background */
+background: linear-gradient(180deg, #1a2640 60%, #24355e 100%);
+
   box-shadow: 0 8px 32px 0 #0002;
   top: 92px;
   left: 0;
@@ -107,7 +109,7 @@
 /* Active & Hover State */
 .menu-item.active .menu-link,
 .menu-link:hover {
-  background: linear-gradient(90deg, #233876 60%, #3b82f6 100%);
+  background:#f75c3c;
   color: #fff;
   box-shadow: 0 2px 12px 0 #3b82f633;
 }
@@ -116,20 +118,29 @@
   font-weight: 600;
 }
 
-.menu-item.active::before,
-.menu-link:hover::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 8px;
-  bottom: 8px;
-  width: 5px;
-  border-radius: 6px;
-  background: linear-gradient(180deg, #3b82f6 0%, #8fd3ff 100%);
-  z-index: 2;
-  transition: opacity 0.2s;
-  opacity: 1;
+.menu-item.active .menu-link {
+  position: relative;
+ background:#f75c3c;
+  background-size: 400% 100%;
+  animation: wave-shine 4s ease-in-out infinite;
+  color: #fff;
+  font-weight: 600;
+  box-shadow: 0 2px 12px #3b82f633;
 }
+
+@keyframes wave-shine {
+  0% {
+    background-position: 200% 0;
+  }
+  50% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+
 
 .menu-item:not(.active) .menu-link::before {
   display: none;

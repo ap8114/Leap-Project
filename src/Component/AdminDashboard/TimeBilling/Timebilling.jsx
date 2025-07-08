@@ -184,9 +184,9 @@ const Timebilling = () => {
     </Col>
     <Col xs={12} md="auto" className="mt-3 mt-md-0 text-md-end">
       <Button
-        variant="primary"
+        variant="custom"
         onClick={() => setShowNewEntryModal(true)}
-        className="d-flex align-items-center w-100 w-md-auto justify-content-center"
+        className="d-flex align-items-center w-100 w-md-auto justify-content-center btn-custom"
       >
         <Plus className="me-2" size={18} />
         New Time Entry
@@ -280,7 +280,7 @@ const Timebilling = () => {
                     </Badge>
                   </td>
                   <td className="align-middle pe-4 text-end">
-                    <button className="btn btn-link text-primary me-2">
+                    <button className="btn btn-link text-custom me-2">
                       <i className="fas fa-edit"></i>
                     </button>
                     <button className="btn btn-link text-danger">
@@ -297,7 +297,7 @@ const Timebilling = () => {
         <div className="text-muted small mb-2 mb-md-0">
           Showing <span className="fw-medium">1</span> to <span className="fw-medium">5</span> of <span className="fw-medium">24</span> entries
         </div>
-        <Pagination className="mb-0">
+        <Pagination className="mb-0 pagination-custom">
           <Pagination.Prev disabled>Previous</Pagination.Prev>
           <Pagination.Item active>1</Pagination.Item>
           <Pagination.Item>2</Pagination.Item>
@@ -395,7 +395,7 @@ const Timebilling = () => {
           <Button variant="light" onClick={() => setShowNewEntryModal(false)}>
             Cancel
           </Button>
-          <Button variant="primary" type="submit">
+          <Button variant="custom" type="submit" className='btn-custom'>
             Save Time Entry
           </Button>
         </Modal.Footer>
