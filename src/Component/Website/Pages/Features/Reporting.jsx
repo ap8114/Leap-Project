@@ -36,7 +36,6 @@ const Reporting = () => {
 
       <div className="w-100 mt-4">
 
-
         {/* Hero Section */}
         <div className="bg-dark text-white">
           <div className="container px-4 py-5">
