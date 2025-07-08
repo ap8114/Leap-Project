@@ -27,6 +27,10 @@ import Reporting from "./Component/Website/Pages/Features/Reporting";
 import ClientService from "./Component/Website/Pages/Features/ClientService";
 import Conveyancing from "./Component/Website/Pages/Solutions/Conveyancing";
 import EstateProbate from "./Component/Website/Pages/Solutions/EstateProbate";
+import Family from "./Component/Website/Pages/Solutions/Family.JSX";
+import Employment from "./Component/Website/Pages/Solutions/Employment";
+import PersonalInjury from "./Component/Website/Pages/Solutions/PersonalInjury";
+
 
 function App() {
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
@@ -53,7 +57,10 @@ function App() {
     "/reporting",
     "/clientservice",
     "/conveyancing",
-    "/estateprobate"
+    "/estateprobate",
+    "/family",
+    "/employment",
+    "/personalinjury",
   ];
   const isNoLayoutPage = noLayoutRoutes.includes(location.pathname);
   // Hide layout (navbar/sidebar) only on login page
@@ -69,8 +76,11 @@ function App() {
     location.pathname === "/reporting" ||
     location.pathname === "/clientservice" ||
       location.pathname === "/conveyancing" ||
-location.pathname === "/estateprobate";
-
+location.pathname === "/estateprobate" ||
+    location.pathname === "/family" ||
+    location.pathname === "/employment" ||
+     location.pathname === "/personalinjury";
+   
   // ...existing code...
   return (
     <>
@@ -102,12 +112,14 @@ location.pathname === "/estateprobate";
               />
               <Route
                 path="/timerecordingbilling"
-                element={<TimeRecordingBilling />}
-              />
+                element={<TimeRecordingBilling />}/>
               <Route path="/reporting" element={<Reporting />} />
               <Route path="/clientservice" element={<ClientService />} />
               <Route path="/conveyancing" element={<Conveyancing/>} />
               <Route path="/estateprobate" element={<EstateProbate/>} />
+                <Route path="/family" element={< Family/>} />
+                   <Route path="/employment" element={< Employment/>} />
+                       <Route path="/personalinjury" element={< PersonalInjury/>} />
 
               {/* Website Routes Ends */}
 
