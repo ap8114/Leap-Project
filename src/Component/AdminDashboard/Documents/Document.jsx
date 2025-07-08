@@ -132,9 +132,12 @@ const Document = () => {
   return (
     <div className="p-3">
 
-      <div className="">
+      <div className=" container-fluid p-4">
         <div className="">
           <h1 className="display-6 fw-bold">Documents</h1>
+            <p className="text-muted">
+    Upload, manage, and organize legal documents, templates, and signed files in one place.
+  </p>
         </div>
         {/* Search and Filters */}
         <div className="row g-2 align-items-center">
@@ -298,7 +301,7 @@ const Document = () => {
       </div>
 
       {/* Brief Generator Modal */}
-      <Modal show={showBriefTab} onHide={() => setShowBriefTab(false)} centered>
+      <Modal show={showBriefTab} onHide={() => setShowBriefTab(false)} centered   dialogClassName="modal-dialog-margin" className='mt-5 py-3'>
         <Modal.Header closeButton>
           <Modal.Title>Generate Brief</Modal.Title>
         </Modal.Header>
@@ -370,22 +373,47 @@ const Document = () => {
       </Modal>
 
       {/* Template Modal */}
-      <Modal show={showTemplateModal} onHide={() => setShowTemplateModal(false)} size="lg" centered>
-        <Modal.Header closeButton>
-          <Modal.Title>Choose a Template</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <InputGroup className="mb-4">
-            <InputGroup.Text>
+{showTemplateModal && (
+  <div
+    className="modal d-block fade show mt-5"
+    tabIndex="-1"
+    style={{
+      backgroundColor: "rgba(0, 0, 0, 0.5)",
+      position: "fixed",
+      top: 0,
+      left: 0,
+      width: "100%",
+      height: "100%",
+      overflowY: "auto",
+      zIndex: 1050,
+    }}
+  >
+    <div className="modal-dialog modal-lg modal-dialog-centered">
+      <div className="modal-content">
+        <div className="modal-header">
+          <h5 className="modal-title">Choose a Template</h5>
+          <button
+            type="button"
+            className="btn-close"
+            aria-label="Close"
+            onClick={() => setShowTemplateModal(false)}
+          ></button>
+        </div>
+        <div className="modal-body">
+          <div className="input-group mb-4">
+            <span className="input-group-text">
               <FaSearch />
-            </InputGroup.Text>
-            <FormControl
+            </span>
+            <input
+              type="text"
+              className="form-control"
               placeholder="Search templates..."
               value={templateSearch}
               onChange={(e) => setTemplateSearch(e.target.value)}
             />
-          </InputGroup>
-          <Row className="g-4">
+          </div>
+
+          <div className="row g-4">
             {templates
               .filter(template =>
                 template.name.toLowerCase().includes(templateSearch.toLowerCase()) ||
@@ -393,31 +421,35 @@ const Document = () => {
                 template.description?.toLowerCase().includes(templateSearch.toLowerCase())
               )
               .map(template => (
-                <Col md={4} key={template.id}>
-                  <Card>
-                    <Card.Img variant="top" src={template.imageUrl} alt={template.name} style={{ height: '150px', objectFit: 'cover' }} />
-                    <Card.Body>
-                      <Card.Title className="h6">{template.name}</Card.Title>
-                      <Card.Subtitle className="mb-2 text-muted small">{template.category}</Card.Subtitle>
-                      <Card.Text className="small text-muted">{template.description}</Card.Text>
-                      <Button
-                        variant="primary"
-                        size="sm"
-                        className="w-100"
-                        onClick={() => {
-                          // Handle template selection
-                          setShowTemplateModal(false);
-                        }}
+                <div className="col-md-4" key={template.id}>
+                  <div className="card">
+                    <img
+                      src={template.imageUrl}
+                      alt={template.name}
+                      className="card-img-top"
+                      style={{ height: '150px', objectFit: 'cover' }}
+                    />
+                    <div className="card-body">
+                      <h6 className="card-title">{template.name}</h6>
+                      <h6 className="card-subtitle mb-2 text-muted small">{template.category}</h6>
+                      <p className="card-text small text-muted">{template.description}</p>
+                      <button
+                        className="btn btn-primary btn-sm w-100"
+                        onClick={() => setShowTemplateModal(false)}
                       >
                         Use Template
-                      </Button>
-                    </Card.Body>
-                  </Card>
-                </Col>
+                      </button>
+                    </div>
+                  </div>
+                </div>
               ))}
-          </Row>
-        </Modal.Body>
-      </Modal>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+)}
+
     </div>
   );
 };

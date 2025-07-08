@@ -9,6 +9,7 @@
   box-shadow: 0 8px 32px 0 #0002;
   top: 92px;
   left: 0;
+ 
   display: flex;
   flex-direction: column;
 }
@@ -43,7 +44,7 @@
 
 @media (max-width: 768px) {
   .sidebar-container {
-    width: 200px;
+    width: 250px;
     top: 92px;
     border-radius: 0 14px 14px 0;
   }
@@ -56,7 +57,7 @@
 /* Menu */
 .menu {
   list-style-type: none;
-  padding: 0;
+  padding: 10px;
   margin: 0;
   flex: 1;
   display: flex;

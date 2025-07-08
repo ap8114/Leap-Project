@@ -89,11 +89,12 @@ const ReportsAnalytics= () => {
   }, [billingView, dateRange, taskTimeframe]);
 
   return (
-    <div className="min-vh-100 bg-light py-4 px-3">
-      <div className="container-fluid">
+    <div className="min-vh-100 bg-light p-4">
+      <div className="container-fluid p-4">
         <div className="mb-4">
-          <h1 className="display-6 fw-bold text-dark">Reports & Analytics</h1>
-          <p className="lead text-muted">
+          <h1 className="display-6 fw-bold mb-2 ">Reports & Analytics</h1>
+         
+          <p className="text-muted">
             Monitor your firm's performance with comprehensive analytics and reports
           </p>
         </div>
@@ -203,89 +204,98 @@ const ReportsAnalytics= () => {
           </div>
 
           {/* Task Completion Rate */}
-          <div className="col-md-6">
-            <div className="card shadow-sm h-100">
-              <div className="card-body">
-                <div className="d-flex justify-content-between align-items-center mb-3">
-                  <div>
-                    <h2 className="h4 fw-bold text-dark">Task Completion Rate</h2>
-                    <p className="text-muted mb-0">Performance metrics for task completion</p>
-                  </div>
-                  <span className="text-warning">
-                    <i className="fas fa-tasks fs-4"></i>
-                  </span>
-                </div>
+       <div className="col-12 col-md-6">
+  <div className="card shadow-sm h-100">
+    <div className="card-body">
+      {/* Header */}
+      <div className="d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center mb-3">
+        <div>
+          <h2 className="h5 fw-bold text-dark">Task Completion Rate</h2>
+          <p className="text-muted mb-0">Performance metrics for task completion</p>
+        </div>
+        <span className="text-warning mt-2 mt-sm-0">
+          <i className="fas fa-tasks fs-4"></i>
+        </span>
+      </div>
 
-                <div className="d-flex align-items-center justify-content-between mb-4">
-                  <div className="d-flex align-items-center">
-                    <div className="position-relative" style={{width: '130px', height: '130px'}}>
-                      <svg className="w-100 h-100" viewBox="0 0 36 36">
-                        <path
-                          d="M18 2.0845
-                            a 15.9155 15.9155 0 0 1 0 31.831
-                            a 15.9155 15.9155 0 0 1 0 -31.831"
-                          fill="none"
-                          stroke="#E5E7EB"
-                          strokeWidth="3"
-                        />
-                        <path
-                          d="M18 2.0845
-                            a 15.9155 15.9155 0 0 1 0 31.831
-                            a 15.9155 15.9155 0 0 1 0 -31.831"
-                          fill="none"
-                          stroke="#F59E0B"
-                          strokeWidth="3"
-                          strokeDasharray="85, 100"
-                        />
-                        <text x="18" y="20.5" textAnchor="middle" fontSize="10" fill="#374151" fontWeight="bold">85%</text>
-                      </svg>
-                    </div>
-                    <div className="ms-3">
-                      <div className="d-flex align-items-center mb-2">
-                        <div className="rounded-circle bg-success me-2" style={{width: '12px', height: '12px'}}></div>
-                        <span className="small text-dark">Completed: 127</span>
-                      </div>
-                      <div className="d-flex align-items-center mb-2">
-                        <div className="rounded-circle bg-warning me-2" style={{width: '12px', height: '12px'}}></div>
-                        <span className="small text-dark">In Progress: 18</span>
-                      </div>
-                      <div className="d-flex align-items-center">
-                        <div className="rounded-circle bg-danger me-2" style={{width: '12px', height: '12px'}}></div>
-                        <span className="small text-dark">Overdue: 5</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div>
-                    <div className="btn-group" role="group">
-                      <button
-                        type="button"
-                        onClick={() => setTaskTimeframe('weekly')}
-                        className={`btn btn-sm ${taskTimeframe === 'weekly' ? 'btn-warning' : 'btn-outline-secondary'}`}
-                      >
-                        Weekly
-                      </button>
-                      <button
-                        type="button"
-                        onClick={() => setTaskTimeframe('monthly')}
-                        className={`btn btn-sm ${taskTimeframe === 'monthly' ? 'btn-warning' : 'btn-outline-secondary'}`}
-                      >
-                        Monthly
-                      </button>
-                    </div>
-                  </div>
-                </div>
+      {/* Chart and Stats */}
+      <div className="d-flex flex-column flex-lg-row align-items-start justify-content-between mb-4 gap-3">
+        {/* Progress Circle and Stats */}
+        <div className="d-flex">
+          <div className="position-relative" style={{ width: '130px', height: '130px' }}>
+            <svg className="w-100 h-100" viewBox="0 0 36 36">
+              <path
+                d="M18 2.0845
+                  a 15.9155 15.9155 0 0 1 0 31.831
+                  a 15.9155 15.9155 0 0 1 0 -31.831"
+                fill="none"
+                stroke="#E5E7EB"
+                strokeWidth="3"
+              />
+              <path
+                d="M18 2.0845
+                  a 15.9155 15.9155 0 0 1 0 31.831
+                  a 15.9155 15.9155 0 0 1 0 -31.831"
+                fill="none"
+                stroke="#F59E0B"
+                strokeWidth="3"
+                strokeDasharray="85, 100"
+              />
+              <text x="18" y="20.5" textAnchor="middle" fontSize="10" fill="#374151" fontWeight="bold">85%</text>
+            </svg>
+          </div>
 
-                <div className="h-64" id="task-completion-chart"></div>
-
-                <div className="mt-3 d-flex justify-content-between align-items-center small">
-                  <div className="text-muted">Last updated: July 8, 2025</div>
-                  <button className="btn btn-link text-primary fw-medium p-0 border-0">
-                    View Full Report <i className="fas fa-arrow-right ms-2"></i>
-                  </button>
-                </div>
-              </div>
+          <div className="ms-3">
+            <div className="d-flex align-items-center mb-2">
+              <div className="rounded-circle bg-success me-2" style={{ width: '12px', height: '12px' }}></div>
+              <span className="small text-dark">Completed: 127</span>
+            </div>
+            <div className="d-flex align-items-center mb-2">
+              <div className="rounded-circle bg-warning me-2" style={{ width: '12px', height: '12px' }}></div>
+              <span className="small text-dark">In Progress: 18</span>
+            </div>
+            <div className="d-flex align-items-center">
+              <div className="rounded-circle bg-danger me-2" style={{ width: '12px', height: '12px' }}></div>
+              <span className="small text-dark">Overdue: 5</span>
             </div>
           </div>
+        </div>
+
+        {/* Button Group */}
+        <div className="d-flex justify-content-start justify-content-lg-end mt-3 mt-lg-0">
+          <div className="btn-group" role="group">
+            <button
+              type="button"
+              onClick={() => setTaskTimeframe('weekly')}
+              className={`btn btn-sm ${taskTimeframe === 'weekly' ? 'btn-warning' : 'btn-outline-secondary'}`}
+            >
+              Weekly
+            </button>
+            <button
+              type="button"
+              onClick={() => setTaskTimeframe('monthly')}
+              className={`btn btn-sm ${taskTimeframe === 'monthly' ? 'btn-warning' : 'btn-outline-secondary'}`}
+            >
+              Monthly
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Chart Area (keep chart responsive using % or media query if applicable) */}
+      <div className="w-100" id="task-completion-chart" style={{ minHeight: "180px" }}></div>
+
+      {/* Footer */}
+      <div className="mt-3 d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center small">
+        <div className="text-muted mb-2 mb-sm-0">Last updated: July 8, 2025</div>
+        <button className="btn btn-link text-primary fw-medium p-0 border-0">
+          View Full Report <i className="fas fa-arrow-right ms-2"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
 
           {/* Time Logged by User */}
           <div className="col-md-6">
