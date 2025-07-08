@@ -9,19 +9,20 @@ import ForgotPassword from "./Auth/ForgotPassword";
 import { useState } from "react";
 import Dashboard from "./Component/AdminDashboard/Dashboard/Dashboard";
 import Matter from "./Component/AdminDashboard/Matters/Matter";
-import Home from "./Component/Website/HomePages/Home";
 
 import Document from "./Component/AdminDashboard/Documents/Document";
 import Calendar from "./Component/AdminDashboard/Calendar/Calendar";
 import Timebilling from "./Component/AdminDashboard/TimeBilling/Timebilling";
 
-import ClientAndMatterManagement from "./Component/Website/Pages/ClientAndMatterManagement";
-import DocumentAutomation from "./Component/Website/Pages/DocumentAutomation";
 import Client from "./Component/AdminDashboard/Clientcrm/Client";
 import TasksWorkflow from "./Component/AdminDashboard/TasksWorkflow/TasksWorkflow";
 import Settings from "./Component/AdminDashboard/Setting/Settings";
 import ReportsAnalytics from "./Component/AdminDashboard/ReportsAnalytics/ReportsAnalytics";
 import AdminPage from "./Component/AdminDashboard/Admin/AdminPage";
+import TimeRecordingBilling from "./Component/Website/Pages/Features/TimeRecordingBilling";
+import ClientAndMatterManagement from "./Component/Website/Pages/Features/ClientAndMatterManagement";
+import DocumentAutomation from "./Component/Website/Pages/Features/DocumentAutomation";
+import Home from "./Component/Website/HomePages/Home";
 
 
 function App() {
@@ -45,6 +46,7 @@ function App() {
     "/login",
     "/client-and-matter-management",
     "/document-automation",
+    "/timerecordingbilling"
   ];
   const isNoLayoutPage = noLayoutRoutes.includes(location.pathname);
   // Hide layout (navbar/sidebar) only on login page
@@ -55,7 +57,9 @@ function App() {
     location.pathname === "/forgotpassword" ||
     location.pathname === "/signup" ||
     location.pathname === "/client-and-matter-management" ||
-    location.pathname === "/document-automation";
+    location.pathname === "/document-automation" ||
+     location.pathname === "/timerecordingbilling"
+
   // ...existing code...
   return (
     <>
@@ -77,14 +81,10 @@ function App() {
             <Routes>
               {/* Website Routes Starts */}
               <Route path="/" element={<Home />} />
-              <Route
-                path="/client-and-matter-management"
-                element={<ClientAndMatterManagement />}
-              />
-              <Route
-                path="/document-automation"
-                element={<DocumentAutomation />}
-              />
+              <Route path="/client-and-matter-management" element={<ClientAndMatterManagement />} />
+              <Route path="/document-automation" element={<DocumentAutomation />} />
+              <Route path="/timerecordingbilling" element={<TimeRecordingBilling />} />
+
               {/* Website Routes Ends */}
 
               <Route path="/login" element={<Login />} />
@@ -93,9 +93,8 @@ function App() {
             </Routes>
           ) : (
             <div
-              className={`right-side-content${
-                isSidebarCollapsed ? " collapsed" : ""
-              }`}
+              className={`right-side-content${isSidebarCollapsed ? " collapsed" : ""
+                }`}
             >
               <Routes>
                 {/* AdminDashboard */}
@@ -107,9 +106,9 @@ function App() {
                 <Route path="/timebilling" element={<Timebilling />} />
                 <Route path="/tasksworkflow" element={<TasksWorkflow />} />
                 <Route path="/setting" element={<Settings />} />
-           
-                   <Route path="/reportsanalytics" element={<ReportsAnalytics/>} />
-                     <Route path="/adminpage" element={<AdminPage/>} />
+
+                <Route path="/reportsanalytics" element={<ReportsAnalytics />} />
+                <Route path="/adminpage" element={<AdminPage />} />
 
               </Routes>
             </div>

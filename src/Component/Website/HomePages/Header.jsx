@@ -77,18 +77,22 @@ const Header = () => {
                                             </div>
                                         </Link>
 
+                                       <Link to="/timerecordingbilling" className="text-decoration-none text-dark">
                                         <div className="mb-2">
                                             <div className="fw-semibold">Time recording and billing</div>
                                             <div className="small text-muted">
                                                 Revolutionary AI time-tracking tools, capture every billable minute for your firm
                                             </div>
                                         </div>
+                                        </Link>
+
                                         <div className="mb-2">
                                             <div className="fw-semibold">Reporting</div>
                                             <div className="small text-muted">
                                                 Gain quick insights into your data to make intelligent decisions across your firm
                                             </div>
                                         </div>
+
                                         <div>
                                             <div className="fw-semibold">Client service</div>
                                             <div className="small text-muted">
@@ -97,7 +101,7 @@ const Header = () => {
                                         </div>
                                     </div>
                                     {/* Column 2: More Features */}
-                                    <div className="col-4 border-start">
+                                    {/* <div className="col-4 border-start">
                                         <div className="pt-4">
                                             <div className="mb-3">
                                                 <div className="fw-semibold">Security and compliance</div>
@@ -130,7 +134,7 @@ const Header = () => {
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> */}
                                     {/* Column 3: Images and Info */}
                                     <div className="col-4 border-start">
                                         <div className="mb-4 d-flex align-items-start">
