@@ -117,12 +117,14 @@ const Header = () => {
                     </div>
                     </Link>
 
+                    <Link to="/clientservice" className="text-decoration-none text-dark">
                     <div>
                       <div className="fw-semibold">Client service</div>
                       <div className="small text-muted">
                         Connect, communicate and collaborate with clients online
                       </div>
                     </div>
+                    </Link>
                   </div>
                  
                   <div className="col-4 border-start">
@@ -459,7 +461,7 @@ const Header = () => {
                     <Link to="/reporting" className="dropdown-item">
                       Reporting
                     </Link>
-                    <div className="dropdown-item">Client service</div>
+                    <Link to="/clientservice" className="dropdown-item">Client service</Link>
                     <div className="dropdown-item">Security and compliance</div>
                     <div className="dropdown-item">Legal accounting</div>
                     <div className="dropdown-item">NEW: Matter AI</div>

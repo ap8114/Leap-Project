@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Header from '../../HomePages/Header';
 import FooterSection from '../../HomePages/FooterSection';
 
-const Reporting = () => {
+const ClientService = () => {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
@@ -30,14 +30,12 @@ const Reporting = () => {
   ];
 
   return (
-
     <div className='w-100'>
       <Header />
 
-      <div className="w-100 mt-4">
-
+      <div className="w-100 mt-3">
         {/* Hero Section */}
-        <div className="bg-dark text-white">
+        <div className="bg-primary text-white">
           <div className="container px-4 py-5">
             <div className="row align-items-center g-5 py-5">
               <div className="col-lg-6">
@@ -125,7 +123,7 @@ const Reporting = () => {
               </p>
             </div>
             <div className="col-lg-4 text-center">
-              <div className="rounded-circle bg-primary d-flex align-items-center justify-content-center mx-auto" style={{ width: '200px', height: '200px' }}>
+              <div className="rounded-circle bg-info d-flex align-items-center justify-content-center mx-auto" style={{ width: '200px', height: '200px' }}>
                 <div className="text-white text-center">
                   <div className="fw-bold fs-5">AICPA</div>
                   <div className="fw-bold display-6 mb-1">SOC</div>
@@ -283,4 +281,4 @@ const Reporting = () => {
   );
 };
 
-export default Reporting;
+export default ClientService;
