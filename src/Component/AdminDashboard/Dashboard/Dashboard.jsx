@@ -288,7 +288,7 @@ const Dashboard = () => {
               <div className="col-12 col-md-6">
                 <div className="row g-3 h-100">
                   <div className="col-6 col-lg-4">
-                    <div className="p-3 bg-custom bg-opacity-10 rounded h-100 d-flex flex-column">
+                    <div className="p-3 bg-primary bg-opacity-10 rounded h-100 d-flex flex-column">
                       <div className="text-custom small mb-1 fw-semibold">Active Cases</div>
                       <div className="h4 fw-bold mb-auto">248</div>
                       <div className="text-custom small mt-1 d-flex align-items-center">
