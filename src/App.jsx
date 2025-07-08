@@ -21,6 +21,7 @@ import Timebilling from "./Component/AdminDashboard/TimeBilling/Timebilling";
 
 import ClientAndMatterManagement from "./Component/Website/Pages/ClientAndMatterManagement";
 import DocumentAutomation from "./Component/Website/Pages/DocumentAutomation";
+import TasksWorkflow from "./Component/AdminDashboard/TasksWorkflow/TasksWorkflow";
 
 
 function App() {
@@ -80,7 +81,8 @@ function App() {
                  <Route path="/client" element={<ClientsCRM/>} />
                  <Route path="/calendar" element={<Calendar/>} />
                  <Route path="/timebilling" element={<Timebilling/>} />
-             
+                  <Route path="/tasksworkflow" element={<TasksWorkflow/>} />
+
               </Routes>
             </div>
           )}
