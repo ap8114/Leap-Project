@@ -177,7 +177,6 @@ const Header = () => {
 
                                     {/* Areas of Law */}
                                     <div className="col-5">
-                                        <h6 className="dropdown-header text-primary">AREAS OF LAW</h6>
                                         <div className="row">
                                             <div className="col-12"> {/* Changed to single column for better mobile display */}
                                                 <Link to="/" className="dropdown-item">Conveyancing</Link>
