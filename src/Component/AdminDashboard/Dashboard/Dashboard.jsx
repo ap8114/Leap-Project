@@ -242,7 +242,7 @@ const Dashboard = () => {
               <ul className="dropdown-menu" aria-labelledby="exportDropdown">
                 <li><button className="dropdown-item"><i className="fas fa-file-pdf text-danger me-2"></i>Export as PDF</button></li>
                 <li><button className="dropdown-item"><i className="fas fa-file-excel text-success me-2"></i>Export as Excel</button></li>
-                <li><button className="dropdown-item"><i className="fas fa-file-csv text-primary me-2"></i>Export as CSV</button></li>
+                <li><button className="dropdown-item"><i className="fas fa-file-csv text-custom me-2"></i>Export as CSV</button></li>
               </ul>
             </div>
             <button className="btn btn-sm btn-outline-secondary">
@@ -288,10 +288,10 @@ const Dashboard = () => {
               <div className="col-12 col-md-6">
                 <div className="row g-3 h-100">
                   <div className="col-6 col-lg-4">
-                    <div className="p-3 bg-primary bg-opacity-10 rounded h-100 d-flex flex-column">
-                      <div className="text-primary small mb-1 fw-semibold">Active Cases</div>
+                    <div className="p-3 bg-custom bg-opacity-10 rounded h-100 d-flex flex-column">
+                      <div className="text-custom small mb-1 fw-semibold">Active Cases</div>
                       <div className="h4 fw-bold mb-auto">248</div>
-                      <div className="text-primary small mt-1 d-flex align-items-center">
+                      <div className="text-custom small mt-1 d-flex align-items-center">
                         <i className="fas fa-arrow-up me-1"></i> 12 new this month
                       </div>
                     </div>
@@ -357,7 +357,7 @@ const Dashboard = () => {
           </div>
           <div className="card-body d-flex flex-column">
             <div className="d-flex flex-wrap mb-3">
-              <button className="btn btn-sm btn-primary me-2 mb-2">Last 6 Months</button>
+              <button className="btn btn-sm btn-custom me-2 mb-2">Last 6 Months</button>
               <button className="btn btn-sm btn-outline-secondary me-2 mb-2">Last Year</button>
               <button className="btn btn-sm btn-outline-secondary me-2 mb-2">All Time</button>
             </div>
@@ -375,10 +375,10 @@ const Dashboard = () => {
                 </div>
               </div>
               <div className="col-6 col-md-3">
-                <div className="p-3 bg-primary bg-opacity-10 rounded h-100">
-                  <div className="text-primary small mb-1">Time Logged</div>
+                <div className="p-3 bg-custom bg-opacity-10 rounded h-100">
+                  <div className="text-custom small mb-1">Time Logged</div>
                   <div className="h4">182.5h</div>
-                  <div className="text-primary small mt-1">
+                  <div className="text-custom small mt-1">
                     <i className="fas fa-clock me-1"></i>This month
                   </div>
                 </div>
@@ -453,7 +453,7 @@ const Dashboard = () => {
                       <span className="small">78%</span>
                     </div>
                     <div className="progress" style={{ height: '8px' }}>
-                      <div className="progress-bar bg-primary" style={{ width: '78%' }}></div>
+                      <div className="progress-bar bg-custom" style={{ width: '78%' }}></div>
                     </div>
                   </div>
                 </div>
@@ -491,8 +491,8 @@ const Dashboard = () => {
                     3 accounts below minimum
                   </div>
                 </div>
-                <div className="p-3 bg-primary bg-opacity-10 rounded flex-grow-1">
-                  <div className="text-primary small mb-1">Pending Transactions</div>
+                <div className="p-3 bg-custom bg-opacity-10 rounded flex-grow-1">
+                  <div className="text-custom small mb-1">Pending Transactions</div>
                   <div className="h3">$23,450</div>
                 </div>
               </div>

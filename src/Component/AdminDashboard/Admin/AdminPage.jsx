@@ -108,7 +108,7 @@ const AdminPage= () => {
               <button
                 id="addUserBtn"
                 onClick={() => setShowModal(true)}
-                className="btn btn-primary"
+                className="btn btn-custom"
               >
                 <i className="fas fa-plus me-2"></i>
                 Add New User
@@ -207,7 +207,7 @@ const AdminPage= () => {
                       <button
                         id="saveUserBtn"
                         onClick={handleEditUser}
-                        className="btn btn-primary"
+                        className="btn btn-custom"
                       >
                         Save Changes
                       </button>
@@ -299,7 +299,7 @@ const AdminPage= () => {
                       <button
                         id="createUserBtn"
                         onClick={handleCreateUser}
-                        className="btn btn-primary"
+                        className="btn btn-custom"
                       >
                         Create User
                       </button>
@@ -348,7 +348,7 @@ const AdminPage= () => {
                             setEditingUser(user);
                             setShowEditModal(true);
                           }}
-                          className="btn btn-link text-primary me-2"
+                          className="btn btn-link text-custom me-2"
                         >
                          <i className="fas fa-edit"></i>
                         </button>
@@ -450,7 +450,7 @@ const AdminPage= () => {
             </div>
             
             <div className="d-flex justify-content-end mt-4">
-              <button className="btn btn-primary">
+              <button className="btn btn-custom">
                 Save Changes
               </button>
             </div>

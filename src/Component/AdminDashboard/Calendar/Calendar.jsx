@@ -145,7 +145,7 @@ const Calendar = () => {
   const getReminderIcon = (type) => {
     switch(type) {
       case 'meeting':
-        return <i className="bi bi-people-fill text-primary me-2"></i>;
+        return <i className="bi bi-people-fill text-custom me-2"></i>;
       case 'deadline':
         return <i className="bi bi-clock-fill text-warning me-2"></i>;
       case 'hearing':
@@ -158,7 +158,7 @@ const Calendar = () => {
   const getAppointmentColor = (type) => {
     switch(type) {
       case 'meeting':
-        return 'primary';
+        return 'custom';
       case 'deadline':
         return 'warning';
       case 'hearing':
@@ -254,7 +254,7 @@ const Calendar = () => {
             {weekDates.map((date, index) => (
               <div key={index} className={`col text-center p-2 ${date.getDate() === new Date().getDate() && date.getMonth() === new Date().getMonth() ? 'bg-light' : ''}`}>
                 <div className="small text-muted">{['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'][date.getDay()]}</div>
-                <div className={`fw-medium ${date.getDate() === new Date().getDate() && date.getMonth() === new Date().getMonth() ? 'text-primary' : ''}`}>
+                <div className={`fw-medium ${date.getDate() === new Date().getDate() && date.getMonth() === new Date().getMonth() ? 'text-custom' : ''}`}>
                   {date.getDate()}
                 </div>
               </div>
@@ -362,7 +362,7 @@ const Calendar = () => {
                     setSelectedView('day');
                   }}
                 >
-                  <div className={`d-flex justify-content-end ${isToday ? 'text-primary fw-bold' : ''}`}>
+                  <div className={`d-flex justify-content-end ${isToday ? 'text-custom fw-bold' : ''}`}>
                     {day.getDate()}
                   </div>
                   <div className="mt-1">
@@ -407,9 +407,9 @@ const Calendar = () => {
   </p>
           </div>
           <Button 
-            variant="primary" 
+            variant="custom" 
             onClick={() => setIsModalOpen(true)}
-            className="d-flex align-items-center"
+            className="d-flex align-items-center btn-custom"
           >
             <i className="bi bi-plus-lg me-2"></i>
             New Appointment
@@ -435,21 +435,21 @@ const Calendar = () => {
                     
                     <div className="btn-group" role="group">
                       <Button
-                        variant={selectedView === 'day' ? 'primary' : 'outline-secondary'}
+                        variant={selectedView === 'day' ? 'custom' : 'outline-secondary'}
                         onClick={() => setSelectedView('day')}
                         size="sm"
                       >
                         Day
                       </Button>
                       <Button
-                        variant={selectedView === 'week' ? 'primary' : 'outline-secondary'}
+                        variant={selectedView === 'week' ? 'custom' : 'outline-secondary'}
                         onClick={() => setSelectedView('week')}
                         size="sm"
                       >
                         Week
                       </Button>
                       <Button
-                        variant={selectedView === 'month' ? 'primary' : 'outline-secondary'}
+                        variant={selectedView === 'month' ? 'custom' : 'outline-secondary'}
                         onClick={() => setSelectedView('month')}
                         size="sm"
                       >
@@ -523,7 +523,7 @@ const Calendar = () => {
               <div className="card-body">
                 <div className="d-flex justify-content-between align-items-center mb-3">
                   <h5 className="card-title mb-0">Upcoming Reminders</h5>
-                  <span className="badge bg-primary rounded-pill">{upcomingReminders.length}</span>
+                  <span className="badge bg-custom rounded-pill">{upcomingReminders.length}</span>
                 </div>
                 <div className="list-group gap-2">
                   {upcomingReminders.map((reminder) => (
@@ -647,7 +647,7 @@ const Calendar = () => {
           <Button variant="outline-secondary" onClick={() => setIsModalOpen(false)}>
             Cancel
           </Button>
-          <Button variant="primary" onClick={handleCreateAppointment}>
+          <Button variant="custom" className="btn-custom" onClick={handleCreateAppointment}>
             Save Appointment
           </Button>
         </Modal.Footer>

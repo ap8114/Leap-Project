@@ -130,7 +130,7 @@ const Matter = () => {
       case 'Closed':
         return 'bg-secondary';
       default:
-        return 'bg-primary';
+        return 'bg-custom';
     }
   };
 
@@ -288,7 +288,7 @@ const Matter = () => {
       {!(searchTerm || statusFilter !== "All" || typeFilter !== "All" || assigneeFilter !== "All") && (
         <button
           onClick={() => setIsModalOpen(true)}
-          className="btn btn-primary d-flex align-items-center"
+          className="btn btn-custom d-flex align-items-center"
         >
           <i className="fas fa-plus me-2"></i>
           Create your first matter
@@ -406,7 +406,7 @@ const Matter = () => {
                   </button>
                   <button
                     type="button"
-                    className="btn btn-primary"
+                    className= " btn btn-custom "
                     onClick={handleCreateMatter}
                   >
                     Create Matter

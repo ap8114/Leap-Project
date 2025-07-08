@@ -82,7 +82,7 @@ const DocumentAutomation = () => {
                                     <div className="mb-6">
                                         <div className="flex items-center justify-between mb-4">
                                             <h3 className="text-lg font-semibold text-gray-800">Template Generator</h3>
-                                            <span className="text-blue-600 font-bold">LEAP UK</span>
+                                            <span className="text-blue-600 font-bold">Clio UK</span>
                                         </div>
                                         <div className="space-y-3">
                                             <div className="bg-gray-50 p-3 rounded-lg">
@@ -123,8 +123,8 @@ const DocumentAutomation = () => {
                             {features.map((feature, index) => (
                                 <div key={index} className="col-12 col-md-6 col-lg-4">
                                     <div className="bg-white p-4 rounded-4 shadow-sm border h-100 d-flex flex-column hover-shadow transition">
-                                        <div className="d-flex align-items-center justify-content-center bg-primary bg-opacity-10 rounded-3 mb-4" style={{ width: '48px', height: '48px' }}>
-                                            <i className={`${feature.icon} text-primary fs-4`}></i>
+                                        <div className="d-flex align-items-center justify-content-center bg-custom bg-opacity-10 rounded-3 mb-4" style={{ width: '48px', height: '48px' }}>
+                                            <i className={`${feature.icon} text-custom fs-4`}></i>
                                         </div>
                                         <h3 className="h5 fw-bold text-dark mb-3">{feature.title}</h3>
                                         <p className="text-muted mb-0">{feature.description}</p>
@@ -142,18 +142,18 @@ const DocumentAutomation = () => {
                         <div className="row align-items-center g-5">
                             {/* Left Content */}
                             <div className="col-lg-6">
-                                <div className="d-inline-block bg-primary bg-opacity-10 text-primary px-3 py-1 rounded-pill fw-semibold small mb-4">
+                                <div className="d-inline-block bg-custom bg-opacity-10 text-custom px-3 py-1 rounded-pill fw-semibold small mb-4">
                                     Matter AI
                                 </div>
                                 <h2 className="display-6 fw-bold text-dark mb-4">
                                     Get instant answers from your matters
                                 </h2>
                                 <p className="fs-5 text-muted mb-4">
-                                    LEAP uses AI to intelligently examine your LEAP matter to provide instant insights and information.
+                                    Clio uses AI to intelligently examine your Clio matter to provide instant insights and information.
                                     It examines your correspondence to identify important data and give a detailed response in seconds,
                                     generating professional-quality documents in a fraction of the time. Ask it anything.
                                 </p>
-                                <button className="btn btn-primary px-4 py-2 fw-semibold">
+                                <button className="btn btn-custom px-4 py-2 fw-semibold">
                                     Find out more about Matter AI
                                 </button>
                             </div>
@@ -245,7 +245,7 @@ const DocumentAutomation = () => {
                                     Work with the tools you use every day
                                 </h2>
                                 <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                                    Seamless integration with Word, Excel, Outlook and Teams maximises productivity and increases your billable time. Easily assign documents and emails to matters, synchronise your LEAP documents across all your connected devices and work collaboratively with your colleagues.
+                                    Seamless integration with Word, Excel, Outlook and Teams maximises productivity and increases your billable time. Easily assign documents and emails to matters, synchronise your Clio documents across all your connected devices and work collaboratively with your colleagues.
                                 </p>
                                 <div className="grid grid-cols-2 gap-4 mb-8">
                                     {integrations.map((integration, index) => (
@@ -392,7 +392,7 @@ const DocumentAutomation = () => {
                                 Ready to transform your legal practice?
                             </h2>
                             <p className="text-xl lg:text-2xl mb-12 text-blue-100 leading-relaxed">
-                                Join thousands of law firms who have already streamlined their operations with LEAP's comprehensive legal practice management solution.
+                                Join thousands of law firms who have already streamlined their operations with Clio's comprehensive legal practice management solution.
                             </p>
                             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
                                 <button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors cursor-pointer whitespace-nowrap">
