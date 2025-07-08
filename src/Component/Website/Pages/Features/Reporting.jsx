@@ -1,281 +1,588 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import * as echarts from 'echarts';
 import Header from '../../HomePages/Header';
 import FooterSection from '../../HomePages/FooterSection';
 
 const Reporting = () => {
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
-  const [email, setEmail] = useState('');
-  const [phone, setPhone] = useState('');
-  const [company, setCompany] = useState('');
-  const [activeAccordion, setActiveAccordion] = useState(null);
+  const [activeTab, setActiveTab] = useState('dashboard');
 
-  const toggleAccordion = (index) => {
-    setActiveAccordion(activeAccordion === index ? null : index);
-  };
+  useEffect(() => {
+    // Initialize charts when component mounts or activeTab changes
+    const initCharts = () => {
+      // Revenue Chart
+      const revenueChart = document.getElementById('revenueChart');
+      if (revenueChart) {
+        const chart = echarts.init(revenueChart);
+        const option = {
+          animation: false,
+          tooltip: {
+            trigger: 'axis',
+            axisPointer: {
+              type: 'shadow'
+            }
+          },
+          legend: {
+            data: ['2024', '2025']
+          },
+          grid: {
+            left: '3%',
+            right: '4%',
+            bottom: '3%',
+            containLabel: true
+          },
+          xAxis: {
+            type: 'category',
+            data: ['Corporate', 'Litigation', 'Real Estate', 'Family', 'IP']
+          },
+          yAxis: {
+            type: 'value'
+          },
+          series: [
+            {
+              name: '2024',
+              type: 'bar',
+              data: [32000, 45000, 28000, 22000, 18000],
+              color: '#2c3e50'
+            },
+            {
+              name: '2025',
+              type: 'bar',
+              data: [38000, 52000, 31000, 25000, 22000],
+              color: '#3b82f6'
+            }
+          ]
+        };
+        chart.setOption(option);
+      }
 
-  const faqItems = [
-    {
-      question: "What is LawConnect?",
-      answer: "LawConnect is a secure client portal that allows legal professionals to share documents, communicate, and collaborate with clients in a secure environment."
-    },
-    {
-      question: "How secure is my data?",
-      answer: "All data is stored on secure servers provided by Amazon Web Services, one of the world's largest and most secure data storage providers. LawConnect is SOC 2 Type 1 compliant, ensuring the highest standards for security and confidentiality."
-    },
-    {
-      question: "How do I share documents with clients?",
-      answer: "You can easily share documents with clients directly from your matter. Simply select the document you wish to share and choose the recipient from your contacts."
-    }
-  ];
+      // Client Chart
+      const clientChart = document.getElementById('clientChart');
+      if (clientChart) {
+        const chart = echarts.init(clientChart);
+        const option = {
+          animation: false,
+          tooltip: {
+            trigger: 'item'
+          },
+          legend: {
+            orient: 'vertical',
+            left: 'left',
+          },
+          series: [
+            {
+              name: 'Client Distribution',
+              type: 'pie',
+              radius: '70%',
+              data: [
+                { value: 35, name: 'Corporate' },
+                { value: 25, name: 'Individual' },
+                { value: 20, name: 'Government' },
+                { value: 15, name: 'Non-profit' },
+                { value: 5, name: 'Other' }
+              ],
+              emphasis: {
+                itemStyle: {
+                  shadowBlur: 10,
+                  shadowOffsetX: 0,
+                  shadowColor: 'rgba(0, 0, 0, 0.5)'
+                }
+              },
+              color: ['#2c3e50', '#3b82f6', '#60a5fa', '#93c5fd', '#bfdbfe']
+            }
+          ]
+        };
+        chart.setOption(option);
+      }
+
+      // Performance Chart
+      const performanceChart = document.getElementById('performanceChart');
+      if (performanceChart) {
+        const chart = echarts.init(performanceChart);
+        const option = {
+          animation: false,
+          tooltip: {
+            trigger: 'axis'
+          },
+          legend: {
+            data: ['Billable Hours', 'Revenue']
+          },
+          grid: {
+            left: '3%',
+            right: '4%',
+            bottom: '3%',
+            containLabel: true
+          },
+          xAxis: {
+            type: 'category',
+            boundaryGap: false,
+            data: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+          },
+          yAxis: [
+            {
+              type: 'value',
+              name: 'Hours',
+              position: 'left'
+            },
+            {
+              type: 'value',
+              name: 'Revenue',
+              position: 'right',
+              axisLabel: {
+                formatter: '${value}k'
+              }
+            }
+          ],
+          series: [
+            {
+              name: 'Billable Hours',
+              type: 'line',
+              data: [820, 932, 901, 934, 1290, 1330, 1320, 1250, 1100, 980, 840, 750],
+              color: '#2c3e50'
+            },
+            {
+              name: 'Revenue',
+              type: 'line',
+              yAxisIndex: 1,
+              data: [82, 93, 90, 93, 129, 133, 132, 125, 110, 98, 84, 75],
+              color: '#f76b1c'
+            }
+          ]
+        };
+        chart.setOption(option);
+      }
+
+      // Growth Chart
+      const growthChart = document.getElementById('growthChart');
+      if (growthChart) {
+        const chart = echarts.init(growthChart);
+        const option = {
+          animation: false,
+          tooltip: {
+            trigger: 'axis',
+            axisPointer: {
+              type: 'shadow'
+            }
+          },
+          legend: {},
+          grid: {
+            left: '3%',
+            right: '4%',
+            bottom: '3%',
+            containLabel: true
+          },
+          xAxis: {
+            type: 'value',
+            boundaryGap: [0, 0.01]
+          },
+          yAxis: {
+            type: 'category',
+            data: ['Corporate', 'Litigation', 'Real Estate', 'Family', 'IP']
+          },
+          series: [
+            {
+              name: 'Growth Rate',
+              type: 'bar',
+              data: [18, 23, 15, 12, 25],
+              color: '#2c3e50'
+            }
+          ]
+        };
+        chart.setOption(option);
+      }
+    };
+
+    initCharts();
+
+    // Handle window resize
+    const handleResize = () => {
+      const charts = ['revenueChart', 'clientChart', 'performanceChart', 'growthChart'];
+      charts.forEach(id => {
+        const chart = echarts.getInstanceByDom(document.getElementById(id));
+        if (chart) {
+          chart.resize();
+        }
+      });
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [activeTab]);
 
   return (
-
-    <div className='w-100'>
+    <div className="w-100">
+      {/* Header */}
       <Header />
 
-      <div className="w-100 mt-4">
+      <div className='w-100 mt-3'>
 
         {/* Hero Section */}
-        <div className="bg-dark text-white">
-          <div className="container px-4 py-5">
-            <div className="row align-items-center g-5 py-5">
-              <div className="col-lg-6">
-                <div className="small mb-3">Powered by lawconnect</div>
-                <h1 className="display-4 fw-bold mb-4">Streamline your client communication</h1>
+        <section className="bg-gradient bg-dark text-white py-5">
+          <div className="container">
+            <div className="row align-items-center">
+              <div className="col-md-6 pe-4">
+                <h1 className="display-4 fw-bold mb-4">Accurate data for instant decision-making</h1>
                 <p className="lead mb-4">
-                  Experience simplified and secure client communication through LEAP's integrated customizable client portal. Sign documents electronically, share correspondence, accept payments and collaborate in real-time directly from your matter.
+                  Gain instant insights into your data to make well-informed decisions across your practice with powerful reporting tools to provide you with everything you need to know about clients, matters, billing, financial compliance, and performance.
                 </p>
-                <button className="btn btn-warning btn-lg px-4">
+                <button className="btn btn-warning btn-lg">
                   BOOK DEMONSTRATION
                 </button>
               </div>
-              <div className="col-lg-6">
+              <div className="col-md-6">
                 <img
-                  src="https://readdy.ai/api/search-image?query=Professional%20workspace%20with%20smartphone%20displaying%20secure%20document%20sharing%20app%20next%20to%20laptop%20computer%2C%20modern%20office%20setting%2C%20clean%20minimal%20design%2C%20blue%20and%20orange%20interface%20elements%2C%20high%20quality%20professional%20photo&width=600&height=400&seq=hero-image-1&orientation=landscape"
-                  alt="Client communication platform"
-                  className="img-fluid rounded shadow"
+                  src="https://readdy.ai/api/search-image?query=Professional%20modern%20business%20analytics%20dashboard%20with%20charts%2C%20graphs%20and%20data%20visualization%20on%20a%20clean%20white%20interface%20with%20dark%20blue%20and%20orange%20accents%2C%20showing%20financial%20metrics%20and%20performance%20indicators%2C%20high%20quality%20professional%20UI%20design&width=600&height=400&seq=1&orientation=landscape"
+                  alt="Data Analytics Dashboard"
+                  className="img-fluid rounded shadow-lg"
                 />
               </div>
             </div>
           </div>
-        </div>
+        </section>
 
-        {/* Features Overview */}
-        <div className="container px-4 py-5">
-          <h2 className="text-center display-5 fw-bold mb-5">Secure document sharing made simple</h2>
-          <div className="d-flex flex-wrap justify-content-center gap-2 mb-5">
-            {['Secure data', 'Revoke access', 'Share large files', 'Your firm\'s brand', 'Get paid faster'].map((feature, index) => (
-              <span key={index} className="badge bg-light text-dark px-3 py-2 rounded-pill">
-                {feature}
-              </span>
-            ))}
-          </div>
-
-          {/* Security Features Section */}
-          <div className="row align-items-center g-5 py-5">
-            <div className="col-lg-6">
-              <div className="small text-muted mb-2">Powered by lawconnect</div>
-              <h3 className="display-6 fw-bold mb-4">Safeguard your data with secure correspondence</h3>
-              <p className="text-muted mb-4">
-                Unlike email, which can be susceptible to cybersecurity breaches, hacking and unauthorized access, LEAP offers a secure environment for sharing documents and working with clients.
-              </p>
-              <p className="text-muted">
-                You can work confidently and securely, without worrying that yours or your clients' files will fall into the wrong hands. All data is stored on secure servers provided by Amazon Web Services, one of the world's largest and most secure data storage providers.
-              </p>
-            </div>
-            <div className="col-lg-6">
-              <img
-                src="https://readdy.ai/api/search-image?query=Professional%20document%20management%20dashboard%20interface%2C%20secure%20file%20sharing%20platform%2C%20clean%20modern%20UI%20design%20with%20blue%20navigation%20and%20document%20list%2C%20corporate%20software%20interface%20with%20AWS%20logo%2C%20high%20quality%20professional%20screenshot&width=600&height=400&seq=security-dashboard-2&orientation=landscape"
-                alt="Secure document management dashboard"
-                className="img-fluid rounded shadow"
-              />
-            </div>
-          </div>
-
-          {/* Electronic Signatures Section */}
-          <div className="row align-items-center g-5 py-5">
-            <div className="col-lg-6 order-lg-2">
-              <h3 className="display-6 fw-bold mb-4">Start work quickly</h3>
-              <p className="text-muted mb-4">
-                Backed by industry leaders DocuSign, our integrated electronic signatures shorten the time it takes for a matter to start.
-              </p>
-              <p className="text-muted">
-                By requesting a signature online, directly from the matter for your Terms and Conditions, you can begin working immediately without waiting for returned documents in the post.
-              </p>
-            </div>
-            <div className="col-lg-6 order-lg-1">
-              <img
-                src="https://readdy.ai/api/search-image?query=Electronic%20signature%20interface%20with%20document%20preview%2C%20DocuSign%20style%20interface%20with%20signature%20field%20highlighted%2C%20professional%20document%20signing%20platform%20with%20clean%20design%2C%20digital%20contract%20signing%20page%20with%20form%20fields%2C%20high%20quality%20professional%20screenshot&width=600&height=400&seq=esign-interface-3&orientation=landscape"
-                alt="Electronic signature interface"
-                className="img-fluid rounded shadow"
-              />
-            </div>
-          </div>
-
-          {/* Security Certification */}
-          <div className="row align-items-center g-5 py-5">
-            <div className="col-lg-8">
-              <h3 className="display-6 fw-bold mb-4">Security and compliance</h3>
-              <p className="text-muted mb-4">
-                LawConnect is SOC 2 Type 1 compliant. This attests to our unwavering commitment to the highest standards for security and confidentiality in safeguarding our users' data.
-              </p>
-              <p className="text-muted">
-                Our internal security controls underwent a rigorous and independent audit by AssuranceLab, culminating in this certification for all LEAP subsidiaries, including LawConnect.
-              </p>
-            </div>
-            <div className="col-lg-4 text-center">
-              <div className="rounded-circle bg-primary d-flex align-items-center justify-content-center mx-auto" style={{ width: '200px', height: '200px' }}>
-                <div className="text-white text-center">
-                  <div className="fw-bold fs-5">AICPA</div>
-                  <div className="fw-bold display-6 mb-1">SOC</div>
-                  <div className="small">SERVICE ORGANIZATION</div>
-                </div>
+        {/* Dashboard Tab Section */}
+        <section className="py-5">
+          <div className="container">
+            <div className="card shadow">
+              <div className="card-header bg-light">
+                <ul className="nav nav-tabs card-header-tabs">
+                  <li className="nav-item">
+                    <button
+                      className={`nav-link ${activeTab === 'dashboard' ? 'active' : ''}`}
+                      onClick={() => setActiveTab('dashboard')}
+                    >
+                      Dashboard
+                    </button>
+                  </li>
+                  <li className="nav-item">
+                    <button
+                      className={`nav-link ${activeTab === 'reports' ? 'active' : ''}`}
+                      onClick={() => setActiveTab('reports')}
+                    >
+                      Reports
+                    </button>
+                  </li>
+                  <li className="nav-item">
+                    <button
+                      className={`nav-link ${activeTab === 'analytics' ? 'active' : ''}`}
+                      onClick={() => setActiveTab('analytics')}
+                    >
+                      Analytics
+                    </button>
+                  </li>
+                </ul>
               </div>
-            </div>
-          </div>
-
-          {/* Testimonial */}
-          <div className="text-center py-5">
-            <div className="mx-auto mb-4 rounded-circle overflow-hidden" style={{ width: '80px', height: '80px' }}>
-              <img
-                src="https://readdy.ai/api/search-image?query=Professional%20headshot%20of%20a%20female%20lawyer%20or%20legal%20professional%20with%20neutral%20background%2C%20business%20attire%2C%20confident%20expression%2C%20high%20quality%20professional%20photo&width=100&height=100&seq=testimonial-4&orientation=squarish"
-                alt="Client testimonial"
-                className="w-100 h-100 object-fit-cover"
-              />
-            </div>
-            <p className="text-muted fst-italic mb-4 mx-auto" style={{ maxWidth: '800px' }}>
-              "LawConnect has transformed how we interact with clients. The secure document sharing and electronic signatures have cut our onboarding time in half while giving our clients peace of mind."
-            </p>
-            <p className="fw-bold">Jane Doe, Legal Partner at Smith & Associates</p>
-          </div>
-
-          {/* Contact Form Section */}
-          <div className="row align-items-center g-5 py-5">
-            <div className="col-lg-6">
-              <h3 className="display-6 fw-bold mb-4">Provide 24/7 access to information and services</h3>
-              <ul className="list-unstyled">
-                <li className="mb-2">
-                  <i className="fas fa-check-circle text-warning me-2"></i>
-                  Secure document sharing
-                </li>
-                <li className="mb-2">
-                  <i className="fas fa-check-circle text-warning me-2"></i>
-                  Electronic signatures
-                </li>
-                <li className="mb-2">
-                  <i className="fas fa-check-circle text-warning me-2"></i>
-                  Client communication
-                </li>
-                <li className="mb-2">
-                  <i className="fas fa-check-circle text-warning me-2"></i>
-                  24/7 portal access
-                </li>
-              </ul>
-            </div>
-            <div className="col-lg-6 bg-white p-4 rounded shadow">
-              <form className="row g-3">
-                <div className="col-md-6">
-                  <label htmlFor="firstName" className="form-label">First Name</label>
-                  <input
-                    type="text"
-                    id="firstName"
-                    value={firstName}
-                    onChange={(e) => setFirstName(e.target.value)}
-                    className="form-control"
-                  />
-                </div>
-                <div className="col-md-6">
-                  <label htmlFor="lastName" className="form-label">Last Name</label>
-                  <input
-                    type="text"
-                    id="lastName"
-                    value={lastName}
-                    onChange={(e) => setLastName(e.target.value)}
-                    className="form-control"
-                  />
-                </div>
-                <div className="col-12">
-                  <label htmlFor="email" className="form-label">Email</label>
-                  <input
-                    type="email"
-                    id="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    className="form-control"
-                  />
-                </div>
-                <div className="col-12">
-                  <label htmlFor="phone" className="form-label">Phone Number</label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    value={phone}
-                    onChange={(e) => setPhone(e.target.value)}
-                    className="form-control"
-                  />
-                </div>
-                <div className="col-12">
-                  <label htmlFor="company" className="form-label">Company</label>
-                  <input
-                    type="text"
-                    id="company"
-                    value={company}
-                    onChange={(e) => setCompany(e.target.value)}
-                    className="form-control"
-                  />
-                </div>
-                <div className="col-12">
-                  <button
-                    type="submit"
-                    className="btn btn-dark w-100 py-2"
-                  >
-                    SEND REQUEST
-                  </button>
-                  <p className="small text-center text-muted mt-2">
-                    By submitting this form, you agree to our <a href="#" className="text-warning text-decoration-none">Privacy Policy</a>
-                  </p>
-                </div>
-              </form>
-            </div>
-          </div>
-
-          {/* Access Documents CTA */}
-          <div className="bg-light p-4 rounded mb-5">
-            <div className="d-flex flex-column flex-md-row justify-content-between align-items-center">
-              <div className="mb-3 mb-md-0">
-                <h3 className="fw-bold mb-2">Access your shared documents</h3>
-                <p className="text-muted mb-0">Click below to access documents that have been shared with you.</p>
-              </div>
-              <button className="btn btn-warning px-4">
-                ACCESS DOCUMENTS
-              </button>
-            </div>
-          </div>
-
-          {/* FAQ Section */}
-          <div className="py-5">
-            <h3 className="text-center display-6 fw-bold mb-5">Frequently asked questions</h3>
-            <div className="mx-auto" style={{ maxWidth: '800px' }}>
-              {faqItems.map((item, index) => (
-                <div key={index} className="border-bottom pb-3 mb-3">
-                  <button
-                    onClick={() => toggleAccordion(index)}
-                    className="d-flex justify-content-between align-items-center w-100 text-start fw-bold py-2 bg-transparent border-0"
-                  >
-                    <span>{item.question}</span>
-                    <i className={`fas ${activeAccordion === index ? 'fa-chevron-up' : 'fa-chevron-down'} text-muted`}></i>
-                  </button>
-                  {activeAccordion === index && (
-                    <div className="mt-2 text-muted">
-                      {item.answer}
+              <div className="card-body">
+                {activeTab === 'dashboard' && (
+                  <div>
+                    <div className="mb-4">
+                      <h2 className="h3 fw-bold text-primary mb-2">Performance Overview</h2>
+                      <p className="text-muted">View your key performance metrics at a glance.</p>
                     </div>
-                  )}
-                </div>
-              ))}
+                    <div className="row mb-4 g-4">
+                      <div className="col-md-4">
+                        <div className="card border-primary">
+                          <div className="card-body">
+                            <div className="text-primary fw-semibold mb-2">Revenue</div>
+                            <div className="h2 fw-bold">$124,568</div>
+                            <div className="text-success small mt-2">
+                              <i className="fas fa-arrow-up me-1"></i> 12.5% from last month
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="col-md-4">
+                        <div className="card border-primary">
+                          <div className="card-body">
+                            <div className="text-primary fw-semibold mb-2">Clients</div>
+                            <div className="h2 fw-bold">87</div>
+                            <div className="text-success small mt-2">
+                              <i className="fas fa-arrow-up me-1"></i> 4.2% from last month
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="col-md-4">
+                        <div className="card border-primary">
+                          <div className="card-body">
+                            <div className="text-primary fw-semibold mb-2">Matters</div>
+                            <div className="h2 fw-bold">243</div>
+                            <div className="text-success small mt-2">
+                              <i className="fas fa-arrow-up me-1"></i> 8.7% from last month
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="row g-4">
+                      <div className="col-md-6">
+                        <div className="card">
+                          <div className="card-body">
+                            <h3 className="h5 fw-semibold text-primary mb-4">Revenue by Practice Area</h3>
+                            <div id="revenueChart" style={{ height: '400px' }}></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="col-md-6">
+                        <div className="card">
+                          <div className="card-body">
+                            <h3 className="h5 fw-semibold text-primary mb-4">Client Distribution</h3>
+                            <div id="clientChart" style={{ height: '400px' }}></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )}
+                {activeTab === 'reports' && (
+                  <div>
+                    <div className="mb-4">
+                      <h2 className="h3 fw-bold text-primary mb-2">Financial Reports</h2>
+                      <p className="text-muted">Access and generate detailed financial reports.</p>
+                    </div>
+                    <div className="card mb-4">
+                      <div className="card-header">
+                        <h3 className="h5 fw-medium text-primary">Available Reports</h3>
+                      </div>
+                      <div className="card-body">
+                        <div className="list-group">
+                          <div className="list-group-item d-flex justify-content-between align-items-center">
+                            <div>
+                              <h4 className="fw-medium text-primary">Revenue Summary</h4>
+                              <p className="small text-muted mb-0">Overview of revenue by practice area and time period</p>
+                            </div>
+                            <button className="btn btn-primary btn-sm">Generate</button>
+                          </div>
+                          <div className="list-group-item d-flex justify-content-between align-items-center">
+                            <div>
+                              <h4 className="fw-medium text-primary">Client Billing</h4>
+                              <p className="small text-muted mb-0">Detailed billing information by client</p>
+                            </div>
+                            <button className="btn btn-primary btn-sm">Generate</button>
+                          </div>
+                          <div className="list-group-item d-flex justify-content-between align-items-center">
+                            <div>
+                              <h4 className="fw-medium text-primary">Matter Profitability</h4>
+                              <p className="small text-muted mb-0">Analyze profitability across different matters</p>
+                            </div>
+                            <button className="btn btn-primary btn-sm">Generate</button>
+                          </div>
+                          <div className="list-group-item d-flex justify-content-between align-items-center">
+                            <div>
+                              <h4 className="fw-medium text-primary">Compliance Report</h4>
+                              <p className="small text-muted mb-0">Regulatory compliance status and issues</p>
+                            </div>
+                            <button className="btn btn-primary btn-sm">Generate</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="card">
+                      <div className="card-header">
+                        <h3 className="h5 fw-medium text-primary">Schedule Reports</h3>
+                      </div>
+                      <div className="card-body">
+                        <div className="row g-4">
+                          <div className="col-md-6">
+                            <div className="mb-3">
+                              <label className="form-label">Report Type</label>
+                              <select className="form-select">
+                                <option>Select a report</option>
+                                <option>Revenue Summary</option>
+                                <option>Client Billing</option>
+                                <option>Matter Profitability</option>
+                                <option>Compliance Report</option>
+                              </select>
+                            </div>
+                            <div className="mb-3">
+                              <label className="form-label">Frequency</label>
+                              <select className="form-select">
+                                <option>Weekly</option>
+                                <option>Monthly</option>
+                                <option>Quarterly</option>
+                                <option>Yearly</option>
+                              </select>
+                            </div>
+                            <div className="mb-3">
+                              <label className="form-label">Delivery Method</label>
+                              <div className="d-flex gap-4">
+                                <div className="form-check">
+                                  <input className="form-check-input" type="radio" name="delivery" id="email" defaultChecked />
+                                  <label className="form-check-label" htmlFor="email">Email</label>
+                                </div>
+                                <div className="form-check">
+                                  <input className="form-check-input" type="radio" name="delivery" id="dashboard" />
+                                  <label className="form-check-label" htmlFor="dashboard">Dashboard</label>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div className="col-md-6">
+                            <div className="mb-3">
+                              <label className="form-label">Recipients</label>
+                              <input type="text" className="form-control" placeholder="Enter email addresses" />
+                            </div>
+                            <div className="mb-3">
+                              <label className="form-label">Start Date</label>
+                              <input type="date" className="form-control" />
+                            </div>
+                            <div className="mb-3">
+                              <label className="form-label">Additional Notes</label>
+                              <textarea className="form-control" rows={3}></textarea>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="mt-3 d-flex justify-content-end">
+                          <button className="btn btn-warning">Schedule Report</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )}
+                {activeTab === 'analytics' && (
+                  <div>
+                    <div className="mb-4">
+                      <h2 className="h3 fw-bold text-primary mb-2">Advanced Analytics</h2>
+                      <p className="text-muted">Gain deeper insights with interactive data visualization.</p>
+                    </div>
+                    <div className="row mb-4 g-4">
+                      <div className="col-md-6">
+                        <div className="card">
+                          <div className="card-body">
+                            <h3 className="h5 fw-semibold text-primary mb-4">Performance Metrics</h3>
+                            <div id="performanceChart" style={{ height: '400px' }}></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="col-md-6">
+                        <div className="card">
+                          <div className="card-body">
+                            <h3 className="h5 fw-semibold text-primary mb-4">Growth Trends</h3>
+                            <div id="growthChart" style={{ height: '400px' }}></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="card">
+                      <div className="card-body">
+                        <h3 className="h5 fw-semibold text-primary mb-4">Custom Analysis</h3>
+                        <div className="row g-4 mb-4">
+                          <div className="col-md-4">
+                            <label className="form-label">Metric</label>
+                            <select className="form-select">
+                              <option>Revenue</option>
+                              <option>Clients</option>
+                              <option>Matters</option>
+                              <option>Billable Hours</option>
+                            </select>
+                          </div>
+                          <div className="col-md-4">
+                            <label className="form-label">Time Period</label>
+                            <select className="form-select">
+                              <option>Last 12 Months</option>
+                              <option>Last 6 Months</option>
+                              <option>Last Quarter</option>
+                              <option>Last Month</option>
+                            </select>
+                          </div>
+                          <div className="col-md-4">
+                            <label className="form-label">Grouping</label>
+                            <select className="form-select">
+                              <option>Practice Area</option>
+                              <option>Attorney</option>
+                              <option>Client Type</option>
+                              <option>Location</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div className="d-flex justify-content-end">
+                          <button className="btn btn-primary">Generate Analysis</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
             </div>
           </div>
-        </div>
+        </section>
+
+        {/* Feature Sections */}
+        <section className="bg-light py-5">
+          <div className="container">
+            <div className="row align-items-center mb-5">
+              <div className="col-md-6 pe-4 mb-4 mb-md-0">
+                <div className="text-warning text-uppercase small fw-semibold mb-2">FINANCIAL REPORTS</div>
+                <h2 className="h1 fw-bold text-primary mb-4">Maintain regulatory compliance</h2>
+                <p className="lead text-muted mb-4">
+                  With a full suite of financial reports, your accounts will always be up-to-date and compliant with the regulator.
+                </p>
+                <p className="lead text-muted">
+                  Track where you are holding client funds, quickly identify overdrawn and inactive matters and manage lock-up in real-time.
+                </p>
+              </div>
+              <div className="col-md-6">
+                <img
+                  src="https://readdy.ai/api/search-image?query=Professional%20financial%20compliance%20dashboard%20with%20regulatory%20reports%2C%20client%20fund%20tracking%2C%20and%20matter%20management%20interface%20with%20clean%20modern%20design%2C%20showing%20charts%20and%20status%20indicators%20with%20dark%20blue%20and%20orange%20color%20scheme&width=600&height=400&seq=2&orientation=landscape"
+                  alt="Financial Compliance Dashboard"
+                  className="img-fluid rounded shadow-lg"
+                />
+              </div>
+            </div>
+
+            <div className="row align-items-center mb-5">
+              <div className="col-md-6 order-md-2 ps-4 mb-4 mb-md-0">
+                <div className="text-warning text-uppercase small fw-semibold mb-2">PRACTICE MANAGEMENT REPORTS</div>
+                <h2 className="h1 fw-bold text-primary mb-4">Monitor performance and gain insights</h2>
+                <p className="lead text-muted mb-4">
+                  LEAP's integrated firm and staff reports provide valuable data to monitor individual performance and manage the firm.
+                </p>
+                <p className="lead text-muted">
+                  Through the LEAP Connector for Power BI, gain a deeper understanding of trends, performance, and profitability out of the box.
+                </p>
+              </div>
+              <div className="col-md-6 order-md-1">
+                <img
+                  src="https://readdy.ai/api/search-image?query=Professional%20performance%20monitoring%20dashboard%20with%20staff%20metrics%2C%20trend%20analysis%2C%20and%20profitability%20charts%20in%20a%20clean%20modern%20interface%20with%20dark%20blue%20and%20orange%20color%20scheme%2C%20showing%20business%20analytics%20and%20KPIs%20for%20law%20firm%20management&width=600&height=400&seq=3&orientation=landscape"
+                  alt="Performance Monitoring Dashboard"
+                  className="img-fluid rounded shadow-lg"
+                />
+              </div>
+            </div>
+
+            <div className="row align-items-center">
+              <div className="col-md-6 pe-4 mb-4 mb-md-0">
+                <div className="text-warning text-uppercase small fw-semibold mb-2">REPORT AUTOMATION</div>
+                <h2 className="h1 fw-bold text-primary mb-4">Schedule your insights</h2>
+                <p className="lead text-muted mb-4">
+                  LEAP enables automatic delivery of essential information at set intervals. You can easily schedule recurring reports to be generated and distributed at specified times, saving time and enhancing efficiency by eliminating manual reporting tasks.
+                </p>
+                <p className="lead text-muted">
+                  The scheduled report feature provides a reliable way to keep everyone informed and aligned with organisational objectives at the time they need to.
+                </p>
+              </div>
+              <div className="col-md-6">
+                <img
+                  src="https://readdy.ai/api/search-image?query=Professional%20report%20scheduling%20interface%20with%20calendar%20view%2C%20automated%20delivery%20options%2C%20and%20report%20configuration%20settings%20in%20a%20clean%20modern%20design%20with%20dark%20blue%20and%20orange%20color%20scheme%2C%20showing%20business%20reporting%20automation%20tools&width=600&height=400&seq=4&orientation=landscape"
+                  alt="Report Scheduling Interface"
+                  className="img-fluid rounded shadow-lg"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="bg-dark text-white py-5 text-center mb-2">
+          <div className="container">
+            <h2 className="h1 fw-bold mb-4">Ready to transform your decision-making with accurate data?</h2>
+            <p className="lead mb-5 mx-auto" style={{ maxWidth: '800px' }}>
+              Book a demonstration today and discover how our powerful reporting tools can provide you with the insights you need to drive your practice forward.
+            </p>
+            <button className="btn btn-warning btn-lg">
+              BOOK DEMONSTRATION
+            </button>
+          </div>
+        </section>
       </div>
       {/* Footer */}
       <FooterSection />

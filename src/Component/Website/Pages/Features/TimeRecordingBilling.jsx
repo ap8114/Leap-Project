@@ -13,7 +13,7 @@ const TimeRecordingBilling = () => {
 
             <div className="w-100 mt-3">
                 {/* Hero Section */}
-                <section className="bg-primary text-white py-5">
+                <section className="bg-dark text-white py-5">
                     <div className="container">
                         <div className="row align-items-center">
                             <div className="col-lg-6 order-lg-1 mb-5 mb-lg-0">
@@ -157,7 +157,7 @@ const TimeRecordingBilling = () => {
                 )}
 
                 {/* CTA Section */}
-                <div className="bg-primary py-5">
+                <div className="bg-dark py-5">
                     <div className="container">
                         <div className="d-lg-flex justify-content-between align-items-center">
                             <h2 className="display-5 fw-bold text-white mb-4 mb-lg-0">
