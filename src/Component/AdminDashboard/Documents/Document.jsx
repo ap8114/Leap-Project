@@ -130,10 +130,10 @@ const getActivityIcon = (type) => {
 
 
   return (
-    <div className="p-3">
+    <div className="p-4">
         
-      <div className="">
-        <div className="mb-4">
+      <div className="p-4">
+        <div className="mb-4 ">
           <h1 className="display-6 fw-bold mb-2">Documents</h1>
        
         </div>

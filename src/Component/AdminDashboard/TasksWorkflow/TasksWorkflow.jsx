@@ -99,7 +99,7 @@ const TasksWorkflow = () => {
 
   return (
     <div className="p-4">
-      <div className="">
+      <div className="p-4">
         <h1 className="display-5 fw-bold text-dark mb-2">Tasks Management</h1>
         <p className="text-muted mb-4">Manage and track tasks across your matters</p>
 

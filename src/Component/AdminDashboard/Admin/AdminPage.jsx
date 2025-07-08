@@ -345,11 +345,11 @@ const AdminPage= () => {
                             setEditingUser(user);
                             setShowEditModal(true);
                           }}
-                          className="btn btn-sm btn-outline-primary me-2"
+                          className="btn btn-link text-primary me-2"
                         >
-                          <i className="fas fa-edit"></i>
+                         <i className="fas fa-edit"></i>
                         </button>
-                        <button className="btn btn-sm btn-outline-danger">
+                        <button className="btn btn-link text-danger me-2">
                           <i className="fas fa-trash-alt"></i>
                         </button>
                       </td>

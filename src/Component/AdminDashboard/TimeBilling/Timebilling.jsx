@@ -172,255 +172,225 @@ const Timebilling = () => {
   };
 
   return (
-    <div className="min-vh-100 bg-light">
-      <div className="py-4 container-fluid">
-        
-             <div className="mb-4">
-          <h1 className="display-6 fw-bold mb-2">Time & Billing</h1>
-           <p className="text-muted">Manage your time entries, expenses, invoices, and trust accounts</p>
-       
-        </div>
-        
+<div className="min-vh-100 bg-light p-3 p-md-4">
+  <div className="py-3 py-md-4 container-fluid">
     
-        
-        {/* Time Tracking Tab */}
-        <Row>
-          <Col>
-            <div className="d-flex justify-content-between align-items-center mb-4">
-              <div className="d-flex align-items-center gap-3">
-                <Button 
-                  variant="primary" 
-                  onClick={() => setShowNewEntryModal(true)}
-                  className="d-flex align-items-center"
-                >
-                  <Plus className="me-2" />
-                  New Time Entry
-                </Button>
-                
-                <Card className="p-3 d-flex align-items-center flex-row gap-3">
-                  <div className="text-muted small">Timer:</div>
-                  <div className="font-monospace fw-semibold">{formatTime(timerSeconds)}</div>
-                  {!timerRunning ? (
-                    <Button 
-                      variant="success" 
-                      onClick={startTimer}
-                      className="rounded-circle p-2"
-                    >
-                      <PlayFill />
-                    </Button>
-                  ) : (
-                    <Button 
-                      variant="danger" 
-                      onClick={stopTimer}
-                      className="rounded-circle p-2"
-                    >
-                      <StopFill />
-                    </Button>
-                  )}
-                  {timerSeconds > 0 && (
-                    <Button 
-                      variant="secondary" 
-                      onClick={resetTimer}
-                      className="rounded-circle p-2"
-                    >
-                      <ArrowClockwise />
-                    </Button>
-                  )}
-                </Card>
-              </div>
-              
-              <div className="d-flex align-items-center gap-3">
-                <Dropdown>
-                  <Dropdown.Toggle variant="light" className="border">
-                    {selectedMatter} <ChevronDown size={12} className="ms-2" />
-                  </Dropdown.Toggle>
-                  <Dropdown.Menu>
-                    <Dropdown.Item onClick={() => setSelectedMatter('All Matters')}>All Matters</Dropdown.Item>
-                    <Dropdown.Item onClick={() => setSelectedMatter('Smith v. Jones')}>Smith v. Jones</Dropdown.Item>
-                    <Dropdown.Item onClick={() => setSelectedMatter('Johnson Estate')}>Johnson Estate</Dropdown.Item>
-                    <Dropdown.Item onClick={() => setSelectedMatter('Corporate Restructuring')}>Corporate Restructuring</Dropdown.Item>
-                  </Dropdown.Menu>
-                </Dropdown>
-                
-                <Dropdown>
-                  <Dropdown.Toggle variant="light" className="border">
-                    {selectedTimeRange} <ChevronDown size={12} className="ms-2" />
-                  </Dropdown.Toggle>
-                  <Dropdown.Menu>
-                    <Dropdown.Item onClick={() => setSelectedTimeRange('This Month')}>This Month</Dropdown.Item>
-                    <Dropdown.Item onClick={() => setSelectedTimeRange('Last Month')}>Last Month</Dropdown.Item>
-                    <Dropdown.Item onClick={() => setSelectedTimeRange('Last 7 Days')}>Last 7 Days</Dropdown.Item>
-                    <Dropdown.Item onClick={() => setSelectedTimeRange('Custom Range')}>Custom Range</Dropdown.Item>
-                  </Dropdown.Menu>
-                </Dropdown>
-                
-                <InputGroup className="w-auto">
-                  <InputGroup.Text>
-                    <Search />
-                  </InputGroup.Text>
+    <div className="mb-4">
+      <h1 className="display-6 fw-bold mb-2">Time & Billing</h1>
+      <p className="text-muted">
+        Manage your time entries, expenses, invoices, and trust accounts
+      </p>
+    </div>
+
+    {/* Time Tracking Tab */}
+    <Row>
+      <Col>
+        <div className="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-3 mb-4">
+          
+          {/* Left button group */}
+          <div className="d-flex flex-wrap align-items-center gap-2">
+            <Button
+              variant="primary"
+              onClick={() => setShowNewEntryModal(true)}
+              className="d-flex align-items-center"
+            >
+              <Plus className="me-2" />
+              New Time Entry
+            </Button>
+          </div>
+
+          {/* Right filter controls */}
+          <div className="d-flex flex-wrap align-items-center gap-2">
+            <Dropdown>
+              <Dropdown.Toggle variant="light" className="border">
+                {selectedMatter}
+              </Dropdown.Toggle>
+              <Dropdown.Menu>
+                <Dropdown.Item onClick={() => setSelectedMatter('All Matters')}>All Matters</Dropdown.Item>
+                <Dropdown.Item onClick={() => setSelectedMatter('Smith v. Jones')}>Smith v. Jones</Dropdown.Item>
+                <Dropdown.Item onClick={() => setSelectedMatter('Johnson Estate')}>Johnson Estate</Dropdown.Item>
+                <Dropdown.Item onClick={() => setSelectedMatter('Corporate Restructuring')}>Corporate Restructuring</Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
+
+            <Dropdown>
+              <Dropdown.Toggle variant="light" className="border">
+                {selectedTimeRange}
+              </Dropdown.Toggle>
+              <Dropdown.Menu>
+                <Dropdown.Item onClick={() => setSelectedTimeRange('This Month')}>This Month</Dropdown.Item>
+                <Dropdown.Item onClick={() => setSelectedTimeRange('Last Month')}>Last Month</Dropdown.Item>
+                <Dropdown.Item onClick={() => setSelectedTimeRange('Last 7 Days')}>Last 7 Days</Dropdown.Item>
+                <Dropdown.Item onClick={() => setSelectedTimeRange('Custom Range')}>Custom Range</Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
+
+            <Form.Control
+              type="text"
+              placeholder="Search entries..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+            />
+
+            <Button variant="light" className="border">
+              <Funnel size={20} />
+            </Button>
+          </div>
+        </div>
+
+        {/* Responsive Table */}
+        <Card className="overflow-hidden">
+          <div className="table-responsive">
+            <Table hover responsive className="mb-0">
+              <thead className="bg-light">
+                <tr>
+                  <th className="text-uppercase small text-muted">Date</th>
+                  <th className="text-uppercase small text-muted">Matter/Task</th>
+                  <th className="text-uppercase small text-muted">Description</th>
+                  <th className="text-uppercase small text-muted">Duration</th>
+                  <th className="text-uppercase small text-muted">Rate</th>
+                  <th className="text-uppercase small text-muted">Amount</th>
+                  <th className="text-uppercase small text-muted">Status</th>
+                  <th className="text-uppercase small text-muted text-end">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                {timeEntries.map((entry) => (
+                  <tr key={entry.id}>
+                    <td className="align-middle">{entry.date}</td>
+                    <td className="align-middle fw-medium">{entry.matter}</td>
+                    <td className="align-middle">{entry.description}</td>
+                    <td className="align-middle">{entry.duration}</td>
+                    <td className="align-middle">{entry.rate}</td>
+                    <td className="align-middle fw-medium">{entry.amount}</td>
+                    <td className="align-middle">
+                      <Badge bg={entry.status === 'Unbilled' ? 'warning' : 'success'} className="text-uppercase">
+                        {entry.status}
+                      </Badge>
+                    </td>
+                    <td className="align-middle text-end">
+                      <button className="btn btn-link text-primary me-2">
+                        <i className="fas fa-edit"></i>
+                      </button>
+                      <button className="btn btn-link text-danger">
+                        <i className="fas fa-trash-alt"></i>
+                      </button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </Table>
+          </div>
+          <Card.Footer className="d-flex flex-column flex-md-row justify-content-between align-items-center bg-light">
+            <div className="text-muted small mb-2 mb-md-0">
+              Showing 5 of 24 entries
+            </div>
+            <Pagination className="mb-0">
+              <Pagination.Prev />
+              <Pagination.Next />
+            </Pagination>
+          </Card.Footer>
+        </Card>
+      </Col>
+    </Row>
+
+    {/* New Time Entry Modal */}
+    <Modal show={showNewEntryModal} onHide={() => setShowNewEntryModal(false)} centered>
+      <div ref={modalRef}>
+        <Modal.Header closeButton>
+          <Modal.Title>New Time Entry</Modal.Title>
+        </Modal.Header>
+        <Form onSubmit={handleSubmit}>
+          <Modal.Body>
+            <Form.Group className="mb-3">
+              <Form.Label>Date</Form.Label>
+              <Form.Control
+                type="date"
+                name="date"
+                value={newEntry.date}
+                onChange={handleInputChange}
+                required
+              />
+            </Form.Group>
+
+            <Form.Group className="mb-3">
+              <Form.Label>Matter</Form.Label>
+              <Form.Select
+                name="matter"
+                value={newEntry.matter}
+                onChange={handleInputChange}
+                required
+              >
+                <option value="">Select a matter</option>
+                <option value="Smith v. Jones">Smith v. Jones</option>
+                <option value="Johnson Estate">Johnson Estate</option>
+                <option value="Corporate Restructuring">Corporate Restructuring</option>
+              </Form.Select>
+            </Form.Group>
+
+            <Form.Group className="mb-3">
+              <Form.Label>Description</Form.Label>
+              <Form.Control
+                as="textarea"
+                rows={3}
+                name="description"
+                value={newEntry.description}
+                onChange={handleInputChange}
+                required
+              />
+            </Form.Group>
+
+            <Row className="mb-3">
+              <Col xs={12} md={6}>
+                <Form.Group>
+                  <Form.Label>Duration (hh:mm)</Form.Label>
                   <Form.Control
                     type="text"
-                    placeholder="Search entries..."
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
+                    name="duration"
+                    value={newEntry.duration}
+                    onChange={handleInputChange}
+                    placeholder="e.g. 1:30"
+                    required
                   />
-                </InputGroup>
-                
-                <Button variant="light" className="border">
-                  <Funnel />
-                </Button>
-              </div>
-            </div>
-            
-            <Card className="overflow-hidden">
-              <Table hover responsive className="mb-0">
-                <thead className="bg-light">
-                  <tr>
-                    <th className="text-uppercase small text-muted">Date</th>
-                    <th className="text-uppercase small text-muted">Matter/Task</th>
-                    <th className="text-uppercase small text-muted">Description</th>
-                    <th className="text-uppercase small text-muted">Duration</th>
-                    <th className="text-uppercase small text-muted">Rate</th>
-                    <th className="text-uppercase small text-muted">Amount</th>
-                    <th className="text-uppercase small text-muted">Status</th>
-                    <th className="text-uppercase small text-muted text-end">Actions</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {timeEntries.map((entry) => (
-                    <tr key={entry.id}>
-                      <td className="align-middle">{entry.date}</td>
-                      <td className="align-middle fw-medium">{entry.matter}</td>
-                      <td className="align-middle">{entry.description}</td>
-                      <td className="align-middle">{entry.duration}</td>
-                      <td className="align-middle">{entry.rate}</td>
-                      <td className="align-middle fw-medium">{entry.amount}</td>
-                      <td className="align-middle">
-                        <Badge bg={entry.status === 'Unbilled' ? 'warning' : 'success'} className="text-uppercase">
-                          {entry.status}
-                        </Badge>
-                      </td>
-                      <td className="align-middle text-end">
-                        <Button variant="link" size="sm" className="text-primary p-0 me-2">
-                          <Pencil />
-                        </Button>
-                        <Button variant="link" size="sm" className="text-danger p-0">
-                          <Trash />
-                        </Button>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </Table>
-              <Card.Footer className="d-flex justify-content-between align-items-center bg-light">
-                <div className="text-muted small">
-                  Showing 5 of 24 entries
-                </div>
-                <Pagination className="mb-0">
-                  <Pagination.Prev />
-                  <Pagination.Next />
-                </Pagination>
-              </Card.Footer>
-            </Card>
-          </Col>
-        </Row>
-        
-        {/* New Time Entry Modal */}
-        <Modal show={showNewEntryModal} onHide={() => setShowNewEntryModal(false)} centered>
-          <div ref={modalRef}>
-            <Modal.Header closeButton>
-              <Modal.Title>New Time Entry</Modal.Title>
-            </Modal.Header>
-            <Form onSubmit={handleSubmit}>
-              <Modal.Body>
-                <Form.Group className="mb-3">
-                  <Form.Label>Date</Form.Label>
+                </Form.Group>
+              </Col>
+              <Col xs={12} md={6}>
+                <Form.Group>
+                  <Form.Label>Hourly Rate ($)</Form.Label>
                   <Form.Control
-                    type="date"
-                    name="date"
-                    value={newEntry.date}
+                    type="text"
+                    name="rate"
+                    value={newEntry.rate}
                     onChange={handleInputChange}
+                    placeholder="e.g. 250.00"
                     required
                   />
                 </Form.Group>
-                
-                <Form.Group className="mb-3">
-                  <Form.Label>Matter</Form.Label>
-                  <Form.Select
-                    name="matter"
-                    value={newEntry.matter}
-                    onChange={handleInputChange}
-                    required
-                  >
-                    <option value="">Select a matter</option>
-                    <option value="Smith v. Jones">Smith v. Jones</option>
-                    <option value="Johnson Estate">Johnson Estate</option>
-                    <option value="Corporate Restructuring">Corporate Restructuring</option>
-                  </Form.Select>
-                </Form.Group>
-                
-                <Form.Group className="mb-3">
-                  <Form.Label>Description</Form.Label>
-                  <Form.Control
-                    as="textarea"
-                    rows={3}
-                    name="description"
-                    value={newEntry.description}
-                    onChange={handleInputChange}
-                    required
-                  />
-                </Form.Group>
-                
-                <Row className="mb-3">
-                  <Col>
-                    <Form.Group>
-                      <Form.Label>Duration (hh:mm)</Form.Label>
-                      <Form.Control
-                        type="text"
-                        name="duration"
-                        value={newEntry.duration}
-                        onChange={handleInputChange}
-                        placeholder="e.g. 1:30"
-                        required
-                      />
-                    </Form.Group>
-                  </Col>
-                  <Col>
-                    <Form.Group>
-                      <Form.Label>Hourly Rate ($)</Form.Label>
-                      <Form.Control
-                        type="text"
-                        name="rate"
-                        value={newEntry.rate}
-                        onChange={handleInputChange}
-                        placeholder="e.g. 250.00"
-                        required
-                      />
-                    </Form.Group>
-                  </Col>
-                </Row>
-                
-                <Form.Check
-                  type="checkbox"
-                  id="billable"
-                  label="Billable time entry"
-                  defaultChecked
-                  className="mt-4"
-                />
-              </Modal.Body>
-              <Modal.Footer>
-                <Button variant="light" onClick={() => setShowNewEntryModal(false)}>
-                  Cancel
-                </Button>
-                <Button variant="primary" type="submit">
-                  Save Time Entry
-                </Button>
-              </Modal.Footer>
-            </Form>
-          </div>
-        </Modal>
+              </Col>
+            </Row>
+
+            <Form.Check
+              type="checkbox"
+              id="billable"
+              label="Billable time entry"
+              defaultChecked
+              className="mt-3"
+            />
+          </Modal.Body>
+          <Modal.Footer>
+            <Button variant="light" onClick={() => setShowNewEntryModal(false)}>
+              Cancel
+            </Button>
+            <Button variant="primary" type="submit">
+              Save Time Entry
+            </Button>
+          </Modal.Footer>
+        </Form>
       </div>
-    </div>
+    </Modal>
+  </div>
+</div>
+
   );
 };
 

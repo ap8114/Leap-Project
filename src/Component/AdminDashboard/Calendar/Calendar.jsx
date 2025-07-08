@@ -86,7 +86,7 @@ const Calendar = () => {
   };
 
   return (
-    <div className="min-vh-100 bg-light">
+    <div className="min-vh-100 bg-light p-4">
       <div className="container-fluid px-0 px-md-3">
         <div className="mb-4 mt-3 px-3 px-md-0">
           <h1 className="display-6 fw-bold mb-2">Calendar</h1>
