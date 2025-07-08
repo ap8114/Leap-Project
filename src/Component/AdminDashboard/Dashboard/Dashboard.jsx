@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import * as echarts from 'echarts';
 
 const Dashboard = () => {
-const [dateRange, setDateRange] = useState({
-  start: '2025-06-01',
-  end: '2025-07-07'
-});
+  const [dateRange, setDateRange] = useState({
+    start: '2025-06-01',
+    end: '2025-07-07'
+  });
 
-const [viewMode, setViewMode] = useState('grid');
-const [expandedCard, setExpandedCard] = useState(null);
+  const [viewMode, setViewMode] = useState('grid');
+  const [expandedCard, setExpandedCard] = useState(null);
 
 
 
@@ -175,176 +175,176 @@ const [expandedCard, setExpandedCard] = useState(null);
     };
   }, []);
 
- const handleDateRangeChange = (e, type) => {
-  setDateRange(prev => ({
-    ...prev,
-    [type]: e.target.value
-  }));
-};
+  const handleDateRangeChange = (e, type) => {
+    setDateRange(prev => ({
+      ...prev,
+      [type]: e.target.value
+    }));
+  };
 
 
   const toggleView = () => {
     setViewMode(prev => (prev === 'grid' ? 'list' : 'grid'));
   };
 
- const toggleCardExpand = (cardId) => {
-  setExpandedCard(prev => (prev === cardId ? null : cardId));
-};
+  const toggleCardExpand = (cardId) => {
+    setExpandedCard(prev => (prev === cardId ? null : cardId));
+  };
 
 
   return (
     <div className="min-vh-100 bg-light p-4">
       <div className="container">
         <div className="mb-4">
-          <h1 className="display-6 fw-bold mb-2">    Dashboard</h1>
+          <h1 className="display-6 fw-bold mb-2">Dashboard</h1>
           <p className="text-muted">Overview of cases, tasks, deadlines and performance metrics</p>
         </div>
 
         {/* Control Strip */}
-       <div className="card mb-4">
-  <div className="card-body">
-    <div className="row gy-3 gx-0 align-items-center">
-      {/* Date Range: From & To */}
-      <div className="col-12 col-md d-flex flex-wrap flex-md-nowrap gap-2">
-  <div className="flex-grow-1 flex-md-grow-0 d-flex align-items-center mb-2 mb-sm-0" style={{ minWidth: 0 }}>
-    <label className="me-2 fw-semibold mb-0">From:</label>
-    <input
-      type="date"
-      value={dateRange.start}
-      onChange={(e) => handleDateRangeChange(e, 'start')}
-      className="form-control form-control-sm flex-grow-1"
-      style={{ minWidth: 0 }}
-    />
-  </div>
-  <div className="flex-grow-1 flex-md-grow-0 d-flex align-items-center" style={{ minWidth: 0 }}>
-    <label className="me-2 fw-semibold mb-0">To:</label>
-    <input
-      type="date"
-      value={dateRange.end}
-      onChange={(e) => handleDateRangeChange(e, 'end')}
-      className="form-control form-control-sm flex-grow-1"
-      style={{ minWidth: 0 }}
-    />
-  </div>
-</div>
+        <div className="card mb-4">
+          <div className="card-body">
+            <div className="row gy-3 gx-0 align-items-center">
+              {/* Date Range: From & To */}
+              <div className="col-12 col-md d-flex flex-wrap flex-md-nowrap gap-2">
+                <div className="flex-grow-1 flex-md-grow-0 d-flex align-items-center">
+                  <label className="me-2 fw-semibold mb-0">From:</label>
+                  <input
+                    type="date"
+                    value={dateRange.start}
+                    onChange={(e) => handleDateRangeChange(e, 'start')}
+                    className="form-control form-control-sm flex-grow- mt-3"
+                    
+                  />
+                </div>
+                <div className="flex-grow-1 flex-md-grow-0 d-flex align-items-center" >
+                  <label className="me-2 fw-semibold mb-0">To:</label>
+                  <input
+                    type="date"
+                    value={dateRange.end}
+                    onChange={(e) => handleDateRangeChange(e, 'end')}
+                    className="form-control form-control-sm flex-grow-1 mt-3"
+                  
+                  />
+                </div>
+              </div>
 
-      {/* Action Buttons */}
-      <div className="col-12 col-md-auto d-flex flex-wrap justify-content-start justify-content-md-end gap-2">
-        <div className="dropdown">
-          <button
-            className="btn btn-sm btn-outline-secondary dropdown-toggle"
-            type="button"
-            id="exportDropdown"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            <i className="fas fa-download me-2"></i>
-            Export
-          </button>
-          <ul className="dropdown-menu" aria-labelledby="exportDropdown">
-            <li><button className="dropdown-item"><i className="fas fa-file-pdf text-danger me-2"></i>Export as PDF</button></li>
-            <li><button className="dropdown-item"><i className="fas fa-file-excel text-success me-2"></i>Export as Excel</button></li>
-            <li><button className="dropdown-item"><i className="fas fa-file-csv text-primary me-2"></i>Export as CSV</button></li>
-          </ul>
+              {/* Action Buttons */}
+              <div className="col-12 col-md-auto d-flex flex-wrap justify-content-start justify-content-md-end gap-2">
+                <div className="dropdown">
+                  <button
+                    className="btn btn-sm btn-outline-secondary dropdown-toggle"
+                    type="button"
+                    id="exportDropdown"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <i className="fas fa-download me-2"></i>
+                    Export
+                  </button>
+                  <ul className="dropdown-menu" aria-labelledby="exportDropdown">
+                    <li><button className="dropdown-item"><i className="fas fa-file-pdf text-danger me-2"></i>Export as PDF</button></li>
+                    <li><button className="dropdown-item"><i className="fas fa-file-excel text-success me-2"></i>Export as Excel</button></li>
+                    <li><button className="dropdown-item"><i className="fas fa-file-csv text-primary me-2"></i>Export as CSV</button></li>
+                  </ul>
+                </div>
+                <button className="btn btn-sm btn-outline-secondary">
+                  <i className="fas fa-sync-alt"></i>
+                </button>
+                <button onClick={toggleView} className="btn btn-sm btn-outline-secondary">
+                  <i className={`fas ${viewMode === 'grid' ? 'fa-list' : 'fa-th-large'}`}></i>
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
-        <button className="btn btn-sm btn-outline-secondary">
-          <i className="fas fa-sync-alt"></i>
-        </button>
-        <button onClick={toggleView} className="btn btn-sm btn-outline-secondary">
-          <i className={`fas ${viewMode === 'grid' ? 'fa-list' : 'fa-th-large'}`}></i>
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
 
 
         {/* Main Dashboard Content */}
         <div className={`row ${viewMode === 'grid' ? 'row-cols-1 row-cols-md-2' : 'row-cols-1'} g-4`}>
           {/* Case Progress Card */}
-         <div className={`col ${expandedCard === 'case-progress' ? 'col-12' : 'col-md-6'}`}>
-  <div className="card h-100">
-    {/* Header */}
-    <div className="card-header d-flex justify-content-between align-items-center">
-      <h5 className="mb-0">Case Progress</h5>
-      <div>
-        <button
-          onClick={() => toggleCardExpand('case-progress')}
-          className="btn btn-sm btn-link text-secondary"
-        >
-          <i className={`fas ${expandedCard === 'case-progress' ? 'fa-compress-alt' : 'fa-expand-alt'}`}></i>
-        </button>
-        <button className="btn btn-sm btn-link text-secondary">
-          <i className="fas fa-ellipsis-v"></i>
-        </button>
-      </div>
-    </div>
-
-    {/* Body */}
-    <div className="card-body">
-      <div className="row g-3 align-items-center">
-        {/* Chart */}
-        <div className="col-12 col-md-6 d-flex justify-content-center">
-          <div id="case-progress-chart" style={{ width: '100%', height: '240px' }}></div>
-        </div>
-
-        {/* Stats Cards */}
-        <div className="col-12 col-md-6">
-          <div className="row g-3">
-            {/* Active Cases */}
-            <div className="col-12 col-sm-6 col-lg-4">
-              <div className="p-3 bg-primary bg-opacity-10 rounded h-100">
-                <div className="text-primary small mb-1 fw-semibold">Active Cases</div>
-                <div className="h4 fw-bold">248</div>
-                <div className="text-primary small mt-1 d-flex align-items-center">
-                  <i className="fas fa-arrow-up me-1"></i> 12 new this month
+          <div className={`col ${expandedCard === 'case-progress' ? 'col-12' : 'col-md-6'}`}>
+            <div className="card h-100">
+              {/* Header */}
+              <div className="card-header d-flex justify-content-between align-items-center">
+                <h5 className="mb-0">Case Progress</h5>
+                <div>
+                  <button
+                    onClick={() => toggleCardExpand('case-progress')}
+                    className="btn btn-sm btn-link text-secondary"
+                  >
+                    <i className={`fas ${expandedCard === 'case-progress' ? 'fa-compress-alt' : 'fa-expand-alt'}`}></i>
+                  </button>
+                  <button className="btn btn-sm btn-link text-secondary">
+                    <i className="fas fa-ellipsis-v"></i>
+                  </button>
                 </div>
               </div>
-            </div>
 
-            {/* Tasks Completed */}
-            <div className="col-12 col-sm-6 col-lg-4">
-              <div className="p-3 bg-success bg-opacity-10 rounded h-100">
-                <div className="text-success small mb-1 fw-semibold">Tasks Completed</div>
-                <div className="h4 fw-bold text-success">193</div>
-                <div className="text-success small mt-1 d-flex align-items-center">
-                  <i className="fas fa-check me-1"></i> 15 today
+              {/* Body */}
+              <div className="card-body">
+                <div className="row g-3 align-items-center">
+                  {/* Chart */}
+                  <div className="col-12 col-md-6 d-flex justify-content-center">
+                    <div id="case-progress-chart" style={{ width: '100%', height: '240px' }}></div>
+                  </div>
+
+                  {/* Stats Cards */}
+                  <div className="col-12 col-md-6">
+                    <div className="row g-3">
+                      {/* Active Cases */}
+                      <div className="col-12 col-sm-6 col-lg-4">
+                        <div className="p-3 bg-primary bg-opacity-10 rounded h-100">
+                          <div className="text-primary small mb-1 fw-semibold">Active Cases</div>
+                          <div className="h4 fw-bold">248</div>
+                          <div className="text-primary small mt-1 d-flex align-items-center">
+                            <i className="fas fa-arrow-up me-1"></i> 12 new this month
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Tasks Completed */}
+                      <div className="col-12 col-sm-6 col-lg-4">
+                        <div className="p-3 bg-success bg-opacity-10 rounded h-100">
+                          <div className="text-success small mb-1 fw-semibold">Tasks Completed</div>
+                          <div className="h4 fw-bold text-success">193</div>
+                          <div className="text-success small mt-1 d-flex align-items-center">
+                            <i className="fas fa-check me-1"></i> 15 today
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Upcoming Deadlines */}
+                      <div className="col-12 col-sm-6 col-lg-4">
+                        <div className="p-3 bg-warning bg-opacity-10 rounded h-100">
+                          <div className="text-warning small mb-1 fw-semibold">Upcoming Deadlines</div>
+                          <div className="h4 fw-bold text-warning">8</div>
+                          <div className="text-warning small mt-1 d-flex align-items-center">
+                            <i className="fas fa-clock me-1"></i> Next in 2 days
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
 
-            {/* Upcoming Deadlines */}
-            <div className="col-12 col-sm-6 col-lg-4">
-              <div className="p-3 bg-warning bg-opacity-10 rounded h-100">
-                <div className="text-warning small mb-1 fw-semibold">Upcoming Deadlines</div>
-                <div className="h4 fw-bold text-warning">8</div>
-                <div className="text-warning small mt-1 d-flex align-items-center">
-                  <i className="fas fa-clock me-1"></i> Next in 2 days
+                {/* Legend */}
+                <div className="row mt-4 g-2 justify-content-center text-center">
+                  <div className="col-4 d-flex justify-content-center align-items-center">
+                    <span className="badge bg-success me-2" style={{ width: '12px', height: '12px' }}></span>
+                    <span className="small text-muted">Complete (78%)</span>
+                  </div>
+                  <div className="col-4 d-flex justify-content-center align-items-center">
+                    <span className="badge bg-warning me-2" style={{ width: '12px', height: '12px' }}></span>
+                    <span className="small text-muted">In Progress (17%)</span>
+                  </div>
+                  <div className="col-4 d-flex justify-content-center align-items-center">
+                    <span className="badge bg-danger me-2" style={{ width: '12px', height: '12px' }}></span>
+                    <span className="small text-muted">Delayed (5%)</span>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-
-      {/* Legend */}
-      <div className="row mt-4 g-2 justify-content-center text-center">
-        <div className="col-4 d-flex justify-content-center align-items-center">
-          <span className="badge bg-success me-2" style={{ width: '12px', height: '12px' }}></span>
-          <span className="small text-muted">Complete (78%)</span>
-        </div>
-        <div className="col-4 d-flex justify-content-center align-items-center">
-          <span className="badge bg-warning me-2" style={{ width: '12px', height: '12px' }}></span>
-          <span className="small text-muted">In Progress (17%)</span>
-        </div>
-        <div className="col-4 d-flex justify-content-center align-items-center">
-          <span className="badge bg-danger me-2" style={{ width: '12px', height: '12px' }}></span>
-          <span className="small text-muted">Delayed (5%)</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
           {/* Billing Overview Card */}
           <div className={`col ${expandedCard === 'billing' ? 'col-12' : ''}`}>
