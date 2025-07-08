@@ -534,10 +534,10 @@ const Reporting = () => {
                 <div className="text-warning text-uppercase small fw-semibold mb-2">PRACTICE MANAGEMENT REPORTS</div>
                 <h2 className="h1 fw-bold text-primary mb-4">Monitor performance and gain insights</h2>
                 <p className="lead text-muted mb-4">
-                  LEAP's integrated firm and staff reports provide valuable data to monitor individual performance and manage the firm.
+                  Clio's integrated firm and staff reports provide valuable data to monitor individual performance and manage the firm.
                 </p>
                 <p className="lead text-muted">
-                  Through the LEAP Connector for Power BI, gain a deeper understanding of trends, performance, and profitability out of the box.
+                  Through the Clio Connector for Power BI, gain a deeper understanding of trends, performance, and profitability out of the box.
                 </p>
               </div>
               <div className="col-md-6 order-md-1">
@@ -554,7 +554,7 @@ const Reporting = () => {
                 <div className="text-warning text-uppercase small fw-semibold mb-2">REPORT AUTOMATION</div>
                 <h2 className="h1 fw-bold text-primary mb-4">Schedule your insights</h2>
                 <p className="lead text-muted mb-4">
-                  LEAP enables automatic delivery of essential information at set intervals. You can easily schedule recurring reports to be generated and distributed at specified times, saving time and enhancing efficiency by eliminating manual reporting tasks.
+                  Clio enables automatic delivery of essential information at set intervals. You can easily schedule recurring reports to be generated and distributed at specified times, saving time and enhancing efficiency by eliminating manual reporting tasks.
                 </p>
                 <p className="lead text-muted">
                   The scheduled report feature provides a reliable way to keep everyone informed and aligned with organisational objectives at the time they need to.

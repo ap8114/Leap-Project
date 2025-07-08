@@ -1,5 +1,5 @@
 {
-  "name": "leap",
+  "name": "Clio",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -14,6 +14,7 @@
     "@fortawesome/react-fontawesome": "^0.2.2",
     "bootstrap": "^5.3.7",
     "echarts": "^5.6.0",
+    "lucide-react": "^0.525.0",
     "react": "^19.1.0",
     "react-bootstrap": "^2.10.10",
     "react-bootstrap-icons": "^1.11.6",

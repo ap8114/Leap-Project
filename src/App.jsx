@@ -26,6 +26,7 @@ import Home from "./Component/Website/HomePages/Home";
 import Reporting from "./Component/Website/Pages/Features/Reporting";
 import ClientService from "./Component/Website/Pages/Features/ClientService";
 import Conveyancing from "./Component/Website/Pages/Solutions/Conveyancing";
+import EstateProbate from "./Component/Website/Pages/Solutions/EstateProbate";
 
 function App() {
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
@@ -51,7 +52,8 @@ function App() {
     "/timerecordingbilling",
     "/reporting",
     "/clientservice",
-    "/conveyancing"
+    "/conveyancing",
+    "/estateprobate"
   ];
   const isNoLayoutPage = noLayoutRoutes.includes(location.pathname);
   // Hide layout (navbar/sidebar) only on login page
@@ -66,7 +68,8 @@ function App() {
     location.pathname === "/timerecordingbilling" ||
     location.pathname === "/reporting" ||
     location.pathname === "/clientservice" ||
-      location.pathname === "/conveyancing";
+      location.pathname === "/conveyancing" ||
+location.pathname === "/estateprobate";
 
   // ...existing code...
   return (
@@ -104,6 +107,7 @@ function App() {
               <Route path="/reporting" element={<Reporting />} />
               <Route path="/clientservice" element={<ClientService />} />
               <Route path="/conveyancing" element={<Conveyancing/>} />
+              <Route path="/estateprobate" element={<EstateProbate/>} />
 
               {/* Website Routes Ends */}
 
