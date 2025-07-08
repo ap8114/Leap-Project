@@ -123,7 +123,7 @@ const Navbar = ({ toggleSidebar }) => {
           {/* Profile dropdown */}
           <div className="dropdown">
             <div
-              className="d-flex align-items-center gap-2"
+              className="d-flex align-items-center gap-2 "
               style={{ cursor: "pointer" }}
               data-bs-toggle="dropdown"
               aria-expanded="false"
@@ -134,20 +134,20 @@ const Navbar = ({ toggleSidebar }) => {
             </div>
             <ul className="dropdown-menu dropdown-menu-end shadow-lg border-0 rounded-3 p-2 mt-2">
               <li>
-                <a className="dropdown-item d-flex align-items-center gap-2 text-light" href="/profile">
-                  <i className="bi bi-person-circle  text-light"></i> Profile
+                <a className="dropdown-item d-flex align-items-center gap-2 text-dark" href="/profile">
+                  <i className="bi bi-person-circle  text-dark"></i> Profile
                 </a>
               </li>
               <li>
-                <a className="dropdown-item d-flex align-items-center gap-2 text-light" href="/settings">
-                  <i className="bi bi-gear text-light"></i> Settings
+                <a className="dropdown-item d-flex align-items-center gap-2 text-dark" href="/settings">
+                  <i className="bi bi-gear text-dark"></i> Settings
                 </a>
               </li>
               <li>
                 <hr className="dropdown-divider" />
               </li>
               <li>
-                <button className="dropdown-item d-flex align-items-center gap-2 text-light " onClick={handleLogout}>
+                <button className="dropdown-item d-flex align-items-center gap-2 text-dark " onClick={handleLogout}>
                   <i className="bi bi-box-arrow-right "></i> Logout
                 </button>
               </li>
