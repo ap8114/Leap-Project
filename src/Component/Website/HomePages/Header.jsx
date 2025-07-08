@@ -9,16 +9,18 @@ const Header = () => {
     const [openMobileDropdown, setOpenMobileDropdown] = useState(null);
     return (
         <div>
-            <nav className="navbars navbar-expand-lg navbar-dark p-3">
+            <nav className="navbars navbar-expand-lg p-3 mb-3">
                 <div className="container-fluid px-4 d-flex align-items-center justify-content-between">
 
+                   <Link to="/" className="text-decoration-none">
                     <div className="d-flex align-items-center">
                         <img
-                            src="https://i.ibb.co/r2dVqZRg/C401-F892-948-F-4567-B30-E-34-D20-C772502-1.jpg"
+                            src="https://i.postimg.cc/RVJPy6VB/Whats-App-Image-2025-07-08-at-18-18-06-42bff2fc-removebg-preview.png"
                             alt="Logo"
-                            style={{ height: '60px', width: '70px' }}
+                            style={{ height: '60px', width: '150px' }}
                         />
                     </div>
+                   </Link>
 
                     {/* Toggle button for mobile */}
                     <button
@@ -234,17 +236,17 @@ const Header = () => {
                         </li>
                         {/* Company Dropdown */}
                         <Link to="/company" className="text-decoration-none">
-                        <li className="nav-item dropdown position-static">
-                            <div
-                                className="nav-link"
-                                href="#company"
-                              
-                                role="button"
-                                
-                            >
-                                Company
-                            </div>
-                            {/* <div
+                            <li className="nav-item dropdown position-static">
+                                <div
+                                    className="nav-link"
+                                    href="#company"
+
+                                    role="button"
+
+                                >
+                                    Company
+                                </div>
+                                {/* <div
                                 className="dropdown-menu shadow border-0 mt-2 p-4 rounded-4"
                                 aria-labelledby="companyDropdown"
                                 style={{ minWidth: "950px", maxWidth: "1100px" }}
@@ -325,7 +327,7 @@ const Header = () => {
                                     </div>
                                 </div>
                             </div> */}
-                        </li>
+                            </li>
                         </Link>
                         {/* Resources Dropdown */}
                         <li className="nav-item dropdown position-static">
@@ -509,18 +511,18 @@ const Header = () => {
                             </li>
                             {/* Company Mobile Dropdown */}
                             <li className="nav-item">
-                               <Link to="/company" className="text-decoration-none">
-                                <button
-                                    className="nav-link text-light w-100 text-start bg-transparent border-0"
-                                    onClick={() =>
-                                        setOpenMobileDropdown(
-                                            openMobileDropdown === "company" ? null : "company"
-                                        )
-                                    }
-                                >
-                                    Company
-                                </button>
-                               </Link>
+                                <Link to="/company" className="text-decoration-none">
+                                    <button
+                                        className="nav-link text-light w-100 text-start bg-transparent border-0"
+                                        onClick={() =>
+                                            setOpenMobileDropdown(
+                                                openMobileDropdown === "company" ? null : "company"
+                                            )
+                                        }
+                                    >
+                                        Company
+                                    </button>
+                                </Link>
                                 {/* {openMobileDropdown === "company" && (
                                     <div className="ps-3 text-white">
                                         <div className="dropdown-item">Leadership</div>
