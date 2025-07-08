@@ -11,16 +11,14 @@ const Header = () => {
         <div>
             <nav className="navbars navbar-expand-lg navbar-dark p-3">
                 <div className="container-fluid px-4 d-flex align-items-center justify-content-between">
-                    {/* Logo */}
-                    <Link className="navbar-brand" to="/">
-                        {/* https://i.ibb.co/SD7MR15F/image.png */}
-                        {/* <img
-                            src=""
+
+                    <div className="d-flex align-items-center">
+                        <img
+                            src="https://i.ibb.co/r2dVqZRg/C401-F892-948-F-4567-B30-E-34-D20-C772502-1.jpg"
                             alt="Logo"
-                            height="40"
-                        /> */}
-                        <h3>LOGO</h3>
-                    </Link>
+                            style={{ height: '60px', width: '70px' }}
+                        />
+                    </div>
 
                     {/* Toggle button for mobile */}
                     <button
@@ -294,12 +292,16 @@ const Header = () => {
                                             For individuals and companies skilled in providing support
                                             to law firms
                                         </div>
-                                        <a className="dropdown-item fw-semibold" href="#lawsociety">
+
+                                        <Link to="/thelawsociety" className="text-decoration-none">
+                                         <div className="dropdown-item fw-semibold">
                                             The Law Society
-                                        </a>
+                                        </div>
                                         <div className="small text-muted ms-3">
                                             Proud to be a strategic partner of The Law Society
                                         </div>
+                                        </Link>
+                                       
                                     </div>
                                     {/* Ideas Hub */}
                                     <div className="col-3 border-start">
@@ -410,9 +412,9 @@ const Header = () => {
                         </li>
                         {/* Contact */}
                         <li className="nav-item">
-                            <a className="nav-link" href="#contact">
+                            <Link to='/contactus' className="nav-link text-decoration-none">
                                 Contact
-                            </a>
+                            </Link>
                         </li>
                     </ul>
 
@@ -421,7 +423,7 @@ const Header = () => {
                         <Link to="/dashboard" className="btn btn-outline-light">
                             Login
                         </Link>
-                        <Link to="#demo" className="btn btn-demo">
+                        <Link to="#demo" className="btn btn-demo" style={{ backgroundColor: '#f76b1c', color: 'white' }}>
                             REQUEST DEMO
                         </Link>
                     </div>
