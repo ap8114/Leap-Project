@@ -94,8 +94,11 @@ const AdminPage= () => {
 
   return (
     <div className="min-vh-100 bg-light p-4">
-      <div className="container-fluid">
-        <h1 className="display-5 fw-bold text-dark mb-4">Admin Panel</h1>
+      <div className="container-fluid p-4">
+        <h1 className="display-6 fw-bold  mb-2">Admin Panel</h1>
+        <p className="text-muted mb-3">
+  Manage users, assign roles and permissions, and monitor system activity with access to logs and controls.
+</p>
         
         {/* User Management Section */}
         <div className="card shadow-sm mb-4">
@@ -124,8 +127,8 @@ const AdminPage= () => {
             
             {/* Edit User Modal */}
             {showEditModal && editingUser && (
-              <div className="modal fade show d-block" tabIndex={-1} style={{backgroundColor: 'rgba(0,0,0,0.5)'}}>
-                <div className="modal-dialog">
+              <div className="modal fade show d-block " tabIndex={-1} style={{backgroundColor: 'rgba(0,0,0,0.5)'}}>
+                <div className="modal-dialog ">
                   <div className="modal-content">
                     <div className="modal-header">
                       <h5 className="modal-title">Edit User</h5>
@@ -345,11 +348,11 @@ const AdminPage= () => {
                             setEditingUser(user);
                             setShowEditModal(true);
                           }}
-                          className="btn btn-sm btn-outline-primary me-2"
+                          className="btn btn-link text-primary me-2"
                         >
-                          <i className="fas fa-edit"></i>
+                         <i className="fas fa-edit"></i>
                         </button>
-                        <button className="btn btn-sm btn-outline-danger">
+                        <button className="btn btn-link text-danger me-2">
                           <i className="fas fa-trash-alt"></i>
                         </button>
                       </td>

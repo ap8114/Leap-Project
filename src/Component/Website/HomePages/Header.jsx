@@ -116,8 +116,12 @@ const Header = () => {
                       </div>
                     </div>
                     </Link>
+<<<<<<< HEAD
                     
                     <Link to="/clientservice" className="text-decoration-none text-dark">
+=======
+
+>>>>>>> 3a69c4c058b59128ffe342e4758353249a213f4f
                     <div>
                       <div className="fw-semibold">Client service</div>
                       <div className="small text-muted">
@@ -126,6 +130,7 @@ const Header = () => {
                     </div>
                     </Link>
                   </div>
+<<<<<<< HEAD
                   {/* Column 2: More Features */}
                   {/* <div className="col-4 border-start">
                                         <div className="pt-4">
@@ -162,6 +167,9 @@ const Header = () => {
                                         </div>
                                     </div> */}
                   {/* Column 3: Images and Info */}
+=======
+                 
+>>>>>>> 3a69c4c058b59128ffe342e4758353249a213f4f
                   <div className="col-4 border-start">
                     <div className="mb-4 d-flex align-items-start">
                       <img
@@ -220,68 +228,17 @@ const Header = () => {
                 style={{ minWidth: "900px", maxWidth: "1000px" }}
               >
                 <div className="row">
-                  {/* Firm Size */}
-                  <div className="col-3">
-                    <h6 className="dropdown-header text-primary">FIRM SIZE</h6>
-                    <div className="mb-3">
-                      <strong>Starting your own law firm?</strong>
-                      <div className="small text-muted">
-                        Discover how LEAP can help solicitors establish their
-                        own law firm
-                      </div>
-                    </div>
-                    <div>
-                      <strong>For mid-sized law firms</strong>
-                      <div className="small text-muted">
-                        Discover how LEAP can support larger law firms across
-                        every department
-                      </div>
-                    </div>
-                  </div>
                   {/* Areas of Law */}
-                  <div className="col-5 border-start">
-                    <h6 className="dropdown-header text-primary">
-                      AREAS OF LAW
-                    </h6>
-                    <div className="row">
-                      <div className="col-6">
-                        <a className="dropdown-item" href="#conveyancing">
-                          Conveyancing
-                        </a>
-                        <a className="dropdown-item" href="#corporate">
-                          Corporate & Commercial
-                        </a>
-                        <a className="dropdown-item" href="#criminal">
-                          Criminal
-                        </a>
-                        <a className="dropdown-item" href="#employment">
-                          Employment
-                        </a>
-                        <a className="dropdown-item" href="#estates">
-                          Estates and probate
-                        </a>
-                      </div>
-                      <div className="col-6">
-                        <a className="dropdown-item" href="#family">
-                          Family
-                        </a>
-                        <a className="dropdown-item" href="#immigration">
-                          Immigration
-                        </a>
-                        <a className="dropdown-item" href="#lifetime">
-                          Lifetime planning
-                        </a>
-                        <a className="dropdown-item" href="#personal-injury">
-                          Personal injury
-                        </a>
-                        <a
-                          className="dropdown-item"
-                          href="#specialist-litigation"
-                        >
-                          Specialist litigation
-                        </a>
-                      </div>
-                    </div>
+                  <div className="col-5">
+                   <div className="row">
+  <div className="col-12"> {/* Changed to single column for better mobile display */}
+    <a className="dropdown-item" href="#conveyancing">Conveyancing</a>
+    <a className="dropdown-item" href="#family">Family</a>
+    <a className="dropdown-item" href="#employment">Employment</a>
+    <a className="dropdown-item" href="#personal-injury">Personal injury</a>
+    <a className="dropdown-item" href="#estates">Estates and probate</a>
+  </div>
+</div>
                   </div>
                   {/* Images and Info */}
                   <div className="col-4 border-start">
@@ -348,12 +305,6 @@ const Header = () => {
                     <div className="small text-muted mb-2 ms-3">
                       We understand that our greatest asset is our people
                     </div>
-                    <a className="dropdown-item fw-semibold" href="#careers">
-                      Careers
-                    </a>
-                    <div className="small text-muted mb-2 ms-3">
-                      We care about what we do and the people we work with
-                    </div>
                     <a
                       className="dropdown-item fw-semibold"
                       href="#innovations"
@@ -363,32 +314,6 @@ const Header = () => {
                     <div className="small text-muted ms-3">
                       LEAP is the result of valuable feedback from users across
                       the globe
-                    </div>
-                  </div>
-                  {/* Contact & Support */}
-                  <div className="col-3 border-start">
-                    <h6 className="dropdown-header text-primary">
-                      CONTACT & SUPPORT
-                    </h6>
-                    <a className="dropdown-item fw-semibold" href="#contactus">
-                      Contact us
-                    </a>
-                    <div className="small text-muted mb-2 ms-3">
-                      Get in touch to find out more about LEAP
-                    </div>
-                    <a className="dropdown-item fw-semibold" href="#support">
-                      Client Support
-                    </a>
-                    <div className="small text-muted mb-2 ms-3">
-                      Learn about our unlimited support and training options for
-                      LEAP users
-                    </div>
-                    <a className="dropdown-item fw-semibold" href="#helpcentre">
-                      LEAP Help Centre
-                    </a>
-                    <div className="small text-muted ms-3">
-                      Browse our articles, access support and engage with the
-                      LEAP Community
                     </div>
                   </div>
                   {/* Business Partners */}
@@ -503,25 +428,7 @@ const Header = () => {
                       person across the UK
                     </div>
                   </div>
-                  {/* Thought Leadership */}
-                  <div className="col-3 border-start">
-                    <h6 className="dropdown-header text-primary">
-                      THOUGHT LEADERSHIP
-                    </h6>
-                    <a className="dropdown-item fw-semibold" href="#blog">
-                      Blog
-                    </a>
-                    <div className="small text-muted mb-2 ms-3">
-                      Stay on top of emerging industry trends
-                    </div>
-                    <a className="dropdown-item fw-semibold" href="#linkedin">
-                      LinkedIn
-                    </a>
-                    <div className="small text-muted ms-3">
-                      Follow us to stay up-to-date on the latest developments at
-                      LEAP
-                    </div>
-                  </div>
+                 
                   {/* Help Centre */}
                   <div className="col-3 border-start">
                     <div className="mb-3">

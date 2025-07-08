@@ -112,10 +112,10 @@ const Navbar = ({ toggleSidebar }) => {
                 ref={notificationRef}
                 className="notification-dropdown"
               >
-                <div className="fw-bold mb-2" style={{ color: "#1976d2" }}>Notifications</div>
+                <div className="fw-bold mb-2 text-light" style={{ color: "#1976d2" }}>Notifications</div>
                 <div style={{ color: "#333", fontSize: "0.97rem" }}>
                   {/* Example notification */}
-                  <div className="mb-2">No new notifications.</div>
+                  <div className="mb-2 text-muted">No new notifications.</div>
                 </div>
               </div>
             )}
@@ -134,21 +134,21 @@ const Navbar = ({ toggleSidebar }) => {
             </div>
             <ul className="dropdown-menu dropdown-menu-end shadow-lg border-0 rounded-3 p-2 mt-2">
               <li>
-                <a className="dropdown-item d-flex align-items-center gap-2" href="/profile">
-                  <i className="bi bi-person-circle"></i> Profile
+                <a className="dropdown-item d-flex align-items-center gap-2 text-light" href="/profile">
+                  <i className="bi bi-person-circle  text-light"></i> Profile
                 </a>
               </li>
               <li>
-                <a className="dropdown-item d-flex align-items-center gap-2" href="/settings">
-                  <i className="bi bi-gear"></i> Settings
+                <a className="dropdown-item d-flex align-items-center gap-2 text-light" href="/settings">
+                  <i className="bi bi-gear text-light"></i> Settings
                 </a>
               </li>
               <li>
                 <hr className="dropdown-divider" />
               </li>
               <li>
-                <button className="dropdown-item d-flex align-items-center gap-2 text-danger" onClick={handleLogout}>
-                  <i className="bi bi-box-arrow-right"></i> Logout
+                <button className="dropdown-item d-flex align-items-center gap-2 text-light " onClick={handleLogout}>
+                  <i className="bi bi-box-arrow-right "></i> Logout
                 </button>
               </li>
             </ul>
