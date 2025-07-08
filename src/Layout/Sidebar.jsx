@@ -34,8 +34,8 @@ const Sidebar = ({ collapsed, menuItemClick }) => {
     { path: "/calendar", icon: "fa-solid fa-calendar-check", text: "Calendar" },                   // Calendar
     { path: "/tasksworkflow", icon: "fa-solid fa-diagram-project", text: "Tasks & Workflow" },     // Tasks & Workflow
     { path: "/timebilling", icon: "fa-solid fa-stopwatch", text: "Time & Billing" },               // Time & Billing
-    { path: "/reports-analytics", icon: "fa-solid fa-chart-line", text: "Reports & Analytics" },   // Reports & Analytics
-    { path: "/admin", icon: "fa-solid fa-user-shield", text: "Admin" },                            // Admin
+    { path: "/reportsanalytics", icon: "fa-solid fa-chart-line", text: "Reports & Analytics" },   // Reports & Analytics
+    { path: "/adminpage", icon: "fa-solid fa-user-shield", text: "Admin" },                            // Admin
     { path: "/setting", icon: "fa-solid fa-gear", text: "Settings" }                              // Settings
   ];
 

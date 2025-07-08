@@ -20,6 +20,9 @@ import DocumentAutomation from "./Component/Website/Pages/DocumentAutomation";
 import Client from "./Component/AdminDashboard/Clientcrm/Client";
 import TasksWorkflow from "./Component/AdminDashboard/TasksWorkflow/TasksWorkflow";
 import Settings from "./Component/AdminDashboard/Setting/Settings";
+import ReportsAnalytics from "./Component/AdminDashboard/ReportsAnalytics/ReportsAnalytics";
+import AdminPage from "./Component/AdminDashboard/Admin/AdminPage";
+
 
 function App() {
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
@@ -104,6 +107,10 @@ function App() {
                 <Route path="/timebilling" element={<Timebilling />} />
                 <Route path="/tasksworkflow" element={<TasksWorkflow />} />
                 <Route path="/setting" element={<Settings />} />
+           
+                   <Route path="/reportsanalytics" element={<ReportsAnalytics/>} />
+                     <Route path="/adminpage" element={<AdminPage/>} />
+
               </Routes>
             </div>
           )}
