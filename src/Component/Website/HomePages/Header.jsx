@@ -189,7 +189,7 @@ const Header = () => {
                   <div className="col-5">
                    <div className="row">
   <div className="col-12"> {/* Changed to single column for better mobile display */}
-    <a className="dropdown-item" href="#conveyancing">Conveyancing</a>
+<Link to="/conveyancing" className="dropdown-item ">Conveyancing </Link>
     <a className="dropdown-item" href="#family">Family</a>
     <a className="dropdown-item" href="#employment">Employment</a>
     <a className="dropdown-item" href="#personal-injury">Personal injury</a>
