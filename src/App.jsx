@@ -10,7 +10,7 @@ import { useState } from "react";
 import Dashboard from "./Component/AdminDashboard/Dashboard/Dashboard";
 import Matter from "./Component/AdminDashboard/Matters/Matter";
 import Home from "./Component/Website/HomePages/Home";
-import ClientsCRM from "./Component/AdminDashboard/Clients/ClientsCRM";
+
 import Document from "./Component/AdminDashboard/Documents/Document";
 import Calendar from "./Component/AdminDashboard/Calendar/Calendar";
 import Timebilling from "./Component/AdminDashboard/TimeBilling/Timebilling";
@@ -21,6 +21,7 @@ import Timebilling from "./Component/AdminDashboard/TimeBilling/Timebilling";
 
 import ClientAndMatterManagement from "./Component/Website/Pages/ClientAndMatterManagement";
 import DocumentAutomation from "./Component/Website/Pages/DocumentAutomation";
+import Client from "./Component/AdminDashboard/Clientcrm/Client";
 
 
 function App() {
@@ -77,7 +78,7 @@ function App() {
                 <Route path="/dashboard" element={<Dashboard />} />
                  <Route path="/matter" element={<Matter/>} />
                  <Route path="/document" element={<Document/>} />
-                 <Route path="/client" element={<ClientsCRM/>} />
+                 <Route path="/Client" element={<Client/>} />
                  <Route path="/calendar" element={<Calendar/>} />
                  <Route path="/timebilling" element={<Timebilling/>} />
              
