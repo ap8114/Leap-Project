@@ -1,7 +1,7 @@
 import React from 'react'
 import { Container, Row, Col, Card, Button, Accordion, ListGroup } from 'react-bootstrap';
-import FooterSection from '../HomePages/FooterSection'
-import Header from '../HomePages/Header'
+import Header from '../../HomePages/Header';
+import FooterSection from '../../HomePages/FooterSection';
 
 const DocumentAutomation = () => {
     const features = [
@@ -422,7 +422,7 @@ const DocumentAutomation = () => {
 
             </div>
 
-            <FooterSection />
+          <FooterSection />
         </div>
     )
 }

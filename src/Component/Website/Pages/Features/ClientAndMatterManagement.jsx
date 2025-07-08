@@ -1,6 +1,6 @@
 import React from 'react'
-import Header from '../HomePages/Header'
-import FooterSection from '../HomePages/FooterSection'
+import Header from '../../HomePages/Header'
+import FooterSection from '../../HomePages/FooterSection'
 import { Row, Col, Container, Card, Button, Accordion, ListGroup } from 'react-bootstrap'
 
 const ClientAndMatterManagement = () => {
