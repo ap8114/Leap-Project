@@ -24,7 +24,7 @@ import ClientAndMatterManagement from "./Component/Website/Pages/Features/Client
 import DocumentAutomation from "./Component/Website/Pages/Features/DocumentAutomation";
 import Home from "./Component/Website/HomePages/Home";
 import Reporting from "./Component/Website/Pages/Features/Reporting";
-
+import ClientService from "./Component/Website/Pages/Features/ClientService";
 
 function App() {
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
@@ -48,7 +48,8 @@ function App() {
     "/client-and-matter-management",
     "/document-automation",
     "/timerecordingbilling",
-    "/reporting"
+    "/reporting",
+    "/clientservice",
   ];
   const isNoLayoutPage = noLayoutRoutes.includes(location.pathname);
   // Hide layout (navbar/sidebar) only on login page
@@ -60,8 +61,9 @@ function App() {
     location.pathname === "/signup" ||
     location.pathname === "/client-and-matter-management" ||
     location.pathname === "/document-automation" ||
-     location.pathname === "/timerecordingbilling" ||
-    location.pathname === "/reporting";
+    location.pathname === "/timerecordingbilling" ||
+    location.pathname === "/reporting" ||
+    location.pathname === "/clientservice";
 
   // ...existing code...
   return (
@@ -84,11 +86,20 @@ function App() {
             <Routes>
               {/* Website Routes Starts */}
               <Route path="/" element={<Home />} />
-              <Route path="/client-and-matter-management" element={<ClientAndMatterManagement />} />
-              <Route path="/document-automation" element={<DocumentAutomation />} />
-              <Route path="/timerecordingbilling" element={<TimeRecordingBilling />} />
-                 <Route path="/reporting" element={<Reporting />} />
-
+              <Route
+                path="/client-and-matter-management"
+                element={<ClientAndMatterManagement />}
+              />
+              <Route
+                path="/document-automation"
+                element={<DocumentAutomation />}
+              />
+              <Route
+                path="/timerecordingbilling"
+                element={<TimeRecordingBilling />}
+              />
+              <Route path="/reporting" element={<Reporting />} />
+              <Route path="/clientservice" element={<ClientService />} />
 
               {/* Website Routes Ends */}
 
@@ -98,8 +109,9 @@ function App() {
             </Routes>
           ) : (
             <div
-              className={`right-side-content${isSidebarCollapsed ? " collapsed" : ""
-                }`}
+              className={`right-side-content${
+                isSidebarCollapsed ? " collapsed" : ""
+              }`}
             >
               <Routes>
                 {/* AdminDashboard */}
@@ -112,9 +124,11 @@ function App() {
                 <Route path="/tasksworkflow" element={<TasksWorkflow />} />
                 <Route path="/setting" element={<Settings />} />
 
-                <Route path="/reportsanalytics" element={<ReportsAnalytics />} />
+                <Route
+                  path="/reportsanalytics"
+                  element={<ReportsAnalytics />}
+                />
                 <Route path="/adminpage" element={<AdminPage />} />
-
               </Routes>
             </div>
           )}
