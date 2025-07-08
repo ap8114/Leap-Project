@@ -116,12 +116,8 @@ const Header = () => {
                       </div>
                     </div>
                     </Link>
-<<<<<<< HEAD
-                    
-                    <Link to="/clientservice" className="text-decoration-none text-dark">
-=======
 
->>>>>>> 3a69c4c058b59128ffe342e4758353249a213f4f
+                    <Link to="/clientservice" className="text-decoration-none text-dark">
                     <div>
                       <div className="fw-semibold">Client service</div>
                       <div className="small text-muted">
@@ -130,46 +126,7 @@ const Header = () => {
                     </div>
                     </Link>
                   </div>
-<<<<<<< HEAD
-                  {/* Column 2: More Features */}
-                  {/* <div className="col-4 border-start">
-                                        <div className="pt-4">
-                                            <div className="mb-3">
-                                                <div className="fw-semibold">Security and compliance</div>
-                                                <div className="small text-muted">
-                                                    Protect your firm’s data to help prevent cyberattacks and safeguard information
-                                                </div>
-                                            </div>
-                                            <div className="mb-3">
-                                                <div className="fw-semibold">Legal accounting</div>
-                                                <div className="small text-muted">
-                                                    Manage client accounting, billing and reporting processes with ease
-                                                </div>
-                                            </div>
-                                            <div className="mb-3">
-                                                <div className="fw-semibold">NEW: Matter AI</div>
-                                                <div className="small text-muted">
-                                                    Instantly access insights and information directly from your matter
-                                                </div>
-                                            </div>
-                                            <div className="mb-3">
-                                                <div className="fw-semibold">NEW: Prompts</div>
-                                                <div className="small text-muted">
-                                                    Create high-quality, matter-specific legal documents in a fraction of the time
-                                                </div>
-                                            </div>
-                                            <div>
-                                                <div className="fw-semibold">NEW: LEAP Leads</div>
-                                                <div className="small text-muted">
-                                                    Attract, manage, and convert quality leads into clients.
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div> */}
-                  {/* Column 3: Images and Info */}
-=======
                  
->>>>>>> 3a69c4c058b59128ffe342e4758353249a213f4f
                   <div className="col-4 border-start">
                     <div className="mb-4 d-flex align-items-start">
                       <img
