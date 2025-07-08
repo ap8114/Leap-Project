@@ -26,6 +26,10 @@ import Home from "./Component/Website/HomePages/Home";
 import Reporting from "./Component/Website/Pages/Features/Reporting";
 import ClientService from "./Component/Website/Pages/Features/ClientService";
 import Conveyancing from "./Component/Website/Pages/Solutions/Conveyancing";
+import Family from "./Component/Website/Pages/Solutions/Family.JSX";
+import Employment from "./Component/Website/Pages/Solutions/Employment";
+import PersonalInjury from "./Component/Website/Pages/Solutions/PersonalInjury";
+
 
 function App() {
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
@@ -51,7 +55,10 @@ function App() {
     "/timerecordingbilling",
     "/reporting",
     "/clientservice",
-    "/conveyancing"
+    "/conveyancing",
+    "/family",
+    "/employment",
+    "/personalinjury",
   ];
   const isNoLayoutPage = noLayoutRoutes.includes(location.pathname);
   // Hide layout (navbar/sidebar) only on login page
@@ -66,8 +73,11 @@ function App() {
     location.pathname === "/timerecordingbilling" ||
     location.pathname === "/reporting" ||
     location.pathname === "/clientservice" ||
-      location.pathname === "/conveyancing";
-
+      location.pathname === "/conveyancing" ||
+    location.pathname === "/family" ||
+    location.pathname === "/employment" ||
+     location.pathname === "/personalinjury";
+   
   // ...existing code...
   return (
     <>
@@ -99,11 +109,13 @@ function App() {
               />
               <Route
                 path="/timerecordingbilling"
-                element={<TimeRecordingBilling />}
-              />
+                element={<TimeRecordingBilling />}/>
               <Route path="/reporting" element={<Reporting />} />
               <Route path="/clientservice" element={<ClientService />} />
               <Route path="/conveyancing" element={<Conveyancing/>} />
+                <Route path="/family" element={< Family/>} />
+                   <Route path="/employment" element={< Employment/>} />
+                       <Route path="/personalinjury" element={< PersonalInjury/>} />
 
               {/* Website Routes Ends */}
 
