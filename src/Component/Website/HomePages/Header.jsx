@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { Link, Route, Routes } from "react-router-dom";
 import "./Website.css"; // Assuming you have a CSS file for styling
+import logofasttrack from "../../../assets/logofasttrack.png"; // Adjust the path as necessary
 
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -9,15 +10,15 @@ const Header = () => {
     const [openMobileDropdown, setOpenMobileDropdown] = useState(null);
     return (
         <div>
-            <nav className="navbars navbar-expand-lg p-3 mb-3">
+            <nav className="navbars navbar-expand-lg navbar-dark  p-3">
                 <div className="container-fluid px-4 d-flex align-items-center justify-content-between">
 
                    <Link to="/" className="text-decoration-none">
                     <div className="d-flex align-items-center">
                         <img
-                            src="https://i.postimg.cc/RVJPy6VB/Whats-App-Image-2025-07-08-at-18-18-06-42bff2fc-removebg-preview.png"
+                            src={logofasttrack}
                             alt="Logo"
-                            style={{ height: '60px', width: '150px' }}
+                            style={{ height: '70px', width: '170px' }}
                         />
                     </div>
                    </Link>

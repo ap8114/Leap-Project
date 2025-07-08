@@ -330,7 +330,7 @@ select.form-input {
 /* navbar end  */
 .right-side-content {
   width: 100%;
-  margin-top: 85px;
+ 
   padding-left: 250px;
 
   transition: padding-left 0.3s;
@@ -760,7 +760,7 @@ select.form-input {
 }
  .activebadge {
   background-color: #39bf1b;
-}
+} 
  .expiredbadge {
   background-color: #ff0000;
 }
@@ -1038,4 +1038,20 @@ select.form-input {
   color: #6c757d;
   background-color: #f8f9fa;
   border-color: #dee2e6;
+}
+
+/* modal custom css for main content render */
+
+.modal-custom .modal-dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  z-index: 1050;
+  width: 100%;
+  max-width: 500px;
+}
+.modal-backdrop {
+  z-index: 1040;
 }

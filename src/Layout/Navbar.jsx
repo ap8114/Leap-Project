@@ -49,7 +49,7 @@ const Navbar = ({ toggleSidebar }) => {
   };
 
   return (
-    <nav className="navbar custom-navbar p-0 shadow-sm">
+    <nav className="navbar custom-navbar p-0 shadow-sm position-sticky top-0 ">
       <div className="container-fluid d-flex flex-nowrap justify-content-between align-items-center px-2">
 
         {/* Left: Logo and Sidebar Toggle */}

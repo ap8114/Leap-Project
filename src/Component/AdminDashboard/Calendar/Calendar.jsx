@@ -561,7 +561,7 @@ const Calendar = () => {
       </div>
       
       {/* New Appointment Modal */}
-      <Modal show={isModalOpen} onHide={() => setIsModalOpen(false)} centered>
+      <Modal show={isModalOpen} onHide={() => setIsModalOpen(false)}  size="md" className="modal-custom">
         <Modal.Header closeButton className="border-0 pb-0">
           <Modal.Title>New Appointment</Modal.Title>
         </Modal.Header>
