@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Card, Pagination} from 'react-bootstrap';
 
 const AdminPage= () => {
  const [users, setUsers] = useState([
@@ -360,30 +361,22 @@ const AdminPage= () => {
                   ))}
                 </tbody>
               </table>
+               <Card.Footer className="bg-white border-top d-flex flex-column flex-md-row justify-content-between align-items-center py-3">
+        <div className="text-muted small mb-2 mb-md-0">
+          Showing <span className="fw-medium">1</span> to <span className="fw-medium">5</span> of <span className="fw-medium">24</span> entries
+        </div>
+        <Pagination className="mb-0 pagination-custom">
+          <Pagination.Prev disabled>Previous</Pagination.Prev>
+          <Pagination.Item active>1</Pagination.Item>
+          <Pagination.Item>2</Pagination.Item>
+          <Pagination.Item>3</Pagination.Item>
+          <Pagination.Next>Next</Pagination.Next>
+        </Pagination>
+      </Card.Footer>
             </div>
             
             {/* Pagination */}
-            <div className="d-flex justify-content-between align-items-center mt-3">
-              <div className="text-muted small">
-                Showing {indexOfFirstUser + 1} to {Math.min(indexOfLastUser, filteredUsers.length)} of {filteredUsers.length} users
-              </div>
-              <div className="btn-group">
-                <button
-                  onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
-                  disabled={currentPage === 1}
-                  className="btn btn-outline-secondary btn-sm"
-                >
-                  <i className="fas fa-chevron-left"></i>
-                </button>
-                <button
-                  onClick={() => setCurrentPage(prev => prev + 1)}
-                  disabled={indexOfLastUser >= filteredUsers.length}
-                  className="btn btn-outline-secondary btn-sm"
-                >
-                  <i className="fas fa-chevron-right"></i>
-                </button>
-              </div>
-            </div>
+    
           </div>
         </div>
         

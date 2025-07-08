@@ -142,7 +142,7 @@ const Matter = () => {
 
   return (
     <div className="min-vh-100 bg-white p-4">
-     <div className="container-fluid p-3 p-md-4">
+    
   {/* Title & Description */}
   <div className="mb-3">
     <h1 className="h1 fw-bold mb-2">Matters</h1>
@@ -216,7 +216,7 @@ const Matter = () => {
         </select>
       </div>
     </div>
-  </div>
+ 
 
   {/* Matters Grid */}
   {filteredMatters.length > 0 ? (
