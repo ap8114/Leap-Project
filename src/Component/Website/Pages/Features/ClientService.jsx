@@ -35,7 +35,7 @@ const ClientService = () => {
 
       <div className="w-100 mt-3">
         {/* Hero Section */}
-        <div className="bg-primary text-white">
+        <div className="bg-dark text-white">
           <div className="container px-4 py-5">
             <div className="row align-items-center g-5 py-5">
               <div className="col-lg-6">

@@ -25,6 +25,7 @@ import DocumentAutomation from "./Component/Website/Pages/Features/DocumentAutom
 import Home from "./Component/Website/HomePages/Home";
 import Reporting from "./Component/Website/Pages/Features/Reporting";
 import ClientService from "./Component/Website/Pages/Features/ClientService";
+import Conveyancing from "./Component/Website/Pages/Solutions/Conveyancing";
 
 function App() {
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
@@ -50,6 +51,7 @@ function App() {
     "/timerecordingbilling",
     "/reporting",
     "/clientservice",
+    "/conveyancing"
   ];
   const isNoLayoutPage = noLayoutRoutes.includes(location.pathname);
   // Hide layout (navbar/sidebar) only on login page
@@ -63,7 +65,8 @@ function App() {
     location.pathname === "/document-automation" ||
     location.pathname === "/timerecordingbilling" ||
     location.pathname === "/reporting" ||
-    location.pathname === "/clientservice";
+    location.pathname === "/clientservice" ||
+      location.pathname === "/conveyancing";
 
   // ...existing code...
   return (
@@ -100,6 +103,7 @@ function App() {
               />
               <Route path="/reporting" element={<Reporting />} />
               <Route path="/clientservice" element={<ClientService />} />
+              <Route path="/conveyancing" element={<Conveyancing/>} />
 
               {/* Website Routes Ends */}
 

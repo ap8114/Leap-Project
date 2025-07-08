@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import Header from '../../HomePages/Header';
+import FooterSection from '../../HomePages/FooterSection';
 
 const Conveyancing = () => {
   const [email, setEmail] = useState('');
@@ -34,7 +36,10 @@ const Conveyancing = () => {
   ];
 
   return (
-    <div className="bg-white text-dark">
+    <div className='w-100 '>
+        <Header />
+    
+    <div className="bg-white text-dark mt-3">
       {/* Hero Section */}
       <section className="position-relative overflow-hidden">
         <div className="container-fluid">
@@ -551,75 +556,9 @@ const Conveyancing = () => {
           </div>
         </div>
       </section>
-
+</div>
       {/* Footer */}
-      <footer className="bg-dark text-white py-5">
-        <div className="container">
-          <div className="row g-4">
-            <div className="col-md-6 col-lg-3">
-              <h3 className="h5 mb-4">Conveyancing Software</h3>
-              <p className="text-muted small">
-                Streamlining property transactions for legal professionals since 2015.
-              </p>
-              <div className="d-flex gap-3 mt-4">
-                <a href="#" className="text-white">
-                  <i className="fab fa-facebook-f"></i>
-                </a>
-                <a href="#" className="text-white">
-                  <i className="fab fa-twitter"></i>
-                </a>
-                <a href="#" className="text-white">
-                  <i className="fab fa-linkedin-in"></i>
-                </a>
-                <a href="#" className="text-white">
-                  <i className="fab fa-instagram"></i>
-                </a>
-              </div>
-            </div>
-            <div className="col-md-6 col-lg-3">
-              <h3 className="h5 mb-4">Product</h3>
-              <ul className="list-unstyled small">
-                <li className="mb-2"><a href="#" className="text-muted text-decoration-none">Features</a></li>
-                <li className="mb-2"><a href="#" className="text-muted text-decoration-none">Pricing</a></li>
-                <li className="mb-2"><a href="#" className="text-muted text-decoration-none">Case Studies</a></li>
-                <li className="mb-2"><a href="#" className="text-muted text-decoration-none">Reviews</a></li>
-                <li><a href="#" className="text-muted text-decoration-none">Updates</a></li>
-              </ul>
-            </div>
-            <div className="col-md-6 col-lg-3">
-              <h3 className="h5 mb-4">Support</h3>
-              <ul className="list-unstyled small">
-                <li className="mb-2"><a href="#" className="text-muted text-decoration-none">Help Center</a></li>
-                <li className="mb-2"><a href="#" className="text-muted text-decoration-none">Documentation</a></li>
-                <li className="mb-2"><a href="#" className="text-muted text-decoration-none">API Reference</a></li>
-                <li className="mb-2"><a href="#" className="text-muted text-decoration-none">Community</a></li>
-                <li><a href="#" className="text-muted text-decoration-none">Contact Us</a></li>
-              </ul>
-            </div>
-            <div className="col-md-6 col-lg-3">
-              <h3 className="h5 mb-4">Company</h3>
-              <ul className="list-unstyled small">
-                <li className="mb-2"><a href="#" className="text-muted text-decoration-none">About Us</a></li>
-                <li className="mb-2"><a href="#" className="text-muted text-decoration-none">Careers</a></li>
-                <li className="mb-2"><a href="#" className="text-muted text-decoration-none">Blog</a></li>
-                <li className="mb-2"><a href="#" className="text-muted text-decoration-none">Press</a></li>
-                <li><a href="#" className="text-muted text-decoration-none">Partners</a></li>
-              </ul>
-            </div>
-          </div>
-          <hr className="my-4 bg-secondary" />
-          <div className="d-flex flex-column flex-md-row justify-content-between align-items-center">
-            <div className="d-flex gap-3 mb-3 mb-md-0">
-              <a href="#" className="text-muted small text-decoration-none">Privacy Policy</a>
-              <a href="#" className="text-muted small text-decoration-none">Terms of Service</a>
-              <a href="#" className="text-muted small text-decoration-none">Cookie Policy</a>
-            </div>
-            <p className="small text-muted mb-0">
-              &copy; {new Date().getFullYear()} Conveyancing Software. All rights reserved.
-            </p>
-          </div>
-        </div>
-      </footer>
+    <FooterSection />
     </div>
   );
 };
