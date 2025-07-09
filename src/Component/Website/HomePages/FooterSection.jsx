@@ -54,8 +54,8 @@ const FooterSection = () => {
                   <Link to="/terms" className="small">Terms</Link>
                   <Link to="/privacy-policy" className="small">Privacy Policy</Link>
                   {/* <Link to="/cookie-policy" className="small">Cookie Policy</Link> */}
-                  <Link to="/security" className="small">Security Statement</Link>
-                  <Link to="/sitemap" className="small">Sitemap</Link>
+                  {/* <Link to="/security" className="small">Security Statement</Link>
+                  <Link to="/sitemap" className="small">Sitemap</Link> */}
                 </div>
               </div>
             </div>
