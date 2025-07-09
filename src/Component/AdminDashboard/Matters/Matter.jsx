@@ -304,7 +304,7 @@ const Matter = () => {
       {isModalOpen && (
         <>
       
-          <div className="modal-backdrop fade show mt-5 modal-custom"></div>
+          <div className="modal-backdrop fade show  modal-custom"></div>
 
        
           <div className="modal fade show d-block  modal-md" tabIndex="-1" role="dialog" aria-modal="true">
