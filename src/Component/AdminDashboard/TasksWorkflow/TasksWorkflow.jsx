@@ -245,7 +245,7 @@ const TasksWorkflow = () => {
       {/* New Task Modal */}
     {isNewTaskModalOpen && (
   <div
-    className="modal fade show d-block mt-5"
+    className="modal fade show d-block mt-5 "
     tabIndex="-1"
     role="dialog"
     style={{
@@ -259,7 +259,7 @@ const TasksWorkflow = () => {
       overflowY: 'auto',
     }}
   >
-    <div className="modal-dialog modal-dialog-centered">
+    <div className="modal-dialog ">
       <div className="modal-content">
         <div className="modal-header">
           <h5 className="modal-title">Create New Task</h5>

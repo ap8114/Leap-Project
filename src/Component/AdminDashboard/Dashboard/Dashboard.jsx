@@ -77,7 +77,7 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="container-fluid p-4 bg-light py-5">
+    <div className="container-fluid p-4 bg-light ">
       {/* Page Header */}
       <div className="mb-5">
         <h1 className="display-6 fw-bold mb-2">Dashboard</h1>

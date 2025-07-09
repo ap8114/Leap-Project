@@ -561,97 +561,104 @@ const Calendar = () => {
       </div>
       
       {/* New Appointment Modal */}
-      <Modal show={isModalOpen} onHide={() => setIsModalOpen(false)}  size="md" className="modal-custom">
-        <Modal.Header closeButton className="border-0 pb-0">
-          <Modal.Title>New Appointment</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <Form>
-            <Form.Group className="mb-3">
-              <Form.Label>Title</Form.Label>
-              <Form.Control
+ {isModalOpen && (
+  <div className="modal d-block fade show" tabIndex="-1" style={{ backgroundColor: 'rgba(0,0,0,0.5)' }}>
+    <div className="modal-dialog modal-md ">
+      <div className="modal-content">
+        
+        {/* Modal Header */}
+        <div className="modal-header border-0 pb-0">
+          <h5 className="modal-title">New Appointment</h5>
+          <button type="button" className="btn-close" onClick={() => setIsModalOpen(false)}></button>
+        </div>
+
+        {/* Modal Body */}
+        <div className="modal-body">
+          <form>
+            <div className="mb-3">
+              <label className="form-label">Title</label>
+              <input
                 type="text"
-                value={newAppointment.title}
-                onChange={(e) => setNewAppointment({...newAppointment, title: e.target.value})}
+                className="form-control"
                 placeholder="Meeting with client"
+                value={newAppointment.title}
+                onChange={(e) => setNewAppointment({ ...newAppointment, title: e.target.value })}
                 required
               />
-            </Form.Group>
-            
-            <Row className="mb-3">
-              <Col md={6}>
-                <Form.Group className="mb-3">
-                  <Form.Label>Date</Form.Label>
-                  <Form.Control
-                    type="date"
-                    value={newAppointment.date}
-                    onChange={(e) => setNewAppointment({...newAppointment, date: e.target.value})}
-                    required
-                  />
-                </Form.Group>
-              </Col>
-              <Col md={6}>
-                <Form.Group className="mb-3">
-                  <Form.Label>Type</Form.Label>
-                  <Form.Select
-                    value={newAppointment.type}
-                    onChange={(e) => setNewAppointment({...newAppointment, type: e.target.value})}
-                  >
-                    <option value="meeting">Meeting</option>
-                    <option value="hearing">Court Hearing</option>
-                    <option value="deadline">Deadline</option>
-                    <option value="other">Other</option>
-                  </Form.Select>
-                </Form.Group>
-              </Col>
-            </Row>
-            
-            <Row className="mb-3">
-              <Col md={6}>
-                <Form.Group className="mb-3">
-                  <Form.Label>Start Time</Form.Label>
-                  <Form.Control
-                    type="time"
-                    value={newAppointment.startTime}
-                    onChange={(e) => setNewAppointment({...newAppointment, startTime: e.target.value})}
-                    required
-                  />
-                </Form.Group>
-              </Col>
-              <Col md={6}>
-                <Form.Group className="mb-3">
-                  <Form.Label>End Time</Form.Label>
-                  <Form.Control
-                    type="time"
-                    value={newAppointment.endTime}
-                    onChange={(e) => setNewAppointment({...newAppointment, endTime: e.target.value})}
-                    required
-                  />
-                </Form.Group>
-              </Col>
-            </Row>
-            
-            <Form.Group className="mb-3">
-              <Form.Label>Description</Form.Label>
-              <Form.Control
-                as="textarea"
-                rows={3}
-                value={newAppointment.description}
-                onChange={(e) => setNewAppointment({...newAppointment, description: e.target.value})}
+            </div>
+
+            <div className="row mb-3">
+              <div className="col-md-6 mb-3 mb-md-0">
+                <label className="form-label">Date</label>
+                <input
+                  type="date"
+                  className="form-control"
+                  value={newAppointment.date}
+                  onChange={(e) => setNewAppointment({ ...newAppointment, date: e.target.value })}
+                  required
+                />
+              </div>
+              <div className="col-md-6">
+                <label className="form-label">Type</label>
+                <select
+                  className="form-select"
+                  value={newAppointment.type}
+                  onChange={(e) => setNewAppointment({ ...newAppointment, type: e.target.value })}
+                >
+                  <option value="meeting">Meeting</option>
+                  <option value="hearing">Court Hearing</option>
+                  <option value="deadline">Deadline</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+            </div>
+
+            <div className="row mb-3">
+              <div className="col-md-6 mb-3 mb-md-0">
+                <label className="form-label">Start Time</label>
+                <input
+                  type="time"
+                  className="form-control"
+                  value={newAppointment.startTime}
+                  onChange={(e) => setNewAppointment({ ...newAppointment, startTime: e.target.value })}
+                  required
+                />
+              </div>
+              <div className="col-md-6">
+                <label className="form-label">End Time</label>
+                <input
+                  type="time"
+                  className="form-control"
+                  value={newAppointment.endTime}
+                  onChange={(e) => setNewAppointment({ ...newAppointment, endTime: e.target.value })}
+                  required
+                />
+              </div>
+            </div>
+
+            <div className="mb-3">
+              <label className="form-label">Description</label>
+              <textarea
+                className="form-control"
+                rows="3"
                 placeholder="Add details about the appointment"
-              />
-            </Form.Group>
-          </Form>
-        </Modal.Body>
-        <Modal.Footer className="border-0">
-          <Button variant="outline-secondary" onClick={() => setIsModalOpen(false)}>
-            Cancel
-          </Button>
-          <Button variant="custom" className="btn-custom" onClick={handleCreateAppointment}>
-            Save Appointment
-          </Button>
-        </Modal.Footer>
-      </Modal>
+                value={newAppointment.description}
+                onChange={(e) => setNewAppointment({ ...newAppointment, description: e.target.value })}
+              ></textarea>
+            </div>
+          </form>
+        </div>
+
+        {/* Modal Footer */}
+        <div className="modal-footer border-0">
+          <button className="btn btn-outline-secondary" onClick={() => setIsModalOpen(false)}>Cancel</button>
+          <button className="btn btn-custom" onClick={handleCreateAppointment}>Save Appointment</button>
+        </div>
+      </div>
+    </div>
+  </div>
+)}
+
     </div>
   );
 };
