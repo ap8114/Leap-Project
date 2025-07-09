@@ -450,7 +450,7 @@ const Header = () => {
                                     Features
                                 </button>
                                 {openMobileDropdown === "features" && (
-                                    <div className="ps-3 text-white">
+                                    <div className="ps-3 text-dark">
                                         <Link
                                             to="/client-and-matter-management"
                                             className="dropdown-item"
@@ -460,18 +460,14 @@ const Header = () => {
                                         <Link to="/document-automation" className="dropdown-item">
                                             Document automation and management
                                         </Link>
-                                        <div className="dropdown-item">
+                                        <Link to="/timerecordingbilling" className="dropdown-item">
                                             Time recording and billing
-                                        </div>
+                                        </Link>
                                         <Link to="/reporting" className="dropdown-item">
                                             Reporting
                                         </Link>
                                         <Link to="/clientservice" className="dropdown-item">Client service</Link>
-                                        <div className="dropdown-item">Security and compliance</div>
-                                        <div className="dropdown-item">Legal accounting</div>
-                                        <div className="dropdown-item">NEW: Matter AI</div>
-                                        <div className="dropdown-item">NEW: Prompts</div>
-                                        <div className="dropdown-item">NEW: LEAP Leads</div>
+                                       
                                     </div>
                                 )}
                             </li>
@@ -488,25 +484,12 @@ const Header = () => {
                                     Solutions
                                 </button>
                                 {openMobileDropdown === "solutions" && (
-                                    <div className="ps-3 text-white">
-                                        <div className="dropdown-item fw-semibold">
-                                            Starting your own law firm?
-                                        </div>
-                                        <div className="dropdown-item fw-semibold">
-                                            For mid-sized law firms
-                                        </div>
+                                    <div className="ps-3 text-dark">
                                         <div className="dropdown-item">Conveyancing</div>
-                                        <div className="dropdown-item">Corporate & Commercial</div>
-                                        <div className="dropdown-item">Criminal</div>
-                                        <div className="dropdown-item">Employment</div>
-                                        <div className="dropdown-item">Estates and probate</div>
                                         <div className="dropdown-item">Family</div>
-                                        <div className="dropdown-item">Immigration</div>
-                                        <div className="dropdown-item">Lifetime planning</div>
+                                        <div className="dropdown-item">Employment</div>
                                         <div className="dropdown-item">Personal injury</div>
-                                        <div className="dropdown-item">Specialist litigation</div>
-                                        <div className="dropdown-item">Legal Aid</div>
-                                        <div className="dropdown-item">Switch to LEAP</div>
+                                        <div className="dropdown-item">Estates and probate</div>
                                     </div>
                                 )}
                             </li>
@@ -544,18 +527,19 @@ const Header = () => {
                                 )} */}
                             </li>
                             {/* Resources Mobile Dropdown */}
-                            <li className="nav-item">
-                                <button
-                                    className="nav-link text-light w-100 text-start bg-transparent border-0"
-                                    onClick={() =>
-                                        setOpenMobileDropdown(
-                                            openMobileDropdown === "resources" ? null : "resources"
-                                        )
-                                    }
-                                >
-                                    Resources
-                                </button>
-                                {openMobileDropdown === "resources" && (
+                            <Link to="/resources" className="text-decoration-none">
+                                <li className="nav-item">
+                                    <button
+                                        className="nav-link text-light w-100 text-start bg-transparent border-0"
+                                        onClick={() =>
+                                            setOpenMobileDropdown(
+                                                openMobileDropdown === "resources" ? null : "resources"
+                                            )
+                                        }
+                                    >
+                                        Resources
+                                    </button>
+                                    {/* {openMobileDropdown === "resources" && (
                                     <div className="ps-3 text-white">
                                         <div className="dropdown-item">Testimonials</div>
                                         <div className="dropdown-item">Brochures and guides</div>
@@ -567,8 +551,9 @@ const Header = () => {
                                         <div className="dropdown-item">LinkedIn</div>
                                         <div className="dropdown-item">LEAP Help Centre</div>
                                     </div>
-                                )}
-                            </li>
+                                )} */}
+                                </li>
+                            </Link>
                             {/* Contact */}
                             <li className="nav-item">
                                 <a className="nav-link text-light" href="#contact">
