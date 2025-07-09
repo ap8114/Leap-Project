@@ -4,10 +4,68 @@ import { Link, Route, Routes } from "react-router-dom";
 import "./Website.css"; // Assuming you have a CSS file for styling
 import logoFastTrack from "../../../assets/logoFastTrack.png"; // Adjust the path as necessary
 
+const mobileMenus = [
+    {
+        key: "features",
+        label: "Features",
+        icon: "bi bi-grid-fill",
+        submenu: [
+            { to: "/client-and-matter-management", icon: "bi bi-people-fill", label: "Client and matter management" },
+            { to: "/document-automation", icon: "bi bi-file-earmark-text-fill", label: "Document automation and management" },
+            { to: "/timerecordingbilling", icon: "bi bi-clock-fill", label: "Time recording and billing" },
+            { to: "/reporting", icon: "bi bi-bar-chart-fill", label: "Reporting" },
+            { to: "/clientservice", icon: "bi bi-person-lines-fill", label: "Client service" },
+        ],
+    },
+    {
+        key: "solutions",
+        label: "Solutions",
+        icon: "bi bi-lightbulb-fill",
+        submenu: [
+            { to: "/conveyancing", icon: "bi bi-house-door-fill", label: "Conveyancing" },
+            { to: "/family", icon: "bi bi-people-fill", label: "Family" },
+            { to: "/employment", icon: "bi bi-briefcase-fill", label: "Employment" },
+            { to: "/personalinjury", icon: "bi bi-heart-pulse-fill", label: "Personal injury" },
+            { to: "/estateprobate", icon: "bi bi-file-earmark-text-fill", label: "Estates and probate" },
+        ],
+    },
+    {
+        key: "company",
+        label: "Company",
+        icon: "bi bi-building-fill",
+        submenu: [
+            { to: "/company", icon: "bi bi-building-fill", label: "About Company" },
+        ],
+    },
+    {
+        key: "resources",
+        label: "Resources",
+        icon: "bi bi-collection-fill",
+        submenu: [
+            { to: "/resources", icon: "bi bi-collection-fill", label: "Resources" },
+        ],
+    },
+    {
+        key: "contact",
+        label: "Contact",
+        icon: "bi bi-envelope-fill",
+        submenu: [
+            { to: "/contactus", icon: "bi bi-envelope-fill", label: "Contact" },
+        ],
+    },
+];
+
+
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [showFeatures, setShowFeatures] = useState(false);
     const [openMobileDropdown, setOpenMobileDropdown] = useState(null);
+
+    const [sliderMenu, setSliderMenu] = useState(null);
+
+    // Find submenu for slider
+    const currentSlider = mobileMenus.find((m) => m.key === sliderMenu);
+
     return (
         <div>
             <nav className="navbars navbar-expand-lg navbar-dark  p-3">
@@ -313,158 +371,68 @@ const Header = () => {
                     </div>
                 </div>
 
-                {/* Mobile menu */}
-                {isMenuOpen && (
-                    <div className="d-lg-none px-4 pt-3 pb-4">
+                {/* Mobile Main Menu */}
+                {isMenuOpen && !sliderMenu && (
+                    <div className="d-lg-none mobile-main-menu px-4 pt-3 pb-4 position-fixed top-0 start-0 w-100 h-100 bg-white" style={{ zIndex: 1050 }}>
+                        <div className="d-flex justify-content-between align-items-center mb-4">
+                            <span className="fw-bold fs-5">Menu</span>
+                            <button className="btn btn-link text-dark fs-3 p-0" onClick={() => setIsMenuOpen(false)}>
+                                <i className="bi bi-x-lg"></i>
+                            </button>
+                        </div>
                         <ul className="navbar-nav gap-2">
-                            {/* Features Mobile Dropdown */}
-                            <li className="nav-item border-bottom">
-                                <button
-                                    className="nav-link w-100 text-start bg-transparent border-0 d-flex justify-content-between align-items-center py-3 px-0"
-                                    onClick={() => setOpenMobileDropdown(openMobileDropdown === "features" ? null : "features")}
-                                >
-                                    <div className="d-flex align-items-center">
-                                        <i className="bi bi-grid-fill me-2" style={{ fontSize: "1.1rem" }}></i>
-                                        <span>Features</span>
-                                    </div>
-                                    <i className={`bi ${openMobileDropdown === "features" ? "bi-chevron-up" : "bi-chevron-down"}`}></i>
-                                </button>
-
-                                {openMobileDropdown === "features" && (
-                                    <div className="ps-4 py-2">
-                                        <Link
-                                            to="/client-and-matter-management"
-                                            className="dropdown-item d-flex align-items-center py-2 px-0 text-decoration-none"
-                                        >
-                                            <i className="bi bi-people-fill me-2 text-muted"></i>
-                                            Client and matter management
-                                        </Link>
-                                        <Link
-                                            to="/document-automation"
-                                            className="dropdown-item d-flex align-items-center py-2 px-0 text-decoration-none"
-                                        >
-                                            <i className="bi bi-file-earmark-text-fill me-2 text-muted"></i>
-                                            Document automation and management
-                                        </Link>
-                                        <Link
-                                            to="/timerecordingbilling"
-                                            className="dropdown-item d-flex align-items-center py-2 px-0 text-decoration-none"
-                                        >
-                                            <i className="bi bi-clock-fill me-2 text-muted"></i>
-                                            Time recording and billing
-                                        </Link>
-                                        <Link
-                                            to="/reporting"
-                                            className="dropdown-item d-flex align-items-center py-2 px-0 text-decoration-none"
-                                        >
-                                            <i className="bi bi-bar-chart-fill me-2 text-muted"></i>
-                                            Reporting
-                                        </Link>
-                                        <Link
-                                            to="/clientservice"
-                                            className="dropdown-item d-flex align-items-center py-2 px-0 text-decoration-none"
-                                        >
-                                            <i className="bi bi-person-lines-fill me-2 text-muted"></i>
-                                            Client service
-                                        </Link>
-                                    </div>
-                                )}
-                            </li>
-                            {/* Solutions Mobile Dropdown */}
-                            <li className="nav-item border-bottom">
-                                <button
-                                    className="nav-link w-100 text-start bg-transparent border-0 d-flex justify-content-between align-items-center py-3 px-0"
-                                    onClick={() => setOpenMobileDropdown(openMobileDropdown === "solutions" ? null : "solutions")}
-                                >
-                                    <div className="d-flex align-items-center">
-                                        <i className="bi bi-lightbulb-fill me-2" style={{ fontSize: "1.1rem" }}></i>
-                                        <span>Solutions</span>
-                                    </div>
-                                    <i className={`bi ${openMobileDropdown === "solutions" ? "bi-chevron-up" : "bi-chevron-down"}`}></i>
-                                </button>
-
-                                {openMobileDropdown === "solutions" && (
-                                    <div className="ps-4 py-2">
-                                        <Link
-                                            to="/conveyancing"
-                                            className="dropdown-item d-flex align-items-center py-2 px-0 text-decoration-none"
-                                        >
-                                            <i className="bi bi-house-door-fill me-2 text-muted"></i>
-                                            Conveyancing
-                                        </Link>
-                                        <Link
-                                            to="/family"
-                                            className="dropdown-item d-flex align-items-center py-2 px-0 text-decoration-none"
-                                        >
-                                            <i className="bi bi-people-fill me-2 text-muted"></i>
-                                            Family
-                                        </Link>
-                                        <Link
-                                            to="/employment"
-                                            className="dropdown-item d-flex align-items-center py-2 px-0 text-decoration-none"
-                                        >
-                                            <i className="bi bi-briefcase-fill me-2 text-muted"></i>
-                                            Employment
-                                        </Link>
-                                        <Link
-                                            to="/personalinjury"
-                                            className="dropdown-item d-flex align-items-center py-2 px-0 text-decoration-none"
-                                        >
-                                            <i className="bi bi-heart-pulse-fill me-2 text-muted"></i>
-                                            Personal injury
-                                        </Link>
-                                        <Link
-                                            to="/estateprobate"
-                                            className="dropdown-item d-flex align-items-center py-2 px-0 text-decoration-none"
-                                        >
-                                            <i className="bi bi-file-earmark-text-fill me-2 text-muted"></i>
-                                            Estates and probate
-                                        </Link>
-                                    </div>
-                                )}
-                            </li>
-                            {/* Company Mobile Dropdown */}
-                            <li className="nav-item border-bottom">
-                                <Link
-                                    to="/company"
-                                    className="nav-link w-100 text-start bg-transparent border-0 d-flex align-items-center py-3 px-0 text-decoration-none"
-                                >
-                                    <i className="bi bi-building-fill me-2" style={{ fontSize: "1.1rem" }}></i>
-                                    <span>Company</span>
-                                </Link>
-                            </li>
-                            {/* Resources Mobile Dropdown */}
-                            <li className="nav-item border-bottom">
-                                <Link
-                                    to="/resources"
-                                    className="nav-link w-100 text-start bg-transparent border-0 d-flex align-items-center py-3 px-0 text-decoration-none"
-                                >
-                                    <i className="bi bi-collection-fill me-2" style={{ fontSize: "1.1rem" }}></i>
-                                    <span>Resources</span>
-                                </Link>
-                            </li>
-                            {/* Contact */}
-                            <li className="nav-item border-bottom">
-                                <Link
-                                    to="/contactus"
-                                    className="nav-link w-100 text-start bg-transparent border-0 d-flex align-items-center py-3 px-0 text-decoration-none"
-                                >
-                                    <i className="bi bi-envelope-fill me-2" style={{ fontSize: "1.1rem" }}></i>
-                                    <span>Contact</span>
-                                </Link>
-                            </li>
+                            {mobileMenus.map((menu) => (
+                                <li className="nav-item border-bottom" key={menu.key}>
+                                    <button
+                                        className="nav-link w-100 text-start bg-transparent border-0 d-flex justify-content-between align-items-center py-3 px-0"
+                                        onClick={() => setSliderMenu(menu.key)}
+                                    >
+                                        <div className="d-flex align-items-center">
+                                            <i className={`${menu.icon} me-2`} style={{ fontSize: "1.1rem" }}></i>
+                                            <span>{menu.label}</span>
+                                        </div>
+                                        <i className="bi bi-arrow-right"></i>
+                                    </button>
+                                </li>
+                            ))}
                         </ul>
                         <div className="mt-3 d-flex justify-content-center align-items-center flex-column gap-2">
-                            <Link
-                                to="/login"
-                                className="btn btn-light text-dark p-2 w-100"
-                            >
+                            <Link to="/login" className="btn btn-light text-dark p-2 w-100">
                                 Login
                             </Link>
                             <Link to="#demo" className="btn btn-demo p-2 w-100">
                                 REQUEST DEMO
                             </Link>
                         </div>
+                    </div>
+                )}
+
+                {/* Mobile Slider Submenu */}
+                {isMenuOpen && sliderMenu && (
+                    <div className="d-lg-none mobile-slider-menu position-fixed top-0 start-0 w-100 h-100 bg-white animate__animated animate__slideInRight" style={{ zIndex: 1060, transition: "transform 0.3s" }}>
+                        <div className="d-flex justify-content-between align-items-center mb-4 px-4 pt-3">
+                            <button className="btn btn-link text-dark fs-4 p-0" onClick={() => setSliderMenu(null)}>
+                                <i className="bi bi-arrow-left"></i>
+                            </button>
+                            <span className="fw-bold fs-5">{currentSlider?.label}</span>
+                            <button className="btn btn-link text-dark fs-3 p-0" onClick={() => { setSliderMenu(null); setIsMenuOpen(false); }}>
+                                <i className="bi bi-x-lg"></i>
+                            </button>
+                        </div>
+                        <ul className="navbar-nav gap-2 px-4">
+                            {currentSlider?.submenu?.map((item, idx) => (
+                                <li className="nav-item border-bottom" key={idx}>
+                                    <Link
+                                        to={item.to}
+                                        className="nav-link w-100 d-flex align-items-center py-3 px-0 text-decoration-none"
+                                        onClick={() => { setSliderMenu(null); setIsMenuOpen(false); }}
+                                    >
+                                        <i className={`${item.icon} me-2 text-muted`}></i>
+                                        <span>{item.label}</span>
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
                     </div>
                 )}
             </nav>
