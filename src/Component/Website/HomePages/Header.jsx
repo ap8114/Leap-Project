@@ -444,7 +444,7 @@ const Header = () => {
             <Link to="/login" className="btn btn-outline-light">
               Login
             </Link>
-            <Link to="#demo" className="btn btn-demo">
+            <Link to="#demo" className="btn btn-demo p-2">
               REQUEST DEMO
             </Link>
           </div>
