@@ -82,8 +82,8 @@ const TimeRecordingBilling = () => {
                                 <div className="text-custom text-uppercase small fw-semibold">Time tracking</div>
                                 <h2 className="mt-2 display-5 fw-bold">Capture everything</h2>
                                 <p className="mt-3 fs-5 text-secondary">
-                                    FastTrack's intelligent time capture tool eliminates the need for timers to capture your billable time.
-                                    Start working, and every activity will be tracked. FastTrack converts your activities into billable time,
+                                    FastTrack Software's intelligent time capture tool eliminates the need for timers to capture your billable time.
+                                    Start working, and every activity will be tracked. FastTrack Software converts your activities into billable time,
                                     making you more profitable.
                                 </p>
                                 <div className="mt-4">
@@ -108,7 +108,7 @@ const TimeRecordingBilling = () => {
                                 <div className="text-custom text-uppercase small fw-semibold">Invoicing</div>
                                 <h2 className="mt-2 display-5 fw-bold">Simplified billing</h2>
                                 <p className="mt-3 fs-5 text-secondary">
-                                    FastTrack's intelligent billing engine effortlessly captures all billable time, fees and disbursements
+                                    FastTrack Software's intelligent billing engine effortlessly captures all billable time, fees and disbursements
                                     in an easy-to-understand invoice. Different templates cater for different types of work, and sharing
                                     online gives your client complete transparency over their liability.
                                 </p>
@@ -134,13 +134,13 @@ const TimeRecordingBilling = () => {
                                 <div className="text-custom text-uppercase small fw-semibold">Online payments</div>
                                 <h2 className="mt-2 display-5 fw-bold">A smarter way to get paid</h2>
                                 <p className="mt-3 fs-5 text-secondary">
-                                    Improve your cash flow by getting paid on time with FastTrack online payments powered by FeeWise.
+                                    Improve your cash flow by getting paid on time with FastTrack Software online payments powered by FeeWise.
                                     With flexible repayment plans and automated receipting accompanying payment reminders,
                                     your bills will be paid on time.
                                 </p>
                                 <div className="mt-4">
                                     <button className="btn btn-link text-custom fw-medium p-0 text-decoration-none">
-                                        Learn more about FastTrack Online Payments
+                                        Learn more about FastTrack Software Online Payments
                                         <i className="fas fa-arrow-right ms-2"></i>
                                     </button>
                                 </div>

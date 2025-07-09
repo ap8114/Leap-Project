@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { Link, Route, Routes } from "react-router-dom";
 import "./Website.css"; // Assuming you have a CSS file for styling
-import logofasttrack from "../../../assets/logofasttrack.png"; // Adjust the path as necessary
+import logoFastTrack from "../../../assets/logoFastTrack.png"; // Adjust the path as necessary
 
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -16,7 +16,7 @@ const Header = () => {
                     <Link to="/" className="text-decoration-none">
                         <div className="d-flex align-items-center">
                             <img
-                                src={logofasttrack}
+                                src={logoFastTrack}
                                 alt="Logo"
                                 style={{ height: '70px', width: '170px' }}
                             />
@@ -160,7 +160,7 @@ const Header = () => {
                                                 </div>
                                                 <div className="small text-muted">
                                                     Seamless integrations provide additional value to your
-                                                    Clio subscription
+                                                    FastTrack Software Software subscription
                                                 </div>
                                             </div>
                                         </div>
@@ -295,7 +295,7 @@ const Header = () => {
 
                     {/* Desktop Buttons */}
                     <div className="d-none d-lg-flex gap-3 ms-auto">
-                        <Link to="/dashboard" className="btn btn-light text-dark p-2">
+                        <Link to="/login" className="btn btn-light text-dark p-2">
                             Login
                         </Link>
                         <Link to="#demo" className="btn btn-demo p-2">
@@ -304,6 +304,7 @@ const Header = () => {
                     </div>
                 </div>
 
+         
                 {/* Mobile menu */}
                 {isMenuOpen && (
                     <div className="d-lg-none px-4 pt-3 pb-4">
