@@ -173,7 +173,7 @@ const Matter = () => {
 
   {/* Filters */}
   <div className="bg-light p-3 p-md-4 rounded mb-4">
-    <div className="row g-3">
+    <div className="row g-4">
       <div className="col-12 col-md-4">
         <select
           className="form-select"
@@ -218,7 +218,7 @@ const Matter = () => {
 
   {/* Matters Grid */}
   {filteredMatters.length > 0 ? (
-    <div className="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4">
+    <div className="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 py-4">
       {filteredMatters.map((matter) => (
         <div key={matter.id} className="col">
           <div className="card h-100 border-light shadow-lg ">

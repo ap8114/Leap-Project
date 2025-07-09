@@ -96,7 +96,7 @@ const Navbar = ({ toggleSidebar }) => {
         </div>
 
         {/* Right: Actions (always in one line) */}
-        <div className="d-flex align-items-center right-actions ms-2 gap-2 flex-nowrap">
+        <div className="d-flex align-items-center  ms-2 gap-2 flex-nowrap">
           {/* Notification bell */}
           <div className="position-relative">
             <button
@@ -104,7 +104,7 @@ const Navbar = ({ toggleSidebar }) => {
               onClick={() => setShowNotification(!showNotification)}
               aria-label="Notifications"
             >
-              <i className="fa-regular fa-bell fs-4 "></i>
+              <i className="fa-regular fa-bell fs-4 text-[#f76b1c] "></i>
             </button>
             {showNotification && (
               <div
@@ -133,22 +133,26 @@ const Navbar = ({ toggleSidebar }) => {
             </div>
             <ul className="dropdown-menu dropdown-menu-end shadow-lg border-0 rounded-3 p-2 mt-2">
               <li>
-                <a className="dropdown-item d-flex align-items-center gap-2 text-dark" href="/profile">
-                  <i className="bi bi-person-circle  text-dark"></i> Profile
+                <a className="dropdown-item d-flex align-items-center gap-2 custom-hover" href="/profile">
+                  <i className="bi bi-person-circle  custom-hover"></i> Profile
                 </a>
               </li>
               <li>
-                <a className="dropdown-item d-flex align-items-center gap-2 text-dark" href="/settings">
-                  <i className="bi bi-gear text-dark"></i> Settings
+                <a className="dropdown-item d-flex align-items-center gap-2 custom-hover" href="/settings">
+                  <i className="bi bi-gear custom-hover"></i> Settings
                 </a>
               </li>
               <li>
                 <hr className="dropdown-divider" />
               </li>
               <li>
-                <button className="dropdown-item d-flex align-items-center gap-2 text-dark " onClick={handleLogout}>
-                  <i className="bi bi-box-arrow-right text-dark"></i> Logout
-                </button>
+          <button
+  className="dropdown-item d-flex align-items-center gap-2  custom-hover rounded-3 py-2"
+  onClick={handleLogout}
+>
+  <i className="bi bi-box-arrow-right custom-hover"></i> Logout
+</button>
+
               </li>
             </ul>
           </div>
