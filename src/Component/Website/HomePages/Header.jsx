@@ -160,7 +160,7 @@ const Header = () => {
                                                 </div>
                                                 <div className="small text-muted">
                                                     Seamless integrations provide additional value to your
-                                                    FastTrack Software Software subscription
+                                                    FastTrack Software  subscription
                                                 </div>
                                             </div>
                                         </div>
