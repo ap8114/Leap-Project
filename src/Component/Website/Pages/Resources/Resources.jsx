@@ -9,7 +9,7 @@ const Resources = () => {
     const testimonials = [
         {
             id: 1,
-            quote: "LEAP has transformed our practice efficiency by 40%. The automated document generation and integrated billing system have streamlined our workflows significantly.",
+            quote: "Clio has transformed our practice efficiency by 40%. The automated document generation and integrated billing system have streamlined our workflows significantly.",
             name: "Sarah Mitchell",
             firm: "Mitchell & Associates",
             image: "https://readdy.ai/api/search-image?query=Professional%20female%20lawyer%20in%20modern%20office%20setting%20with%20confident%20smile%20wearing%20business%20suit%20against%20clean%20white%20background&width=80&height=80&seq=testimonial1&orientation=squarish",
@@ -17,7 +17,7 @@ const Resources = () => {
         },
         {
             id: 2,
-            quote: "The compliance features in LEAP give us peace of mind. We've reduced our administrative overhead by 60% while maintaining the highest standards of client service.",
+            quote: "The compliance features in Clio give us peace of mind. We've reduced our administrative overhead by 60% while maintaining the highest standards of client service.",
             name: "David Thompson",
             firm: "Thompson Legal Group",
             image: "https://readdy.ai/api/search-image?query=Professional%20male%20lawyer%20in%20contemporary%20office%20environment%20with%20friendly%20expression%20wearing%20dark%20business%20suit%20against%20neutral%20background&width=80&height=80&seq=testimonial2&orientation=squarish",
@@ -25,7 +25,7 @@ const Resources = () => {
         },
         {
             id: 3,
-            quote: "ROI was evident within the first quarter. LEAP's integration capabilities have unified our entire practice management system into one seamless platform.",
+            quote: "ROI was evident within the first quarter. Clio's integration capabilities have unified our entire practice management system into one seamless platform.",
             name: "Emma Rodriguez",
             firm: "Rodriguez Law Firm",
             image: "https://readdy.ai/api/search-image?query=Professional%20female%20attorney%20in%20modern%20law%20office%20with%20warm%20smile%20wearing%20navy%20blazer%20against%20minimalist%20background&width=80&height=80&seq=testimonial3&orientation=squarish",
@@ -35,7 +35,7 @@ const Resources = () => {
 
     const brochures = [
         {
-            title: "LEAP Brochure",
+            title: "Clio Brochure",
             description: "Comprehensive overview of features and benefits for your entire firm",
             icon: "fas fa-file-pdf"
         },
@@ -65,7 +65,7 @@ const Resources = () => {
             icon: "fas fa-cogs"
         },
         {
-            title: "5 Essentials of LEAP",
+            title: "5 Essentials of Clio",
             description: "Shows top workflow tools and integrations for maximum productivity",
             icon: "fas fa-star"
         },
@@ -85,7 +85,7 @@ const Resources = () => {
         {
             date: "2025-01-15",
             time: "2:00 PM GMT",
-            title: "LEAP Advanced Features Webinar",
+            title: "Clio Advanced Features Webinar",
             type: "webinar",
             location: "Online"
         },
@@ -147,7 +147,7 @@ const Resources = () => {
                 ></div>
                 <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center">
-                        <h1 className="text-5xl font-bold mb-6">LEAP Resources</h1>
+                        <h1 className="text-5xl font-bold mb-6">Clio Resources</h1>
                         <p className="text-xl mb-8 max-w-3xl mx-auto">
                             Discover comprehensive guides, testimonials, and insights to help your law firm thrive with cutting-edge legal technology solutions
                         </p>
@@ -222,7 +222,7 @@ const Resources = () => {
                         <div className="space-y-6">
                             <h3 className="text-xl font-semibold text-[#2c3e50] mb-4">Additional Resources</h3>
                             <div className="bg-white rounded-lg shadow p-6 hover:shadow-md transition-shadow border-l-4 border-[#f76b1c]">
-                                <h4 className="font-semibold text-[#2c3e50] mb-2">LEAP Ireland Insights</h4>
+                                <h4 className="font-semibold text-[#2c3e50] mb-2">Clio Ireland Insights</h4>
                                 <p className="text-gray-600 mb-4">Region-specific thought leadership and market analysis for Irish legal practices.</p>
                                 <button className="text-[#f76b1c] hover:text-[#e05e15] font-medium cursor-pointer">
                                     Access Resources
@@ -409,7 +409,7 @@ const Resources = () => {
                 <div className="p-5">
                     <div className="text-center mb-16">
                         <h2 className="text-4xl font-bold text-[#2c3e50] mb-4">Client Success Stories</h2>
-                        <p className="text-xl text-gray-600">Real-world results from law firms using LEAP</p>
+                        <p className="text-xl text-gray-600">Real-world results from law firms using Clio</p>
                     </div>
 
                     <div className="relative">

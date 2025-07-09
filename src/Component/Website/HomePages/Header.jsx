@@ -158,7 +158,7 @@ const Header = () => {
                                                 </div>
                                                 <div className="small text-muted">
                                                     Seamless integrations provide additional value to your
-                                                    LEAP subscription
+                                                    Clio subscription
                                                 </div>
                                             </div>
                                         </div>
@@ -218,16 +218,16 @@ const Header = () => {
                                         <div className="d-flex align-items-start">
                                             <img
                                                 src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=120&q=80"
-                                                alt="Switch to LEAP"
+                                                alt="Switch to Clio"
                                                 className="rounded-3 me-3"
                                                 style={{ width: 70, height: 70, objectFit: "cover" }}
                                             />
                                             <div>
                                                 <div className="text-custom fw-semibold small mb-1">
-                                                    SWITCH TO LEAP
+                                                    SWITCH TO Clio
                                                 </div>
                                                 <div className="small text-muted">
-                                                    Discover why law firms are choosing LEAP
+                                                    Discover why law firms are choosing Clio
                                                 </div>
                                             </div>
                                         </div>
@@ -269,7 +269,7 @@ const Header = () => {
                                             Innovations
                                         </a>
                                         <div className="small text-muted ms-3">
-                                            LEAP is the result of valuable feedback from users across
+                                            Clio is the result of valuable feedback from users across
                                             the globe
                                         </div>
                                     </div>
@@ -322,7 +322,7 @@ const Header = () => {
                                             </div>
                                             <div className="small text-muted">
                                                 Provide feedback, read discussions and vote on improved
-                                                LEAP features
+                                                Clio features
                                             </div>
                                         </div>
                                     </div>
@@ -364,7 +364,7 @@ const Header = () => {
                                             Brochures and guides
                                         </a>
                                         <div className="small text-muted mb-2 ms-3">
-                                            Learn more about how LEAP can improve your practice
+                                            Learn more about how Clio can improve your practice
                                         </div>
                                         <a
                                             className="dropdown-item fw-semibold"
@@ -386,7 +386,7 @@ const Header = () => {
                                             Upcoming events & webinars
                                         </a>
                                         <div className="small text-muted ms-3">
-                                            LEAP hosts and attends industry events both online and in
+                                            Clio hosts and attends industry events both online and in
                                             person across the UK
                                         </div>
                                     </div>
@@ -395,18 +395,18 @@ const Header = () => {
                                         <div className="mb-3">
                                             <img
                                                 src="https://i.ibb.co/4VwQyqF/ideas-hub.png"
-                                                alt="LEAP Help Centre"
+                                                alt="Clio Help Centre"
                                                 className="rounded-3 mb-2"
                                                 style={{ width: 120, height: 70, objectFit: "cover" }}
                                             />
                                         </div>
                                         <div>
                                             <div className="text-custom fw-semibold small mb-1">
-                                                LEAP HELP CENTRE
+                                                Clio HELP CENTRE
                                             </div>
                                             <div className="small text-muted">
                                                 Browse our articles, access support and engage with the
-                                                LEAP Community
+                                                Clio Community
                                             </div>
                                         </div>
                                     </div>
@@ -514,7 +514,7 @@ const Header = () => {
                                         <div className="dropdown-item">Innovations</div>
                                         <div className="dropdown-item">Contact us</div>
                                         <div className="dropdown-item">Client Support</div>
-                                        <div className="dropdown-item">LEAP Help Centre</div>
+                                        <div className="dropdown-item">Clio Help Centre</div>
                                         <div className="dropdown-item">
                                             Partner Network Directory
                                         </div>
@@ -549,7 +549,7 @@ const Header = () => {
                                         </div>
                                         <div className="dropdown-item">Blog</div>
                                         <div className="dropdown-item">LinkedIn</div>
-                                        <div className="dropdown-item">LEAP Help Centre</div>
+                                        <div className="dropdown-item">Clio Help Centre</div>
                                     </div>
                                 )} */}
                                 </li>

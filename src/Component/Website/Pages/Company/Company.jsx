@@ -9,7 +9,7 @@ const Company = () => {
     const timelineData = [
         {
             date: 'Nov 2024',
-            title: 'LEAP Desktop – AI Prompt Templates',
+            title: 'Clio Desktop – AI Prompt Templates',
             description: 'Customisable document-drafting templates with guidance, speeding up work and reducing errors',
             icon: 'fas fa-robot'
         },
@@ -21,7 +21,7 @@ const Company = () => {
         },
         {
             date: 'Jul 2024',
-            title: 'LEAP Desktop 2.5 + Generator',
+            title: 'Clio Desktop 2.5 + Generator',
             description: 'Enhancements linking LawY, Matter AI, Guides and Precedents; Teams integration; staff signatures',
             icon: 'fas fa-cogs'
         },
@@ -40,12 +40,12 @@ const Company = () => {
         {
             date: 'Jun 2024',
             title: 'App Update – Workflow App',
-            description: 'Milestones added, deeply embedded into LEAP for matter tracking',
+            description: 'Milestones added, deeply embedded into Clio for matter tracking',
             icon: 'fas fa-tasks'
         },
         {
             date: 'Apr 2024',
-            title: 'LEAP Desktop – Matter AI',
+            title: 'Clio Desktop – Matter AI',
             description: 'AI-powered insight, correspondence analysis, and document drafting',
             icon: 'fas fa-brain'
         },
@@ -57,7 +57,7 @@ const Company = () => {
         },
         {
             date: 'Mar 2024',
-            title: 'LEAP Desktop – LawY AI Assistant',
+            title: 'Clio Desktop – LawY AI Assistant',
             description: 'Trusted AI answers verified by lawyers',
             icon: 'fas fa-user-tie'
         }
@@ -65,12 +65,12 @@ const Company = () => {
     const partnerCategories = [
         {
             title: 'Certified Consultants',
-            description: 'Expert consultants to help optimize your LEAP implementation',
+            description: 'Expert consultants to help optimize your Clio implementation',
             icon: 'fas fa-user-check'
         },
         {
             title: 'Bookkeepers',
-            description: 'Qualified bookkeeping professionals familiar with LEAP',
+            description: 'Qualified bookkeeping professionals familiar with Clio',
             icon: 'fas fa-calculator'
         },
         {
@@ -164,7 +164,7 @@ const Company = () => {
                             <h2 className="text-4xl font-bold text-gray-900 mb-8">Join Our Team</h2>
                             <p className="text-lg text-gray-600 mb-8 leading-relaxed">
                                 We care deeply about our people and their growth. Explore opportunities and join a collaborative,
-                                innovative team dedicated to modern legal practice. At LEAP, you'll be part of a company that's
+                                innovative team dedicated to modern legal practice. At Clio, you'll be part of a company that's
                                 transforming the legal industry through cutting-edge technology.
                             </p>
                             <div className="space-y-4 mb-8">
@@ -193,7 +193,7 @@ const Company = () => {
                             <div className="rounded-2xl overflow-hidden shadow-2xl">
                                 <img
                                     src="https://readdy.ai/api/search-image?query=modern%20collaborative%20office%20workspace%20with%20diverse%20team%20of%20professionals%20working%20together%20on%20innovative%20technology%20projects%20in%20bright%20contemporary%20setting&width=600&height=400&seq=careers1&orientation=landscape"
-                                    alt="LEAP Team Working"
+                                    alt="Clio Team Working"
                                     className="w-full h-full object-cover"
                                 />
                             </div>
@@ -209,7 +209,7 @@ const Company = () => {
                         <div className="bg-[#2c3e50] text-white rounded-2xl p-8 max-w-2xl mx-auto mb-12">
                             <div className="text-3xl font-bold mb-2">£13 Million</div>
                             <p className="text-gray-200">
-                                LEAP reinvests annually into R&D, delivering cutting-edge technology and the world's best
+                                Clio reinvests annually into R&D, delivering cutting-edge technology and the world's best
                                 practice management software
                             </p>
                         </div>
@@ -242,12 +242,12 @@ const Company = () => {
                                             {activeTimelineItem === index && (
                                                 <div className="mt-4 pt-4 border-t border-gray-100">
                                                     <a
-                                                        href="https://community.leap.co.uk"
+                                                        href="https://community.Clio.co.uk"
                                                         className="text-[#f76b1c] hover:text-[#e65b0c] font-medium cursor-pointer"
                                                         target="_blank"
                                                         rel="noopener noreferrer"
                                                     >
-                                                        Learn more on community.leap.co.uk <i className="fas fa-external-link-alt ml-1"></i>
+                                                        Learn more on community.Clio.co.uk <i className="fas fa-external-link-alt ml-1"></i>
                                                     </a>
                                                 </div>
                                             )}
@@ -424,7 +424,7 @@ const Company = () => {
                         <div className="bg-gradient-to-r from-[#2c3e50] to-[#2c3e50] rounded-2xl p-8 text-white">
                             <h3 className="text-2xl font-semibold mb-4">Become a Partner</h3>
                             <p className="text-gray-200 mb-6 max-w-2xl mx-auto">
-                                Join our partner network and help law firms maximize their potential with LEAP.
+                                Join our partner network and help law firms maximize their potential with Clio.
                                 Opportunities available for supporting law firms across various specialties.
                             </p>
                             <button className="bg-white text-[#f76b13] px-8 py-4 !rounded-button font-semibold hover:bg-gray-50 transition-colors cursor-pointer whitespace-nowrap">
@@ -441,7 +441,7 @@ const Company = () => {
                         <h2 className="text-4xl font-bold text-gray-900 mb-6">Ideas Hub</h2>
                         <p className="text-xl text-gray-600 max-w-3xl mx-auto">
                             Share feedback, participate in discussions, and vote on feature suggestions.
-                            Help shape the future of LEAP together with our community.
+                            Help shape the future of Clio together with our community.
                         </p>
                     </div>
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -463,7 +463,7 @@ const Company = () => {
                             </div>
                             <h3 className="text-xl font-semibold text-gray-900 mb-4">Join Discussions</h3>
                             <p className="text-gray-600 mb-6">
-                                Engage with other LEAP users, share experiences, and learn from the community.
+                                Engage with other Clio users, share experiences, and learn from the community.
                             </p>
                             <button className="bg-[#f76b1c] text-white px-6 py-3 !rounded-button font-semibold hover:bg-[#e65b0c] transition-colors cursor-pointer whitespace-nowrap">
                                 Join Discussion
