@@ -441,10 +441,10 @@ const Header = () => {
 
           {/* Desktop Buttons */}
           <div className="d-none d-lg-flex gap-3 ms-auto">
-            <Link to="/dashboard" className="btn btn-outline-light">
+            <Link to="/dashboard" className="btn btn-light text-dark p-2">
               Login
             </Link>
-            <Link to="#demo" className="btn btn-demo">
+            <Link to="#demo" className="btn btn-demo p-2">
               REQUEST DEMO
             </Link>
           </div>
