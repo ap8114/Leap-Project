@@ -262,35 +262,35 @@ const Header = () => {
                             </div>
                         </li>
                         {/* Company Dropdown */}
-                      <Link to="/company" className="text-decoration-none">
-                        <li className="nav-item">
-                            <div
-                                className="nav-link"
-                                role="button"
-                            >
-                                Company
-                            </div>
-                        </li>
-                      </Link>
+                        <Link to="/company" className="text-decoration-none">
+                            <li className="nav-item">
+                                <div
+                                    className="nav-link"
+                                    role="button"
+                                >
+                                    Company
+                                </div>
+                            </li>
+                        </Link>
                         {/* Resources Dropdown */}
-                      <Link  to="/resources" className="text-decoration-none">
-                        <li className="nav-item">
-                            <div
-                                className="nav-link"
-                                role="button"    
-                            >
-                                Resources
-                            </div>
-                        </li>
-                      </Link>
+                        <Link to="/resources" className="text-decoration-none">
+                            <li className="nav-item">
+                                <div
+                                    className="nav-link"
+                                    role="button"
+                                >
+                                    Resources
+                                </div>
+                            </li>
+                        </Link>
                         {/* Contact */}
-                      <Link  to="/contactus" className="text-decoration-none">
-                        <li className="nav-item">
-                            <div className="nav-link">
-                                Contact
-                            </div>
-                        </li>
-                      </Link>
+                        <Link to="/contactus" className="text-decoration-none">
+                            <li className="nav-item">
+                                <div className="nav-link">
+                                    Contact
+                                </div>
+                            </li>
+                        </Link>
                     </ul>
 
                     {/* Desktop Buttons */}
@@ -389,10 +389,10 @@ const Header = () => {
                             </li>
                         </ul>
                         <div className="mt-3 d-flex justify-content-center align-items-center flex-column gap-2">
-                            <Link to="/dashboard" className="btn btn-outline-light">
+                            <Link to="/dashboard" className="btn btn-light text-dark p-2 w-100">
                                 Login
                             </Link>
-                            <Link to="#demo" className="btn btn-demo">
+                            <Link to="#demo" className="btn btn-demo p-2 w-100">
                                 REQUEST DEMO
                             </Link>
                         </div>
