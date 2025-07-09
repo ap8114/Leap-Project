@@ -16,9 +16,9 @@ const HeroSection = () => {
                                     ⭐ Trusted by 61,000+ Legal Professionals
                                 </span>
                             </div>
-                            <h1 className="display-5 fw-bold">Transform Your Law Practice with Clio</h1>
+                            <h1 className="display-5 fw-bold">Transform Your Law Practice with FastTrack</h1>
                             <p className="lead text-muted mb-4">
-                                Experience the future of legal practice management. Clio delivers unmatched efficiency, security, and innovation to drive your firm’s success.
+                                Experience the future of legal practice management. FastTrack delivers unmatched efficiency, security, and innovation to drive your firm’s success.
                             </p>
 
                             {/* Buttons */}
@@ -53,7 +53,7 @@ const HeroSection = () => {
                             <div className="position-relative rounded-4 overflow-hidden shadow">
                                 <img
                                     src="https://i.ibb.co/SD7MR15F/image.png"
-                                    alt="Clio Software"
+                                    alt="FastTrack Software"
                                     className="img-fluid rounded-4"
                                 />
                                 {/* "New Features" Badge */}
