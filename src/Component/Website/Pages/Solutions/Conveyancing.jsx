@@ -55,7 +55,7 @@ const Conveyancing = () => {
                     Streamline your property transactions with our comprehensive conveyancing solution. Manage documents, track progress, and collaborate securely in one platform.
                   </p>
                   <div className="d-flex flex-column flex-sm-row justify-content-center justify-content-lg-start gap-3">
-                    <a href="#" className="btn btn-warning btn-lg px-4 py-3">
+                    <a href="#" className="btn  btn-lg px-4 py-3" style={{backgroundColor: '#f76b1c' , color: 'white'}}>
                       Get Started
                     </a>
                     <a href="#" className="btn btn-outline-secondary btn-lg px-4 py-3">
@@ -80,7 +80,8 @@ const Conveyancing = () => {
       <section className="py-5 bg-white">
         <div className="container">
           <div className="text-center mb-5">
-            <span className="badge bg-warning text-white mb-3">Features</span>
+            <span className="badge  text-white mb-3" style={{backgroundColor: '#f76b1c' , color: 'white'}}
+>Features</span>
             <h2 className="display-5 fw-bold mb-3 text-custom">
               Complete property transaction software
             </h2>
@@ -94,7 +95,7 @@ const Conveyancing = () => {
               <div className="card h-100 border-0 shadow-sm">
                 <div className="card-body">
                   <div className="d-flex align-items-center mb-3">
-                    <div className="bg-warning rounded p-3 me-3">
+                    <div className=" rounded p-3 me-3" style={{backgroundColor: '#f76b1c' , color: 'white'}}>
                       <i className="fas fa-tasks text-white fs-4"></i>
                     </div>
                     <h3 className="h5 mb-0 text-custom">Streamlined Workflow</h3>
@@ -117,7 +118,7 @@ const Conveyancing = () => {
               <div className="card h-100 border-0 shadow-sm">
                 <div className="card-body">
                   <div className="d-flex align-items-center mb-3">
-                    <div className="bg-warning rounded p-3 me-3">
+                    <div className=" rounded p-3 me-3" style={{backgroundColor: '#f76b1c' , color: 'white'}}>
                       <i className="fas fa-file-contract text-white fs-4"></i>
                     </div>
                     <h3 className="h5 mb-0 text-custom">Document Management</h3>
@@ -140,7 +141,7 @@ const Conveyancing = () => {
               <div className="card h-100 border-0 shadow-sm">
                 <div className="card-body">
                   <div className="d-flex align-items-center mb-3">
-                    <div className="bg-warning rounded p-3 me-3">
+                    <div className="rounded p-3 me-3" style={{backgroundColor: '#f76b1c' , color: 'white'}}>
                       <i className="fas fa-chart-line text-white fs-4"></i>
                     </div>
                     <h3 className="h5 mb-0 text-custom">Real-time Tracking</h3>
@@ -166,7 +167,8 @@ const Conveyancing = () => {
       <section className="py-5 bg-light">
         <div className="container">
           <div className="text-center mb-5">
-            <span className="badge bg-warning text-white mb-3">Dashboard</span>
+            <span className="badge text-white mb-3" style={{backgroundColor: '#f76b1c' , color: 'white'}}
+>Dashboard</span>
             <h2 className="display-5 fw-bold mb-3 text-custom">
               Comprehensive Dashboard Overview
             </h2>
@@ -188,7 +190,7 @@ const Conveyancing = () => {
               <ul className="list-unstyled">
                 <li className="d-flex mb-4">
                   <div className="flex-shrink-0">
-                    <div className="d-flex align-items-center justify-content-center rounded-circle bg-warning text-white" style={{width: '40px', height: '40px'}}>
+                    <div className="d-flex align-items-center justify-content-center rounded-circle  text-white" style={{backgroundColor: '#f76b1c' , color: 'white' , width: '40px', height: '40px'}}>
                       <i className="fas fa-check"></i>
                     </div>
                   </div>
@@ -199,7 +201,7 @@ const Conveyancing = () => {
                 </li>
                 <li className="d-flex mb-4">
                   <div className="flex-shrink-0">
-                    <div className="d-flex align-items-center justify-content-center rounded-circle bg-warning text-white" style={{width: '40px', height: '40px'}}>
+                    <div className="d-flex align-items-center justify-content-center rounded-circle text-white" style={{backgroundColor: '#f76b1c' , color: 'white', width: '40px', height: '40px', width: '40px', height: '40px'}} >
                       <i className="fas fa-check"></i>
                     </div>
                   </div>
@@ -210,7 +212,7 @@ const Conveyancing = () => {
                 </li>
                 <li className="d-flex mb-4">
                   <div className="flex-shrink-0">
-                    <div className="d-flex align-items-center justify-content-center rounded-circle bg-warning text-white" style={{width: '40px', height: '40px'}}>
+                    <div className="d-flex align-items-center justify-content-center rounded-circle text-white" style={{backgroundColor: '#f76b1c' , color: 'white' , width: '40px', height: '40px'}} >
                       <i className="fas fa-check"></i>
                     </div>
                   </div>
@@ -221,7 +223,7 @@ const Conveyancing = () => {
                 </li>
                 <li className="d-flex">
                   <div className="flex-shrink-0">
-                    <div className="d-flex align-items-center justify-content-center rounded-circle bg-warning text-white" style={{width: '40px', height: '40px'}}>
+                    <div className="d-flex align-items-center justify-content-center rounded-circle  text-white" style={{backgroundColor: '#f76b1c' , color: 'white', width: '40px', height: '40px'}} >
                       <i className="fas fa-check"></i>
                     </div>
                   </div>
@@ -240,7 +242,8 @@ const Conveyancing = () => {
       <section className="py-5 bg-white">
         <div className="container">
           <div className="text-center mb-5">
-            <span className="badge bg-warning text-white mb-3">Documents</span>
+            <span className="badge text-white mb-3" style={{backgroundColor: '#f76b1c' , color: 'white'}}
+>Documents</span>
             <h2 className="display-5 fw-bold mb-3 text-custom">
               Streamlined Document Management
             </h2>
@@ -262,7 +265,7 @@ const Conveyancing = () => {
               <ul className="list-unstyled">
                 <li className="d-flex mb-4">
                   <div className="flex-shrink-0">
-                    <div className="d-flex align-items-center justify-content-center rounded-circle bg-warning text-white" style={{width: '40px', height: '40px'}}>
+                    <div className="d-flex align-items-center justify-content-center rounded-circle text-white" style={{backgroundColor: '#f76b1c' , color: 'white', width: '40px', height: '40px'}} >
                       <i className="fas fa-shield-alt"></i>
                     </div>
                   </div>
@@ -273,7 +276,7 @@ const Conveyancing = () => {
                 </li>
                 <li className="d-flex mb-4">
                   <div className="flex-shrink-0">
-                    <div className="d-flex align-items-center justify-content-center rounded-circle bg-warning text-white" style={{width: '40px', height: '40px'}}>
+                    <div className="d-flex align-items-center justify-content-center rounded-circle text-white" style={{backgroundColor: '#f76b1c' , color: 'white' , width: '40px', height: '40px'}}>
                       <i className="fas fa-signature"></i>
                     </div>
                   </div>
@@ -284,7 +287,7 @@ const Conveyancing = () => {
                 </li>
                 <li className="d-flex mb-4">
                   <div className="flex-shrink-0">
-                    <div className="d-flex align-items-center justify-content-center rounded-circle bg-warning text-white" style={{width: '40px', height: '40px'}}>
+                    <div className="d-flex align-items-center justify-content-center rounded-circletext-white" style={{backgroundColor: '#f76b1c' , color: 'white', width: '40px', height: '40px'}} >
                       <i className="fas fa-file-alt"></i>
                     </div>
                   </div>
@@ -295,7 +298,7 @@ const Conveyancing = () => {
                 </li>
                 <li className="d-flex">
                   <div className="flex-shrink-0">
-                    <div className="d-flex align-items-center justify-content-center rounded-circle bg-warning text-white" style={{width: '40px', height: '40px'}}>
+                    <div className="d-flex align-items-center justify-content-center rounded-circle text-white" style={{backgroundColor: '#f76b1c' , color: 'white', width: '40px', height: '40px'}}>
                       <i className="fas fa-history"></i>
                     </div>
                   </div>
@@ -314,7 +317,8 @@ const Conveyancing = () => {
       <section className="py-5 bg-light">
         <div className="container">
           <div className="text-center mb-5">
-            <span className="badge bg-warning text-white mb-3">FAQ</span>
+            <span className="badge text-white mb-3" style={{backgroundColor: '#f76b1c' , color: 'white'}}
+>FAQ</span>
             <h2 className="display-5 fw-bold mb-3 text-custom">
               Frequently Asked Questions
             </h2>
@@ -354,7 +358,7 @@ const Conveyancing = () => {
       </section>
 
       {/* Contact Form Section */}
-      <section className="py-5 bg-custom text-white">
+      <section className="py-5 bg-custom text-dark">
         <div className="container">
           <div className="row">
             <div className="col-lg-6 mb-5 mb-lg-0">
@@ -364,17 +368,17 @@ const Conveyancing = () => {
               <p className="lead mb-5">
                 Contact us today to learn how our conveyancing software can transform your property transaction process, reduce errors, and improve client satisfaction.
               </p>
-              <ul className="list-unstyled">
-                <li className="d-flex mb-4">
-                  <div className="flex-shrink-0 text-warning">
-                    <i className="fas fa-check-circle fs-4"></i>
+              <ul className="list-unstyled" >
+                <li className="d-flex mb-4" >
+                  <div className="flex-shrink-0  " style={{color: '#f76b1c'}}>
+                    <i className="fas fa-check-circle fs-4"  ></i>
                   </div>
                   <div className="ms-3">
                     <h3 className="h5">Reduce transaction time by up to 40%</h3>
                   </div>
                 </li>
                 <li className="d-flex mb-4">
-                  <div className="flex-shrink-0 text-warning">
+                  <div className="flex-shrink-0 " style={{color: '#f76b1c'}}>
                     <i className="fas fa-check-circle fs-4"></i>
                   </div>
                   <div className="ms-3">
@@ -382,7 +386,7 @@ const Conveyancing = () => {
                   </div>
                 </li>
                 <li className="d-flex">
-                  <div className="flex-shrink-0 text-warning">
+                  <div className="flex-shrink-0 " style={{color: '#f76b1c'}}>
                     <i className="fas fa-check-circle fs-4"></i>
                   </div>
                   <div className="ms-3">
@@ -433,7 +437,7 @@ const Conveyancing = () => {
                         onChange={(e) => setMessage(e.target.value)}
                       ></textarea>
                     </div>
-                    <button type="submit" className="btn btn-warning w-100 py-3 fw-bold">
+                    <button type="submit" className="btn  w-100 py-3 fw-bold" style={{backgroundColor: '#f76b1c' , color: 'white'}}>
                       Send Message
                     </button>
                   </form>
@@ -448,7 +452,8 @@ const Conveyancing = () => {
       <section className="py-5 bg-white">
         <div className="container">
           <div className="text-center mb-5">
-            <span className="badge bg-warning text-white mb-3">Testimonials</span>
+            <span className="badge text-white mb-3" style={{backgroundColor: '#f76b1c' , color: 'white'}}
+>Testimonials</span>
             <h2 className="display-5 fw-bold mb-3 text-custom">
               Trusted by property professionals
             </h2>
@@ -461,7 +466,7 @@ const Conveyancing = () => {
             <div className="col-md-6 col-lg-3">
               <div className="card h-100 border-0 shadow-sm">
                 <div className="card-body">
-                  <div className="text-warning mb-3">
+                  <div className="mb-3" style={{color: '#f76b1c'}}>
                     <i className="fas fa-star"></i>
                     <i className="fas fa-star"></i>
                     <i className="fas fa-star"></i>
@@ -485,7 +490,7 @@ const Conveyancing = () => {
             <div className="col-md-6 col-lg-3">
               <div className="card h-100 border-0 shadow-sm">
                 <div className="card-body">
-                  <div className="text-warning mb-3">
+                  <div className="mb-3" style={{color: '#f76b1c'}}>
                     <i className="fas fa-star"></i>
                     <i className="fas fa-star"></i>
                     <i className="fas fa-star"></i>
@@ -509,7 +514,7 @@ const Conveyancing = () => {
             <div className="col-md-6 col-lg-3">
               <div className="card h-100 border-0 shadow-sm">
                 <div className="card-body">
-                  <div className="text-warning mb-3">
+                  <div className="mb-3" style={{color: '#f76b1c'}}>
                     <i className="fas fa-star"></i>
                     <i className="fas fa-star"></i>
                     <i className="fas fa-star"></i>
@@ -533,7 +538,7 @@ const Conveyancing = () => {
             <div className="col-md-6 col-lg-3">
               <div className="card h-100 border-0 shadow-sm">
                 <div className="card-body">
-                  <div className="text-warning mb-3">
+                  <div className=" mb-3" style={{color: '#f76b1c'}}>
                     <i className="fas fa-star"></i>
                     <i className="fas fa-star"></i>
                     <i className="fas fa-star"></i>

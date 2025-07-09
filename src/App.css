@@ -1060,3 +1060,16 @@ margin-top: auto;
 .modal-backdrop {
   z-index: 1040;
 }
+.modal {
+  z-index: 1050; /* Modal should be above backdrop */
+}
+
+.modal-backdrop {
+  backdrop-filter: blur(5px);
+  background-color: rgba(0,0,0,0.5);
+}
+/* logout color class */
+.custom-hover:hover {
+  background-color: #f76b1c !important;
+  color: white !important;
+}

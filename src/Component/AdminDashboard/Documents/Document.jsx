@@ -281,7 +281,7 @@ const Document = () => {
         {/* Document Detail Modal */}
         {isModalOpen && selectedDocument && (
           <div
-            className="modal fade show d-block mt-5"
+            className="modal fade show d-block"
             tabIndex={-1}
             style={{ backgroundColor: "rgba(0,0,0,0.5)" }}
           >

@@ -245,7 +245,7 @@ const TasksWorkflow = () => {
       {/* New Task Modal */}
     {isNewTaskModalOpen && (
   <div
-    className="modal fade show d-block mt-5 "
+    className="modal fade show d-block  "
     tabIndex="-1"
     role="dialog"
     style={{
@@ -367,7 +367,7 @@ const TasksWorkflow = () => {
       {/* Edit Task Modal */}
      {isEditModalOpen && editTask && (
   <div
-    className="modal fade show d-block mt-5"
+    className="modal fade show d-block "
     tabIndex="-1"
     role="dialog"
     style={{

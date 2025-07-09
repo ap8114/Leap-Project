@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 
-import Home from '../../HomePages/Home';
+
 import FooterSection from '../../HomePages/FooterSection';
+import Header from '../../HomePages/Header';
 
 const PersonalInjury = () => {
   const [activeTab, setActiveTab] = useState(0);
@@ -13,10 +14,10 @@ const PersonalInjury = () => {
 
   return (
 
-    <div>
-        <Home/>
+    <div className='w-100'>
+        <Header/>
     
-    <div className="min-vh-100 bg-white">
+    <div className="min-vh-100 mt-4 bg-white">
       {/* Navigation */}
       
 
@@ -27,7 +28,7 @@ const PersonalInjury = () => {
           backgroundImage: `url('https://readdy.ai/api/search-image?query=modern%20professional%20law%20office%20with%20clean%20minimalist%20design%20featuring%20legal%20documents%20and%20scales%20of%20justice%20on%20a%20bright%20white%20desk%20with%20natural%20lighting%20creating%20a%20sophisticated%20atmosphere&width=1440&height=600&seq=hero-bg-001&orientation=landscape')`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          opacity: '0.1'
+          opacity: '0.9'
         }}
       >
         <div className="container position-relative py-5">
@@ -41,7 +42,7 @@ const PersonalInjury = () => {
                 secure document management, and automated client communication tools designed for modern law firms.
               </p>
               <div className="d-flex flex-column flex-sm-row gap-3">
-                <button className="btn btn-warning text-white px-4 py-3 fw-semibold">
+                <button className="text-white px-4 py-3 fw-semibold" style={{backgroundColor: '#f76b1c' , color: 'white'}}>
                   Start Free Trial
                 </button>
                 <button className="btn btn-outline-dark px-4 py-3 fw-semibold">
@@ -78,7 +79,7 @@ const PersonalInjury = () => {
             <div className="col-md-4">
               <div className="card h-100 shadow-sm border-0">
                 <div className="card-body p-4">
-                  <div className="bg-warning rounded-circle d-flex align-items-center justify-content-center mb-4" style={{ width: '64px', height: '64px' }}>
+                  <div className="rounded-circle d-flex align-items-center justify-content-center mb-4"        style={{ backgroundColor: "#f76b1c", color: "white" , width: '64px', height: '64px', }} >
                     <i className="fa fa-folder-open fa-2x text-white"></i>
                   </div>
                   <h3 className="h4 fw-bold mb-3 text-dark">Document Management</h3>
@@ -93,7 +94,7 @@ const PersonalInjury = () => {
             <div className="col-md-4">
               <div className="card h-100 shadow-sm border-0">
                 <div className="card-body p-4">
-                  <div className="bg-warning rounded-circle d-flex align-items-center justify-content-center mb-4" style={{ width: '64px', height: '64px' }}>
+                  <div className="rounded-circle d-flex align-items-center justify-content-center mb-4"    style={{ backgroundColor: "#f76b1c", color: "white" , width: '64px', height: '64px', }}>
                     <i className="fa fa-comments fa-2x text-white"></i>
                   </div>
                   <h3 className="h4 fw-bold mb-3 text-dark">Client Communication</h3>
@@ -108,7 +109,7 @@ const PersonalInjury = () => {
             <div className="col-md-4">
               <div className="card h-100 shadow-sm border-0">
                 <div className="card-body p-4">
-                  <div className="bg-warning rounded-circle d-flex align-items-center justify-content-center mb-4" style={{ width: '64px', height: '64px' }}>
+                  <div className=" rounded-circle d-flex align-items-center justify-content-center mb-4"    style={{ backgroundColor: "#f76b1c", color: "white" , width: '64px', height: '64px', }}>
                     <i className="fa fa-chart-line fa-2x text-white"></i>
                   </div>
                   <h3 className="h4 fw-bold mb-3 text-dark">Case Tracking</h3>
@@ -137,15 +138,15 @@ const PersonalInjury = () => {
               </p>
               <ul className="list-unstyled">
                 <li className="mb-3 d-flex align-items-center">
-                  <i className="fa fa-check-circle fa-lg text-warning me-3"></i>
+                  <i className="fa fa-check-circle fa-lg  me-3" style={{color: '#f76b1c'}}></i>
                   <span className="text-dark">Real-time case status updates</span>
                 </li>
                 <li className="mb-3 d-flex align-items-center">
-                  <i className="fa fa-check-circle fa-lg text-warning me-3"></i>
+                  <i className="fa fa-check-circle fa-lg me-3" style={{color: '#f76b1c'}}></i>
                   <span className="text-dark">Integrated calendar and task management</span>
                 </li>
                 <li className="d-flex align-items-center">
-                  <i className="fa fa-check-circle fa-lg text-warning me-3"></i>
+                  <i className="fa fa-check-circle fa-lg  me-3" style={{color: '#f76b1c'}}></i>
                   <span className="text-dark">Performance analytics and reporting</span>
                 </li>
               </ul>
@@ -186,7 +187,7 @@ const PersonalInjury = () => {
               </p>
               <div className="row g-3">
                 <div className="col-12 d-flex">
-                  <div className="bg-warning rounded-circle d-flex align-items-center justify-content-center me-3" style={{ width: '32px', height: '32px', flexShrink: 0 }}>
+                  <div className=" rounded-circle d-flex align-items-center justify-content-center me-3"     style={{ backgroundColor: "#f76b1c", color: "white", width: '32px', height: '32px', flexShrink: 0 }} >
                     <i className="fa fa-shield-alt text-white"></i>
                   </div>
                   <div>
@@ -195,7 +196,7 @@ const PersonalInjury = () => {
                   </div>
                 </div>
                 <div className="col-12 d-flex">
-                  <div className="bg-warning rounded-circle d-flex align-items-center justify-content-center me-3" style={{ width: '32px', height: '32px', flexShrink: 0 }}>
+                  <div className="rounded-circle d-flex align-items-center justify-content-center me-3"  style={{ backgroundColor: "#f76b1c", color: "white", width: '32px', height: '32px', flexShrink: 0 }}>
                     <i className="fa fa-search text-white"></i>
                   </div>
                   <div>
@@ -284,15 +285,15 @@ const PersonalInjury = () => {
               </p>
               <ul className="list-unstyled">
                 <li className="mb-3 d-flex align-items-center text-white">
-                  <i className="fa fa-check fa-lg text-warning me-3"></i>
+                  <i className="fa fa-check fa-lg me-3" style={{color: '#f76b1c'}}></i>
                   <span>30-day free trial</span>
                 </li>
                 <li className="mb-3 d-flex align-items-center text-white">
-                  <i className="fa fa-check fa-lg text-warning me-3"></i>
+                  <i className="fa fa-check fa-lg  me-3" style={{color: '#f76b1c'}}></i>
                   <span>No setup fees</span>
                 </li>
                 <li className="d-flex align-items-center text-white">
-                  <i className="fa fa-check fa-lg text-warning me-3"></i>
+                  <i className="fa fa-check fa-lg me-3" style={{color: '#f76b1c'}}></i>
                   <span>Cancel anytime</span>
                 </li>
               </ul>
@@ -341,7 +342,8 @@ const PersonalInjury = () => {
                   <div className="col-12">
                     <button
                       type="submit"
-                      className="btn btn-warning text-white w-100 py-3 fw-semibold"
+                      className="btn text-white w-100 py-3 fw-semibold"
+                          style={{ backgroundColor: "#f76b1c", color: "white" }}
                     >
                       Start Free Trial
                     </button>
@@ -391,7 +393,7 @@ const PersonalInjury = () => {
               <div key={index} className="col-md-6 col-lg-3">
                 <div className="card h-100 shadow-sm border-0">
                   <div className="card-body text-center p-4">
-                    <div className="bg-warning rounded-circle d-flex align-items-center justify-content-center mx-auto mb-4" style={{ width: '48px', height: '48px' }}>
+                    <div className=" rounded-circle d-flex align-items-center justify-content-center mx-auto mb-4"     style={{ backgroundColor: "#f76b1c", color: "white", width: '48px', height: '48px' }} >
                       <i className={`fa ${useCase.icon} text-white`}></i>
                     </div>
                     <h3 className="h5 fw-bold mb-3 text-dark">
