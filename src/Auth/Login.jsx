@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
-import logofasttrack from "../../src/assets/logofasttrack.png";
+import logoFastTrack from "../../src/assets/logoFastTrack.png";
 
 
 const Login = () => {
@@ -27,13 +27,13 @@ const Login = () => {
         <div className="mb-4 d-flex align-items-center">
         
          <div className="mb-4 d-flex align-items-center">
-          <img src={logofasttrack} alt="Logo" style={{ height: '60px' }} className="me-2" />
+          <img src={logoFastTrack} alt="Logo" style={{ height: '60px' }} className="me-2" />
         </div>
         </div>
 
         {/* Welcome */}
         <div className="text-center mb-4 px-2">
-          <h2 className="fw-bold fs-3">Welcome to FastTrack</h2>
+          <h2 className="fw-bold fs-3">Welcome to FastTrack Software</h2>
           <p className="text-muted mb-1 fs-6">Sign in to your account</p>
           <small className="text-muted">The most trusted legal practice management software</small>
         </div>
@@ -82,7 +82,7 @@ const Login = () => {
       {/* Right Panel - Image + Overlay */}
       <Col xs={12} md={6} className="position-relative p-0 d-none d-md-block vh-100">
         <div className="position-absolute top-0 start-0 w-100 h-100" style={{
-          backgroundImage: `url('https://readdy.ai/api/search-image?query=modern%20professional%20office%20workspace%20with%20laptop%20showing%20legal%20software%20dashboard%20analytics%20charts%20on%20screen%20warm%20lighting%20large%20windows%20minimalist%20design%20contemporary%20furniture%20clean%20background&width=800&height=1024&seq=fasttrack-login-bg&orientation=portrait')`,
+          backgroundImage: `url('https://readdy.ai/api/search-image?query=modern%20professional%20office%20workspace%20with%20laptop%20showing%20legal%20software%20dashboard%20analytics%20charts%20on%20screen%20warm%20lighting%20large%20windows%20minimalist%20design%20contemporary%20furniture%20clean%20background&width=800&height=1024&seq=FastTrack Software-login-bg&orientation=portrait')`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}>
@@ -109,9 +109,9 @@ const Login = () => {
               </Col>
             </Row>
             <hr />
-            <h5 className="fw-bold text-dark mb-2">Transform Your Law Practice with FastTrack</h5>
+            <h5 className="fw-bold text-dark mb-2">Transform Your Law Practice with FastTrack Software</h5>
             <p className="text-muted mb-0">
-              Experience the future of legal practice management. FastTrack delivers unmatched efficiency, security, and innovation to drive your firm's success.
+              Experience the future of legal practice management. FastTrack Software delivers unmatched efficiency, security, and innovation to drive your firm's success.
             </p>
           </div>
         </div>
