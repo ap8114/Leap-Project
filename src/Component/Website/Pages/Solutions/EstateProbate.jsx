@@ -17,7 +17,7 @@ const EstateProbate = () => {
             <div className="row align-items-center">
               <div className="col-lg-6 order-lg-1 order-2">
                 <h1 className="display-4 fw-bold mb-4">
-                  Simplify Your <span className="" style={{color: '#f76b1c'}}>Property Transactions</span>
+                  Simplify Your <span className="" >Property Transactions</span>
                 </h1>
                 <p className="lead text-muted mb-4">
                   Streamline your property management process with our comprehensive digital platform. Track transactions, manage documents, and close deals faster.
@@ -46,7 +46,7 @@ const EstateProbate = () => {
         <section className="py-5 bg-white">
           <div className="container">
             <div className="text-center mb-5">
-              <h2 className="display-5 fw-bold mb-3" style={{color: '#f76b1c'}}>
+              <h2 className="display-5 fw-bold mb-3">
                 Powerful Features for Property Management
               </h2>
               <p className="lead text-muted">
