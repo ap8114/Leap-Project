@@ -26,18 +26,24 @@ const Sidebar = ({ collapsed, menuItemClick }) => {
   };
 
   // Only admin menu items
-  const adminMenuItems = [
-    { path: "/dashboard", icon: "fa-solid fa-gauge", text: "Dashboard" },                          // Dashboard
-    { path: "/matter", icon: "fa-solid fa-scale-balanced", text: "Matters" },                      // Matters
-    { path: "/client", icon: "fa-solid fa-handshake", text: "Clients & CRM" },                     // Clients / CRM
-    { path: "/document", icon: "fa-solid fa-file-lines", text: "Documents" },                      // Documents
-    { path: "/calendar", icon: "fa-solid fa-calendar-check", text: "Calendar" },                   // Calendar
-    { path: "/tasksworkflow", icon: "fa-solid fa-diagram-project", text: "Tasks & Workflow" },     // Tasks & Workflow
-    { path: "/timebilling", icon: "fa-solid fa-stopwatch", text: "Time & Billing" },               // Time & Billing
-    { path: "/reportsanalytics", icon: "fa-solid fa-chart-line", text: "Reports & Analytics" },   // Reports & Analytics
-    { path: "/adminpage", icon: "fa-solid fa-user-shield", text: "Admin" },                            // Admin
-    { path: "/setting", icon: "fa-solid fa-gear", text: "Settings" }                              // Settings
-  ];
+const adminMenuItems = [
+  { path: "/dashboard", icon: "fa-solid fa-gauge", text: "Dashboard" },
+  { path: "/matter", icon: "fa-solid fa-scale-balanced", text: "Matters" },
+  { path: "/client", icon: "fa-solid fa-handshake", text: "Clients & CRM" },
+  { path: "/document", icon: "fa-solid fa-file-lines", text: "Documents" },
+  { path: "/calendar", icon: "fa-solid fa-calendar-check", text: "Calendar" },
+  { path: "/tasksworkflow", icon: "fa-solid fa-diagram-project", text: "Tasks & Workflow" },
+  { path: "/timebilling", icon: "fa-solid fa-stopwatch", text: "Time & Billing" },
+  { path: "/reportsanalytics", icon: "fa-solid fa-chart-line", text: "Reports & Analytics" },
+  { path: "/adminpage", icon: "fa-solid fa-user-shield", text: "Admin" },
+  { path: "/activity", icon: "fa-solid fa-clock-rotate-left", text: "Activity" },               // ⏱ Activity log
+  { path: "/accounts", icon: "fa-solid fa-file-invoice-dollar", text: "Accounts" },             // 💰 Financial/accounts
+  { path: "/communications", icon: "fa-solid fa-comments", text: "Communications" },            // 💬 Messages, emails
+  { path: "/contactus", icon: "fa-solid fa-envelope", text: "Contact Us" },                     // 📬 Contact
+  { path: "/appintegration", icon: "fa-solid fa-plug", text: "App Integration" },               // 🔌 Integrations
+  { path: "/setting", icon: "fa-solid fa-gear", text: "Settings" }
+];
+
 
   return (
     <div className={`sidebar-container ${collapsed ? "collapsed" : ""}`}>
