@@ -89,8 +89,8 @@ const ReportsAnalytics= () => {
   }, [billingView, dateRange, taskTimeframe]);
 
   return (
-    <div className="min-vh-100 bg-light p-4">
-      <div className="container-fluid p-4">
+    <div className=" bg-light p-4">
+      <div className="">
         <div className="mb-4">
           <h1 className="display-6 fw-bold mb-2 ">Reports & Analytics</h1>
          

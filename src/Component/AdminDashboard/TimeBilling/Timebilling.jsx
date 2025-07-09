@@ -173,7 +173,7 @@ const Timebilling = () => {
   };
 
   return (
-<Container fluid className="p-5">
+<div  className="p-4">
   {/* Page Header */}
   <Row className="mb-4 align-items-center">
     <Col xs={12} md={8}>
@@ -402,7 +402,7 @@ const Timebilling = () => {
       </Form>
     </div>
   </Modal>
-</Container>
+</div>
 
   );
 };

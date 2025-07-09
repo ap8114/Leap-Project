@@ -396,8 +396,8 @@ const Calendar = () => {
   }, [currentDate]);
 
   return (
-    <div className="min-vh-100 bg-light">
-      <div className="container-fluid px-3 px-md-4 py-5">
+    <div className=" bg-light p-4">
+      <div className="">
         {/* Header */}
         <div className="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center mb-4">
           <div className="mb-3 mb-md-0">

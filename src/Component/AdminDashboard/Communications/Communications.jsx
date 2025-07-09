@@ -110,326 +110,137 @@ const Communications = () => {
   };
 
   return (
-    <div className="bg-gray-50">
-      <div className="mx-auto px-6 py-8">
-        {/* Header */}
-        <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-900 mb-6">Communications</h1>
-          
-          {/* Tab Navigation */}
-          <div className="flex space-x-1 bg-gray-100 p-1 rounded-lg w-fit">
-            <button
-              onClick={() => setActiveTab('inbox')}
-              className={`px-6 py-2 rounded-md text-sm font-medium transition-colors whitespace-nowrap !rounded-button cursor-pointer ${
-                activeTab === 'inbox'
-                  ? 'bg-white text-blue-600 shadow-sm'
-                  : 'text-gray-600 hover:text-gray-900'
-              }`}
-            >
-              Inbox
-            </button>
-            <button
-              onClick={() => setActiveTab('sent')}
-              className={`px-6 py-2 rounded-md text-sm font-medium transition-colors whitespace-nowrap !rounded-button cursor-pointer ${
-                activeTab === 'sent'
-                  ? 'bg-white text-blue-600 shadow-sm'
-                  : 'text-gray-600 hover:text-gray-900'
-              }`}
-            >
-              Sent
-            </button>
-            <button
-              onClick={() => setActiveTab('linked')}
-              className={`px-6 py-2 rounded-md text-sm font-medium transition-colors whitespace-nowrap !rounded-button cursor-pointer ${
-                activeTab === 'linked'
-                  ? 'bg-white text-blue-600 shadow-sm'
-                  : 'text-gray-600 hover:text-gray-900'
-              }`}
-            >
-              Linked to Matters
-            </button>
-          </div>
-        </div>
+ <div className="container-fluid py-4">
+  {/* Header */}
+  <div className="mb-4">
+    <h1 className="display-6 fw-bold  mb-3">Communications</h1>
 
-        {/* Action Bar */}
-        <div className="flex justify-between items-center mb-6">
-          <div className="flex items-center space-x-4">
-            <div className="flex items-center space-x-2">
-              <i className="fas fa-envelope text-blue-600"></i>
-              <span className="text-sm text-gray-600">Email Integration Active</span>
-            </div>
-          </div>
-          <button
-            onClick={() => setShowNewMessage(true)}
-            className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors flex items-center space-x-2 whitespace-nowrap !rounded-button cursor-pointer"
-          >
-            <i className="fas fa-plus"></i>
-            <span>New Message</span>
-          </button>
-        </div>
-
-        {/* Messages List */}
-        <div className="space-y-4">
-          {getCurrentMessages().map((message) => (
-            <div key={message.id} className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
-              <div
-                className="p-6 cursor-pointer hover:bg-gray-50 transition-colors"
-                onClick={() => toggleMessage(message.id)}
-              >
-                <div className="flex items-start justify-between">
-                  <div className="flex-1">
-                    <div className="flex items-center space-x-3 mb-2">
-                      <div className="flex items-center space-x-2">
-                        {message.type === 'email' ? (
-                          <i className="fas fa-envelope text-blue-500"></i>
-                        ) : (
-                          <i className="fas fa-comment text-green-500"></i>
-                        )}
-                        <span className="font-medium text-gray-900">
-                          {activeTab === 'sent' ? (message).recipient : (message).sender}
-                        </span>
-                      </div>
-                      {(message).unread && activeTab !== 'sent' && (
-                        <span className="w-2 h-2 bg-blue-600 rounded-full"></span>
-                      )}
-                      {(message).linkedMatter && (
-                        <span className="bg-purple-100 text-purple-700 text-xs px-2 py-1 rounded-full">
-                          {(message).linkedMatter}
-                        </span>
-                      )}
-                    </div>
-                    <h3 className="font-semibold text-gray-900 mb-2">{message.subject}</h3>
-                    <p className="text-gray-600 text-sm line-clamp-2">{message.preview}</p>
-                  </div>
-                  <div className="flex flex-col items-end space-y-2 ml-4">
-                    <span className="text-sm text-gray-500">{message.time}</span>
-                    <i className={`fas fa-chevron-${expandedMessage === message.id ? 'up' : 'down'} text-gray-400`}></i>
-                  </div>
-                </div>
-              </div>
-
-              {/* Expanded Message Content */}
-              {expandedMessage === message.id && (
-                <div className="border-t border-gray-200 p-6 bg-gray-50">
-                  <div className="mb-4">
-                    <p className="text-gray-700 leading-relaxed">
-                      {message.preview} Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                    </p>
-                  </div>
-                  
-                  {/* Action Buttons */}
-                  <div className="flex flex-wrap gap-3">
-                    {activeTab !== 'sent' && (
-                      <>
-                        <button className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors flex items-center space-x-2 text-sm whitespace-nowrap !rounded-button cursor-pointer">
-                          <i className="fas fa-reply"></i>
-                          <span>Reply</span>
-                        </button>
-                        <button className="bg-gray-600 text-white px-4 py-2 rounded-lg hover:bg-gray-700 transition-colors flex items-center space-x-2 text-sm whitespace-nowrap !rounded-button cursor-pointer">
-                          <i className="fas fa-share"></i>
-                          <span>Forward</span>
-                        </button>
-                      </>
-                    )}
-                    <button
-                      onClick={() => setShowLinkMatter(message.id)}
-                      className="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors flex items-center space-x-2 text-sm whitespace-nowrap !rounded-button cursor-pointer"
-                    >
-                      <i className="fas fa-link"></i>
-                      <span>Link to Matter</span>
-                    </button>
-                    <button
-                      onClick={() => setShowAddNote(message.id)}
-                      className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors flex items-center space-x-2 text-sm whitespace-nowrap !rounded-button cursor-pointer"
-                    >
-                      <i className="fas fa-sticky-note"></i>
-                      <span>Add Note</span>
-                    </button>
-                    <button className="bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-600 transition-colors flex items-center space-x-2 text-sm whitespace-nowrap !rounded-button cursor-pointer">
-                      <i className="fas fa-archive"></i>
-                      <span>Archive</span>
-                    </button>
-                  </div>
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
-
-        {/* New Message Modal */}
-        {showNewMessage && (
-          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-            <div className="bg-white rounded-lg shadow-xl w-full max-w-2xl mx-4">
-              <div className="flex items-center justify-between p-6 border-b border-gray-200">
-                <h3 className="text-lg font-semibold text-gray-900">New Message</h3>
-                <button
-                  onClick={() => setShowNewMessage(false)}
-                  className="text-gray-400 hover:text-gray-600 cursor-pointer"
-                >
-                  <i className="fas fa-times"></i>
-                </button>
-              </div>
-              <div className="p-6 space-y-4">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">To</label>
-                  <input
-                    type="text"
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
-                    placeholder="Enter recipient email or select team member"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Subject</label>
-                  <input
-                    type="text"
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
-                    placeholder="Enter subject"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Message</label>
-                  <textarea
-                    rows={6}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
-                    placeholder="Type your message here..."
-                  ></textarea>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <input type="checkbox" id="linkMatter" className="rounded" />
-                  <label htmlFor="linkMatter" className="text-sm text-gray-700">Link to matter</label>
-                </div>
-              </div>
-              <div className="flex justify-end space-x-3 p-6 border-t border-gray-200">
-                <button
-                  onClick={() => setShowNewMessage(false)}
-                  className="px-4 py-2 text-gray-700 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors whitespace-nowrap !rounded-button cursor-pointer"
-                >
-                  Cancel
-                </button>
-                <button className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors whitespace-nowrap !rounded-button cursor-pointer">
-                  Send Message
-                </button>
-              </div>
-            </div>
-          </div>
-        )}
-
-        {/* Link to Matter Modal */}
-        {showLinkMatter && (
-          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-            <div className="bg-white rounded-lg shadow-xl w-full max-w-md mx-4">
-              <div className="flex items-center justify-between p-6 border-b border-gray-200">
-                <h3 className="text-lg font-semibold text-gray-900">Link to Matter</h3>
-                <button
-                  onClick={() => setShowLinkMatter(null)}
-                  className="text-gray-400 hover:text-gray-600 cursor-pointer"
-                >
-                  <i className="fas fa-times"></i>
-                </button>
-              </div>
-              <div className="p-6">
-                <div className="mb-4">
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Search Matters</label>
-                  <div className="relative">
-                    <input
-                      type="text"
-                      className="w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
-                      placeholder="Type to search matters..."
-                    />
-                    <i className="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 text-sm"></i>
-                  </div>
-                </div>
-                <div className="space-y-2 max-h-48 overflow-y-auto">
-                  {['Smith Property Purchase', 'Johnson vs. Anderson', 'Corporate Merger Deal', 'Estate Planning - Wilson'].map((matter) => (
-                    <div key={matter} className="p-3 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer">
-                      <span className="text-sm text-gray-900">{matter}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              <div className="flex justify-end space-x-3 p-6 border-t border-gray-200">
-                <button
-                  onClick={() => setShowLinkMatter(null)}
-                  className="px-4 py-2 text-gray-700 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors whitespace-nowrap !rounded-button cursor-pointer"
-                >
-                  Cancel
-                </button>
-                <button className="px-6 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors whitespace-nowrap !rounded-button cursor-pointer">
-                  Link Matter
-                </button>
-              </div>
-            </div>
-          </div>
-        )}
-
-        {/* Add Note Modal */}
-        {showAddNote && (
-          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-            <div className="bg-white rounded-lg shadow-xl w-full max-w-lg mx-4">
-              <div className="flex items-center justify-between p-6 border-b border-gray-200">
-                <h3 className="text-lg font-semibold text-gray-900">Add Note to Matter</h3>
-                <button
-                  onClick={() => setShowAddNote(null)}
-                  className="text-gray-400 hover:text-gray-600 cursor-pointer"
-                >
-                  <i className="fas fa-times"></i>
-                </button>
-              </div>
-              <div className="p-6 space-y-4">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Select Matter</label>
-                  <div className="relative">
-                    <button className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm text-left flex items-center justify-between cursor-pointer">
-                      <span>Choose matter...</span>
-                      <i className="fas fa-chevron-down text-gray-400"></i>
-                    </button>
-                  </div>
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Note</label>
-                  <textarea
-                    rows={4}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
-                    placeholder="Add your note about this message..."
-                  ></textarea>
-                </div>
-              </div>
-              <div className="flex justify-end space-x-3 p-6 border-t border-gray-200">
-                <button
-                  onClick={() => setShowAddNote(null)}
-                  className="px-4 py-2 text-gray-700 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors whitespace-nowrap !rounded-button cursor-pointer"
-                >
-                  Cancel
-                </button>
-                <button className="px-6 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors whitespace-nowrap !rounded-button cursor-pointer">
-                  Add Note
-                </button>
-              </div>
-            </div>
-          </div>
-        )}
-      </div>
-
-      <style>{`
-        .!rounded-button {
-          border-radius: 0.5rem !important;
-        }
-        input[type="number"]::-webkit-outer-spin-button,
-        input[type="number"]::-webkit-inner-spin-button {
-          -webkit-appearance: none;
-          margin: 0;
-        }
-        input[type="number"] {
-          -moz-appearance: textfield;
-        }
-        .line-clamp-2 {
-          display: -webkit-box;
-          -webkit-line-clamp: 2;
-          -webkit-box-orient: vertical;
-          overflow: hidden;
-        }
-      `}</style>
+    {/* Tab Navigation */}
+    <div className="d-flex flex-wrap bg-light p-2 rounded">
+      {['Inbox', 'Sent', 'Linked to Matters'].map((tab) => (
+        <button
+          key={tab}
+          onClick={() => setActiveTab(tab.toLowerCase().replace(/ /g, ''))}
+          className={`btn btn-sm me-2 mb-2 ${
+            activeTab === tab.toLowerCase().replace(/ /g, '')
+              ? 'btn-custom'
+              : 'btn-outline-secondary'
+          }`}
+        >
+          {tab}
+        </button>
+      ))}
     </div>
+  </div>
+
+  {/* Action Bar */}
+  <div className="row align-items-center mb-3">
+    <div className="col-12 col-md-6 mb-2 mb-md-0">
+      <div className="d-flex align-items-center gap-2">
+        <i className="fas fa-envelope text-custom"></i>
+        <span className="text-muted small">Email Integration Active</span>
+      </div>
+    </div>
+    <div className="col-12 col-md-6 text-md-end">
+      <button
+        onClick={() => setShowNewMessage(true)}
+        className="btn btn-custom d-inline-flex align-items-center"
+      >
+        <i className="fas fa-plus me-2"></i>
+        New Message
+      </button>
+    </div>
+  </div>
+
+  {/* Messages List */}
+  <div className="row g-3">
+    {getCurrentMessages().map((message) => (
+      <div key={message.id} className="col-12">
+        <div className="card shadow-sm">
+          <div
+            className="card-body cursor-pointer"
+            onClick={() => toggleMessage(message.id)}
+          >
+            <div className="d-flex justify-content-between align-items-start">
+              <div className="flex-grow-1">
+                <div className="d-flex align-items-center gap-2 mb-2">
+                  <i
+                    className={`fas ${
+                      message.type === 'email'
+                        ? 'fa-envelope text-custom'
+                        : 'fa-comment text-success'
+                    }`}
+                  ></i>
+                  <strong>{
+                    activeTab === 'sent' ? message.recipient : message.sender
+                  }</strong>
+                  {message.unread && activeTab !== 'sent' && (
+                    <span className="badge bg-custom rounded-circle p-1"></span>
+                  )}
+                  {message.linkedMatter && (
+                    <span className="badge bg-light text-dark border">
+                      {message.linkedMatter}
+                    </span>
+                  )}
+                </div>
+                <h5 className="mb-1">{message.subject}</h5>
+                <p className="text-muted small mb-0 text-truncate">
+                  {message.preview}
+                </p>
+              </div>
+              <div className="text-end">
+                <small className="text-muted">{message.time}</small>
+                <div>
+                  <i
+                    className={`fas fa-chevron-${
+                      expandedMessage === message.id ? 'up' : 'down'
+                    } text-muted`}
+                  ></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Expanded Content */}
+          {expandedMessage === message.id && (
+            <div className="border-top p-3 bg-light">
+              <p className="mb-3 text-muted small">{message.preview} + details...</p>
+
+              {/* Action Buttons */}
+              <div className="d-flex flex-wrap gap-2">
+                {activeTab !== 'sent' && (
+                  <>
+                    <button className="btn btn-sm btn-custom">
+                      <i className="fas fa-reply me-1"></i> Reply
+                    </button>
+                    <button className="btn btn-sm btn-secondary">
+                      <i className="fas fa-share me-1"></i> Forward
+                    </button>
+                  </>
+                )}
+                <button
+                  className="btn btn-sm btn-purple text-white"
+                  onClick={() => setShowLinkMatter(message.id)}
+                >
+                  <i className="fas fa-link me-1"></i> Link to Matter
+                </button>
+                <button
+                  className="btn btn-sm btn-success text-white"
+                  onClick={() => setShowAddNote(message.id)}
+                >
+                  <i className="fas fa-sticky-note me-1"></i> Add Note
+                </button>
+                <button className="btn btn-sm btn-dark">
+                  <i className="fas fa-archive me-1"></i> Archive
+                </button>
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
   );
 };
 

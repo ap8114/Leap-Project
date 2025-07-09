@@ -105,12 +105,12 @@ const Activity = () => {
 
     const groupedActivities = groupActivitiesByDate(activities);
     return (
-        <div className="min-vh-100 bg-light">
-            <div className="container p-3">
+        <div className=" bg-light p-4">
+            <div className="">
                 {/* Page Header */}
                 <div className="">
                     <div className="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center mb-4">
-                        <h1 className="h2 mb-3 mb-md-0 text-[#2c3e50]">Activity Log</h1>
+                         <h1 className="display-6 fw-bold  mb-2">Activity Log</h1>
                         <div className="d-flex gap-2">
                             <button className="btn btn-outline-secondary">
                                 <i className="fas fa-file-pdf text-danger me-2"></i>
@@ -142,7 +142,7 @@ const Activity = () => {
                             {/* View Toggle */}
                             <div className="d-flex align-items-center">
                                 <span className="me-2 text-[#2c3e50]">View:</span>
-                                <div className="btn-group" role="group">
+                                <div className="btn-group border-2" role="group">
                                     <button
                                         onClick={() => setViewMode('timeline')}
                                         className={`btn ${viewMode === 'timeline' ? 'btn-custom' : 'btn-outline-custom'}`}

@@ -205,22 +205,30 @@ const Account = () => {
     <div className="min-vh-100 bg-light">
       <div className="container py-4">
         {/* Page Header */}
-        <div className="d-flex justify-content-between align-items-center mb-4">
-          <div className="d-flex align-items-center gap-3">
-            <h1 className="mb-0">Accounts</h1>
-            <span className="badge bg-success">New</span>
-          </div>
-          <div className="d-flex gap-3">
-            <button className="btn btn-outline-secondary">
-              <FontAwesomeIcon icon={faDownload} className="me-2" />
-              Export Report
-            </button>
-            <button className="btn btn-custom">
-              <FontAwesomeIcon icon={faChartBar} className="me-2" />
-              Go to Reports
-            </button>
-          </div>
-        </div>
+       <div className="row align-items-center mb-4">
+  {/* Left Side: Heading + Badge */}
+  <div className="col-12 col-md-6 mb-3 mb-md-0">
+    <div className="d-flex flex-column flex-md-row align-items-start align-items-md-center gap-2 gap-md-3">
+      <h1 className="display-6 fw-bold  mb-2">Accounts</h1>
+      <span className="badge bg-success">New</span>
+    </div>
+  </div>
+
+  {/* Right Side: Buttons */}
+  <div className="col-12 col-md-6">
+    <div className="d-flex flex-column flex-md-row justify-content-md-end gap-2 gap-md-3">
+      <button className="btn btn-outline-secondary w-100 w-md-auto">
+        <FontAwesomeIcon icon={faDownload} className="me-2" />
+        Export Report
+      </button>
+      <button className="btn btn-custom w-100 w-md-auto">
+        <FontAwesomeIcon icon={faChartBar} className="me-2" />
+        Go to Reports
+      </button>
+    </div>
+  </div>
+</div>
+
 
         {/* Balance Overview Section */}
         <div className="row mb-4">

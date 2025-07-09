@@ -36,12 +36,12 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-vh-100 bg-light py-5">
-      <div className="container" style={{ maxWidth: '1200px' }}>
+    <div className=" bg-light p-4">
+      <div className="" >
         {/* Header */}
-        <div className="text-center mb-5">
-          <h1 className="display-5 fw-bold mb-3">Contact Us</h1>
-          <p className="lead text-muted mx-auto" style={{ maxWidth: '600px' }}>
+        <div className=" mb-5">
+          <h1 className="display-6 fw-bold  mb-2">Contact Us</h1>
+          <p className=" text-muted " >
             We'd love to hear from you. Send us a message and we'll respond as soon as possible.
           </p>
         </div>
