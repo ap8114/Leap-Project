@@ -25,10 +25,10 @@ const Login = () => {
       <Col xs={12} md={6} className="d-flex flex-column justify-content-center align-items-center px-4 px-sm-5 py-4 vh-100 overflow-auto">
         {/* Logo Placeholder */}
         <div className="mb-4 d-flex align-items-center">
-        
-         <div className="mb-4 d-flex align-items-center">
-          <img src={logoFastTrack} alt="Logo" style={{ height: '60px' }} className="me-2" />
-        </div>
+
+          <div className="mb-4 d-flex align-items-center">
+            <img src={logoFastTrack} alt="Logo" style={{ height: '60px' }} className="me-2" />
+          </div>
         </div>
 
         {/* Welcome */}
@@ -61,14 +61,18 @@ const Login = () => {
             />
           </Form.Group>
 
-          <Button type="submit" className="w-100 bg-warning border-0 text-white fw-bold">
+          <button
+            type="submit"
+            className="w-100 btn btn-lg text-white fw-bold rounded"
+            style={{ backgroundColor: '#f76b1c', border: 'none' }}
+          >
             Sign In
-          </Button>
+          </button>
         </Form>
 
         <div className="mt-4 text-center">
           <small className="text-muted">Don't have an account?</small>{' '}
-          <a href="#" onClick={handleSignUp} className="text-warning fw-medium">Sign Up</a>
+          {/* <a href="#" onClick={handleSignUp} className="text-warning fw-medium">Sign Up</a> */}
         </div>
 
         <div className="mt-4">
@@ -92,10 +96,10 @@ const Login = () => {
         <div className="position-relative z-2 h-100 d-flex align-items-center justify-content-center p-4 p-lg-5">
           <div className="bg-white bg-opacity-75 p-4 p-md-5 rounded shadow text-center w-100 mx-2" style={{ maxWidth: '500px' }}>
             <div className="mb-3">
-              <span className="badge bg-warning text-dark">New Features Available</span>
+              <span className="badge bg-[#f76b1c]">New Features Available</span>
             </div>
             <div className="d-flex align-items-center justify-content-center mb-3">
-              <i className="fas fa-users text-warning me-2"></i>
+              <i className="fas fa-users text-[#f76b1c] me-2"></i>
               <span className="fw-medium">Trusted by 61,000+ Legal Professionals</span>
             </div>
             <Row>
