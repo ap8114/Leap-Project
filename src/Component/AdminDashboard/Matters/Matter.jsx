@@ -152,26 +152,24 @@ const Matter = () => {
   </div>
 
   {/* Search & Create Button */}
-  <div className="row align-items-stretch g-3 mb-3">
-    <div className="col-12 col-sm-9">
-      <input
-        type="text"
-        className="form-control h-100"
-        placeholder="Search..."
-        aria-label="Search"
-      />
-    </div>
-    <div className="col-12 col-sm-3 d-grid">
-      <button
-        onClick={() => setIsModalOpen(true)}
-
-        className="btn btn-custom"
-      >
-        <i className="fas fa-plus me-2"></i>
-        Create Matter
-      </button>
-    </div>
+<div className="d-flex flex-wrap gap-3 mb-3 ">
+  <div className="flex-grow-1">
+    <input
+      type="text"
+      className="form-control h-100 py-1"
+      placeholder="Search..."
+      aria-label="Search"
+    />
   </div>
+  <div>
+    <button onClick={() => setIsModalOpen(true)} className="btn btn-custom">
+      <i className="fas fa-plus me-2 py-2"></i>
+      Create Matter
+    </button>
+  </div>
+</div>
+
+
 
   {/* Filters */}
   <div className="bg-light p-3 p-md-4 rounded mb-4">
