@@ -9,7 +9,7 @@ const Resources = () => {
     const testimonials = [
         {
             id: 1,
-            quote: "LEAP has transformed our practice efficiency by 40%. The automated document generation and integrated billing system have streamlined our workflows significantly.",
+            quote: "Clio has transformed our practice efficiency by 40%. The automated document generation and integrated billing system have streamlined our workflows significantly.",
             name: "Sarah Mitchell",
             firm: "Mitchell & Associates",
             image: "https://readdy.ai/api/search-image?query=Professional%20female%20lawyer%20in%20modern%20office%20setting%20with%20confident%20smile%20wearing%20business%20suit%20against%20clean%20white%20background&width=80&height=80&seq=testimonial1&orientation=squarish",
@@ -17,7 +17,7 @@ const Resources = () => {
         },
         {
             id: 2,
-            quote: "The compliance features in LEAP give us peace of mind. We've reduced our administrative overhead by 60% while maintaining the highest standards of client service.",
+            quote: "The compliance features in Clio give us peace of mind. We've reduced our administrative overhead by 60% while maintaining the highest standards of client service.",
             name: "David Thompson",
             firm: "Thompson Legal Group",
             image: "https://readdy.ai/api/search-image?query=Professional%20male%20lawyer%20in%20contemporary%20office%20environment%20with%20friendly%20expression%20wearing%20dark%20business%20suit%20against%20neutral%20background&width=80&height=80&seq=testimonial2&orientation=squarish",
@@ -25,7 +25,7 @@ const Resources = () => {
         },
         {
             id: 3,
-            quote: "ROI was evident within the first quarter. LEAP's integration capabilities have unified our entire practice management system into one seamless platform.",
+            quote: "ROI was evident within the first quarter. Clio's integration capabilities have unified our entire practice management system into one seamless platform.",
             name: "Emma Rodriguez",
             firm: "Rodriguez Law Firm",
             image: "https://readdy.ai/api/search-image?query=Professional%20female%20attorney%20in%20modern%20law%20office%20with%20warm%20smile%20wearing%20navy%20blazer%20against%20minimalist%20background&width=80&height=80&seq=testimonial3&orientation=squarish",
@@ -35,7 +35,7 @@ const Resources = () => {
 
     const brochures = [
         {
-            title: "LEAP Brochure",
+            title: "Clio Brochure",
             description: "Comprehensive overview of features and benefits for your entire firm",
             icon: "fas fa-file-pdf"
         },
@@ -65,7 +65,7 @@ const Resources = () => {
             icon: "fas fa-cogs"
         },
         {
-            title: "5 Essentials of LEAP",
+            title: "5 Essentials of Clio",
             description: "Shows top workflow tools and integrations for maximum productivity",
             icon: "fas fa-star"
         },
@@ -85,7 +85,7 @@ const Resources = () => {
         {
             date: "2025-01-15",
             time: "2:00 PM GMT",
-            title: "LEAP Advanced Features Webinar",
+            title: "Clio Advanced Features Webinar",
             type: "webinar",
             location: "Online"
         },
@@ -147,7 +147,7 @@ const Resources = () => {
                 ></div>
                 <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center">
-                        <h1 className="text-5xl font-bold mb-6">LEAP Resources</h1>
+                        <h1 className="text-5xl font-bold mb-6">Clio Resources</h1>
                         <p className="text-xl mb-8 max-w-3xl mx-auto">
                             Discover comprehensive guides, testimonials, and insights to help your law firm thrive with cutting-edge legal technology solutions
                         </p>
@@ -193,26 +193,26 @@ const Resources = () => {
             </section>
 
             {/* White Papers Section */}
-            <section className="py-20 bg-gray-50">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <section className="bg-gray-50">
+                <div className="p-5 mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16">
-                        <h2 className="text-4xl font-bold text-gray-900 mb-4">White Papers</h2>
+                        <h2 className="text-4xl font-bold text-[#2c3e50] mb-4">White Papers</h2>
                         <p className="text-xl text-gray-600">Thought leadership to help your firm excel</p>
                     </div>
 
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                        <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <div className="bg-white rounded-lg shadow-lg overflow-hidden border-t-4 border-[#f76b1c]">
                             <img
                                 src="https://readdy.ai/api/search-image?query=Professional%20business%20document%20cover%20design%20with%20modern%20typography%20and%20legal%20symbols%2C%20clean%20corporate%20layout%20with%20blue%20and%20white%20color%20scheme%20on%20minimalist%20background&width=400&height=250&seq=whitepaper1&orientation=landscape"
                                 alt="11 Habits of Successful Law Firms"
                                 className="w-full h-48 object-cover"
                             />
                             <div className="p-6">
-                                <h3 className="text-2xl font-bold text-gray-900 mb-3">11 Habits of Successful Law Firms</h3>
+                                <h3 className="text-2xl font-bold text-[#2c3e50] mb-3">11 Habits of Successful Law Firms</h3>
                                 <p className="text-gray-600 mb-6">
                                     Discover the proven best practices that distinguish thriving law firms from the rest. This comprehensive guide covers operational improvements, client management strategies, and technology adoption patterns.
                                 </p>
-                                <button className="bg-blue-600 text-white px-6 py-3 !rounded-button hover:bg-blue-700 transition-colors whitespace-nowrap cursor-pointer">
+                                <button className="bg-[#f76b1c] text-white px-6 py-3 rounded-lg hover:bg-[#e05e15] transition-colors whitespace-nowrap cursor-pointer">
                                     <i className="fas fa-download mr-2"></i>
                                     Download White Paper
                                 </button>
@@ -220,26 +220,26 @@ const Resources = () => {
                         </div>
 
                         <div className="space-y-6">
-                            <h3 className="text-xl font-semibold text-gray-900 mb-4">Additional Resources</h3>
-                            <div className="bg-white rounded-lg shadow p-6">
-                                <h4 className="font-semibold text-gray-900 mb-2">LEAP Ireland Insights</h4>
+                            <h3 className="text-xl font-semibold text-[#2c3e50] mb-4">Additional Resources</h3>
+                            <div className="bg-white rounded-lg shadow p-6 hover:shadow-md transition-shadow border-l-4 border-[#f76b1c]">
+                                <h4 className="font-semibold text-[#2c3e50] mb-2">Clio Ireland Insights</h4>
                                 <p className="text-gray-600 mb-4">Region-specific thought leadership and market analysis for Irish legal practices.</p>
-                                <button className="text-blue-600 hover:text-blue-700 font-medium cursor-pointer">
-                                    Access Resources <i className="fas fa-arrow-right ml-1"></i>
+                                <button className="text-[#f76b1c] hover:text-[#e05e15] font-medium cursor-pointer">
+                                    Access Resources
                                 </button>
                             </div>
-                            <div className="bg-white rounded-lg shadow p-6">
-                                <h4 className="font-semibold text-gray-900 mb-2">Technology Adoption Guide</h4>
+                            <div className="bg-white rounded-lg shadow p-6 hover:shadow-md transition-shadow border-l-4 border-[#f76b1c]">
+                                <h4 className="font-semibold text-[#2c3e50] mb-2">Technology Adoption Guide</h4>
                                 <p className="text-gray-600 mb-4">Strategic framework for implementing legal technology in your practice.</p>
-                                <button className="text-blue-600 hover:text-blue-700 font-medium cursor-pointer">
-                                    Download Guide <i className="fas fa-arrow-right ml-1"></i>
+                                <button className="text-[#f76b1c] hover:text-[#e05e15] font-medium cursor-pointer">
+                                    Download Guide
                                 </button>
                             </div>
-                            <div className="bg-white rounded-lg shadow p-6">
-                                <h4 className="font-semibold text-gray-900 mb-2">Compliance Checklist</h4>
+                            <div className="bg-white rounded-lg shadow p-6 hover:shadow-md transition-shadow border-l-4 border-[#f76b1c]">
+                                <h4 className="font-semibold text-[#2c3e50] mb-2">Compliance Checklist</h4>
                                 <p className="text-gray-600 mb-4">Essential compliance requirements and best practices for modern law firms.</p>
-                                <button className="text-blue-600 hover:text-blue-700 font-medium cursor-pointer">
-                                    Get Checklist <i className="fas fa-arrow-right ml-1"></i>
+                                <button className="text-[#f76b1c] hover:text-[#e05e15] font-medium cursor-pointer">
+                                    Get Checklist
                                 </button>
                             </div>
                         </div>
@@ -248,10 +248,10 @@ const Resources = () => {
             </section>
 
             {/* Webinars & Events Section */}
-            <section className="py-20">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <section className="bg-gray-50">
+                <div className="p-5 mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16">
-                        <h2 className="text-4xl font-bold text-gray-900 mb-4">Webinars & Events</h2>
+                        <h2 className="text-4xl font-bold text-[#2c3e50] mb-4">Webinars & Events</h2>
                         <p className="text-xl text-gray-600">Join us for upcoming educational sessions and industry events</p>
                     </div>
 
@@ -259,7 +259,9 @@ const Resources = () => {
                         <div className="bg-gray-100 rounded-lg p-1">
                             <button
                                 onClick={() => setEventView('calendar')}
-                                className={`px-6 py-2 !rounded-button transition-colors whitespace-nowrap cursor-pointer ${eventView === 'calendar' ? 'bg-white text-blue-600 shadow' : 'text-gray-600'
+                                className={`px-6 py-2 rounded-lg transition-colors whitespace-nowrap cursor-pointer ${eventView === 'calendar'
+                                    ? 'bg-white text-[#f76b1c] shadow border border-[#f76b1c]'
+                                    : 'text-gray-600 hover:text-[#f76b1c]'
                                     }`}
                             >
                                 <i className="fas fa-calendar-alt mr-2"></i>
@@ -267,7 +269,9 @@ const Resources = () => {
                             </button>
                             <button
                                 onClick={() => setEventView('list')}
-                                className={`px-6 py-2 !rounded-button transition-colors whitespace-nowrap cursor-pointer ${eventView === 'list' ? 'bg-white text-blue-600 shadow' : 'text-gray-600'
+                                className={`px-6 py-2 rounded-lg transition-colors whitespace-nowrap cursor-pointer ${eventView === 'list'
+                                    ? 'bg-white text-[#f76b1c] shadow border border-[#f76b1c]'
+                                    : 'text-gray-600 hover:text-[#f76b1c]'
                                     }`}
                             >
                                 <i className="fas fa-list mr-2"></i>
@@ -278,24 +282,28 @@ const Resources = () => {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {events.map((event, index) => (
-                            <div key={index} className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow">
+                            <div key={index} className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow border-t-4 border-[#f76b1c]">
                                 <div className="flex items-center mb-4">
-                                    <div className={`rounded-lg p-3 mr-4 ${event.type === 'webinar' ? 'bg-green-100' : 'bg-purple-100'
+                                    <div className={`rounded-lg p-3 mr-4 ${event.type === 'webinar'
+                                        ? 'bg-[#f76b1c] bg-opacity-10'
+                                        : 'bg-[#2c3e50] bg-opacity-10'
                                         }`}>
-                                        <i className={`${event.type === 'webinar' ? 'fas fa-video text-green-600' : 'fas fa-map-marker-alt text-purple-600'
+                                        <i className={`${event.type === 'webinar'
+                                            ? 'fas fa-video text-[#f76b1c]'
+                                            : 'fas fa-map-marker-alt text-[#2c3e50]'
                                             } text-xl`}></i>
                                     </div>
                                     <div>
                                         <div className="text-sm text-gray-500">{event.date}</div>
-                                        <div className="text-sm font-medium text-gray-700">{event.time}</div>
+                                        <div className="text-sm font-medium text-[#2c3e50]">{event.time}</div>
                                     </div>
                                 </div>
-                                <h3 className="text-lg font-semibold text-gray-900 mb-2">{event.title}</h3>
+                                <h3 className="text-lg font-semibold text-[#2c3e50] mb-2">{event.title}</h3>
                                 <div className="flex items-center text-gray-600 mb-4">
                                     <i className="fas fa-map-marker-alt mr-2"></i>
                                     <span className="text-sm">{event.location}</span>
                                 </div>
-                                <button className="w-full bg-blue-600 text-white py-2 px-4 !rounded-button hover:bg-blue-700 transition-colors whitespace-nowrap cursor-pointer">
+                                <button className="w-full bg-[#f76b1c] text-white py-2 px-4 rounded-lg hover:bg-[#e05e15] transition-colors whitespace-nowrap cursor-pointer">
                                     Register Now
                                 </button>
                             </div>
@@ -305,7 +313,7 @@ const Resources = () => {
             </section>
 
             {/* Thought Leadership Section */}
-            <section className="py-20 bg-gray-50">
+            {/* <section className="py-20 bg-gray-50">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16">
                         <h2 className="text-4xl font-bold text-gray-900 mb-4">Thought Leadership</h2>
@@ -313,7 +321,7 @@ const Resources = () => {
                     </div>
 
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                        {/* Blog Posts */}
+                      
                         <div className="bg-white rounded-lg shadow-lg p-6">
                             <div className="flex items-center mb-6">
                                 <i className="fas fa-blog text-blue-600 text-xl mr-3"></i>
@@ -335,7 +343,6 @@ const Resources = () => {
                             </button>
                         </div>
 
-                        {/* LinkedIn Feed */}
                         <div className="bg-white rounded-lg shadow-lg p-6">
                             <div className="flex items-center mb-6">
                                 <i className="fab fa-linkedin text-blue-600 text-xl mr-3"></i>
@@ -360,7 +367,6 @@ const Resources = () => {
                             </button>
                         </div>
 
-                        {/* Help Centre */}
                         <div className="bg-white rounded-lg shadow-lg p-6">
                             <div className="flex items-center mb-6">
                                 <i className="fas fa-question-circle text-blue-600 text-xl mr-3"></i>
@@ -396,14 +402,14 @@ const Resources = () => {
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> */}
 
             {/* Testimonials Section */}
-            <section className="py-20 bg-gray-50">
+            <section className=" mb-3 bg-gray-50">
                 <div className="p-5">
                     <div className="text-center mb-16">
-                        <h2 className="text-4xl font-bold text-gray-900 mb-4">Client Success Stories</h2>
-                        <p className="text-xl text-gray-600">Real-world results from law firms using LEAP</p>
+                        <h2 className="text-4xl font-bold text-[#2c3e50] mb-4">Client Success Stories</h2>
+                        <p className="text-xl text-gray-600">Real-world results from law firms using Clio</p>
                     </div>
 
                     <div className="relative">
@@ -414,8 +420,8 @@ const Resources = () => {
                             >
                                 {testimonials.map((testimonial, index) => (
                                     <div key={testimonial.id} className="w-full flex-shrink-0">
-                                        <div className="bg-white rounded-lg shadow-lg p-8 mx-4 max-w-4xl mx-auto">
-                                            <div className="flex items-start space-x-6">
+                                        <div className="bg-white rounded-lg shadow-lg p-8 mx-4 max-w-4xl mx-auto border-t-4 border-[#f76b1c]">
+                                            <div className="flex flex-col md:flex-row items-start space-x-0 md:space-x-6 space-y-6 md:space-y-0">
                                                 <div className="relative">
                                                     <img
                                                         src={testimonial.image}
@@ -423,7 +429,7 @@ const Resources = () => {
                                                         className="w-20 h-20 rounded-full object-cover"
                                                     />
                                                     {testimonial.hasVideo && (
-                                                        <button className="absolute -bottom-2 -right-2 bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center cursor-pointer">
+                                                        <button className="absolute -bottom-2 -right-2 bg-[#f76b1c] text-white rounded-full w-8 h-8 flex items-center justify-center cursor-pointer hover:bg-[#e05e15] transition-colors">
                                                             <i className="fas fa-play text-xs"></i>
                                                         </button>
                                                     )}
@@ -433,7 +439,7 @@ const Resources = () => {
                                                         "{testimonial.quote}"
                                                     </blockquote>
                                                     <div>
-                                                        <div className="font-semibold text-gray-900">{testimonial.name}</div>
+                                                        <div className="font-semibold text-[#2c3e50]">{testimonial.name}</div>
                                                         <div className="text-gray-600">{testimonial.firm}</div>
                                                     </div>
                                                 </div>
@@ -446,15 +452,15 @@ const Resources = () => {
 
                         <button
                             onClick={prevTestimonial}
-                            className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-3 shadow-lg hover:bg-gray-50 cursor-pointer"
+                            className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-3 shadow-lg hover:bg-[#f76b1c] hover:text-white cursor-pointer transition-colors"
                         >
-                            <i className="fas fa-chevron-left text-gray-600"></i>
+                            <i className="fas fa-chevron-left"></i>
                         </button>
                         <button
                             onClick={nextTestimonial}
-                            className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-3 shadow-lg hover:bg-gray-50 cursor-pointer"
+                            className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-3 shadow-lg hover:bg-[#f76b1c] hover:text-white cursor-pointer transition-colors"
                         >
-                            <i className="fas fa-chevron-right text-gray-600"></i>
+                            <i className="fas fa-chevron-right"></i>
                         </button>
 
                         <div className="flex justify-center mt-8 space-x-2">
@@ -462,7 +468,7 @@ const Resources = () => {
                                 <button
                                     key={index}
                                     onClick={() => setCurrentTestimonial(index)}
-                                    className={`w-3 h-3 rounded-full cursor-pointer ${index === currentTestimonial ? 'bg-blue-600' : 'bg-gray-300'
+                                    className={`w-3 h-3 rounded-full cursor-pointer transition-colors ${index === currentTestimonial ? 'bg-[#f76b1c]' : 'bg-gray-300'
                                         }`}
                                 />
                             ))}
@@ -477,7 +483,7 @@ const Resources = () => {
             {/* Back to Top Button */}
             <button
                 onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                className="fixed bottom-8 right-8 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition-colors cursor-pointer"
+                className="fixed bottom-8 right-8 bg-[#f76b1c] text-white p-3 rounded-full shadow-lg hover:bg-[#f76b1c] transition-colors cursor-pointer"
             >
                 <i className="fas fa-chevron-up"></i>
             </button>
