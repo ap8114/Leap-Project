@@ -231,6 +231,7 @@ select.form-input {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-top: 0px;
 }
 
 /* maindashbord end */
@@ -342,7 +343,7 @@ select.form-input {
   }
   .right-side-content {
   width: 100%;
-  margin-top: 85px;
+  /* margin-top: 85px; */
   padding-left: 0px;
   /* background-color: #f2f2f2; */
   /* height: 668px; */
@@ -501,7 +502,7 @@ select.form-input {
   }
 .right-side-content {
   width: 100%;
-  margin-top: 85px;
+  /* margin-top: 85px; */
   padding-left:0px;
   /* background-color: #f2f2f2; */
   /* height: 668px; */
@@ -547,7 +548,7 @@ select.form-input {
   }
 .right-side-content {
   width: 100%;
-  margin-top: 85px;
+  /* margin-top: 85px; */
   padding-left: 0px;
   /* background-color: #f2f2f2; */
   /* height: 668px; */
@@ -615,7 +616,7 @@ select.form-input {
   }
   .right-side-content {
   width: 100%;
-  margin-top: 85px;
+  /* margin-top: 85px; */
   padding-left: 0px;
   /* margin: 30px; */
   /* background-color: #f2f2f2; */
@@ -1042,15 +1043,19 @@ select.form-input {
 
 /* modal custom css for main content render */
 
+.modal-dialog {
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+}
+
 .modal-custom .modal-dialog {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  margin: 0;
-  z-index: 1050;
-  width: 100%;
-  max-width: 500px;
+ display: flex;
+
+  justify-content: center;
+  align-items: center;
+margin-top: auto;
+ 
 }
 .modal-backdrop {
   z-index: 1040;

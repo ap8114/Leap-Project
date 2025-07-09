@@ -142,7 +142,7 @@ const Matter = () => {
 
   return (
     <div className="min-vh-100 bg-white p-4">
-     <div className="container-fluid p-3 p-md-4">
+    
   {/* Title & Description */}
   <div className="mb-3">
     <h1 className="h1 fw-bold mb-2">Matters</h1>
@@ -216,7 +216,7 @@ const Matter = () => {
         </select>
       </div>
     </div>
-  </div>
+ 
 
   {/* Matters Grid */}
   {filteredMatters.length > 0 ? (
@@ -307,8 +307,8 @@ const Matter = () => {
           <div className="modal-backdrop fade show mt-5 modal-custom"></div>
 
        
-          <div className="modal fade show d-block" tabIndex="-1" role="dialog" aria-modal="true">
-            <div className="modal-dialog modal-dialog-centered" role="document">
+          <div className="modal fade show d-block  modal-md" tabIndex="-1" role="dialog" aria-modal="true">
+            <div className="modal-dialog " role="document">
               <div className="modal-content">
                 <div className="modal-header">
                   <h5 className="modal-title">Create New Matter</h5>

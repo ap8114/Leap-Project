@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Card, Pagination} from 'react-bootstrap';
 
 const Client = () => {
   const [clients, setClients] = useState([
@@ -105,12 +106,12 @@ const Client = () => {
 
   return (
     <div className="container-fluid p-4">
-      <div className="p-4">
+      
         <div className="col">
            <h1 className="display-6 fw-bold mb-2">Client</h1>
           <p className="text-muted">Manage your clients and their information</p>
         </div>
-      </div>
+      
 
       <div className="card shadow-sm mb-4">
         <div className="card-body">
@@ -219,11 +220,21 @@ const Client = () => {
                 )}
               </tbody>
             </table>
+             <Card.Footer className="bg-white border-top d-flex flex-column flex-md-row justify-content-between align-items-center py-3">
+        <div className="text-muted small mb-2 mb-md-0">
+          Showing <span className="fw-medium">1</span> to <span className="fw-medium">5</span> of <span className="fw-medium">24</span> entries
+        </div>
+        <Pagination className="mb-0 pagination-custom">
+          <Pagination.Prev disabled>Previous</Pagination.Prev>
+          <Pagination.Item active>1</Pagination.Item>
+          <Pagination.Item>2</Pagination.Item>
+          <Pagination.Item>3</Pagination.Item>
+          <Pagination.Next>Next</Pagination.Next>
+        </Pagination>
+      </Card.Footer>
           </div>
           
-          <div className="card-footer text-muted">
-            Showing <span className="fw-medium">{filteredClients.length}</span> of <span className="fw-medium">{clients.length}</span> clients
-          </div>
+         
         </div>
       </div>
 {/* add modal */}
