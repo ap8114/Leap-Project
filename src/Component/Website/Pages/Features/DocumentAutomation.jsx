@@ -82,7 +82,7 @@ const DocumentAutomation = () => {
                                     <div className="mb-6">
                                         <div className="flex items-center justify-between mb-4">
                                             <h3 className="text-lg font-semibold text-gray-800">Template Generator</h3>
-                                            <span className="text-blue-600 font-bold">Clio UK</span>
+                                            <span className="text-blue-600 font-bold">FastTrack UK</span>
                                         </div>
                                         <div className="space-y-3">
                                             <div className="bg-gray-50 p-3 rounded-lg">
@@ -149,7 +149,7 @@ const DocumentAutomation = () => {
                                     Get instant answers from your matters
                                 </h2>
                                 <p className="fs-5 text-muted mb-4">
-                                    Clio uses AI to intelligently examine your Clio matter to provide instant insights and information.
+                                    FastTrack uses AI to intelligently examine your FastTrack matter to provide instant insights and information.
                                     It examines your correspondence to identify important data and give a detailed response in seconds,
                                     generating professional-quality documents in a fraction of the time. Ask it anything.
                                 </p>
@@ -245,7 +245,7 @@ const DocumentAutomation = () => {
                                     Work with the tools you use every day
                                 </h2>
                                 <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                                    Seamless integration with Word, Excel, Outlook and Teams maximises productivity and increases your billable time. Easily assign documents and emails to matters, synchronise your Clio documents across all your connected devices and work collaboratively with your colleagues.
+                                    Seamless integration with Word, Excel, Outlook and Teams maximises productivity and increases your billable time. Easily assign documents and emails to matters, synchronise your FastTrack documents across all your connected devices and work collaboratively with your colleagues.
                                 </p>
                                 <div className="grid grid-cols-2 gap-4 mb-8">
                                     {integrations.map((integration, index) => (
@@ -392,7 +392,7 @@ const DocumentAutomation = () => {
                                 Ready to transform your legal practice?
                             </h2>
                             <p className="text-xl lg:text-2xl mb-12 text-blue-100 leading-relaxed">
-                                Join thousands of law firms who have already streamlined their operations with Clio's comprehensive legal practice management solution.
+                                Join thousands of law firms who have already streamlined their operations with FastTrack's comprehensive legal practice management solution.
                             </p>
                             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
                                 <button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors cursor-pointer whitespace-nowrap">
@@ -423,6 +423,15 @@ const DocumentAutomation = () => {
             </div>
 
           <FooterSection />
+
+            {/* Back to Top Button */}
+            <button
+                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                className="fixed bottom-8 right-8 bg-[#f76b1c] text-white p-3 rounded-full shadow-lg hover:bg-[#f76b1c] transition-colors cursor-pointer"
+            >
+                <i className="fas fa-chevron-up"></i>
+            </button>
+            
         </div>
     )
 }

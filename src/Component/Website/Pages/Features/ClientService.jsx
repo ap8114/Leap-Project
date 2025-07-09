@@ -42,7 +42,7 @@ const ClientService = () => {
                 <div className="small mb-3">Powered by lawconnect</div>
                 <h1 className="display-4 fw-bold mb-4">Streamline your client communication</h1>
                 <p className="lead mb-4">
-                  Experience simplified and secure client communication through Clio's integrated customizable client portal. Sign documents electronically, share correspondence, accept payments and collaborate in real-time directly from your matter.
+                  Experience simplified and secure client communication through FastTrack's integrated customizable client portal. Sign documents electronically, share correspondence, accept payments and collaborate in real-time directly from your matter.
                 </p>
                 <button className="btn btn-warning btn-lg px-4">
                   BOOK DEMONSTRATION
@@ -76,7 +76,7 @@ const ClientService = () => {
               <div className="small text-muted mb-2">Powered by lawconnect</div>
               <h3 className="display-6 fw-bold mb-4">Safeguard your data with secure correspondence</h3>
               <p className="text-muted mb-4">
-                Unlike email, which can be susceptible to cybersecurity breaches, hacking and unauthorized access, Clio offers a secure environment for sharing documents and working with clients.
+                Unlike email, which can be susceptible to cybersecurity breaches, hacking and unauthorized access, FastTrack offers a secure environment for sharing documents and working with clients.
               </p>
               <p className="text-muted">
                 You can work confidently and securely, without worrying that yours or your clients' files will fall into the wrong hands. All data is stored on secure servers provided by Amazon Web Services, one of the world's largest and most secure data storage providers.
@@ -119,7 +119,7 @@ const ClientService = () => {
                 LawConnect is SOC 2 Type 1 compliant. This attests to our unwavering commitment to the highest standards for security and confidentiality in safeguarding our users' data.
               </p>
               <p className="text-muted">
-                Our internal security controls underwent a rigorous and independent audit by AssuranceLab, culminating in this certification for all Clio subsidiaries, including LawConnect.
+                Our internal security controls underwent a rigorous and independent audit by AssuranceLab, culminating in this certification for all FastTrack subsidiaries, including LawConnect.
               </p>
             </div>
             <div className="col-lg-4 text-center">
@@ -277,6 +277,15 @@ const ClientService = () => {
       </div>
       {/* Footer */}
       <FooterSection />
+
+        {/* Back to Top Button */}
+            <button
+                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                className="fixed bottom-8 right-8 bg-[#f76b1c] text-white p-3 rounded-full shadow-lg hover:bg-[#f76b1c] transition-colors cursor-pointer"
+            >
+                <i className="fas fa-chevron-up"></i>
+            </button>
+            
     </div>
   );
 };

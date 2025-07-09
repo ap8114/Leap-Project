@@ -57,7 +57,7 @@ const Navbar = ({ toggleSidebar }) => {
       <Link to="/" className="navbar-brand d-flex align-items-center me-2">
   <img
     src="https://i.postimg.cc/RVJPy6VB/Whats-App-Image-2025-07-08-at-18-18-06-42bff2fc-removebg-preview.png"
-    alt="clio logo"
+    alt="FastTrack logo"
     style={{
       height: "60px", // controlled height
       width: "auto",

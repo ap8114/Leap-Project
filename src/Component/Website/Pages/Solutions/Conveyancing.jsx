@@ -564,6 +564,15 @@ const Conveyancing = () => {
 </div>
       {/* Footer */}
     <FooterSection />
+
+      {/* Back to Top Button */}
+            <button
+                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                className="fixed bottom-8 right-8 bg-[#f76b1c] text-white p-3 rounded-full shadow-lg hover:bg-[#f76b1c] transition-colors cursor-pointer"
+            >
+                <i className="fas fa-chevron-up"></i>
+            </button>
+            
     </div>
   );
 };

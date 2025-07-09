@@ -374,7 +374,7 @@ const Employment = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-5 bg-warning">
+        <section className="py-5 bg-dark">
           <div className="container py-5">
             <div className="text-center mx-auto" style={{ maxWidth: "800px" }}>
               <h2 className="display-5 fw-bold text-white mb-4">
@@ -386,10 +386,10 @@ const Employment = () => {
                 productivity.
               </p>
               <div className="d-flex flex-column flex-sm-row gap-3 justify-content-center">
-                <button className="btn btn-white btn-lg px-4 py-3 fw-semibold text-warning">
+                <button className="btn  btn-lg px-4 py-3 fw-semibold "     style={{ backgroundColor: "#f76b1c", color: "white" }}>
                   Start Free Trial
                 </button>
-                <button className="btn btn-outline-white btn-lg px-4 py-3 fw-semibold">
+                <button className="btn btn-outline-light  btn-lg px-4 py-3 fw-semibold">
                   Schedule Demo
                 </button>
               </div>
@@ -400,9 +400,21 @@ const Employment = () => {
           </div>
         </section>
 
-        {/* Footer */}
-      </div>
-      <FooterSection />
+  
+
+     
+      {/* Footer */}
+    </div>
+    <FooterSection/>
+
+      {/* Back to Top Button */}
+            <button
+                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                className="fixed bottom-8 right-8 bg-[#f76b1c] text-white p-3 rounded-full shadow-lg hover:bg-[#f76b1c] transition-colors cursor-pointer"
+            >
+                <i className="fas fa-chevron-up"></i>
+            </button>
+            
     </div>
   );
 };

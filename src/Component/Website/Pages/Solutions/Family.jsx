@@ -509,100 +509,19 @@ const Family = () => {
           </Container>
         </section>
 
-        {/* Contact Form Section */}
-        <section className="py-5 bg-dark text-white">
-          <Container>
-            <Row className="align-items-center">
-              <Col lg={6} className="mb-5 mb-lg-0">
-                <h2 className="display-5 fw-bold mb-4" style={{color: '#f76b1c'}}>Ready to transform your family law practice?</h2>
-                <p className="lead text-muted mb-4">
-                  Join thousands of family law attorneys who trust our platform 
-                  to manage their most sensitive cases with confidence and efficiency.
-                </p>
-                <ul className="list-unstyled">
-                  <li className="mb-3">
-                    <i className="fas fa-check-circle me-2" style={{color: '#f76b1c'}}></i>
-                    <span>30-day free trial with full access</span>
-                  </li>
-                  <li className="mb-3">
-                    <i className="fas fa-check-circle me-2" style={{color: '#f76b1c'}}></i>
-                    <span>No setup fees or hidden costs</span>
-                  </li>
-                  <li className="mb-3">
-                    <i className="fas fa-check-circle me-2" style={{color: '#f76b1c'}}></i>
-                    <span>24/7 customer support</span>
-                  </li>
-                  <li>
-                    <i className="fas fa-check-circle me-2" style={{color: '#f76b1c'}}></i>
-                    <span>Data migration assistance</span>
-                  </li>
-                </ul>
-              </Col>
-              <Col lg={6}>
-                <Card className="shadow-lg">
-                  <Card.Body>
-                    <h3 className="h3 mb-4">Get Started Today</h3>
-                    <Form onSubmit={handleSubmit}>
-                      <Form.Group className="mb-3">
-                        <Form.Label>Full Name</Form.Label>
-                        <Form.Control
-                          type="text"
-                          name="name"
-                          value={formData.name}
-                          onChange={handleInputChange}
-                          placeholder="Enter your full name"
-                          required
-                        />
-                      </Form.Group>
-                      <Form.Group className="mb-3">
-                        <Form.Label>Email Address</Form.Label>
-                        <Form.Control
-                          type="email"
-                          name="email"
-                          value={formData.email}
-                          onChange={handleInputChange}
-                          placeholder="Enter your email address"
-                          required
-                        />
-                      </Form.Group>
-                      <Form.Group className="mb-3">
-                        <Form.Label>Law Firm Name</Form.Label>
-                        <Form.Control
-                          type="text"
-                          name="company"
-                          value={formData.company}
-                          onChange={handleInputChange}
-                          placeholder="Enter your law firm name"
-                        />
-                      </Form.Group>
-                      <Form.Group className="mb-3">
-                        <Form.Label>Message (Optional)</Form.Label>
-                        <Form.Control
-                          as="textarea"
-                          name="message"
-                          value={formData.message}
-                          onChange={handleInputChange}
-                          rows={4}
-                          placeholder="Tell us about your practice needs"
-                        />
-                      </Form.Group>
-                      <Button type="submit" style={{backgroundColor: '#f76b1c', borderColor: '#f76b1c'}} size="lg" className="w-100">
-                        Start Free Trial
-                      </Button>
-                      <p className="text-muted small mt-3 text-center">
-                        By submitting this form, you agree to our{' '}
-                        <a href="#" className="text-primary">Terms of Service</a> and{' '}
-                        <a href="#" className="text-primary">Privacy Policy</a>
-                      </p>
-                    </Form>
-                  </Card.Body>
-                </Card>
-              </Col>
-            </Row>
-          </Container>
-        </section>
-      </div>
-      <FooterSection />
+      {/* Footer */}
+  
+    </div>
+<FooterSection/>
+
+  {/* Back to Top Button */}
+            <button
+                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                className="fixed bottom-8 right-8 bg-[#f76b1c] text-white p-3 rounded-full shadow-lg hover:bg-[#f76b1c] transition-colors cursor-pointer"
+            >
+                <i className="fas fa-chevron-up"></i>
+            </button>
+            
     </div>
   );
 };

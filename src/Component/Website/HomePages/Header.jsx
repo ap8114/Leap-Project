@@ -13,15 +13,15 @@ const Header = () => {
             <nav className="navbars navbar-expand-lg navbar-dark  p-3">
                 <div className="container-fluid px-4 d-flex align-items-center justify-content-between">
 
-                   <Link to="/" className="text-decoration-none">
-                    <div className="d-flex align-items-center">
-                        <img
-                            src={logofasttrack}
-                            alt="Logo"
-                            style={{ height: '70px', width: '170px' }}
-                        />
-                    </div>
-                   </Link>
+                    <Link to="/" className="text-decoration-none">
+                        <div className="d-flex align-items-center">
+                            <img
+                                src={logofasttrack}
+                                alt="Logo"
+                                style={{ height: '70px', width: '170px' }}
+                            />
+                        </div>
+                    </Link>
 
           {/* Toggle button for mobile */}
           <button
