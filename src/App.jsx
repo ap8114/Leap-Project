@@ -32,6 +32,7 @@ import Employment from "./Component/Website/Pages/Solutions/Employment";
 import PersonalInjury from "./Component/Website/Pages/Solutions/PersonalInjury";
 import ContactUs from "./Component/Website/ContactUs/ContactUs";
 import Company from "./Component/Website/Pages/Company/Company";
+import Resources from "./Component/Website/Pages/Resources/Resources";
 
 
 function App() {
@@ -65,7 +66,8 @@ function App() {
     "/personalinjury",
     "/contactus",
     // "/thelawsociety",
-    "/company"
+    "/company",
+    "/resources",
   ];
   const isNoLayoutPage = noLayoutRoutes.includes(location.pathname);
   // Hide layout (navbar/sidebar) only on login page
@@ -86,7 +88,9 @@ function App() {
     location.pathname === "/employment" ||
     location.pathname === "/personalinjury" ||
     location.pathname === "/contactus" ||
-     location.pathname === "/company";
+     location.pathname === "/company"||
+      location.pathname === "/resources";
+
     //  location.pathname === "/thelawsociety";
 
   // ...existing code...
@@ -131,6 +135,7 @@ function App() {
               <Route path="/contactus" element={< ContactUs />} />
                {/* <Route path="/thelawsociety" element={<TheLawSociety />} /> */}
                <Route path="/company" element={< Company />} />
+                <Route path="/resources" element={< Resources />} />
 
               {/* Website Routes Ends */}
 

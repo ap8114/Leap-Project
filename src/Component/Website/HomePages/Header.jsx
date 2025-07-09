@@ -13,15 +13,15 @@ const Header = () => {
             <nav className="navbars navbar-expand-lg navbar-dark  p-3">
                 <div className="container-fluid px-4 d-flex align-items-center justify-content-between">
 
-                   <Link to="/" className="text-decoration-none">
-                    <div className="d-flex align-items-center">
-                        <img
-                            src={logofasttrack}
-                            alt="Logo"
-                            style={{ height: '70px', width: '170px' }}
-                        />
-                    </div>
-                   </Link>
+                    <Link to="/" className="text-decoration-none">
+                        <div className="d-flex align-items-center">
+                            <img
+                                src={logofasttrack}
+                                alt="Logo"
+                                style={{ height: '70px', width: '170px' }}
+                            />
+                        </div>
+                    </Link>
 
                     {/* Toggle button for mobile */}
                     <button
@@ -331,24 +331,24 @@ const Header = () => {
                             </li>
                         </Link>
                         {/* Resources Dropdown */}
-                        <li className="nav-item dropdown position-static">
-                            <a
-                                className="nav-link dropdown-toggle"
-                                href="#resources"
-                                id="resourcesDropdown"
-                                role="button"
-                                data-bs-toggle="dropdown"
-                                aria-expanded="false"
-                            >
-                                Resources
-                            </a>
-                            <div
+                        <Link to="/resources" className="text-decoration-none">
+                            <li className="nav-item dropdown position-static">
+                                <div
+                                    className="nav-link"
+                                    href="#resources"
+                                    id="resourcesDropdown"
+                                    role="button"
+
+                                >
+                                    Resources
+                                </div>
+                                {/* <div
                                 className="dropdown-menu shadow border-0 mt-2 p-4 rounded-4"
                                 aria-labelledby="resourcesDropdown"
                                 style={{ minWidth: "950px", maxWidth: "1100px" }}
                             >
                                 <div className="row">
-                                    {/* Resources */}
+                                  
                                     <div className="col-3">
                                         <h6 className="dropdown-header text-custom">RESOURCES</h6>
                                         <a
@@ -377,7 +377,7 @@ const Header = () => {
                                             challenges in your firm
                                         </div>
                                     </div>
-                                    {/* Webinars & Events */}
+                                  
                                     <div className="col-3 border-start">
                                         <h6 className="dropdown-header text-custom">
                                             WEBINARS & EVENTS
@@ -391,7 +391,6 @@ const Header = () => {
                                         </div>
                                     </div>
 
-                                    {/* Help Centre */}
                                     <div className="col-3 border-start">
                                         <div className="mb-3">
                                             <img
@@ -412,8 +411,9 @@ const Header = () => {
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </li>
+                            </div> */}
+                            </li>
+                        </Link>
                         {/* Contact */}
                         <li className="nav-item">
                             <Link to='/contactus' className="nav-link text-decoration-none">
