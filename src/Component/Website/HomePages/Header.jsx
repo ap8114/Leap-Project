@@ -65,14 +65,14 @@ const Header = () => {
                                             to="/client-and-matter-management"
                                             className="text-decoration-none text-dark"
                                         >
-                                            <div className="bg-light rounded-3 p-2 mb-2">
+                                            <div className="rounded-3 mb-2">
                                                 <div className="fw-semibold">
                                                     Client and matter management
                                                 </div>
-                                                <div className="small text-muted">
+                                                {/* <div className="small text-muted">
                                                     Manage and collaborate on matters in one secure and
                                                     searchable location
-                                                </div>
+                                                </div> */}
                                             </div>
                                         </Link>
 
@@ -84,10 +84,10 @@ const Header = () => {
                                                 <div className="fw-semibold">
                                                     Document automation and management
                                                 </div>
-                                                <div className="small text-muted">
+                                                {/* <div className="small text-muted">
                                                     Utilise fully automated and integrated legal forms and
                                                     precedents
-                                                </div>
+                                                </div> */}
                                             </div>
                                         </Link>
 
@@ -99,10 +99,10 @@ const Header = () => {
                                                 <div className="fw-semibold">
                                                     Time recording and billing
                                                 </div>
-                                                <div className="small text-muted">
+                                                {/* <div className="small text-muted">
                                                     Revolutionary AI time-tracking tools, capture every
                                                     billable minute for your firm
-                                                </div>
+                                                </div> */}
                                             </div>
                                         </Link>
 
@@ -110,19 +110,19 @@ const Header = () => {
                                         <Link to="/reporting" className="text-decoration-none text-dark">
                                             <div className="mb-2">
                                                 <div className="fw-semibold">Reporting</div>
-                                                <div className="small text-muted">
+                                                {/* <div className="small text-muted">
                                                     Gain quick insights into your data to make intelligent
                                                     decisions across your firm
-                                                </div>
+                                                </div> */}
                                             </div>
                                         </Link>
 
                                         <Link to="/clientservice" className="text-decoration-none text-dark">
                                             <div>
                                                 <div className="fw-semibold">Client service</div>
-                                                <div className="small text-muted">
+                                                {/* <div className="small text-muted">
                                                     Connect, communicate and collaborate with clients online
-                                                </div>
+                                                </div> */}
                                             </div>
                                         </Link>
                                     </div>

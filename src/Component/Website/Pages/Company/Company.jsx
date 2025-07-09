@@ -310,7 +310,7 @@ const Company = () => {
                                     <Link to="/contactus" className="text-decoration-none">
                                       <button
                                             onClick={() => setShowContactForm(true)}
-                                            className="bg-[#f76b13] text-white px-8 py-4 !rounded-button font-semibold hover:bg-blue-700 transition-colors cursor-pointer whitespace-nowrap"
+                                            className="bg-[#f76b13] text-white px-8 py-4 !rounded-button font-semibold hover:bg-[#f76b1c]  transition-colors cursor-pointer whitespace-nowrap"
                                         >
                                             Contact Us
                                         </button>
@@ -393,8 +393,8 @@ const Company = () => {
                                 </div>
                                 <h3 className="text-xl font-semibold text-gray-900 mb-4">{category.title}</h3>
                                 <p className=" mb-6">{category.description}</p>
-                                <button className="text-[#f76b13] font-semibold hover:text-blue-700 transition-colors cursor-pointer whitespace-nowrap">
-                                    Find Partners <i className="fas fa-arrow-right ml-2"></i>
+                                <button className="text-[#f76b13] font-semibold transition-colors cursor-pointer whitespace-nowrap">
+                                    Find Partners 
                                 </button>
                             </div>
                         ))}
@@ -414,7 +414,7 @@ const Company = () => {
                                 <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
                                     Strategic Partner
                                 </span>
-                                <button className="text-[#f76b13] font-semibold hover:text-blue-700 transition-colors cursor-pointer whitespace-nowrap">
+                                <button className="text-[#f76b13] font-semibold transition-colors cursor-pointer whitespace-nowrap">
                                     Learn More <i className="fas fa-external-link-alt ml-2"></i>
                                 </button>
                             </div>

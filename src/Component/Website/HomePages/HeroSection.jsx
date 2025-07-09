@@ -12,7 +12,7 @@ const HeroSection = () => {
                         {/* Text Column */}
                         <div className="col-lg-6 text-center text-lg-start">
                             <div className="mb-3">
-                                <span className="badge bg-warning text-dark px-3 py-2 rounded-pill">
+                                <span className="badge bg-[#f76b1c] text-white px-3 py-2 rounded-pill">
                                     ⭐ Trusted by 61,000+ Legal Professionals
                                 </span>
                             </div>
@@ -57,7 +57,7 @@ const HeroSection = () => {
                                     className="img-fluid rounded-4"
                                 />
                                 {/* "New Features" Badge */}
-                                <span className="position-absolute top-0 end-0 bg-warning text-white px-3 py-1 fw-semibold rounded-bottom-start">
+                                <span className="position-absolute top-0 end-0 bg-[#f76b1c]  text-white px-3 py-1 fw-semibold rounded-bottom-start">
                                     New Features Available
                                 </span>
                                 {/* Trusted Platform Label */}
