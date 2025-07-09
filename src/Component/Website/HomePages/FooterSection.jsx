@@ -37,7 +37,7 @@ const FooterSection = () => {
                 Liversedge<br />
                 WF15 8HG
               </p>
-              <a href="tel:07977 317760">Tel: 07977 317760</a>
+              <a href="tel:+44 7977 317760">Tel: +44 7977 317760</a>
               <a href="mailto:sales@fastracksoftware.co.uk">Email: sales@fastracksoftware.co.uk</a>
               <Link to="/contactus">Contact Form</Link>
             </div>

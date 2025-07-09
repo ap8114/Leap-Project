@@ -49,7 +49,7 @@ const ContactUs = () => {
                   <i className="fas fa-phone me-3 mt-1" style={{color: '#f76b1c'}} />
                   <div>
                     <strong className="d-block">Phone</strong>
-                    <span>07977 317760</span>
+                    <span>+44 7977 317760</span>
                   </div>
                 </div>
                 <div className="d-flex">
