@@ -17,9 +17,9 @@ const ClientAndMatterManagement = () => {
                                 <p className="lead mb-4">
                                     Streamline your firm's operations with our comprehensive legal practice platform designed to enhance efficiency and compliance.
                                 </p>
-                                <Button 
-                                    variant="outline-light" 
-                                    size="lg" 
+                                <Button
+                                    variant="outline-light"
+                                    size="lg"
                                     className="rounded-pill px-4"
                                     style={{ borderWidth: '2px', color: 'white', borderColor: '#f76b1c', backgroundColor: '#f76b1c' }}
                                 >
@@ -28,7 +28,7 @@ const ClientAndMatterManagement = () => {
                             </Col>
                             <Col lg={6} className="pe-lg-5">
                                 <img
-                                    src="https://via.placeholder.com/800x500"
+                                    src="https://i.ibb.co/pjTYW5Fw/hands-using-laptop-with-scale-icon-legal-court-word-concept.jpg"
                                     alt="Legal software dashboard"
                                     className="img-fluid rounded shadow"
                                 />
@@ -45,10 +45,10 @@ const ClientAndMatterManagement = () => {
                             <Col md={4}>
                                 <Card className="h-100 border-0 shadow-sm">
                                     <Card.Body className="p-4">
-                                        <div 
-                                            className="rounded-circle d-flex align-items-center justify-content-center mb-3" 
-                                            style={{ 
-                                                width: '60px', 
+                                        <div
+                                            className="rounded-circle d-flex align-items-center justify-content-center mb-3"
+                                            style={{
+                                                width: '60px',
                                                 height: '60px',
                                                 backgroundColor: 'rgba(247, 107, 28, 0.1)'
                                             }}
@@ -66,10 +66,10 @@ const ClientAndMatterManagement = () => {
                             <Col md={4}>
                                 <Card className="h-100 border-0 shadow-sm">
                                     <Card.Body className="p-4">
-                                        <div 
-                                            className="rounded-circle d-flex align-items-center justify-content-center mb-3" 
-                                            style={{ 
-                                                width: '60px', 
+                                        <div
+                                            className="rounded-circle d-flex align-items-center justify-content-center mb-3"
+                                            style={{
+                                                width: '60px',
                                                 height: '60px',
                                                 backgroundColor: 'rgba(247, 107, 28, 0.1)'
                                             }}
@@ -87,10 +87,10 @@ const ClientAndMatterManagement = () => {
                             <Col md={4}>
                                 <Card className="h-100 border-0 shadow-sm">
                                     <Card.Body className="p-4">
-                                        <div 
-                                            className="rounded-circle d-flex align-items-center justify-content-center mb-3" 
-                                            style={{ 
-                                                width: '60px', 
+                                        <div
+                                            className="rounded-circle d-flex align-items-center justify-content-center mb-3"
+                                            style={{
+                                                width: '60px',
                                                 height: '60px',
                                                 backgroundColor: 'rgba(247, 107, 28, 0.1)'
                                             }}
@@ -114,7 +114,7 @@ const ClientAndMatterManagement = () => {
                         <Row className="align-items-center px-lg-5">
                             <Col lg={6} className="mb-4 mb-lg-0">
                                 <img
-                                    src="https://via.placeholder.com/800x500"
+                                    src="https://i.ibb.co/99yVGDhK/automation-production-system-operation-precess-concept.jpg"
                                     alt="Workflow automation"
                                     className="img-fluid rounded shadow"
                                 />
@@ -138,8 +138,8 @@ const ClientAndMatterManagement = () => {
                                         Visual process designer for complex workflows
                                     </ListGroup.Item>
                                 </ListGroup>
-                                <Button 
-                                    variant="custom" 
+                                <Button
+                                    variant="custom"
                                     className="rounded-pill px-4"
                                     style={{ backgroundColor: '#f76b1c', borderColor: '#f76b1c' }}
                                 >
@@ -263,17 +263,17 @@ const ClientAndMatterManagement = () => {
                     <div className="text-center px-lg-5">
                         <h2 className="mb-4">Ready to Modernize Your Practice?</h2>
                         <p className="lead mb-4">Discover how our solution can transform your firm's operations and client service.</p>
-                        <Button 
-                            variant="outline-light" 
-                            size="lg" 
+                        <Button
+                            variant="outline-light"
+                            size="lg"
                             className="rounded-pill px-4 me-2"
                             style={{ borderWidth: '2px', color: 'white', borderColor: '#f76b1c', backgroundColor: '#f76b1c' }}
                         >
                             Request Demo
                         </Button>
-                        <Button 
-                            variant="outline-light" 
-                            size="lg" 
+                        <Button
+                            variant="outline-light"
+                            size="lg"
                             className="rounded-pill px-4"
                             style={{ borderWidth: '2px', color: '#f76b1c', borderColor: '#f76b1c' }}
                         >
@@ -285,14 +285,14 @@ const ClientAndMatterManagement = () => {
 
             <FooterSection />
 
-              {/* Back to Top Button */}
+            {/* Back to Top Button */}
             <button
                 onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                 className="fixed bottom-8 right-8 bg-[#f76b1c] text-white p-3 rounded-full shadow-lg hover:bg-[#f76b1c] transition-colors cursor-pointer"
             >
                 <i className="fas fa-chevron-up"></i>
             </button>
-            
+
         </div>
     )
 }
