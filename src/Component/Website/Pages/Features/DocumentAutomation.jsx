@@ -82,7 +82,7 @@ const DocumentAutomation = () => {
                                     <div className="mb-6">
                                         <div className="flex items-center justify-between mb-4">
                                             <h3 className="text-lg font-semibold text-gray-800">Template Generator</h3>
-                                            <span className="text-blue-600 font-bold">FastTrack UK</span>
+                                            <span className="text-dark-600 font-bold">FastTrack UK</span>
                                         </div>
                                         <div className="space-y-3">
                                             <div className="bg-gray-50 p-3 rounded-lg">
@@ -99,7 +99,7 @@ const DocumentAutomation = () => {
                                             </div>
                                         </div>
                                     </div>
-                                    <button className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-semibold transition-colors cursor-pointer whitespace-nowrap">
+                                    <button className="w-full   text-white py-3 rounded-lg font-semibold transition-colors cursor-pointer whitespace-nowrap"    style={{ backgroundColor: "#f76b1c", color: "white" }}>
                                         Generate Document
                                     </button>
                                 </div>

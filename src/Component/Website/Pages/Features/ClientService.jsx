@@ -44,7 +44,7 @@ const ClientService = () => {
                 <p className="lead mb-4">
                   Experience simplified and secure client communication through FastTrack's integrated customizable client portal. Sign documents electronically, share correspondence, accept payments and collaborate in real-time directly from your matter.
                 </p>
-                <button className="btn btn-warning btn-lg px-4">
+                <button className="btn btn-lg px-4"  style={{ backgroundColor: '#f76b1c', color: 'white' }}>
                   BOOK DEMONSTRATION
                 </button>
               </div>
@@ -154,19 +154,19 @@ const ClientService = () => {
               <h3 className="display-6 fw-bold mb-4">Provide 24/7 access to information and services</h3>
               <ul className="list-unstyled">
                 <li className="mb-2">
-                  <i className="fas fa-check-circle text-warning me-2"></i>
+                  <i className="fas fa-check-circle  me-2" style={{color: '#f76b1c'}}></i>
                   Secure document sharing
                 </li>
                 <li className="mb-2">
-                  <i className="fas fa-check-circle text-warning me-2"></i>
+                  <i className="fas fa-check-circle  me-2" style={{color: '#f76b1c'}} ></i>
                   Electronic signatures
                 </li>
                 <li className="mb-2">
-                  <i className="fas fa-check-circle text-warning me-2"></i>
+                  <i className="fas fa-check-circle me-2" style={{color: '#f76b1c'}}></i>
                   Client communication
                 </li>
                 <li className="mb-2">
-                  <i className="fas fa-check-circle text-warning me-2"></i>
+                  <i className="fas fa-check-circle  me-2" style={{color: '#f76b1c'}}></i>
                   24/7 portal access
                 </li>
               </ul>
@@ -226,7 +226,8 @@ const ClientService = () => {
                 <div className="col-12">
                   <button
                     type="submit"
-                    className="btn btn-dark w-100 py-2"
+                    className="btn  w-100 py-2"
+                    style={{ backgroundColor: '#f76b1c', color: 'white' }}
                   >
                     SEND REQUEST
                   </button>
@@ -245,7 +246,7 @@ const ClientService = () => {
                 <h3 className="fw-bold mb-2">Access your shared documents</h3>
                 <p className="text-muted mb-0">Click below to access documents that have been shared with you.</p>
               </div>
-              <button className="btn btn-warning px-4">
+              <button className="btn px-4" style={{ backgroundColor: '#f76b1c', color: 'white' }}>
                 ACCESS DOCUMENTS
               </button>
             </div>
