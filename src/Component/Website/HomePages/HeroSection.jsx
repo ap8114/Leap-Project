@@ -53,7 +53,7 @@ const HeroSection = () => {
                             <div className="position-relative rounded-4 overflow-hidden shadow">
                                 <img
                                     src="https://i.ibb.co/SD7MR15F/image.png"
-                                    alt="FastTrack Software Software"
+                                    alt="FastTrack Software "
                                     className="img-fluid rounded-4"
                                 />
                                 {/* "New Features" Badge */}
