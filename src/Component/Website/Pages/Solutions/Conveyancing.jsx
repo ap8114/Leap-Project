@@ -39,7 +39,7 @@ const Conveyancing = () => {
     <div className='w-100 '>
         <Header />
     
-    <div className="bg-white text-dark mt-3">
+    <div className="bg-white text-dark">
       {/* Hero Section */}
       <section className="position-relative overflow-hidden">
         <div className="container-fluid">
@@ -572,7 +572,7 @@ const Conveyancing = () => {
             >
                 <i className="fas fa-chevron-up"></i>
             </button>
-            
+
     </div>
   );
 };
