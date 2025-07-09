@@ -19,7 +19,7 @@ import {
 const Dashboard = () => {
   // Quick Summary Cards Data
   const [summaryCards] = useState([
-    { id: 1, title: 'Total Cases', value: 42, icon: faBriefcase, color: 'primary' },
+    { id: 1, title: 'Total Cases', value: 42, icon: faBriefcase, color: 'custom' },
     { id: 2, title: 'Billable Hours', value: '156.5', icon: faDollarSign, color: 'success' },
     { id: 3, title: 'Open Tasks', value: 18, icon: faTasks, color: 'warning' },
     { id: 4, title: 'Pending Invoices', value: 7, icon: faFileInvoice, color: 'danger' }
@@ -100,8 +100,8 @@ const Dashboard = () => {
                 {activities.map((activity) => (
                   <div key={activity.id} className="list-group-item border-0 px-0">
                     <div className="d-flex gap-3">
-                      <div className="bg-primary bg-opacity-10 p-2 rounded">
-                        <FontAwesomeIcon icon={activity.icon} className="text-primary" />
+                      <div className="bg-custom bg-opacity-10 p-2 rounded">
+                        <FontAwesomeIcon icon={activity.icon} className="text-custom" />
                       </div>
                       <div className="flex-grow-1">
                         <h6 className="mb-1">{activity.title}</h6>
@@ -132,8 +132,8 @@ const Dashboard = () => {
                 {events.map((event) => (
                   <div key={event.id} className="list-group-item border-0 px-0">
                     <div className="d-flex gap-3 align-items-center">
-                      <div className={`bg-primary bg-opacity-10 p-3 rounded`}>
-                        <FontAwesomeIcon icon={getEventTypeIcon(event.type)} className="text-primary" />
+                      <div className={`bg-custom bg-opacity-10 p-3 rounded`}>
+                        <FontAwesomeIcon icon={getEventTypeIcon(event.type)} className="text-custom" />
                       </div>
                       <div className="flex-grow-1">
                         <h6 className="mb-1">{event.title}</h6>

@@ -130,14 +130,14 @@ const Family = () => {
                   <div>
                     <Row className="mb-4 g-4">
                       <Col md={3}>
-                        <Card className="border-0 bg-primary bg-opacity-10">
+                        <Card className="border-0 bg-custom bg-opacity-10">
                           <Card.Body>
                             <div className="d-flex justify-content-between align-items-center">
                               <div>
-                                <p className="text-primary mb-1">Active Cases</p>
+                                <p className="text-custom mb-1">Active Cases</p>
                                 <h3 className="mb-0">24</h3>
                               </div>
-                              <i className="fas fa-briefcase text-primary fs-3"></i>
+                              <i className="fas fa-briefcase text-custom fs-3"></i>
                             </div>
                           </Card.Body>
                         </Card>
@@ -202,7 +202,7 @@ const Family = () => {
                                   <td>Johnson Divorce</td>
                                   <td>Filed Petition</td>
                                   <td>Today</td>
-                                  <td><span className="badge bg-primary">Active</span></td>
+                                  <td><span className="badge bg-custom">Active</span></td>
                                 </tr>
                                 <tr>
                                   <td>Smith Custody</td>
@@ -236,7 +236,7 @@ const Family = () => {
                               </div>
                               <div className="d-flex flex-wrap justify-content-center gap-3">
                                 <div className="d-flex align-items-center">
-                                  <span className="bg-primary rounded-circle me-2" style={{ width: '10px', height: '10px' }}></span>
+                                  <span className="bg-custom rounded-circle me-2" style={{ width: '10px', height: '10px' }}></span>
                                   <small>Divorce (45%)</small>
                                 </div>
                                 <div className="d-flex align-items-center">
@@ -297,7 +297,7 @@ const Family = () => {
                               </div>
                               <div className="d-flex justify-content-between align-items-center p-3 bg-light rounded">
                                 <div className="d-flex align-items-center">
-                                  <i className="fas fa-file-word text-primary me-3 fs-4"></i>
+                                  <i className="fas fa-file-word text-custom me-3 fs-4"></i>
                                   <div>
                                     <div className="fw-bold">Custody Agreement.docx</div>
                                     <small className="text-muted">Uploaded yesterday</small>
@@ -325,7 +325,7 @@ const Family = () => {
                               </div>
                               <div className="d-flex justify-content-between align-items-center">
                                 <div className="d-flex align-items-center">
-                                  <i className="fas fa-folder text-primary me-3 fs-4"></i>
+                                  <i className="fas fa-folder text-custom me-3 fs-4"></i>
                                   <span>Discovery</span>
                                 </div>
                                 <small className="text-muted">8 files</small>
@@ -367,12 +367,12 @@ const Family = () => {
                                 </div>
                                 <i className="fas fa-clock text-warning fs-4"></i>
                               </div>
-                              <div className="d-flex align-items-center p-3 bg-primary bg-opacity-10 border-start border-primary border-4 rounded">
+                              <div className="d-flex align-items-center p-3 bg-custom bg-opacity-10 border-start border-custom border-4 rounded">
                                 <div className="flex-grow-1">
-                                  <div className="fw-bold text-primary">Court Hearing</div>
-                                  <small className="text-primary">Davis Property Division - Dec 20, 2024</small>
+                                  <div className="fw-bold text-custom">Court Hearing</div>
+                                  <small className="text-custom">Davis Property Division - Dec 20, 2024</small>
                                 </div>
-                                <i className="fas fa-gavel text-primary fs-4"></i>
+                                <i className="fas fa-gavel text-custom fs-4"></i>
                               </div>
                             </div>
                           </Card.Body>
@@ -384,15 +384,15 @@ const Family = () => {
                             <h3 className="h5 mb-3">Quick Actions</h3>
                             <div className="d-flex flex-column gap-3">
                               <Button variant="outline-secondary" className="text-start">
-                                <i className="fas fa-plus me-2 text-primary"></i>
+                                <i className="fas fa-plus me-2 text-custom"></i>
                                 New Case
                               </Button>
                               <Button variant="outline-secondary" className="text-start">
-                                <i className="fas fa-calendar-plus me-2 text-primary"></i>
+                                <i className="fas fa-calendar-plus me-2 text-custom"></i>
                                 Schedule Meeting
                               </Button>
                               <Button variant="outline-secondary" className="text-start">
-                                <i className="fas fa-file-upload me-2 text-primary"></i>
+                                <i className="fas fa-file-upload me-2 text-custom"></i>
                                 Upload Document
                               </Button>
                             </div>
@@ -521,7 +521,7 @@ const Family = () => {
             >
                 <i className="fas fa-chevron-up"></i>
             </button>
-            
+
     </div>
   );
 };

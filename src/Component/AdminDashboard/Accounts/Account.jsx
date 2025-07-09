@@ -50,7 +50,7 @@ const Account = () => {
     switch (status) {
       case 'Paid': return 'badge bg-success';
       case 'Pending': return 'badge bg-warning text-dark';
-      case 'Issued': return 'badge bg-primary';
+      case 'Issued': return 'badge bg-custom';
       default: return 'badge bg-secondary';
     }
   };
@@ -64,25 +64,25 @@ const Account = () => {
             <div className="mb-4 btn-group">
               <button
                 onClick={() => setInvoiceFilter('all')}
-                className={`btn btn-sm ${invoiceFilter === 'all' ? 'btn-primary' : 'btn-outline-secondary'}`}
+                className={`btn btn-sm ${invoiceFilter === 'all' ? 'btn-custom' : 'btn-outline-secondary'}`}
               >
                 All
               </button>
               <button
                 onClick={() => setInvoiceFilter('issued')}
-                className={`btn btn-sm ${invoiceFilter === 'issued' ? 'btn-primary' : 'btn-outline-secondary'}`}
+                className={`btn btn-sm ${invoiceFilter === 'issued' ? 'btn-custom' : 'btn-outline-secondary'}`}
               >
                 Issued
               </button>
               <button
                 onClick={() => setInvoiceFilter('paid')}
-                className={`btn btn-sm ${invoiceFilter === 'paid' ? 'btn-primary' : 'btn-outline-secondary'}`}
+                className={`btn btn-sm ${invoiceFilter === 'paid' ? 'btn-custom' : 'btn-outline-secondary'}`}
               >
                 Paid
               </button>
               <button
                 onClick={() => setInvoiceFilter('pending')}
-                className={`btn btn-sm ${invoiceFilter === 'pending' ? 'btn-primary' : 'btn-outline-secondary'}`}
+                className={`btn btn-sm ${invoiceFilter === 'pending' ? 'btn-custom' : 'btn-outline-secondary'}`}
               >
                 Pending
               </button>
@@ -207,10 +207,6 @@ const Account = () => {
         {/* Page Header */}
         <div className="d-flex justify-content-between align-items-center mb-4">
           <div className="d-flex align-items-center gap-3">
-            <div className="d-flex align-items-center gap-2">
-              <span className="fs-3">🟩</span>
-              <span className="fs-3">💰</span>
-            </div>
             <h1 className="mb-0">Accounts</h1>
             <span className="badge bg-success">New</span>
           </div>
@@ -219,7 +215,7 @@ const Account = () => {
               <FontAwesomeIcon icon={faDownload} className="me-2" />
               Export Report
             </button>
-            <button className="btn btn-primary">
+            <button className="btn btn-custom">
               <FontAwesomeIcon icon={faChartBar} className="me-2" />
               Go to Reports
             </button>
@@ -236,8 +232,8 @@ const Account = () => {
                     <p className="text-muted mb-2">Trust Account Balance</p>
                     <h2 className="mb-0">$127,450.00</h2>
                   </div>
-                  <div className="p-3 bg-primary bg-opacity-10 rounded">
-                    <FontAwesomeIcon icon={faShieldAlt} className="text-primary fs-3" />
+                  <div className="p-3 bg-custom bg-opacity-10 rounded">
+                    <FontAwesomeIcon icon={faShieldAlt} className="text-custom fs-3" />
                   </div>
                 </div>
                 <div className="mt-3 d-flex align-items-center">

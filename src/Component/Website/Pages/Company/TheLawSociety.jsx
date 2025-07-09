@@ -89,7 +89,7 @@
 //                     {transactionSteps.map((step) => (
 //                       <div key={step.id} className="text-center" style={{ width: '20%' }}>
 //                         <div 
-//                           className={`mx-auto rounded-circle d-flex align-items-center justify-content-center ${step.active ? 'bg-warning' : step.completed ? 'bg-primary' : 'bg-secondary'}`}
+//                           className={`mx-auto rounded-circle d-flex align-items-center justify-content-center ${step.active ? 'bg-warning' : step.completed ? 'bg-custom' : 'bg-secondary'}`}
 //                           style={{ 
 //                             width: '30px', 
 //                             height: '30px', 
@@ -107,7 +107,7 @@
                 
 //                 <div className="d-flex gap-2">
 //                   <Button variant="warning">Mark Current Step Complete</Button>
-//                   <Button variant="outline-primary">View Full Details</Button>
+//                   <Button variant="outline-custom">View Full Details</Button>
 //                 </div>
 //               </Card.Body>
 //             </Card>

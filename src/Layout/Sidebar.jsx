@@ -39,8 +39,8 @@ const adminMenuItems = [
   { path: "/activity", icon: "fa-solid fa-clock-rotate-left", text: "Activity" },               // ⏱ Activity log
   { path: "/accounts", icon: "fa-solid fa-file-invoice-dollar", text: "Accounts" },             // 💰 Financial/accounts
   { path: "/communications", icon: "fa-solid fa-comments", text: "Communications" },            // 💬 Messages, emails
-  { path: "/contactus", icon: "fa-solid fa-envelope", text: "Contact Us" },                     // 📬 Contact
-  { path: "/appintegration", icon: "fa-solid fa-plug", text: "App Integration" },               // 🔌 Integrations
+  { path: "/contact", icon: "fa-solid fa-envelope", text: "Contact" },                     // 📬 Contact
+  // { path: "/appintegration", icon: "fa-solid fa-plug", text: "App Integration" },               // 🔌 Integrations
   { path: "/setting", icon: "fa-solid fa-gear", text: "Settings" }
 ];
 
