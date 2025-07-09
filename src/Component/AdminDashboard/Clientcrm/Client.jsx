@@ -240,8 +240,8 @@ const Client = () => {
 {/* add modal */}
     {showAddForm && (
   <>
-    <div className="modal fade show d-block mt-5 " tabIndex="-1" style={{ backgroundColor: 'rgba(0,0,0,0.5)' }}>
-  <div className="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg mt-3" role="document">
+    <div className="modal fade show d-block  " tabIndex="-1" style={{ backgroundColor: 'rgba(0,0,0,0.5)' }}>
+  <div className="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-md mt-3" role="document">
     <div className="modal-content" style={{ maxHeight: '90vh', overflowY: 'auto' }}>
       <div className="modal-header">
         <h5 className="modal-title">Add New Client</h5>
