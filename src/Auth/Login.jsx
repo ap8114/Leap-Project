@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
+import logofasttrack from "../../src/assets/logofasttrack.png";
 
 
 const Login = () => {
@@ -24,12 +25,10 @@ const Login = () => {
       <Col xs={12} md={6} className="d-flex flex-column justify-content-center align-items-center px-4 px-sm-5 py-4 vh-100 overflow-auto">
         {/* Logo Placeholder */}
         <div className="mb-4 d-flex align-items-center">
-          <div className="bg-warning rounded-circle d-flex justify-content-center align-items-center me-2" style={{ width: '32px', height: '32px' }}>
-            <i className="fas fa-check text-white small"></i>
-          </div>
-          <div>
-            <h5 className="mb-0 fw-bold">Your Logo</h5>
-          </div>
+        
+         <div className="mb-4 d-flex align-items-center">
+          <img src={logofasttrack} alt="Logo" style={{ height: '60px' }} className="me-2" />
+        </div>
         </div>
 
         {/* Welcome */}
