@@ -34,7 +34,7 @@ const FooterSection = () => {
                             <div className="col-lg-3 col-md-6">
                                 <h5>CONTACT US</h5>
                                 <a href="tel:0845 683 7517">0845 683 7517</a>
-                                <a href="mailto:info@Clio.co.uk">info@Clio.co.uk</a>
+                                <a href="mailto:info@FastTrack.co.uk">info@FastTrack.co.uk</a>
                                 <a href="#">View statement</a>
                             </div>
                         </div>
@@ -42,7 +42,7 @@ const FooterSection = () => {
                             <div className="row align-items-center">
                                 <div className="col-md-6">
                                     <small>
-                                        Copyright © 2025 Clio Legal Software. All rights reserved.
+                                        Copyright © 2025 FastTrack Legal Software. All rights reserved.
                                     </small>
                                 </div>
                                 <div className="col-md-6">

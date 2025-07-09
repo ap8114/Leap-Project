@@ -24,7 +24,7 @@ const FeaturesSection = () => {
                                             }}
                                         />
                                     </div>
-                                    <h3 className="mb-3">Why Choose Clio?</h3>
+                                    <h3 className="mb-3">Why Choose FastTrack?</h3>
                                 </div>
 
                                 {/* Feature Items */}
@@ -52,7 +52,7 @@ const FeaturesSection = () => {
                                 <div className="mt-4 pt-4 border-top">
                                     <div className="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-3">
                                         <div>
-                                            <h6 className="mb-1 text-white fw-semibold">Already using Clio?</h6>
+                                            <h6 className="mb-1 text-white fw-semibold">Already using FastTrack?</h6>
                                             <p className="mb-0">Get help from our dedicated support team.</p>
                                         </div>
                                         <Link to="contactus" className='text-decoration-none'>
@@ -123,7 +123,7 @@ const FeaturesSection = () => {
                                             <div className="form-check">
                                                 <input className="form-check-input" type="checkbox" id="updates" />
                                                 <label className="form-check-label" htmlFor="updates">
-                                                    Keep me updated with Clio news and special offers
+                                                    Keep me updated with FastTrack news and special offers
                                                 </label>
                                             </div>
                                         </div>

@@ -1,8 +1,9 @@
 import { Route, Routes, useLocation } from "react-router-dom";
 import "./App.css";
 import Navbar from "./Layout/Navbar";
-import Sidebar from "./Layout/Sidebar";
+import Sidebar from "./Layout/Sidebar"
 import Login from "./Auth/Login";
+
 import Signup from "./Auth/Signup";
 import ForgotPassword from "./Auth/ForgotPassword";
 
@@ -33,6 +34,7 @@ import PersonalInjury from "./Component/Website/Pages/Solutions/PersonalInjury";
 import ContactUs from "./Component/Website/ContactUs/ContactUs";
 import Company from "./Component/Website/Pages/Company/Company";
 import Resources from "./Component/Website/Pages/Resources/Resources";
+import { BiLogIn } from "react-icons/bi";
 
 
 function App() {
@@ -77,6 +79,7 @@ function App() {
     location.pathname === "/" ||
     location.pathname === "/forgotpassword" ||
     location.pathname === "/signup" ||
+    location.pathname === "/login" ||
     location.pathname === "/client-and-matter-management" ||
     location.pathname === "/document-automation" ||
     location.pathname === "/timerecordingbilling" ||
@@ -139,7 +142,7 @@ function App() {
 
               {/* Website Routes Ends */}
 
-              <Route path="/login" element={<Login />} />
+              <Route path="/login" element={<Login/>} />
               <Route path="/signup" element={<Signup />} />
               <Route path="/forgotpassword" element={<ForgotPassword />} />
             </Routes>

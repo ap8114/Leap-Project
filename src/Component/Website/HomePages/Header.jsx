@@ -424,7 +424,7 @@ const Header = () => {
 
                     {/* Desktop Buttons */}
                     <div className="d-none d-lg-flex gap-3 ms-auto">
-                        <Link to="/dashboard" className="btn btn-light">
+                        <Link to="/login" className="btn btn-light">
                             Login
                         </Link>
                         <Link to="#demo" className="btn btn-demo" style={{ backgroundColor: '#f76b1c', color: 'white' }}>
