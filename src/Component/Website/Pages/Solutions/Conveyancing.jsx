@@ -47,7 +47,7 @@ const Conveyancing = () => {
             <div className="col-lg-6 bg-white pt-5 pb-5 pb-lg-0">
               <div className="container pt-5">
                 <div className="text-center text-lg-start">
-                  <h1 className="display-4 fw-bold mb-4" style={{color: '#f76b1c'}}>
+                  <h1 className="display-4 fw-bold text-custom mb-4">
                     Practice the Significant<br />
                     Conveyancing Software
                   </h1>
@@ -80,8 +80,9 @@ const Conveyancing = () => {
       <section className="py-5 bg-white">
         <div className="container">
           <div className="text-center mb-5">
-            <span className="badge text-white mb-3" style={{backgroundColor: '#f76b1c' , color: 'white'}}>Features</span>
-            <h2 className="display-5 fw-bold mb-3 text-dark">
+            <span className="badge  text-white mb-3" style={{backgroundColor: '#f76b1c' , color: 'white'}}
+>Features</span>
+            <h2 className="display-5 fw-bold mb-3 text-custom">
               Complete property transaction software
             </h2>
             <p className="lead text-muted mx-auto" style={{maxWidth: '700px'}}>
@@ -97,7 +98,7 @@ const Conveyancing = () => {
                     <div className=" rounded p-3 me-3" style={{backgroundColor: '#f76b1c' , color: 'white'}}>
                       <i className="fas fa-tasks text-white fs-4"></i>
                     </div>
-                    <h3 className="h5 mb-0 text-dark">Streamlined Workflow</h3>
+                    <h3 className="h5 mb-0 text-custom">Streamlined Workflow</h3>
                   </div>
                   <p className="text-muted">
                     Automate routine tasks and guide your team through each stage of the conveyancing process with customizable workflows.
@@ -120,7 +121,7 @@ const Conveyancing = () => {
                     <div className=" rounded p-3 me-3" style={{backgroundColor: '#f76b1c' , color: 'white'}}>
                       <i className="fas fa-file-contract text-white fs-4"></i>
                     </div>
-                    <h3 className="h5 mb-0 text-dark">Document Management</h3>
+                    <h3 className="h5 mb-0 text-custom">Document Management</h3>
                   </div>
                   <p className="text-muted">
                     Securely store, organize and share all property transaction documents with clients and stakeholders in one central location.
@@ -143,7 +144,7 @@ const Conveyancing = () => {
                     <div className="rounded p-3 me-3" style={{backgroundColor: '#f76b1c' , color: 'white'}}>
                       <i className="fas fa-chart-line text-white fs-4"></i>
                     </div>
-                    <h3 className="h5 mb-0 text-dark">Real-time Tracking</h3>
+                    <h3 className="h5 mb-0 text-custom">Real-time Tracking</h3>
                   </div>
                   <p className="text-muted">
                     Monitor transaction progress in real-time with comprehensive dashboards and automated status updates for all parties.
@@ -166,8 +167,9 @@ const Conveyancing = () => {
       <section className="py-5 bg-light">
         <div className="container">
           <div className="text-center mb-5">
-            <span className="badge text-white mb-3" style={{backgroundColor: '#f76b1c' , color: 'white'}}>Dashboard</span>
-            <h2 className="display-5 fw-bold mb-3 text-dark">
+            <span className="badge text-white mb-3" style={{backgroundColor: '#f76b1c' , color: 'white'}}
+>Dashboard</span>
+            <h2 className="display-5 fw-bold mb-3 text-custom">
               Comprehensive Dashboard Overview
             </h2>
             <p className="lead text-muted mx-auto" style={{maxWidth: '700px'}}>
@@ -184,7 +186,7 @@ const Conveyancing = () => {
               />
             </div>
             <div className="col-lg-6">
-              <h3 className="h2 fw-bold text-dark mb-4">Powerful transaction tracking capabilities</h3>
+              <h3 className="h2 fw-bold text-custom mb-4">Powerful transaction tracking capabilities</h3>
               <ul className="list-unstyled">
                 <li className="d-flex mb-4">
                   <div className="flex-shrink-0">
@@ -193,7 +195,7 @@ const Conveyancing = () => {
                     </div>
                   </div>
                   <div className="ms-4">
-                    <h4 className="h5 fw-bold text-dark">Visual Progress Tracking</h4>
+                    <h4 className="h5 fw-bold text-custom">Visual Progress Tracking</h4>
                     <p className="text-muted mb-0">Interactive progress bars show exactly where each transaction stands at a glance.</p>
                   </div>
                 </li>
@@ -204,7 +206,7 @@ const Conveyancing = () => {
                     </div>
                   </div>
                   <div className="ms-4">
-                    <h4 className="h5 fw-bold text-dark">Milestone Tracking</h4>
+                    <h4 className="h5 fw-bold text-custom">Milestone Tracking</h4>
                     <p className="text-muted mb-0">Clear timeline visualization of completed and upcoming transaction milestones.</p>
                   </div>
                 </li>
@@ -215,7 +217,7 @@ const Conveyancing = () => {
                     </div>
                   </div>
                   <div className="ms-4">
-                    <h4 className="h5 fw-bold text-dark">Document Status Indicators</h4>
+                    <h4 className="h5 fw-bold text-custom">Document Status Indicators</h4>
                     <p className="text-muted mb-0">Color-coded indicators show which documents are pending, received, or require attention.</p>
                   </div>
                 </li>
@@ -226,7 +228,7 @@ const Conveyancing = () => {
                     </div>
                   </div>
                   <div className="ms-4">
-                    <h4 className="h5 fw-bold text-dark">Client Communication Logs</h4>
+                    <h4 className="h5 fw-bold text-custom">Client Communication Logs</h4>
                     <p className="text-muted mb-0">Track all client interactions and communications in one centralized location.</p>
                   </div>
                 </li>
@@ -240,8 +242,9 @@ const Conveyancing = () => {
       <section className="py-5 bg-white">
         <div className="container">
           <div className="text-center mb-5">
-            <span className="badge text-white mb-3" style={{backgroundColor: '#f76b1c' , color: 'white'}}>Documents</span>
-            <h2 className="display-5 fw-bold mb-3 text-dark">
+            <span className="badge text-white mb-3" style={{backgroundColor: '#f76b1c' , color: 'white'}}
+>Documents</span>
+            <h2 className="display-5 fw-bold mb-3 text-custom">
               Streamlined Document Management
             </h2>
             <p className="lead text-muted mx-auto" style={{maxWidth: '700px'}}>
@@ -258,7 +261,7 @@ const Conveyancing = () => {
               />
             </div>
             <div className="col-lg-6 order-lg-1">
-              <h3 className="h2 fw-bold text-dark mb-4">Secure document handling features</h3>
+              <h3 className="h2 fw-bold text-custom mb-4">Secure document handling features</h3>
               <ul className="list-unstyled">
                 <li className="d-flex mb-4">
                   <div className="flex-shrink-0">
@@ -267,7 +270,7 @@ const Conveyancing = () => {
                     </div>
                   </div>
                   <div className="ms-4">
-                    <h4 className="h5 fw-bold text-dark">Bank-Level Security</h4>
+                    <h4 className="h5 fw-bold text-custom">Bank-Level Security</h4>
                     <p className="text-muted mb-0">256-bit encryption ensures all sensitive property documents remain protected.</p>
                   </div>
                 </li>
@@ -278,7 +281,7 @@ const Conveyancing = () => {
                     </div>
                   </div>
                   <div className="ms-4">
-                    <h4 className="h5 fw-bold text-dark">Electronic Signatures</h4>
+                    <h4 className="h5 fw-bold text-custom">Electronic Signatures</h4>
                     <p className="text-muted mb-0">Legally binding e-signature capabilities for faster document execution.</p>
                   </div>
                 </li>
@@ -289,7 +292,7 @@ const Conveyancing = () => {
                     </div>
                   </div>
                   <div className="ms-4">
-                    <h4 className="h5 fw-bold text-dark">Document Templates</h4>
+                    <h4 className="h5 fw-bold text-custom">Document Templates</h4>
                     <p className="text-muted mb-0">Customizable templates for all standard conveyancing documents.</p>
                   </div>
                 </li>
@@ -300,7 +303,7 @@ const Conveyancing = () => {
                     </div>
                   </div>
                   <div className="ms-4">
-                    <h4 className="h5 fw-bold text-dark">Version Control</h4>
+                    <h4 className="h5 fw-bold text-custom">Version Control</h4>
                     <p className="text-muted mb-0">Track document changes with comprehensive version history and audit trails.</p>
                   </div>
                 </li>
@@ -314,8 +317,9 @@ const Conveyancing = () => {
       <section className="py-5 bg-light">
         <div className="container">
           <div className="text-center mb-5">
-            <span className="badge text-white mb-3" style={{backgroundColor: '#f76b1c' , color: 'white'}}>FAQ</span>
-            <h2 className="display-5 fw-bold mb-3 text-dark">
+            <span className="badge text-white mb-3" style={{backgroundColor: '#f76b1c' , color: 'white'}}
+>FAQ</span>
+            <h2 className="display-5 fw-bold mb-3 text-custom">
               Frequently Asked Questions
             </h2>
             <p className="lead text-muted mx-auto" style={{maxWidth: '700px'}}>
@@ -354,7 +358,7 @@ const Conveyancing = () => {
       </section>
 
       {/* Contact Form Section */}
-      <section className="py-5 bg-dark text-white">
+      <section className="py-5 bg-custom text-dark">
         <div className="container">
           <div className="row">
             <div className="col-lg-6 mb-5 mb-lg-0">
@@ -366,7 +370,7 @@ const Conveyancing = () => {
               </p>
               <ul className="list-unstyled" >
                 <li className="d-flex mb-4" >
-                  <div className="flex-shrink-0 " >
+                  <div className="flex-shrink-0  " style={{color: '#f76b1c'}}>
                     <i className="fas fa-check-circle fs-4"  ></i>
                   </div>
                   <div className="ms-3">
@@ -374,7 +378,7 @@ const Conveyancing = () => {
                   </div>
                 </li>
                 <li className="d-flex mb-4">
-                  <div className="flex-shrink-0 text-warning">
+                  <div className="flex-shrink-0 " style={{color: '#f76b1c'}}>
                     <i className="fas fa-check-circle fs-4"></i>
                   </div>
                   <div className="ms-3">
@@ -382,7 +386,7 @@ const Conveyancing = () => {
                   </div>
                 </li>
                 <li className="d-flex">
-                  <div className="flex-shrink-0 text-warning">
+                  <div className="flex-shrink-0 " style={{color: '#f76b1c'}}>
                     <i className="fas fa-check-circle fs-4"></i>
                   </div>
                   <div className="ms-3">
@@ -448,8 +452,9 @@ const Conveyancing = () => {
       <section className="py-5 bg-white">
         <div className="container">
           <div className="text-center mb-5">
-            <span className="badgetext-white mb-3" style={{backgroundColor: '#f76b1c' , color: 'white'}}>Testimonials</span>
-            <h2 className="display-5 fw-bold mb-3 " style={{color: '#f76b1c'}}>
+            <span className="badge text-white mb-3" style={{backgroundColor: '#f76b1c' , color: 'white'}}
+>Testimonials</span>
+            <h2 className="display-5 fw-bold mb-3 text-custom">
               Trusted by property professionals
             </h2>
             <p className="lead text-muted mx-auto" style={{maxWidth: '700px'}}>
@@ -472,9 +477,9 @@ const Conveyancing = () => {
                     "This software has transformed our conveyancing process. We've reduced transaction times by 35% and our clients love the transparency."
                   </p>
                   <div className="d-flex align-items-center">
-                    <i className="fas fa-user-circle text-dark fs-3 me-3"></i>
+                    <i className="fas fa-user-circle text-custom fs-3 me-3"></i>
                     <div>
-                      <h4 className="h6 mb-0 text-dark">Sarah Johnson</h4>
+                      <h4 className="h6 mb-0 text-custom">Sarah Johnson</h4>
                       <small className="text-muted">Partner, Johnson & Associates</small>
                     </div>
                   </div>
@@ -496,9 +501,9 @@ const Conveyancing = () => {
                     "The document management system alone is worth the investment. We've eliminated paper files and can access everything securely from anywhere."
                   </p>
                   <div className="d-flex align-items-center">
-                    <i className="fas fa-user-circle text-dark fs-3 me-3"></i>
+                    <i className="fas fa-user-circle text-custom fs-3 me-3"></i>
                     <div>
-                      <h4 className="h6 mb-0 text-dark">Michael Thompson</h4>
+                      <h4 className="h6 mb-0 text-custom">Michael Thompson</h4>
                       <small className="text-muted">Director, Thompson Legal</small>
                     </div>
                   </div>
@@ -520,9 +525,9 @@ const Conveyancing = () => {
                     "The client portal has dramatically improved our communication. Clients can check progress anytime, reducing calls to our office."
                   </p>
                   <div className="d-flex align-items-center">
-                    <i className="fas fa-user-circle text-dark fs-3 me-3"></i>
+                    <i className="fas fa-user-circle text-custom fs-3 me-3"></i>
                     <div>
-                      <h4 className="h6 mb-0 text-dark">Jennifer Williams</h4>
+                      <h4 className="h6 mb-0 text-custom">Jennifer Williams</h4>
                       <small className="text-muted">Managing Partner, Williams Property Law</small>
                     </div>
                   </div>
@@ -544,9 +549,9 @@ const Conveyancing = () => {
                     "Implementation was seamless and the support team is exceptional. They understand conveyancing and have built software that truly works for us."
                   </p>
                   <div className="d-flex align-items-center">
-                    <i className="fas fa-user-circle text-dark fs-3 me-3"></i>
+                    <i className="fas fa-user-circle text-custom fs-3 me-3"></i>
                     <div>
-                      <h4 className="h6 mb-0 text-dark">David Roberts</h4>
+                      <h4 className="h6 mb-0 text-custom">David Roberts</h4>
                       <small className="text-muted">CEO, Roberts Conveyancing</small>
                     </div>
                   </div>

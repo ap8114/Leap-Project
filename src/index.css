@@ -1,5 +1,5 @@
 body{
-    background-color: #e7f7ed!important;
+    background-color: #f5f7fa!important;
     overflow-x: hidden;
 }
 
@@ -269,5 +269,9 @@ body{
   align-items: center!important;
   min-height: 100vh!important;
 }
+
+/* index.css or App.css */
+
+
 
 

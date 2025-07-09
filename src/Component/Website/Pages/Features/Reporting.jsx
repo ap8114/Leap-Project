@@ -275,14 +275,14 @@ const Reporting = () => {
                 {activeTab === 'dashboard' && (
                   <div>
                     <div className="mb-4">
-                      <h2 className="h3 fw-bold text-primary mb-2">Performance Overview</h2>
+                      <h2 className="h3 fw-bold text-custom mb-2">Performance Overview</h2>
                       <p className="text-muted">View your key performance metrics at a glance.</p>
                     </div>
                     <div className="row mb-4 g-4">
                       <div className="col-md-4">
-                        <div className="card border-primary">
+                        <div className="card border-custom">
                           <div className="card-body">
-                            <div className="text-primary fw-semibold mb-2">Revenue</div>
+                            <div className="text-custom fw-semibold mb-2">Revenue</div>
                             <div className="h2 fw-bold">$124,568</div>
                             <div className="text-success small mt-2">
                               <i className="fas fa-arrow-up me-1"></i> 12.5% from last month
@@ -291,9 +291,9 @@ const Reporting = () => {
                         </div>
                       </div>
                       <div className="col-md-4">
-                        <div className="card border-primary">
+                        <div className="card border-custom">
                           <div className="card-body">
-                            <div className="text-primary fw-semibold mb-2">Clients</div>
+                            <div className="text-custom fw-semibold mb-2">Clients</div>
                             <div className="h2 fw-bold">87</div>
                             <div className="text-success small mt-2">
                               <i className="fas fa-arrow-up me-1"></i> 4.2% from last month
@@ -302,9 +302,9 @@ const Reporting = () => {
                         </div>
                       </div>
                       <div className="col-md-4">
-                        <div className="card border-primary">
+                        <div className="card border-custom">
                           <div className="card-body">
-                            <div className="text-primary fw-semibold mb-2">Matters</div>
+                            <div className="text-custom fw-semibold mb-2">Matters</div>
                             <div className="h2 fw-bold">243</div>
                             <div className="text-success small mt-2">
                               <i className="fas fa-arrow-up me-1"></i> 8.7% from last month
@@ -317,7 +317,7 @@ const Reporting = () => {
                       <div className="col-md-6">
                         <div className="card">
                           <div className="card-body">
-                            <h3 className="h5 fw-semibold text-primary mb-4">Revenue by Practice Area</h3>
+                            <h3 className="h5 fw-semibold text-custom mb-4">Revenue by Practice Area</h3>
                             <div id="revenueChart" style={{ height: '400px' }}></div>
                           </div>
                         </div>
@@ -325,7 +325,7 @@ const Reporting = () => {
                       <div className="col-md-6">
                         <div className="card">
                           <div className="card-body">
-                            <h3 className="h5 fw-semibold text-primary mb-4">Client Distribution</h3>
+                            <h3 className="h5 fw-semibold text-custom mb-4">Client Distribution</h3>
                             <div id="clientChart" style={{ height: '400px' }}></div>
                           </div>
                         </div>
@@ -336,49 +336,49 @@ const Reporting = () => {
                 {activeTab === 'reports' && (
                   <div>
                     <div className="mb-4">
-                      <h2 className="h3 fw-bold text-primary mb-2">Financial Reports</h2>
+                      <h2 className="h3 fw-bold text-custom mb-2">Financial Reports</h2>
                       <p className="text-muted">Access and generate detailed financial reports.</p>
                     </div>
                     <div className="card mb-4">
                       <div className="card-header">
-                        <h3 className="h5 fw-medium text-primary">Available Reports</h3>
+                        <h3 className="h5 fw-medium text-custom">Available Reports</h3>
                       </div>
                       <div className="card-body">
                         <div className="list-group">
                           <div className="list-group-item d-flex justify-content-between align-items-center">
                             <div>
-                              <h4 className="fw-medium text-primary">Revenue Summary</h4>
+                              <h4 className="fw-medium text-custom">Revenue Summary</h4>
                               <p className="small text-muted mb-0">Overview of revenue by practice area and time period</p>
                             </div>
-                            <button className="btn btn-primary btn-sm">Generate</button>
+                            <button className="btn btn-custom btn-sm">Generate</button>
                           </div>
                           <div className="list-group-item d-flex justify-content-between align-items-center">
                             <div>
-                              <h4 className="fw-medium text-primary">Client Billing</h4>
+                              <h4 className="fw-medium text-custom">Client Billing</h4>
                               <p className="small text-muted mb-0">Detailed billing information by client</p>
                             </div>
-                            <button className="btn btn-primary btn-sm">Generate</button>
+                            <button className="btn btn-custom btn-sm">Generate</button>
                           </div>
                           <div className="list-group-item d-flex justify-content-between align-items-center">
                             <div>
-                              <h4 className="fw-medium text-primary">Matter Profitability</h4>
+                              <h4 className="fw-medium text-custom">Matter Profitability</h4>
                               <p className="small text-muted mb-0">Analyze profitability across different matters</p>
                             </div>
-                            <button className="btn btn-primary btn-sm">Generate</button>
+                            <button className="btn btn-custom btn-sm">Generate</button>
                           </div>
                           <div className="list-group-item d-flex justify-content-between align-items-center">
                             <div>
-                              <h4 className="fw-medium text-primary">Compliance Report</h4>
+                              <h4 className="fw-medium text-custom">Compliance Report</h4>
                               <p className="small text-muted mb-0">Regulatory compliance status and issues</p>
                             </div>
-                            <button className="btn btn-primary btn-sm">Generate</button>
+                            <button className="btn btn-custom btn-sm">Generate</button>
                           </div>
                         </div>
                       </div>
                     </div>
                     <div className="card">
                       <div className="card-header">
-                        <h3 className="h5 fw-medium text-primary">Schedule Reports</h3>
+                        <h3 className="h5 fw-medium text-custom">Schedule Reports</h3>
                       </div>
                       <div className="card-body">
                         <div className="row g-4">
@@ -441,14 +441,14 @@ const Reporting = () => {
                 {activeTab === 'analytics' && (
                   <div>
                     <div className="mb-4">
-                      <h2 className="h3 fw-bold text-primary mb-2">Advanced Analytics</h2>
+                      <h2 className="h3 fw-bold text-custom mb-2">Advanced Analytics</h2>
                       <p className="text-muted">Gain deeper insights with interactive data visualization.</p>
                     </div>
                     <div className="row mb-4 g-4">
                       <div className="col-md-6">
                         <div className="card">
                           <div className="card-body">
-                            <h3 className="h5 fw-semibold text-primary mb-4">Performance Metrics</h3>
+                            <h3 className="h5 fw-semibold text-custom mb-4">Performance Metrics</h3>
                             <div id="performanceChart" style={{ height: '400px' }}></div>
                           </div>
                         </div>
@@ -456,7 +456,7 @@ const Reporting = () => {
                       <div className="col-md-6">
                         <div className="card">
                           <div className="card-body">
-                            <h3 className="h5 fw-semibold text-primary mb-4">Growth Trends</h3>
+                            <h3 className="h5 fw-semibold text-custom mb-4">Growth Trends</h3>
                             <div id="growthChart" style={{ height: '400px' }}></div>
                           </div>
                         </div>
@@ -464,7 +464,7 @@ const Reporting = () => {
                     </div>
                     <div className="card">
                       <div className="card-body">
-                        <h3 className="h5 fw-semibold text-primary mb-4">Custom Analysis</h3>
+                        <h3 className="h5 fw-semibold text-custom mb-4">Custom Analysis</h3>
                         <div className="row g-4 mb-4">
                           <div className="col-md-4">
                             <label className="form-label">Metric</label>
@@ -495,7 +495,7 @@ const Reporting = () => {
                           </div>
                         </div>
                         <div className="d-flex justify-content-end">
-                          <button className="btn btn-primary">Generate Analysis</button>
+                          <button className="btn btn-custom">Generate Analysis</button>
                         </div>
                       </div>
                     </div>
@@ -512,7 +512,7 @@ const Reporting = () => {
             <div className="row align-items-center mb-5">
               <div className="col-md-6 pe-4 mb-4 mb-md-0">
                 <div className="text-warning text-uppercase small fw-semibold mb-2">FINANCIAL REPORTS</div>
-                <h2 className="h1 fw-bold text-primary mb-4">Maintain regulatory compliance</h2>
+                <h2 className="h1 fw-bold text-custom mb-4">Maintain regulatory compliance</h2>
                 <p className="lead text-muted mb-4">
                   With a full suite of financial reports, your accounts will always be up-to-date and compliant with the regulator.
                 </p>
@@ -532,7 +532,7 @@ const Reporting = () => {
             <div className="row align-items-center mb-5">
               <div className="col-md-6 order-md-2 ps-4 mb-4 mb-md-0">
                 <div className="text-warning text-uppercase small fw-semibold mb-2">PRACTICE MANAGEMENT REPORTS</div>
-                <h2 className="h1 fw-bold text-primary mb-4">Monitor performance and gain insights</h2>
+                <h2 className="h1 fw-bold text-custom mb-4">Monitor performance and gain insights</h2>
                 <p className="lead text-muted mb-4">
                   Clio's integrated firm and staff reports provide valuable data to monitor individual performance and manage the firm.
                 </p>
@@ -552,7 +552,7 @@ const Reporting = () => {
             <div className="row align-items-center">
               <div className="col-md-6 pe-4 mb-4 mb-md-0">
                 <div className="text-warning text-uppercase small fw-semibold mb-2">REPORT AUTOMATION</div>
-                <h2 className="h1 fw-bold text-primary mb-4">Schedule your insights</h2>
+                <h2 className="h1 fw-bold text-custom mb-4">Schedule your insights</h2>
                 <p className="lead text-muted mb-4">
                   Clio enables automatic delivery of essential information at set intervals. You can easily schedule recurring reports to be generated and distributed at specified times, saving time and enhancing efficiency by eliminating manual reporting tasks.
                 </p>

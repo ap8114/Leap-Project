@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Card, Pagination} from 'react-bootstrap';
 
 const Client = () => {
   const [clients, setClients] = useState([
@@ -105,12 +106,12 @@ const Client = () => {
 
   return (
     <div className="container-fluid p-4">
-      <div className="p-4">
+      
         <div className="col">
            <h1 className="display-6 fw-bold mb-2">Client</h1>
           <p className="text-muted">Manage your clients and their information</p>
         </div>
-      </div>
+      
 
       <div className="card shadow-sm mb-4">
         <div className="card-body">
@@ -131,7 +132,7 @@ const Client = () => {
             <div className="col-md-6 text-md-end">
               <button
                 onClick={() => setShowAddForm(true)}
-                className="btn btn-primary"
+                className="btn btn-custom"
               >
                 <i className="fas fa-plus me-2"></i>
                 Add New Client
@@ -156,8 +157,8 @@ const Client = () => {
                     <tr key={client.id}>
                       <td>
                         <div className="d-flex align-items-center">
-                          <div className="bg-primary bg-opacity-10 rounded-circle p-2 me-3">
-                            <span className="text-primary fw-medium">
+                          <div className="bg-custom bg-opacity-10 rounded-circle p-2 me-3">
+                            <span className="text-custom fw-medium">
                               {client.name.split(' ').map(n => n[0]).join('')}
                             </span>
                           </div>
@@ -187,7 +188,7 @@ const Client = () => {
                         <div className="d-flex justify-content-end gap-2">
                           <button 
                             onClick={() => setEditingClient(client)}
-                            className="btn btn-link text-primary"
+                            className="btn btn-link text-custom"
                             title="Edit Client"
                           >
                             <i className="fas fa-edit"></i>
@@ -219,11 +220,21 @@ const Client = () => {
                 )}
               </tbody>
             </table>
+             <Card.Footer className="bg-white border-top d-flex flex-column flex-md-row justify-content-between align-items-center py-3">
+        <div className="text-muted small mb-2 mb-md-0">
+          Showing <span className="fw-medium">1</span> to <span className="fw-medium">5</span> of <span className="fw-medium">24</span> entries
+        </div>
+        <Pagination className="mb-0 pagination-custom">
+          <Pagination.Prev disabled>Previous</Pagination.Prev>
+          <Pagination.Item active>1</Pagination.Item>
+          <Pagination.Item>2</Pagination.Item>
+          <Pagination.Item>3</Pagination.Item>
+          <Pagination.Next>Next</Pagination.Next>
+        </Pagination>
+      </Card.Footer>
           </div>
           
-          <div className="card-footer text-muted">
-            Showing <span className="fw-medium">{filteredClients.length}</span> of <span className="fw-medium">{clients.length}</span> clients
-          </div>
+         
         </div>
       </div>
 {/* add modal */}
@@ -310,7 +321,7 @@ const Client = () => {
         <button type="button" className="btn btn-secondary w-100 w-sm-auto" onClick={() => setShowAddForm(false)}>
           Cancel
         </button>
-        <button type="button" className="btn btn-primary w-100 w-sm-auto" onClick={handleAddClient}>
+        <button type="button" className="btn btn-custom w-100 w-sm-auto" onClick={handleAddClient}>
           Save Client
         </button>
       </div>
@@ -421,7 +432,7 @@ const Client = () => {
             </button>
             <button
               type="button"
-              className="btn btn-primary w-100"
+              className="btn btn-custom w-100"
               onClick={handleUpdateClient}
             >
               Update Client

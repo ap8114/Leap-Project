@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
-import { Modal, Button, Form, Row, Col, Badge } from 'react-bootstrap';
+import React, { useState, useEffect } from 'react';
+import { Modal, Button, Form, Row, Col, Badge, Dropdown } from 'react-bootstrap';
 
 const Calendar = () => {
   const [selectedView, setSelectedView] = useState('week');
-  const [selectedDate, setSelectedDate] = useState(new Date());
+  const [currentDate, setCurrentDate] = useState(new Date());
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [appointments, setAppointments] = useState([]);
   const [newAppointment, setNewAppointment] = useState({
+    id: '',
     title: '',
     date: '',
     startTime: '',
@@ -14,6 +16,7 @@ const Calendar = () => {
     type: 'meeting'
   });
 
+  // Sample data
   const staffMembers = [
     { id: 1, name: 'John Smith', status: 'available' },
     { id: 2, name: 'Sarah Johnson', status: 'busy' },
@@ -21,54 +24,95 @@ const Calendar = () => {
     { id: 4, name: 'Emma Davis', status: 'available' },
   ];
 
-  const upcomingReminders = [
-    { id: 1, title: 'Client Meeting', time: '10:00 AM', type: 'meeting', urgency: 'high' },
-    { id: 2, title: 'Document Deadline', time: '2:00 PM', type: 'deadline', urgency: 'medium' },
-    { id: 3, title: 'Court Hearing', time: '9:30 AM', type: 'hearing', urgency: 'high' },
-  ];
+  const [upcomingReminders, setUpcomingReminders] = useState([
+    { id: 1, title: 'Client Meeting', time: '10:00 AM', date: getFormattedDate(new Date()), type: 'meeting', urgency: 'high' },
+    { id: 2, title: 'Document Deadline', time: '2:00 PM', date: getFormattedDate(new Date()), type: 'deadline', urgency: 'medium' },
+    { id: 3, title: 'Court Hearing', time: '9:30 AM', date: getFormattedDate(new Date()), type: 'hearing', urgency: 'high' },
+  ]);
 
-  const getStatusBadge = (status) => {
-    switch(status) {
-      case 'available':
-        return <Badge bg="success">Available</Badge>;
-      case 'busy':
-        return <Badge bg="warning" text="dark">Busy</Badge>;
-      case 'out-of-office':
-        return <Badge bg="danger">Out of Office</Badge>;
-      default:
-        return <Badge bg="secondary">Unknown</Badge>;
+  // Helper functions
+  function getFormattedDate(date) {
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const day = String(date.getDate()).padStart(2, '0');
+    return `${year}-${month}-${day}`;
+  }
+
+  function getDaysInMonth(year, month) {
+    return new Date(year, month + 1, 0).getDate();
+  }
+
+  function getFirstDayOfMonth(year, month) {
+    return new Date(year, month, 1).getDay();
+  }
+
+  function getWeekDates(date) {
+    const startDate = new Date(date);
+    startDate.setDate(date.getDate() - date.getDay() + (date.getDay() === 0 ? -6 : 1)); // Adjust to Monday
+    
+    const dates = [];
+    for (let i = 0; i < 7; i++) {
+      const currentDate = new Date(startDate);
+      currentDate.setDate(startDate.getDate() + i);
+      dates.push(currentDate);
     }
-  };
+    return dates;
+  }
 
-  const getReminderIcon = (type) => {
-    switch(type) {
-      case 'meeting':
-        return <i className="bi bi-people-fill text-primary"></i>;
-      case 'deadline':
-        return <i className="bi bi-clock-fill text-warning"></i>;
-      case 'hearing':
-        return <i className="bi bi-gavel text-danger"></i>;
-      default:
-        return <i className="bi bi-calendar-event text-secondary"></i>;
-    }
-  };
+  function formatTime(timeString) {
+    if (!timeString) return '';
+    const [hours, minutes] = timeString.split(':');
+    const hour = parseInt(hours);
+    const ampm = hour >= 12 ? 'PM' : 'AM';
+    const displayHour = hour % 12 || 12;
+    return `${displayHour}:${minutes} ${ampm}`;
+  }
 
-  const handleDateNavigation = (direction) => {
-    const newDate = new Date(selectedDate);
+  // Calendar navigation
+  const navigateDate = (direction) => {
+    const newDate = new Date(currentDate);
+    
     if (selectedView === 'day') {
       newDate.setDate(newDate.getDate() + (direction === 'next' ? 1 : -1));
     } else if (selectedView === 'week') {
       newDate.setDate(newDate.getDate() + (direction === 'next' ? 7 : -7));
-    } else {
+    } else { // month
       newDate.setMonth(newDate.getMonth() + (direction === 'next' ? 1 : -1));
     }
-    setSelectedDate(newDate);
+    
+    setCurrentDate(newDate);
   };
 
+  const goToToday = () => {
+    setCurrentDate(new Date());
+  };
+
+  // Appointment handling
   const handleCreateAppointment = () => {
-    console.log('New appointment:', newAppointment);
+    const appointmentId = Date.now().toString();
+    const appointmentToAdd = {
+      ...newAppointment,
+      id: appointmentId
+    };
+    
+    setAppointments([...appointments, appointmentToAdd]);
+    
+    // If the appointment is today, add to reminders
+    if (newAppointment.date === getFormattedDate(new Date())) {
+      setUpcomingReminders([
+        ...upcomingReminders,
+        {
+          id: appointmentId,
+          title: newAppointment.title,
+          time: formatTime(newAppointment.startTime),
+          date: newAppointment.date,
+          type: newAppointment.type,
+          urgency: 'medium'
+        }
+      ]);
+    }
+    
     setIsModalOpen(false);
-    // Reset form
     setNewAppointment({
       title: '',
       date: '',
@@ -79,154 +123,390 @@ const Calendar = () => {
     });
   };
 
-  // Format date for display
-  const formatDateDisplay = (date) => {
-    const options = { month: 'long', year: 'numeric' };
-    return date.toLocaleDateString(undefined, options);
+  const handleDeleteReminder = (id) => {
+    setUpcomingReminders(upcomingReminders.filter(reminder => reminder.id !== id));
+    setAppointments(appointments.filter(appointment => appointment.id !== id));
   };
 
+  // UI helpers
+  const getStatusBadge = (status) => {
+    switch(status) {
+      case 'available':
+        return <Badge bg="success" className="text-white">Available</Badge>;
+      case 'busy':
+        return <Badge bg="warning" className="text-dark">Busy</Badge>;
+      case 'out-of-office':
+        return <Badge bg="danger" className="text-white">Out of Office</Badge>;
+      default:
+        return <Badge bg="secondary">Unknown</Badge>;
+    }
+  };
+
+  const getReminderIcon = (type) => {
+    switch(type) {
+      case 'meeting':
+        return <i className="bi bi-people-fill text-custom me-2"></i>;
+      case 'deadline':
+        return <i className="bi bi-clock-fill text-warning me-2"></i>;
+      case 'hearing':
+        return <i className="bi bi-gavel text-danger me-2"></i>;
+      default:
+        return <i className="bi bi-calendar-event text-secondary me-2"></i>;
+    }
+  };
+
+  const getAppointmentColor = (type) => {
+    switch(type) {
+      case 'meeting':
+        return 'custom';
+      case 'deadline':
+        return 'warning';
+      case 'hearing':
+        return 'danger';
+      default:
+        return 'secondary';
+    }
+  };
+
+  // Date formatting
+  const formatDateDisplay = (date) => {
+    if (selectedView === 'day') {
+      return date.toLocaleDateString(undefined, { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
+    } else if (selectedView === 'week') {
+      const startDate = new Date(date);
+      startDate.setDate(date.getDate() - date.getDay() + (date.getDay() === 0 ? -6 : 1)); // Start from Monday
+      const endDate = new Date(startDate);
+      endDate.setDate(startDate.getDate() + 6);
+      
+      return `${startDate.toLocaleDateString(undefined, { month: 'short', day: 'numeric' })} - 
+              ${endDate.toLocaleDateString(undefined, { month: 'short', day: 'numeric', year: 'numeric' })}`;
+    } else {
+      return date.toLocaleDateString(undefined, { month: 'long', year: 'numeric' });
+    }
+  };
+
+  // Render calendar cells based on view
+  const renderCalendarCells = () => {
+    if (selectedView === 'day') {
+      return renderDayView();
+    } else if (selectedView === 'week') {
+      return renderWeekView();
+    } else {
+      return renderMonthView();
+    }
+  };
+
+  const renderDayView = () => {
+    const hours = [];
+    for (let i = 8; i < 20; i++) {
+      hours.push(i);
+    }
+
+    const formattedCurrentDate = getFormattedDate(currentDate);
+    const dayAppointments = appointments.filter(appt => appt.date === formattedCurrentDate);
+
+    return (
+      <div className="day-view">
+        <div className="hour-grid">
+          {hours.map(hour => {
+            const hourStart = `${hour.toString().padStart(2, '0')}:00`;
+            const hourEnd = `${hour === 23 ? '00' : (hour + 1).toString().padStart(2, '0')}:00`;
+            
+            return (
+              <div key={hour} className="hour-row position-relative border-bottom" style={{ height: '60px' }}>
+                <div className="hour-label text-muted small" style={{ width: '50px' }}>
+                  {hour}:00
+                </div>
+                <div className="hour-slot position-absolute top-0 end-0 bottom-0 start-0 ps-5">
+                  {dayAppointments
+                    .filter(appt => {
+                      const startHour = parseInt(appt.startTime.split(':')[0]);
+                      return startHour === hour;
+                    })
+                    .map(appt => (
+                      <div 
+                        key={appt.id}
+                        className={`bg-${getAppointmentColor(appt.type)} bg-opacity-10 text-${getAppointmentColor(appt.type)} p-2 rounded mb-1 border-start border-${getAppointmentColor(appt.type)} border-3`}
+                      >
+                        <div className="fw-medium small">{appt.title}</div>
+                        <div className="small">{formatTime(appt.startTime)} - {formatTime(appt.endTime)}</div>
+                      </div>
+                    ))
+                  }
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    );
+  };
+
+  const renderWeekView = () => {
+    const weekDates = getWeekDates(currentDate);
+    const hours = [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19];
+
+    return (
+      <div className="week-view" style={{ overflowX: 'auto' }}>
+        <div style={{ minWidth: '700px' }}>
+          <div className="row g-0 border-bottom">
+            <div className="col-1 border-end" style={{ minWidth: '50px' }}></div>
+            {weekDates.map((date, index) => (
+              <div key={index} className={`col text-center p-2 ${date.getDate() === new Date().getDate() && date.getMonth() === new Date().getMonth() ? 'bg-light' : ''}`}>
+                <div className="small text-muted">{['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'][date.getDay()]}</div>
+                <div className={`fw-medium ${date.getDate() === new Date().getDate() && date.getMonth() === new Date().getMonth() ? 'text-custom' : ''}`}>
+                  {date.getDate()}
+                </div>
+              </div>
+            ))}
+          </div>
+          
+          <div className="row g-0">
+            <div className="col-1 border-end" style={{ minWidth: '50px' }}>
+              {hours.map(hour => (
+                <div key={hour} className="hour-label text-muted small text-end pe-2 py-1" style={{ height: '40px' }}>
+                  {hour}:00
+                </div>
+              ))}
+            </div>
+            
+            {weekDates.map((date, dayIndex) => {
+              const formattedDate = getFormattedDate(date);
+              const dayAppointments = appointments.filter(appt => appt.date === formattedDate);
+              
+              return (
+                <div key={dayIndex} className="col border-end">
+                  {hours.map(hour => {
+                    const hourAppointments = dayAppointments.filter(appt => {
+                      const startHour = parseInt(appt.startTime.split(':')[0]);
+                      return startHour === hour;
+                    });
+                    
+                    return (
+                      <div 
+                        key={hour} 
+                        className="hour-cell border-bottom position-relative" 
+                        style={{ height: '40px' }}
+                        onClick={() => {
+                          setNewAppointment({
+                            ...newAppointment,
+                            date: formattedDate,
+                            startTime: `${hour.toString().padStart(2, '0')}:00`,
+                            endTime: `${hour === 23 ? '00' : (hour + 1).toString().padStart(2, '0')}:00`
+                          });
+                          setIsModalOpen(true);
+                        }}
+                      >
+                        {hourAppointments.map(appt => (
+                          <div
+                            key={appt.id}
+                            className={`bg-${getAppointmentColor(appt.type)} bg-opacity-10 text-${getAppointmentColor(appt.type)} p-1 rounded small position-absolute start-0 end-0 mx-1`}
+                            style={{ top: '2px', bottom: '2px', overflow: 'hidden' }}
+                          >
+                            <div className="text-truncate fw-medium">{appt.title}</div>
+                          </div>
+                        ))}
+                      </div>
+                    );
+                  })}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    );
+  };
+
+  const renderMonthView = () => {
+    const year = currentDate.getFullYear();
+    const month = currentDate.getMonth();
+    const daysInMonth = getDaysInMonth(year, month);
+    const firstDayOfMonth = getFirstDayOfMonth(year, month);
+    const days = [];
+    
+    // Add empty cells for days before the first day of the month
+    for (let i = 0; i < firstDayOfMonth; i++) {
+      days.push(null);
+    }
+    
+    // Add days of the month
+    for (let i = 1; i <= daysInMonth; i++) {
+      days.push(new Date(year, month, i));
+    }
+    
+    // Calculate total weeks
+    const totalWeeks = Math.ceil(days.length / 7);
+    
+    return (
+      <div className="month-view">
+        {Array.from({ length: totalWeeks }).map((_, weekIndex) => (
+          <div key={weekIndex} className="row g-0 border-bottom">
+            {Array.from({ length: 7 }).map((_, dayIndex) => {
+              const day = days[weekIndex * 7 + dayIndex];
+              if (!day) {
+                return <div key={dayIndex} className="col p-2 border-end" style={{ height: '100px' }}></div>;
+              }
+              
+              const formattedDate = getFormattedDate(day);
+              const dayAppointments = appointments.filter(appt => appt.date === formattedDate);
+              const isToday = day.getDate() === new Date().getDate() && day.getMonth() === new Date().getMonth();
+              
+              return (
+                <div 
+                  key={dayIndex} 
+                  className={`col p-1 border-end ${isToday ? 'bg-light' : ''}`} 
+                  style={{ height: '100px', cursor: 'pointer' }}
+                  onClick={() => {
+                    setCurrentDate(day);
+                    setSelectedView('day');
+                  }}
+                >
+                  <div className={`d-flex justify-content-end ${isToday ? 'text-custom fw-bold' : ''}`}>
+                    {day.getDate()}
+                  </div>
+                  <div className="mt-1">
+                    {dayAppointments.slice(0, 2).map(appt => (
+                      <div 
+                        key={appt.id}
+                        className={`bg-${getAppointmentColor(appt.type)} bg-opacity-10 text-${getAppointmentColor(appt.type)} p-1 rounded small mb-1 text-truncate`}
+                      >
+                        {formatTime(appt.startTime)} {appt.title}
+                      </div>
+                    ))}
+                    {dayAppointments.length > 2 && (
+                      <div className="small text-muted">+{dayAppointments.length - 2} more</div>
+                    )}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        ))}
+      </div>
+    );
+  };
+
+  // Set default date for new appointment
+  useEffect(() => {
+    setNewAppointment(prev => ({
+      ...prev,
+      date: getFormattedDate(currentDate)
+    }));
+  }, [currentDate]);
+
   return (
-    <div className="min-vh-100 bg-light p-4">
-      <div className="container-fluid px-0 px-md-3">
-        <div className="mb-4 mt-3 px-3 px-md-0">
-          <h1 className="display-6 fw-bold mb-2">Calendar</h1>
-           <p className="text-muted">
+    <div className="min-vh-100 bg-light">
+      <div className="container-fluid px-3 px-md-4 py-5">
+        {/* Header */}
+        <div className="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center mb-4">
+          <div className="mb-3 mb-md-0">
+            <h1 className="h1 fw-bold mb-1"> Calendar</h1>
+               <p className="text-muted">
     Keep track of meetings, court dates, deadlines, and team availability — all in one organized view.
   </p>
-        </div>  
+          </div>
+          <Button 
+            variant="custom" 
+            onClick={() => setIsModalOpen(true)}
+            className="d-flex align-items-center btn-custom"
+          >
+            <i className="bi bi-plus-lg me-2"></i>
+            New Appointment
+          </Button>
+        </div>
         
-        <div className="row g-3">
-          {/* Main Calendar Section - full width on mobile, 8 columns on md+ */}
-          <div className="col-12 col-md-8 order-1 order-md-0">
-            <div className="card mb-4">
-              <div className="card-body">
-                {/* Calendar Controls - stacked on mobile, flex row on larger screens */}
-                <div className="d-flex flex-column flex-md-row justify-content-between align-items-center mb-4 gap-2">
-                  <div className="d-flex flex-column flex-md-row align-items-center gap-2 w-100 w-md-auto">
+        <div className="row g-4">
+          {/* Main Calendar Area */}
+          <div className="col-lg-8 order-1 order-lg-0">
+            <div className="card shadow-sm border-0">
+              <div className="card-body p-3">
+                {/* Calendar Controls */}
+                <div className="d-flex flex-column flex-md-row justify-content-between align-items-center mb-3 gap-2">
+                  <div className="d-flex align-items-center gap-2">
                     <Button 
-                      variant="primary" 
-                      onClick={() => setIsModalOpen(true)}
-                      className="me-md-2 w-100 w-md-auto"
+                      variant="outline-secondary" 
+                      size="sm"
+                      onClick={goToToday}
+                      className="d-flex align-items-center"
                     >
-                      <i className="bi bi-plus me-2"></i>
-                      New Appointment
+                      Today
                     </Button>
                     
-                    <div className="btn-group w-100 w-md-auto" role="group">
+                    <div className="btn-group" role="group">
                       <Button
-                        variant={selectedView === 'day' ? 'primary' : 'outline-secondary'}
+                        variant={selectedView === 'day' ? 'custom' : 'outline-secondary'}
                         onClick={() => setSelectedView('day')}
-                        className="flex-grow-0"
+                        size="sm"
                       >
-                        <span className="d-none d-md-inline">Day</span>
-                        <span className="d-md-none">D</span>
+                        Day
                       </Button>
                       <Button
-                        variant={selectedView === 'week' ? 'primary' : 'outline-secondary'}
+                        variant={selectedView === 'week' ? 'custom' : 'outline-secondary'}
                         onClick={() => setSelectedView('week')}
-                        className="flex-grow-0"
+                        size="sm"
                       >
-                        <span className="d-none d-md-inline">Week</span>
-                        <span className="d-md-none">W</span>
+                        Week
                       </Button>
                       <Button
-                        variant={selectedView === 'month' ? 'primary' : 'outline-secondary'}
+                        variant={selectedView === 'month' ? 'custom' : 'outline-secondary'}
                         onClick={() => setSelectedView('month')}
-                        className="flex-grow-0"
+                        size="sm"
                       >
-                        <span className="d-none d-md-inline">Month</span>
-                        <span className="d-md-none">M</span>
+                        Month
                       </Button>
                     </div>
                   </div>
                   
-                  <div className="d-flex align-items-center gap-2 w-100 justify-content-center justify-content-md-end">
+                  <div className="d-flex align-items-center gap-2">
                     <Button 
                       variant="outline-secondary" 
-                      onClick={() => handleDateNavigation('prev')}
+                      onClick={() => navigateDate('prev')}
                       size="sm"
+                      className="d-flex align-items-center justify-content-center"
+                      style={{ width: '32px', height: '32px' }}
                     >
                       <i className="bi bi-chevron-left"></i>
                     </Button>
-                    <h5 className="mb-0 text-center">{formatDateDisplay(selectedDate)}</h5>
+                    <h5 className="mb-0 text-center" style={{ minWidth: '200px' }}>
+                      {formatDateDisplay(currentDate)}
+                    </h5>
                     <Button 
                       variant="outline-secondary" 
-                      onClick={() => handleDateNavigation('next')}
+                      onClick={() => navigateDate('next')}
                       size="sm"
+                      className="d-flex align-items-center justify-content-center"
+                      style={{ width: '32px', height: '32px' }}
                     >
                       <i className="bi bi-chevron-right"></i>
                     </Button>
                   </div>
                 </div>
                 
-                {/* Calendar Grid */}
-                <div className="border rounded" style={{ overflowX: 'auto' }}>
-                  <div style={{ minWidth: '600px' }}>
-                    {/* Calendar Header */}
-                    <div className="row g-0 border-bottom">
-                      {['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'].map((day) => (
-                        <div key={day} className="col p-2 text-center fw-medium text-muted">
-                          <span className="d-none d-sm-inline">{day}</span>
-                          <span className="d-sm-none">{day[0]}</span>
-                        </div>
-                      ))}
-                    </div>
-                    
-                    {/* Calendar Body */}
-                    <div className="row g-0">
-                      {Array.from({ length: 35 }).map((_, index) => (
-                        <div 
-                          key={index} 
-                          className="col p-1 p-sm-2 border-end border-bottom" 
-                          style={{ 
-                            minHeight: selectedView === 'month' ? '80px' : '120px',
-                            fontSize: '0.8rem'
-                          }}
-                        >
-                          <span className={`text-muted small ${index < 7 ? 'd-block' : 'd-none d-sm-block'}`}>
-                            {index + 1}
-                          </span>
-                          {index === 6 && (
-                            <div className="mt-1 mt-sm-2">
-                              <div className="bg-primary bg-opacity-10 text-primary p-1 p-sm-2 rounded mb-1 mb-sm-2">
-                                <div className="fw-medium">Client Meeting</div>
-                                <div className="small">10:00 - 11:00</div>
-                              </div>
-                              <div className="bg-danger bg-opacity-10 text-danger p-1 p-sm-2 rounded">
-                                <div className="fw-medium">Court Hearing</div>
-                                <div className="small">14:00 - 16:00</div>
-                              </div>
-                            </div>
-                          )}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
+                {/* Calendar View */}
+                <div className="border rounded bg-white">
+                  {renderCalendarCells()}
                 </div>
               </div>
             </div>
           </div>
           
-          {/* Right Sidebar - full width on mobile, 4 columns on md+ */}
-          <div className="col-12 col-md-4 order-0 order-md-1">
+          {/* Sidebar */}
+          <div className="col-lg-4 order-0 order-lg-1">
             {/* Staff Availability */}
-            <div className="card mb-4">
+            <div className="card shadow-sm border-0 mb-4">
               <div className="card-body">
-                <h5 className="card-title d-flex justify-content-between align-items-center">
-                  Staff Availability
-                  <Button 
-                    variant="link" 
-                    className="p-0 text-muted d-md-none"
-                    onClick={() => {/* Add toggle functionality if needed */}}
-                  >
-                    <i className="bi bi-chevron-down"></i>
+                <div className="d-flex justify-content-between align-items-center mb-3">
+                  <h5 className="card-title mb-0">Team Availability</h5>
+                  <Button variant="link" className="p-0 text-muted">
+                    <i className="bi bi-arrow-clockwise"></i>
                   </Button>
-                </h5>
+                </div>
                 <div className="list-group list-group-flush">
                   {staffMembers.map((staff) => (
-                    <div key={staff.id} className="list-group-item d-flex justify-content-between align-items-center py-2">
-                      <div className="d-flex align-items-center text-truncate">
-                        <span className={`me-2 d-inline-block rounded-circle ${staff.status === 'available' ? 'bg-success' : staff.status === 'busy' ? 'bg-warning' : 'bg-danger'}`} style={{ width: '10px', height: '10px', minWidth: '10px' }}></span>
+                    <div key={staff.id} className="list-group-item d-flex justify-content-between align-items-center py-2 px-0 border-0">
+                      <div className="d-flex align-items-center">
+                        <div className={`rounded-circle me-2 ${staff.status === 'available' ? 'bg-success' : staff.status === 'busy' ? 'bg-warning' : 'bg-danger'}`} style={{ width: '10px', height: '10px' }}></div>
                         <span className="text-truncate">{staff.name}</span>
                       </div>
                       <div className="ms-2">
@@ -239,32 +519,37 @@ const Calendar = () => {
             </div>
             
             {/* Upcoming Reminders */}
-            <div className="card">
+            <div className="card shadow-sm border-0">
               <div className="card-body">
-                <h5 className="card-title d-flex justify-content-between align-items-center">
-                  Upcoming Reminders
-                  <Button 
-                    variant="link" 
-                    className="p-0 text-muted d-md-none"
-                    onClick={() => {/* Add toggle functionality if needed */}}
-                  >
-                    <i className="bi bi-chevron-down"></i>
-                  </Button>
-                </h5>
-                <div className="list-group">
+                <div className="d-flex justify-content-between align-items-center mb-3">
+                  <h5 className="card-title mb-0">Upcoming Reminders</h5>
+                  <span className="badge bg-custom rounded-pill">{upcomingReminders.length}</span>
+                </div>
+                <div className="list-group gap-2">
                   {upcomingReminders.map((reminder) => (
-                    <div key={reminder.id} className="list-group-item py-2">
-                      <div className="d-flex align-items-center">
-                        <div className="me-2 me-sm-3">
+                    <div key={reminder.id} className="list-group-item border rounded p-2">
+                      <div className="d-flex align-items-start">
+                        <div className="flex-shrink-0">
                           {getReminderIcon(reminder.type)}
                         </div>
-                        <div className="flex-grow-1 text-truncate">
-                          <div className="fw-medium text-truncate">{reminder.title}</div>
-                          <div className="text-muted small">{reminder.time}</div>
+                        <div className="flex-grow-1">
+                          <div className="d-flex justify-content-between">
+                            <h6 className="mb-0">{reminder.title}</h6>
+                            <Dropdown>
+                              <Dropdown.Toggle variant="link" className="p-0 text-muted" id="dropdown-reminder">
+                                <i className="bi bi-three-dots-vertical"></i>
+                              </Dropdown.Toggle>
+                              <Dropdown.Menu>
+                                <Dropdown.Item onClick={() => handleDeleteReminder(reminder.id)}>
+                                  <i className="bi bi-trash me-2"></i>Delete
+                                </Dropdown.Item>
+                              </Dropdown.Menu>
+                            </Dropdown>
+                          </div>
+                          <div className="small text-muted">
+                            {reminder.date} • {reminder.time}
+                          </div>
                         </div>
-                        <Button variant="link" className="text-muted p-0 ms-2">
-                          <i className="bi bi-three-dots-vertical"></i>
-                        </Button>
                       </div>
                     </div>
                   ))}
@@ -275,9 +560,9 @@ const Calendar = () => {
         </div>
       </div>
       
-      {/* New Appointment Modal - responsive by default */}
-      <Modal className='mt-5' show={isModalOpen} onHide={() => setIsModalOpen(false)} centered>
-        <Modal.Header closeButton>
+      {/* New Appointment Modal */}
+      <Modal show={isModalOpen} onHide={() => setIsModalOpen(false)}  size="md" className="modal-custom">
+        <Modal.Header closeButton className="border-0 pb-0">
           <Modal.Title>New Appointment</Modal.Title>
         </Modal.Header>
         <Modal.Body>
@@ -288,54 +573,59 @@ const Calendar = () => {
                 type="text"
                 value={newAppointment.title}
                 onChange={(e) => setNewAppointment({...newAppointment, title: e.target.value})}
-                placeholder="Enter appointment title"
+                placeholder="Meeting with client"
+                required
               />
             </Form.Group>
             
             <Row className="mb-3">
-              <Col xs={12} md={6}>
-                <Form.Group>
+              <Col md={6}>
+                <Form.Group className="mb-3">
                   <Form.Label>Date</Form.Label>
                   <Form.Control
                     type="date"
                     value={newAppointment.date}
                     onChange={(e) => setNewAppointment({...newAppointment, date: e.target.value})}
+                    required
                   />
                 </Form.Group>
               </Col>
-              <Col xs={12} md={6}>
-                <Form.Group>
+              <Col md={6}>
+                <Form.Group className="mb-3">
                   <Form.Label>Type</Form.Label>
                   <Form.Select
                     value={newAppointment.type}
                     onChange={(e) => setNewAppointment({...newAppointment, type: e.target.value})}
                   >
                     <option value="meeting">Meeting</option>
-                    <option value="hearing">Hearing</option>
+                    <option value="hearing">Court Hearing</option>
                     <option value="deadline">Deadline</option>
+                    <option value="other">Other</option>
                   </Form.Select>
                 </Form.Group>
               </Col>
             </Row>
             
             <Row className="mb-3">
-              <Col xs={12} md={6}>
-                <Form.Group>
+              <Col md={6}>
+                <Form.Group className="mb-3">
                   <Form.Label>Start Time</Form.Label>
                   <Form.Control
                     type="time"
                     value={newAppointment.startTime}
                     onChange={(e) => setNewAppointment({...newAppointment, startTime: e.target.value})}
+                    required
                   />
                 </Form.Group>
               </Col>
-              <Col xs={12} md={6}>
-                <Form.Group>
+              <Col md={6}>
+                <Form.Group className="mb-3">
                   <Form.Label>End Time</Form.Label>
                   <Form.Control
                     type="time"
                     value={newAppointment.endTime}
                     onChange={(e) => setNewAppointment({...newAppointment, endTime: e.target.value})}
+                    required
                   />
                 </Form.Group>
               </Col>
@@ -348,17 +638,17 @@ const Calendar = () => {
                 rows={3}
                 value={newAppointment.description}
                 onChange={(e) => setNewAppointment({...newAppointment, description: e.target.value})}
-                placeholder="Enter appointment description"
+                placeholder="Add details about the appointment"
               />
             </Form.Group>
           </Form>
         </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={() => setIsModalOpen(false)}>
+        <Modal.Footer className="border-0">
+          <Button variant="outline-secondary" onClick={() => setIsModalOpen(false)}>
             Cancel
           </Button>
-          <Button variant="primary" onClick={handleCreateAppointment}>
-            Create Appointment
+          <Button variant="custom" className="btn-custom" onClick={handleCreateAppointment}>
+            Save Appointment
           </Button>
         </Modal.Footer>
       </Modal>

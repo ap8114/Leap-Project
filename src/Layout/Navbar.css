@@ -1,58 +1,58 @@
 /* Main Navbar Glassmorphism */
+/* Main Navbar based on FastTrack Logo */
 .custom-navbar {
-  background: #1565c0; /* Single solid color */
+  background: #ffffff; /* clean white */
   min-height: 64px;
-  box-shadow: 0 4px 32px 0 #1976d244;
-  z-index: 3000;
+  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.08);
+  border-bottom: 1px solid #f2f2f2;
   position: fixed;
+  width: 100%;
   top: 0;
   left: 0;
-  width: 100vw;
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-  border-bottom: 1.5px solid #2196f3;
+  z-index: 3000;
   display: flex;
   align-items: center;
-  backdrop-filter: blur(8px) saturate(1.2);
+  backdrop-filter: blur(4px);
 }
 
 /* Brand */
 .custom-navbar .navbar-brand {
-  color: #8fd3ff !important;
+  color: #f75c3c; /* coral */
   font-weight: bold;
   font-size: 2rem;
-  letter-spacing: 1px;
-  text-shadow: 0 2px 8px #1976d288;
-  margin-right: 18px;
   padding-left: 12px;
   display: flex;
   align-items: center;
 }
 
+
 /* Toggle Button */
 .custom-navbar .nav-toggle-icon {
-  background: rgba(21,101,192,0.18);
+  background: rgba(247, 92, 60, 0.15);
   border-radius: 10px;
-  box-shadow: 0 2px 12px #2196f344;
-  color: #8fd3ff !important;
+  box-shadow: 0 2px 12px rgba(247, 92, 60, 0.25);
+  color: #f75c3c !important;
   margin-right: 10px;
   padding: 6px 10px;
   transition: background 0.2s, box-shadow 0.2s;
-  border: none;
+  border: 1px solid;
   display: flex;
   align-items: center;
 }
 .custom-navbar .nav-toggle-icon:hover {
-  background: #2196f3;
+  background: #f75c3c;
   color: #fff !important;
-  box-shadow: 0 4px 24px #1976d244;
+  box-shadow: 0 4px 24px rgba(247, 92, 60, 0.4);
 }
+
+/* Update other items like .search-bar, .right-actions, and dropdowns similarly by replacing #1976d2 or #2196f3 with dark/navy tones and using #f75c3c for highlights */
+
 
 /* Search Bar Glassy */
 .custom-navbar .search-bar {
   background: rgba(255,255,255,0.08);
   border-radius: 14px;
-  border: 1.5px solid #2196f3;      /* Add border */
+  border: 1.5px solid #f75c3c;      /* Add border */
   color: #fff;
   padding: 10px 18px 10px 38px;
   width: 420px;
@@ -68,11 +68,11 @@
 }
 /* Border highlight on focus */
 .custom-navbar .search-bar:focus {
-  border-color: #8fd3ff;
+  border-color: #f75c3c;
   box-shadow: 0 0 0 2px #8fd3ff44, 0 2px 12px #2196f344;
 }
 .custom-navbar .search-bar::placeholder {
-  color: #cbe7ff;
+  color: black;
   opacity: 1;
   font-size: 1rem;
   letter-spacing: 0.5px;
@@ -91,7 +91,7 @@
 .custom-navbar .right-actions .btn,
 .custom-navbar .right-actions .dropdown-toggle {
   background: rgba(21,101,192,0.18);
-  color: #8fd3ff;
+  color: #f75c3c;
   border: none;
   font-weight: 500;
   border-radius: 10px;
@@ -115,7 +115,7 @@
   top: 2px;
   right: 2px;
   background: #e53935;
-  color: #fff;
+  color: #f75c3c;
   font-size: 0.75rem;
   border-radius: 50%;
   padding: 2px 6px;
@@ -127,45 +127,100 @@
 
 /* Avatar */
 .custom-navbar .avatar i {
-  color: #8fd3ff !important;
+  color: #f75c3c !important;
   background: transparent;
   border-radius: 50%;
   padding: 2px;
   font-size: 1.5rem;
 }
 
-/* Dropdown & Notification Glassy */
+/* Dropdown & Notification - Clean White Base */
 .navbar .dropdown-menu,
 .navbar .notification-dropdown {
   right: 0 !important;
   left: auto !important;
   z-index: 2000 !important;
-  min-width: 240px;
-  background: rgba(21,101,192,0.95);
-  border: 1.5px solid #1976d2;
-  box-shadow: 0 4px 24px 0 #1976d244;
-  border-radius: 12px;
-  padding: 0.5rem 0.75rem;
-  color: #fff;
-}
-.navbar .notification-dropdown {
-  position: absolute;
-  top: 48px;
-  right: 0;
-  z-index: 2100;
   min-width: 260px;
+  background: #ffffff; /* White background */
+  border: 1px solid #f75c3c; /* Coral border */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border-radius: 14px;
   padding: 0.75rem 1rem;
+  color: #1b1f2b; /* Dark navy text */
+  animation: dropdownFadeIn 0.3s ease-out;
+  transition: all 0.3s ease;
 }
 
-/* Dropdown Items */
-.navbar .dropdown-menu li a {
-  color: #8fd3ff;
-  border-radius: 8px;
-  transition: background 0.2s, color 0.2s;
+@keyframes dropdownFadeIn {
+  from {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
-.navbar .dropdown-menu li a:hover {
-  background: #e3f2fd;
-  color: #1976d2;
+
+/* Notification Positioning */
+.navbar .notification-dropdown {
+  position: absolute;
+  top: 56px;
+  right: 0;
+  z-index: 2100;
+  min-width: 280px;
+  padding: 1rem;
+  border: 1px solid #f75c3c; /* Coral border */
+}
+
+/* List Items */
+.navbar .dropdown-menu li,
+.navbar .notification-dropdown li {
+  margin-bottom: 8px;
+  list-style: none;
+}
+
+/* Links */
+.navbar .dropdown-menu li a,
+.navbar .notification-dropdown li a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  color: #1b1f2b; /* Default text: dark/navy */
+  background: transparent;
+
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: background 0.25s ease, color 0.25s ease;
+  text-decoration: none;
+}
+
+/* Hover or Active Style */
+.navbar .dropdown-menu li a:hover,
+.navbar .dropdown-menu li a:focus,
+.navbar .dropdown-menu li a:active,
+.navbar .notification-dropdown li a:hover,
+.navbar .notification-dropdown li a:focus,
+.navbar .notification-dropdown li a:active {
+  background: #f75c3c; /* Coral highlight */
+  color: #fff;          /* White text */
+}
+
+/* Optional Icon Styling */
+.navbar .dropdown-menu li a i,
+.navbar .notification-dropdown li a i {
+  font-size: 1.1rem;
+  color: #f75c3c;
+  transition: transform 0.2s;
+}
+
+/* Icon turns white on hover */
+.navbar .dropdown-menu li a:hover i,
+.navbar .notification-dropdown li a:hover i {
+  color: #fff;
+  transform: scale(1.2);
 }
 
 /* Responsive */

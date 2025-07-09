@@ -139,7 +139,7 @@ const ClientAndMatterManagement = () => {
                                     </ListGroup.Item>
                                 </ListGroup>
                                 <Button 
-                                    variant="primary" 
+                                    variant="custom" 
                                     className="rounded-pill px-4"
                                     style={{ backgroundColor: '#f76b1c', borderColor: '#f76b1c' }}
                                 >

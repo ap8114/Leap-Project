@@ -99,12 +99,12 @@ const Document = () => {
   };
 
   const getFileIconColor = (type) => {
-    return type === "PDF" ? "text-danger" : "text-primary";
+    return type === "PDF" ? "text-danger" : "text-custom";
   };
 
   return (
     <div className="min-vh-100 bg-light p-4">
-      <div className="container py-5">
+      <div className="container-fluid py-3">
         {/* Header */}
         <div className=" mb-5">
           <h1 className="display-6 fw-bold text-dark mb-3">Documents</h1>
@@ -115,7 +115,7 @@ const Document = () => {
         <div className="card shadow-sm mb-5">
           <div className="card-body p-5">
             <div
-              className="border border-dashed rounded-3 p-5 text-center hover-border-primary transition-all cursor-pointer"
+              className="border border-dashed rounded-3 p-5 text-center hover-border-custom transition-all cursor-pointer"
               onDragOver={handleDragOver}
               onDrop={handleDrop}
               style={{ borderColor: "#dee2e6" }}
@@ -140,7 +140,7 @@ const Document = () => {
                   onChange={handleFileUpload}
                   className="d-none"
                 />
-                <span className="btn btn-primary px-4 py-2 fw-medium">
+                <span className="btn btn-custom px-4 py-2 fw-medium">
                   Upload Files
                 </span>
               </label>
@@ -162,7 +162,7 @@ const Document = () => {
                 onClick={() => setActiveCategory(category)}
                 className={`btn ${
                   activeCategory === category
-                    ? "btn-white shadow-sm text-primary"
+                    ? "btn-white shadow-sm text-custom"
                     : "text-muted"
                 } flex-grow-0 mx-1`}
               >
@@ -195,7 +195,7 @@ const Document = () => {
                               className={`badge ${
                                 document.type === "PDF"
                                   ? "bg-danger-light text-danger"
-                                  : "bg-primary-light text-primary"
+                                  : "bg-custom-light text-custom"
                               } me-2`}
                             >
                               {document.type}
@@ -229,7 +229,7 @@ const Document = () => {
                           setSelectedDocument(document);
                           setIsModalOpen(true);
                         }}
-                        className="btn btn-primary btn-sm flex-grow-1"
+                        className="btn btn-custom btn-sm flex-grow-1"
                       >
                         <FontAwesomeIcon icon={faEye} className="me-1" />
                         View
@@ -273,7 +273,7 @@ const Document = () => {
                 onChange={handleFileUpload}
                 className="d-none"
               />
-              <span className="btn btn-primary px-4 py-2">Upload Document</span>
+              <span className="btn btn-custom px-4 py-2">Upload Document</span>
             </label>
           </div>
         )}
@@ -305,7 +305,7 @@ const Document = () => {
                           className={`badge ${
                             selectedDocument.type === "PDF"
                               ? "bg-danger-light text-danger"
-                              : "bg-primary-light text-primary"
+                              : "bg-custom-light text-custom"
                           }`}
                         >
                           {selectedDocument.type}
@@ -366,7 +366,7 @@ const Document = () => {
                     >
                       Close
                     </button>
-                    <button className="btn btn-primary">
+                    <button className="btn btn-custom">
                       <FontAwesomeIcon icon={faDownload} className="me-2" />
                       Download
                     </button>

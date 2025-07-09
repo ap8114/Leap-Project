@@ -51,7 +51,7 @@ const TasksWorkflow = () => {
   const getStatusColor = (status) => {
     switch (status) {
       case 'Completed': return 'bg-success';
-      case 'In Progress': return 'bg-primary';
+      case 'In Progress': return 'bg-custom';
       case 'Not Started': return 'bg-secondary';
       default: return 'bg-secondary';
     }
@@ -109,7 +109,7 @@ const TasksWorkflow = () => {
               <h2 className="h4 fw-semibold text-dark">Active Tasks</h2>
               <button
                 onClick={() => setIsNewTaskModalOpen(true)}
-                className="btn btn-primary d-flex align-items-center">
+                className="btn btn-custom d-flex align-items-center">
                 <i className="fas fa-plus me-2"></i> New Task
               </button>
             </div>
@@ -191,7 +191,7 @@ const TasksWorkflow = () => {
             </td>
             <td className="text-end">
               <button
-                className="btn btn-link text-primary me-2"
+                className="btn btn-link text-custom me-2"
                 onClick={() => handleEditClick(task)}
               >
                 <i className="fas fa-edit"></i>
@@ -211,7 +211,7 @@ const TasksWorkflow = () => {
     <div className="text-muted small mb-2 mb-md-0">
       Showing <span className="fw-medium">1</span> to <span className="fw-medium">5</span> of <span className="fw-medium">24</span> entries
     </div>
-    <ul className="pagination mb-0">
+    <ul className="pagination pagination-custom mb-0">
       <li className="page-item disabled">
         <a className="page-link">Previous</a>
       </li>
@@ -353,7 +353,7 @@ const TasksWorkflow = () => {
             >
               Cancel
             </button>
-            <button type="submit" className="btn btn-primary">
+            <button type="submit" className="btn btn-custom">
               Create Task
             </button>
           </div>
@@ -487,7 +487,7 @@ const TasksWorkflow = () => {
             >
               Cancel
             </button>
-            <button type="submit" className="btn btn-primary">
+            <button type="submit" className="btn btn-custom">
               Save Changes
             </button>
           </div>

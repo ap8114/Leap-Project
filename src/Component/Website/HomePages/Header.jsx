@@ -2,25 +2,26 @@ import React from "react";
 import { useState } from "react";
 import { Link, Route, Routes } from "react-router-dom";
 import "./Website.css"; // Assuming you have a CSS file for styling
+import logofasttrack from "../../../assets/logofasttrack.png"; // Adjust the path as necessary
 
 const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [showFeatures, setShowFeatures] = useState(false);
-  const [openMobileDropdown, setOpenMobileDropdown] = useState(null);
-  return (
-    <div>
-      <nav className="navbars navbar-expand-lg navbar-dark p-3">
-        <div className="container-fluid px-4 d-flex align-items-center justify-content-between">
-          {/* Logo */}
-          <Link className="navbar-brand" to="/">
-            {/* https://i.ibb.co/SD7MR15F/image.png */}
-            {/* <img
-                            src=""
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [showFeatures, setShowFeatures] = useState(false);
+    const [openMobileDropdown, setOpenMobileDropdown] = useState(null);
+    return (
+        <div>
+            <nav className="navbars navbar-expand-lg navbar-dark  p-3">
+                <div className="container-fluid px-4 d-flex align-items-center justify-content-between">
+
+                   <Link to="/" className="text-decoration-none">
+                    <div className="d-flex align-items-center">
+                        <img
+                            src={logofasttrack}
                             alt="Logo"
-                            height="40"
-                        /> */}
-            <h3>LOGO</h3>
-          </Link>
+                            style={{ height: '70px', width: '170px' }}
+                        />
+                    </div>
+                   </Link>
 
           {/* Toggle button for mobile */}
           <button

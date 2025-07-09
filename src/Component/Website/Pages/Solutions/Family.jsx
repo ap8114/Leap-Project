@@ -53,39 +53,36 @@ const Family = () => {
   };
 
   return (
-    <div className="w-100"> {/* Fixed typo */}
-
+    <div className="w-100">
       <Header />
-      <div className="w-100"> {/* Fixed typo */}
-        {/* Navigation */}
-
+      <div className="w-100">
         {/* Hero Section */}
         <section className="py-5 position-relative">
           <div className="position-absolute top-0 start-0 w-100 h-100 opacity-90"></div>
           <Container className="position-relative">
             <Row className="align-items-center">
-              <Col xs={12} lg={6} className="mb-4 mb-lg-0 text-center text-lg-start">
-                <h1 className="display-5 fw-bold mb-3 " style={{color: '#f76b1c'}}>
+              <Col lg={6} className="mb-5 mb-lg-0">
+                <h1 className="display-4 fw-bold mb-4 text-dark">
                   Practice management for family law software
                 </h1>
                 <p className="lead text-muted mb-4">
-                  Streamline your family law practice with comprehensive case management,
-                  secure document handling, and automated workflow solutions designed
+                  Streamline your family law practice with comprehensive case management, 
+                  secure document handling, and automated workflow solutions designed 
                   specifically for divorce, custody, and domestic relations cases.
                 </p>
-                <div className="d-flex flex-column flex-sm-row gap-3 justify-content-center justify-content-lg-start">
-                  <Button  size="lg" className="w-100 w-sm-auto" style={{backgroundColor: '#f76b1c' , color: 'white'}}>Get Started Free</Button>
-                  <Button variant="outline-dark" size="lg" className="w-100 w-sm-auto">Schedule Demo</Button>
+                <div className="d-flex flex-column flex-sm-row gap-3">
+                  <Button  style={{backgroundColor: '#f76b1c' , color: 'white'}}
+ size="lg">Get Started Free</Button>
+                  <Button variant="outline-dark" size="lg">Schedule Demo</Button>
                 </div>
               </Col>
-              <Col xs={12} lg={6} className="text-center">
-                <Image
-                  src="https://readdy.ai/api/search-image?query=professional%20female%20lawyer%20holding%20documents%20in%20modern%20law%20office%2C%20confident%20and%20caring%20expression%2C%20natural%20lighting%2C%20clean%20background%20with%20legal%20books%20and%20family%20photos%2C%20representing%20trust%20and%20expertise%20in%20family%20law&width=600&height=400&seq=hero002&orientation=landscape"
-                  alt="Family Law Professional"
-                  fluid
-                  rounded
-                  className="shadow mx-auto"
-                  style={{ maxWidth: "100%", height: "auto" }}
+              <Col lg={6}>
+                <Image 
+                  src="https://readdy.ai/api/search-image?query=professional%20female%20lawyer%20holding%20documents%20in%20modern%20law%20office%2C%20confident%20and%20caring%20expression%2C%20natural%20lighting%2C%20clean%20background%20with%20legal%20books%20and%20family%20photos%2C%20representing%20trust%20and%20expertise%20in%20family%20law&width=600&height=400&seq=hero002&orientation=landscape" 
+                  alt="Family Law Professional" 
+                  fluid 
+                  rounded 
+                  className="shadow"
                 />
               </Col>
             </Row>
@@ -97,11 +94,11 @@ const Family = () => {
           <Container>
             <Row className="text-center mb-5">
               <Col>
-                <h2 className="display-6 fw-bold mb-3 text-dark">
+                <h2 className="display-5 fw-bold mb-3 text-dark">
                   Everything you need to manage family law cases
                 </h2>
                 <p className="lead text-muted">
-                  Our comprehensive dashboard gives you complete visibility into your cases,
+                  Our comprehensive dashboard gives you complete visibility into your cases, 
                   deadlines, documents, and client communications all in one place.
                 </p>
               </Col>
@@ -111,9 +108,9 @@ const Family = () => {
               <Card.Header className="bg-light">
                 <div className="d-flex align-items-center">
                   <div className="d-flex gap-2 me-3">
-                    <span className="bg-danger rounded-circle" style={{ width: '12px', height: '12px' }}></span>
-                    <span className="bg-warning rounded-circle" style={{ width: '12px', height: '12px' }}></span>
-                    <span className="bg-success rounded-circle" style={{ width: '12px', height: '12px' }}></span>
+                    <span className="bg-danger rounded-circle" style={{width: '12px', height: '12px'}}></span>
+                    <span className="bg-warning rounded-circle" style={{width: '12px', height: '12px'}}></span>
+                    <span className="bg-success rounded-circle" style={{width: '12px', height: '12px'}}></span>
                   </div>
                   <span className="text-muted">FamilyLaw Pro Dashboard</span>
                 </div>
@@ -132,12 +129,12 @@ const Family = () => {
                 {activeTab === 'dashboard' && (
                   <div>
                     <Row className="mb-4 g-4">
-                      <Col xs={12} sm={6} md={3}>
-                        <Card className="border-0 bg-blue-50">
+                      <Col md={3}>
+                        <Card className="border-0 bg-primary bg-opacity-10">
                           <Card.Body>
                             <div className="d-flex justify-content-between align-items-center">
                               <div>
-                                <p className="mb-1" >Active Cases</p>
+                                <p className="text-primary mb-1">Active Cases</p>
                                 <h3 className="mb-0">24</h3>
                               </div>
                               <i className="fas fa-briefcase text-primary fs-3"></i>
@@ -145,8 +142,8 @@ const Family = () => {
                           </Card.Body>
                         </Card>
                       </Col>
-                      <Col xs={12} sm={6} md={3}>
-                        <Card className="border-0 bg-orange-50">
+                      <Col md={3}>
+                        <Card className="border-0 bg-warning bg-opacity-10">
                           <Card.Body>
                             <div className="d-flex justify-content-between align-items-center">
                               <div>
@@ -158,8 +155,8 @@ const Family = () => {
                           </Card.Body>
                         </Card>
                       </Col>
-                      <Col xs={12} sm={6} md={3}>
-                        <Card className="border-0 bg-green-50">
+                      <Col md={3}>
+                        <Card className="border-0 bg-success bg-opacity-10">
                           <Card.Body>
                             <div className="d-flex justify-content-between align-items-center">
                               <div>
@@ -171,71 +168,95 @@ const Family = () => {
                           </Card.Body>
                         </Card>
                       </Col>
-                      <Col xs={12} sm={6} md={3}>
-                        <Card className="border-0 bg-purple-50">
+                      <Col md={3}>
+                        <Card className="border-0 bg-info bg-opacity-10">
                           <Card.Body>
                             <div className="d-flex justify-content-between align-items-center">
                               <div>
-                                <p className="text-purple mb-1">Revenue</p>
+                                <p className="text-info mb-1">Revenue</p>
                                 <h3 className="mb-0">$89K</h3>
                               </div>
-                              <i className="fas fa-dollar-sign text-purple fs-3"></i>
+                              <i className="fas fa-dollar-sign text-info fs-3"></i>
                             </div>
                           </Card.Body>
                         </Card>
                       </Col>
                     </Row>
 
-                    <Card className="border">
-                      <Card.Header className="bg-light">
-                        <h3 className="h5 mb-0">Recent Cases</h3>
-                      </Card.Header>
-                      <div className="table-responsive">
-                        <Table striped hover className="mb-0">
-                          <thead>
-                            <tr>
-                              <th>Case</th>
-                              <th>Client</th>
-                              <th>Type</th>
-                              <th>Status</th>
-                              <th>Next Action</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td>
-                                <div className="fw-bold">Johnson vs. Johnson</div>
-                                <div className="text-muted small">Case #2024-001</div>
-                              </td>
-                              <td>Sarah Johnson</td>
-                              <td>Divorce</td>
-                              <td><span className="badge bg-warning">In Progress</span></td>
-                              <td>Mediation - Dec 15</td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <div className="fw-bold">Smith Custody Case</div>
-                                <div className="text-muted small">Case #2024-002</div>
-                              </td>
-                              <td>Michael Smith</td>
-                              <td>Child Custody</td>
-                              <td><span className="badge bg-success">Settled</span></td>
-                              <td>Final Review</td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <div className="fw-bold">Davis Property Division</div>
-                                <div className="text-muted small">Case #2024-003</div>
-                              </td>
-                              <td>Jennifer Davis</td>
-                              <td>Property Division</td>
-                              <td><span className="badge bg-dark">Discovery</span></td>
-                              <td>Document Review</td>
-                            </tr>
-                          </tbody>
-                        </Table>
-                      </div>
-                    </Card>
+                    <Row>
+                      <Col lg={8} className="mb-4 mb-lg-0">
+                        <Card>
+                          <Card.Body>
+                            <h3 className="h5 mb-3">Recent Activity</h3>
+                            <Table striped bordered hover>
+                              <thead>
+                                <tr>
+                                  <th>Case</th>
+                                  <th>Activity</th>
+                                  <th>Date</th>
+                                  <th>Status</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>Johnson Divorce</td>
+                                  <td>Filed Petition</td>
+                                  <td>Today</td>
+                                  <td><span className="badge bg-primary">Active</span></td>
+                                </tr>
+                                <tr>
+                                  <td>Smith Custody</td>
+                                  <td>Mediation Scheduled</td>
+                                  <td>Yesterday</td>
+                                  <td><span className="badge bg-warning">Pending</span></td>
+                                </tr>
+                                <tr>
+                                  <td>Davis Support</td>
+                                  <td>Order Signed</td>
+                                  <td>Dec 1, 2024</td>
+                                  <td><span className="badge bg-success">Completed</span></td>
+                                </tr>
+                              </tbody>
+                            </Table>
+                          </Card.Body>
+                        </Card>
+                      </Col>
+                      <Col lg={4}>
+                        <Card>
+                          <Card.Body>
+                            <h3 className="h5 mb-3">Case Distribution</h3>
+                            <div className="text-center">
+                              <div className="d-flex justify-content-center mb-3">
+                                <div style={{ width: '200px', height: '200px' }}>
+                                  {/* Placeholder for chart */}
+                                  <div className="bg-light rounded-circle d-flex align-items-center justify-content-center" style={{ width: '100%', height: '100%' }}>
+                                    <span className="text-muted">Case Chart</span>
+                                  </div>
+                                </div>
+                              </div>
+                              <div className="d-flex flex-wrap justify-content-center gap-3">
+                                <div className="d-flex align-items-center">
+                                  <span className="bg-primary rounded-circle me-2" style={{ width: '10px', height: '10px' }}></span>
+                                  <small>Divorce (45%)</small>
+                                </div>
+                                <div className="d-flex align-items-center">
+                                  <span className="bg-warning rounded-circle me-2" style={{ width: '10px', height: '10px' }}></span>
+                                  <small>Custody (30%)</small>
+                                </div>
+                                <div className="d-flex align-items-center">
+                                  <span className="bg-success rounded-circle me-2" style={{ width: '10px', height: '10px' }}></span>
+                                  <small>Support (15%)</small>
+                                </div>
+                                <div className="d-flex align-items-center">
+                                  <span className="bg-info rounded-circle me-2" style={{ width: '10px', height: '10px' }}></span>
+                                  <small>Other (10%)</small>
+                                </div>
+                              </div>
+                            </div>
+                          </Card.Body>
+                        </Card>
+                      </Col>
+                    </Row>
                   </div>
                 )}
 
@@ -245,7 +266,7 @@ const Family = () => {
                       <i className="fas fa-cloud-upload-alt text-muted fs-1 mb-3"></i>
                       <h3 className="h4 mb-2">Upload Documents</h3>
                       <p className="text-muted mb-4">Drag and drop files here, or click to browse</p>
-                      <Button style={{backgroundColor: '#f76b1c' , color: 'white'}} onClick={simulateUpload}>
+                      <Button style={{backgroundColor: '#f76b1c', color: 'white'}} onClick={simulateUpload}>
                         Choose Files
                       </Button>
                       {uploadProgress > 0 && (
@@ -327,7 +348,7 @@ const Family = () => {
                 {activeTab === 'calendar' && (
                   <div>
                     <Row>
-                      <Col xs={12} lg={8} className="mb-4 mb-lg-0">
+                      <Col lg={8} className="mb-4 mb-lg-0">
                         <Card>
                           <Card.Body>
                             <h3 className="h5 mb-3">Upcoming Deadlines</h3>
@@ -357,7 +378,7 @@ const Family = () => {
                           </Card.Body>
                         </Card>
                       </Col>
-                      <Col xs={12} lg={4}>
+                      <Col lg={4}>
                         <Card>
                           <Card.Body>
                             <h3 className="h5 mb-3">Quick Actions</h3>
@@ -391,9 +412,9 @@ const Family = () => {
           <Container>
             <Row className="text-center mb-5">
               <Col>
-                <h2 className="display-6 fw-bold mb-3">Built specifically for family law practices</h2>
+                <h2 className="display-5 fw-bold mb-3">Built specifically for family law practices</h2>
                 <p className="lead text-muted">
-                  Every feature is designed with family law attorneys in mind,
+                  Every feature is designed with family law attorneys in mind, 
                   from sensitive document handling to complex case tracking.
                 </p>
               </Col>
@@ -403,7 +424,7 @@ const Family = () => {
               <Col xs={12} md={6} lg={4}>
                 <Card className="h-100 shadow-sm border-0">
                   <Card.Body>
-                    <div style={{backgroundColor: '#f76b1c' , color: 'white'}} className=" text-white rounded p-3 mb-4 d-inline-flex">
+                    <div className="text-white rounded p-3 mb-4 d-inline-flex" style={{backgroundColor: '#f76b1c'}}>
                       <i className="fas fa-shield-alt fs-4"></i>
                     </div>
                     <h3 className="h4 mb-3">Secure Document Management</h3>
@@ -417,7 +438,7 @@ const Family = () => {
               <Col xs={12} md={6} lg={4}>
                 <Card className="h-100 shadow-sm border-0">
                   <Card.Body>
-                    <div className=" text-white rounded p-3 mb-4 d-inline-flex" style={{backgroundColor: '#f76b1c' , color: 'white'}}>
+                    <div className="text-white rounded p-3 mb-4 d-inline-flex" style={{backgroundColor: '#f76b1c'}}>
                       <i className="fas fa-users fs-4"></i>
                     </div>
                     <h3 className="h4 mb-3">Client Portal</h3>
@@ -431,7 +452,7 @@ const Family = () => {
               <Col xs={12} md={6} lg={4}>
                 <Card className="h-100 shadow-sm border-0">
                   <Card.Body>
-                    <div className=" text-white rounded p-3 mb-4 d-inline-flex" style={{backgroundColor: '#f76b1c' , color: 'white'}}>
+                    <div className="text-white rounded p-3 mb-4 d-inline-flex" style={{backgroundColor: '#f76b1c'}}>
                       <i className="fas fa-calendar-check fs-4"></i>
                     </div>
                     <h3 className="h4 mb-3">Deadline Tracking</h3>
@@ -445,7 +466,7 @@ const Family = () => {
               <Col xs={12} md={6} lg={4}>
                 <Card className="h-100 shadow-sm border-0">
                   <Card.Body>
-                    <div className=" text-white rounded p-3 mb-4 d-inline-flex" style={{backgroundColor: '#f76b1c' , color: 'white'}}>
+                    <div className="text-white rounded p-3 mb-4 d-inline-flex" style={{backgroundColor: '#f76b1c'}}>
                       <i className="fas fa-chart-line fs-4"></i>
                     </div>
                     <h3 className="h4 mb-3">Financial Tracking</h3>
@@ -459,7 +480,7 @@ const Family = () => {
               <Col xs={12} md={6} lg={4}>
                 <Card className="h-100 shadow-sm border-0">
                   <Card.Body>
-                    <div className=" text-white rounded p-3 mb-4 d-inline-flex" style={{backgroundColor: '#f76b1c' , color: 'white'}}>
+                    <div className="text-white rounded p-3 mb-4 d-inline-flex" style={{backgroundColor: '#f76b1c'}}>
                       <i className="fas fa-comments fs-4"></i>
                     </div>
                     <h3 className="h4 mb-3">Communication Hub</h3>
@@ -473,7 +494,7 @@ const Family = () => {
               <Col xs={12} md={6} lg={4}>
                 <Card className="h-100 shadow-sm border-0">
                   <Card.Body>
-                    <div className="text-white rounded p-3 mb-4 d-inline-flex" style={{backgroundColor: '#f76b1c' , color: 'white'}}>
+                    <div className="text-white rounded p-3 mb-4 d-inline-flex" style={{backgroundColor: '#f76b1c'}}>
                       <i className="fas fa-file-contract fs-4"></i>
                     </div>
                     <h3 className="h4 mb-3">Document Templates</h3>
@@ -492,7 +513,7 @@ const Family = () => {
         <section className="py-5 bg-dark text-white">
           <Container>
             <Row className="align-items-center">
-              <Col xs={12} lg={6} className="mb-5 mb-lg-0">
+              <Col lg={6} className="mb-5 mb-lg-0">
                 <h2 className="display-5 fw-bold mb-4" style={{color: '#f76b1c'}}>Ready to transform your family law practice?</h2>
                 <p className="lead text-muted mb-4">
                   Join thousands of family law attorneys who trust our platform 
@@ -508,7 +529,7 @@ const Family = () => {
                     <span>No setup fees or hidden costs</span>
                   </li>
                   <li className="mb-3">
-                    <i className="fas fa-check-circle  me-2" style={{color: '#f76b1c'}}></i>
+                    <i className="fas fa-check-circle me-2" style={{color: '#f76b1c'}}></i>
                     <span>24/7 customer support</span>
                   </li>
                   <li>
@@ -517,7 +538,7 @@ const Family = () => {
                   </li>
                 </ul>
               </Col>
-              <Col xs={12} lg={6}>
+              <Col lg={6}>
                 <Card className="shadow-lg">
                   <Card.Body>
                     <h3 className="h3 mb-4">Get Started Today</h3>
@@ -565,7 +586,7 @@ const Family = () => {
                           placeholder="Tell us about your practice needs"
                         />
                       </Form.Group>
-                      <Button type="submit"  size="lg" className="w-100" >
+                      <Button type="submit" style={{backgroundColor: '#f76b1c', borderColor: '#f76b1c'}} size="lg" className="w-100">
                         Start Free Trial
                       </Button>
                       <p className="text-muted small mt-3 text-center">
@@ -580,8 +601,6 @@ const Family = () => {
             </Row>
           </Container>
         </section>
-
-        {/* Footer */}
       </div>
       <FooterSection />
     </div>

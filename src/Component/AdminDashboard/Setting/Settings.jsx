@@ -129,7 +129,7 @@ const Settings = () => {
             </Form.Group>
           </Col>
         </Row>
-        <Button variant="outline-primary">Upload Template</Button>
+        <Button variant="outline-custom">Upload Template</Button>
       </div>
 
       {/* Basic Preferences */}
@@ -169,7 +169,7 @@ const Settings = () => {
 
       {/* Save Button */}
       <div className="text-center">
-        <Button variant="primary" size="lg">
+        <Button variant="custom" size="lg" className='btn-custom'>
           Save Changes
         </Button>
       </div>
