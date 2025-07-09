@@ -224,7 +224,7 @@ const Reporting = () => {
                 <p className="lead mb-4">
                   Gain instant insights into your data to make well-informed decisions across your practice with powerful reporting tools to provide you with everything you need to know about clients, matters, billing, financial compliance, and performance.
                 </p>
-                <button className="btn btn-warning btn-lg">
+                <button className="btn  btn-lg"     style={{ backgroundColor: "#f76b1c", color: "white" }}>
                   BOOK DEMONSTRATION
                 </button>
               </div>
@@ -578,7 +578,7 @@ const Reporting = () => {
             <p className="lead mb-5 mx-auto" style={{ maxWidth: '800px' }}>
               Book a demonstration today and discover how our powerful reporting tools can provide you with the insights you need to drive your practice forward.
             </p>
-            <button className="btn btn-warning btn-lg">
+            <button className="btn btn-lg"     style={{ backgroundColor: "#f76b1c", color: "white" }}>
               BOOK DEMONSTRATION
             </button>
           </div>

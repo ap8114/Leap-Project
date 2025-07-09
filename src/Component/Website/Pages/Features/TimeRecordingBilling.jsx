@@ -25,7 +25,7 @@ const TimeRecordingBilling = () => {
                                     Issue invoices in minutes and get paid on time with online payments.
                                 </p>
                                 <div className="d-flex flex-column flex-sm-row gap-3">
-                                    <button className="btn btn-warning text-white px-4 py-3 fw-bold">
+                                    <button className="btn   px-4 py-3 fw-bold"     style={{ backgroundColor: "#f76b1c", color: "white" }}>
                                         Book Demonstration
                                     </button>
                                     <button className="btn btn-outline-light px-4 py-3 fw-bold">
@@ -165,7 +165,7 @@ const TimeRecordingBilling = () => {
                                 <span className="d-block text-custom-light">Start your free trial today.</span>
                             </h2>
                             <div className="d-flex gap-3">
-                                <button className="btn btn-warning text-white px-5 py-3 fw-medium">
+                                <button className="btn px-5 py-3 fw-medium"     style={{ backgroundColor: "#f76b1c", color: "white" }}>
                                     Get started
                                 </button>
                                 <button className="btn btn-light text-custom px-5 py-3 fw-medium">
@@ -207,7 +207,7 @@ const TimeRecordingBilling = () => {
                                             "This software has revolutionized our billing process. We've increased our billable hours by 15%
                                             and reduced the time spent on administrative tasks. The AI time tracking is a game-changer."
                                         </p>
-                                        <div className="text-warning">
+                                        <div className="" style={{color: '#f76b1c'}}>
                                             <i className="fas fa-star"></i>
                                             <i className="fas fa-star"></i>
                                             <i className="fas fa-star"></i>
@@ -233,7 +233,7 @@ const TimeRecordingBilling = () => {
                                             "The online payment system has dramatically improved our cash flow. Clients appreciate the
                                             transparency and ease of payment, and we've reduced our outstanding invoices by over 40%."
                                         </p>
-                                        <div className="text-warning">
+                                        <div className="" style={{color: '#f76b1c'}}>
                                             <i className="fas fa-star"></i>
                                             <i className="fas fa-star"></i>
                                             <i className="fas fa-star"></i>
@@ -259,7 +259,7 @@ const TimeRecordingBilling = () => {
                                             "Implementation was seamless and the support team is exceptional. The software has simplified
                                             our billing workflow and helped us capture billable time we were previously missing."
                                         </p>
-                                        <div className="text-warning">
+                                        <div className="" style={{color: '#f76b1c'}}>
                                             <i className="fas fa-star"></i>
                                             <i className="fas fa-star"></i>
                                             <i className="fas fa-star"></i>
