@@ -241,31 +241,24 @@ const PersonalInjury = () => {
                 answer: "Most firms are up and running within 24-48 hours. Our onboarding team provides personalized setup and training to ensure a smooth transition."
               }
             ].map((faq, index) => (
-              <div key={index} className="accordion-item border mb-3">
-                <h2 className="accordion-header" id={`heading${index}`}>
-                  <button 
-                    className="accordion-button collapsed" 
-                    type="button" 
-                    data-bs-toggle="collapse" 
-                    data-bs-target={`#collapse${index}`}
-                    aria-expanded={expandedFaq === index ? "true" : "false"}
-                    aria-controls={`collapse${index}`}
-                    onClick={() => toggleFaq(index)}
-                  >
-                    {faq.question}
-                  </button>
-                </h2>
-                <div 
-                  id={`collapse${index}`} 
-                  className={`accordion-collapse collapse ${expandedFaq === index ? 'show' : ''}`}
-                  aria-labelledby={`heading${index}`}
-                  data-bs-parent="#faqAccordion"
-                >
-                  <div className="accordion-body bg-light">
-                    {faq.answer}
-                  </div>
-                </div>
-              </div>
+             <div key={index} className="border mb-3 rounded overflow-hidden shadow">
+ 
+    <button 
+      type="button"
+      onClick={() => toggleFaq(index)}
+      className="w-full text-left px-5 py-4 font-semibold text-gray-800 bg-gray-100 hover:bg-gray-200 transition"
+    >
+      {faq.question}
+    </button>
+  
+
+  {expandedFaq === index && (
+    <div className="px-5 py-4 bg-white text-gray-700 border-t">
+      {faq.answer}
+    </div>
+  )}
+</div>
+
             ))}
           </div>
         </div>
