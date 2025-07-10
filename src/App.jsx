@@ -39,6 +39,8 @@ import Activity from "./Component/AdminDashboard/Activity/Activity";
 import Communications from "./Component/AdminDashboard/Communications/Communications";
 import Account from "./Component/AdminDashboard/Accounts/Account";
 import Contact from "./Component/AdminDashboard/Contact/Contact";
+import RecordPayment from "./Component/AdminDashboard/TimeBilling/RecordPayment";
+import NewBills from "./Component/AdminDashboard/TimeBilling/NewBlls";
 
 
 function App() {
@@ -96,7 +98,9 @@ function App() {
     location.pathname === "/personalinjury" ||
     location.pathname === "/contactus" ||
     location.pathname === "/company" ||
-    location.pathname === "/resources";
+    location.pathname === "/resources" ||
+    location.pathname === "/recordpayment";
+
 
   //  location.pathname === "/thelawsociety";
 
@@ -158,6 +162,8 @@ function App() {
               <Routes>
                 {/* AdminDashboard */}
                 <Route path="/dashboard" element={<Dashboard />} />
+                <Route path="/recordpayment" element={<RecordPayment />} />
+                 <Route path="/newbills" element={<NewBills />} />
                 <Route path="/matter" element={<Matter />} />
                 <Route path="/document" element={<Document />} />
                 <Route path="/Client" element={<Client />} />
