@@ -45,7 +45,7 @@ const Sidebar = ({ collapsed, menuItemClick }) => {
 
   return (
     <div className={`sidebar-container ${collapsed ? "collapsed" : ""}`}>
-      <div className="sidebar">
+      <div className="sidebar ">
         <ul className="menu">
           {adminMenuItems.map((item) => (
             <li
