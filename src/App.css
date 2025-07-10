@@ -240,7 +240,7 @@ select.form-input {
   height: 95px;
   position: fixed;
   z-index: 5;
-  background-color: #fff;
+  background-color: #e5e7eb;
   width: 100%;
   /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
 }

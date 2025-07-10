@@ -28,19 +28,18 @@ const Sidebar = ({ collapsed, menuItemClick }) => {
 
   const adminMenuItems = [
     { path: "/dashboard", icon: "fa-solid fa-gauge", text: "Dashboard" },
-    { path: "/matter", icon: "fa-solid fa-scale-balanced", text: "Matters" },
-    { path: "/client", icon: "fa-solid fa-handshake", text: "Clients & CRM" },
-    { path: "/document", icon: "fa-solid fa-file-lines", text: "Documents" },
     { path: "/calendar", icon: "fa-solid fa-calendar-check", text: "Calendar" },
-    { path: "/tasksworkflow", icon: "fa-solid fa-diagram-project", text: "Tasks & Workflow" },
-    { path: "/timebilling", icon: "fa-solid fa-stopwatch", text: "Time & Billing" },
-    { path: "/reportsanalytics", icon: "fa-solid fa-chart-line", text: "Reports & Analytics" },
-    { path: "/adminpage", icon: "fa-solid fa-user-shield", text: "Admin" },
-    { path: "/activity", icon: "fa-solid fa-clock-rotate-left", text: "Activity" },
-    { path: "/accounts", icon: "fa-solid fa-file-invoice-dollar", text: "Accounts" },
-    { path: "/communications", icon: "fa-solid fa-comments", text: "Communications" },
-    { path: "/contact", icon: "fa-solid fa-envelope", text: "Contact" },
-    { path: "/setting", icon: "fa-solid fa-gear", text: "Settings" }
+    { path: "/tasksworkflow", icon: "fa-solid fa-diagram-project", text: "Tasks" },
+    { path: "/matter", icon: "fa-solid fa-scale-balanced", text: "Matters" },
+     { path: "/contact", icon: "fa-solid fa-envelope", text: "Contact" },
+      { path: "/activity", icon: "fa-solid fa-clock-rotate-left", text: "Activity" },
+       { path: "/timebilling", icon: "fa-solid fa-stopwatch", text: "Time & Billing" },
+       { path: "/accounts", icon: "fa-solid fa-file-invoice-dollar", text: "Accounts" },
+       { path: "/document", icon: "fa-solid fa-file-lines", text: "Documents" },
+       { path: "/communications", icon: "fa-solid fa-comments", text: "Communications" },
+        { path: "/reportsanalytics", icon: "fa-solid fa-chart-line", text: "Reports & Analytics" },
+        { path: "/setting", icon: "fa-solid fa-gear", text: "Settings" }
+   
   ];
 
   return (
