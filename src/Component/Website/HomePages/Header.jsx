@@ -5,165 +5,178 @@ import "./Website.css"; // Assuming you have a CSS file for styling
 import logofasttrack from "../../../assets/logofasttrack.png"; // Adjust the path as necessary
 
 const Header = () => {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [showFeatures, setShowFeatures] = useState(false);
-    const [openMobileDropdown, setOpenMobileDropdown] = useState(null);
-    return (
-        <div>
-            <nav className="navbars navbar-expand-lg navbar-dark  p-3">
-                <div className="container-fluid px-4 d-flex align-items-center justify-content-between">
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [showFeatures, setShowFeatures] = useState(false);
+  const [openMobileDropdown, setOpenMobileDropdown] = useState(null);
+  return (
+    <div>
+      <nav className="navbars navbar-expand-lg navbar-dark  p-3">
+        <div className="container-fluid px-4 d-flex align-items-center justify-content-between">
+          <Link to="/" className="text-decoration-none">
+            <div className="d-flex align-items-center">
+              <img
+                src={logofasttrack}
+                alt="Logo"
+                style={{ height: "70px", width: "170px" }}
+              />
+            </div>
+          </Link>
 
-                    <Link to="/" className="text-decoration-none">
-                        <div className="d-flex align-items-center">
-                            <img
-                                src={logofasttrack}
-                                alt="Logo"
-                                style={{ height: '70px', width: '170px' }}
-                            />
-                        </div>
-                    </Link>
-
-          {/* Toggle button for mobile */}
+          {/* Toggle button for mobile - Dark Version */}
           <button
-            className="navbar-toggler d-lg-none"
+            className="navbar-toggler d-lg-none border-0"
             type="button"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-expanded={isMenuOpen ? "true" : "false"}
+            aria-label="Toggle navigation"
           >
-            <span className="navbar-toggler-icon"></span>
+            <span
+              className="navbar-toggler-icon"
+              style={{
+                backgroundImage:
+                  "url(\"data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 0, 0, 0.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e\")",
+              }}
+            ></span>
           </button>
 
           {/* Desktop Nav items */}
           <ul className="navbar-nav d-none d-lg-flex flex-row gap-3 mx-auto mb-0">
             {/* Features Dropdown */}
-             <li
-                            className={`nav-item dropdown position-static${showFeatures ? " show" : ""
-                                }`}
-                            onMouseEnter={() => setShowFeatures(true)}
-                            onMouseLeave={() => setShowFeatures(false)}
-                        >
-                            <a
-                                className="nav-link dropdown-toggle"
-                                href="#features"
-                                id="featuresDropdown"
-                                role="button"
-                                data-bs-toggle="dropdown"
-                                aria-expanded="false"
-                            >
-                                Features
-                            </a>
-                            <div
-                                className="dropdown-menu shadow border-0 mt-2 p-4 rounded-4"
-                                aria-labelledby="featuresDropdown"
-                                style={{ minWidth: "1100px", maxWidth: "1200px" }}
-                            >
-                                <div className="row">
-                                    {/* Column 1: Features List */}
-                                    <div className="col-4">
-                                        <Link
-                                            to="/client-and-matter-management"
-                                            className="text-decoration-none text-dark"
-                                        >
-                                            <div className="rounded-3 mb-2">
-                                                <div className="fw-semibold">
-                                                    Client and matter management
-                                                </div>
-                                                {/* <div className="small text-muted">
+            <li
+              className={`nav-item dropdown position-static${
+                showFeatures ? " show" : ""
+              }`}
+              onMouseEnter={() => setShowFeatures(true)}
+              onMouseLeave={() => setShowFeatures(false)}
+            >
+              <a
+                className="nav-link dropdown-toggle"
+                href="#features"
+                id="featuresDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Features
+              </a>
+              <div
+                className="dropdown-menu shadow border-0 mt-2 p-4 rounded-4"
+                aria-labelledby="featuresDropdown"
+                style={{ minWidth: "1100px", maxWidth: "1200px" }}
+              >
+                <div className="row">
+                  {/* Column 1: Features List */}
+                  <div className="col-6">
+                    <Link
+                      to="/client-and-matter-management"
+                      className="text-decoration-none text-dark"
+                    >
+                      <div className="rounded-3 mb-2">
+                        <div className="fw-semibold">
+                          Client and matter management
+                        </div>
+                        {/* <div className="small text-muted">
                                                     Manage and collaborate on matters in one secure and
                                                     searchable location
                                                 </div> */}
-                                            </div>
-                                        </Link>
+                      </div>
+                    </Link>
 
-                                        <Link
-                                            to="/document-automation"
-                                            className="text-decoration-none text-dark"
-                                        >
-                                            <div className="mb-2">
-                                                <div className="fw-semibold">
-                                                    Document automation and management
-                                                </div>
-                                                {/* <div className="small text-muted">
+                    <Link
+                      to="/document-automation"
+                      className="text-decoration-none text-dark"
+                    >
+                      <div className="mb-2">
+                        <div className="fw-semibold">
+                          Document automation and management
+                        </div>
+                        {/* <div className="small text-muted">
                                                     Utilise fully automated and integrated legal forms and
                                                     precedents
                                                 </div> */}
-                                            </div>
-                                        </Link>
+                      </div>
+                    </Link>
 
-                                        <Link
-                                            to="/timerecordingbilling"
-                                            className="text-decoration-none text-dark"
-                                        >
-                                            <div className="mb-2">
-                                                <div className="fw-semibold">
-                                                    Time recording and billing
-                                                </div>
-                                                {/* <div className="small text-muted">
+                    <Link
+                      to="/timerecordingbilling"
+                      className="text-decoration-none text-dark"
+                    >
+                      <div className="mb-2">
+                        <div className="fw-semibold">
+                          Time recording and billing
+                        </div>
+                        {/* <div className="small text-muted">
                                                     Revolutionary AI time-tracking tools, capture every
                                                     billable minute for your firm
                                                 </div> */}
-                                            </div>
-                                        </Link>
+                      </div>
+                    </Link>
 
-
-                                        <Link to="/reporting" className="text-decoration-none text-dark">
-                                            <div className="mb-2">
-                                                <div className="fw-semibold">Reporting</div>
-                                                {/* <div className="small text-muted">
+                    <Link
+                      to="/reporting"
+                      className="text-decoration-none text-dark"
+                    >
+                      <div className="mb-2">
+                        <div className="fw-semibold">Reporting</div>
+                        {/* <div className="small text-muted">
                                                     Gain quick insights into your data to make intelligent
                                                     decisions across your firm
                                                 </div> */}
-                                            </div>
-                                        </Link>
+                      </div>
+                    </Link>
 
-                                        <Link to="/clientservice" className="text-decoration-none text-dark">
-                                            <div>
-                                                <div className="fw-semibold">Client service</div>
-                                                {/* <div className="small text-muted">
+                    <Link
+                      to="/clientservice"
+                      className="text-decoration-none text-dark"
+                    >
+                      <div>
+                        <div className="fw-semibold">Client service</div>
+                        {/* <div className="small text-muted">
                                                     Connect, communicate and collaborate with clients online
                                                 </div> */}
-                                            </div>
-                                        </Link>
-                                    </div>
+                      </div>
+                    </Link>
+                  </div>
 
-                                    <div className="col-4 border-start">
-                                        <div className="mb-4 d-flex align-items-start">
-                                            <img
-                                                src="https://i.ibb.co/6y9wK3y/mobile-working.png"
-                                                alt="Mobile Working"
-                                                className="rounded-3 me-3"
-                                                style={{ width: 90, height: 70, objectFit: "cover" }}
-                                            />
-                                            <div>
-                                                <div className="text-custom fw-semibold small mb-1">
-                                                    MOBILE WORKING
-                                                </div>
-                                                <div className="small text-muted">
-                                                    Work on your matters effectively away from the office
-                                                    on any device
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="d-flex align-items-start">
-                                            <img
-                                                src="https://i.ibb.co/6Jm1qkQ/integrations.png"
-                                                alt="Apps & Integrations"
-                                                className="rounded-3 me-3"
-                                                style={{ width: 90, height: 70, objectFit: "cover" }}
-                                            />
-                                            <div>
-                                                <div className="text-custom fw-semibold small mb-1">
-                                                    APPS & INTEGRATIONS
-                                                </div>
-                                                <div className="small text-muted">
-                                                    Seamless integrations provide additional value to your
-                                                    Clio subscription
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
+                  <div className="col-6 border-start">
+                    <div className="mb-4 d-flex align-items-start">
+                      <img
+                        src="https://i.ibb.co/WbCNCfh/image.png"
+                        alt="Mobile Working"
+                        className="rounded-3 me-3"
+                        style={{ width: 90, height: 70, objectFit: "cover" }}
+                      />
+                      <div>
+                        <div className="text-custom fw-semibold small mb-1">
+                          MOBILE WORKING
+                        </div>
+                        <div className="small text-muted">
+                          Work on your matters effectively away from the office
+                          on any device
+                        </div>
+                      </div>
+                    </div>
+                    <div className="d-flex align-items-start">
+                      <img
+                        src="https://i.ibb.co/6c5QbfXx/image.png"
+                        alt="Apps & Integrations"
+                        className="rounded-3 me-3"
+                        style={{ width: 90, height: 70, objectFit: "cover" }}
+                      />
+                      <div>
+                        <div className="text-custom fw-semibold small mb-1">
+                          APPS & INTEGRATIONS
+                        </div>
+                        <div className="small text-muted">
+                          Seamless integrations provide additional value to your
+                          Clio subscription
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
 
             {/* Solutions Dropdown */}
             <li className="nav-item dropdown position-static">
@@ -189,7 +202,10 @@ const Header = () => {
                       <div className="col-12">
                         {" "}
                         {/* Changed to single column for better mobile display */}
-                        <Link to="/conveyancing" className="dropdown-item fw-semibold">
+                        <Link
+                          to="/conveyancing"
+                          className="dropdown-item fw-semibold"
+                        >
                           Conveyancing{" "}
                         </Link>
                         <Link
@@ -213,7 +229,10 @@ const Header = () => {
                         >
                           Personal injury
                         </Link>
-                        <Link to="/estateprobate" className="dropdown-item fw-semibold">
+                        <Link
+                          to="/estateprobate"
+                          className="dropdown-item fw-semibold"
+                        >
                           Estates and probate
                         </Link>
                       </div>
@@ -258,185 +277,27 @@ const Header = () => {
               </div>
             </li>
             {/* Company Dropdown */}
-            <li className="nav-item dropdown position-static">
-              <a
-                className="nav-link dropdown-toggle"
-                href="#company"
-                id="companyDropdown"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Company
-              </a>
-              <div
-                className="dropdown-menu shadow border-0 mt-2 p-4 rounded-4"
-                aria-labelledby="companyDropdown"
-                style={{ minWidth: "950px", maxWidth: "1100px" }}
-              >
-                <div className="row">
-                  {/* Company */}
-                  <div className="col-3">
-                    <h6 className="dropdown-header text-primary">COMPANY</h6>
-                    <a className="dropdown-item fw-semibold" href="#leadership">
-                      Leadership
-                    </a>
-                    <div className="small text-muted mb-2 ms-3">
-                      We understand that our greatest asset is our people
-                    </div>
-                    <a
-                      className="dropdown-item fw-semibold"
-                      href="#innovations"
-                    >
-                      Innovations
-                    </a>
-                    <div className="small text-muted ms-3">
-                      LEAP is the result of valuable feedback from users across
-                      the globe
-                    </div>
-                  </div>
-                  {/* Business Partners */}
-                  <div className="col-3 border-start">
-                    <h6 className="dropdown-header text-primary">
-                      BUSINESS PARTNERS
-                    </h6>
-                    <a className="dropdown-item fw-semibold" href="#partners">
-                      Partner Network Directory
-                    </a>
-                    <div className="small text-muted mb-2 ms-3">
-                      Certified Consultants, Accounting, Bookkeepers and IT
-                      Partners
-                    </div>
-                    <a
-                      className="dropdown-item fw-semibold"
-                      href="#joinpartner"
-                    >
-                      Join our Partner Network
-                    </a>
-                    <div className="small text-muted mb-2 ms-3">
-                      For individuals and companies skilled in providing support
-                      to law firms
-                    </div>
-                    <a className="dropdown-item fw-semibold" href="#lawsociety">
-                      The Law Society
-                    </a>
-                    <div className="small text-muted ms-3">
-                      Proud to be a strategic partner of The Law Society
-                    </div>
-                  </div>
-                  {/* Ideas Hub */}
-                  <div className="col-3 border-start">
-                    <div className="mb-3">
-                      <img
-                        src="https://i.ibb.co/4VwQyqF/ideas-hub.png"
-                        alt="Ideas Hub"
-                        className="rounded-3 mb-2"
-                        style={{ width: 120, height: 70, objectFit: "cover" }}
-                      />
-                    </div>
-                    <div>
-                      <div className="text-primary fw-semibold small mb-1">
-                        IDEAS HUB
-                      </div>
-                      <div className="small text-muted">
-                        Provide feedback, read discussions and vote on improved
-                        LEAP features
-                      </div>
-                    </div>
-                  </div>
+            <Link to="/company" className="text-decoration-none">
+              <li className="nav-item">
+                <div className="nav-link" role="button">
+                  Company
                 </div>
-              </div>
-            </li>
+              </li>
+            </Link>
             {/* Resources Dropdown */}
-            <li className="nav-item dropdown position-static">
-              <a
-                className="nav-link dropdown-toggle"
-                href="#resources"
-                id="resourcesDropdown"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Resources
-              </a>
-              <div
-                className="dropdown-menu shadow border-0 mt-2 p-4 rounded-4"
-                aria-labelledby="resourcesDropdown"
-                style={{ minWidth: "950px", maxWidth: "1100px" }}
-              >
-                <div className="row">
-                  {/* Resources */}
-                  <div className="col-3">
-                    <h6 className="dropdown-header text-primary">RESOURCES</h6>
-                    <a
-                      className="dropdown-item fw-semibold"
-                      href="#testimonials"
-                    >
-                      Testimonials
-                    </a>
-                    <div className="small text-muted mb-2 ms-3">
-                      Don't take our word for it, hear from our clients
-                    </div>
-                    <a className="dropdown-item fw-semibold" href="#brochures">
-                      Brochures and guides
-                    </a>
-                    <div className="small text-muted mb-2 ms-3">
-                      Learn more about how LEAP can improve your practice
-                    </div>
-                    <a
-                      className="dropdown-item fw-semibold"
-                      href="#whitepapers"
-                    >
-                      White papers
-                    </a>
-                    <div className="small text-muted ms-3">
-                      Thought leadership articles to help you overcome
-                      challenges in your firm
-                    </div>
-                  </div>
-                  {/* Webinars & Events */}
-                  <div className="col-3 border-start">
-                    <h6 className="dropdown-header text-primary">
-                      WEBINARS & EVENTS
-                    </h6>
-                    <a className="dropdown-item fw-semibold" href="#events">
-                      Upcoming events & webinars
-                    </a>
-                    <div className="small text-muted ms-3">
-                      LEAP hosts and attends industry events both online and in
-                      person across the UK
-                    </div>
-                  </div>
-
-                  {/* Help Centre */}
-                  <div className="col-3 border-start">
-                    <div className="mb-3">
-                      <img
-                        src="https://i.ibb.co/4VwQyqF/ideas-hub.png"
-                        alt="LEAP Help Centre"
-                        className="rounded-3 mb-2"
-                        style={{ width: 120, height: 70, objectFit: "cover" }}
-                      />
-                    </div>
-                    <div>
-                      <div className="text-primary fw-semibold small mb-1">
-                        LEAP HELP CENTRE
-                      </div>
-                      <div className="small text-muted">
-                        Browse our articles, access support and engage with the
-                        LEAP Community
-                      </div>
-                    </div>
-                  </div>
+            <Link to="/resources" className="text-decoration-none">
+              <li className="nav-item">
+                <div className="nav-link" role="button">
+                  Resources
                 </div>
-              </div>
-            </li>
+              </li>
+            </Link>
             {/* Contact */}
-            <li className="nav-item">
-              <a className="nav-link" href="#contact">
-                Contact
-              </a>
-            </li>
+            <Link to="/contactus" className="text-decoration-none">
+              <li className="nav-item">
+                <div className="nav-link">Contact</div>
+              </li>
+            </Link>
           </ul>
 
           {/* Desktop Buttons */}
@@ -467,7 +328,7 @@ const Header = () => {
                   Features
                 </button>
                 {openMobileDropdown === "features" && (
-                  <div className="ps-3 text-white">
+                  <div className="ps-3 text-dark">
                     <Link
                       to="/client-and-matter-management"
                       className="dropdown-item"
@@ -486,11 +347,6 @@ const Header = () => {
                     <Link to="/clientservice" className="dropdown-item">
                       Client service
                     </Link>
-                    <div className="dropdown-item">Security and compliance</div>
-                    <div className="dropdown-item">Legal accounting</div>
-                    <div className="dropdown-item">NEW: Matter AI</div>
-                    <div className="dropdown-item">NEW: Prompts</div>
-                    <div className="dropdown-item">NEW: LEAP Leads</div>
                   </div>
                 )}
               </li>
@@ -507,85 +363,41 @@ const Header = () => {
                   Solutions
                 </button>
                 {openMobileDropdown === "solutions" && (
-                  <div className="ps-3 text-white">
-                    <div className="dropdown-item fw-semibold">
-                      Starting your own law firm?
-                    </div>
-                    <div className="dropdown-item fw-semibold">
-                      For mid-sized law firms
-                    </div>
-                    <div className="dropdown-item">Conveyancing</div>
-                    <div className="dropdown-item">Corporate & Commercial</div>
-                    <div className="dropdown-item">Criminal</div>
-                    <div className="dropdown-item">Employment</div>
-                    <div className="dropdown-item">Estates and probate</div>
-                    <div className="dropdown-item">Family</div>
-                    <div className="dropdown-item">Immigration</div>
-                    <div className="dropdown-item">Lifetime planning</div>
-                    <div className="dropdown-item">Personal injury</div>
-                    <div className="dropdown-item">Specialist litigation</div>
-                    <div className="dropdown-item">Legal Aid</div>
-                    <div className="dropdown-item">Switch to LEAP</div>
+                  <div className="ps-3 text-dark">
+                    <Link to="/conveyancing" className="dropdown-item">
+                      Conveyancing
+                    </Link>
+                    <Link to="/family" className="dropdown-item">
+                      Family
+                    </Link>
+                    <Link to="/employment" className="dropdown-item">
+                      Employment
+                    </Link>
+                    <Link to="/personalinjury" className="dropdown-item">
+                      Personal injury
+                    </Link>
+                    <Link to="/estateprobate" className="dropdown-item">
+                      Estates and probate
+                    </Link>
                   </div>
                 )}
               </li>
               {/* Company Mobile Dropdown */}
-              <li className="nav-item">
-                <button
-                  className="nav-link text-light w-100 text-start bg-transparent border-0"
-                  onClick={() =>
-                    setOpenMobileDropdown(
-                      openMobileDropdown === "company" ? null : "company"
-                    )
-                  }
-                >
-                  Company
-                </button>
-                {openMobileDropdown === "company" && (
-                  <div className="ps-3 text-white">
-                    <div className="dropdown-item">Leadership</div>
-                    <div className="dropdown-item">Careers</div>
-                    <div className="dropdown-item">Innovations</div>
-                    <div className="dropdown-item">Contact us</div>
-                    <div className="dropdown-item">Client Support</div>
-                    <div className="dropdown-item">LEAP Help Centre</div>
-                    <div className="dropdown-item">
-                      Partner Network Directory
-                    </div>
-                    <div className="dropdown-item">
-                      Join our Partner Network
-                    </div>
-                    <div className="dropdown-item">The Law Society</div>
-                    <div className="dropdown-item">Ideas Hub</div>
-                  </div>
-                )}
-              </li>
+              <Link to="/company" className="text-decoration-none">
+                <li className="nav-item">
+                  <button className="nav-link text-light w-100 text-start bg-transparent border-0">
+                    Company
+                  </button>
+                </li>
+              </Link>
               {/* Resources Mobile Dropdown */}
-              <li className="nav-item">
-                <button
-                  className="nav-link text-light w-100 text-start bg-transparent border-0"
-                  onClick={() =>
-                    setOpenMobileDropdown(
-                      openMobileDropdown === "resources" ? null : "resources"
-                    )
-                  }
-                >
-                  Resources
-                </button>
-                {openMobileDropdown === "resources" && (
-                  <div className="ps-3 text-white">
-                    <div className="dropdown-item">Testimonials</div>
-                    <div className="dropdown-item">Brochures and guides</div>
-                    <div className="dropdown-item">White papers</div>
-                    <div className="dropdown-item">
-                      Upcoming events & webinars
-                    </div>
-                    <div className="dropdown-item">Blog</div>
-                    <div className="dropdown-item">LinkedIn</div>
-                    <div className="dropdown-item">LEAP Help Centre</div>
-                  </div>
-                )}
-              </li>
+              <Link to="/resources" className="text-decoration-none">
+                <li className="nav-item">
+                  <button className="nav-link text-light w-100 text-start bg-transparent border-0">
+                    Resources
+                  </button>
+                </li>
+              </Link>
               {/* Contact */}
               <li className="nav-item">
                 <a className="nav-link text-light" href="#contact">
