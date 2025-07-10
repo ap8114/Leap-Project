@@ -1,13 +1,44 @@
-import React from 'react'
+import React, { useState } from 'react';
+
 import Header from '../../HomePages/Header'
 import FooterSection from '../../HomePages/FooterSection'
 import { Row, Col, Container, Card, Button, Accordion, ListGroup } from 'react-bootstrap'
 
 
 
+
+
+
 const ClientAndMatterManagement = () => {
 
+
+     const [activeIndex, setActiveIndex] = useState(null);
+
+  const toggleFaq = (index) => {
+    setActiveIndex(activeIndex === index ? null : index);};
     
+const faqs = [
+  {
+    question: 'What does a legal practice system do?',
+    answer:
+      'A legal practice system is a specialized platform that helps law firms manage client relationships, case files, documents, deadlines, billing, and compliance requirements in an integrated digital environment, replacing traditional paper-based systems.',
+  },
+  {
+    question: "How can this improve our firm's operations?",
+    answer:
+      'By centralizing information, automating routine tasks, ensuring compliance, and providing remote access, our solution reduces administrative burdens, minimizes errors, and allows legal professionals to focus on client service rather than paperwork.',
+  },
+  {
+    question: 'Can we create automated legal processes?',
+    answer:
+      'Yes, our platform includes tools to automate document assembly, deadline tracking, client communications, and other repetitive tasks specific to your practice areas, all without requiring programming knowledge.',
+  },
+  {
+    question: 'What efficiency gains can we expect?',
+    answer:
+      'Firms typically see 30–50% reduction in administrative time, faster conflict checking, improved billing accuracy, better deadline compliance, and enhanced collaboration among team members.',
+  },
+];
     return (
         <div>
             <Header />
@@ -230,37 +261,37 @@ const ClientAndMatterManagement = () => {
                 </section>
 
                 {/* FAQ Section */}
-                <section className="py-5 bg-white">
-                    <Container fluid className="px-lg-5">
-                        <h2 className="text-center mb-5" style={{ color: '#2c3e50' }}>Common Questions</h2>
-                        <Accordion flush>
-                            <Accordion.Item eventKey="0">
-                                <Accordion.Header style={{ color: '#2c3e50' }}>What does a legal practice system do?</Accordion.Header>
-                                <Accordion.Body>
-                                    A legal practice system is a specialized platform that helps law firms manage client relationships, case files, documents, deadlines, billing, and compliance requirements in an integrated digital environment, replacing traditional paper-based systems.
-                                </Accordion.Body>
-                            </Accordion.Item>
-                            <Accordion.Item eventKey="1">
-                                <Accordion.Header style={{ color: '#2c3e50' }}>How can this improve our firm's operations?</Accordion.Header>
-                                <Accordion.Body>
-                                    By centralizing information, automating routine tasks, ensuring compliance, and providing remote access, our solution reduces administrative burdens, minimizes errors, and allows legal professionals to focus on client service rather than paperwork.
-                                </Accordion.Body>
-                            </Accordion.Item>
-                            <Accordion.Item eventKey="2">
-                                <Accordion.Header style={{ color: '#2c3e50' }}>Can we create automated legal processes?</Accordion.Header>
-                                <Accordion.Body>
-                                    Yes, our platform includes tools to automate document assembly, deadline tracking, client communications, and other repetitive tasks specific to your practice areas, all without requiring programming knowledge.
-                                </Accordion.Body>
-                            </Accordion.Item>
-                            <Accordion.Item eventKey="3">
-                                <Accordion.Header style={{ color: '#2c3e50' }}>What efficiency gains can we expect?</Accordion.Header>
-                                <Accordion.Body>
-                                    Firms typically see 30-50% reduction in administrative time, faster conflict checking, improved billing accuracy, better deadline compliance, and enhanced collaboration among team members.
-                                </Accordion.Body>
-                            </Accordion.Item>
-                        </Accordion>
-                    </Container>
-                </section>
+         <section className="py-12 bg-white">
+      <div className="max-w-6xl mx-auto px-4">
+        <h2 className="text-center text-3xl font-bold mb-8 text-gray-800">Common Questions</h2>
+        <div className="space-y-4">
+          {faqs.map((faq, index) => (
+            <div key={index} className="border border-gray-200 rounded-md shadow-sm">
+              <button
+                onClick={() => toggleFaq(index)}
+                className="w-full px-6 py-4 text-left flex justify-between items-center text-gray-800 font-medium text-lg focus:outline-none"
+              >
+                <span>{faq.question}</span>
+                <svg
+                  className={`w-5  transform transition-transform duration-200 ${
+                    activeIndex === index ? 'rotate-180' : ''
+                  }`}
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              {activeIndex === index && (
+                <div className="px-6 pb-4 text-gray-600">{faq.answer}</div>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
 
                 {/* CTA Section */}
                 <section className="py-5 mb-2" style={{ backgroundColor: '#2c3e50', color: 'white' }}>

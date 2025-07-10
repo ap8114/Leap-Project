@@ -1,36 +1,38 @@
-import React, { useState } from 'react';
-import Header from '../../HomePages/Header';
-import FooterSection from '../../HomePages/FooterSection';
+import React, { useState } from "react";
+import Header from "../../HomePages/Header";
+import FooterSection from "../../HomePages/FooterSection";
 
 const ClientService = () => {
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
-  const [email, setEmail] = useState('');
-  const [phone, setPhone] = useState('');
-  const [company, setCompany] = useState('');
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [company, setCompany] = useState("");
   const [activeAccordion, setActiveAccordion] = useState(null);
 
   const toggleAccordion = (index) => {
     setActiveAccordion(activeAccordion === index ? null : index);
-  };
-
+  };  
   const faqItems = [
     {
       question: "What is LawConnect?",
-      answer: "LawConnect is a secure client portal that allows legal professionals to share documents, communicate, and collaborate with clients in a secure environment."
+      answer:
+        "LawConnect is a secure client portal that allows legal professionals to share documents, communicate, and collaborate with clients in a secure environment.",
     },
     {
       question: "How secure is my data?",
-      answer: "All data is stored on secure servers provided by Amazon Web Services, one of the world's largest and most secure data storage providers. LawConnect is SOC 2 Type 1 compliant, ensuring the highest standards for security and confidentiality."
+      answer:
+        "All data is stored on secure servers provided by Amazon Web Services, one of the world's largest and most secure data storage providers. LawConnect is SOC 2 Type 1 compliant, ensuring the highest standards for security and confidentiality.",
     },
     {
       question: "How do I share documents with clients?",
-      answer: "You can easily share documents with clients directly from your matter. Simply select the document you wish to share and choose the recipient from your contacts."
-    }
+      answer:
+        "You can easily share documents with clients directly from your matter. Simply select the document you wish to share and choose the recipient from your contacts.",
+    },
   ];
 
   return (
-    <div className='w-100'>
+    <div className="w-100">
       <Header />
 
       <div className="w-100 mt-3">
@@ -40,11 +42,16 @@ const ClientService = () => {
             <div className="row align-items-center g-5 py-5">
               <div className="col-lg-6">
                 <div className="small mb-3">Powered by lawconnect</div>
-                <h1 className="display-4 fw-bold mb-4">Streamline your client communication</h1>
+                <h1 className="display-4 fw-bold mb-4">
+                  Streamline your client communication
+                </h1>
                 <p className="lead mb-4">
                   Experience simplified and secure client communication through FastTrack Software's integrated customizable client portal. Sign documents electronically, share correspondence, accept payments and collaborate in real-time directly from your matter.
                 </p>
-                <button className="btn btn-lg px-4"  style={{ backgroundColor: '#f76b1c', color: 'white' }}>
+                <button
+                  className="btn btn-lg px-4"
+                  style={{ backgroundColor: "#f76b1c", color: "white" }}
+                >
                   BOOK DEMONSTRATION
                 </button>
               </div>
@@ -61,10 +68,21 @@ const ClientService = () => {
 
         {/* Features Overview */}
         <div className="container px-4 py-5">
-          <h2 className="text-center display-5 fw-bold mb-5">Secure document sharing made simple</h2>
+          <h2 className="text-center display-5 fw-bold mb-5">
+            Secure document sharing made simple
+          </h2>
           <div className="d-flex flex-wrap justify-content-center gap-2 mb-5">
-            {['Secure data', 'Revoke access', 'Share large files', 'Your firm\'s brand', 'Get paid faster'].map((feature, index) => (
-              <span key={index} className="badge bg-light text-dark px-3 py-2 rounded-pill">
+            {[
+              "Secure data",
+              "Revoke access",
+              "Share large files",
+              "Your firm's brand",
+              "Get paid faster",
+            ].map((feature, index) => (
+              <span
+                key={index}
+                className="badge bg-light text-dark px-3 py-2 rounded-pill"
+              >
                 {feature}
               </span>
             ))}
@@ -74,12 +92,18 @@ const ClientService = () => {
           <div className="row align-items-center g-5 py-5">
             <div className="col-lg-6">
               <div className="small text-muted mb-2">Powered by lawconnect</div>
-              <h3 className="display-6 fw-bold mb-4">Safeguard your data with secure correspondence</h3>
+              <h3 className="display-6 fw-bold mb-4">
+                Safeguard your data with secure correspondence
+              </h3>
               <p className="text-muted mb-4">
                 Unlike email, which can be susceptible to cybersecurity breaches, hacking and unauthorized access, FastTrack Software offers a secure environment for sharing documents and working with clients.
               </p>
               <p className="text-muted">
-                You can work confidently and securely, without worrying that yours or your clients' files will fall into the wrong hands. All data is stored on secure servers provided by Amazon Web Services, one of the world's largest and most secure data storage providers.
+                You can work confidently and securely, without worrying that
+                yours or your clients' files will fall into the wrong hands. All
+                data is stored on secure servers provided by Amazon Web
+                Services, one of the world's largest and most secure data
+                storage providers.
               </p>
             </div>
             <div className="col-lg-6">
@@ -96,10 +120,13 @@ const ClientService = () => {
             <div className="col-lg-6 order-lg-2">
               <h3 className="display-6 fw-bold mb-4">Start work quickly</h3>
               <p className="text-muted mb-4">
-                Backed by industry leaders DocuSign, our integrated electronic signatures shorten the time it takes for a matter to start.
+                Backed by industry leaders DocuSign, our integrated electronic
+                signatures shorten the time it takes for a matter to start.
               </p>
               <p className="text-muted">
-                By requesting a signature online, directly from the matter for your Terms and Conditions, you can begin working immediately without waiting for returned documents in the post.
+                By requesting a signature online, directly from the matter for
+                your Terms and Conditions, you can begin working immediately
+                without waiting for returned documents in the post.
               </p>
             </div>
             <div className="col-lg-6 order-lg-1">
@@ -114,16 +141,23 @@ const ClientService = () => {
           {/* Security Certification */}
           <div className="row align-items-center g-5 py-5">
             <div className="col-lg-8">
-              <h3 className="display-6 fw-bold mb-4">Security and compliance</h3>
+              <h3 className="display-6 fw-bold mb-4">
+                Security and compliance
+              </h3>
               <p className="text-muted mb-4">
-                LawConnect is SOC 2 Type 1 compliant. This attests to our unwavering commitment to the highest standards for security and confidentiality in safeguarding our users' data.
+                LawConnect is SOC 2 Type 1 compliant. This attests to our
+                unwavering commitment to the highest standards for security and
+                confidentiality in safeguarding our users' data.
               </p>
               <p className="text-muted">
                 Our internal security controls underwent a rigorous and independent audit by AssuranceLab, culminating in this certification for all FastTrack Software subsidiaries, including LawConnect.
               </p>
             </div>
             <div className="col-lg-4 text-center">
-              <div className="rounded-circle bg-info d-flex align-items-center justify-content-center mx-auto" style={{ width: '200px', height: '200px' }}>
+              <div
+                className="rounded-circle bg-info d-flex align-items-center justify-content-center mx-auto"
+                style={{ width: "200px", height: "200px" }}
+              >
                 <div className="text-white text-center">
                   <div className="fw-bold fs-5">AICPA</div>
                   <div className="fw-bold display-6 mb-1">SOC</div>
@@ -135,38 +169,62 @@ const ClientService = () => {
 
           {/* Testimonial */}
           <div className="text-center py-5">
-            <div className="mx-auto mb-4 rounded-circle overflow-hidden" style={{ width: '80px', height: '80px' }}>
+            <div
+              className="mx-auto mb-4 rounded-circle overflow-hidden"
+              style={{ width: "80px", height: "80px" }}
+            >
               <img
                 src="https://readdy.ai/api/search-image?query=Professional%20headshot%20of%20a%20female%20lawyer%20or%20legal%20professional%20with%20neutral%20background%2C%20business%20attire%2C%20confident%20expression%2C%20high%20quality%20professional%20photo&width=100&height=100&seq=testimonial-4&orientation=squarish"
                 alt="Client testimonial"
                 className="w-100 h-100 object-fit-cover"
               />
             </div>
-            <p className="text-muted fst-italic mb-4 mx-auto" style={{ maxWidth: '800px' }}>
-              "LawConnect has transformed how we interact with clients. The secure document sharing and electronic signatures have cut our onboarding time in half while giving our clients peace of mind."
+            <p
+              className="text-muted fst-italic mb-4 mx-auto"
+              style={{ maxWidth: "800px" }}
+            >
+              "LawConnect has transformed how we interact with clients. The
+              secure document sharing and electronic signatures have cut our
+              onboarding time in half while giving our clients peace of mind."
             </p>
-            <p className="fw-bold">Jane Doe, Legal Partner at Smith & Associates</p>
+            <p className="fw-bold">
+              Jane Doe, Legal Partner at Smith & Associates
+            </p>
           </div>
 
           {/* Contact Form Section */}
           <div className="row align-items-center g-5 py-5">
             <div className="col-lg-6">
-              <h3 className="display-6 fw-bold mb-4">Provide 24/7 access to information and services</h3>
+              <h3 className="display-6 fw-bold mb-4">
+                Provide 24/7 access to information and services
+              </h3>
               <ul className="list-unstyled">
                 <li className="mb-2">
-                  <i className="fas fa-check-circle  me-2" style={{color: '#f76b1c'}}></i>
+                  <i
+                    className="fas fa-check-circle  me-2"
+                    style={{ color: "#f76b1c" }}
+                  ></i>
                   Secure document sharing
                 </li>
                 <li className="mb-2">
-                  <i className="fas fa-check-circle  me-2" style={{color: '#f76b1c'}} ></i>
+                  <i
+                    className="fas fa-check-circle  me-2"
+                    style={{ color: "#f76b1c" }}
+                  ></i>
                   Electronic signatures
                 </li>
                 <li className="mb-2">
-                  <i className="fas fa-check-circle me-2" style={{color: '#f76b1c'}}></i>
+                  <i
+                    className="fas fa-check-circle me-2"
+                    style={{ color: "#f76b1c" }}
+                  ></i>
                   Client communication
                 </li>
                 <li className="mb-2">
-                  <i className="fas fa-check-circle  me-2" style={{color: '#f76b1c'}}></i>
+                  <i
+                    className="fas fa-check-circle  me-2"
+                    style={{ color: "#f76b1c" }}
+                  ></i>
                   24/7 portal access
                 </li>
               </ul>
@@ -174,7 +232,9 @@ const ClientService = () => {
             <div className="col-lg-6 bg-white p-4 rounded shadow">
               <form className="row g-3">
                 <div className="col-md-6">
-                  <label htmlFor="firstName" className="form-label">First Name</label>
+                  <label htmlFor="firstName" className="form-label">
+                    First Name
+                  </label>
                   <input
                     type="text"
                     id="firstName"
@@ -184,7 +244,9 @@ const ClientService = () => {
                   />
                 </div>
                 <div className="col-md-6">
-                  <label htmlFor="lastName" className="form-label">Last Name</label>
+                  <label htmlFor="lastName" className="form-label">
+                    Last Name
+                  </label>
                   <input
                     type="text"
                     id="lastName"
@@ -194,7 +256,9 @@ const ClientService = () => {
                   />
                 </div>
                 <div className="col-12">
-                  <label htmlFor="email" className="form-label">Email</label>
+                  <label htmlFor="email" className="form-label">
+                    Email
+                  </label>
                   <input
                     type="email"
                     id="email"
@@ -204,7 +268,9 @@ const ClientService = () => {
                   />
                 </div>
                 <div className="col-12">
-                  <label htmlFor="phone" className="form-label">Phone Number</label>
+                  <label htmlFor="phone" className="form-label">
+                    Phone Number
+                  </label>
                   <input
                     type="tel"
                     id="phone"
@@ -214,7 +280,9 @@ const ClientService = () => {
                   />
                 </div>
                 <div className="col-12">
-                  <label htmlFor="company" className="form-label">Company</label>
+                  <label htmlFor="company" className="form-label">
+                    Company
+                  </label>
                   <input
                     type="text"
                     id="company"
@@ -227,12 +295,15 @@ const ClientService = () => {
                   <button
                     type="submit"
                     className="btn  w-100 py-2"
-                    style={{ backgroundColor: '#f76b1c', color: 'white' }}
+                    style={{ backgroundColor: "#f76b1c", color: "white" }}
                   >
                     SEND REQUEST
                   </button>
                   <p className="small text-center text-muted mt-2">
-                    By submitting this form, you agree to our <a href="#" className="text-warning text-decoration-none">Privacy Policy</a>
+                    By submitting this form, you agree to our{" "}
+                    <a href="#" className="text-warning text-decoration-none">
+                      Privacy Policy
+                    </a>
                   </p>
                 </div>
               </form>
@@ -244,9 +315,15 @@ const ClientService = () => {
             <div className="d-flex flex-column flex-md-row justify-content-between align-items-center">
               <div className="mb-3 mb-md-0">
                 <h3 className="fw-bold mb-2">Access your shared documents</h3>
-                <p className="text-muted mb-0">Click below to access documents that have been shared with you.</p>
+                <p className="text-muted mb-0">
+                  Click below to access documents that have been shared with
+                  you.
+                </p>
               </div>
-              <button className="btn px-4" style={{ backgroundColor: '#f76b1c', color: 'white' }}>
+              <button
+                className="btn px-4"
+                style={{ backgroundColor: "#f76b1c", color: "white" }}
+              >
                 ACCESS DOCUMENTS
               </button>
             </div>
@@ -254,8 +331,10 @@ const ClientService = () => {
 
           {/* FAQ Section */}
           <div className="py-5">
-            <h3 className="text-center display-6 fw-bold mb-5">Frequently asked questions</h3>
-            <div className="mx-auto" style={{ maxWidth: '800px' }}>
+            <h3 className="text-center display-6 fw-bold mb-5">
+              Frequently asked questions
+            </h3>
+            <div className="mx-auto" style={{ maxWidth: "800px" }}>
               {faqItems.map((item, index) => (
                 <div key={index} className="border-bottom pb-3 mb-3">
                   <button
@@ -263,12 +342,16 @@ const ClientService = () => {
                     className="d-flex justify-content-between align-items-center w-100 text-start fw-bold py-2 bg-transparent border-0"
                   >
                     <span>{item.question}</span>
-                    <i className={`fas ${activeAccordion === index ? 'fa-chevron-up' : 'fa-chevron-down'} text-muted`}></i>
+                    <i
+                      className={`fas ${
+                        activeAccordion === index
+                          ? "fa-chevron-up"
+                          : "fa-chevron-down"
+                      } text-muted`}
+                    ></i>
                   </button>
                   {activeAccordion === index && (
-                    <div className="mt-2 text-muted">
-                      {item.answer}
-                    </div>
+                    <div className="mt-2 text-muted">{item.answer}</div>
                   )}
                 </div>
               ))}
@@ -279,14 +362,13 @@ const ClientService = () => {
       {/* Footer */}
       <FooterSection />
 
-        {/* Back to Top Button */}
-            <button
-                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                className="fixed bottom-8 right-8 bg-[#f76b1c] text-white p-3 rounded-full shadow-lg hover:bg-[#f76b1c] transition-colors cursor-pointer"
-            >
-                <i className="fas fa-chevron-up"></i>
-            </button>
-            
+      {/* Back to Top Button */}
+      <button
+        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        className="fixed bottom-8 right-8 bg-[#f76b1c] text-white p-3 rounded-full shadow-lg hover:bg-[#f76b1c] transition-colors cursor-pointer"
+      >
+        <i className="fas fa-chevron-up"></i>
+      </button>
     </div>
   );
 };
