@@ -218,7 +218,7 @@ const Navbar = ({ toggleSidebar }) => {
   };
 
   return (
-    <nav className="navbar custom-navbar p-0">
+    <nav className="navbar custom-navbar p-0 ">
       <div className="container-fluid d-flex flex-nowrap justify-content-between align-items-center px-3 py-2">
         {/* Left: Logo and Sidebar Toggle */}
         <div className="d-flex align-items-center">
