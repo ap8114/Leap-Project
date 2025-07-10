@@ -41,6 +41,8 @@ import Account from "./Component/AdminDashboard/Accounts/Account";
 import Contact from "./Component/AdminDashboard/Contact/Contact";
 import RecordPayment from "./Component/AdminDashboard/TimeBilling/RecordPayment";
 import NewBills from "./Component/AdminDashboard/TimeBilling/NewBlls";
+import ResourceCenter from "./Component/AdminDashboard/ResourceCenter/ResourceCenter";
+import CategoriesTemplate from "./Component/AdminDashboard/Documents/CategoriesTemplate";
 
 
 function App() {
@@ -76,6 +78,7 @@ function App() {
     // "/thelawsociety",
     "/company",
     "/resources",
+    "/resourcecenter",
   ];
   const isNoLayoutPage = noLayoutRoutes.includes(location.pathname);
   // Hide layout (navbar/sidebar) only on login page
@@ -101,6 +104,7 @@ function App() {
     location.pathname === "/resources" ||
     location.pathname === "/recordpayment";
 
+  location.pathname === "/resourcecenter";
 
   //  location.pathname === "/thelawsociety";
 
@@ -147,6 +151,7 @@ function App() {
               {/* <Route path="/thelawsociety" element={<TheLawSociety />} /> */}
               <Route path="/company" element={< Company />} />
               <Route path="/resources" element={< Resources />} />
+              <Route path="/resourcecenter" element={<ResourceCenter />} />
 
               {/* Website Routes Ends */}
 
@@ -166,6 +171,7 @@ function App() {
                  <Route path="/newbills" element={<NewBills />} />
                 <Route path="/matter" element={<Matter />} />
                 <Route path="/document" element={<Document />} />
+                <Route path="/categories" element={<CategoriesTemplate />} />
                 <Route path="/Client" element={<Client />} />
                 <Route path="/calendar" element={<Calendar />} />
                 <Route path="/timebilling" element={<Timebilling />} />
@@ -175,6 +181,7 @@ function App() {
                 <Route path="/communications" element={<Communications />} />
                 <Route path="/accounts" element={<Account />} />
                 <Route path="/contact" element={<Contact />} />
+
 
                 <Route
                   path="/reportsanalytics"
