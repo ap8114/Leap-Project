@@ -62,7 +62,7 @@ const ContactUs = () => {
               </Card.Body>
             </Card>
 
-            <Card className="shadow-sm">
+            <Card className="shadow-sm h-50">
               <Card.Body>
                 <h4 className="text-dark fw-bold mb-4">Business Hours</h4>
                 <div className="d-flex justify-content-between mb-2">
@@ -115,6 +115,15 @@ const ContactUs = () => {
 
       {/* Footer */}
       <FooterSection />
+
+        <button
+        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        className="fixed bottom-8 right-8 bg-[#f76b1c] text-white p-3 rounded-full shadow-lg hover:bg-[#f76b1c] transition-colors cursor-pointer"
+      >
+        <i className="fas fa-chevron-up"></i>
+      </button>
+
+
     </div>
   );
 };
