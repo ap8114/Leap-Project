@@ -327,33 +327,26 @@ const Conveyancing = () => {
             </p>
           </div>
 
-          <div className="accordion" id="faqAccordion">
-            {faqs.map((faq, index) => (
-              <div className="accordion-item border-0 mb-3 shadow-sm" key={index}>
-                <h3 className="accordion-header" id={`heading${index}`}>
-                  <button
-                    className={`accordion-button ${expandedFaq === index ? '' : 'collapsed'}`}
-                    type="button"
-                    onClick={() => handleFaqToggle(index)}
-                    aria-expanded={expandedFaq === index}
-                    aria-controls={`collapse${index}`}
-                  >
-                    {faq.question}
-                  </button>
-                </h3>
-                <div
-                  id={`collapse${index}`}
-                  className={`accordion-collapse collapse ${expandedFaq === index ? 'show' : ''}`}
-                  aria-labelledby={`heading${index}`}
-                  data-bs-parent="#faqAccordion"
-                >
-                  <div className="accordion-body">
-                    {faq.answer}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+         <div className="space-y-4" id="faqAccordion">
+  {faqs.map((faq, index) => (
+    <div className="border rounded shadow-sm" key={index}>
+      
+        <button
+          className="w-full text-left px-4 py-3 font-medium bg-gray-100 hover:bg-gray-200 transition"
+          onClick={() => handleFaqToggle(index)}
+        >
+          {faq.question}
+        </button>
+      
+      {expandedFaq === index && (
+        <div className="px-4 py-3 text-gray-700 bg-white border-t">
+          {faq.answer}
+        </div>
+      )}
+    </div>
+  ))}
+</div>
+
         </div>
       </section>
 
