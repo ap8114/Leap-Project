@@ -35,12 +35,13 @@ import ContactUs from "./Component/Website/ContactUs/ContactUs";
 import Company from "./Component/Website/Pages/Company/Company";
 import Resources from "./Component/Website/Pages/Resources/Resources";
 import { BiLogIn } from "react-icons/bi";
-import Activity from "./Component/AdminDashboard/Activity/Activity";
+
 import Communications from "./Component/AdminDashboard/Communications/Communications";
 import Account from "./Component/AdminDashboard/Accounts/Account";
 import Contact from "./Component/AdminDashboard/Contact/Contact";
 import ResourceCenter from "./Component/AdminDashboard/ResourceCenter/ResourceCenter";
 import CategoriesTemplate from "./Component/AdminDashboard/Documents/CategoriesTemplate";
+import ActivitiesTable from "./Component/AdminDashboard/Activity/ActivitiesTable";
 
 
 function App() {
@@ -171,7 +172,7 @@ function App() {
                 <Route path="/timebilling" element={<Timebilling />} />
                 <Route path="/tasksworkflow" element={<TasksWorkflow />} />
                 <Route path="/setting" element={<Settings />} />
-                <Route path="/activity" element={<Activity />} />
+                <Route path="/activity" element={<ActivitiesTable />} />
                 <Route path="/communications" element={<Communications />} />
                 <Route path="/accounts" element={<Account />} />
                 <Route path="/contact" element={<Contact />} />
