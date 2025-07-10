@@ -40,6 +40,7 @@ import Communications from "./Component/AdminDashboard/Communications/Communicat
 import Account from "./Component/AdminDashboard/Accounts/Account";
 import Contact from "./Component/AdminDashboard/Contact/Contact";
 import ResourceCenter from "./Component/AdminDashboard/ResourceCenter/ResourceCenter";
+import CategoriesTemplate from "./Component/AdminDashboard/Documents/CategoriesTemplate";
 
 
 function App() {
@@ -164,6 +165,7 @@ function App() {
                 <Route path="/dashboard" element={<Dashboard />} />
                 <Route path="/matter" element={<Matter />} />
                 <Route path="/document" element={<Document />} />
+                <Route path="/categories" element={<CategoriesTemplate />} />
                 <Route path="/Client" element={<Client />} />
                 <Route path="/calendar" element={<Calendar />} />
                 <Route path="/timebilling" element={<Timebilling />} />

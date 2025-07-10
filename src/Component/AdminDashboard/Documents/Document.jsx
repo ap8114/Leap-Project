@@ -1,382 +1,368 @@
-import React, { useState } from "react";
-
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faCloudUploadAlt,
-  faFilePdf,
-  faFileWord,
-  faEye,
-  faDownload,
-  faTrash,
-  faTimes,
-  faFolderOpen,
-  faFileAlt,
-} from "@fortawesome/free-solid-svg-icons";
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';  
+import CreateFolderModal from './CreateFolderModal';
+import CreateDocumentModal from './CreateDocumentModal';  
+import { 
+  Container, Row, Col, 
+  Nav, NavItem, NavLink, 
+  Button, Dropdown, DropdownToggle, DropdownMenu, DropdownItem,
+  Form, FormControl, InputGroup, FormCheck,
+  Table, Card, Badge
+} from 'react-bootstrap';
+import { 
+  ChevronDown, ChevronLeft, ChevronRight, 
+  FolderSymlink , Upload, FolderPlus, FileText,
+  SortDown, Filter, X, Check, ArrowsExpand
+} from 'react-bootstrap-icons';
 
 const Document = () => {
-  // Sample document object shape
-  // {
-  //   id: number,
-  //   name: string,
-  //   type: string,
-  //   category: string,
-  //   uploadDate: string,
-  //   size: string
-  // }
+  const [activeTab, setActiveTab] = useState('all');
+  const [sortDropdown, setSortDropdown] = useState(false);
+  const [columnsDropdown, setColumnsDropdown] = useState(false);
+  const [filtersDropdown, setFiltersDropdown] = useState(false);
+  const [newDropdown, setNewDropdown] = useState(false);
+  const [expandRows, setExpandRows] = useState(false);
+  const [showFoldersFirst, setShowFoldersFirst] = useState(false);
+  const [showTrashedFiles, setShowTrashedFiles] = useState(false);
+   const [showCreateFolderModal, setShowCreateFolderModal] = useState(false);
+   const [showCreateDocumentModal, setShowCreateDocumentModal] = useState(false);
 
-  const [activeCategory, setActiveCategory] = useState("Pleading");
-  const [selectedDocument, setSelectedDocument] = useState(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [documents, setDocuments] = useState([
+  const documents = [
     {
       id: 1,
-      name: "Motion to Dismiss.pdf",
-      type: "PDF",
-      category: "Pleading",
-      uploadDate: "2024-01-15",
-      size: "2.4 MB",
+      action: 'View',
+      recordedTime: '2025-07-10 09:30 AM',
+      name: 'Project Report.pdf',
+      category: 'Documents',
+      lastEditAt: '2025-07-09',
+      receivedAt: '2025-07-08',
+      comments: 2,
+      uploaded: 'John Doe'
     },
     {
       id: 2,
-      name: "Contract Evidence.docx",
-      type: "Word",
-      category: "Evidence",
-      uploadDate: "2024-01-14",
-      size: "1.8 MB",
+      action: 'View',
+      recordedTime: '2025-07-10 10:15 AM',
+      name: 'Meeting Notes.docx',
+      category: 'Documents',
+      lastEditAt: '2025-07-10',
+      receivedAt: '2025-07-09',
+      comments: 0,
+      uploaded: 'Jane Smith'
     },
     {
       id: 3,
-      name: "Court Order 001.pdf",
-      type: "PDF",
-      category: "Order",
-      uploadDate: "2024-01-13",
-      size: "856 KB",
-    },
-    {
-      id: 4,
-      name: "Witness Statement.pdf",
-      type: "PDF",
-      category: "Evidence",
-      uploadDate: "2024-01-12",
-      size: "3.2 MB",
-    },
-    {
-      id: 5,
-      name: "Response Brief.docx",
-      type: "Word",
-      category: "Pleading",
-      uploadDate: "2024-01-11",
-      size: "2.1 MB",
-    },
-  ]);
-
-  const categories = ["Pleading", "Evidence", "Order"];
-  const filteredDocuments = documents.filter(
-    (doc) => doc.category === activeCategory
-  );
-
-  const handleFileUpload = (event) => {
-    const files = event.target.files;
-    if (files) {
-      console.log("Files selected:", files);
-      // Add file handling logic here
+      action: 'View',
+      recordedTime: '2025-07-09 02:45 PM',
+      name: 'Financial Report.xlsx',
+      category: 'Spreadsheets',
+      lastEditAt: '2025-07-08',
+      receivedAt: '2025-07-07',
+      comments: 5,
+      uploaded: 'Mike Johnson'
     }
-  };
-
-  const handleDragOver = (event) => {
-    event.preventDefault();
-  };
-
-  const handleDrop = (event) => {
-    event.preventDefault();
-    const files = event.dataTransfer.files;
-    console.log("Files dropped:", files);
-    // Add drop logic here
-  };
-
-  const getFileIcon = (type) => {
-    return type === "PDF" ? faFilePdf : faFileWord;
-  };
-
-  const getFileIconColor = (type) => {
-    return type === "PDF" ? "text-danger" : "text-custom";
-  };
+  ];
 
   return (
-    <div className=" bg-light p-4">
-      <div className="">
+    <div className="min-vh-100 bg-light">
+      <Container fluid className="px-0 bg-white max-w-1440 mx-auto min-vh-100">
         {/* Header */}
-        <div className=" mb-5">
-          <h1 className="display-6 fw-bold text-dark mb-3">Documents</h1>
-          <p className="text-muted">Manage your legal documents efficiently</p>
-        </div>
+        <Row className="align-items-center px-3 px-md-4 py-2 py-md-3 border-bottom">
+          <Col xs={6} md={4} lg={6}>
+            <h1 className="h4 mb-0 text-primary border-bottom border-primary pb-2 d-inline-block">Documents</h1>
+          </Col>
+          <Col xs={6} md={8} lg={6} className="text-end">
+          <Link to="/categories">
+            <Button variant="outline-secondary" size="sm" className="ms-auto">
+              Categories and templates
+            </Button>
+            </Link>
+          </Col>
+        </Row>
 
-        {/* Upload Section */}
-        <div className="card shadow-sm mb-5">
-          <div className="card-body p-5">
-            <div
-              className="border border-dashed rounded-3 p-5 text-center hover-border-custom transition-all cursor-pointer"
-              onDragOver={handleDragOver}
-              onDrop={handleDrop}
-              style={{ borderColor: "#dee2e6" }}
-            >
-              <div className="mb-4">
-                <FontAwesomeIcon
-                  icon={faCloudUploadAlt}
-                  className="text-muted mb-3"
-                  size="3x"
+        {/* Subheader */}
+        <Row className="px-3 px-md-4 py-2 bg-light border-bottom">
+          <Col>
+            <p className="text-muted small mb-0">All files and folders</p>
+          </Col>
+        </Row>
+
+        {/* Filter Bar */}
+        <Row className="px-3 px-md-4 py-2 py-md-3 border-bottom align-items-center">
+          <Col xs={12} md={6} className="mb-2 mb-md-0">
+            <Nav variant="pills" className="flex-nowrap">
+              <NavItem>
+                <NavLink 
+                  active={activeTab === 'all'} 
+                  onClick={() => setActiveTab('all')}
+                  className="py-1 py-md-2 px-2 px-md-3"
+                >
+                  All
+                </NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink 
+                  active={activeTab === 'files'} 
+                  onClick={() => setActiveTab('files')}
+                  className="py-1 py-md-2 px-2 px-md-3"
+                >
+                  Files only
+                </NavLink>
+              </NavItem>
+            </Nav>
+          </Col>
+          
+          <Col xs={12} md={6}>
+            <div className="d-flex flex-wrap justify-content-md-end gap-2">
+              <Form.Group className="me-2" style={{ minWidth: '150px' }}>
+                <FormControl 
+                  type="text" 
+                  placeholder="Filter by keyword" 
+                  size="sm"
                 />
-              </div>
-              <h3 className="h4 fw-semibold text-dark mb-2">
-                Drag & Drop files here
-              </h3>
-              <p className="text-muted mb-4">or click to browse your files</p>
-              <label htmlFor="file-upload" className="d-inline-block">
-                <input
-                  id="file-upload"
-                  type="file"
-                  multiple
-                  accept=".pdf,.doc,.docx"
-                  onChange={handleFileUpload}
-                  className="d-none"
-                />
-                <span className="btn btn-custom px-4 py-2 fw-medium">
-                  Upload Files
-                </span>
-              </label>
-              <div className="mt-3">
-                <p className="small text-muted">
-                  Supported formats: PDF, Word (.doc, .docx)
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Category Tabs */}
-        <div className="mb-5">
-          <div className="d-flex bg-light rounded-3 p-1">
-            {categories.map((category) => (
-              <button
-                key={category}
-                onClick={() => setActiveCategory(category)}
-                className={`btn ${
-                  activeCategory === category
-                    ? "btn-white shadow-sm text-custom"
-                    : "text-muted"
-                } flex-grow-0 mx-1`}
-              >
-                {category}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        {/* Document List */}
-        {filteredDocuments.length > 0 ? (
-          <div className="row g-4">
-            {filteredDocuments.map((document) => (
-              <div key={document.id} className="col-md-6 col-lg-4">
-                <div className="card h-100 shadow-sm hover-shadow transition-all">
-                  <div className="card-body">
-                    <div className="d-flex justify-content-between mb-3">
-                      <div className="d-flex align-items-start">
-                        <FontAwesomeIcon
-                          icon={getFileIcon(document.type)}
-                          className={`${getFileIconColor(document.type)} me-3`}
-                          size="2x"
-                        />
-                        <div>
-                          <h5 className="fw-semibold text-dark mb-1 small">
-                            {document.name}
-                          </h5>
-                          <div className="d-flex align-items-center mt-2">
-                            <span
-                              className={`badge ${
-                                document.type === "PDF"
-                                  ? "bg-danger-light text-danger"
-                                  : "bg-custom-light text-custom"
-                              } me-2`}
-                            >
-                              {document.type}
-                            </span>
-                            <span className="small text-muted">
-                              {document.size}
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="mb-3">
-                      <span className="badge bg-light text-dark rounded-pill small fw-medium">
-                        {document.category}
-                      </span>
-                    </div>
-                    <div className="small text-muted mb-4">
-                      Uploaded on{" "}
-                      {new Date(document.uploadDate).toLocaleDateString(
-                        "en-US",
-                        {
-                          year: "numeric",
-                          month: "long",
-                          day: "numeric",
-                        }
-                      )}
-                    </div>
-                    <div className="d-flex gap-2">
-                      <button
-                        onClick={() => {
-                          setSelectedDocument(document);
-                          setIsModalOpen(true);
-                        }}
-                        className="btn btn-custom btn-sm flex-grow-1"
-                      >
-                        <FontAwesomeIcon icon={faEye} className="me-1" />
-                        View
-                      </button>
-                      <button className="btn btn-outline-secondary btn-sm flex-grow-1">
-                        <FontAwesomeIcon icon={faDownload} className="me-1" />
-                        Download
-                      </button>
-                      <button className="btn btn-outline-danger btn-sm">
-                        <FontAwesomeIcon icon={faTrash} />
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        ) : (
-          /* Empty State */
-          <div className="text-center py-5">
-            <div className="mb-4">
-              <FontAwesomeIcon
-                icon={faFolderOpen}
-                className="text-muted"
-                size="4x"
-              />
-            </div>
-            <h3 className="h4 fw-semibold text-dark mb-2">
-              No {activeCategory.toLowerCase()} documents yet
-            </h3>
-            <p className="text-muted mb-4">
-              Upload your first {activeCategory.toLowerCase()} document to get
-              started
-            </p>
-            <label htmlFor="empty-state-upload" className="d-inline-block">
-              <input
-                id="empty-state-upload"
-                type="file"
-                multiple
-                accept=".pdf,.doc,.docx"
-                onChange={handleFileUpload}
-                className="d-none"
-              />
-              <span className="btn btn-custom px-4 py-2">Upload Document</span>
-            </label>
-          </div>
-        )}
-
-        {/* Document Detail Modal */}
-        {isModalOpen && selectedDocument && (
-          <div
-            className="modal fade show d-block"
-            tabIndex={-1}
-            style={{ backgroundColor: "rgba(0,0,0,0.5)" }}
-          >
-            <div className="modal-dialog modal-md">
-              <div className="modal-content">
-                {/* Modal Header */}
-                <div className="modal-header border-bottom">
-                  <div className="d-flex align-items-center flex-wrap">
-                    <FontAwesomeIcon
-                      icon={getFileIcon(selectedDocument.type)}
-                      className={`${getFileIconColor(
-                        selectedDocument.type
-                      )} me-3 fs-4`} // Smaller and responsive
+              </Form.Group>
+              
+              {/* Sort Dropdown */}
+              <Dropdown align="end" onToggle={setSortDropdown} show={sortDropdown} className="me-2">
+                <Dropdown.Toggle variant="outline-secondary" size="sm" className="d-flex align-items-center">
+                  Sort <ChevronDown size={12} className="ms-1" />
+                </Dropdown.Toggle>
+                <DropdownMenu className="p-3" style={{ width: '300px' }}>
+                  <div className="d-flex justify-content-between align-items-center mb-3">
+                    <FormCheck
+                      type="switch"
+                      id="showFoldersFirst"
+                      label="Show folders first"
+                      checked={showFoldersFirst}
+                      onChange={() => setShowFoldersFirst(!showFoldersFirst)}
+                      className="small"
                     />
-                    <div>
-                      <h5 className="modal-title mb-1">
-                        {selectedDocument.name}
-                      </h5>
-                      <div className="d-flex align-items-center mt-1 gap-2 flex-wrap">
-                        <span
-                          className={`badge ${
-                            selectedDocument.type === "PDF"
-                              ? "bg-danger-light text-danger"
-                              : "bg-custom-light text-custom"
-                          }`}
-                        >
-                          {selectedDocument.type}
-                        </span>
-                        <span className="text-muted small">
-                          {selectedDocument.size}
-                        </span>
-                      </div>
-                    </div>
+                    <Button variant="link" size="sm" className="text-muted p-0" onClick={() => setSortDropdown(false)}>
+                      <X size={16} />
+                    </Button>
                   </div>
-                  <button
-                    onClick={() => setIsModalOpen(false)}
-                    className="btn-close"
+                  <p className="small text-muted mb-3">
+                    With this setting turned on, folders will appear at the top of the list when sorting by the Name, 
+                    Last edit at and Uploaded date columns.
+                  </p>
+                  <div className="d-grid gap-1">
+                    <Button variant="outline-secondary" size="sm" className="text-start">Name A-Z</Button>
+                    <Button variant="outline-secondary" size="sm" className="text-start">Name Z-A</Button>
+                    <Button variant="outline-secondary" size="sm" className="text-start">Last edit at</Button>
+                    <Button variant="outline-secondary" size="sm" className="text-start">Uploaded date</Button>
+                  </div>
+                </DropdownMenu>
+              </Dropdown>
+              
+              {/* Columns Dropdown */}
+              <Dropdown align="end" onToggle={setColumnsDropdown} show={columnsDropdown} className="me-2">
+                <Dropdown.Toggle variant="outline-secondary" size="sm" className="d-flex align-items-center">
+                  Columns <ChevronDown size={12} className="ms-1" />
+                </Dropdown.Toggle>
+                <DropdownMenu className="p-3" style={{ width: '250px' }}>
+                  <h6 className="mb-3">Visible columns</h6>
+                  <div className="d-grid gap-1">
+                    <FormCheck label="Action" defaultChecked className="small" />
+                    <FormCheck label="Recorded time" defaultChecked className="small" />
+                    <FormCheck label="Name" defaultChecked className="small" />
+                    <FormCheck label="Matter" className="small" />
+                    <FormCheck label="Category" defaultChecked className="small" />
+                    <FormCheck label="Last edit at" defaultChecked className="small" />
+                    <FormCheck label="Received at" defaultChecked className="small" />
+                    <FormCheck label="Comments" defaultChecked className="small" />
+                    <FormCheck label="Contact" className="small" />
+                    <FormCheck label="Uploaded by" className="small" />
+                    <FormCheck label="Uploaded date" defaultChecked className="small" />
+                    <FormCheck label="ID" className="small" />
+                  </div>
+                  <div className="d-flex gap-2 mt-3">
+                    <Button variant="primary" size="sm">Update columns</Button>
+                    <Button variant="outline-secondary" size="sm">Cancel</Button>
+                  </div>
+                </DropdownMenu>
+              </Dropdown>
+              
+              {/* Filters Dropdown */}
+              <Dropdown align="end" onToggle={setFiltersDropdown} show={filtersDropdown} className="me-2">
+                <Dropdown.Toggle variant="outline-secondary" size="sm" className="d-flex align-items-center">
+                  Filters <ChevronDown size={12} className="ms-1" />
+                </Dropdown.Toggle>
+                <DropdownMenu className="p-3" style={{ width: '300px' }}>
+                  <Form.Group className="mb-3">
+                    <Form.Label className="small">Matter</Form.Label>
+                    <InputGroup size="sm">
+                      <FormControl placeholder="Find a matter" />
+                      <InputGroup.Text className="bg-white">
+                        <ChevronDown size={12} />
+                      </InputGroup.Text>
+                    </InputGroup>
+                  </Form.Group>
+                  <Form.Group className="mb-3">
+                    <Form.Label className="small">Category</Form.Label>
+                    <InputGroup size="sm">
+                      <FormControl placeholder="Find a document category" />
+                      <InputGroup.Text className="bg-white">
+                        <ChevronDown size={12} />
+                      </InputGroup.Text>
+                    </InputGroup>
+                  </Form.Group>
+                  <FormCheck 
+                    label="Show trashed files" 
+                    checked={showTrashedFiles}
+                    onChange={() => setShowTrashedFiles(!showTrashedFiles)}
+                    className="small mb-3"
                   />
-                </div>
-
-                {/* Modal Body */}
-                <div className="modal-body">
-                  <div className="row mb-4">
-                    <div className="col-sm-6 mb-3 mb-sm-0">
-                      <p className="small text-muted mb-1">Category</p>
-                      <p className="fw-medium text-dark">
-                        {selectedDocument.category}
-                      </p>
-                    </div>
-                    <div className="col-sm-6">
-                      <p className="small text-muted mb-1">Upload Date</p>
-                      <p className="fw-medium text-dark">
-                        {new Date(
-                          selectedDocument.uploadDate
-                        ).toLocaleDateString("en-US", {
-                          year: "numeric",
-                          month: "long",
-                          day: "numeric",
-                        })}
-                      </p>
-                    </div>
+                  <div className="d-flex gap-2">
+                    <Button variant="primary" size="sm">Apply filters</Button>
+                    <Button variant="outline-secondary" size="sm">Clear filters</Button>
                   </div>
+                </DropdownMenu>
+              </Dropdown>
+              
+              {/* New Dropdown */}
+              <Dropdown align="end" onToggle={setNewDropdown} show={newDropdown}>
+                <Dropdown.Toggle variant="primary" size="sm" className="d-flex align-items-center">
+                  New <ChevronDown size={12} className="ms-1" />
+                </Dropdown.Toggle>
+                <DropdownMenu>
+                  <DropdownItem>
+                    <Upload size={14} className="me-2" /> Upload files
+                  </DropdownItem>
+                  <DropdownItem>
+                    <FolderPlus size={14} className="me-2" /> Upload folder
+                  </DropdownItem>
+                   <Dropdown.Item onClick={() => setShowCreateFolderModal(true)}>
+        <FolderPlus size={14} className="me-2" /> Create folder
+      </Dropdown.Item>
 
-                  <div className="bg-light rounded-3 p-3 mb-4">
-                    <p className="small text-muted mb-2">Document Preview</p>
-                    <div className="ratio ratio-16x9 bg-white rounded-3 d-flex align-items-center justify-content-center">
-                      <FontAwesomeIcon
-                        icon={faFileAlt}
-                        className="text-muted fs-2"
-                      />{" "}
-                      {/* Smaller icon */}
-                    </div>
-                  </div>
-                </div>
+      <CreateFolderModal
+        show={showCreateFolderModal}
+        onHide={() => setShowCreateFolderModal(false)}
+      />
+            <Dropdown.Item onClick={() => setShowCreateDocumentModal(true)}>
+        <FileText size={14} className="me-2" /> Create document from template
+      </Dropdown.Item>
 
-                {/* Modal Footer */}
-                <div className="modal-footer border-top bg-light">
-                  <div className="d-flex justify-content-end gap-2 flex-wrap">
-                    <button
-                      onClick={() => setIsModalOpen(false)}
-                      className="btn btn-outline-secondary"
-                    >
-                      Close
-                    </button>
-                    <button className="btn btn-custom">
-                      <FontAwesomeIcon icon={faDownload} className="me-2" />
-                      Download
-                    </button>
-                  </div>
-                </div>
-              </div>
+      {/* Modal Component */}
+      <CreateDocumentModal
+        show={showCreateDocumentModal}
+        onHide={() => setShowCreateDocumentModal(false)}
+      />
+                </DropdownMenu>
+              </Dropdown>
             </div>
-          </div>
-        )}
-      </div>
+          </Col>
+        </Row>
+
+        {/* Table */}
+        <div className="responsive">
+          {activeTab === 'all' ? (
+            <>
+              {/* Table Header */}
+              <Row className="px-3 px-md-4 py-2 bg-light border-bottom d-none d-md-flex">
+                <Col md={1} className="d-flex align-items-center">
+                  <FormCheck />
+                </Col>
+                <Col md={1} className="d-flex align-items-center small fw-bold">
+                  Action
+                </Col>
+                <Col md={1} className="d-flex align-items-center small fw-bold">
+                  Recorded time
+                </Col>
+                <Col md={2} className="d-flex align-items-center small fw-bold">
+                  Name <SortDown size={12} className="ms-1 text-muted" />
+                </Col>
+                <Col md={1} className="d-flex align-items-center small fw-bold">
+                  Category
+                </Col>
+                <Col md={2} className="d-flex align-items-center small fw-bold">
+                  Last edit at <SortDown size={12} className="ms-1 text-muted" />
+                </Col>
+                <Col md={2} className="d-flex align-items-center small fw-bold">
+                  Received at <SortDown size={12} className="ms-1 text-muted" />
+                </Col>
+                <Col md={1} className="d-flex align-items-center small fw-bold">
+                  Comments
+                </Col>
+                <Col md={1} className="d-flex align-items-center small fw-bold">
+                  Uploaded <SortDown size={12} className="ms-1 text-muted" />
+                </Col>
+              </Row>
+
+              {/* Table Content */}
+              {documents.map((doc) => (
+                <Row key={doc.id} className="px-3 px-md-4 py-2 py-md-3 border-bottom hover-bg-light align-items-center">
+                  <Col xs={2} md={1} className="d-flex align-items-center">
+                    <FormCheck className="me-2 me-md-0" />
+                  </Col>
+                  <Col xs={10} md={1} className="mb-2 mb-md-0">
+                    <Button variant="link" size="sm" className="p-0 text-primary">
+                      {doc.action}
+                    </Button>
+                  </Col>
+                  <Col xs={6} md={1} className="small">
+                    {doc.recordedTime}
+                  </Col>
+                  <Col xs={6} md={2} className="fw-bold mb-2 mb-md-0">
+                    {doc.name}
+                  </Col>
+                  <Col xs={6} md={1} className="small">
+                    {doc.category}
+                  </Col>
+                  <Col xs={6} md={2} className="small">
+                    {doc.lastEditAt}
+                  </Col>
+                  <Col xs={6} md={2} className="small">
+                    {doc.receivedAt}
+                  </Col>
+                  <Col xs={6} md={1} className="small">
+                    <Badge bg="light" text="dark" pill>
+                      {doc.comments}
+                    </Badge>
+                  </Col>
+                  <Col xs={6} md={1} className="small">
+                    {doc.uploaded}
+                  </Col>
+                </Row>
+              ))}
+            </>
+          ) : (
+      <Row className="py-5 py-md-8 d-flex justify-content-center text-center">
+  <Col md="auto">
+    <FolderSymlink  size={48} className="text-muted mb-3 " style={{marginLeft:"200"}} />
+    <h5 className="mb-2">No results found</h5>
+    <p className="text-muted">
+      Try adjusting your search or filter to find what you're looking for.
+    </p>
+  </Col>
+</Row>
+
+          )}
+        </div>
+
+        {/* Pagination */}
+        <Row className="px-3 px-md-4 py-2 py-md-3 border-top align-items-center">
+          <Col xs={6} md={4} className="d-flex align-items-center">
+            <Button variant="link" size="sm" className="text-muted p-1 me-2">
+              <ChevronLeft size={16} />
+            </Button>
+            <Button variant="link" size="sm" className="text-muted p-1">
+              <ChevronRight size={16} />
+            </Button>
+            <span className="small text-muted ms-2">No results found</span>
+          </Col>
+          <Col xs={6} md={8} className="d-flex justify-content-end">
+            <FormCheck
+              type="switch"
+              id="expandRows"
+              label="Expand rows"
+              checked={expandRows}
+              onChange={() => setExpandRows(!expandRows)}
+              className="small"
+            />
+          </Col>
+        </Row>
+      </Container>
     </div>
   );
 };
