@@ -1,25 +1,30 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Header from './Header';
 import ContentArea from './ContentArea';
 import FooterPagination from './FooterPagination';
 
-const MainContent = ({ activeNavItem }) => {
-  const [activeTab, setActiveTab] = useState('My client portals');
-  const [newDropdownOpen, setNewDropdownOpen] = useState(false);
-  const [newestDropdownOpen, setNewestDropdownOpen] = useState(false);
-
+const MainContent = ({ 
+  activeNavItem, 
+  activeTab,
+  setActiveTab,
+  onToggleSidebar,
+  isMobile,
+  sidebarOpen
+}) => {
   return (
     <div className="d-flex flex-column flex-grow-1">
       <Header 
-        activeNavItem={activeNavItem} 
-        activeTab={activeTab} 
+        activeNavItem={activeNavItem}
+        activeTab={activeTab}
         setActiveTab={setActiveTab}
-        newDropdownOpen={newDropdownOpen}
-        setNewDropdownOpen={setNewDropdownOpen}
-        newestDropdownOpen={newestDropdownOpen}
-        setNewestDropdownOpen={setNewestDropdownOpen}
+        onToggleSidebar={onToggleSidebar}
+        isMobile={isMobile}
+        sidebarOpen={sidebarOpen}
       />
-      <ContentArea activeNavItem={activeNavItem} activeTab={activeTab} />
+      <ContentArea 
+        activeNavItem={activeNavItem}
+        activeTab={activeTab}
+      />
       <FooterPagination />
     </div>
   );
