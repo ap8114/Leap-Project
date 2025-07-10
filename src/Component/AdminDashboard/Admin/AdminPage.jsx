@@ -94,8 +94,8 @@ const AdminPage= () => {
   }, [autoRefresh]);
 
   return (
-    <div className="min-vh-100 bg-light p-4">
-      <div className="container-fluid p-4">
+    <div className=" bg-light p-4">
+      <div className="">
         <h1 className="display-6 fw-bold  mb-2">Admin Panel</h1>
         <p className="text-muted mb-3">
   Manage users, assign roles and permissions, and monitor system activity with access to logs and controls.

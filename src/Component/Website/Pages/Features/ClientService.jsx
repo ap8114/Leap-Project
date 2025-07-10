@@ -46,11 +46,7 @@ const ClientService = () => {
                   Streamline your client communication
                 </h1>
                 <p className="lead mb-4">
-                  Experience simplified and secure client communication through
-                  FastTrack's integrated customizable client portal. Sign
-                  documents electronically, share correspondence, accept
-                  payments and collaborate in real-time directly from your
-                  matter.
+                  Experience simplified and secure client communication through FastTrack Software's integrated customizable client portal. Sign documents electronically, share correspondence, accept payments and collaborate in real-time directly from your matter.
                 </p>
                 <button
                   className="btn btn-lg px-4"
@@ -100,10 +96,7 @@ const ClientService = () => {
                 Safeguard your data with secure correspondence
               </h3>
               <p className="text-muted mb-4">
-                Unlike email, which can be susceptible to cybersecurity
-                breaches, hacking and unauthorized access, FastTrack offers a
-                secure environment for sharing documents and working with
-                clients.
+                Unlike email, which can be susceptible to cybersecurity breaches, hacking and unauthorized access, FastTrack Software offers a secure environment for sharing documents and working with clients.
               </p>
               <p className="text-muted">
                 You can work confidently and securely, without worrying that
@@ -157,10 +150,7 @@ const ClientService = () => {
                 confidentiality in safeguarding our users' data.
               </p>
               <p className="text-muted">
-                Our internal security controls underwent a rigorous and
-                independent audit by AssuranceLab, culminating in this
-                certification for all FastTrack subsidiaries, including
-                LawConnect.
+                Our internal security controls underwent a rigorous and independent audit by AssuranceLab, culminating in this certification for all FastTrack Software subsidiaries, including LawConnect.
               </p>
             </div>
             <div className="col-lg-4 text-center">

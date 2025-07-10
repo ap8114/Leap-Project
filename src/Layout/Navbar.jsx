@@ -57,7 +57,7 @@ const Navbar = ({ toggleSidebar }) => {
       <Link to="/" className="navbar-brand d-flex align-items-center me-2">
   <img
     src="https://i.postimg.cc/RVJPy6VB/Whats-App-Image-2025-07-08-at-18-18-06-42bff2fc-removebg-preview.png"
-    alt="FastTrack logo"
+    alt="FastTrack Software logo"
     style={{
       height: "60px", // controlled height
       width: "auto",
@@ -146,6 +146,7 @@ const Navbar = ({ toggleSidebar }) => {
                 <hr className="dropdown-divider" />
               </li>
               <li>
+                
           <button
   className="dropdown-item d-flex align-items-center gap-2  custom-hover rounded-3 py-2"
   onClick={handleLogout}

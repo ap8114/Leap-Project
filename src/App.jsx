@@ -35,6 +35,10 @@ import ContactUs from "./Component/Website/ContactUs/ContactUs";
 import Company from "./Component/Website/Pages/Company/Company";
 import Resources from "./Component/Website/Pages/Resources/Resources";
 import { BiLogIn } from "react-icons/bi";
+import Activity from "./Component/AdminDashboard/Activity/Activity";
+import Communications from "./Component/AdminDashboard/Communications/Communications";
+import Account from "./Component/AdminDashboard/Accounts/Account";
+import Contact from "./Component/AdminDashboard/Contact/Contact";
 
 
 function App() {
@@ -91,10 +95,10 @@ function App() {
     location.pathname === "/employment" ||
     location.pathname === "/personalinjury" ||
     location.pathname === "/contactus" ||
-     location.pathname === "/company"||
-      location.pathname === "/resources";
+    location.pathname === "/company" ||
+    location.pathname === "/resources";
 
-    //  location.pathname === "/thelawsociety";
+  //  location.pathname === "/thelawsociety";
 
   // ...existing code...
   return (
@@ -136,13 +140,13 @@ function App() {
               <Route path="/employment" element={< Employment />} />
               <Route path="/personalinjury" element={< PersonalInjury />} />
               <Route path="/contactus" element={< ContactUs />} />
-               {/* <Route path="/thelawsociety" element={<TheLawSociety />} /> */}
-               <Route path="/company" element={< Company />} />
-                <Route path="/resources" element={< Resources />} />
+              {/* <Route path="/thelawsociety" element={<TheLawSociety />} /> */}
+              <Route path="/company" element={< Company />} />
+              <Route path="/resources" element={< Resources />} />
 
               {/* Website Routes Ends */}
 
-              <Route path="/login" element={<Login/>} />
+              <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<Signup />} />
               <Route path="/forgotpassword" element={<ForgotPassword />} />
             </Routes>
@@ -161,6 +165,10 @@ function App() {
                 <Route path="/timebilling" element={<Timebilling />} />
                 <Route path="/tasksworkflow" element={<TasksWorkflow />} />
                 <Route path="/setting" element={<Settings />} />
+                <Route path="/activity" element={<Activity />} />
+                <Route path="/communications" element={<Communications />} />
+                <Route path="/accounts" element={<Account />} />
+                <Route path="/contact" element={<Contact />} />
 
                 <Route
                   path="/reportsanalytics"

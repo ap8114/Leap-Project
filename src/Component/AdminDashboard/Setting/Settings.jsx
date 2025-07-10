@@ -18,7 +18,7 @@ const Settings = () => {
   };
 
   return (
-    <div className=" p-5">
+    <div className=" bg-light p-4">
       <h1 className="display-6 fw-bold mb-2">Settings</h1>
       <p className="text-muted mb-3">
   Customize your firm’s details, communication preferences, templates, and system settings including time format, currency, and more.

@@ -98,8 +98,8 @@ const TasksWorkflow = () => {
   };
 
   return (
-    <div className="p-4">
-      <div className="p-4">
+    <div className=" bg-light p-4">
+      <div className="">
       <h1 className="display-6 fw-bold mb-2">Task Workflow</h1>
         <p className="text-muted mb-4">Manage and track tasks across your matters</p>
 

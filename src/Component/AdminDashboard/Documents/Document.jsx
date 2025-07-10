@@ -103,8 +103,8 @@ const Document = () => {
   };
 
   return (
-    <div className="min-vh-100 bg-light p-4">
-      <div className="container-fluid py-3">
+    <div className=" bg-light p-4">
+      <div className="">
         {/* Header */}
         <div className=" mb-5">
           <h1 className="display-6 fw-bold text-dark mb-3">Documents</h1>
