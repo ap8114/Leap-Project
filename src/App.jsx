@@ -39,6 +39,7 @@ import Activity from "./Component/AdminDashboard/Activity/Activity";
 import Communications from "./Component/AdminDashboard/Communications/Communications";
 import Account from "./Component/AdminDashboard/Accounts/Account";
 import Contact from "./Component/AdminDashboard/Contact/Contact";
+import ResourceCenter from "./Component/AdminDashboard/ResourceCenter/ResourceCenter";
 
 
 function App() {
@@ -74,6 +75,7 @@ function App() {
     // "/thelawsociety",
     "/company",
     "/resources",
+    "/resourcecenter",
   ];
   const isNoLayoutPage = noLayoutRoutes.includes(location.pathname);
   // Hide layout (navbar/sidebar) only on login page
@@ -96,7 +98,8 @@ function App() {
     location.pathname === "/personalinjury" ||
     location.pathname === "/contactus" ||
     location.pathname === "/company" ||
-    location.pathname === "/resources";
+    location.pathname === "/resources" ||
+  location.pathname === "/resourcecenter";
 
   //  location.pathname === "/thelawsociety";
 
@@ -143,6 +146,7 @@ function App() {
               {/* <Route path="/thelawsociety" element={<TheLawSociety />} /> */}
               <Route path="/company" element={< Company />} />
               <Route path="/resources" element={< Resources />} />
+              <Route path="/resourcecenter" element={<ResourceCenter />} />
 
               {/* Website Routes Ends */}
 
@@ -169,6 +173,7 @@ function App() {
                 <Route path="/communications" element={<Communications />} />
                 <Route path="/accounts" element={<Account />} />
                 <Route path="/contact" element={<Contact />} />
+
 
                 <Route
                   path="/reportsanalytics"
