@@ -49,8 +49,8 @@ const Navbar = ({ toggleSidebar }) => {
   };
 
   return (
-    <nav className="navbar custom-navbar p-0 shadow-sm position-sticky top-0 ">
-      <div className="container-fluid d-flex flex-nowrap justify-content-between align-items-center px-2">
+    <nav className="navbar custom-navbar p-0 shadow-sm position-sticky top-0 w-100">
+      <div className="container-fluid d-flex flex-nowrap justify-content-between align-items-center">
 
         {/* Left: Logo and Sidebar Toggle */}
         <div className="d-flex align-items-center">
@@ -163,8 +163,7 @@ const Navbar = ({ toggleSidebar }) => {
   );
 };
 
-export default Navbar;
-
+// export default Navbar;
 // import React, { useState, useRef, useEffect } from "react";
 // import { Link, useNavigate } from "react-router-dom";
 // import logoFastTrack from "../assets/logofasttrack.png";
@@ -188,23 +187,23 @@ export default Navbar;
 // const Navbar = () => {
 //   const navigate = useNavigate();
 
-//   // Timer state
 //   const [timer, setTimer] = useState(0);
 //   const [isTiming, setIsTiming] = useState(false);
 //   const [showTimekeeper, setShowTimekeeper] = useState(false);
-//   const timerInterval = useRef(null);
+//   const [showMobileMenu, setShowMobileMenu] = useState(false);
 
-//   // Dropdowns
 //   const [showCreate, setShowCreate] = useState(false);
 //   const [showRecents, setShowRecents] = useState(false);
 //   const [showNotifications, setShowNotifications] = useState(false);
+//   const [showProfileDropdown, setShowProfileDropdown] = useState(false);
 
-//   // Refs for click outside
+//   const timerInterval = useRef(null);
 //   const notificationRef = useRef(null);
 //   const createRef = useRef(null);
 //   const recentsRef = useRef(null);
+//   const profileRef = useRef(null);
+//   const mobileMenuRef = useRef(null);
 
-//   // Timer logic
 //   useEffect(() => {
 //     if (isTiming) {
 //       timerInterval.current = setInterval(() => {
@@ -216,7 +215,6 @@ export default Navbar;
 //     return () => clearInterval(timerInterval.current);
 //   }, [isTiming]);
 
-//   // Click outside handlers
 //   useEffect(() => {
 //     const handleClickOutside = (e) => {
 //       if (notificationRef.current && !notificationRef.current.contains(e.target)) {
@@ -228,13 +226,22 @@ export default Navbar;
 //       if (recentsRef.current && !recentsRef.current.contains(e.target)) {
 //         setShowRecents(false);
 //       }
+//       if (profileRef.current && !profileRef.current.contains(e.target)) {
+//         setShowProfileDropdown(false);
+//       }
+//       if (
+//         mobileMenuRef.current && 
+//         !mobileMenuRef.current.contains(e.target) &&
+//         !e.target.classList.contains('navbar-toggler')
+//       ) {
+//         setShowMobileMenu(false);
+//       }
 //     };
 
 //     document.addEventListener("mousedown", handleClickOutside);
 //     return () => document.removeEventListener("mousedown", handleClickOutside);
 //   }, []);
 
-//   // Format timer
 //   const formatTime = (sec) => {
 //     const h = String(Math.floor(sec / 3600)).padStart(2, "0");
 //     const m = String(Math.floor((sec % 3600) / 60)).padStart(2, "0");
@@ -242,7 +249,6 @@ export default Navbar;
 //     return `${h}:${m}:${s}`;
 //   };
 
-//   // Logout function
 //   const handleLogout = () => {
 //     localStorage.removeItem("token");
 //     localStorage.removeItem("login-detail");
@@ -250,14 +256,62 @@ export default Navbar;
 //     navigate("/");
 //   };
 
+//   const toggleMobileMenu = (e) => {
+//     e.stopPropagation();
+//     setShowMobileMenu(!showMobileMenu);
+//   };
+
+//   const toggleDropdown = (e, dropdownName) => {
+//     e.stopPropagation();
+//     e.preventDefault();
+    
+//     switch (dropdownName) {
+//       case 'create':
+//         setShowCreate(prev => !prev);
+//         setShowRecents(false);
+//         setShowNotifications(false);
+//         setShowProfileDropdown(false);
+//         break;
+//       case 'recents':
+//         setShowRecents(prev => !prev);
+//         setShowCreate(false);
+//         setShowNotifications(false);
+//         setShowProfileDropdown(false);
+//         break;
+//       case 'notifications':
+//         setShowNotifications(prev => !prev);
+//         setShowCreate(false);
+//         setShowRecents(false);
+//         setShowProfileDropdown(false);
+//         break;
+//       case 'profile':
+//         setShowProfileDropdown(prev => !prev);
+//         setShowCreate(false);
+//         setShowRecents(false);
+//         setShowNotifications(false);
+//         break;
+//       default:
+//         break;
+//     }
+//   };
+
 //   return (
-//     <nav className="navbar navbar-expand-lg">
-//       <div className="container-fluid d-flex align-items-center px-3">
-//         {/* Logo */}
+//     <nav className="navbar custom-navbar p-0 shadow-sm position-sticky top-0 w-100 bg-white">
+//       <div className="container-fluid d-flex align-items-center px-3 py-2">
+//         {/* Logo and Mobile Menu Button */}
 //         <div className="d-flex align-items-center me-4">
+//           <button 
+//             className="navbar-toggler me-2 d-lg-none" 
+//             type="button"
+//             onClick={toggleMobileMenu}
+//             style={{ border: 'none' }}
+//           >
+//             <i className="fas fa-bars"></i>
+//           </button>
 //           <img
 //             src={logoFastTrack}
 //             alt="Logo"
+//             className="img-fluid"
 //             style={{
 //               height: "50px",
 //               width: "auto",
@@ -267,40 +321,196 @@ export default Navbar;
 //           />
 //         </div>
 
-//         {/* Search and Main Content */}
-//         <div className="d-flex flex-grow-1 align-items-center justify-content-between">
-//           {/* Search */}
+//         {/* Mobile Menu */}
+//         {showMobileMenu && (
+//           <div 
+//             ref={mobileMenuRef}
+//             className="mobile-menu d-lg-none position-absolute top-100 start-0 bg-white w-100 p-3 shadow"
+//             style={{ zIndex: 1000 }}
+//           >
+//             <div className="mb-3">
+//               <div className="input-group">
+//                 <input
+//                   className="form-control border-3 w-100"
+//                   style={{ background: "#fff", height: "40px" }}
+//                   placeholder="Search Law Office of Admin"
+//                 />
+//               </div>
+//             </div>
+
+//             <div className="mb-3">
+//               <button
+//                 className="btn btn-light w-100 d-flex align-items-center justify-content-between"
+//                 style={{
+//                   background: "#fff",
+//                   border: "1px solid #2a3a5a",
+//                   borderRadius: "6px",
+//                   height: "40px",
+//                 }}
+//                 onClick={(e) => toggleDropdown(e, 'recents')}
+//               >
+//                 Recents
+//                 <i className={`fas fa-chevron-${showRecents ? 'up' : 'down'}`}></i>
+//               </button>
+//               {showRecents && (
+//                 <div className="mt-2 p-2 border rounded">
+//                   <div className="text-center py-2 text-muted">
+//                     You don't have any recent items
+//                   </div>
+//                 </div>
+//               )}
+//             </div>
+
+//             <div className="mb-3">
+//               <button
+//                 className="btn btn-light w-100 d-flex align-items-center justify-content-between"
+//                 style={{
+//                   border: "none",
+//                   borderRadius: "6px",
+//                   height: "40px",
+//                 }}
+//                 onClick={() => setIsTiming(!isTiming)}
+//               >
+//                 <span>
+//                   <i className={`fa-solid fa-${isTiming ? "pause" : "play"} me-2`}></i>
+//                   {formatTime(timer)}
+//                 </span>
+//               </button>
+//             </div>
+
+//             <div className="mb-3">
+//               <button
+//                 className="btn btn-light w-100 d-flex align-items-center justify-content-between"
+//                 style={{
+//                   border: "none",
+//                   borderRadius: "6px",
+//                   height: "40px",
+//                 }}
+//                 onClick={(e) => toggleDropdown(e, 'create')}
+//               >
+//                 Create new <i className="fa-solid fa-plus"></i>
+//               </button>
+//               {showCreate && (
+//                 <div className="mt-2 p-2 border rounded">
+//                   {createOptions.map((opt) => (
+//                     <button
+//                       key={opt}
+//                       className="dropdown-item"
+//                       onClick={(e) => {
+//                         e.stopPropagation();
+//                         setShowCreate(false);
+//                         setShowMobileMenu(false);
+//                       }}
+//                     >
+//                       {opt}
+//                     </button>
+//                   ))}
+//                 </div>
+//               )}
+//             </div>
+
+//             <div className="mb-3">
+//               <button
+//                 className="btn btn-light w-100 d-flex align-items-center justify-content-between"
+//                 style={{
+//                   border: "none",
+//                   borderRadius: "6px",
+//                   height: "40px",
+//                 }}
+//                 onClick={(e) => toggleDropdown(e, 'notifications')}
+//               >
+//                 Notifications <i className="fa-regular fa-bell"></i>
+//               </button>
+//               {showNotifications && (
+//                 <div className="mt-2 p-2 border rounded">
+//                   <div className="fw-bold mb-2">Notifications</div>
+//                   <div className="text-muted">No new notifications.</div>
+//                 </div>
+//               )}
+//             </div>
+
+//             <div>
+//               <button
+//                 className="btn btn-light w-100 d-flex align-items-center justify-content-between"
+//                 style={{
+//                   border: "none",
+//                   borderRadius: "6px",
+//                   height: "40px",
+//                 }}
+//                 onClick={(e) => toggleDropdown(e, 'profile')}
+//               >
+//                 Profile <i className="fa-solid fa-circle-user"></i>
+//               </button>
+//               {showProfileDropdown && (
+//                 <div className="mt-2 p-2 border rounded">
+//                   <Link 
+//                     className="dropdown-item d-block py-2" 
+//                     to="/profile" 
+//                     onClick={(e) => {
+//                       e.stopPropagation();
+//                       setShowProfileDropdown(false);
+//                       setShowMobileMenu(false);
+//                     }}
+//                   >
+//                     <i className="bi bi-person-circle me-2"></i> Profile
+//                   </Link>
+//                   <Link 
+//                     className="dropdown-item d-block py-2" 
+//                     to="/settings" 
+//                     onClick={(e) => {
+//                       e.stopPropagation();
+//                       setShowProfileDropdown(false);
+//                       setShowMobileMenu(false);
+//                     }}
+//                   >
+//                     <i className="bi bi-gear me-2"></i> Settings
+//                   </Link>
+//                   <hr className="dropdown-divider my-2" />
+//                   <button 
+//                     className="dropdown-item d-block py-2 w-100 text-start" 
+//                     onClick={(e) => {
+//                       e.stopPropagation();
+//                       handleLogout();
+//                       setShowProfileDropdown(false);
+//                       setShowMobileMenu(false);
+//                     }}
+//                   >
+//                     <i className="bi bi-box-arrow-right me-2"></i> Logout
+//                   </button>
+//                 </div>
+//               )}
+//             </div>
+//           </div>
+//         )}
+
+//         {/* Desktop Menu */}
+//         <div className="d-none d-lg-flex flex-grow-1 align-items-center justify-content-between">
 //           <div className="d-flex mt-3" style={{ flex: 1, maxWidth: "600px" }}>
 //             <div className="input-group" style={{ maxWidth: "350px" }}>
 //               <input
-//                 className="form-control border-0"
-//                 style={{
-//                   background: "#2a3a5a",
-//                   color: "#fff",
-//                   height: "40px"
-//                 }}
+//                 className="form-control border-3"
+//                 style={{ background: "#fff", height: "40px" }}
 //                 placeholder="Search Law Office of Admin"
 //               />
 //             </div>
 
-//             {/* Recents */}
 //             <div className="dropdown ms-3" ref={recentsRef}>
 //               <button
-//                 className="btn btn-outline-dark text-dark dropdown-toggle d-flex align-items-center"
+//                 className="btn dropdown-toggle d-flex align-items-center"
 //                 style={{
-                 
+//                   background: "#fff",
+//                   border: "1px solid #2a3a5a",
+//                   borderRadius: "6px",
 //                   height: "40px",
-//                   color: "#fff"
+//                   minWidth: "100px",
 //                 }}
-//                 onClick={() => setShowRecents(!showRecents)}
+//                 onClick={(e) => toggleDropdown(e, 'recents')}
 //               >
 //                 Recents
 //               </button>
+
 //               {showRecents && (
-//                 <div
-//                   className="dropdown-menu show mt-2"
-//                   style={{ minWidth: 320 }}
-//                 >
+//                 <div className="dropdown-menu show mt-2" style={{ minWidth: 320 }}>
 //                   <div className="text-center py-4 text-muted">
 //                     You don't have any recent items
 //                   </div>
@@ -309,19 +519,16 @@ export default Navbar;
 //             </div>
 //           </div>
 
-//           {/* Right Side Controls */}
-//           <div className="d-flex align-items-center ms-4">
+//           {/* Right Controls */}
+//           <div className="d-flex align-items-center ms-4 gap-3">
 //             {/* Timer */}
-//             <div className="d-flex align-items-center me-3">
+//             <div className="d-flex align-items-center">
 //               <button
-//                 className="btn btn-primary d-flex align-items-center justify-content-center"
+//                 className="btn btn-light text-dark d-flex align-items-center justify-content-center"
 //                 style={{
-//                   background: "#2a3a5a",
-//                   border: "none",
 //                   borderRadius: "6px",
 //                   width: "110px",
 //                   height: "40px",
-//                   color: "#fff"
 //                 }}
 //                 onClick={() => setIsTiming(!isTiming)}
 //               >
@@ -329,22 +536,19 @@ export default Navbar;
 //                 {formatTime(timer)}
 //               </button>
 //               <span
-//                 className="mx-3"
+//                 className="mx-2"
 //                 style={{
-//                   borderLeft: "1px solid rgba(255,255,255,0.3)",
+//                   borderLeft: "1px solid rgba(0, 0, 0, 0.3)",
 //                   height: "24px",
-//                   display: "inline-block"
 //                 }}
 //               ></span>
 //               <button
-//                 className="btn btn-primary d-flex align-items-center justify-content-center"
+//                 className="btn btn-light d-flex align-items-center justify-content-center"
 //                 style={{
-//                   background: "#2a3a5a",
 //                   border: "none",
 //                   borderRadius: "6px",
 //                   width: "40px",
 //                   height: "40px",
-//                   color: "#fff"
 //                 }}
 //                 onClick={() => setShowTimekeeper(true)}
 //               >
@@ -352,32 +556,29 @@ export default Navbar;
 //               </button>
 //             </div>
 
-//             {/* Create new */}
-//             <div className="dropdown me-3" ref={createRef}>
+//             {/* Create New */}
+//             <div className="dropdown" ref={createRef}>
 //               <button
-//                 className="btn btn-primary d-flex align-items-center justify-content-center"
+//                 className="btn btn-light d-flex align-items-center justify-content-center"
 //                 style={{
-//                   background: "#2a3a5a",
 //                   border: "none",
 //                   borderRadius: "6px",
-//                   width: "120px",
+//                   width: "160px",
 //                   height: "40px",
-//                   color: "#fff"
 //                 }}
-//                 onClick={() => setShowCreate(!showCreate)}
+//                 onClick={(e) => toggleDropdown(e, 'create')}
 //               >
 //                 Create new <i className="fa-solid fa-plus ms-2"></i>
 //               </button>
+
 //               {showCreate && (
-//                 <div
-//                   className="dropdown-menu show mt-2"
-//                   style={{ minWidth: 220 }}
-//                 >
+//                 <div className="dropdown-menu show mt-2" style={{ minWidth: 220 }}>
 //                   {createOptions.map((opt) => (
 //                     <button
 //                       key={opt}
 //                       className="dropdown-item"
-//                       onClick={() => {
+//                       onClick={(e) => {
+//                         e.stopPropagation();
 //                         setShowCreate(false);
 //                       }}
 //                     >
@@ -388,27 +589,23 @@ export default Navbar;
 //               )}
 //             </div>
 
-//             {/* Notification */}
-//             <div className="position-relative me-3" ref={notificationRef}>
+//             {/* Notifications */}
+//             <div className="position-relative" ref={notificationRef}>
 //               <button
-//                 className="btn btn-primary d-flex align-items-center justify-content-center"
+//                 className="btn btn-light d-flex align-items-center justify-content-center"
 //                 style={{
-//                   background: "#2a3a5a",
 //                   border: "none",
 //                   borderRadius: "6px",
 //                   width: "40px",
 //                   height: "40px",
-//                   color: "#fff"
 //                 }}
-//                 onClick={() => setShowNotifications(!showNotifications)}
+//                 onClick={(e) => toggleDropdown(e, 'notifications')}
 //               >
 //                 <i className="fa-regular fa-bell"></i>
 //               </button>
+
 //               {showNotifications && (
-//                 <div
-//                   className="dropdown-menu show mt-2"
-//                   style={{ minWidth: 300, right: 0, left: "auto" }}
-//                 >
+//                 <div className="dropdown-menu show mt-2" style={{ minWidth: 300, right: 0, left: "auto" }}>
 //                   <div className="fw-bold mb-2 px-3 pt-2">Notifications</div>
 //                   <div className="px-3 pb-2">
 //                     <div className="mb-2 text-muted">No new notifications.</div>
@@ -417,44 +614,64 @@ export default Navbar;
 //               )}
 //             </div>
 
-//             {/* User Profile */}
-//             <div className="dropdown">
+//             {/* Profile */}
+//             <div className="dropdown" ref={profileRef}>
 //               <button
-//                 className="btn btn-primary dropdown-toggle d-flex align-items-center justify-content-center"
+//                 className="btn btn-light d-flex align-items-center justify-content-center"
 //                 style={{
-//                   background: "#2a3a5a",
 //                   border: "none",
 //                   borderRadius: "6px",
 //                   width: "40px",
 //                   height: "40px",
-//                   color: "#fff"
 //                 }}
-//                 id="userDropdown"
-//                 data-bs-toggle="dropdown"
-//                 aria-expanded="false"
+//                 onClick={(e) => toggleDropdown(e, 'profile')}
 //               >
 //                 <i className="fa-solid fa-circle-user"></i>
 //               </button>
-//               <ul className="dropdown-menu dropdown-menu-end mt-2">
-//                 <li>
-//                   <Link className="dropdown-item" to="/profile">
-//                     <i className="bi bi-person-circle me-2"></i> Profile
-//                   </Link>
-//                 </li>
-//                 <li>
-//                   <Link className="dropdown-item" to="/settings">
-//                     <i className="bi bi-gear me-2"></i> Settings
-//                   </Link>
-//                 </li>
-//                 <li>
-//                   <hr className="dropdown-divider" />
-//                 </li>
-//                 <li>
-//                   <button className="dropdown-item" onClick={handleLogout}>
-//                     <i className="bi bi-box-arrow-right me-2"></i> Logout
-//                   </button>
-//                 </li>
-//               </ul>
+
+//               {showProfileDropdown && (
+//                 <ul className="dropdown-menu show dropdown-menu-end mt-2">
+//                   <li>
+//                     <Link 
+//                       className="dropdown-item" 
+//                       to="/profile"
+//                       onClick={(e) => {
+//                         e.stopPropagation();
+//                         setShowProfileDropdown(false);
+//                       }}
+//                     >
+//                       <i className="bi bi-person-circle me-2"></i> Profile
+//                     </Link>
+//                   </li>
+//                   <li>
+//                     <Link 
+//                       className="dropdown-item" 
+//                       to="/settings"
+//                       onClick={(e) => {
+//                         e.stopPropagation();
+//                         setShowProfileDropdown(false);
+//                       }}
+//                     >
+//                       <i className="bi bi-gear me-2"></i> Settings
+//                     </Link>
+//                   </li>
+//                   <li>
+//                     <hr className="dropdown-divider" />
+//                   </li>
+//                   <li>
+//                     <button 
+//                       className="dropdown-item" 
+//                       onClick={(e) => {
+//                         e.stopPropagation();
+//                         handleLogout();
+//                         setShowProfileDropdown(false);
+//                       }}
+//                     >
+//                       <i className="bi bi-box-arrow-right me-2"></i> Logout
+//                     </button>
+//                   </li>
+//                 </ul>
+//               )}
 //             </div>
 //           </div>
 //         </div>

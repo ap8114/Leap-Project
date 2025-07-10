@@ -231,7 +231,7 @@ select.form-input {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 0px;
+  margin-top: -5px;
 }
 
 /* maindashbord end */
