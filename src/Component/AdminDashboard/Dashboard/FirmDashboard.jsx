@@ -227,7 +227,7 @@ const FirmDashboard = () => {
     {/* Left Side: Title + Refresh */}
     <div class="col-12 col-md-6 d-flex flex-wrap align-items-center gap-3">
       <h2 class="h4 mb-0">Firm overview</h2>
-      <button class="btn btn-link text-primary p-0 d-flex align-items-center gap-1">
+      <button class="btn btn-link text-custom p-0 d-flex align-items-center gap-1">
         <i class="fas fa-sync-alt"></i>
         <span>Refresh</span>
       </button>
@@ -285,19 +285,19 @@ const FirmDashboard = () => {
         <div className="text-center text-muted small py-4">
           {activeUtilizationView === 'Hr.' && (
             <div>
-              <div className="h3 text-primary mb-2">165h</div>
+              <div className="h3 text-custom mb-2">165h</div>
               <div className="small">Average Monthly Hours</div>
             </div>
           )}
           {activeUtilizationView === '$' && (
             <div>
-              <div className="h3 text-primary mb-2">$18,750</div>
+              <div className="h3 text-custom mb-2">$18,750</div>
               <div className="small">Average Monthly Revenue</div>
             </div>
           )}
           {activeUtilizationView === '%' && (
             <div>
-              <div className="h3 text-primary mb-2">85%</div>
+              <div className="h3 text-custom mb-2">85%</div>
               <div className="small">Average Utilization Rate</div>
             </div>
           )}
@@ -309,7 +309,7 @@ const FirmDashboard = () => {
           <i className="fas fa-info-circle text-muted ms-1"></i>
           <div className="row mt-2 small text-center">
             <div className="col-4">
-              <div className="fw-bold text-primary">BILLABLE</div>
+              <div className="fw-bold text-custom">BILLABLE</div>
               <div>
                 {activeUtilizationView === 'Hr.' && '1,980h'}
                 {activeUtilizationView === '$' && '$225K'}
@@ -389,19 +389,19 @@ const FirmDashboard = () => {
         <div className="text-center text-muted small py-4">
           {activeRealizationView === 'Hr.' && (
             <div>
-              <div className="h3 text-primary mb-2">142h</div>
+              <div className="h3 text-custom mb-2">142h</div>
               <div>Average Monthly Realized Hours</div>
             </div>
           )}
           {activeRealizationView === '$' && (
             <div>
-              <div className="h3 text-primary mb-2">$19,250</div>
+              <div className="h3 text-custom mb-2">$19,250</div>
               <div>Average Monthly Realized Revenue</div>
             </div>
           )}
           {activeRealizationView === '%' && (
             <div>
-              <div className="h3 text-primary mb-2">82%</div>
+              <div className="h3 text-custom mb-2">82%</div>
               <div>Average Realization Rate</div>
             </div>
           )}
@@ -413,7 +413,7 @@ const FirmDashboard = () => {
           <i className="fas fa-info-circle text-muted ms-1"></i>
           <div className="row mt-2 small text-center">
             <div className="col-4">
-              <div className="fw-bold text-primary">BILLED: NONDISCOUNTED</div>
+              <div className="fw-bold text-custom">BILLED: NONDISCOUNTED</div>
               <div>
                 {activeRealizationView === 'Hr.' && '1,704h'}
                 {activeRealizationView === '$' && '$255,600'}
@@ -421,7 +421,7 @@ const FirmDashboard = () => {
               </div>
             </div>
             <div className="col-4">
-              <div className="fw-bold text-primary">BILLED: DISCOUNTED</div>
+              <div className="fw-bold text-custom">BILLED: DISCOUNTED</div>
               <div>
                 {activeRealizationView === 'Hr.' && '1,356h'}
                 {activeRealizationView === '$' && '$203,400'}
@@ -523,19 +523,19 @@ const FirmDashboard = () => {
         <div className="text-center text-muted small py-4">
           {activeCollectionView === 'Hr.' && (
             <div>
-              <div className="h3 text-primary mb-2">175h</div>
+              <div className="h3 text-custom mb-2">175h</div>
               <div>Average Monthly Collected Hours</div>
             </div>
           )}
           {activeCollectionView === '$' && (
             <div>
-              <div className="h3 text-primary mb-2">$26,250</div>
+              <div className="h3 text-custom mb-2">$26,250</div>
               <div>Average Monthly Collection</div>
             </div>
           )}
           {activeCollectionView === '%' && (
             <div>
-              <div className="h3 text-primary mb-2">91%</div>
+              <div className="h3 text-custom mb-2">91%</div>
               <div>Average Collection Rate</div>
             </div>
           )}
@@ -547,7 +547,7 @@ const FirmDashboard = () => {
           <i className="fas fa-info-circle text-muted ms-1"></i>
           <div className="row mt-2 small text-center">
             <div className="col-6">
-              <div className="fw-bold text-primary">COLLECTED</div>
+              <div className="fw-bold text-custom">COLLECTED</div>
               <div>
                 {activeCollectionView === 'Hr.' && '2,100h'}
                 {activeCollectionView === '$' && '$315,000'}
@@ -611,7 +611,7 @@ const FirmDashboard = () => {
 
         {/* Link */}
         <div className="text-end mt-3">
-          <button className="btn btn-link text-primary p-0 small">
+          <button className="btn btn-link text-custom p-0 small">
             See all current outstanding balances
             <i className="fas fa-external-link-alt ms-1"></i>
           </button>
