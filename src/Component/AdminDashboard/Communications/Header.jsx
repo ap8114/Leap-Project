@@ -132,13 +132,13 @@ const Header = ({ activeNavItem, onToggleSidebar, isMobile, sidebarOpen }) => {
 
         {/* Right Side Controls */}
         <div className="d-flex align-items-center gap-3 ms-auto">
-          <button className="btn btn-outline-secondary btn-sm">
+          <button className="btn btn-secondary text-dark btn-sm">
             <i className="fas fa-filter"></i>
           </button>
           <div className="position-relative">
             <button
               onClick={() => setNewestDropdownOpen(!newestDropdownOpen)}
-              className="btn btn-outline-secondary btn-sm d-flex align-items-center"
+              className="btn btn-secondary text-dark btn-sm d-flex align-items-center"
             >
               Newest
               <i className="fas fa-chevron-down ms-2"></i>
