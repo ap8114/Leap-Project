@@ -44,7 +44,7 @@ const ContactPage = () => {
                                         <p>communications and to share invoices.</p>
                                     </div>
                                     <p className="mb-4 text-start">
-                                        <a href="https://help.clio.com/hc/en-us/articles/9290466190363-Create-Contacts" className="text-decoration-none ">
+                                        <a href="https://help.Fasttrack.com/hc/en-us/articles/9290466190363-Create-Contacts" className="text-decoration-none ">
                                             Learn more about contacts <i className="fas fa-external-link-alt ms-1"></i>
                                         </a>
                                     </p>

@@ -80,9 +80,10 @@ const Sidebar = ({ collapsed, menuItemClick }) => {
         </ul>
 
         {/* Bottom Section */}
-        <div className="sidebar-bottom mt-auto px-2 pb-3">
-          {/* Resource Center */}
-
+            {/* Resource Center */}
+          {/* User Info */}
+           {/* Collapse Button */}
+        {/* <div className="sidebar-bottom mt-auto px-2 pb-3">
           <Link to="/resourcecenter" className="text-decoration-none">
              <div className="menu-link d-flex align-items-center mb-3" style={{ cursor: "pointer" }}>
             <div
@@ -96,8 +97,6 @@ const Sidebar = ({ collapsed, menuItemClick }) => {
           </div>
           </Link>
        
-
-          {/* User Info */}
           <div className="menu-link d-flex align-items-center mb-3" style={{ cursor: "pointer" }}>
             <div
               className=" resource-icon d-flex align-items-center justify-content-center"
@@ -111,7 +110,7 @@ const Sidebar = ({ collapsed, menuItemClick }) => {
             )}
           </div>
 
-          {/* Collapse Button */}
+         
           <div className=" menu-link d-flex align-items-center" style={{ cursor: "pointer" }} onClick={menuItemClick}>
             <div
               className="resource-icon d-flex align-items-center justify-content-center"
@@ -121,7 +120,7 @@ const Sidebar = ({ collapsed, menuItemClick }) => {
             </div>
             {!collapsed && <span className="">Collapse</span>}
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

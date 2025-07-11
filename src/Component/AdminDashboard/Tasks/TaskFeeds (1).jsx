@@ -113,7 +113,7 @@ const TaskFeeds = () => {
               }}>
                 <div className="fw-bold mb-1">Information about task feeds</div>
                 <div style={{ fontSize: "1.05em" }}>
-                  Task feeds allow you to view your Clio tasks from third-party applications such as Outlook or iCal.<br />
+                  Task feeds allow you to view your Fasttrack tasks from third-party applications such as Outlook or iCal.<br />
                   Security precaution: task feeds contain a unique identifier that permit viewing and monitoring of your events. Exercise caution when sharing your unique feed address.
                 </div>
               </div>

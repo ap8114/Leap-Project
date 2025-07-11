@@ -62,7 +62,7 @@ const timeRows = [
     nonBillable: "—",
     billable: "—",
     date: "07/10/2025",
-    user: "aman patidar",
+    user: "john smith",
     invoiceStatus: "Unbilled",
     time: "00:00:03",
   },
@@ -77,7 +77,7 @@ const timeRows = [
     nonBillable: "—",
     billable: "—",
     date: "07/10/2025",
-    user: "aman patidar",
+    user: "john smith",
     invoiceStatus: "Unbilled",
     time: "00:00:05",
   },
@@ -484,10 +484,10 @@ const ActivitiesTable = () => {
       </div>
 
       {/* Filters Row */}
-     <div className="container-fluid px-2 px-md-4 py-3 bg-light">
-  <div className="d-flex flex-column flex-md-row align-items-center align-items-md-stretch gap-2 mb-2 overflow-auto">
+     <div className="container-fluid px-2 py-3 bg-light">
+  <div className="d-flex flex-column flex-md-row align-items-center align-items-md-stretch  mb-2 overflow-hidden">
     {/* Tabs */}
-    <div className="d-flex flex-nowrap gap-2 me-md-auto">
+    <div className="d-flex flex-nowrap mb-2  me-md-auto">
       {tabBtn("All", null, "All", "#1976d2")}
       {tabBtn("Time", <BsClock />, "Time", "#FFA646")}
       {tabBtn("Expense", <BsCurrencyDollar />, "Expense", "#7e3ff2")}
@@ -695,7 +695,7 @@ const ActivitiesTable = () => {
             <input
               type="text"
               className="form-control"
-              value="aman patidar (me)"
+              value="john smith (me)"
               readOnly
             />
             <button

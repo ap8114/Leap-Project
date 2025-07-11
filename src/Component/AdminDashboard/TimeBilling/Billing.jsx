@@ -673,7 +673,7 @@ const Billing = () => {
           }}
         >
           <img
-            src="https://app.clio.com/assets/empty-states/bills.svg"
+            src="https://app.Fasttrack.com/assets/empty-states/bills.svg"
             alt="No bills"
             style={{ width: isMobile ? "100px" : "140px", marginBottom: "16px" }}
           />

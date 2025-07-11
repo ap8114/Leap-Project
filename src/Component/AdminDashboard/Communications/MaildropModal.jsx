@@ -10,12 +10,12 @@ const MaildropModal = ({ show, handleClose }) => {
 
       <Modal.Body>
         <p>
-          File emails directly to Clio by sending them to the Maildrop address below.
+          File emails directly to Fasttrack by sending them to the Maildrop address below.
           Save the email address to your contacts and then use the To:, Bcc: or Cc: to file.
           <a href="#" className="ms-1">Learn more.</a>
         </p>
         <p className="mt-3">
-          <strong>b10b0426@maildrop.clio.com</strong>
+          <strong>b10b0426@maildrop.Fasttrack.com</strong>
         </p>
       </Modal.Body>
 

@@ -224,7 +224,7 @@ function App() {
                 <Route path="/contact" element={<ContactPage />} />
                 <Route path="/newperson" element={< NewPerson />} />
 
-                {/*  */}
+                {/* report analytics routes */}
                 <Route
                   path="/reportsanalytics"
                   element={<ReportsAnalytics />}
