@@ -68,7 +68,8 @@ const [showTemplates, setShowTemplates] = useState(false);
   );
 
   return (
-    <Container fluid className="px-4 pt-3">
+    <div  className="px-4 pt-3">
+      <h3 className="fw-bold mt-2 ms-1 mb-4" >Matters</h3>
       {/* Main Tabs + Buttons */}
       <Row className="align-items-center mb-3 justify-content-between">
         <Col>
@@ -505,7 +506,7 @@ const [showTemplates, setShowTemplates] = useState(false);
 )}
 
 
-    </Container>
+    </div>
   );
 };
 

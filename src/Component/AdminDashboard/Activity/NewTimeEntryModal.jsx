@@ -237,10 +237,10 @@ const NewTimeEntryModal = ({ show, onClose }) => {
 
         <div className="d-flex flex-wrap justify-content-between gap-2 pt-2">
           <div className="d-flex gap-2">
-            <button className="btn btn-primary btn-sm fw-semibold">
+            <button className="btn btn-custom btn-sm fw-semibold">
               Save entry
             </button>
-            <button className="btn btn-outline-primary btn-sm fw-semibold">
+            <button className="btn btn-outline-custom btn-sm fw-semibold">
               Save + another
             </button>
           </div>

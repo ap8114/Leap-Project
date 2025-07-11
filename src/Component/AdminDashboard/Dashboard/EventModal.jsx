@@ -50,7 +50,7 @@ const EventModal = ({ show, handleClose }) => {
                 onChange={(e) => setTitle(e.target.value)}
                 size="lg"
               />
-              <Form.Text className="text-primary">This field is required</Form.Text>
+              <Form.Text className="text-custom">This field is required</Form.Text>
             </Form.Group>
 
             {/* Start Time */}
@@ -151,7 +151,7 @@ const EventModal = ({ show, handleClose }) => {
             {/* Zoom Integration */}
             <div className="mb-4">
               <p className="text-muted fs-6">
-                Connect to Zoom in your <a href="#" className="text-primary">settings</a> to add a video call to this event. <a href="#" className="text-primary">Learn more</a>
+                Connect to Zoom in your <a href="#" className="text-custom">settings</a> to add a video call to this event. <a href="#" className="text-custom">Learn more</a>
               </p>
             </div>
 
@@ -203,7 +203,7 @@ const EventModal = ({ show, handleClose }) => {
             {/* Event Type */}
             <Form.Group className="mb-4">
               <Form.Label>
-                Event type <InfoCircle className="text-primary ms-1" />
+                Event type <InfoCircle className="text-custom ms-1" />
               </Form.Label>
               <Form.Check 
                 type="radio"
@@ -213,7 +213,7 @@ const EventModal = ({ show, handleClose }) => {
                 value="meeting"
                 checked={eventType === 'meeting'}
                 onChange={(e) => setEventType(e.target.value)}
-                className="text-primary fs-5"
+                className="text-custom fs-5"
               />
             </Form.Group>
 
@@ -253,7 +253,7 @@ const EventModal = ({ show, handleClose }) => {
       </Modal.Body>
       
       <Modal.Footer className="border-top-0 bg-light px-4 py-3">
-        <Button variant="primary" size="lg" className="px-4 py-2 fs-6">
+        <Button variant="custom" size="lg" className="px-4 py-2 fs-6">
           Save event
         </Button>
         <Button variant="outline-secondary" size="lg" className="px-4 py-2 fs-6">

@@ -14,8 +14,8 @@ import Document from "./Component/AdminDashboard/Documents/Document";
 
 import Timebilling from "./Component/AdminDashboard/TimeBilling/Timebilling";
 
-import Client from "./Component/AdminDashboard/Clientcrm/Client";
-import TasksWorkflow from "./Component/AdminDashboard/Tasks/TasksWorkflow";
+
+
 import Settings from "./Component/AdminDashboard/Setting/Settings";
 import ReportsAnalytics from "./Component/AdminDashboard/ReportsAnalytics/ReportsAnalytics";
 import AdminPage from "./Component/AdminDashboard/Admin/AdminPage";
@@ -49,6 +49,11 @@ import CalendarUI from "./Component/AdminDashboard/Calendar/CalendarView";
 
 import Communication from "./Component/AdminDashboard/Communications/Communication";
 import MattersDashboard from "./Component/AdminDashboard/Matters/MatterDashboard";
+import PricingPlans from "./Component/AdminDashboard/Communications/PricingPlans";
+import TaskPage from "./Component/AdminDashboard/Tasks/TaskPage";
+import TaskFeeds from "./Component/AdminDashboard/Tasks/TaskFeeds (1)";
+import NewCalendar from "./Component/AdminDashboard/Calendar/NewCalender";
+
 
 
 function App() {
@@ -179,15 +184,26 @@ function App() {
                 <Route path="/matter" element={<MattersDashboard />} />
                 <Route path="/document" element={<Document />} />
                 <Route path="/categories" element={<CategoriesTemplate />} />
-                <Route path="/Client" element={<Client />} />
+               
                 {/* calendar routing  */}
                 <Route path="/calendar" element={<CalendarUI />} />
                 <Route path="/timebilling" element={<Timebilling />} />
-                <Route path="/tasksworkflow" element={<TasksWorkflow />} />
+                <Route path="/newcalender" element={<NewCalendar />} />
+
+                {/* tasks routing  */}
+                <Route path="/tasks" element={<TaskPage />} />
+                 <Route path="/taskfeed" element={<TaskFeeds />} />
+
+
+
                 <Route path="/setting" element={<Settings />} />
                 <Route path="/activity" element={<ActivitiesTable />} />
                 {/* communication routing */}
                 <Route path="/communications" element={<Communication />} />
+                <Route path="/pricingplan" element={<PricingPlans />} />
+
+
+                {/* account routing */}
                 <Route path="/accounts" element={<Account />} />
 
 
@@ -195,7 +211,7 @@ function App() {
                 <Route path="/contact" element={<ContactPage />} />
                 <Route path="/newperson" element={< NewPerson />} />
 
-
+                {/*  */}
                 <Route
                   path="/reportsanalytics"
                   element={<ReportsAnalytics />}

@@ -1,24 +1,9 @@
-import React from "react";
-import {
-  Modal,
-  Button,
-  Container,
-  Row,
-  Col,
-  Form,
-  Accordion,
-} from "react-bootstrap";
-import { FaExternalLinkAlt } from "react-icons/fa";
+import React from 'react';
+import { Modal, Button, Container, Row, Col, Form, Accordion } from 'react-bootstrap';
+import { FaExternalLinkAlt } from 'react-icons/fa';
 const NewMatterForm = ({ show, onHide }) => {
   return (
-    <Modal
-      show={show}
-      onHide={onHide}
-      dialogClassName="modal-xxl"
-      size="xl"
-      centered
-      scrollable
-    >
+    <Modal show={show} onHide={onHide} dialogClassName="modal-xxl" size="xl" centered scrollable>
       <Modal.Header closeButton>
         <Modal.Title>Create New Matter</Modal.Title>
       </Modal.Header>
@@ -26,38 +11,45 @@ const NewMatterForm = ({ show, onHide }) => {
         <Container fluid>
           <Row>
             {/* Sidebar */}
+            {/* <Col md={2} className="border-end">
+              <div className="d-flex flex-column gap-2">
+                <a href="#">Template information</a>
+                <a href="#">Matter details</a>
+                <a href="#">Matter permissions</a>
+                <a href="#">Matter notifications</a>
+                <a href="#">Block users</a>
+                <a href="#">Related contacts</a>
+                <a href="#">Custom fields</a>
+                <a href="#">Billing preference</a>
+                <a href="#">Task lists</a>
+                <a href="#">Document folders</a>
+                <a href="#">Reports</a>
+              </div>
+            </Col> */}
 
             {/* Main Content */}
             <Col md={12}>
               <Accordion defaultActiveKey="0">
                 {/* Template Info */}
                 <Accordion.Item eventKey="0">
-                  <Accordion.Header>📘 Template information</Accordion.Header>
-                  <Accordion.Body>
-                    <div className="p-3 mb-3 border border-primary bg-light rounded text-dark">
-                      Enhance your process by{" "}
-                      <a
-                        href="/create-template"
-                        className="text-primary fw-semibold"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        creating a template{" "}
-                        <FaExternalLinkAlt style={{ fontSize: "0.75rem" }} />
-                      </a>{" "}
-                      that can be applied to any matter.
-                    </div>
+  <Accordion.Header>📘 Template information</Accordion.Header>
+  <Accordion.Body>
+    <div className="p-3 mb-3 border bg-light rounded text-dark">
+      Enhance your process by
+      <a href="/create-template" className="text-primary fw-semibold">
+        creating a template <FaExternalLinkAlt />
+      </a>
+      that can be applied to any matter.
+    </div>
 
-                    <Form.Group className="mt-2">
-                      <Form.Label className="fw-semibold">
-                        Use an existing template
-                      </Form.Label>
-                      <Form.Select className="rounded">
-                        <option>Select your template</option>
-                      </Form.Select>
-                    </Form.Group>
-                  </Accordion.Body>
-                </Accordion.Item>
+    <div className="form-group mt-2">
+      <label className="fw-semibold">Use an existing template</label>
+      <select className="form-select rounded">
+        <option>Select your template</option>
+      </select>
+    </div>
+  </Accordion.Body>
+</Accordion.Item>
                 {/* Matter Details */}
                 <Accordion.Item eventKey="1">
                   <Accordion.Header>📘 Matter details</Accordion.Header>
@@ -73,11 +65,7 @@ const NewMatterForm = ({ show, onHide }) => {
                         <Col md={6}>
                           <Form.Group>
                             <Form.Label>Matter description *</Form.Label>
-                            <Form.Control
-                              as="textarea"
-                              rows={3}
-                              placeholder="Enter matter description"
-                            />
+                            <Form.Control as="textarea" rows={3} placeholder="Enter matter description" />
                           </Form.Group>
                         </Col>
                       </Row>
@@ -102,8 +90,7 @@ const NewMatterForm = ({ show, onHide }) => {
                         <Col md={4}>
                           <Form.Group>
                             <Form.Label>
-                              Responsible staff{" "}
-                              <span title="This is info">ℹ️</span>
+                              Responsible staff <span title="This is info">ℹ️</span>
                             </Form.Label>
                             <Form.Select>
                               <option>Find a firm user</option>
@@ -161,10 +148,7 @@ const NewMatterForm = ({ show, onHide }) => {
                         <Col md={3}>
                           <Form.Group>
                             <Form.Label>Open date</Form.Label>
-                            <Form.Control
-                              type="date"
-                              defaultValue="2025-07-10"
-                            />
+                            <Form.Control type="date" defaultValue="2025-07-10" />
                           </Form.Group>
                         </Col>
                         <Col md={3}>
@@ -183,10 +167,7 @@ const NewMatterForm = ({ show, onHide }) => {
                           <Form.Group>
                             <Form.Label>Statute of limitations date</Form.Label>
                             <Form.Control type="date" />
-                            <Form.Check
-                              type="checkbox"
-                              label="Statute of limitations date satisfied"
-                            />
+                            <Form.Check type="checkbox" label="Statute of limitations date satisfied" />
                           </Form.Group>
                         </Col>
                       </Row>
@@ -194,15 +175,15 @@ const NewMatterForm = ({ show, onHide }) => {
                   </Accordion.Body>
                 </Accordion.Item>
 
+
+
+
                 {/* Matter Permissions */}
                 <Accordion.Item eventKey="2">
                   <Accordion.Header>📘 Matter permissions</Accordion.Header>
                   <Accordion.Body>
                     <Form>
-                      <Form.Label className="fw-semibold">
-                        Firm users with access{" "}
-                        <span className="text-danger">*</span>
-                      </Form.Label>
+                      <Form.Label className="fw-semibold">Firm users with access <span className="text-danger">*</span></Form.Label>
                       <div className="mb-2">
                         <Form.Check
                           type="radio"
@@ -227,10 +208,8 @@ const NewMatterForm = ({ show, onHide }) => {
                   <Accordion.Header>🔔 Matter notifications</Accordion.Header>
                   <Accordion.Body>
                     <div className="p-3 bg-light border border-primary rounded mb-3 text-dark small">
-                      Firm users that you select will receive notifications when
-                      the status of this matter changes or the matter is
-                      deleted. They will also be notified when documents are
-                      uploaded by clients and related contacts.
+                      Firm users that you select will receive notifications when the status of this matter changes or the matter is deleted.
+                      They will also be notified when documents are uploaded by clients and related contacts.
                     </div>
                     <Form.Group>
                       <Form.Label className="fw-semibold">Firm user</Form.Label>
@@ -244,55 +223,61 @@ const NewMatterForm = ({ show, onHide }) => {
                   <Accordion.Header>🔒 Block users</Accordion.Header>
                   <Accordion.Body>
                     <div className="p-3 bg-light border border-primary rounded mb-3 text-dark small">
-                      Prevent users from accessing this matter by blocking them.
-                      Blocking will override any matter permissions, including
-                      any groups that the users are a part of. Only admins can
-                      block a user.
+                      Prevent users from accessing this matter by blocking them. Blocking will override any matter permissions,
+                      including any groups that the users are a part of. Only admins can block a user.
                     </div>
                     <Form.Group>
-                      <Form.Label className="fw-semibold">
-                        Choose users to block
-                      </Form.Label>
+                      <Form.Label className="fw-semibold">Choose users to block</Form.Label>
                       <Form.Control placeholder="Find a firm user" />
                     </Form.Group>
                   </Accordion.Body>
                 </Accordion.Item>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
                 {/* Related Contacts */}
                 <Accordion.Item eventKey="5">
                   <Accordion.Header>👤 Related contacts</Accordion.Header>
                   <Accordion.Body>
                     <div className="p-3 bg-light border border-primary rounded mb-3 text-dark small">
-                      Information for related contacts appears on the matter
-                      dashboard. These contacts will also appear in future
-                      conflict checks.
+                      Information for related contacts appears on the matter dashboard. These contacts will also appear in future conflict checks.
                     </div>
 
                     <Form>
                       <div className="d-flex flex-wrap align-items-center gap-2 mb-3">
-                        <Form.Control
-                          placeholder="What’s the contact’s name?"
-                          style={{ flex: 1 }}
-                        />
+                        <Form.Control placeholder="What’s the contact’s name?" style={{ flex: 1 }} />
                         <Form.Select style={{ width: "40px" }}>
                           <option>▼</option>
                         </Form.Select>
-                        <Form.Control
-                          placeholder="Relationship"
-                          style={{ flex: 1 }}
-                        />
-                        <Button variant="light" className="text-danger px-2">
-                          ×
-                        </Button>
+                        <Form.Control placeholder="Relationship" style={{ flex: 1 }} />
+                        <Button variant="light" className="text-danger px-2">×</Button>
                       </div>
 
                       <div className="mb-3 d-flex align-items-center gap-2">
                         <Form.Check type="checkbox" id="bill-recipient" />
                         <Form.Label htmlFor="bill-recipient" className="mb-0">
-                          Bill recipient{" "}
-                          <span title="Bill this contact" className="text-info">
-                            ℹ️
-                          </span>
+                          Bill recipient <span title="Bill this contact" className="text-info">ℹ️</span>
                         </Form.Label>
                       </div>
 
@@ -308,18 +293,11 @@ const NewMatterForm = ({ show, onHide }) => {
                   <Accordion.Header>⚙️ Custom fields</Accordion.Header>
                   <Accordion.Body>
                     <div className="p-3 bg-light border border-primary rounded mb-3 text-dark small">
-                      Speed up your workflow by{" "}
-                      <a
-                        href="#"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-primary fw-semibold"
-                      >
+                      Speed up your workflow by{' '}
+                      <a href="#" target="_blank" rel="noopener noreferrer" className="text-primary fw-semibold">
                         creating custom field sets
-                      </a>{" "}
-                      for often-used custom fields. Customize data within your
-                      template to always be visible for a Matter.{" "}
-                      <span className="text-info">ℹ️</span>
+                      </a>{' '}
+                      for often-used custom fields. Customize data within your template to always be visible for a Matter. <span className="text-info">ℹ️</span>
                     </div>
 
                     <Form.Group>
@@ -329,6 +307,7 @@ const NewMatterForm = ({ show, onHide }) => {
                     </Form.Group>
                   </Accordion.Body>
                 </Accordion.Item>
+
 
                 <Accordion.Item eventKey="7">
                   <Accordion.Header>💳 Billing preference</Accordion.Header>
@@ -348,21 +327,15 @@ const NewMatterForm = ({ show, onHide }) => {
                               target="_blank"
                               rel="noopener noreferrer"
                             >
-                              Learn more about billing{" "}
-                              <span className="text-info">↗</span>
+                              Learn more about billing <span className="text-info">↗</span>
                             </a>
                           </span>
                         }
                         className="me-3"
                         defaultChecked
                       />
-                      <Form.Group
-                        className="mb-0"
-                        style={{ minWidth: "180px" }}
-                      >
-                        <Form.Label className="fw-semibold">
-                          Billing method
-                        </Form.Label>
+                      <Form.Group className="mb-0" style={{ minWidth: "180px" }}>
+                        <Form.Label className="fw-semibold">Billing method</Form.Label>
                         <Form.Select>
                           <option>Hourly</option>
                           <option>Flat Fee</option>
@@ -410,6 +383,8 @@ const NewMatterForm = ({ show, onHide }) => {
                   </Accordion.Body>
                 </Accordion.Item>
 
+
+
                 <Accordion.Item eventKey="8">
                   <Accordion.Header>📋 Task Lists & Documents</Accordion.Header>
                   <Accordion.Body>
@@ -417,16 +392,9 @@ const NewMatterForm = ({ show, onHide }) => {
                     <div className="mb-4">
                       <h6 className="fw-semibold mb-3">Task lists</h6>
                       <p className="text-muted mb-3">
-                        Automatically generate and assign tasks when this matter
-                        is created.
-                        <a
-                          href="#"
-                          className="text-primary fw-semibold ms-1"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          Learn more about using task lists{" "}
-                          <span className="text-info">↗</span>
+                        Automatically generate and assign tasks when this matter is created.
+                        <a href="#" className="text-primary fw-semibold ms-1" target="_blank" rel="noopener noreferrer">
+                          Learn more about using task lists <span className="text-info">↗</span>
                         </a>
                       </p>
 
@@ -440,27 +408,16 @@ const NewMatterForm = ({ show, onHide }) => {
                       <hr className="my-3" />
 
                       <div className="d-flex flex-wrap justify-content-between align-items-center mb-3">
-                        <Form.Group
-                          className="mb-2"
-                          style={{ minWidth: "250px" }}
-                        >
-                          <Form.Label className="fw-semibold">
-                            Task list
-                          </Form.Label>
+                        <Form.Group className="mb-2" style={{ minWidth: "250px" }}>
+                          <Form.Label className="fw-semibold">Task list</Form.Label>
                           <div className="d-flex">
                             <Form.Control placeholder="Find a task list" />
-                            <Button
-                              variant="outline-secondary"
-                              className="ms-2"
-                            >
+                            <Button variant="outline-secondary" className="ms-2">
                               <i className="bi bi-search"></i>
                             </Button>
                           </div>
                         </Form.Group>
-                        <Button
-                          variant="outline-primary"
-                          className="fw-semibold mb-2"
-                        >
+                        <Button variant="outline-primary" className="fw-semibold mb-2">
                           + Add task list
                         </Button>
                       </div>
@@ -470,41 +427,23 @@ const NewMatterForm = ({ show, onHide }) => {
                     <div>
                       <h6 className="fw-semibold mb-3">Document folders</h6>
                       <p className="text-muted mb-3">
-                        Create folders within this matter to keep incoming files
-                        organized.
-                        <a
-                          href="#"
-                          className="text-primary fw-semibold ms-1"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          Learn more about Clio Documents{" "}
-                          <span className="text-info">↗</span>
+                        Create folders within this matter to keep incoming files organized.
+                        <a href="#" className="text-primary fw-semibold ms-1" target="_blank" rel="noopener noreferrer">
+                          Learn more about Clio Documents <span className="text-info">↗</span>
                         </a>
                       </p>
 
                       <hr className="my-3" />
 
                       <div className="d-flex flex-wrap justify-content-between align-items-center">
-                        <Form.Group
-                          className="mb-2"
-                          style={{ minWidth: "250px" }}
-                        >
-                          <Form.Label className="fw-semibold">
-                            Folder name
-                          </Form.Label>
+                        <Form.Group className="mb-2" style={{ minWidth: "250px" }}>
+                          <Form.Label className="fw-semibold">Folder name</Form.Label>
                           <div className="d-flex">
                             <Form.Control placeholder="Category" />
-                            <Form.Control
-                              placeholder="Find a document category"
-                              className="ms-2"
-                            />
+                            <Form.Control placeholder="Find a document category" className="ms-2" />
                           </div>
                         </Form.Group>
-                        <Button
-                          variant="outline-primary"
-                          className="fw-semibold mb-2"
-                        >
+                        <Button variant="outline-primary" className="fw-semibold mb-2">
                           + Add a document folder
                         </Button>
                       </div>
@@ -519,23 +458,14 @@ const NewMatterForm = ({ show, onHide }) => {
                     <div className="mb-4">
                       <h6 className="fw-semibold mb-3">Document folders</h6>
                       <p className="text-muted mb-3">
-                        Create folders within this matter to keep incoming files
-                        organized.
-                        <a
-                          href="#"
-                          className="text-primary fw-semibold ms-1"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          Learn more about Clio Documents{" "}
-                          <span className="text-info">↗</span>
+                        Create folders within this matter to keep incoming files organized.
+                        <a href="#" className="text-primary fw-semibold ms-1" target="_blank" rel="noopener noreferrer">
+                          Learn more about Clio Documents <span className="text-info">↗</span>
                         </a>
                       </p>
 
                       <div className="mb-3">
-                        <Form.Label className="fw-semibold">
-                          Folder name
-                        </Form.Label>
+                        <Form.Label className="fw-semibold">Folder name</Form.Label>
                         <div className="d-flex flex-wrap gap-2">
                           <Form.Select style={{ minWidth: "120px" }}>
                             <option>Category</option>
@@ -557,50 +487,25 @@ const NewMatterForm = ({ show, onHide }) => {
                     <div>
                       <h6 className="fw-semibold mb-3">Reports</h6>
                       <p className="text-muted mb-3">
-                        Attorney allocation: Select the percentage of collected
-                        funds to allocate to originating and/or responsible
-                        attorneys. Previously generated reports will not be
-                        affected by updated attorney allocations.
-                        <a
-                          href="#"
-                          className="text-primary fw-semibold ms-1"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          Learn more about attorney allocation{" "}
-                          <span className="text-info">↗</span>
+                        Attorney allocation: Select the percentage of collected funds to allocate to originating and/or responsible attorneys. Previously generated reports will not be affected by updated attorney allocations.
+                        <a href="#" className="text-primary fw-semibold ms-1" target="_blank" rel="noopener noreferrer">
+                          Learn more about attorney allocation <span className="text-info">↗</span>
                         </a>
                       </p>
 
                       <div className="d-flex flex-wrap align-items-center gap-3 mb-3">
                         <div>
-                          <Form.Label className="fw-semibold">
-                            Originating attorney allocation
-                          </Form.Label>
+                          <Form.Label className="fw-semibold">Originating attorney allocation</Form.Label>
                           <div className="d-flex align-items-center">
-                            <Form.Control
-                              type="number"
-                              min="0"
-                              max="100"
-                              defaultValue="0"
-                              style={{ width: "70px" }}
-                            />
+                            <Form.Control type="number" min="0" max="100" defaultValue="0" style={{ width: "70px" }} />
                             <span className="ms-2">%</span>
                           </div>
                         </div>
 
                         <div>
-                          <Form.Label className="fw-semibold">
-                            Responsible attorney allocation
-                          </Form.Label>
+                          <Form.Label className="fw-semibold">Responsible attorney allocation</Form.Label>
                           <div className="d-flex align-items-center">
-                            <Form.Control
-                              type="number"
-                              min="0"
-                              max="100"
-                              defaultValue="0"
-                              style={{ width: "70px" }}
-                            />
+                            <Form.Control type="number" min="0" max="100" defaultValue="0" style={{ width: "70px" }} />
                             <span className="ms-2">%</span>
                           </div>
                         </div>
@@ -615,8 +520,23 @@ const NewMatterForm = ({ show, onHide }) => {
                     </div>
                   </Accordion.Body>
                 </Accordion.Item>
+
+
+
+
+
+
+
+
+
               </Accordion>
+
+
+
+
             </Col>
+
+
           </Row>
         </Container>
       </Modal.Body>

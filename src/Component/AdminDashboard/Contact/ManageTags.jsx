@@ -24,7 +24,7 @@ const ManageTags = ({ onClose }) => {
     };
 
     return (
-        <div className="container mt-5 " >
+        <div className="container-fluid mt-5 " >
             <Modal show={showModal} onHide={handleClose} centered dialogClassName="custom-modal-width">
                 <Modal.Header closeButton>
                     <Modal.Title className="fw-bold">Contact tags settings</Modal.Title>

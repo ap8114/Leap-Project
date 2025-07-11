@@ -69,17 +69,9 @@ main {
 }
 
 
-.btn-outline-custom {
-  color: #578e7e;
-  border-color: #578e7e;
-  background-color: white;
-}
 
-.btn-outline-custom:hover {
-  background-color: #578e7e;
-  color: white;
-  border-color: #578e7e;
-}
+
+
 
 /* login end */
 /* signup */
@@ -231,7 +223,7 @@ select.form-input {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 0px;
+  margin-top: -5px;
 }
 
 /* maindashbord end */
@@ -983,6 +975,20 @@ select.form-input {
   background-color: #1A2744 !important;
   border-color: #1A2744 !important;
   color: #fff !important;
+}
+
+.text-custom{
+  color: #1A2744 !important;
+}
+
+.outline-primary{
+  color: #1A2744 !important;
+}
+.border-custom{
+  color: #1A2744 !important;
+}
+.custom{
+  color: #1A2744 !important;
 }
 
 .btn-custom:hover,

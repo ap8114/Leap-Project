@@ -13,14 +13,14 @@ const FirmFeed = () => {
       <div className="list-group list-group-flush">
         <div className="list-group-item">
           <div className="d-flex gap-3">
-            <div className="flex-shrink-0 rounded bg-primary bg-opacity-10 d-flex align-items-center justify-content-center" style={{ width: '32px', height: '32px' }}>
-              <span className="small fw-bold text-primary">AP</span>
+            <div className="flex-shrink-0 rounded bg-custom bg-opacity-10 d-flex align-items-center justify-content-center" style={{ width: '32px', height: '32px' }}>
+              <span className="small fw-bold text-custom">AP</span>
             </div>
             <div className="flex-grow-1">
               <div className="d-flex flex-wrap align-items-center gap-1">
-                <a href="#" className="text-primary fw-medium">john smith</a>
+                <a href="#" className="text-custom fw-medium">john smith</a>
                 <span className="text-muted">completed a task,</span>
-                <a href="#" className="text-primary">'jhf',</a>
+                <a href="#" className="text-custom">'jhf',</a>
                 <span className="text-muted">about 21 hours ago.</span>
               </div>
               <div className="text-end small text-muted mt-1">
@@ -31,14 +31,14 @@ const FirmFeed = () => {
         </div>
         <div className="list-group-item">
           <div className="d-flex gap-3">
-            <div className="flex-shrink-0 rounded bg-primary bg-opacity-10 d-flex align-items-center justify-content-center" style={{ width: '32px', height: '32px' }}>
-              <span className="small fw-bold text-primary">AP</span>
+            <div className="flex-shrink-0 rounded bg-custom bg-opacity-10 d-flex align-items-center justify-content-center" style={{ width: '32px', height: '32px' }}>
+              <span className="small fw-bold text-custom">AP</span>
             </div>
             <div className="flex-grow-1">
               <div className="d-flex flex-wrap align-items-center gap-1">
-                <a href="#" className="text-primary fw-medium">john smith</a>
+                <a href="#" className="text-custom fw-medium">john smith</a>
                 <span className="text-muted">created a task,</span>
-                <a href="#" className="text-primary">'jhf',</a>
+                <a href="#" className="text-custom">'jhf',</a>
                 <span className="text-muted">about 21 hours ago.</span>
               </div>
               <div className="text-end small text-muted mt-1">
