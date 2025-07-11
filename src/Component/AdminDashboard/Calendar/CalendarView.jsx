@@ -218,8 +218,8 @@ const CalendarUI = ({ }) => {
         {/* Day Header */}
         <div className="border-bottom p-3 bg-white shadow-sm mb-3">
           <div className="row g-0">
-            <div className="col-md-2 text-center">
-              <div className="small text-muted">All Day</div>
+            <div className="col-md-2  text-center">
+              <div className="small  text-muted">All Day</div>
             </div>
             <div className="col-md-10 text-center">
               <div className="fw-bold">
@@ -349,10 +349,10 @@ const CalendarUI = ({ }) => {
       </style>
 
       {/* Header */}
-      <div className="bg-white border-bottom p-3 shadow-sm">
-        <h1 className="fw-bold mb-5 "style={{ fontSize: "2rem", fontWeight: "700" }}>Calendar</h1>
+      <div className="bg-white container-fluid  p-3">
+        <h1 className="fw-bold mb-3 "style={{ fontSize: "2rem", fontWeight: "700" }}>Calendar</h1>
         <div className="row align-items-center">
-          <div className="col-md-6 mb-3 mb-md-0">
+          <div className="col-md-5 mb-3 mb-md-0">
             <div className="d-flex align-items-center gap-2 flex-wrap">
               <button
                 className="btn btn-outline-secondary btn-sm order-1"
@@ -426,9 +426,9 @@ const CalendarUI = ({ }) => {
             </div>
           </div>
 
-          <div className="col-md-6">
+          <div className="col-md-7">
             <div className="d-flex align-items-center justify-content-md-end gap-2 flex-wrap">
-              <div className="btn-group order-2 order-md-1" role="group">
+         <div className="btn-group order-2 order-md-1" role="group">
                 {['Agenda', 'Day', 'Week', 'Work week', 'Month'].map(view => (
                   <button
                     key={view}

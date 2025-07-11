@@ -304,7 +304,7 @@ const [showTemplates, setShowTemplates] = useState(false);
 
 
           {/* Table */}
-          <div className="border rounded" style={{ overflowX: "auto" }}>
+          <div className="border rounded custom-scroll" style={{ overflowX: "auto" }}>>
             <Table hover className="mb-0">
               <thead className="table-light text-nowrap">
                 <tr>

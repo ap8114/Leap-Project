@@ -109,7 +109,7 @@ const TaskPage = () => {
         {/* Header */}
         <div className="row justify-content-between align-items-center mb-4">
           <div className="col-auto">
-            <h1 className="fw-bold m-0">Tasks</h1>
+            <h1 className="fw-bold m-0"  style={{ fontSize: "2rem", fontWeight: "700" }}>Tasks</h1>
           </div>
           <div className="col-auto d-flex gap-2">
             <Link to="/taskfeed">
