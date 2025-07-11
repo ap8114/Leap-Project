@@ -981,6 +981,16 @@ select.form-input {
   color: #1A2744 !important;
 }
 
+.outline-primary{
+  color: #1A2744 !important;
+}
+.border-custom{
+  color: #1A2744 !important;
+}
+.custom{
+  color: #1A2744 !important;
+}
+
 .btn-custom:hover,
 .btn-custom:focus,
 .btn-custom:active {

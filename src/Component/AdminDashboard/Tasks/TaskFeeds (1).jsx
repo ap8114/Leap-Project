@@ -131,7 +131,7 @@ const TaskFeeds = () => {
             <div className="d-flex justify-content-between align-items-center mb-3">
               <h5 className="mb-0">Task Type</h5>
               <button 
-                className="btn btn-primary btn-sm"
+                className="btn btn-custom btn-sm"
                 onClick={() => setShowAddTaskTypeModal(true)}
                 style={{ backgroundColor: "#1976d2", borderColor: "#1976d2" }}
               >
@@ -150,11 +150,11 @@ const TaskFeeds = () => {
             <div className="d-flex justify-content-between align-items-center mb-4">
               <h4 className="mb-0">Task lists</h4>
               <div>
-                <button className="btn btn-outline-primary me-2" style={{ color: "#1976d2", borderColor: "#1976d2" }}>
+                <button className="btn btn-outline-custom me-2" style={{ color: "#1976d2", borderColor: "#1976d2" }}>
                   Actions
                 </button>
                 <button 
-                  className="btn btn-primary"
+                  className="btn btn-custom"
                   onClick={() => setShowAddTaskListModal(true)}
                   style={{ backgroundColor: "#1976d2", borderColor: "#1976d2" }}
                 >
@@ -172,7 +172,7 @@ const TaskFeeds = () => {
                 />
               </div>
               <div>
-                <button className="btn btn-outline-primary" style={{ color: "#1976d2", borderColor: "#1976d2" }}>
+                <button className="btn btn-outline-custom" style={{ color: "#1976d2", borderColor: "#1976d2" }}>
                   Filters
                 </button>
               </div>
@@ -186,7 +186,7 @@ const TaskFeeds = () => {
             <div className="text-center p-5" style={{ border: "1px dashed #ddd", borderRadius: "4px" }}>
               <div className="mb-3">No task lists found.</div>
               <button 
-                className="btn btn-primary"
+                className="btn btn-custom"
                 onClick={() => setShowAddTaskListModal(true)}
                 style={{ backgroundColor: "#1976d2", borderColor: "#1976d2" }}
               >
@@ -225,7 +225,7 @@ const TaskFeeds = () => {
               </div>
               <div className="modal-footer">
                 <button 
-                  className="btn btn-primary"
+                  className="btn btn-custom"
                   onClick={handleAddTaskType}
                   style={{ backgroundColor: "#1976d2", borderColor: "#1976d2" }}
                 >
@@ -296,14 +296,14 @@ const TaskFeeds = () => {
               </div>
               <div className="modal-footer">
                 <button 
-                  className="btn btn-primary me-2"
+                  className="btn btn-custom me-2"
                   onClick={handleAddTaskList}
                   style={{ backgroundColor: "#1976d2", borderColor: "#1976d2" }}
                 >
                   Save and add tasks
                 </button>
                 <button 
-                  className="btn btn-primary me-2"
+                  className="btn btn-custom me-2"
                   onClick={handleAddTaskList}
                   style={{ backgroundColor: "#1976d2", borderColor: "#1976d2" }}
                 >

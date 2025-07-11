@@ -234,13 +234,13 @@ const ManageCategories = ({ onBack }) => {
             {/* Tabs */}
             <div className="d-flex flex-grow" >
               <button
-                className={`btn fw-semibold px-3 py-2 ${activeTab === "Time" ? "active-tab bg-primary bg-opacity-10 text-primary border-primary" : ""}`}
+                className={`btn fw-semibold px-3 py-2 ${activeTab === "Time" ? "active-tab bg-custom bg-opacity-10 text-custom border-custom" : ""}`}
                 onClick={() => setActiveTab("Time")}
               >
                 Time entry
               </button>
               <button
-                className={`btn fw-semibold px-3${activeTab === "Expense" ? "active-tab bg-primary bg-opacity-10 text-primary border-primary" : ""}`}
+                className={`btn fw-semibold px-3${activeTab === "Expense" ? "active-tab bg-custom bg-opacity-10 text-custom border-custom" : ""}`}
 
                 onClick={() => setActiveTab("Expense")}
               >

@@ -183,12 +183,22 @@ const CalendarUI = ({ }) => {
   const renderMonthView = () => {
     return (
       <div className="p-3">
+<<<<<<< HEAD
         <Container className="mt-4 border p-3 bg-white shadow">
           <Row className="text-center fw-bold border-bottom pb-2">
             {['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'].map((d, idx) => (
               <Col key={idx} className="border-end">{d}</Col>
             ))}
           </Row>
+=======
+        
+          <Container className="mt-4 border p-3 bg-white shadow">
+      <Row className="text-center fw-bold border-bottom pb-2">
+        {['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'].map((d, idx) => (
+          <Col key={idx} className="border-end">{d}</Col>
+        ))}
+      </Row>
+>>>>>>> bffa92826dde013715152e8c02db5f2357445712
 
           {[0, 1, 2, 3, 4, 5].map((week) => (
             <Row key={week} className="text-center" style={{ minHeight: '80px' }}>

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Form, Collapse, Modal } from 'react-bootstrap';
 import { FaUser, FaBuilding, FaCamera } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 import NewCompany from './NewCompany';
 import ManageTags from './ManageTags';
 
@@ -573,7 +574,9 @@ const NewPerson = () => {
                 <div className="d-flex flex-wrap gap-2 justify-content-end mt-3 bg-white pt-3 pb-2 sticky-bottom" style={{ zIndex: 10 }}>
                     <Button variant="primary" className="px-4 py-2 fw-bold" style={{ borderRadius: 8 }}>Save contact</Button>
                     <Button variant="outline-primary" className="px-4 py-2 fw-bold" style={{ borderRadius: 8 }}>Save and create new matter</Button>
+                    <Link to="/activity">
                     <Button variant="secondary" className="px-4 py-2 fw-bold" style={{ borderRadius: 8 }}>Cancel</Button>
+                    </Link>
                 </div>
             </Form>
 
