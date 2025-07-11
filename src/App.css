@@ -323,9 +323,7 @@ select.form-input {
 /* navbar end  */
 .right-side-content {
   width: 100%;
- 
   padding-left: 250px;
-
   transition: padding-left 0.3s;
 }
 
@@ -335,6 +333,7 @@ select.form-input {
   }
   .right-side-content {
   width: 100%;
+  
   /* margin-top: 85px; */
   padding-left: 0px;
   /* background-color: #f2f2f2; */

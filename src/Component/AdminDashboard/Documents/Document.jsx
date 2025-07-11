@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';  
+import { Link } from 'react-router-dom';
 import CreateFolderModal from './CreateFolderModal';
-import CreateDocumentModal from './CreateDocumentModal';  
-import { 
-  Container, Row, Col, 
-  Nav, NavItem, NavLink, 
+import CreateDocumentModal from './CreateDocumentModal';
+import {
+  Container, Row, Col,
+  Nav, NavItem, NavLink,
   Button, Dropdown, DropdownToggle, DropdownMenu, DropdownItem,
   Form, FormControl, InputGroup, FormCheck,
   Table, Card, Badge
 } from 'react-bootstrap';
-import { 
-  ChevronDown, ChevronLeft, ChevronRight, 
-  FolderSymlink , Upload, FolderPlus, FileText,
+import {
+  ChevronDown, ChevronLeft, ChevronRight,
+  FolderSymlink, Upload, FolderPlus, FileText,
   SortDown, Filter, X, Check, ArrowsExpand
 } from 'react-bootstrap-icons';
 
@@ -24,8 +24,8 @@ const Document = () => {
   const [expandRows, setExpandRows] = useState(false);
   const [showFoldersFirst, setShowFoldersFirst] = useState(false);
   const [showTrashedFiles, setShowTrashedFiles] = useState(false);
-   const [showCreateFolderModal, setShowCreateFolderModal] = useState(false);
-   const [showCreateDocumentModal, setShowCreateDocumentModal] = useState(false);
+  const [showCreateFolderModal, setShowCreateFolderModal] = useState(false);
+  const [showCreateDocumentModal, setShowCreateDocumentModal] = useState(false);
 
   const documents = [
     {
@@ -69,13 +69,13 @@ const Document = () => {
         {/* Header */}
         <Row className="align-items-center px-3 px-md-4 py-2 py-md-3 border-bottom">
           <Col xs={6} md={4} lg={6}>
-             <h3 className="fw-bold mb-2 mt-2 ms-3">Documents</h3>
+            <h3 className="fw-bold mb-2 mt-2 ms-3">Documents</h3>
           </Col>
           <Col xs={6} md={8} lg={6} className="text-end">
-          <Link to="/categories">
-            <Button variant="outline-secondary" size="sm" className="ms-auto">
-              Categories and templates
-            </Button>
+            <Link to="/categories">
+              <Button variant="outline-secondary" size="sm" className="ms-auto">
+                Categories and templates
+              </Button>
             </Link>
           </Col>
         </Row>
@@ -92,8 +92,8 @@ const Document = () => {
           <Col xs={12} md={6} className="mb-2 mb-md-0">
             <Nav variant="pills" className="flex-nowrap">
               <NavItem>
-                <NavLink 
-                  active={activeTab === 'all'} 
+                <NavLink
+                  active={activeTab === 'all'}
                   onClick={() => setActiveTab('all')}
                   className="py-1 py-md-2 px-2 px-md-3 custom-tabs"
                 >
@@ -101,8 +101,8 @@ const Document = () => {
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink 
-                  active={activeTab === 'files'} 
+                <NavLink
+                  active={activeTab === 'files'}
                   onClick={() => setActiveTab('files')}
                   className="py-1 py-md-2 px-2 px-md-3 custom-tabs"
                 >
@@ -111,21 +111,21 @@ const Document = () => {
               </NavItem>
             </Nav>
           </Col>
-          
+
           <Col xs={12} md={6}>
             <div className="d-flex flex-wrap justify-content-md-end gap-2">
               <Form.Group className="me-2" style={{ minWidth: '150px' }}>
-                <FormControl 
-                  type="text" 
-                  placeholder="Filter by keyword" 
+                <FormControl
+                  type="text"
+                  placeholder="Filter by keyword"
                   size="sm"
                 />
               </Form.Group>
-              
+
               {/* Sort Dropdown */}
               <Dropdown align="end" onToggle={setSortDropdown} show={sortDropdown} className="me-2">
                 <Dropdown.Toggle variant="outline-secondary" size="sm" className="d-flex align-items-center">
-                  Sort <ChevronDown size={12} className="ms-1" />
+                  Sort
                 </Dropdown.Toggle>
                 <DropdownMenu className="p-3" style={{ width: '300px' }}>
                   <div className="d-flex justify-content-between align-items-center mb-3">
@@ -142,7 +142,7 @@ const Document = () => {
                     </Button>
                   </div>
                   <p className="small text-muted mb-3">
-                    With this setting turned on, folders will appear at the top of the list when sorting by the Name, 
+                    With this setting turned on, folders will appear at the top of the list when sorting by the Name,
                     Last edit at and Uploaded date columns.
                   </p>
                   <div className="d-grid gap-1">
@@ -153,11 +153,11 @@ const Document = () => {
                   </div>
                 </DropdownMenu>
               </Dropdown>
-              
+
               {/* Columns Dropdown */}
               <Dropdown align="end" onToggle={setColumnsDropdown} show={columnsDropdown} className="me-2">
                 <Dropdown.Toggle variant="outline-secondary" size="sm" className="d-flex align-items-center">
-                  Columns <ChevronDown size={12} className="ms-1" />
+                  Columns
                 </Dropdown.Toggle>
                 <DropdownMenu className="p-3" style={{ width: '250px' }}>
                   <h6 className="mb-3">Visible columns</h6>
@@ -181,73 +181,105 @@ const Document = () => {
                   </div>
                 </DropdownMenu>
               </Dropdown>
-              
+
               {/* Filters Dropdown */}
-              <Dropdown align="end" onToggle={setFiltersDropdown} show={filtersDropdown} className="me-2">
-                <Dropdown.Toggle variant="outline-secondary" size="sm" className="d-flex align-items-center">
-                  Filters <ChevronDown size={12} className="ms-1" />
+              <Dropdown
+                align="end"
+                show={filtersDropdown}
+                onToggle={(isOpen) => setFiltersDropdown(isOpen)}
+              >
+                <Dropdown.Toggle
+                  variant="outline-secondary"
+                  size="sm"
+                  className="d-flex align-items-center"
+                >
+                  Filters
                 </Dropdown.Toggle>
-                <DropdownMenu className="p-3" style={{ width: '300px' }}>
-                  <Form.Group className="mb-3">
+
+                <Dropdown.Menu className="p-3" style={{ width: '300px' }}>
+                  <Form.Group className="mb-2">
                     <Form.Label className="small">Matter</Form.Label>
                     <InputGroup size="sm">
                       <FormControl placeholder="Find a matter" />
-                      <InputGroup.Text className="bg-white">
-                        <ChevronDown size={12} />
-                      </InputGroup.Text>
+
                     </InputGroup>
                   </Form.Group>
-                  <Form.Group className="mb-3">
+
+                  <Form.Group className="mb-5">
                     <Form.Label className="small">Category</Form.Label>
-                    <InputGroup size="sm">
-                      <FormControl placeholder="Find a document category" />
-                      <InputGroup.Text className="bg-white">
-                        <ChevronDown size={12} />
-                      </InputGroup.Text>
+                    <InputGroup size="sm mb-2">
+                      <FormControl placeholder="Find a document category" className="py-1" />
+
                     </InputGroup>
                   </Form.Group>
-                  <FormCheck 
-                    label="Show trashed files" 
+
+                  <FormCheck
+                    label="Show trashed files"
                     checked={showTrashedFiles}
                     onChange={() => setShowTrashedFiles(!showTrashedFiles)}
                     className="small mb-3"
                   />
+
                   <div className="d-flex gap-2">
                     <Button variant="custom" size="sm">Apply filters</Button>
                     <Button variant="outline-secondary" size="sm">Clear filters</Button>
                   </div>
-                </DropdownMenu>
+                </Dropdown.Menu>
               </Dropdown>
-              
+
               {/* New Dropdown */}
               <Dropdown align="end" onToggle={setNewDropdown} show={newDropdown}>
                 <Dropdown.Toggle variant="custom" size="sm" className="d-flex align-items-center">
-                  New <ChevronDown size={12} className="ms-1" />
+                  New
                 </Dropdown.Toggle>
-                <DropdownMenu>
-                  <DropdownItem>
-                    <Upload size={14} className="me-2" /> Upload files
-                  </DropdownItem>
-                  <DropdownItem>
-                    <FolderPlus size={14} className="me-2" /> Upload folder
-                  </DropdownItem>
-                   <Dropdown.Item onClick={() => setShowCreateFolderModal(true)}>
-        <FolderPlus size={14} className="me-2" /> Create folder
-      </Dropdown.Item>
+                <DropdownMenu className='mt-2'>
+                  <Dropdown.Item as="label" className="d-flex align-items-center gap-2 mb-0">
+                    <Upload size={14} /> Upload file
+                    <input
+                      type="file"
+                      hidden
+                      onChange={(e) => {
+                        const file = e.target.files[0];
+                        if (file) {
+                          console.log("Uploaded file:", file.name);
+                          // TODO: Handle file upload logic here
+                        }
+                      }}
+                    />
+                  </Dropdown.Item>
 
-      <CreateFolderModal
-        show={showCreateFolderModal}
-        onHide={() => setShowCreateFolderModal(false)}
-      />
-            <Dropdown.Item onClick={() => setShowCreateDocumentModal(true)}>
-        <FileText size={14} className="me-2" /> Create document from template
-      </Dropdown.Item>
+                  <Dropdown.Item as="label" className="d-flex align-items-center gap-2 mb-0">
+                    <FolderPlus size={14} /> Upload folder
+                    <input
+                      type="file"
+                      hidden
+                      webkitdirectory="true"
+                      directory=""
+                      onChange={(e) => {
+                        const files = Array.from(e.target.files);
+                        console.log("Folder contents:", files.map(f => f.name));
+                        // TODO: Handle folder upload logic here
+                      }}
+                    />
+                  </Dropdown.Item>
 
-      {/* Modal Component */}
-      <CreateDocumentModal
-        show={showCreateDocumentModal}
-        onHide={() => setShowCreateDocumentModal(false)}
-      />
+                  <Dropdown.Item onClick={() => setShowCreateFolderModal(true)} className='d-flex align-items-center gap-2 mb-0'>
+                    <FolderPlus size={14} className="me-2" /> Create folder
+                  </Dropdown.Item>
+
+                  <CreateFolderModal
+                    show={showCreateFolderModal}
+                    onHide={() => setShowCreateFolderModal(false)}
+                  />
+                  <Dropdown.Item onClick={() => setShowCreateDocumentModal(true)} className='d-flex align-items-center gap-2 mb-0'>
+                    <FileText size={14} className="me-2" /> Create document from template
+                  </Dropdown.Item>
+
+                  {/* Modal Component */}
+                  <CreateDocumentModal
+                    show={showCreateDocumentModal}
+                    onHide={() => setShowCreateDocumentModal(false)}
+                  />
                 </DropdownMenu>
               </Dropdown>
             </div>
@@ -327,15 +359,15 @@ const Document = () => {
               ))}
             </>
           ) : (
-      <Row className="py-5 py-md-8 d-flex justify-content-center text-center">
-  <Col md="auto">
-    <FolderSymlink  size={48} className="text-muted mb-3 " style={{marginLeft:"200"}} />
-    <h5 className="mb-2">No results found</h5>
-    <p className="text-muted">
-      Try adjusting your search or filter to find what you're looking for.
-    </p>
-  </Col>
-</Row>
+            <Row className="py-5 py-md-8 d-flex justify-content-center text-center">
+              <Col md="auto">
+                <FolderSymlink size={48} className="text-muted mb-3 " style={{ marginLeft: "200" }} />
+                <h5 className="mb-2">No results found</h5>
+                <p className="text-muted">
+                  Try adjusting your search or filter to find what you're looking for.
+                </p>
+              </Col>
+            </Row>
 
           )}
         </div>

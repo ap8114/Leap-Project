@@ -60,11 +60,18 @@ function App() {
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
     const [isMobile, setIsMobile] = useState(false);
 
- 
+  
 
-  const menusidebarcollaps = () => {
+  const menusidebarcollapse = () => {
     setIsSidebarCollapsed(true);
   };
+
+
+  useEffect(() => {
+  if (isMobile) {
+    menusidebarcollapse();
+  }
+}, [isMobile]);
 
    useEffect(() => {
       const handleResize = () => {
