@@ -27,23 +27,31 @@ const Account = () => {
   return (
     <div className="container-fluid bg-light min-vh-100 py-3">
       {/* HEADER */}
-      <div className=" p-3 mb-3 d-flex justify-content-between align-items-center">
-       <h1 className="fw-bold mb-2 mt-2 ms-0" style={{ fontSize: "2rem", fontWeight: "700" }}>Accounts</h1>
-        <div className="d-flex gap-2">
-          <button
-            className="btn btn-secondary text-dark"
-            onClick={() => setShowExportModal(true)}
-          >
-            Export transactions
-          </button>
-          <button
-            className="btn btn-custom text-white"
-            onClick={() => setShowNewAccountModal(true)}
-          >
-            New account
-          </button>
-        </div>
-      </div>
+     <div className="container-fluid p-3 mb-3">
+  <div className="row align-items-center">
+    <div className="col-12 col-md-6 mb-2 mb-md-0">
+      <h1 className="fw-bold mb-0" style={{ fontSize: "2rem" }}>
+        Accounts
+      </h1>
+    </div>
+
+    <div className="col-12 col-md-6 d-flex flex-column flex-md-row justify-content-md-end gap-2">
+      <button
+        className="btn btn-secondary text-dark w-100 w-md-auto"
+        onClick={() => setShowExportModal(true)}
+      >
+        Export transactions
+      </button>
+      <button
+        className="btn btn-custom text-white w-100 w-md-auto"
+        onClick={() => setShowNewAccountModal(true)}
+      >
+        New account
+      </button>
+    </div>
+  </div>
+</div>
+
 
       {/* FILTERS & COLUMNS */}
       <div className="bg-white border p-3 mb-3 d-flex justify-content-end gap-2">
