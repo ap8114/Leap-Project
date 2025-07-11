@@ -430,7 +430,7 @@ const NewMatterForm = ({ show, onHide }) => {
                       <p className="text-muted mb-3">
                         Create folders within this matter to keep incoming files organized.
                         <a href="#" className="text-custom fw-semibold ms-1" target="_blank" rel="noopener noreferrer">
-                          Learn more about Clio Documents <span className="text-info">↗</span>
+                          Learn more about Fasttrack Documents <span className="text-info">↗</span>
                         </a>
                       </p>
 
@@ -461,7 +461,7 @@ const NewMatterForm = ({ show, onHide }) => {
                       <p className="text-muted mb-3">
                         Create folders within this matter to keep incoming files organized.
                         <a href="#" className="text-custom fw-semibold ms-1" target="_blank" rel="noopener noreferrer">
-                          Learn more about Clio Documents <span className="text-info">↗</span>
+                          Learn more about Fasttrack Documents <span className="text-info">↗</span>
                         </a>
                       </p>
 

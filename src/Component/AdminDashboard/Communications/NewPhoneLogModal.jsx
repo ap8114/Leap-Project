@@ -37,7 +37,7 @@ const NewPhoneLogModal = ({ show, handleClose }) => {
             </Col>
             <Col md={6}>
               <Form.Label>To</Form.Label>
-              <Form.Control type="text" value="aman patidar" readOnly />
+              <Form.Control type="text" value="john smith" readOnly />
             </Col>
           </Row>
 
@@ -67,7 +67,7 @@ const NewPhoneLogModal = ({ show, handleClose }) => {
 
           <Form.Group>
             <Form.Label>Notifications</Form.Label>
-            <Form.Control type="text" value="aman patidar" readOnly />
+            <Form.Control type="text" value="john smith" readOnly />
           </Form.Group>
         </Form>
       </Modal.Body>

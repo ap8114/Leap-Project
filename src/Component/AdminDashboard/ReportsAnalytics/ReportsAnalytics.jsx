@@ -5,44 +5,44 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import ClassicReports from './ClassicReports'
 const Reports = () => {
   const [key, setKey] = useState('reports');
-  const [subKey, setSubKey] = useState('clio');
+  const [subKey, setSubKey] = useState('Fasttrack');
   const [viewTab, setViewTab] = useState('card');
 
-  const clioReports = [
+  const FasttrackReports = [
     {
       title: 'Client productivity report',
       category: 'Productivity',
-      type: 'Clio report',
+      type: 'Fasttrack report',
       description: 'Breakdown of time spent for clients to understand billable vs lost time.',
     },
     {
       title: 'Payment report',
       category: 'Revenue',
-      type: 'Clio report',
+      type: 'Fasttrack report',
       description: 'Detailed view of payments to understand revenue and recover expenses.',
     },
     {
       title: 'Client transaction report',
       category: 'Compliance',
-      type: 'Clio report',
+      type: 'Fasttrack report',
       description: 'Detailed view of trust/operating transactions including payments and balances.',
     },
     {
       title: 'Transaction report',
       category: 'Compliance',
-      type: 'Clio report',
+      type: 'Fasttrack report',
       description: 'History of trust/operating transactions and related actions.',
     },
     {
       title: 'Payment allocation report',
       category: 'Revenue',
-      type: 'Clio report',
+      type: 'Fasttrack report',
       description: 'Time and expenses collected per user for each market.',
     },
     {
       title: 'Trust transaction report',
       category: 'Compliance',
-      type: 'Clio report',
+      type: 'Fasttrack report',
       description: 'Shows client/matter trust transactions, balances, and audit details.',
     },
   ];
@@ -86,7 +86,7 @@ const Reports = () => {
                 }}
               >
                 <Tab eventKey="custom" title="Custom" />
-                <Tab eventKey="clio" title="Clio" />
+                <Tab eventKey="Fasttrack" title="Fasttrack" />
               </Tabs>
             </Col>
 
@@ -151,11 +151,11 @@ const Reports = () => {
             </>
           )}
 
-          {subKey === 'clio' && (
+          {subKey === 'Fasttrack' && (
             <>
               {viewTab === 'card' ? (
                 <div className="row">
-                  {clioReports.map((report, idx) => (
+                  {FasttrackReports.map((report, idx) => (
                     <div className="col-md-4 mb-4" key={idx}>
                       <Card className="h-100">
                         <Card.Body>
@@ -205,7 +205,7 @@ const Reports = () => {
                         </tr>
                       </thead>
                       <tbody className='table-white'> 
-                        {clioReports.map((report, idx) => (
+                        {FasttrackReports.map((report, idx) => (
                           <tr key={idx}>
                             <td className='text-custom underline py-3 px-3'>{report.title}</td>
                             <td>{report.category}</td>

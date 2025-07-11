@@ -11,12 +11,12 @@ const settingsContent = [
   ],
   [
     { label: 'Manage Users', desc: 'Manage users associated with this account.' },
-    { label: 'Appearance', desc: 'Customize how Clio Manage looks on your device.' },
+    { label: 'Appearance', desc: 'Customize how Fasttrack Manage looks on your device.' },
     { label: 'Billing', desc: 'Edit your bill settings, themes, payment profiles, and UTBMS options...' },
   ],
   [
     { label: 'Groups, Job Titles, and Permissions', desc: 'Manage your groups, job titles, and permissions.' },
-    { label: 'Clio Mobile App', desc: 'Download Clio Mobile. Manage your device authorization and notifications.' },
+    { label: 'Fasttrack Mobile App', desc: 'Download Fasttrack Mobile. Manage your device authorization and notifications.' },
     { label: 'Data Escrow', desc: 'Manage back-ups using Amazon S3 cloud storage.' },
   ],
   [
@@ -27,7 +27,7 @@ const settingsContent = [
   [
     { label: 'Security & Compliance', desc: 'Manage passwords, set up two-factor authentication, and monitor account sessions.' },
     { label: 'Apps', desc: 'Authorize 3rd party client applications.' },
-    { label: 'Clio for Co-Counsel & Sharing', desc: 'Edit branding options for Clio for Co-Counsel and email notifications. Manage resources and bill preview settings.' },
+    { label: 'Fasttrack for Co-Counsel & Sharing', desc: 'Edit branding options for Fasttrack for Co-Counsel and email notifications. Manage resources and bill preview settings.' },
   ],
   [
     { label: 'Documents', desc: 'View your automation merge fields. Link your account to external document sources. Edit document preview settings.' },
@@ -52,7 +52,7 @@ const labelToRoute = {
   'Appearance': '/settings/appearance',
   'Billing': '/settings/billing',
   'Groups, Job Titles, and Permissions': '/settings/groups-permissions',
-  'Clio Mobile App': '/settings/mobile-app',
+  'Fasttrack Mobile App': '/settings/mobile-app',
   'Data Escrow': '/settings/data-escrow',
   'Custom Fields': '/settings/custom-fields',
   'Contact and Calendar Sync': '/settings/contact-calendar-sync',
@@ -65,7 +65,7 @@ const labelToRoute = {
   'Text Snippets': '/settings/text-snippets',
   'Notifications': '/settings/notifications',
   'Court Rules': '/settings/court-rules',
-  'Clio for Co-Counsel & Sharing': '/settings/clio-co-counsel',
+  'Fasttrack for Co-Counsel & Sharing': '/settings/Fasttrack-co-counsel',
   'Automated Workflows': '/settings/automated-workflows',
 };
 
@@ -87,7 +87,7 @@ const Settings = () => (
             <span style={{ fontWeight: 700, fontSize: 28, color: '#232933', letterSpacing: 1 }}>PERSONAL</span>
           </Col>
           <Col xs={12} md={4} className="py-3">
-            <span style={{ fontWeight: 700, fontSize: 28, color: '#232933', letterSpacing: 1 }}>CLIO SETTINGS</span>
+            <span style={{ fontWeight: 700, fontSize: 28, color: '#232933', letterSpacing: 1 }}>Fasttrack SETTINGS</span>
           </Col>
         </Row>
       </div>

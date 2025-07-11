@@ -11,9 +11,9 @@ const NewInternalMessageModal = ({ show, handleClose }) => {
       <Modal.Body>
         <Alert variant="info">
           Starting a new internal message thread with contacts will invite them to use 
-          <a href="#"> Clio for Co-Counsel</a>, a secure web portal intended for co-counsels 
+          <a href="#"> Fasttrack for Co-Counsel</a>, a secure web portal intended for co-counsels 
           to collaborate with your firm. If you want to communicate with your clients via 
-          <a href="#"> Clio for Clients</a>, you can use the <a href="#">client portals</a> feature.
+          <a href="#"> Fasttrack for Clients</a>, you can use the <a href="#">client portals</a> feature.
         </Alert>
 
         <Form>
