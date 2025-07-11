@@ -188,20 +188,20 @@ const ResourceCenter = () => {
             <h2 className="mb-4">Quick links</h2>
             <Row>
               <Col md={4} className="mb-4">
-                <Card className="h-100 border-primary">
+                <Card className="h-100 border-custom">
                   <Card.Body className="text-center">
                     <Card.Title>Live Training Sessions</Card.Title>
                     <Card.Text>
                       Learn Clio faster with live, interactive training. Get the essential skills to manage your practice efficiently, whether you're just starting or refining your workflow.
                     </Card.Text>
-                    <Button variant="primary">View Schedule</Button>
+                    <Button variant="custom">View Schedule</Button>
                   </Card.Body>
                 </Card>
               </Col>
               <Col md={4} className="mb-4">
                 <Card className="h-100 border-success">
                   <Card.Body className="text-center">
-                    <Card.Title>Customer Community</Card.Title>
+                    <Card.Title>customer Community</Card.Title>
                     <Card.Text>
                       Connect with fellow Clio users, get answers to your questions, and stay informed about new features and pilot programs.
                     </Card.Text>
@@ -234,7 +234,7 @@ const ResourceCenter = () => {
               <p className="mb-4">
                 Get personalized support—24 hours a day, 5 days a week—from the largest and most experienced team in the industry.
               </p>
-              <Button variant="primary">
+              <Button variant="custom">
                 <i className="bi bi-telephone me-2"></i> 1-888-858-2546
               </Button>
             </Col>

@@ -40,7 +40,7 @@ const CategoriesTemplate = () => {
    <Row className="mb-3">
   <Col>
   <Link to="/document">
-    <Button variant="link" className="text-primary d-flex align-items-center gap-1 p-0 text-decoration-none" >
+    <Button variant="link" className="text-custom d-flex align-items-center gap-1 p-0 text-decoration-none" >
       <ChevronLeft size={16} /> <span>Back to Documents</span>
     </Button>
     </Link>
@@ -78,7 +78,7 @@ const CategoriesTemplate = () => {
           />
           {activeTab === 'templates' ? (
             <>
-              <Button variant="primary" onClick={handleNewTemplateClick}>
+              <Button variant="custom" onClick={handleNewTemplateClick}>
                 <FileEarmarkPlus className="me-1" /> New Template
               </Button>
               <Form.Control
@@ -89,7 +89,7 @@ const CategoriesTemplate = () => {
               />
             </>
           ) : (
-            <Button variant="primary" onClick={() => setShowCategoryModal(true)}>
+            <Button variant="custom" onClick={() => setShowCategoryModal(true)}>
               <Folder className="me-1" /> New Category
             </Button>
           )}

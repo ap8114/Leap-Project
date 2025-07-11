@@ -981,7 +981,7 @@ select.form-input {
   color: #1A2744 !important;
 }
 
-.outline-primary{
+.outline-custom{
   color: #1A2744 !important;
 }
 .border-custom{
@@ -990,6 +990,14 @@ select.form-input {
 .custom{
   color: #1A2744 !important;
 }
+
+.bg-custom{
+  background-color: #1A2744 !important;
+  color: #fff !important;
+}
+
+
+
 
 .btn-custom:hover,
 .btn-custom:focus,
@@ -1047,6 +1055,10 @@ select.form-input {
   border-color: #dee2e6;
 }
 
+
+
+
+
 /* modal custom css for main content render */
 
 .modal-dialog {
@@ -1081,7 +1093,7 @@ margin-top: auto;
 }
 
 
-/* Custom styles for mobile sidebar  communication page*/
+/* custom styles for mobile sidebar  communication page*/
 @media (max-width: 991.98px) {
   .ms-250 {
     margin-left: 250px;

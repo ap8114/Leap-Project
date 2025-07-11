@@ -33,7 +33,7 @@ const NewClientPortalModal = ({ show, handleClose }) => {
         <Button variant="outline-secondary" onClick={handleClose}>
           Cancel
         </Button>
-        <Button variant="primary">
+        <Button variant="custom">
           Create client portal
         </Button>
       </Modal.Footer>

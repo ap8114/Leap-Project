@@ -20,7 +20,7 @@ const NewMatterForm = ({ show, onHide }) => {
                 <a href="#">Matter notifications</a>
                 <a href="#">Block users</a>
                 <a href="#">Related contacts</a>
-                <a href="#">Custom fields</a>
+                <a href="#">custom fields</a>
                 <a href="#">Billing preference</a>
                 <a href="#">Task lists</a>
                 <a href="#">Document folders</a>
@@ -37,7 +37,7 @@ const NewMatterForm = ({ show, onHide }) => {
   <Accordion.Body>
     <div className="p-3 mb-3 border bg-light rounded text-dark">
       Enhance your process by
-      <a href="/create-template" className="text-primary fw-semibold" >
+      <a href="/create-template" className="text-custom fw-semibold">
         creating a template <FaExternalLinkAlt />
       </a>
       that can be applied to any matter.
@@ -208,7 +208,7 @@ const NewMatterForm = ({ show, onHide }) => {
                 <Accordion.Item eventKey="3">
                   <Accordion.Header>🔔 Matter notifications</Accordion.Header>
                   <Accordion.Body>
-                    <div className="p-3 bg-light border border-primary rounded mb-3 text-dark small">
+                    <div className="p-3 bg-light border border-custom rounded mb-3 text-dark small">
                       Firm users that you select will receive notifications when the status of this matter changes or the matter is deleted.
                       They will also be notified when documents are uploaded by clients and related contacts.
                     </div>
@@ -223,7 +223,7 @@ const NewMatterForm = ({ show, onHide }) => {
                 <Accordion.Item eventKey="4">
                   <Accordion.Header>🔒 Block users</Accordion.Header>
                   <Accordion.Body>
-                    <div className="p-3 bg-light border border-primary rounded mb-3 text-dark small">
+                    <div className="p-3 bg-light border border-custom rounded mb-3 text-dark small">
                       Prevent users from accessing this matter by blocking them. Blocking will override any matter permissions,
                       including any groups that the users are a part of. Only admins can block a user.
                     </div>
@@ -261,7 +261,7 @@ const NewMatterForm = ({ show, onHide }) => {
                 <Accordion.Item eventKey="5">
                   <Accordion.Header>👤 Related contacts</Accordion.Header>
                   <Accordion.Body>
-                    <div className="p-3 bg-light border border-primary rounded mb-3 text-dark small">
+                    <div className="p-3 bg-light border border-custom rounded mb-3 text-dark small">
                       Information for related contacts appears on the matter dashboard. These contacts will also appear in future conflict checks.
                     </div>
 
@@ -282,23 +282,23 @@ const NewMatterForm = ({ show, onHide }) => {
                         </Form.Label>
                       </div>
 
-                      <Button variant="outline-primary" className="fw-semibold">
+                      <Button variant="outline-custom" className="fw-semibold">
                         + Add related contact
                       </Button>
                     </Form>
                   </Accordion.Body>
                 </Accordion.Item>
 
-                {/* Custom Fields */}
+                {/* custom Fields */}
                 <Accordion.Item eventKey="6">
-                  <Accordion.Header>⚙️ Custom fields</Accordion.Header>
+                  <Accordion.Header>⚙️ custom fields</Accordion.Header>
                   <Accordion.Body>
-                    <div className="p-3 bg-light border border-primary rounded mb-3 text-dark small">
+                    <div className="p-3 bg-light border border-custom rounded mb-3 text-dark small">
                       Speed up your workflow by{' '}
-                      <a href="#" target="_blank" rel="noopener noreferrer" className="text-primary fw-semibold">
+                      <a href="#" target="_blank" rel="noopener noreferrer" className="text-custom fw-semibold">
                         creating custom field sets
                       </a>{' '}
-                      for often-used custom fields. Customize data within your template to always be visible for a Matter. <span className="text-info">ℹ️</span>
+                      for often-used custom fields. customize data within your template to always be visible for a Matter. <span className="text-info">ℹ️</span>
                     </div>
 
                     <Form.Group>
@@ -314,7 +314,7 @@ const NewMatterForm = ({ show, onHide }) => {
                   <Accordion.Header>💳 Billing preference</Accordion.Header>
                   <Accordion.Body>
                     {/* Billable Row */}
-                    <div className="d-flex flex-wrap justify-content-between align-items-center border border-primary rounded p-3 mb-3">
+                    <div className="d-flex flex-wrap justify-content-between align-items-center border border-custom rounded p-3 mb-3">
                       <Form.Check
                         type="checkbox"
                         id="is-billable"
@@ -324,7 +324,7 @@ const NewMatterForm = ({ show, onHide }) => {
                             <br />
                             <a
                               href="#"
-                              className="text-primary fw-semibold"
+                              className="text-custom fw-semibold"
                               target="_blank"
                               rel="noopener noreferrer"
                             >
@@ -345,10 +345,10 @@ const NewMatterForm = ({ show, onHide }) => {
                       </Form.Group>
                     </div>
 
-                    {/* Custom billing rates */}
+                    {/* custom billing rates */}
                     <div className="mb-3">
-                      <h6 className="fw-semibold">Custom billing rates</h6>
-                      <Button variant="outline-primary" className="fw-semibold">
+                      <h6 className="fw-semibold">custom billing rates</h6>
+                      <Button variant="outline-custom" className="fw-semibold">
                         + Add a custom billing rate
                       </Button>
                     </div>
@@ -394,7 +394,7 @@ const NewMatterForm = ({ show, onHide }) => {
                       <h6 className="fw-semibold mb-3">Task lists</h6>
                       <p className="text-muted mb-3">
                         Automatically generate and assign tasks when this matter is created.
-                        <a href="#" className="text-primary fw-semibold ms-1" target="_blank" rel="noopener noreferrer">
+                        <a href="#" className="text-custom fw-semibold ms-1" target="_blank" rel="noopener noreferrer">
                           Learn more about using task lists <span className="text-info">↗</span>
                         </a>
                       </p>
@@ -418,7 +418,7 @@ const NewMatterForm = ({ show, onHide }) => {
                             </Button>
                           </div>
                         </Form.Group>
-                        <Button variant="outline-primary" className="fw-semibold mb-2">
+                        <Button variant="outline-custom" className="fw-semibold mb-2">
                           + Add task list
                         </Button>
                       </div>
@@ -429,7 +429,7 @@ const NewMatterForm = ({ show, onHide }) => {
                       <h6 className="fw-semibold mb-3">Document folders</h6>
                       <p className="text-muted mb-3">
                         Create folders within this matter to keep incoming files organized.
-                        <a href="#" className="text-primary fw-semibold ms-1" target="_blank" rel="noopener noreferrer">
+                        <a href="#" className="text-custom fw-semibold ms-1" target="_blank" rel="noopener noreferrer">
                           Learn more about Clio Documents <span className="text-info">↗</span>
                         </a>
                       </p>
@@ -444,7 +444,7 @@ const NewMatterForm = ({ show, onHide }) => {
                             <Form.Control placeholder="Find a document category" className="ms-2" />
                           </div>
                         </Form.Group>
-                        <Button variant="outline-primary" className="fw-semibold mb-2">
+                        <Button variant="outline-custom" className="fw-semibold mb-2">
                           + Add a document folder
                         </Button>
                       </div>
@@ -460,7 +460,7 @@ const NewMatterForm = ({ show, onHide }) => {
                       <h6 className="fw-semibold mb-3">Document folders</h6>
                       <p className="text-muted mb-3">
                         Create folders within this matter to keep incoming files organized.
-                        <a href="#" className="text-primary fw-semibold ms-1" target="_blank" rel="noopener noreferrer">
+                        <a href="#" className="text-custom fw-semibold ms-1" target="_blank" rel="noopener noreferrer">
                           Learn more about Clio Documents <span className="text-info">↗</span>
                         </a>
                       </p>
@@ -477,7 +477,7 @@ const NewMatterForm = ({ show, onHide }) => {
                         </div>
                       </div>
 
-                      <Button variant="outline-primary" className="fw-semibold">
+                      <Button variant="outline-custom" className="fw-semibold">
                         + Add a document folder
                       </Button>
 
@@ -489,7 +489,7 @@ const NewMatterForm = ({ show, onHide }) => {
                       <h6 className="fw-semibold mb-3">Reports</h6>
                       <p className="text-muted mb-3">
                         Attorney allocation: Select the percentage of collected funds to allocate to originating and/or responsible attorneys. Previously generated reports will not be affected by updated attorney allocations.
-                        <a href="#" className="text-primary fw-semibold ms-1" target="_blank" rel="noopener noreferrer">
+                        <a href="#" className="text-custom fw-semibold ms-1" target="_blank" rel="noopener noreferrer">
                           Learn more about attorney allocation <span className="text-info">↗</span>
                         </a>
                       </p>
@@ -545,7 +545,7 @@ const NewMatterForm = ({ show, onHide }) => {
         <Button variant="secondary" onClick={onHide}>
           Cancel
         </Button>
-        <Button variant="primary">Save Matter</Button>
+        <Button variant="custom">Save Matter</Button>
       </Modal.Footer>
     </Modal>
   );

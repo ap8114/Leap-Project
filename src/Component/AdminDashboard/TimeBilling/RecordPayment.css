@@ -178,12 +178,12 @@
   border-radius: 0.25rem;
 }
 
-.btn-primary {
+.btn-custom {
   background-color: #1976d2;
   border-color: #1976d2;
 }
 
-.btn-primary:hover {
+.btn-custom:hover {
   background-color: #1565c0;
   border-color: #1565c0;
 }

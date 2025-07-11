@@ -60,7 +60,7 @@ const Header = ({ activeNavItem, onToggleSidebar, isMobile, sidebarOpen }) => {
                 <div className="py-2 px-2">
                   <div className="d-flex flex-column gap-2">
                     <Button
-                      variant="outline-primary"
+                      variant="outline-custom"
                       className="text-start w-100"
                       onClick={handleShowNewClientPortal}
                     >
@@ -72,7 +72,7 @@ const Header = ({ activeNavItem, onToggleSidebar, isMobile, sidebarOpen }) => {
                     />
 
                     <Button
-                      variant="outline-primary"
+                      variant="outline-custom"
                       className="text-start w-100"
                       onClick={handleShowInternalMessage}
                     >
@@ -84,7 +84,7 @@ const Header = ({ activeNavItem, onToggleSidebar, isMobile, sidebarOpen }) => {
                     />
 
                     <Button
-                      variant="outline-primary"
+                      variant="outline-custom"
                       className="text-start w-100"
                       onClick={handleShowPhoneLog}
                     >
@@ -96,7 +96,7 @@ const Header = ({ activeNavItem, onToggleSidebar, isMobile, sidebarOpen }) => {
                     />
 
                     <Button
-                      variant="outline-primary"
+                      variant="outline-custom"
                       className="text-start w-100"
                       onClick={handleShowEmailLog}
                     >

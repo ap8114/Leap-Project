@@ -166,7 +166,7 @@ const faqs = [
                                     </ListGroup.Item>
                                     <ListGroup.Item className="border-0 ps-0">
                                         <i className="bi bi-check-circle-fill me-2" style={{ color: '#f76b1c' }}></i>
-                                        Customizable document generation
+                                        customizable document generation
                                     </ListGroup.Item>
                                     <ListGroup.Item className="border-0 ps-0">
                                         <i className="bi bi-check-circle-fill me-2" style={{ color: '#f76b1c' }}></i>
@@ -178,7 +178,7 @@ const faqs = [
                                     className="rounded-pill px-4"
                                     style={{ backgroundColor: '#f76b1c', borderColor: '#f76b1c' }}
                                 >
-                                    Learn More About Customization
+                                    Learn More About customization
                                 </Button>
                             </Col>
                         </Row>

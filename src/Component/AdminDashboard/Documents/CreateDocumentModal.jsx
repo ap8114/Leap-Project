@@ -56,7 +56,7 @@ const CreateDocumentModal = ({ show, onHide }) => {
 
           {/* Buttons */}
           <div className="d-flex gap-2">
-            <Button variant="primary">Create</Button>
+            <Button variant="custom">Create</Button>
             <Button variant="light" onClick={onHide}>Cancel</Button>
             <a href="#" className="align-self-center ms-auto small">Learn more about document automation</a>
           </div>

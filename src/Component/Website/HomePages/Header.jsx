@@ -305,7 +305,7 @@ const Header = () => {
                                                 style={{ width: 70, height: 70, objectFit: "cover" }}
                                             />
                                             <div>
-                                                <div className="text-primary fw-semibold small mb-1">
+                                                <div className="text-custom fw-semibold small mb-1">
                                                     LEGAL AID
                                                 </div>
                                                 <div className="small text-muted">
@@ -321,7 +321,7 @@ const Header = () => {
                                                 style={{ width: 70, height: 70, objectFit: "cover" }}
                                             />
                                             <div>
-                                                <div className="text-primary fw-semibold small mb-1">
+                                                <div className="text-custom fw-semibold small mb-1">
                                                     SWITCH TO LEAP
                                                 </div>
                                                 <div className="small text-muted">

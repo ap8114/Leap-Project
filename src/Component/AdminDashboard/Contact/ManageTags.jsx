@@ -58,7 +58,7 @@ const ManageTags = ({ onClose }) => {
                             style={{ maxWidth: 300, marginRight: 10 }}
                         />
                         <Button
-                            variant="outline-primary"
+                            variant="outline-custom"
                             onClick={handleCreateTag}
                             disabled={!newTagName.trim()}
                         >

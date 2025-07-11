@@ -37,7 +37,7 @@ const NewBills = () => {
                   </span>
                 </div>
                 <div>
-                  <Button variant="primary" disabled={selectedClients === 0} style={{ fontSize: '14px' }}>
+                  <Button variant="custom" disabled={selectedClients === 0} style={{ fontSize: '14px' }}>
                     Generate
                   </Button>
                 </div>
@@ -93,9 +93,9 @@ const NewBills = () => {
               <Row>
                 <Col md={4}>
                   <Form.Group className="mb-3">
-                    <Form.Label style={{ fontSize: '14px' }}>Master Custom Fields</Form.Label>
+                    <Form.Label style={{ fontSize: '14px' }}>Master custom Fields</Form.Label>
                     <div className="text-muted small" style={{ fontSize: '12px' }}>
-                      Customize and export up your workflow by <a href="#">sandless.Custom</a>
+                      customize and export up your workflow by <a href="#">sandless.custom</a>
                     </div>
                   </Form.Group>
                 </Col>
@@ -116,7 +116,7 @@ const NewBills = () => {
                     </div>
                   </Form.Group>
                 </Col>
-                <Button variant="primary" className="ms-2 w-25 text-center" style={{ fontSize: '14px' }}>Search</Button>
+                <Button variant="custom" className="ms-2 w-25 text-center" style={{ fontSize: '14px' }}>Search</Button>
               </Row>
             </Card.Body>
           </Card>

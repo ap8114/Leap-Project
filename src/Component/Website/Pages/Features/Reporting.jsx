@@ -464,7 +464,7 @@ const Reporting = () => {
                     </div>
                     <div className="card">
                       <div className="card-body">
-                        <h3 className="h5 fw-semibold text-custom mb-4">Custom Analysis</h3>
+                        <h3 className="h5 fw-semibold text-custom mb-4">custom Analysis</h3>
                         <div className="row g-4 mb-4">
                           <div className="col-md-4">
                             <label className="form-label">Metric</label>

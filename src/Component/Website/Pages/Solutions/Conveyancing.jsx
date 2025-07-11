@@ -206,7 +206,7 @@ const Conveyancing = () => {
                   </div>
                   <div className="ms-4">
                     <h4 className="h5 fw-bold text-custom">Document Templates</h4>
-                    <p className="text-muted mb-0">Customizable templates for all standard conveyancing documents.</p>
+                    <p className="text-muted mb-0">customizable templates for all standard conveyancing documents.</p>
                   </div>
                 </li>
                 <li className="d-flex">
@@ -480,7 +480,7 @@ const Conveyancing = () => {
                     </div>
                     <div className="ms-4">
                       <h4 className="h5 fw-bold text-custom">Document Templates</h4>
-                      <p className="text-muted mb-0">Customizable templates for all standard conveyancing documents.</p>
+                      <p className="text-muted mb-0">customizable templates for all standard conveyancing documents.</p>
                     </div>
                   </li>
                   <li className="d-flex">
