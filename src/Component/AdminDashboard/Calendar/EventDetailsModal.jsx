@@ -10,10 +10,7 @@ const EventDetailsPage = () => {
   return (
     <div className="w-100 bg-light min-vh-100">
       {/* Top Header */}
-      <div className="bg-white border-bottom py-3 px-4 d-flex justify-content-between align-items-center">
-        <h5 className="mb-0 fw-semibold">New event</h5>
-        <button type="button" className="btn-close" aria-label="Close"></button>
-      </div>
+     
 
       {/* Main Content */}
       <Container fluid className="py-4 px-4">
@@ -33,16 +30,16 @@ const EventDetailsPage = () => {
             <Form.Group className="mb-3">
               <Row className="g-2 align-items-end">
                 <Col md={6}>
-                  <Form.Label className="fw-bold">Start time <span className="text-danger">*</span></Form.Label>
+                  <Form.Label className="fw-bold mb-5">Start time <span className="text-danger">*</span></Form.Label>
                   <InputGroup>
-                    <InputGroup.Text><Calendar size={16} /></InputGroup.Text>
-                    <Form.Control type="text" defaultValue="07/07/2025" />
+                    <InputGroup.Text className='mb-5 '><Calendar size={16} /></InputGroup.Text>
+                    <Form.Control className='mb-5' type="text" defaultValue="07/07/2025" />
                   </InputGroup>
                 </Col>
                 <Col md={6}>
                   <InputGroup>
-                    <InputGroup.Text><Clock size={16} /></InputGroup.Text>
-                    <Form.Control type="text" defaultValue="6:00 PM" />
+                    <InputGroup.Text className='mb-5'><Clock size={16} /></InputGroup.Text>
+                    <Form.Control className='mb-5' type="text" defaultValue="6:00 PM" />
                   </InputGroup>
                 </Col>
               </Row>
@@ -51,14 +48,14 @@ const EventDetailsPage = () => {
                 <Col md={6}>
                   <Form.Label className="fw-bold">End time <span className="text-danger">*</span></Form.Label>
                   <InputGroup>
-                    <InputGroup.Text><Calendar size={16} /></InputGroup.Text>
-                    <Form.Control type="text" defaultValue="07/07/2025" />
+                    <InputGroup.Text className='mb-5'><Calendar size={15} /></InputGroup.Text>
+                    <Form.Control className='mb-5'  type="text" defaultValue="07/07/2025" />
                   </InputGroup>
                 </Col>
                 <Col md={6}>
                   <InputGroup>
-                    <InputGroup.Text><Clock size={16} /></InputGroup.Text>
-                    <Form.Control type="text" defaultValue="6:30 PM" />
+                    <InputGroup.Text className='mb-5'><Clock size={16} /></InputGroup.Text>
+                    <Form.Control className='mb-5' type="text" defaultValue="6:30 PM" />
                   </InputGroup>
                 </Col>
               </Row>
@@ -73,8 +70,8 @@ const EventDetailsPage = () => {
             <Form.Group className="mb-3">
               <Form.Label className="fw-bold">Location</Form.Label>
               <InputGroup>
-                <InputGroup.Text><MapPin size={16} /></InputGroup.Text>
-                <Form.Control type="text" placeholder="Add location" />
+                <InputGroup.Text className='mb-5'><MapPin size={16} /></InputGroup.Text>
+                <Form.Control className='mb-5' type="text" placeholder="Add location" />
               </InputGroup>
               <Form.Text className="text-muted">
                 Connect to Zoom in your <a href="#">Settings</a> to add a video call to this event. <a href="#">Learn more</a>
@@ -85,8 +82,8 @@ const EventDetailsPage = () => {
             <Form.Group className="mb-3">
               <Form.Label className="fw-bold">Matter</Form.Label>
               <InputGroup>
-                <InputGroup.Text><Type size={16} /></InputGroup.Text>
-                <Form.Control type="text" placeholder="Type in a matter name" />
+                <InputGroup.Text className='mb-5'><Type size={16} /></InputGroup.Text>
+                <Form.Control className='mb-5' type="text" placeholder="Type in a matter name" />
               </InputGroup>
             </Form.Group>
 
@@ -106,7 +103,7 @@ const EventDetailsPage = () => {
             <Form.Group className="mb-3">
               <Form.Label className="fw-bold">Save to this calendar <span className="text-danger">*</span></Form.Label>
               <Form.Select>
-                <option>Kundan Kelwa</option>
+                <option>Aman</option>
               </Form.Select>
               <Form.Check
                 type="checkbox"
@@ -142,9 +139,9 @@ const EventDetailsPage = () => {
             <Form.Group className="mb-3">
               <Form.Label className="fw-bold">Find firm users or contacts to invite</Form.Label>
               <InputGroup>
-                <InputGroup.Text><Users size={16} /></InputGroup.Text>
-                <Form.Control type="text" placeholder="Type in name" />
-                <Button variant="outline-secondary" disabled>▼</Button>
+                <InputGroup.Text className='mb-5'><Users size={16} /></InputGroup.Text>
+                <Form.Control className='mb-5' type="text" placeholder="Type in name" />
+                <Button className='mb-5' variant="outline-secondary" disabled>▼</Button>
               </InputGroup>
             </Form.Group>
 
