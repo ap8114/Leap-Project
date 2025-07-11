@@ -23,8 +23,8 @@ const ExportModal = ({ show, onHide }) => {
           </Form.Group>
 
           {/* Date Range */}
-          <div className="mb-4">
-            <h6 className="fw-semibold mb-2">Date Range</h6>
+          <div className="mb-3">
+            <h6 className="fw-semibold mb-3">Date Range</h6>
             <Form.Check
               type="radio"
               id="allDates"
@@ -32,21 +32,22 @@ const ExportModal = ({ show, onHide }) => {
               label="All transactions across all dates"
               checked={dateOption === 'all'}
               onChange={() => setDateOption('all')}
-              className="mb-2"
+              className="mb-3"
             />
             <Form.Check
               type="radio"
               id="customRange"
               name="dateOption"
+              className=''
               label={
-                <Row className="mt-2">
-                  <Col md={3}>
+                <Row className="">
+                  <Col md={5}>
                     <Form.Control type="date" disabled={dateOption !== 'custom'} />
                   </Col>
-                  <Col md="auto" className="d-flex align-items-center">
+                  <Col md="auto mt-2" className="">
                     To
                   </Col>
-                  <Col md={3}>
+                  <Col md={5}>
                     <Form.Control type="date" disabled={dateOption !== 'custom'} />
                   </Col>
                 </Row>
@@ -75,9 +76,9 @@ const ExportModal = ({ show, onHide }) => {
           {/* Action Buttons */}
           <div className="mt-4 d-flex gap-3">
             <Button variant="primary">Export Transactions</Button>
-            <Button variant="link" className="text-decoration-none text-muted" onClick={onHide}>
+            <button variant="link" className="btn btn-secondary text-decoration-none text-muted" onClick={onHide}>
               Cancel
-            </Button>
+            </button>
           </div>
         </Form>
       </Modal.Body>

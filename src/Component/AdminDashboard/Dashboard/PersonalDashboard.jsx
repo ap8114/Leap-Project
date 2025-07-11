@@ -106,7 +106,7 @@ const PersonalDashboard = ({ setShowTaskModal, setShowEventModal }) => {
       <div className="mb-5">
         <div className="d-flex justify-content-between align-items-center mb-3">
           <h2 className="h5 mb-0">Today's Agenda</h2>
-          <button className="btn btn-link text-primary p-0">Hide</button>
+          <button className="btn btn-link text-custom p-0">Hide</button>
         </div>
         <div className="row">
           <div className="col-md-6 mb-3 mb-md-0">
@@ -123,7 +123,7 @@ const PersonalDashboard = ({ setShowTaskModal, setShowEventModal }) => {
                   </div>
                   <button 
                     onClick={() => setShowTaskModal(true)}
-                    className="btn btn-primary rounded-circle p-0 d-flex align-items-center justify-content-center"
+                    className="btn btn-custom rounded-circle p-0 d-flex align-items-center justify-content-center"
                     style={{ width: '32px', height: '32px' }}
                   >
                     <i className="fas fa-plus"></i>
@@ -146,7 +146,7 @@ const PersonalDashboard = ({ setShowTaskModal, setShowEventModal }) => {
                   </div>
                   <button 
                     onClick={() => setShowEventModal(true)}
-                    className="btn btn-primary rounded-circle p-0 d-flex align-items-center justify-content-center"
+                    className="btn btn-custom rounded-circle p-0 d-flex align-items-center justify-content-center"
                     style={{ width: '32px', height: '32px' }}
                   >
                     <i className="fas fa-plus"></i>
@@ -162,7 +162,7 @@ const PersonalDashboard = ({ setShowTaskModal, setShowEventModal }) => {
       <div className="mb-5">
         <div className="d-flex align-items-center gap-2 mb-3">
           <h2 className="h5 mb-0">Hourly Metrics for john smith</h2>
-          <i className="fas fa-info-circle text-primary"></i>
+          <i className="fas fa-info-circle text-custom"></i>
         </div>
         <div className="card">
           <div className="card-body">
@@ -183,15 +183,15 @@ const PersonalDashboard = ({ setShowTaskModal, setShowEventModal }) => {
               <div className="d-flex justify-content-center">
                 <div className="position-relative" style={{ width: '192px', height: '192px' }}>
                   <div className="position-absolute top-0 start-0 rounded-circle border border-8 border-light" style={{ width: '192px', height: '192px' }}></div>
-                  <div className="position-absolute top-0 start-0 rounded-circle border border-8 border-primary border-top-0" style={{ width: '192px', height: '192px', transform: 'rotate(45deg)' }}></div>
+                  <div className="position-absolute top-0 start-0 rounded-circle border border-8 border-custom border-top-0" style={{ width: '192px', height: '192px', transform: 'rotate(45deg)' }}></div>
                   <div className="position-absolute top-0 start-0 w-100 h-100 d-flex flex-column align-items-center justify-content-center">
-                    <span className="h3 text-primary mb-1">0 Hours</span>
+                    <span className="h3 text-custom mb-1">0 Hours</span>
                     <span className="small text-muted">1.9 Hours</span>
                   </div>
                 </div>
               </div>
               <div className="mt-3">
-                <button className="btn btn-link text-primary p-0 small">
+                <button className="btn btn-link text-custom p-0 small">
                   <i className="fas fa-cog me-1"></i>
                   Personal performance settings
                 </button>
@@ -205,7 +205,7 @@ const PersonalDashboard = ({ setShowTaskModal, setShowEventModal }) => {
       <div className="mb-5">
         <div className="d-flex align-items-center gap-2 mb-3">
           <h2 className="h5 mb-0">Billing Metrics for Firm</h2>
-          <i className="fas fa-info-circle text-primary"></i>
+          <i className="fas fa-info-circle text-custom"></i>
         </div>
         <div className="row">
           <div className="col-md-6">
@@ -216,11 +216,11 @@ const PersonalDashboard = ({ setShowTaskModal, setShowEventModal }) => {
                     <div>
                       <h3 className="h6 mb-2">Draft Bills</h3>
                       <div className="d-flex align-items-center gap-2">
-                        <span className="h3 text-primary">0</span>
-                        <button className="btn btn-link text-primary p-0 small">(Create new bills)</button>
+                        <span className="h3 text-custom">0</span>
+                        <button className="btn btn-link text-custom p-0 small">(Create new bills)</button>
                       </div>
                     </div>
-                    <button className="btn btn-link text-primary p-0 small">
+                    <button className="btn btn-link text-custom p-0 small">
                       <i className="fas fa-eye me-1"></i>
                       View
                     </button>
@@ -235,11 +235,11 @@ const PersonalDashboard = ({ setShowTaskModal, setShowEventModal }) => {
                     <div>
                       <h3 className="h6 mb-2">Unpaid Bills</h3>
                       <div className="d-flex align-items-center gap-2">
-                        <span className="h3 text-primary">0</span>
+                        <span className="h3 text-custom">0</span>
                         <span className="small text-muted">(Approve from Draft or Pending Approval)</span>
                       </div>
                     </div>
-                    <button className="btn btn-link text-primary p-0 small">
+                    <button className="btn btn-link text-custom p-0 small">
                       <i className="fas fa-eye me-1"></i>
                       View
                     </button>
@@ -255,7 +255,7 @@ const PersonalDashboard = ({ setShowTaskModal, setShowEventModal }) => {
                       <h3 className="h6 mb-2">Overdue Bills</h3>
                       <span className="h3 text-danger">0</span>
                     </div>
-                    <button className="btn btn-link text-primary p-0 small">
+                    <button className="btn btn-link text-custom p-0 small">
                       <i className="fas fa-eye me-1"></i>
                       View
                     </button>
@@ -273,7 +273,7 @@ const PersonalDashboard = ({ setShowTaskModal, setShowEventModal }) => {
                       <h3 className="h6 mb-2">Total in Draft</h3>
                       <span className="h3">-</span>
                     </div>
-                    <button className="btn btn-link text-primary p-0 small">
+                    <button className="btn btn-link text-custom p-0 small">
                       <i className="fas fa-eye me-1"></i>
                       View
                     </button>
@@ -289,7 +289,7 @@ const PersonalDashboard = ({ setShowTaskModal, setShowEventModal }) => {
                       <h3 className="h6 mb-2">Total in Unpaid</h3>
                       <span className="h3">-</span>
                     </div>
-                    <button className="btn btn-link text-primary p-0 small">
+                    <button className="btn btn-link text-custom p-0 small">
                       <i className="fas fa-eye me-1"></i>
                       View
                     </button>
@@ -305,7 +305,7 @@ const PersonalDashboard = ({ setShowTaskModal, setShowEventModal }) => {
                       <h3 className="h6 mb-2">Total in Overdue</h3>
                       <span className="h3">-</span>
                     </div>
-                    <button className="btn btn-link text-primary p-0 small">
+                    <button className="btn btn-link text-custom p-0 small">
                       <i className="fas fa-eye me-1"></i>
                       View
                     </button>
@@ -321,7 +321,7 @@ const PersonalDashboard = ({ setShowTaskModal, setShowEventModal }) => {
       <div className="mb-5">
         <div className="d-flex align-items-center gap-2 mb-3">
           <h2 className="h5 mb-0">Financial Metrics for john smith</h2>
-          <i className="fas fa-info-circle text-primary"></i>
+          <i className="fas fa-info-circle text-custom"></i>
         </div>
         <div className="row">
           {['Today', 'This Week', 'This Month', 'This Year'].map((period, index) => (

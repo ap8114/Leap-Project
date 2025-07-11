@@ -57,12 +57,12 @@ const Timebilling = () => {
               
               <div className="btn-group">
                 <Link to="/newbills" className="text-decoration-none">
-                  <button className="btn btn-primary">
+                  <button className="btn btn-custom">
                     New bills
                   </button>
                 </Link>
                 <button
-                  className="btn btn-primary dropdown-toggle dropdown-toggle-split"
+                  className="btn btn-custom dropdown-toggle dropdown-toggle-split"
                   onClick={toggleDropdown}
                   aria-expanded={showDropdown}
                 />

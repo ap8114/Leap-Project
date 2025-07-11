@@ -192,7 +192,7 @@ const TaskModal = ({ showTaskModal, setShowTaskModal, taskForm, handleTaskFormCh
                   </div>
                   <div className="flex-grow-1">
                     <div className="small text-muted mb-1">No reminders set for this task</div>
-                    <button className="btn btn-link text-primary p-0 small">
+                    <button className="btn btn-link text-custom p-0 small">
                       <i className="fas fa-plus me-1"></i>
                       Add a reminder
                     </button>
@@ -206,7 +206,7 @@ const TaskModal = ({ showTaskModal, setShowTaskModal, taskForm, handleTaskFormCh
           <div className="modal-footer">
             <button
               onClick={handleSaveTask}
-              className="btn btn-primary"
+              className="btn btn-custom"
             >
               Save task
             </button>

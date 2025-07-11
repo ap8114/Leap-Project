@@ -9,11 +9,11 @@ const ContactPage = () => {
     const [showModal, setShowModal] = useState(false);
 
     return (
-        <div style={{ backgroundColor: '#f8f9fa', minHeight: '100vh' }}>
+        <div className='p-4'>
             {/* Header */}
-            <div className="container-fluid bg-white py-3 border-bottom sticky-top" style={{ zIndex: 100 }}>
+            <div className="bg-white  border-bottom sticky-top" style={{ zIndex: 100 }}>
                 <div className="d-flex justify-content-between align-items-center flex-wrap">
-                    <h4 className="fw-bold mb-0">Contacts</h4>
+                    <h3 className="fw-bold mb-3 ">Contacts</h3>
                     <div className="d-flex gap-2 mt-2 mt-md-0">
                         <button
                             className="btn btn-outline-secondary"
@@ -21,18 +21,18 @@ const ContactPage = () => {
                         >
                             Manage tags
                         </button>
-                        <Link to="/newperson" className="btn btn-primary" style={{ backgroundColor: "#0073E6", color: "white" }}>
+                        <Link to="/newperson" className="btn btn-custom" style={{ backgroundColor: "#0073E6", color: "white" }}>
                             New person
                         </Link>
-                        <Link to="/newperson" className="btn btn-primary" style={{ backgroundColor: "#0073E6", color: "white" }}>
+                        <Link to="/newperson" className="btn btn-custom" style={{ backgroundColor: "#0073E6", color: "white" }}>
                             New company
                         </Link>
                     </div>
                 </div>
             </div>
-            <div className="container-fluid py-4">
-                <div className="row justify-content-center">
-                    <div className="col-12 col-xl-10">
+            <div className="p-2 w-100">
+                <div className="">
+                    <div className="">
                         <div className="card shadow-sm border-0 rounded-3 flex-md-row flex-column d-flex align-items-stretch" style={{ minHeight: 500 }}>
                             {/* Left Panel */}
                             <div className="col-12 col-md-5 p-4 d-flex flex-column justify-content-between" style={{ backgroundColor: "#f5f6f7", minWidth: 320 }}>
@@ -56,14 +56,14 @@ const ContactPage = () => {
                                         </label>
                                         <div className="d-flex gap-2 mb-3 flex-wrap">
                                             <button
-                                                className={`btn ${contactType === "person" ? "btn-primary" : "btn-outline-secondary"} d-flex align-items-center gap-2 px-3 py-2`}
+                                                className={`btn ${contactType === "person" ? "btn-custom" : "btn-outline-secondary"} d-flex align-items-center gap-2 px-3 py-2`}
                                                 onClick={() => setContactType("person")}
                                                 style={{ borderRadius: "8px" }}
                                             >
                                                 <FaUser size={16} /> Person
                                             </button>
                                             <button
-                                                className={`btn ${contactType === "company" ? "btn-primary" : "btn-outline-secondary"} d-flex align-items-center gap-2 px-3 py-2`}
+                                                className={`btn ${contactType === "company" ? "btn-custom" : "btn-outline-secondary"} d-flex align-items-center gap-2 px-3 py-2`}
                                                 onClick={() => setContactType("company")}
                                                 style={{ borderRadius: "8px" }}
                                             >
@@ -103,7 +103,7 @@ const ContactPage = () => {
                                     <div className="mb-3 mt-5">
                                         <div className="d-flex align-items-center justify-content-center mb-2">
                                             <div
-                                                className="bg-primary rounded-circle d-flex align-items-center justify-content-center"
+                                                className="bg-custom rounded-circle d-flex align-items-center justify-content-center"
                                                 style={{ width: "40px", height: "40px" }}
                                             >
                                                 <BsCheckCircleFill size={24} color="white" />
@@ -154,7 +154,7 @@ const ContactPage = () => {
                                     </div>
                                     <Link to="/newperson">
                                         <button
-                                            className="btn btn-primary btn-lg px-4"
+                                            className="btn btn-custom btn-lg px-4"
                                             style={{ backgroundColor: "#0073E6", color: "white" }}
                                         >
                                             Create new contact

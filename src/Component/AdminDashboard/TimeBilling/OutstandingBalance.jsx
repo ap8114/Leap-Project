@@ -1,125 +1,5 @@
 import React, { useState } from "react";
-
-const tableHeaderStyle = {
-  padding: "12px 16px",
-  background: "#f9fafb",
-  borderBottom: "1px solid #e5e7eb",
-  fontWeight: 600,
-  fontSize: 15,
-  textAlign: "left",
-  color: "#222",
-  whiteSpace: "nowrap",
-};
-
-const sortIconStyle = {
-  marginLeft: 6,
-  fontSize: 13,
-  color: "#bdbdbd",
-  cursor: "pointer",
-  verticalAlign: "middle",
-};
-
-const inputStyle = {
-  padding: "8px 12px",
-  border: "1px solid #e5e7eb",
-  borderRadius: 6,
-  fontSize: 14,
-  width: 200,
-  marginLeft: 16,
-};
-
-const buttonStyle = {
-  background: "#fff",
-  color: "#4b5563",
-  border: "1px solid #e5e7eb",
-  borderRadius: 6,
-  padding: "8px 16px",
-  fontWeight: 530,
-  fontSize: 14,
-  cursor: "pointer",
-  display: "flex",
-  alignItems: "center",
-  marginLeft: 16,
-};
-
-const iconStyle = {
-  marginRight: 8,
-  fontSize: 16,
-};
-
-const dropdownStyle = {
-  position: "absolute",
-  right: 0,
-  top: "100%",
-  background: "#fff",
-  border: "1px solid #e5e7eb",
-  borderRadius: 8,
-  boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
-  padding: "8px 0",
-  zIndex: 10,
-  width: 240,
-};
-
-const nestedDropdownStyle = {
-  position: "absolute",
-  top: 0,
-  background: "#fff",
-  border: "1px solid #e5e7eb",
-  borderRadius: 8,
-  boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
-  padding: "8px 0",
-  zIndex: 20,
-  width: 240,
-  marginLeft: 8,
-};
-
-const dropdownItemStyle = {
-  padding: "8px 16px",
-  display: "flex",
-  alignItems: "center",
-  cursor: "pointer",
-};
-
-const checkboxStyle = {
-  marginRight: 12,
-};
-
-const buttonContainerStyle = {
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "flex-end",
-  padding: "16px 24px",
-  borderBottom: "1px solid #e5e7eb",
-  gap: 16,
-};
-
-const actionButtonsStyle = {
-  display: "flex",
-  gap: 16,
-};
-
-const filterDropdownItemStyle = {
-  padding: "12px 16px",
-  borderBottom: "1px solid #f3f4f6",
-  position: "relative",
-};
-
-const filterLabelStyle = {
-  display: "block",
-  marginBottom: 8,
-  fontWeight: 600,
-  fontSize: 14,
-};
-
-const filterFooterStyle = {
-  display: "flex",
-  justifyContent: "space-between",
-  padding: "12px 16px",
-  borderTop: "1px solid #f3f4f6",
-};
-
-const dateRangeOptions = ["All dates", "Last 7 days", "Last 30 days", "Last 90 days", "Custom range"];
-const attorneyOptions = ["All attorneys", "John Smith", "Sarah Johnson", "Michael Brown", "Emily Davis"];
+import { Container, Row, Col, Table, Form, Button, Dropdown, InputGroup } from "react-bootstrap";
 
 const OutstandingBalance = () => {
   const [showColumnsDropdown, setShowColumnsDropdown] = useState(false);
@@ -173,364 +53,245 @@ const OutstandingBalance = () => {
     setShowDueDateDropdown(false);
   };
 
+  const dateRangeOptions = ["All dates", "Last 7 days", "Last 30 days", "Last 90 days", "Custom range"];
+  const attorneyOptions = ["All attorneys", "John Smith", "Sarah Johnson", "Michael Brown", "Emily Davis"];
+
   return (
-    <div
-      style={{
-        background: "#fff",
-        borderRadius: 8,
-        border: "1px solid #e5e7eb",
-        padding: 0,
-        position: "relative",
-      }}
-    >
-      {/* Top bar with controls */}
-      <div style={buttonContainerStyle}>
-        <div style={{ position: "relative" }}>
-          <input
-            type="text"
-            placeholder="Search clients..."
-            style={inputStyle}
-          />
-        </div>
-        
-        <div style={actionButtonsStyle}>
-          <div style={{ position: "relative" }}>
-            <button 
-              style={buttonStyle} 
-              onClick={() => setShowColumnsDropdown(!showColumnsDropdown)}
-            >
-              Columns ▾
-            </button>
-            
-            {showColumnsDropdown && (
-              <div style={dropdownStyle}>
-                <div style={{ padding: "8px 16px", fontWeight: 600, borderBottom: "1px solid #e5e7eb" }}>
-                  Visible columns
-                </div>
-                {Object.keys(visibleColumns).map((column) => (
-                  <div 
-                    key={column} 
-                    style={dropdownItemStyle}
-                    onClick={() => toggleColumn(column)}
-                  >
-                    <input 
-                      type="checkbox" 
-                      checked={visibleColumns[column]} 
-                      onChange={() => {}}
-                      style={checkboxStyle}
-                    />
-                    {column}
-                  </div>
-                ))}
-                <div style={{ borderTop: "1px solid #e5e7eb", marginTop: 8, paddingTop: 8 }}>
-                  <button 
-                    style={{ 
-                      ...buttonStyle, 
-                      border: "none", 
-                      padding: "8px 16px", 
-                      width: "100%", 
-                      justifyContent: "center",
-                      background: "#f9fafb",
-                    }}
-                  >
-                    Update columns
-                  </button>
-                  <button 
-                    style={{ 
-                      ...buttonStyle, 
-                      border: "none", 
-                      padding: "8px 16px", 
-                      width: "100%", 
-                      justifyContent: "center", 
-                      marginTop: 4,
-                      background: "#f9fafb",
-                    }}
-                    onClick={() => setShowColumnsDropdown(false)}
-                  >
-                    Cancel
-                  </button>
-                </div>
-              </div>
-            )}
-          </div>
+    <Container fluid className="p-0">
+      <div className="bg-white rounded border border-light shadow-sm">
+        {/* Top bar with controls */}
+        <Row className="align-items-center p-3 border-bottom g-3">
+          <Col xs={12} md={6} lg={4}>
+            <Form.Control 
+              type="text" 
+              placeholder="Search clients..." 
+              className="w-100"
+            />
+          </Col>
           
-          <div style={{ position: "relative" }}>
-            <button 
-              style={buttonStyle}
-              onClick={() => setShowFiltersDropdown(!showFiltersDropdown)}
-            >
-              Filters ▾
-            </button>
-            
-            {showFiltersDropdown && (
-              <div style={dropdownStyle}>
-                <div style={filterDropdownItemStyle}>
-                  <label style={filterLabelStyle}>Originating Attorney</label>
-                  <div style={{ position: "relative" }}>
-                    <button 
-                      style={{ ...buttonStyle, width: "100%", justifyContent: "space-between" }}
-                      onClick={() => setShowOriginatingAttorneyDropdown(!showOriginatingAttorneyDropdown)}
+          <Col xs={12} md={6} lg={8} className="d-flex justify-content-md-end">
+            <div className="d-flex flex-wrap gap-2">
+              <Dropdown show={showColumnsDropdown} onToggle={setShowColumnsDropdown}>
+                <Dropdown.Toggle variant="light" className="d-flex align-items-center">
+                  Columns ▾
+                </Dropdown.Toggle>
+                
+                <Dropdown.Menu className="p-2" style={{ width: '280px' }}>
+                  <div className="fw-bold px-2 py-1 border-bottom">Visible columns</div>
+                  {Object.keys(visibleColumns).map((column) => (
+                    <Dropdown.Item 
+                      key={column} 
+                      as="div"
+                      className="d-flex align-items-center px-2 py-2"
+                      onClick={() => toggleColumn(column)}
                     >
-                      {selectedOriginatingAttorney} <span>▾</span>
-                    </button>
-                    
-                    {showOriginatingAttorneyDropdown && (
-                      <div style={nestedDropdownStyle}>
+                      <Form.Check 
+                        type="checkbox" 
+                        checked={visibleColumns[column]} 
+                        onChange={() => {}}
+                        className="me-3"
+                      />
+                      {column}
+                    </Dropdown.Item>
+                  ))}
+                  <div className="border-top mt-2 pt-2">
+                    <Button variant="light" className="w-100 mb-2">
+                      Update columns
+                    </Button>
+                    <Button 
+                      variant="light" 
+                      className="w-100" 
+                      onClick={() => setShowColumnsDropdown(false)}
+                    >
+                      Cancel
+                    </Button>
+                  </div>
+                </Dropdown.Menu>
+              </Dropdown>
+              
+              <Dropdown show={showFiltersDropdown} onToggle={setShowFiltersDropdown}>
+                <Dropdown.Toggle variant="light">
+                  Filters ▾
+                </Dropdown.Toggle>
+                
+                <Dropdown.Menu style={{ width: '280px' }}>
+                  <div className="px-3 py-2 border-bottom">
+                    <Form.Label className="fw-bold d-block mb-1">Originating Attorney</Form.Label>
+                    <Dropdown show={showOriginatingAttorneyDropdown} onToggle={setShowOriginatingAttorneyDropdown}>
+                      <Dropdown.Toggle variant="light" className="w-100 d-flex justify-content-between align-items-center">
+                        {selectedOriginatingAttorney} <span>▾</span>
+                      </Dropdown.Toggle>
+                      
+                      <Dropdown.Menu style={{ width: '280px' }}>
                         {attorneyOptions.map((option) => (
-                          <div
+                          <Dropdown.Item
                             key={option}
-                            style={dropdownItemStyle}
                             onClick={() => handleOriginatingAttorneySelect(option)}
                           >
                             {option}
-                          </div>
+                          </Dropdown.Item>
                         ))}
-                      </div>
-                    )}
+                      </Dropdown.Menu>
+                    </Dropdown>
                   </div>
-                </div>
-                
-                <div style={filterDropdownItemStyle}>
-                  <label style={filterLabelStyle}>Responsible Attorney</label>
-                  <div style={{ position: "relative" }}>
-                    <button 
-                      style={{ ...buttonStyle, width: "100%", justifyContent: "space-between" }}
-                      onClick={() => setShowResponsibleAttorneyDropdown(!showResponsibleAttorneyDropdown)}
-                    >
-                      {selectedResponsibleAttorney} <span>▾</span>
-                    </button>
-                    
-                    {showResponsibleAttorneyDropdown && (
-                      <div style={nestedDropdownStyle}>
+                  
+                  <div className="px-3 py-2 border-bottom">
+                    <Form.Label className="fw-bold d-block mb-1">Responsible Attorney</Form.Label>
+                    <Dropdown show={showResponsibleAttorneyDropdown} onToggle={setShowResponsibleAttorneyDropdown}>
+                      <Dropdown.Toggle variant="light" className="w-100 d-flex justify-content-between align-items-center">
+                        {selectedResponsibleAttorney} <span>▾</span>
+                      </Dropdown.Toggle>
+                      
+                      <Dropdown.Menu style={{ width: '280px' }}>
                         {attorneyOptions.map((option) => (
-                          <div
+                          <Dropdown.Item
                             key={option}
-                            style={dropdownItemStyle}
                             onClick={() => handleResponsibleAttorneySelect(option)}
                           >
                             {option}
-                          </div>
+                          </Dropdown.Item>
                         ))}
-                      </div>
-                    )}
+                      </Dropdown.Menu>
+                    </Dropdown>
                   </div>
-                </div>
-                
-                <div style={filterDropdownItemStyle}>
-                  <label style={filterLabelStyle}>Last Paid</label>
-                  <div style={{ position: "relative" }}>
-                    <button 
-                      style={{ ...buttonStyle, width: "100%", justifyContent: "space-between" }}
-                      onClick={() => setShowLastPaidDropdown(!showLastPaidDropdown)}
-                    >
-                      {selectedLastPaid} <span>▾</span>
-                    </button>
-                    
-                    {showLastPaidDropdown && (
-                      <div style={nestedDropdownStyle}>
+                  
+                  <div className="px-3 py-2 border-bottom">
+                    <Form.Label className="fw-bold d-block mb-1">Last Paid</Form.Label>
+                    <Dropdown show={showLastPaidDropdown} onToggle={setShowLastPaidDropdown}>
+                      <Dropdown.Toggle variant="light" className="w-100 d-flex justify-content-between align-items-center">
+                        {selectedLastPaid} <span>▾</span>
+                      </Dropdown.Toggle>
+                      
+                      <Dropdown.Menu style={{ width: '280px' }}>
                         {dateRangeOptions.map((option) => (
-                          <div
+                          <Dropdown.Item
                             key={option}
-                            style={dropdownItemStyle}
                             onClick={() => handleLastPaidSelect(option)}
                           >
                             {option}
-                          </div>
+                          </Dropdown.Item>
                         ))}
-                      </div>
-                    )}
+                      </Dropdown.Menu>
+                    </Dropdown>
                   </div>
-                </div>
-                
-                <div style={filterDropdownItemStyle}>
-                  <label style={filterLabelStyle}>Newest Bill's Due Date</label>
-                  <div style={{ position: "relative" }}>
-                    <button 
-                      style={{ ...buttonStyle, width: "100%", justifyContent: "space-between" }}
-                      onClick={() => setShowDueDateDropdown(!showDueDateDropdown)}
-                    >
-                      {selectedDueDate} <span>▾</span>
-                    </button>
-                    
-                    {showDueDateDropdown && (
-                      <div style={nestedDropdownStyle}>
+                  
+                  <div className="px-3 py-2 border-bottom">
+                    <Form.Label className="fw-bold d-block mb-1">Newest Bill's Due Date</Form.Label>
+                    <Dropdown show={showDueDateDropdown} onToggle={setShowDueDateDropdown}>
+                      <Dropdown.Toggle variant="light" className="w-100 d-flex justify-content-between align-items-center">
+                        {selectedDueDate} <span>▾</span>
+                      </Dropdown.Toggle>
+                      
+                      <Dropdown.Menu style={{ width: '280px' }}>
                         {dateRangeOptions.map((option) => (
-                          <div
+                          <Dropdown.Item
                             key={option}
-                            style={dropdownItemStyle}
                             onClick={() => handleDueDateSelect(option)}
                           >
                             {option}
-                          </div>
+                          </Dropdown.Item>
                         ))}
-                      </div>
-                    )}
+                      </Dropdown.Menu>
+                    </Dropdown>
                   </div>
-                </div>
-                
-                <div style={filterFooterStyle}>
-                  <button 
-                    style={{ 
-                      ...buttonStyle, 
-                      border: "1px solid #2563eb", 
-                      color: "#2563eb",
-                      background: "#fff",
-                    }}
-                    onClick={() => setShowFiltersDropdown(false)}
-                  >
-                    Apply 
-                  </button>
-                  <button 
-                    style={{ 
-                      ...buttonStyle, 
-                      border: "1px solid #e5e7eb", 
-                      background: "#fff",
-                    }}
-                    onClick={() => {
-                      setSelectedOriginatingAttorney("Find a firm user");
-                      setSelectedResponsibleAttorney("Find a firm user");
-                      setSelectedLastPaid("Select range");
-                      setSelectedDueDate("All dates");
-                    }}
-                  >
-                    Clear 
-                  </button>
-                </div>
-              </div>
-            )}
+                  
+                  <div className="d-flex justify-content-between px-3 py-2 border-top">
+                    <Button 
+                      variant="outline-primary" 
+                      size="sm"
+                      onClick={() => setShowFiltersDropdown(false)}
+                    >
+                      Apply 
+                    </Button>
+                    <Button 
+                      variant="outline-secondary" 
+                      size="sm"
+                      onClick={() => {
+                        setSelectedOriginatingAttorney("Find a firm user");
+                        setSelectedResponsibleAttorney("Find a firm user");
+                        setSelectedLastPaid("Select range");
+                        setSelectedDueDate("All dates");
+                      }}
+                    >
+                      Clear 
+                    </Button>
+                  </div>
+                </Dropdown.Menu>
+              </Dropdown>
+            </div>
+          </Col>
+        </Row>
+
+        <div className="table-responsive">
+          <Table hover className="mb-0">
+            <thead>
+              <tr>
+                <th className="p-3" style={{ width: '40px' }}>
+                  <Form.Check type="checkbox" />
+                </th>
+                {visibleColumns.Actions && <th className="p-3">Actions</th>}
+                {visibleColumns.Reminders && <th className="p-3">Reminders</th>}
+                {visibleColumns.Client && (
+                  <th className="p-3">
+                    Client
+                    <span className="ms-1 text-muted">▲▼</span>
+                  </th>
+                )}
+                {visibleColumns["Last sent"] && (
+                  <th className="p-3">
+                    Last sent
+                    <span className="ms-1 text-muted">▲▼</span>
+                  </th>
+                )}
+                {visibleColumns["Newest bill's due date"] && (
+                  <th className="p-3">
+                    Newest bill's due date
+                    <span className="ms-1 text-muted">▲▼</span>
+                  </th>
+                )}
+                {visibleColumns["Last paid"] && (
+                  <th className="p-3">
+                    Last paid
+                    <span className="ms-1 text-muted">▲▼</span>
+                  </th>
+                )}
+                {visibleColumns.Balance && (
+                  <th className="p-3">
+                    Balance
+                    <span className="ms-1 text-muted">▲▼</span>
+                  </th>
+                )}
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td 
+                  colSpan={Object.values(visibleColumns).filter(Boolean).length + 1}
+                  className="text-center py-5"
+                >
+                  <div className="fw-bold fs-5 mb-2">No clients with outstanding balance found.</div>
+                  <div className="text-muted mb-4">Start billing your clients!</div>
+                  <Button variant="primary" size="lg">New bills</Button>
+                </td>
+              </tr>
+            </tbody>
+          </Table>
+        </div>
+
+        <div className="d-flex align-items-center justify-content-between p-3 border-top flex-wrap gap-3">
+          <div className="d-flex align-items-center gap-2">
+            <Button variant="light" size="sm" disabled>
+              &lt;
+            </Button>
+            <Button variant="light" size="sm" disabled>
+              &gt;
+            </Button>
+            <span className="text-muted">No results found</span>
           </div>
+          <Button variant="outline-primary">Export</Button>
         </div>
       </div>
-
-      <table
-        style={{ width: "100%", borderCollapse: "separate", borderSpacing: 0 }}
-      >
-        <thead>
-          <tr>
-            <th style={{ ...tableHeaderStyle, width: 40 }}>
-              <input type="checkbox" />
-            </th>
-            {visibleColumns.Actions && <th style={tableHeaderStyle}>Actions</th>}
-            {visibleColumns.Reminders && <th style={tableHeaderStyle}>Reminders</th>}
-            {visibleColumns.Client && (
-              <th style={tableHeaderStyle}>
-                Client
-                <span style={sortIconStyle}>▲▼</span>
-              </th>
-            )}
-            {visibleColumns["Last sent"] && (
-              <th style={tableHeaderStyle}>
-                Last sent
-                <span style={sortIconStyle}>▲▼</span>
-              </th>
-            )}
-            {visibleColumns["Newest bill's due date"] && (
-              <th style={tableHeaderStyle}>
-                Newest bill's due date
-                <span style={sortIconStyle}>▲▼</span>
-              </th>
-            )}
-            {visibleColumns["Last paid"] && (
-              <th style={tableHeaderStyle}>
-                Last paid
-                <span style={sortIconStyle}>▲▼</span>
-              </th>
-            )}
-            {visibleColumns.Balance && (
-              <th style={tableHeaderStyle}>
-                Balance
-                <span style={sortIconStyle}>▲▼</span>
-              </th>
-            )}
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td
-              colSpan={Object.values(visibleColumns).filter(Boolean).length + 1}
-              style={{
-                textAlign: "center",
-                padding: "80px 0",
-                background: "#fff",
-              }}
-            >
-              <div style={{ fontWeight: 600, fontSize: 18, marginBottom: 8 }}>
-                No clients with outstanding balance found.
-              </div>
-              <div style={{ color: "#6b7280", marginBottom: 24 }}>
-                Start billing your clients!
-              </div>
-              <button
-                style={{
-                  background: "#2563eb",
-                  color: "#fff",
-                  border: "none",
-                  borderRadius: 6,
-                  padding: "10px 32px",
-                  fontWeight: 600,
-                  fontSize: 16,
-                  cursor: "pointer",
-                }}
-              >
-                New bills
-              </button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          borderTop: "1px solid #e5e7eb",
-          padding: "12px 24px",
-        }}
-      >
-        <button
-          style={{
-            border: "1px solid #e5e7eb",
-            background: "#f9fafb",
-            borderRadius: 4,
-            padding: "4px 8px",
-            marginRight: 4,
-            cursor: "pointer",
-          }}
-          disabled
-        >
-          &#60;
-        </button>
-        <button
-          style={{
-            border: "1px solid #e5e7eb",
-            background: "#f9fafb",
-            borderRadius: 4,
-            padding: "4px 8px",
-            marginRight: 16,
-            cursor: "pointer",
-          }}
-          disabled
-        >
-          &#62;
-        </button>
-        <span style={{ color: "#6b7280", marginRight: 16 }}>
-          No results found
-        </span>
-        <button
-          style={{
-            background: "#fff",
-            color: "#2563eb",
-            border: "1px solid #2563eb",
-            borderRadius: 6,
-            padding: "6px 24px",
-            fontWeight: 600,
-            fontSize: 16,
-            cursor: "pointer",
-          }}
-        >
-          Export
-        </button>
-      </div>
-    </div>
+    </Container>
   );
 };
 

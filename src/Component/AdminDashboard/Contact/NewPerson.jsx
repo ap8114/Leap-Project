@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Form, Collapse, Modal } from 'react-bootstrap';
 import { FaUser, FaBuilding, FaCamera } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 import NewCompany from './NewCompany';
 import ManageTags from './ManageTags';
 
@@ -52,7 +53,7 @@ const NewPerson = () => {
     const handleRemoveEmployee = (idx) => setEmployees(employees.filter((_, i) => i !== idx));
 
     return (
-        <div className="container py-4" style={{ maxWidth: 1100, minHeight: '100vh' }}>
+        <div className="p-4">
             <div className="mb-3 text-start">
                 <h6 className="fw-bold" style={{ fontSize: 18, color: '#222' }}>New contact</h6>
             </div>
@@ -82,15 +83,15 @@ const NewPerson = () => {
                     </div>
                     <div className="col-md-5 text-md-end text-center">
                         <div className="d-inline-block position-relative mb-2">
-                            <div className="rounded-circle border d-flex align-items-center justify-content-center" style={{ width: 56, height: 56, background: '#f8fafc' }}>
+                            <div className="rounded-circle border d-flex align-items-center justify-content-center" style={{ width: 63, height: 63, background: '#f8fafc' }}>
                                 <img
                                     src={profilePhoto || 'https://cdn-icons-png.flaticon.com/512/847/847969.png'}
                                     alt="Profile"
                                     className="rounded-circle"
-                                    style={{ width: 36, height: 36, objectFit: 'cover' }}
+                                    style={{ width: 60, height: 60, objectFit: 'cover' }}
                                 />
-                                <Form.Label htmlFor="profilePhoto" className="position-absolute top-50 start-50 translate-middle bg-white rounded-circle p-2 border shadow-sm" style={{ cursor: 'pointer', left: '70%', top: '70%' }}>
-                                    <FaCamera color="#0073E6" size={18} />
+                                <Form.Label htmlFor="profilePhoto" className="position-absolute mt-4 ms-3 top-50 start-50 translate-middle bg-white rounded-circle p-2 border shadow-sm" style={{ cursor: 'pointer', left: '70%', top: '70%' }}>
+                                    <FaCamera className='' color="#0073E6" size={10} />
                                 </Form.Label>
                                 <Form.Control
                                     type="file"
@@ -103,7 +104,7 @@ const NewPerson = () => {
                         </div>
                         <div>
                             <a href="#" className="text-primary fw-semibold text-decoration-none" style={{ fontSize: 15 }}>
-                                <FaCamera className="me-1 mb-1" /> Upload photo
+                                Upload photo
                             </a>
                             <span className="ms-1" title="Profile photo helps you identify contacts.">
                                 <span style={{ color: '#0073E6', cursor: 'pointer', fontWeight: 700, fontSize: 18 }}>?</span>
@@ -573,7 +574,9 @@ const NewPerson = () => {
                 <div className="d-flex flex-wrap gap-2 justify-content-end mt-3 bg-white pt-3 pb-2 sticky-bottom" style={{ zIndex: 10 }}>
                     <Button variant="primary" className="px-4 py-2 fw-bold" style={{ borderRadius: 8 }}>Save contact</Button>
                     <Button variant="outline-primary" className="px-4 py-2 fw-bold" style={{ borderRadius: 8 }}>Save and create new matter</Button>
+                    <Link to="/activity">
                     <Button variant="secondary" className="px-4 py-2 fw-bold" style={{ borderRadius: 8 }}>Cancel</Button>
+                    </Link>
                 </div>
             </Form>
 

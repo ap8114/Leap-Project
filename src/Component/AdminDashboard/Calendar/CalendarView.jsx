@@ -2,11 +2,10 @@ import React, { useState } from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import EventDetailsModal from './EventDetailsModal';
 import { Modal } from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import { Link } from 'react-router-dom';
 
 
-const CalendarUI = () => {
+const CalendarUI = ({ }) => {
   const [currentDate, setCurrentDate] = useState(new Date(2025, 6, 10)); // July 10, 2025
   const [selectedView, setSelectedView] = useState('Week');
   const [showHeaderCalendar, setShowHeaderCalendar] = useState(false);
@@ -14,7 +13,17 @@ const CalendarUI = () => {
   const [showEventModal, setShowEventModal] = useState(false);
   const startDay = new Date(2025, 5, 29); // June 29, 2025 (Sunday)
   const days = [];
+  // Reload
+  const handleRefresh = () => {
+    window.location.reload(); // 🔄 This reloads the page
+  };
 
+  const [showDropdown, setShowDropdown] = useState(false);
+  // Print
+  // This function opens the print dialog
+  const handlePrint = () => {
+    window.print(); // 🖨 Opens print dialog
+  };
   for (let i = 0; i < 42; i++) {
     const day = new Date(startDay);
     day.setDate(startDay.getDate() + i);
@@ -31,29 +40,29 @@ const CalendarUI = () => {
     { date: '2025-07-15', time: '11:00 AM', event: 'Design Review' },
     { date: '2025-07-20', time: '4:00 PM', event: 'Sprint Planning' }
   ]);
-  
+
   const monthNames = [
     'January', 'February', 'March', 'April', 'May', 'June',
     'July', 'August', 'September', 'October', 'November', 'December'
   ];
-  
+
   const dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
   const dayNamesShort = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
-  
+
   const calendars = [
     { name: ' Glossary', color: '#007bff', checked: true },
     { name: 'Firm', color: '#fd7e14', checked: true },
     { name: 'Tasks', color: '#28a745', checked: true },
     { name: 'Statute of Limitations', color: '#dc3545', checked: true }
   ];
-  
+
   const timeSlots = [
-    '12:00 am', '1:00 am', '2:00 am', '3:00 am', '4:00 am', '5:00 am', 
+    '12:00 am', '1:00 am', '2:00 am', '3:00 am', '4:00 am', '5:00 am',
     '6:00 am', '7:00 am', '8:00 am', '9:00 am', '10:00 am', '11:00 am',
     '12:00 pm', '1:00 pm', '2:00 pm', '3:00 pm', '4:00 pm', '5:00 pm',
     '6:00 pm', '7:00 pm', '8:00 pm', '9:00 pm', '10:00 pm', '11:00 pm',
   ];
-  
+
   const navigateDate = (direction) => {
     const newDate = new Date(currentDate);
     if (selectedView === 'Day') {
@@ -65,26 +74,26 @@ const CalendarUI = () => {
     }
     setCurrentDate(newDate);
   };
-  
+
   const goToToday = () => {
     setCurrentDate(new Date());
   };
-  
+
   const formatDateHeader = () => {
-    const options = { 
-      weekday: 'short', 
-      year: 'numeric', 
-      month: 'short', 
-      day: 'numeric' 
+    const options = {
+      weekday: 'short',
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric'
     };
     return currentDate.toLocaleDateString('en-US', options);
   };
-  
+
   const getWeekDays = () => {
     const startOfWeek = new Date(currentDate);
     const day = startOfWeek.getDay();
     startOfWeek.setDate(currentDate.getDate() - day);
-    
+
     const weekDays = [];
     for (let i = 0; i < 7; i++) {
       const day = new Date(startOfWeek);
@@ -94,11 +103,12 @@ const CalendarUI = () => {
     return weekDays;
   };
 
+
   const getWorkWeekDays = () => {
     const startOfWeek = new Date(currentDate);
     const day = startOfWeek.getDay();
     startOfWeek.setDate(currentDate.getDate() - day);
-    
+
     const workWeekDays = [];
     for (let i = 1; i <= 5; i++) {
       const day = new Date(startOfWeek);
@@ -107,17 +117,17 @@ const CalendarUI = () => {
     }
     return workWeekDays;
   };
-  
+
   const generateCalendarDays = () => {
     const year = currentDate.getFullYear();
     const month = currentDate.getMonth();
     const firstDay = new Date(year, month, 1);
     const startDate = new Date(firstDay);
     startDate.setDate(startDate.getDate() - firstDay.getDay());
-    
+
     const days = [];
     const current = new Date(startDate);
-    
+
     for (let i = 0; i < 42; i++) {
       days.push({
         date: new Date(current),
@@ -127,20 +137,20 @@ const CalendarUI = () => {
       });
       current.setDate(current.getDate() + 1);
     }
-    
+
     return days;
   };
-  
+
   const generateHeaderCalendarDays = () => {
     const year = headerCalendarDate.getFullYear();
     const month = headerCalendarDate.getMonth();
     const firstDay = new Date(year, month, 1);
     const startDate = new Date(firstDay);
     startDate.setDate(startDate.getDate() - firstDay.getDay());
-    
+
     const days = [];
     const current = new Date(startDate);
-    
+
     for (let i = 0; i < 42; i++) {
       days.push({
         date: new Date(current),
@@ -150,16 +160,16 @@ const CalendarUI = () => {
       });
       current.setDate(current.getDate() + 1);
     }
-    
+
     return days;
   };
-  
+
   const navigateHeaderCalendar = (direction) => {
     const newDate = new Date(headerCalendarDate);
     newDate.setMonth(headerCalendarDate.getMonth() + direction);
     setHeaderCalendarDate(newDate);
   };
-  
+
   const selectHeaderDate = (date) => {
     setCurrentDate(date);
     setShowHeaderCalendar(false);
@@ -173,35 +183,35 @@ const CalendarUI = () => {
   const renderMonthView = () => {
     return (
       <div className="p-3">
-          <Container className="mt-4 border p-3 bg-white shadow">
-      <Row className="text-center fw-bold border-bottom pb-2">
-        {['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'].map((d, idx) => (
-          <Col key={idx} className="border-end">{d}</Col>
-        ))}
-      </Row>
+        <Container className="mt-4 border p-3 bg-white shadow">
+          <Row className="text-center fw-bold border-bottom pb-2">
+            {['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'].map((d, idx) => (
+              <Col key={idx} className="border-end">{d}</Col>
+            ))}
+          </Row>
 
-      {[0, 1, 2, 3, 4, 5].map((week) => (
-        <Row key={week} className="text-center" style={{ minHeight: '80px' }}>
-          {[0, 1, 2, 3, 4, 5, 6].map((d) => {
-            const current = days[week * 7 + d];
-            const isToday = current.toDateString() === today;
+          {[0, 1, 2, 3, 4, 5].map((week) => (
+            <Row key={week} className="text-center" style={{ minHeight: '80px' }}>
+              {[0, 1, 2, 3, 4, 5, 6].map((d) => {
+                const current = days[week * 7 + d];
+                const isToday = current.toDateString() === today;
 
-            return (
-              <Col key={d} className={`border p-2 ${isToday ? 'bg-warning' : ''}`} style={{ height: '80px' }}>
-                <div className="small text-muted">{current.getDate().toString().padStart(2, '0')}</div>
-              </Col>
-            );
-          })}
-        </Row>
-      ))}
-    </Container>
+                return (
+                  <Col key={d} className={`border p-2 ${isToday ? 'bg-warning' : ''}`} style={{ height: '80px' }}>
+                    <div className="small text-muted">{current.getDate().toString().padStart(2, '0')}</div>
+                  </Col>
+                );
+              })}
+            </Row>
+          ))}
+        </Container>
       </div>
     );
   };
 
   const renderDayView = () => {
     const dayEvents = getEventsForDate(currentDate);
-    
+
     return (
       <div className="p-3">
         {/* Day Header */}
@@ -217,7 +227,7 @@ const CalendarUI = () => {
             </div>
           </div>
         </div>
-        
+
         {/* Time Slots */}
         <div className="overflow-auto" style={{ height: 'calc(100vh - 200px)' }}>
           {timeSlots.map((time, index) => (
@@ -227,7 +237,7 @@ const CalendarUI = () => {
               </div>
               <div className="col-md-10 position-relative" style={{ minHeight: '60px' }}>
                 {dayEvents.filter(event => event.time === time).map((event, eventIndex) => (
-                  <div 
+                  <div
                     key={eventIndex}
                     className="position-absolute text-white px-2 py-1 rounded"
                     style={{
@@ -248,16 +258,16 @@ const CalendarUI = () => {
       </div>
     );
   };
-  
+
   const calendarDays = generateCalendarDays();
   const headerCalendarDays = generateHeaderCalendarDays();
   const weekDays = getWeekDays();
   const workWeekDays = getWorkWeekDays();
-  
+
   return (
-    <div className="container-fluid p-0" style={{ minHeight: '100vh', backgroundColor: '#f8f9fa' }}>
-      <link 
-        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css" 
+    <div className="p-4">
+      <link
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css"
         rel="stylesheet"
       />
       <style>
@@ -336,44 +346,44 @@ const CalendarUI = () => {
           }
         `}
       </style>
-      
+
       {/* Header */}
       <div className="bg-white border-bottom p-3 shadow-sm">
         <div className="row align-items-center">
           <div className="col-md-6 mb-3 mb-md-0">
             <div className="d-flex align-items-center gap-2 flex-wrap">
-              <button 
+              <button
                 className="btn btn-outline-secondary btn-sm order-1"
                 onClick={goToToday}
               >
                 Today
               </button>
               <div className="position-relative order-3 order-md-2">
-                <button 
+                <button
                   className="btn btn-link text-decoration-none text-dark p-0 ms-2"
                   onClick={() => setShowHeaderCalendar(!showHeaderCalendar)}
                 >
                   <h5 className="mb-0">{formatDateHeader()} <span className="d-none d-md-inline">▼</span></h5>
                 </button>
-                
+
                 {showHeaderCalendar && (
                   <div className="position-absolute bg-white border rounded shadow-lg p-3 mt-2" style={{ zIndex: 1050, minWidth: '300px' }}>
                     <div className="d-flex align-items-center justify-content-between mb-3">
-                      <button 
+                      <button
                         className="btn btn-sm btn-outline-secondary"
                         onClick={() => navigateHeaderCalendar(-1)}
                       >
                         ‹
                       </button>
                       <h6 className="mb-0">{monthNames[headerCalendarDate.getMonth()]} {headerCalendarDate.getFullYear()}</h6>
-                      <button 
+                      <button
                         className="btn btn-sm btn-outline-secondary"
                         onClick={() => navigateHeaderCalendar(1)}
                       >
                         ›
                       </button>
                     </div>
-                    
+
                     <div className="row g-0 mb-2">
                       {dayNames.map(day => (
                         <div key={day} className="col text-center small text-muted p-1">
@@ -381,20 +391,19 @@ const CalendarUI = () => {
                         </div>
                       ))}
                     </div>
-                    
+
                     <div className="row g-0 mb-3">
                       {headerCalendarDays.map((day, index) => (
                         <div key={index} className="col text-center p-1">
                           <button
-                            className={`btn btn-sm w-100 ${
-                              day.isSelected 
-                                ? 'btn-primary' 
-                                : day.isToday 
-                                ? 'btn-outline-primary' 
-                                : day.isCurrentMonth 
-                                ? 'btn-outline-light text-dark hover-bg-light' 
-                                : 'btn-outline-light text-muted'
-                            }`}
+                            className={`btn btn-sm w-100 ${day.isSelected
+                              ? 'btn-custom'
+                              : day.isToday
+                                ? 'btn-outline-primary'
+                                : day.isCurrentMonth
+                                  ? 'btn-outline-light text-dark hover-bg-light'
+                                  : 'btn-outline-light text-muted'
+                              }`}
                             style={{ fontSize: '0.75rem', height: '32px' }}
                             onClick={() => selectHeaderDate(day.date)}
                           >
@@ -403,7 +412,7 @@ const CalendarUI = () => {
                         </div>
                       ))}
                     </div>
-                    
+
                     <div className="text-center border-top pt-2">
                       <small className="text-primary">
                         {currentDate.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}
@@ -414,7 +423,7 @@ const CalendarUI = () => {
               </div>
             </div>
           </div>
-          
+
           <div className="col-md-6">
             <div className="d-flex align-items-center justify-content-md-end gap-2 flex-wrap">
               <div className="btn-group order-2 order-md-1" role="group">
@@ -422,56 +431,64 @@ const CalendarUI = () => {
                   <button
                     key={view}
                     type="button"
-                    className={`btn btn-sm ${selectedView === view ? 'btn-primary' : 'btn-outline-secondary'}`}
+                    className={`btn btn-sm ${selectedView === view ? 'btn-custom' : 'btn-outline-secondary'}`}
                     onClick={() => setSelectedView(view)}
                   >
                     {view}
                   </button>
                 ))}
               </div>
-              
-             <div className="dropdown order-3 order-md-2">
-      <button 
-        className="btn btn-outline-secondary btn-sm dropdown-toggle" 
-        type="button"
-        id="dropdownMenuButton"
-        data-bs-toggle="dropdown"
-        aria-expanded="false"
-      >
-        More
-      </button>
-      <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-         <li><button className="dropdown-item">Refresh</button></li>
-    <li><button className="dropdown-item">Add new calendar</button></li>
-    <li><button className="dropdown-item">Calendar settings</button></li>
-    <li><button className="dropdown-item">Calendar sharing</button></li>
-    <li><button className="dropdown-item">Calendar sync</button></li>
-    <li><button className="dropdown-item">Calendar feeds</button></li>
-    <li><button className="dropdown-item">Print</button></li>
-      </ul>
-    </div>
-              
-              <button className="btn btn-primary btn-sm order-1 order-md-3 mb-2 mb-md-0"  onClick={() => setShowEventModal(true)}>
+
+              <div className="dropdown order-3 order-md-2">
+                <button
+                  className="btn btn-outline-secondary btn-sm dropdown-toggle"
+                  type="button"
+                  onClick={() => setShowDropdown(!showDropdown)}
+                >
+                  More
+                </button>
+                <ul className={`dropdown-menu ${showDropdown ? 'show' : ''}`}>
+                  <li><button className="dropdown-item" onClick={handleRefresh}>Refresh</button></li>
+                  <Link to="/newcalender" className="text-decoration-none">
+                    <li><button className="dropdown-item">Add new calendar</button></li>
+                  </Link>
+                  <Link to="/newcalender" className="text-decoration-none">
+                    <li><button className="dropdown-item">Calendar settings</button></li>
+                  </Link>
+                  <Link to="/newcalender" className="text-decoration-none">
+                    <li><button className="dropdown-item">Calendar sharing</button></li>
+                  </Link>
+                  <Link to="/newcalender" className="text-decoration-none">
+                    <li><button className="dropdown-item">Calendar sync</button></li>
+                  </Link>
+                  <Link to="/newcalender" className="text-decoration-none">
+                    <li><button className="dropdown-item">Calendar feeds</button></li>
+                  </Link>
+                  <li><button className="dropdown-item" onClick={handlePrint}>Print</button></li>
+                </ul>
+              </div>
+
+              <button className="btn btn-custom btn-sm order-1 order-md-3 mb-2 mb-md-0" onClick={() => setShowEventModal(true)}>
                 New event
               </button>
-                {/* Show modal */}
-      <Modal
-        show={showEventModal}
-        onHide={() => setShowEventModal(false)}
-        size="lg"
-        centered
-        backdrop="static"
-      >
-        <Modal.Header closeButton>
-          <Modal.Title>New Event</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <EventDetailsModal />
-        </Modal.Body>
-      </Modal>
-              
+              {/* Show modal */}
+              <Modal
+                show={showEventModal}
+                onHide={() => setShowEventModal(false)}
+                size="lg"
+                centered
+                backdrop="static"
+              >
+                <Modal.Header closeButton>
+                  <Modal.Title>New Event</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                  <EventDetailsModal />
+                </Modal.Body>
+              </Modal>
+
               <div className="d-flex align-items-center order-4">
-                <button 
+                <button
                   className="btn btn-outline-secondary btn-sm"
                   onClick={() => navigateDate(-1)}
                 >
@@ -480,7 +497,7 @@ const CalendarUI = () => {
                 <span className="small text-muted mx-2 d-none d-md-inline">
                   {monthNames[currentDate.getMonth()]} {currentDate.getFullYear()}
                 </span>
-                <button 
+                <button
                   className="btn btn-outline-secondary btn-sm"
                   onClick={() => navigateDate(1)}
                 >
@@ -491,7 +508,7 @@ const CalendarUI = () => {
           </div>
         </div>
       </div>
-      
+
       <div className="row g-0 calendar-container">
         <div className="col-lg-9 bg-white">
           {selectedView === 'Agenda' ? (
@@ -545,12 +562,12 @@ const CalendarUI = () => {
                   })}
                 </div>
               </div>
-              
+
               {/* All Day Row */}
               <div className="all-day-row">
                 <div className="row g-0 h-100">
                   <div className="col-1 border-end d-flex align-items-center justify-content-center d-none d-md-block">
-                    <small className="text-muted">All Day</small>
+                    <small className="text-muted ms-3 ">All Day</small>
                   </div>
                   {(selectedView === 'Week' ? weekDays : workWeekDays).map((day, index) => {
                     const isToday = day.toDateString() === new Date().toDateString();
@@ -562,7 +579,7 @@ const CalendarUI = () => {
                   })}
                 </div>
               </div>
-              
+
               {/* Time Slots */}
               <div className="overflow-auto hide-scrollbar" style={{ height: 'calc(100vh - 200px)' }}>
                 {timeSlots.map((time, timeIndex) => (
@@ -574,13 +591,13 @@ const CalendarUI = () => {
                       const isToday = day.toDateString() === new Date().toDateString();
                       const dayEvents = getEventsForDate(day);
                       const timeEvent = dayEvents.find(event => event.time === time);
-                      
+
                       return (
                         <div key={dayIndex} className={`col week-day-column ${isToday ? 'week-today' : ''}`}>
                           {timeEvent && (
-                            <div className="position-absolute" style={{ 
-                              top: '0', 
-                              left: '4px', 
+                            <div className="position-absolute" style={{
+                              top: '0',
+                              left: '4px',
                               right: '4px',
                               backgroundColor: '#007bff',
                               color: 'white',
@@ -609,14 +626,14 @@ const CalendarUI = () => {
             </div>
           )}
         </div>
-        
+
         {/* Right Sidebar - Always visible now */}
         <div className="col-lg-3 border-start bg-white sidebar">
           <div className="p-3">
             {/* Mini Calendar */}
             <div className="mb-4">
               <div className="d-flex align-items-center justify-content-between mb-2">
-                <button 
+                <button
                   className="btn btn-sm btn-outline-secondary"
                   onClick={() => {
                     const newDate = new Date(currentDate);
@@ -627,7 +644,7 @@ const CalendarUI = () => {
                   ‹
                 </button>
                 <h6 className="mb-0">{monthNames[currentDate.getMonth()]} {currentDate.getFullYear()}</h6>
-                <button 
+                <button
                   className="btn btn-sm btn-outline-secondary"
                   onClick={() => {
                     const newDate = new Date(currentDate);
@@ -638,7 +655,7 @@ const CalendarUI = () => {
                   ›
                 </button>
               </div>
-              
+
               <div className="row g-0 mb-2">
                 {dayNamesShort.map(day => (
                   <div key={day} className="col text-center small text-muted p-1">
@@ -646,20 +663,19 @@ const CalendarUI = () => {
                   </div>
                 ))}
               </div>
-              
+
               <div className="row g-0">
                 {calendarDays.map((day, index) => (
                   <div key={index} className="col text-center p-1">
                     <button
-                      className={`btn btn-sm w-100 ${
-                        day.isSelected 
-                          ? 'btn-primary' 
-                          : day.isToday 
-                          ? 'btn-outline-primary' 
-                          : day.isCurrentMonth 
-                          ? 'btn-outline-light text-dark' 
-                          : 'btn-outline-light text-muted'
-                      }`}
+                      className={`btn btn-sm w-100 ${day.isSelected
+                        ? 'btn-custom'
+                        : day.isToday
+                          ? 'btn-outline-primary'
+                          : day.isCurrentMonth
+                            ? 'btn-outline-light text-dark'
+                            : 'btn-outline-light text-muted'
+                        }`}
                       style={{ fontSize: '0.75rem', height: '28px' }}
                       onClick={() => setCurrentDate(day.date)}
                     >
@@ -669,7 +685,7 @@ const CalendarUI = () => {
                 ))}
               </div>
             </div>
-            
+
             {/* My Calendars */}
             <div className="mb-4 ms-3">
               <div className="d-flex m align-items-center justify-content-between mb-3">
@@ -678,14 +694,14 @@ const CalendarUI = () => {
               </div>
               {calendars.map((calendar, index) => (
                 <div key={index} className="d-flex align-items-center mb-2">
-                  <input 
-                    className="form-check-input me-2" 
-                    type="checkbox" 
+                  <input
+                    className="form-check-input me-2"
+                    type="checkbox"
                     defaultChecked={calendar.checked}
                     id={`calendar-${index}`}
                   />
-                  <span 
-                    className="badge me-2" 
+                  <span
+                    className="badge me-2"
                     style={{ backgroundColor: calendar.color, width: '12px', height: '12px' }}
                   ></span>
                   <label className="form-check-label small flex-grow-1" htmlFor={`calendar-${index}`}>
@@ -695,7 +711,7 @@ const CalendarUI = () => {
                 </div>
               ))}
             </div>
-            
+
             {/* Other Calendars */}
             <div>
               <div className="d-flex align-items-center justify-content-between mb-3">
@@ -711,13 +727,3 @@ const CalendarUI = () => {
 };
 
 export default CalendarUI;
-
-
-
-
-
-
-
-
-
-
