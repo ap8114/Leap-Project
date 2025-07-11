@@ -69,11 +69,7 @@ const Document = () => {
         {/* Header */}
         <Row className="align-items-center px-3 px-md-4 py-2 py-md-3 border-bottom">
           <Col xs={6} md={4} lg={6}>
-<<<<<<< HEAD
-            <h3 className="fw-bold mb-2 mt-2 ms-3">Documents</h3>
-=======
              <h1 className="fw-bold mb-2 mt-2 ms-3" style={{ fontSize: "2rem", fontWeight: "700" }}>Documents</h1>
->>>>>>> b01d4380c79a12c32dfa55de0118de32723ccd6b
           </Col>
           <Col xs={6} md={8} lg={6} className="text-end">
             <Link to="/categories">
