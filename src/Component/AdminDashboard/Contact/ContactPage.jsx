@@ -13,7 +13,7 @@ const ContactPage = () => {
             {/* Header */}
             <div className="bg-white  border-bottom sticky-top" style={{ zIndex: 100 }}>
                 <div className="d-flex justify-content-between align-items-center flex-wrap">
-                    <h4 className="fw-bold mb-0 ">Contacts</h4>
+                    <h3 className="fw-bold mb-3 ">Contacts</h3>
                     <div className="d-flex gap-2 mt-2 mt-md-0">
                         <button
                             className="btn btn-outline-secondary"

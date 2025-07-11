@@ -108,7 +108,7 @@ const TaskPage = () => {
     <>
       <div className="container-fluid p-4 bg-light min-vh-100">
         <div className="d-flex justify-content-between align-items-center mb-4">
-          <h2 className="ms-4 py-3 fw-light">Tasks</h2>
+          <h3 className="fw-bold mt-4 ms-4">Tasks</h3>
           <div className="d-flex gap-2">
             <Button variant="outline-secondary" className="ms-4 py-3 fw-light">Task types</Button>
             <Button variant="outline-secondary" className="ms-4 py-3 fw-light">Task lists</Button>

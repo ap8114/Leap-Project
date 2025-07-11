@@ -50,7 +50,7 @@ const App = () => {
 
   return (
     <div className="min-h-screen bg-light">
-      <h2 className="ms-4 py-3 fw-light" >Dashboard</h2>
+        <h3 className="fw-bold mt-4 ms-4">Dashboard</h3>
       <div className="container-fluid py-4 px-4">
         <NavigationTabs activeTab={activeTab} setActiveTab={setActiveTab} />
         
