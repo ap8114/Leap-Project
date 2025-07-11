@@ -349,8 +349,8 @@ const CalendarUI = ({ }) => {
       </style>
 
       {/* Header */}
-      <div className="bg-white border-bottom p-3 shadow-sm">
-        <h3 className="fw-bold mb-4 ">Calendar</h3>
+      <div className="bg-white container-fluid  p-3">
+        <h1 className="fw-bold mb-3 "style={{ fontSize: "2rem", fontWeight: "700" }}>Calendar</h1>
         <div className="row align-items-center">
           <div className="col-md-5 mb-3 mb-md-0">
             <div className="d-flex align-items-center gap-2 flex-wrap">

@@ -1131,3 +1131,30 @@ margin-top: auto;
   overflow: visible !important;
   transition: none !important;
 }
+
+
+/* custom scroll bar class */
+
+/* Slim scrollbar for modern look */
+.custom-scroll::-webkit-scrollbar {
+  height: 6px; /* Horizontal ke liye */
+}
+
+.custom-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb {
+  background: #999;
+  border-radius: 4px;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb:hover {
+  background: #666;
+}
+
+/* Firefox ke liye */
+.custom-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #999 transparent;
+}
