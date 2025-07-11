@@ -183,6 +183,7 @@ const CalendarUI = ({ }) => {
   const renderMonthView = () => {
     return (
       <div className="p-3">
+        
         <Container className="mt-4 border p-3 bg-white shadow">
           <Row className="text-center fw-bold border-bottom pb-2">
             {['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'].map((d, idx) => (
@@ -349,6 +350,7 @@ const CalendarUI = ({ }) => {
 
       {/* Header */}
       <div className="bg-white border-bottom p-3 shadow-sm">
+        <h3 className="fw-bold mb-4 ">Calendar</h3>
         <div className="row align-items-center">
           <div className="col-md-6 mb-3 mb-md-0">
             <div className="d-flex align-items-center gap-2 flex-wrap">
@@ -414,7 +416,7 @@ const CalendarUI = ({ }) => {
                     </div>
 
                     <div className="text-center border-top pt-2">
-                      <small className="text-primary">
+                      <small className="text-custom">
                         {currentDate.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}
                       </small>
                     </div>
@@ -556,7 +558,7 @@ const CalendarUI = ({ }) => {
                       <div key={index} className={`col border-end text-center d-flex flex-column justify-content-center ${isToday ? 'week-today' : ''}`}>
                         <div className="small text-muted mb-1 d-none d-md-block">{dayNames[day.getDay()]}</div>
                         <div className="small text-muted mb-1 d-md-none">{dayNames[day.getDay()].substring(0, 1)}</div>
-                        <div className={`h4 mb-0 ${isToday ? 'text-primary fw-bold' : ''}`}>{day.getDate()}</div>
+                        <div className={`h4 mb-0 ${isToday ? 'text-custom fw-bold' : ''}`}>{day.getDate()}</div>
                       </div>
                     );
                   })}

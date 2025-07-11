@@ -754,7 +754,7 @@ const ActivitiesTable = () => {
             ></button>
           </div>
           <div className="d-flex gap-2 mt-3">
-            <button className="btn btn-primary btn-sm flex-grow-1">
+            <button className="btn btn-custom btn-sm flex-grow-1">
               Apply filters
             </button>
             <button className="btn btn-outline-secondary btn-sm flex-grow-1">

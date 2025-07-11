@@ -27,8 +27,8 @@ const Account = () => {
   return (
     <div className="container-fluid bg-light min-vh-100 py-3">
       {/* HEADER */}
-      <div className="bg-white border p-3 mb-3 d-flex justify-content-between align-items-center">
-        <h2 className="mb-0">Bank Accounts</h2>
+      <div className=" p-3 mb-3 d-flex justify-content-between align-items-center">
+       <h3 className="fw-bold mb-2 mt-2 ms-3">Accounts</h3>
         <div className="d-flex gap-2">
           <button
             className="btn btn-secondary text-dark"
@@ -126,16 +126,16 @@ const Account = () => {
       {/* EMPTY STATE */}
       <div className="bg-white border p-5 text-center">
         <div className="d-flex justify-content-center align-items-center mb-4 gap-3">
-          <div className="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" style={{ width: 64, height: 64 }}>
-            <i className="bi bi-check2 fs-2"></i>
+          <div className="bg-secondary text-white rounded-circle d-flex align-items-center justify-content-center" style={{ width: 64, height: 64 }}>
+            <i className="bi bi-check2 fs-2 "></i>
           </div>
           <div className="d-flex gap-1">
-            <div className="rounded-circle bg-primary" style={{ width: 10, height: 10 }}></div>
+            <div className="rounded-circle bg-custom" style={{ width: 10, height: 10 }}></div>
             <div className="rounded-circle bg-info" style={{ width: 10, height: 10 }}></div>
             <div className="rounded-circle bg-secondary" style={{ width: 10, height: 10 }}></div>
           </div>
           <div className="bg-secondary text-white rounded-circle d-flex align-items-center justify-content-center" style={{ width: 64, height: 64 }}>
-            <i className="bi bi-bank fs-2"></i>
+            <i className="bi bi-bank fs-2 "></i>
           </div>
         </div>
         <h4 className="fw-bold">What are accounts in Clio Manage?</h4>

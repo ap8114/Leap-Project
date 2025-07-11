@@ -206,7 +206,7 @@ const NewExpenseModals = ({ show, onClose }) => {
                 <div className="px-2 py-1">
                   <div className="dropdown-item" style={{ fontSize: '14px' }}>(Default) Use tax applied to invoice</div>
                   <div className="dropdown-item" style={{ fontSize: '14px' }}>No tax</div>
-                  <div className="dropdown-item" style={{ fontSize: '14px' }}>Custom tax rate</div>
+                  <div className="dropdown-item" style={{ fontSize: '14px' }}>custom tax rate</div>
                 </div>
               </div>
             )}

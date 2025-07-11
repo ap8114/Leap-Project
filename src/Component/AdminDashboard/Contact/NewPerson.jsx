@@ -8,13 +8,13 @@ import ManageTags from './ManageTags';
 const NewPerson = () => {
     const [contactType, setContactType] = useState('person');
     const [profilePhoto, setProfilePhoto] = useState(null);
-    const [emails, setEmails] = useState([{ value: '', type: 'Work', primary: true }]);
-    const [phones, setPhones] = useState([{ value: '', type: 'Work', primary: true }]);
-    const [websites, setWebsites] = useState([{ value: '', type: 'Work', primary: true }]);
+    const [emails, setEmails] = useState([{ value: '', type: 'Work', custom: true }]);
+    const [phones, setPhones] = useState([{ value: '', type: 'Work', custom: true }]);
+    const [websites, setWebsites] = useState([{ value: '', type: 'Work', custom: true }]);
     const [addresses, setAddresses] = useState([
-        { street: '', city: '', state: '', zip: '', country: 'United States', type: 'Work', primary: true }
+        { street: '', city: '', state: '', zip: '', country: 'United States', type: 'Work', custom: true }
     ]);
-    const [showCustomFields, setShowCustomFields] = useState(false);
+    const [showcustomFields, setShowcustomFields] = useState(false);
     const [showBilling, setShowBilling] = useState(false);
     const [showEmployeesOpen, setShowEmployeesOpen] = useState(false);
     const [employees, setEmployees] = useState([{ name: '' }]);
@@ -64,7 +64,7 @@ const NewPerson = () => {
                         <div className="mb-2">Is this contact a person or a company?</div>
                         <div className="btn-group" role="group">
                             <Button
-                                variant={contactType === 'person' ? 'primary' : 'outline-secondary'}
+                                variant={contactType === 'person' ? 'custom' : 'outline-secondary'}
                                 onClick={() => setContactType('person')}
                                 className={`d-flex align-items-center px-4 py-2 ${contactType === 'person' ? '' : 'bg-white'}`}
                                 style={{ borderRadius: '8px 0 0 8px', fontWeight: 600 }}
@@ -72,7 +72,7 @@ const NewPerson = () => {
                                 <FaUser className="me-2" /> Person
                             </Button>
                             <Button
-                                variant={contactType === 'company' ? 'primary' : 'outline-secondary'}
+                                variant={contactType === 'company' ? 'custom' : 'outline-secondary'}
                                 onClick={() => setContactType('company')}
                                 className={`d-flex align-items-center px-4 py-2 ${contactType === 'company' ? '' : 'bg-white'}`}
                                 style={{ borderRadius: '0 8px 8px 0', fontWeight: 600 }}
@@ -103,7 +103,7 @@ const NewPerson = () => {
                             </div>
                         </div>
                         <div>
-                            <a href="#" className="text-primary fw-semibold text-decoration-none" style={{ fontSize: 15 }}>
+                            <a href="#" className="text-custom fw-semibold text-decoration-none" style={{ fontSize: 15 }}>
                                 Upload photo
                             </a>
                             <span className="ms-1" title="Profile photo helps you identify contacts.">
@@ -222,9 +222,9 @@ const NewPerson = () => {
                         <div className="col-md-2 d-flex align-items-center gap-2">
                             <Form.Check
                                 type="radio"
-                                label="Primary"
-                                checked={email.primary}
-                                onChange={() => setEmails(emails.map((em, i) => ({ ...em, primary: i === idx })))}
+                                label="custom"
+                                checked={email.custom}
+                                onChange={() => setEmails(emails.map((em, i) => ({ ...em, custom: i === idx })))}
                             />
                             {emails.length > 1 && (
                                 <Button variant="link" size="sm" className="p-0 ms-2" style={{ color: '#0067C5' }} onClick={() => handleRemove(setEmails, emails, idx)}>
@@ -234,7 +234,7 @@ const NewPerson = () => {
                         </div>
                     </div>
                 ))}
-                <div className='text-start'>  <Button className="text-start p-0 mb-2" variant="link" size="sm" onClick={() => handleAdd(setEmails, emails, { value: '', type: 'Work', primary: false })}>
+                <div className='text-start'>  <Button className="text-start p-0 mb-2" variant="link" size="sm" onClick={() => handleAdd(setEmails, emails, { value: '', type: 'Work', custom: false })}>
                     + Add email address
                 </Button></div>
                 {/* Phone Section */}
@@ -263,9 +263,9 @@ const NewPerson = () => {
                         <div className="col-md-2 d-flex align-items-center gap-2">
                             <Form.Check
                                 type="radio"
-                                label="Primary"
-                                checked={phone.primary}
-                                onChange={() => setPhones(phones.map((ph, i) => ({ ...ph, primary: i === idx })))}
+                                label="custom"
+                                checked={phone.custom}
+                                onChange={() => setPhones(phones.map((ph, i) => ({ ...ph, custom: i === idx })))}
                             />
                             {phones.length > 1 && (
                                 <Button variant="link" size="sm" className="p-0 ms-2" style={{ color: '#0067C5' }} onClick={() => handleRemove(setPhones, phones, idx)}>
@@ -275,7 +275,7 @@ const NewPerson = () => {
                         </div>
                     </div>
                 ))}
-                <div className='text-start'><Button className="text-start p-0 mb-2" variant="link" size="sm" onClick={() => handleAdd(setPhones, phones, { value: '', type: 'Work', primary: false })}>
+                <div className='text-start'><Button className="text-start p-0 mb-2" variant="link" size="sm" onClick={() => handleAdd(setPhones, phones, { value: '', type: 'Work', custom: false })}>
                     + Add phone number
                 </Button></div>
                 {/* Website Section */}
@@ -304,9 +304,9 @@ const NewPerson = () => {
                         <div className="col-md-2 d-flex align-items-center gap-2">
                             <Form.Check
                                 type="radio"
-                                label="Primary"
-                                checked={website.primary}
-                                onChange={() => setWebsites(websites.map((w, i) => ({ ...w, primary: i === idx })))}
+                                label="custom"
+                                checked={website.custom}
+                                onChange={() => setWebsites(websites.map((w, i) => ({ ...w, custom: i === idx })))}
                             />
                             {websites.length > 1 && (
                                 <Button variant="link" size="sm" className="p-0 ms-2" style={{ color: '#0067C5' }} onClick={() => handleRemove(setWebsites, websites, idx)}>
@@ -316,7 +316,7 @@ const NewPerson = () => {
                         </div>
                     </div>
                 ))}
-                <div className='text-start'>  <Button className="text-start p-0 mb-2" variant="link" size="sm" onClick={() => handleAdd(setWebsites, websites, { value: '', type: 'Work', primary: false })}>
+                <div className='text-start'>  <Button className="text-start p-0 mb-2" variant="link" size="sm" onClick={() => handleAdd(setWebsites, websites, { value: '', type: 'Work', custom: false })}>
                     + Add website
                 </Button></div>
                 {/* Address Section */}
@@ -386,7 +386,7 @@ const NewPerson = () => {
                         </div>
                     </div>
                 ))}
-                <div className='text-start'>  <Button className="text-start p-0 mb-2" variant="link" size="sm" onClick={() => handleAdd(setAddresses, addresses, { street: '', city: '', state: '', zip: '', country: 'United States', type: 'Work', primary: false })}>
+                <div className='text-start'>  <Button className="text-start p-0 mb-2" variant="link" size="sm" onClick={() => handleAdd(setAddresses, addresses, { street: '', city: '', state: '', zip: '', country: 'United States', type: 'Work', custom: false })}>
                     + Add address
                 </Button></div>
                 {/* Tags Section */}
@@ -473,7 +473,7 @@ const NewPerson = () => {
                                 style={{ maxWidth: 300 }}
                             />
                             <Button
-                                variant="outline-primary"
+                                variant="outline-custom"
                                 onClick={() => {
                                     if (newTagName.trim()) {
                                         setTags([...tags, { name: newTagName.trim(), color: selectedTagColor }]);
@@ -488,21 +488,21 @@ const NewPerson = () => {
                         </div>
                     </Modal.Body>
                 </Modal>
-                {/* Custom Fields */}
+                {/* custom Fields */}
                 <div className="border rounded mb-2">
                     <Button
                         variant="link"
                         className="w-100 text-start fw-bold"
-                        onClick={() => setShowCustomFields(!showCustomFields)}
+                        onClick={() => setShowcustomFields(!showcustomFields)}
                         aria-controls="custom-fields-collapse"
-                        aria-expanded={showCustomFields}
+                        aria-expanded={showcustomFields}
                     >
-                        ▸ Custom fields
+                        ▸ custom fields
                     </Button>
-                    <Collapse in={showCustomFields}>
+                    <Collapse in={showcustomFields}>
                         <div id="custom-fields-collapse" className="p-3">
                             <div className="mb-2">
-                                <span>Speed up your workflow by <a href="#" className="text-primary text-decoration-underline">creating custom field sets</a> for often-used custom fields.</span>
+                                <span>Speed up your workflow by <a href="#" className="text-custom text-decoration-underline">creating custom field sets</a> for often-used custom fields.</span>
                             </div>
                             <div className="mb-2">
                                 <Form.Select style={{ maxWidth: 320 }}>
@@ -572,8 +572,8 @@ const NewPerson = () => {
                 </div>
                 {/* Action Buttons */}
                 <div className="d-flex flex-wrap gap-2 justify-content-end mt-3 bg-white pt-3 pb-2 sticky-bottom" style={{ zIndex: 10 }}>
-                    <Button variant="primary" className="px-4 py-2 fw-bold" style={{ borderRadius: 8 }}>Save contact</Button>
-                    <Button variant="outline-primary" className="px-4 py-2 fw-bold" style={{ borderRadius: 8 }}>Save and create new matter</Button>
+                    <Button variant="custom" className="px-4 py-2 fw-bold" style={{ borderRadius: 8 }}>Save contact</Button>
+                    <Button variant="outline-custom" className="px-4 py-2 fw-bold" style={{ borderRadius: 8 }}>Save and create new matter</Button>
                     <Link to="/activity">
                     <Button variant="secondary" className="px-4 py-2 fw-bold" style={{ borderRadius: 8 }}>Cancel</Button>
                     </Link>

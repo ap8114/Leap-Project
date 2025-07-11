@@ -10,7 +10,7 @@ const Company = () => {
         {
             date: 'Nov 2024',
             title: 'FastTrack Software  Desktop – AI Prompt Templates',
-            description: 'Customisable document-drafting templates with guidance, speeding up work and reducing errors',
+            description: 'customisable document-drafting templates with guidance, speeding up work and reducing errors',
             icon: 'fas fa-robot'
         },
         {
@@ -52,7 +52,7 @@ const Company = () => {
         {
             date: 'Apr 2024',
             title: 'New Integration – Power BI Connector',
-            description: 'Custom dashboards and reporting via Microsoft Power BI',
+            description: 'custom dashboards and reporting via Microsoft Power BI',
             icon: 'fas fa-chart-bar'
         },
         {

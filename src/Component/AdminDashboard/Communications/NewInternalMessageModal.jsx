@@ -52,7 +52,7 @@ const NewInternalMessageModal = ({ show, handleClose }) => {
         <Button variant="outline-secondary" onClick={handleClose}>
           Cancel
         </Button>
-        <Button variant="primary">
+        <Button variant="custom">
           Send message
         </Button>
       </Modal.Footer>

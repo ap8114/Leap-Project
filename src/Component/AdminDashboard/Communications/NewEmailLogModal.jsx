@@ -74,7 +74,7 @@ const NewEmailLogModal = ({ show, handleClose }) => {
         <Button variant="secondary" onClick={handleClose}>
           Cancel
         </Button>
-        <Button variant="primary">
+        <Button variant="custom">
           Save email log
         </Button>
       </Modal.Footer>

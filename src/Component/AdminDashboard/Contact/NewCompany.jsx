@@ -119,7 +119,7 @@ const NewCompany = ({ show, onHide }) => {
                     </Form>
                 </Modal.Body>
                 <Modal.Footer className="d-flex justify-content-between flex-wrap">
-                    <Button variant="primary" className="px-4 fw-bold" style={{ borderRadius: 8 }}>Save company</Button>
+                    <Button variant="custom" className="px-4 fw-bold" style={{ borderRadius: 8 }}>Save company</Button>
                     <Button variant="secondary" className="px-4 fw-bold" style={{ borderRadius: 8 }} onClick={onHide}>Cancel</Button>
                 </Modal.Footer>
             </Modal>
@@ -141,7 +141,7 @@ const NewCompany = ({ show, onHide }) => {
                             style={{ maxWidth: 300 }}
                         />
                         <Button
-                            variant="outline-primary"
+                            variant="outline-custom"
                             onClick={() => {
                                 if (newTagName.trim()) {
                                     setTags([...tags, newTagName.trim()]);
