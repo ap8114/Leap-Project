@@ -121,7 +121,7 @@ const TaskPage = () => {
             <Link to="/taskfeed">
               <Button variant="outline-secondary" className="py-2 px-3">Task feeds</Button>
             </Link>
-            <Button variant="primary" className="py-2 px-3" onClick={handleOpen}>New task</Button>
+            <Button variant="custom" className="py-2 px-3" onClick={handleOpen}>New task</Button>
           </div>
         </div>
 
@@ -131,14 +131,14 @@ const TaskPage = () => {
           <div className="col-md-auto">
             <div className="d-flex border rounded-3 overflow-hidden">
               <Button
-                variant={activeTab === "outstanding" ? "primary" : "light"}
+                variant={activeTab === "outstanding" ? "custom" : "light"}
                 className={`rounded-0 border-0 ${activeTab === "outstanding" ? "active" : ""}`}
                 onClick={() => setActiveTab("outstanding")}
               >
                 Outstanding
               </Button>
               <Button
-                variant={activeTab === "completed" ? "primary" : "light"}
+                variant={activeTab === "completed" ? "custom" : "light"}
                 className={`rounded-0 border-0 ${activeTab === "completed" ? "active" : ""}`}
                 onClick={() => setActiveTab("completed")}
               >
@@ -216,7 +216,7 @@ const TaskPage = () => {
           <div className="col-md-auto">
             <Dropdown>
               <Dropdown.Toggle variant="light" className="border">
-                <span className="d-inline-flex justify-content-center align-items-center bg-primary rounded-circle text-white me-2" style={{ width: "20px", height: "20px" }}>
+                <span className="d-inline-flex justify-content-center align-items-center bg-custom rounded-circle text-white me-2" style={{ width: "20px", height: "20px" }}>
                   ✓
                 </span>
                 Filters
@@ -247,7 +247,7 @@ const TaskPage = () => {
                 <div className="p-3">
                   <div className="text-uppercase small fw-semibold text-muted mb-2">Matter</div>
                   <div className="d-flex justify-content-between">
-                    <Button variant="outline-primary" size="sm" style={{ width: "48%" }}>Apply filters</Button>
+                    <Button variant="outline-custom" size="sm" style={{ width: "48%" }}>Apply filters</Button>
                     <Button variant="outline-secondary" size="sm" style={{ width: "48%" }}>Clear filters</Button>
                   </div>
                 </div>
@@ -362,7 +362,7 @@ const TaskPage = () => {
               </div>
               <div className="col-md-4">
                 <Form.Group>
-                  <Form.Label>Private task <span className="text-primary cursor-pointer" title="Restrict visibility">?</span></Form.Label>
+                  <Form.Label>Private task <span className="text-custom cursor-pointer" title="Restrict visibility">?</span></Form.Label>
                   <div className="d-flex align-items-center">
                     <Form.Check
                       type="switch"
@@ -402,7 +402,7 @@ const TaskPage = () => {
             </div>
             <div className="col-md-3 mb-3">
               <Form.Group>
-                <Form.Label>Time estimate <span className="text-primary cursor-pointer" title="Ex. 1h 30m, 1.5h, 1:30...">?</span></Form.Label>
+                <Form.Label>Time estimate <span className="text-custom cursor-pointer" title="Ex. 1h 30m, 1.5h, 1:30...">?</span></Form.Label>
                 <Form.Control
                   type="text"
                   placeholder="Ex. 1h 30m, 1.5h, 1:30..."
@@ -455,8 +455,8 @@ const TaskPage = () => {
         </Modal.Body>
         <Modal.Footer className="d-flex justify-content-between bg-light">
           <div>
-            <Button variant="primary" className="me-2" onClick={handleSaveTask}>Save task</Button>
-            <Button variant="outline-primary" className="me-2">Save and create another</Button>
+            <Button variant="custom" className="me-2" onClick={handleSaveTask}>Save task</Button>
+            <Button variant="outline-custom" className="me-2">Save and create another</Button>
             <Button variant="outline-secondary" onClick={handleClose}>Cancel</Button>
           </div>
         </Modal.Footer>
