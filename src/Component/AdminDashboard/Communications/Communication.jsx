@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Sidebar from './Sidebar';
 import MainContent from './MainContent';
 
+
 const App = () => {
   const [activeNavItem, setActiveNavItem] = useState('Client portals');
   const [sidebarOpen, setSidebarOpen] = useState(false);
