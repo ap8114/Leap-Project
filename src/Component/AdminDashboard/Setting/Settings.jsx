@@ -11,7 +11,7 @@ const settingsContent = [
     ],
     [
         { label: 'Manage Users', desc: 'Manage users associated with this account.' },
-        { label: 'Appearance', desc: 'Customize how Clio Manage looks on your device.' },
+        { label: 'Appearance', desc: 'customize how Clio Manage looks on your device.' },
         { label: 'Billing', desc: 'Edit your bill settings, themes, payment profiles, and UTBMS options...' },
     ],
     [
@@ -20,7 +20,7 @@ const settingsContent = [
         { label: 'Data Escrow', desc: 'Manage back-ups using Amazon S3 cloud storage.' },
     ],
     [
-        { label: 'Custom Fields', desc: 'Create individual custom fields or custom field sets.' },
+        { label: 'custom Fields', desc: 'Create individual custom fields or custom field sets.' },
         { label: 'Contact and Calendar Sync', desc: 'Connect your account to Google, Zoom or Microsoft 365.' },
         { label: 'Firm Feed', desc: 'Manage your Firm Feed s visibility.' },
 
@@ -58,7 +58,7 @@ const labelToRoute = {
     'Groups, Job Titles, and Permissions': '/settings/groups-permissions',
     'Clio Mobile App': '/settings/mobile-app',
     'Data Escrow': '/settings/data-escrow',
-    'Custom Fields': '/settings/custom-fields',
+    'custom Fields': '/settings/custom-fields',
     'Contact and Calendar Sync': '/settings/contact-calendar-sync',
     'Firm Feed': '/settings/firm-feed',
     'Security & Compliance': '/settings/security-compliance',
@@ -76,19 +76,19 @@ const labelToRoute = {
 
 const Settings = () => (
     <div style={{ background: '#f7f8fa', minHeight: '100vh', width: '100vw' }}>
-        <Container fluid className="px-0" style={{ maxWidth: '100%' }}>
+        <div  className="p-3" style={{ maxWidth: '100%' }}>
             {/* Top bar */}
             <div
-                className="border"
-                style={{ background: '#f7f8fa', borderColor: '#d3dbe3', borderTop: '1px solid #d3dbe3' }}
+                
+               
             >
                 <div className="ps-4 py-3 text-start">
-                    <span style={{ color: '#2074d4', fontWeight: 500, fontSize: 24 }}>Settings</span>
+                   <h3 className="fw-bold mb-2 ">Settings</h3>
                 </div>
             </div>
 
             {/* Tab headings */}
-            <div className="border" style={{ background: '#fff', borderBottom: '1px solid #d3dbe3' }}>
+            <div className="mb-1" style={{ background: '#fff', }}>
                 {/* Section headers row */}
                 <div className="border " style={{ background: '#fff', borderColor: '#d3dbe3', borderWidth: '0 0 1px 0', borderStyle: 'solid' }}>
                     <Row className="text-start" style={{ margin: 0 }}>
@@ -137,7 +137,7 @@ const Settings = () => (
                 ))}
             </Container>
 
-        </Container>
+        </div>
 
         {/* Responsive Container */}
         <div className="container-fluid px-3 py-3 text-start">
@@ -153,7 +153,7 @@ const Settings = () => (
                         </div>
 
                         <div style={{ fontSize: 14, color: '#202223' }}>
-                            <strong>You are the Primary Subscriber.</strong>{' '}
+                            <strong>You are the custom Subscriber.</strong>{' '}
                             You can administer the{' '}
                             <a
                                 href="#"

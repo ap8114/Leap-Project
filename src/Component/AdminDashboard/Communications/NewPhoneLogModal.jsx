@@ -76,7 +76,7 @@ const NewPhoneLogModal = ({ show, handleClose }) => {
         <Button variant="secondary" onClick={handleClose}>
           Cancel
         </Button>
-        <Button variant="primary">
+        <Button variant="custom">
           Save phone log
         </Button>
       </Modal.Footer>

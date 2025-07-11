@@ -188,7 +188,7 @@ const RecordPayment = () => {
           </button>
           <button 
             type="submit" 
-            className="btn btn-primary"
+            className="btn btn-custom"
           >
             Record payment
           </button>

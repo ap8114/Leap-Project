@@ -139,6 +139,7 @@ const Billing = () => {
 
   return (
     <div style={{ background: "#fff", borderRadius: 12, padding: 0 }}>
+       
       {/* Mobile Header */}
       {isMobile && (
         <div style={{ padding: "12px 16px", borderBottom: "1px solid #e5e7eb" }}>
@@ -687,7 +688,7 @@ const Billing = () => {
             <Link to="/newbills">
             <button
               style={{
-                background: "#1976d2",
+                
                 color: "#fff",
                 border: "none",
                 borderRadius: 6,
@@ -697,6 +698,7 @@ const Billing = () => {
                 cursor: "pointer",
                 width: isMobile ? "100%" : "auto"
               }}
+              className="btn-custom"
             >
               New bills
             </button>

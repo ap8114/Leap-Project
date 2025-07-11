@@ -121,7 +121,7 @@ const ReportTable = ({ tabKey }) => {
                   <p className="text-muted text-center" style={{ maxWidth: '400px' }}>
                     Say goodbye to generating reports manually. Open the desired report, select filters and schedule it for when you need them.
                   </p>
-                  <Button variant="primary">Select a report</Button>
+                  <Button variant="custom">Select a report</Button>
                 </div>
               </td>
             </tr>

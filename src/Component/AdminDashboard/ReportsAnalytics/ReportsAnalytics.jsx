@@ -110,14 +110,14 @@ const Reports = () => {
                   <Card.Body>
                     <ListGroup variant="flush text-center">
                       <ListGroup.Item>
-                        <strong className="text-primary">No reports found</strong>
+                        <strong className="text-custom">No reports found</strong>
                       </ListGroup.Item>
                       <ListGroup.Item>
                         <p className="mb-0">
                           Create custom reports to configure your own data in your preferred format.
                         </p>
                         <div className="text-center mt-2">
-                          <Button variant="btn-primary bg-primary text-white">
+                          <Button variant="btn-custom bg-custom text-white">
                             New custom report
                           </Button>
                         </div>
@@ -163,7 +163,7 @@ const Reports = () => {
                             <ListGroup.Item className="d-flex justify-content-between align-items-center">
                               <div className="w-100">
                                 <div className="d-flex justify-content-between align-items-center">
-                                  <strong className="text-primary">{report.title}</strong>
+                                  <strong className="text-custom">{report.title}</strong>
                                   <div>
                                     <Button variant="outline-secondary" size="sm" className="me-2">
                                       Preview
@@ -207,7 +207,7 @@ const Reports = () => {
                       <tbody className='table-white'> 
                         {clioReports.map((report, idx) => (
                           <tr key={idx}>
-                            <td className='text-primary underline py-3 px-3'>{report.title}</td>
+                            <td className='text-custom underline py-3 px-3'>{report.title}</td>
                             <td>{report.category}</td>
                             <td>{report.type}</td>
                             <td>{report.description}</td>
@@ -235,7 +235,7 @@ const Reports = () => {
                     Simply open your desired report, refine your columns, filters, and groups, then save your report view.
                   </p>
                 </div>
-                <Button variant="primary">Create report view</Button>
+                <Button variant="custom">Create report view</Button>
               </div>
             </Card.Body>
           </Card>

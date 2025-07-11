@@ -62,7 +62,7 @@ const ExportModal = ({ show, onHide }) => {
             <h6 className="fw-semibold mb-2">Export Format</h6>
             <p className="text-muted small mb-2">
               You may also want to view your{' '}
-              <a href="#" className="text-primary text-decoration-none">
+              <a href="#" className="text-custom text-decoration-none">
                 Quickbooks Export Options
               </a>.
             </p>
@@ -75,7 +75,7 @@ const ExportModal = ({ show, onHide }) => {
 
           {/* Action Buttons */}
           <div className="mt-4 d-flex gap-3">
-            <Button variant="primary">Export Transactions</Button>
+            <Button variant="custom">Export Transactions</Button>
             <button variant="link" className="btn btn-secondary text-decoration-none text-muted" onClick={onHide}>
               Cancel
             </button>

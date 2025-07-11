@@ -16,7 +16,7 @@ import {
 } from 'react-bootstrap-icons';
 
 const Document = () => {
-  const [activeTab, setActiveTab] = useState('all');
+  const [activeTab, setActiveTab] = useState('');
   const [sortDropdown, setSortDropdown] = useState(false);
   const [columnsDropdown, setColumnsDropdown] = useState(false);
   const [filtersDropdown, setFiltersDropdown] = useState(false);
@@ -69,7 +69,7 @@ const Document = () => {
         {/* Header */}
         <Row className="align-items-center px-3 px-md-4 py-2 py-md-3 border-bottom">
           <Col xs={6} md={4} lg={6}>
-            <h1 className="h4 mb-0 text-primary border-bottom border-primary pb-2 d-inline-block">Documents</h1>
+             <h3 className="fw-bold mb-2 mt-2 ms-3">Documents</h3>
           </Col>
           <Col xs={6} md={8} lg={6} className="text-end">
           <Link to="/categories">
@@ -95,7 +95,7 @@ const Document = () => {
                 <NavLink 
                   active={activeTab === 'all'} 
                   onClick={() => setActiveTab('all')}
-                  className="py-1 py-md-2 px-2 px-md-3"
+                  className="py-1 py-md-2 px-2 px-md-3 custom-tabs"
                 >
                   All
                 </NavLink>
@@ -104,7 +104,7 @@ const Document = () => {
                 <NavLink 
                   active={activeTab === 'files'} 
                   onClick={() => setActiveTab('files')}
-                  className="py-1 py-md-2 px-2 px-md-3"
+                  className="py-1 py-md-2 px-2 px-md-3 custom-tabs"
                 >
                   Files only
                 </NavLink>
@@ -176,7 +176,7 @@ const Document = () => {
                     <FormCheck label="ID" className="small" />
                   </div>
                   <div className="d-flex gap-2 mt-3">
-                    <Button variant="primary" size="sm">Update columns</Button>
+                    <Button variant="custom" size="sm">Update columns</Button>
                     <Button variant="outline-secondary" size="sm">Cancel</Button>
                   </div>
                 </DropdownMenu>
@@ -213,7 +213,7 @@ const Document = () => {
                     className="small mb-3"
                   />
                   <div className="d-flex gap-2">
-                    <Button variant="primary" size="sm">Apply filters</Button>
+                    <Button variant="custom" size="sm">Apply filters</Button>
                     <Button variant="outline-secondary" size="sm">Clear filters</Button>
                   </div>
                 </DropdownMenu>
@@ -221,7 +221,7 @@ const Document = () => {
               
               {/* New Dropdown */}
               <Dropdown align="end" onToggle={setNewDropdown} show={newDropdown}>
-                <Dropdown.Toggle variant="primary" size="sm" className="d-flex align-items-center">
+                <Dropdown.Toggle variant="custom" size="sm" className="d-flex align-items-center">
                   New <ChevronDown size={12} className="ms-1" />
                 </Dropdown.Toggle>
                 <DropdownMenu>
@@ -296,7 +296,7 @@ const Document = () => {
                     <FormCheck className="me-2 me-md-0" />
                   </Col>
                   <Col xs={10} md={1} className="mb-2 mb-md-0">
-                    <Button variant="link" size="sm" className="p-0 text-primary">
+                    <Button variant="link" size="sm" className="p-0 text-custom">
                       {doc.action}
                     </Button>
                   </Col>

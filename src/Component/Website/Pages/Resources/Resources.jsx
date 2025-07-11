@@ -60,7 +60,7 @@ const Resources = () => {
             icon: "fas fa-cloud"
         },
         {
-            title: "Document Customisation Engine",
+            title: "Document customisation Engine",
             description: "Explains automation for Word, Outlook, Excel integration",
             icon: "fas fa-cogs"
         },

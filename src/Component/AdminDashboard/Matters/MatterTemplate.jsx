@@ -20,7 +20,7 @@ const MatterTemplate = ({ show, onHide }) => {
           <p className="text-muted">
             Enhance your process and time creating matters
           </p>
-          <Button variant="primary" className="mt-2">
+          <Button variant="custom" className="mt-2">
             New matter template
           </Button>
         </div>

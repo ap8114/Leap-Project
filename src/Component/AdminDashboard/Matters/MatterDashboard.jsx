@@ -97,7 +97,7 @@ const [showTemplates, setShowTemplates] = useState(false);
   Matter Templates
 </Button>
 <Button
-    variant="primary"
+    variant="custom"
     onClick={() => setShowNewMatter(true)} 
   >
     New matter
@@ -131,7 +131,7 @@ const [showTemplates, setShowTemplates] = useState(false);
                   <Button
                     key={i}
                     variant={
-                      selectedStatus === tab ? "primary" : "outline-secondary"
+                      selectedStatus === tab ? "custom" : "outline-secondary"
                     }
                     size="sm"
                     onClick={() => setSelectedStatus(tab)}
@@ -180,9 +180,9 @@ const [showTemplates, setShowTemplates] = useState(false);
         </div>
       </Col>
 
-      {/* === RIGHT SIDE: Custom Fields Selector === */}
+      {/* === RIGHT SIDE: custom Fields Selector === */}
       <Col md={6}>
-        <h6 className="mb-2 fw-bold">Custom Fields</h6>
+        <h6 className="mb-2 fw-bold">custom Fields</h6>
         <Form.Group controlId="customFields">
           <Form.Select>
             <option>Select or search fields</option>
@@ -200,7 +200,7 @@ const [showTemplates, setShowTemplates] = useState(false);
       <Button variant="outline-secondary" size="sm">
         Cancel
       </Button>
-      <Button variant="primary" size="sm">
+      <Button variant="custom" size="sm">
         Update columns
       </Button>
     </div>
@@ -396,7 +396,7 @@ const [showTemplates, setShowTemplates] = useState(false);
                         Stay organized by keeping every case detail in one
                         place.
                       </p>
-                      <Button variant="primary">Clear all filters</Button>
+                      <Button variant="custom">Clear all filters</Button>
                     </td>
                   </tr>
                 )}
@@ -441,7 +441,7 @@ const [showTemplates, setShowTemplates] = useState(false);
   <div className="border rounded p-3 bg-light">
     <Row className="align-items-center mb-3 flex-wrap gap-2">
       <Col md="auto">
-        <Form.Select className="form-select border-primary text-dark">
+        <Form.Select className="form-select border-custom text-dark">
           <option>Administrative</option>
           <option>Litigation</option>
           <option>Contract</option>
@@ -449,7 +449,7 @@ const [showTemplates, setShowTemplates] = useState(false);
       </Col>
 
       <Col md="auto" className="d-flex align-items-center">
-        <span className="text-primary d-flex align-items-center">
+        <span className="text-custom d-flex align-items-center">
           <i className="bi bi-info-circle-fill me-1" />
           Assign a matter to this practice area
         </span>
@@ -475,7 +475,7 @@ const [showTemplates, setShowTemplates] = useState(false);
     <Row className="mt-4">
       <Col md={3}>
         <div className="border rounded-2 text-center p-4 bg-white dashed-box">
-          <span className="text-primary fw-semibold" role="button">
+          <span className="text-custom fw-semibold" role="button">
             <i className="bi bi-plus-circle me-1" />
             Add a matter stage
           </span>
