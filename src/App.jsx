@@ -39,6 +39,7 @@ import Activity from "./Component/AdminDashboard/Activity/Activity";
 import Communications from "./Component/AdminDashboard/Communications/Communications";
 import Account from "./Component/AdminDashboard/Accounts/Account";
 import Contact from "./Component/AdminDashboard/Contact/Contact";
+import TermsOfService from "./Component/Website/HomePages/TermsOfService";
 
 
 function App() {
@@ -169,6 +170,8 @@ function App() {
                 <Route path="/communications" element={<Communications />} />
                 <Route path="/accounts" element={<Account />} />
                 <Route path="/contact" element={<Contact />} />
+                <Route path="/termsservices" element={<TermsOfService />} />
+
 
                 <Route
                   path="/reportsanalytics"
