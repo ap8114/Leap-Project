@@ -35,7 +35,6 @@ import Company from "./Component/Website/Pages/Company/Company";
 import Resources from "./Component/Website/Pages/Resources/Resources";
 
 
-
 import Account from "./Component/AdminDashboard/Accounts/Account";
 
 import RecordPayment from "./Component/AdminDashboard/TimeBilling/RecordPayment";
@@ -113,7 +112,7 @@ function App() {
     location.pathname === "/contactus" ||
     location.pathname === "/company" ||
     location.pathname === "/resources" ||
-    location.pathname === "/recordpayment";
+    location.pathname === "/recordpayment"||
 
   location.pathname === "/resourcecenter";
 

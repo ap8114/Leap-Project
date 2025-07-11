@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import ClassicReports from './ClassicReports'
 const Reports = () => {
   const [key, setKey] = useState('reports');
-  const [subKey, setSubKey] = useState('custom');
+  const [subKey, setSubKey] = useState('clio');
   const [viewTab, setViewTab] = useState('card');
 
   const clioReports = [
@@ -193,7 +193,7 @@ const Reports = () => {
                   ))}
                 </div>
               ) : (
-                <Card>
+                <Card className=''>
                   <Card.Body>
                     <Table hover responsive>
                       <thead className='table-light border'>
