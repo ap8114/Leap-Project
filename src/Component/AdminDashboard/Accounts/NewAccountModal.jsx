@@ -77,29 +77,33 @@ const NewAccountModal = ({ show, onHide }) => {
                 This is the native holding currency of the account.
               </Form.Text>
             </Col>
-            <Col md={6}>
-              <Form.Label>Opening balance</Form.Label>
-              <div className="input-group">
-                <span className="input-group-text">$</span>
-                <Form.Control type="number" placeholder="0.00" />
-                <span className="input-group-text">USD</span>
+            <div className="col-md-6">
+              <label className="form-label">Opening balance</label>
+              <div className="input-group mb-3">
+                <span className="input-group-text mb-5">$</span>
+                <input
+                  type="number"
+                  className="form-control mb-5"
+                  placeholder="0.00"
+                />
+                <span className="input-group-text mb-5">USD</span>
               </div>
-              <Form.Text className="text-muted">
+              <small className="text-muted">
                 Once the bank account is created, you can use transactions to make further changes to your balance.
-              </Form.Text>
-            </Col>
+              </small>
+            </div>
           </Row>
 
           <Form.Group className="mb-4">
-            <Form.Check 
-              type="checkbox" 
-              label="Show this bank account first when viewing the transactions tab of a matter or contact" 
+            <Form.Check
+              type="checkbox"
+              label="Show this bank account first when viewing the transactions tab of a matter or contact"
             />
           </Form.Group>
 
           <div className="d-flex gap-2">
-            <Button variant="primary">Create New Bank Account</Button>
-            <Button variant="secondary" onClick={onHide}>Cancel</Button>
+            <button className="btn btn-primary">Create New Bank Account</button>
+            <button className='btn btn-secondary text-dark' onClick={onHide}>Cancel</button>
           </div>
         </Form>
       </Modal.Body>

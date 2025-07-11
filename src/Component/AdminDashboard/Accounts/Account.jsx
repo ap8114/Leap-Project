@@ -31,7 +31,7 @@ const Account = () => {
         <h2 className="mb-0">Bank Accounts</h2>
         <div className="d-flex gap-2">
           <button
-            className="btn btn-outline-secondary"
+            className="btn btn-secondary text-dark"
             onClick={() => setShowExportModal(true)}
           >
             Export transactions
@@ -142,7 +142,7 @@ const Account = () => {
         <p className="text-muted">
           Accounts in Clio Manage are designed to mirror your real-life bank accounts at your financial institution for collecting bill payments and retaining trust funds.
         </p>
-        <a href="#" className="text-primary d-block mb-3">Learn more about accounts</a>
+      
         <button
           className="btn btn-custom"
           onClick={() => setShowNewAccountModal(true)}
