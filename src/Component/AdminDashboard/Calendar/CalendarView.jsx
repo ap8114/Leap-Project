@@ -388,7 +388,7 @@ const CalendarUI = () => {
                           <button
                             className={`btn btn-sm w-100 ${
                               day.isSelected 
-                                ? 'btn-primary' 
+                                ? 'btn-custom' 
                                 : day.isToday 
                                 ? 'btn-outline-primary' 
                                 : day.isCurrentMonth 
@@ -422,7 +422,7 @@ const CalendarUI = () => {
                   <button
                     key={view}
                     type="button"
-                    className={`btn btn-sm ${selectedView === view ? 'btn-primary' : 'btn-outline-secondary'}`}
+                    className={`btn btn-sm ${selectedView === view ? 'btn-custom' : 'btn-outline-secondary'}`}
                     onClick={() => setSelectedView(view)}
                   >
                     {view}
@@ -451,7 +451,7 @@ const CalendarUI = () => {
       </ul>
     </div>
               
-              <button className="btn btn-primary btn-sm order-1 order-md-3 mb-2 mb-md-0"  onClick={() => setShowEventModal(true)}>
+              <button className="btn btn-custom btn-sm order-1 order-md-3 mb-2 mb-md-0"  onClick={() => setShowEventModal(true)}>
                 New event
               </button>
                 {/* Show modal */}
@@ -653,7 +653,7 @@ const CalendarUI = () => {
                     <button
                       className={`btn btn-sm w-100 ${
                         day.isSelected 
-                          ? 'btn-primary' 
+                          ? 'btn-custom' 
                           : day.isToday 
                           ? 'btn-outline-primary' 
                           : day.isCurrentMonth 

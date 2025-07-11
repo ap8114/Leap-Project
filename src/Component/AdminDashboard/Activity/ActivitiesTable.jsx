@@ -298,14 +298,14 @@ const ActivitiesTable = () => {
             <div className="d-flex justify-content-center gap-2 flex-wrap">
         
                  <button
-              className="btn btn-primary btn-sm fw-semibold"
+              className="btn btn-custom btn-sm fw-semibold"
               onClick={() => setShowNewTimeEntryModal(true)}
             > <BsPlus className="me-1" />
               New time entry
             </button>
           
                <button
-              className="btn btn-primary btn-sm fw-semibold"
+              className="btn btn-custom btn-sm fw-semibold"
               onClick={() => setShowNewExpenseModals(true)}
             >  <BsPlus className="me-1" /> 
               New expense
@@ -398,13 +398,13 @@ const ActivitiesTable = () => {
               Manage categories
             </button>
             <button
-              className="btn btn-primary btn-sm fw-semibold"
+              className="btn btn-custom btn-sm fw-semibold"
               onClick={() => setShowNewTimeEntryModal(true)}
             >
               New time entry
             </button>
             <button
-              className="btn btn-primary btn-sm fw-semibold"
+              className="btn btn-custom btn-sm fw-semibold"
               onClick={() => setShowNewExpenseModals(true)}
             >
               New expense
@@ -578,7 +578,7 @@ const ActivitiesTable = () => {
                 <button className="btn btn-outline-secondary dropdown-toggle" type="button" tabIndex={-1}></button>
               </div>
               <div className="d-flex gap-2 mt-3">
-                <button className="btn btn-primary btn-sm flex-grow-1">Apply filters</button>
+                <button className="btn btn-custom btn-sm flex-grow-1">Apply filters</button>
                 <button className="btn btn-outline-secondary btn-sm flex-grow-1">Clear filters</button>
               </div>
             </div>
@@ -640,7 +640,7 @@ const ActivitiesTable = () => {
         <BsChevronDown className="me-1" /> Expand rows
       </button>
       <button 
-        className="btn btn-sm btn-primary d-flex align-items-center fw-semibold"
+        className="btn btn-sm btn-custom d-flex align-items-center fw-semibold"
         onClick={() => setShowExportModal(true)}
       >
         <BsDownload className="me-1" /> Export

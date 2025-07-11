@@ -123,7 +123,7 @@ const PersonalDashboard = ({ setShowTaskModal, setShowEventModal }) => {
                   </div>
                   <button 
                     onClick={() => setShowTaskModal(true)}
-                    className="btn btn-primary rounded-circle p-0 d-flex align-items-center justify-content-center"
+                    className="btn btn-custom rounded-circle p-0 d-flex align-items-center justify-content-center"
                     style={{ width: '32px', height: '32px' }}
                   >
                     <i className="fas fa-plus"></i>
@@ -146,7 +146,7 @@ const PersonalDashboard = ({ setShowTaskModal, setShowEventModal }) => {
                   </div>
                   <button 
                     onClick={() => setShowEventModal(true)}
-                    className="btn btn-primary rounded-circle p-0 d-flex align-items-center justify-content-center"
+                    className="btn btn-custom rounded-circle p-0 d-flex align-items-center justify-content-center"
                     style={{ width: '32px', height: '32px' }}
                   >
                     <i className="fas fa-plus"></i>

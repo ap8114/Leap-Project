@@ -51,19 +51,19 @@ const NewCategoryModal = ({ show, onClose }) => {
           >
             ×
           </button>
-          
-          <h3 style={{ 
-            fontWeight: 'bold', 
+
+          <h3 style={{
+            fontWeight: 'bold',
             marginBottom: '1rem',
             fontSize: 'clamp(1.25rem, 4vw, 1.75rem)' // Responsive font size
           }}>
             New activity category
           </h3>
-          
+
           {/* Category type */}
           <div style={{ marginBottom: '1rem' }}>
-            <div style={{ 
-              fontWeight: '600', 
+            <div style={{
+              fontWeight: '600',
               marginBottom: '0.5rem',
               fontSize: '1rem'
             }}>
@@ -96,7 +96,7 @@ const NewCategoryModal = ({ show, onClose }) => {
               </label>
             </div>
           </div>
-          
+
           {/* Name */}
           <div style={{ marginBottom: '1rem' }}>
             <div style={{ fontWeight: '600', marginBottom: '0.5rem' }}>
@@ -104,7 +104,7 @@ const NewCategoryModal = ({ show, onClose }) => {
             </div>
             <input className="form-control" />
           </div>
-          
+
           {/* Dynamic fields based on category type */}
           {categoryType === "time" ? (
             <>
@@ -166,16 +166,16 @@ const NewCategoryModal = ({ show, onClose }) => {
               </div>
             </>
           )}
-          
+
           {/* Footer buttons */}
           <div className="d-flex flex-wrap gap-2 mt-3">
-            <button 
-              className="btn btn-primary fw-semibold flex-grow-1"
+            <button
+              className="btn btn-custom fw-semibold flex-grow-1"
               style={{ minWidth: '120px' }}
             >
               Save category
             </button>
-            <button 
+            <button
               className="btn btn-outline-secondary fw-semibold flex-grow-1"
               style={{ minWidth: '120px' }}
               onClick={onClose}
@@ -194,13 +194,13 @@ const ManageCategories = ({ onBack }) => {
   const [showModal, setShowModal] = useState(false);
 
   return (
-    <div style={{ 
-      background: "#f7fafd", 
+    <div style={{
+      background: "#f7fafd",
       minHeight: "100vh",
       paddingBottom: '2rem'
     }}>
       <NewCategoryModal show={showModal} onClose={() => setShowModal(false)} />
-      
+
       {/* Back Button */}
       <div className="p-3">
         <button
@@ -223,66 +223,40 @@ const ManageCategories = ({ onBack }) => {
 
       {/* Tabs and Actions */}
       <div className="container-fluid px-3 px-md-4">
-        <div 
-          className="bg-white rounded-3 p-3 mb-3" 
-          style={{ 
+        <div
+          className="bg-white rounded-3 p-3 mb-3"
+          style={{
             border: "1px solid #e5e7eb",
             overflow: 'hidden'
           }}
         >
           <div className="d-flex flex-column flex-md-row align-items-stretch align-items-md-center gap-3">
             {/* Tabs */}
-            <div className="d-flex flex-grow-1" style={{ minWidth: '200px' }}>
+            <div className="d-flex flex-grow" >
               <button
-                className={`btn fw-semibold px-3 px-md-4 py-2 flex-grow-1 ${activeTab === "Time" ? "active-tab" : ""}`}
-                style={{
-                  background: activeTab === "Time" ? "#eaf2fd" : "transparent",
-                  color: activeTab === "Time" ? "#1976d2" : "#222",
-                  border: "none",
-                  borderRadius: "8px 0 0 8px",
-                  fontSize: 'clamp(0.875rem, 3vw, 1.25rem)',
-                  boxShadow: activeTab === "Time" ? "0 0 0 2px #eaf2fd" : "",
-                }}
+                className={`btn fw-semibold px-3 py-2 ${activeTab === "Time" ? "active-tab bg-primary bg-opacity-10 text-primary border-primary" : ""}`}
                 onClick={() => setActiveTab("Time")}
               >
                 Time entry
               </button>
               <button
-                className={`btn fw-semibold px-3 px-md-4 py-2 flex-grow-1 ${activeTab === "Expense" ? "active-tab" : ""}`}
-                style={{
-                  background: activeTab === "Expense" ? "#fff" : "transparent",
-                  color: activeTab === "Expense" ? "#1976d2" : "#222",
-                  border: "none",
-                  borderRadius: "0 8px 8px 0",
-                  fontSize: 'clamp(0.875rem, 3vw, 1.25rem)',
-                  boxShadow: activeTab === "Expense" ? "0 0 0 2px #eaf2fd" : "",
-                }}
+                className={`btn fw-semibold px-3${activeTab === "Expense" ? "active-tab bg-primary bg-opacity-10 text-primary border-primary" : ""}`}
+
                 onClick={() => setActiveTab("Expense")}
               >
                 Expense
               </button>
             </div>
-            
+
             {/* Search and New Category button */}
-            <div className="d-flex flex-column flex-md-row gap-2 w-100" style={{ minWidth: '200px' }}>
+            <div className="d-flex flex-column flex-md-row gap-2 align-items-center justify-content-center">
               <input
                 type="text"
-                className="form-control form-control-lg flex-grow-1"
+                className="form-control mt-4"
                 placeholder="Filter by keyword"
-                style={{ 
-                  fontSize: 'clamp(0.875rem, 3vw, 1rem)',
-                  borderRadius: 8,
-                  minHeight: '45px'
-                }}
               />
               <button
-                className="btn btn-primary fw-semibold flex-grow-1 flex-md-grow-0"
-                style={{ 
-                  fontSize: 'clamp(0.875rem, 3vw, 1rem)',
-                  borderRadius: 8, 
-                  padding: "0.5rem 1rem",
-                  whiteSpace: 'nowrap'
-                }}
+                className="btn btn-custom fw-semibold text-nowrap p-2"
                 onClick={() => setShowModal(true)}
               >
                 New category
@@ -294,9 +268,9 @@ const ManageCategories = ({ onBack }) => {
 
       {/* Table */}
       <div className="container-fluid px-3 px-md-4">
-        <div 
-          className="bg-white rounded-3 border overflow-auto" 
-          style={{ 
+        <div
+          className="bg-white rounded-3 border overflow-auto"
+          style={{
             border: "1px solid #e5e7eb",
             minHeight: '300px'
           }}

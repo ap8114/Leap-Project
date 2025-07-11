@@ -37,7 +37,7 @@ const Account = () => {
             Export transactions
           </button>
           <button
-            className="btn btn-primary text-white"
+            className="btn btn-custom text-white"
             onClick={() => setShowNewAccountModal(true)}
           >
             New account
@@ -73,7 +73,7 @@ const Account = () => {
                 </div>
               ))}
               <div className="d-flex justify-content-between mt-3">
-                <button className="btn btn-primary btn-sm">Update columns</button>
+                <button className="btn btn-custom btn-sm">Update columns</button>
                 <button className="btn btn-outline-secondary btn-sm" onClick={() => setShowColumns(false)}>Cancel</button>
               </div>
             </div>
@@ -102,7 +102,7 @@ const Account = () => {
                 <option value="inactive">Inactive</option>
               </select>
               <div className="d-flex justify-content-between mt-3">
-                <button className="btn btn-primary btn-sm">Apply filters</button>
+                <button className="btn btn-custom btn-sm">Apply filters</button>
                 <button className="btn btn-outline-secondary btn-sm" onClick={() => setFilterOption('')}>
                   Clear filters
                 </button>
@@ -144,7 +144,7 @@ const Account = () => {
         </p>
         <a href="#" className="text-primary d-block mb-3">Learn more about accounts</a>
         <button
-          className="btn btn-primary"
+          className="btn btn-custom"
           onClick={() => setShowNewAccountModal(true)}
         >
           Create new account

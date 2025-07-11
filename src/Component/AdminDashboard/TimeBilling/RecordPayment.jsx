@@ -158,7 +158,7 @@ const RecordPayment = () => {
       
       <div className="button-container">
         <button className="btn btn-secondary">Cancel</button>
-        <button className="btn btn-primary">Record payment</button>
+        <button className="btn btn-custom">Record payment</button>
       </div>
     </div>
   );
