@@ -44,7 +44,7 @@ const ContentArea = ({ activeNavItem, activeTab = 'All' }) => {
       <div className="text-center" style={{ maxWidth: '500px' }}>
         <div className="mb-5">
           <div className="mx-auto mb-4 rounded-circle bg-custom bg-opacity-10 d-flex align-items-center justify-content-center" style={{ width: '128px', height: '128px' }}>
-            <i className={`fas ${icon} text-custom fs-3`}></i>
+            <i className={`fas ${icon} text-light fs-3`}></i>
           </div>
         </div>
         <h5 className="fw-semibold mb-3">{title}</h5>
