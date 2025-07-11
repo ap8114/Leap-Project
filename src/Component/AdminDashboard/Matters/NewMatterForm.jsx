@@ -1,6 +1,7 @@
 import React from 'react';
 import { Modal, Button, Container, Row, Col, Form, Accordion } from 'react-bootstrap';
 import { FaExternalLinkAlt } from 'react-icons/fa';
+import 'bootstrap/dist/css/bootstrap.min.css';
 const NewMatterForm = ({ show, onHide }) => {
   return (
     <Modal show={show} onHide={onHide} dialogClassName="modal-xxl" size="xl" centered scrollable>
@@ -36,7 +37,7 @@ const NewMatterForm = ({ show, onHide }) => {
   <Accordion.Body>
     <div className="p-3 mb-3 border bg-light rounded text-dark">
       Enhance your process by
-      <a href="/create-template" className="text-primary fw-semibold">
+      <a href="/create-template" className="text-primary fw-semibold" >
         creating a template <FaExternalLinkAlt />
       </a>
       that can be applied to any matter.
