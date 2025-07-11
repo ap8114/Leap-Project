@@ -613,7 +613,7 @@ const ActivitiesTable = () => {
       />
 
       {/* Columns Dropdown */}
-      <div className="dropdown">
+     <div className="dropdown">
         <button
           className="btn btn-sm fw-bold d-flex align-items-center border"
           type="button"
@@ -628,12 +628,7 @@ const ActivitiesTable = () => {
         </button>
         <ul
           className="dropdown-menu p-3 border-0 shadow-sm"
-          style={{
-            minWidth: "220px",
-            maxHeight: "340px",
-            overflowY: "auto",
-            display: showColumns ? "block" : "none",
-          }}
+         
         >
           <li className="mb-2 fw-bold fs-6">Visible columns</li>
           {columnsList.map((col) => (
