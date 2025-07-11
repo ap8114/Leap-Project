@@ -74,7 +74,7 @@ const Settings = () => (
     <Container fluid className="p-3">
       {/* Header */}
       <div className="ps-3 py-3">
-        <h3 className="fw-bold mb-2">Settings</h3>
+        <h1 className="fw-bold mb-2" style={{ fontSize: "2rem", fontWeight: "700" }}>Settings</h1>
       </div>
 
       {/* Section Headings */}
@@ -87,7 +87,7 @@ const Settings = () => (
             <span style={{ fontWeight: 700, fontSize: 28, color: '#232933', letterSpacing: 1 }}>PERSONAL</span>
           </Col>
           <Col xs={12} md={4} className="py-3">
-            <span style={{ fontWeight: 700, fontSize: 28, color: '#232933', letterSpacing: 1 }}>Fasttrack SETTINGS</span>
+            <span style={{ fontWeight: 700, fontSize: 28, color: '#232933', letterSpacing: 1 }}>FASTTRACK SETTINGS</span>
           </Col>
         </Row>
       </div>

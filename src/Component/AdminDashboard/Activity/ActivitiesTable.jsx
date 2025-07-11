@@ -459,7 +459,7 @@ const ActivitiesTable = () => {
       {/* Header Section */}
       <div className="bg-white px-2 px-md-4 pt-4 pb-3 border-bottom">
         <div className="d-flex flex-wrap justify-content-between align-items-center gap-2">
-          <h3 className="fw-bold mb-0">Activities</h3>
+          <h1 className="fw-bold mb-0" style={{ fontSize: "2rem", fontWeight: "700" }}>Activities</h1>
           <div className="d-flex gap-2 flex-wrap">
             <button
               className="btn btn-outline-custom btn-sm fw-semibold"

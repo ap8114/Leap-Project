@@ -70,7 +70,7 @@ const Reports = () => {
 
   return (
     <div className="container-fluid p-4">
-      <h4 className="mb-4 font-semibold">Reports</h4>
+      <h1 className="mb-4 font-semibold" style={{ fontSize: "2rem", fontWeight: "700" }}>Reports</h1>
 
       <Tabs id="main-tabs" activeKey={key} onSelect={(k) => setKey(k)} className="mb-4">
         <Tab eventKey="reports" title="Reports">

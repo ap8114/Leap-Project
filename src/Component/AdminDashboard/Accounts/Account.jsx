@@ -28,7 +28,7 @@ const Account = () => {
     <div className="container-fluid bg-light min-vh-100 py-3">
       {/* HEADER */}
       <div className=" p-3 mb-3 d-flex justify-content-between align-items-center">
-       <h3 className="fw-bold mb-2 mt-2 ms-3">Accounts</h3>
+       <h1 className="fw-bold mb-2 mt-2 ms-3" style={{ fontSize: "2rem", fontWeight: "700" }}>Accounts</h1>
         <div className="d-flex gap-2">
           <button
             className="btn btn-secondary text-dark"

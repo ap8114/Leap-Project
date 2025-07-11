@@ -49,8 +49,8 @@ const App = () => {
   };
 
   return (
-    <div className="min-h-screen bg-light">
-        <h3 className="fw-bold py-4 ms-4">Dashboard</h3>
+    <div className="p-4">
+        <h1 className="fw-bold ms-3" style={{ fontSize: "2rem", fontWeight: "700" }}>Dashboard</h1>
       <div className="container-fluid py-4 px-4">
         <NavigationTabs activeTab={activeTab} setActiveTab={setActiveTab} />
         
