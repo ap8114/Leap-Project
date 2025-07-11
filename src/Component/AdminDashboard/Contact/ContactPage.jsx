@@ -11,9 +11,9 @@ const ContactPage = () => {
     return (
         <div className='p-4'>
             {/* Header */}
-            <div className="bg-white py-3 border-bottom sticky-top" style={{ zIndex: 100 }}>
+            <div className="bg-white  border-bottom sticky-top" style={{ zIndex: 100 }}>
                 <div className="d-flex justify-content-between align-items-center flex-wrap">
-                    <h4 className="fw-bold mb-0">Contacts</h4>
+                    <h4 className="fw-bold mb-0 ">Contacts</h4>
                     <div className="d-flex gap-2 mt-2 mt-md-0">
                         <button
                             className="btn btn-outline-secondary"
@@ -103,7 +103,7 @@ const ContactPage = () => {
                                     <div className="mb-3 mt-5">
                                         <div className="d-flex align-items-center justify-content-center mb-2">
                                             <div
-                                                className="bg-primary rounded-circle d-flex align-items-center justify-content-center"
+                                                className="bg-custom rounded-circle d-flex align-items-center justify-content-center"
                                                 style={{ width: "40px", height: "40px" }}
                                             >
                                                 <BsCheckCircleFill size={24} color="white" />

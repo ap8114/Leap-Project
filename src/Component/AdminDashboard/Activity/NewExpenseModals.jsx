@@ -305,7 +305,7 @@ const NewExpenseModals = ({ show, onClose }) => {
             <button className="btn btn-custom btn-sm fw-semibold">
               Save entry
             </button>
-            <button className="btn btn-outline-primary btn-sm fw-semibold">
+            <button className="btn btn-outline-custom btn-sm fw-semibold">
               Save and create another
             </button>
           </div>

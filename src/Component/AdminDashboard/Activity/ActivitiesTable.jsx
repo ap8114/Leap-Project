@@ -329,7 +329,7 @@ const ActivitiesTable = () => {
     };
     if (activeTab === tab) {
       if (tab === "All") {
-        btnClass += " btn-outline-primary";
+        btnClass += " btn-outline-custom";
         style.background = "#1976d2";
         style.color = "#fff";
         style.borderColor = "#1976d2";
@@ -339,7 +339,7 @@ const ActivitiesTable = () => {
         style.color = "#fff";
         style.borderColor = "#FFA646";
       } else if (tab === "Expense") {
-        btnClass += " btn-outline-primary";
+        btnClass += " btn-outline-custom";
         style.background = "#eaf2fd";
         style.color = "#7e3ff2";
         style.borderColor = "#7e3ff2";
@@ -392,7 +392,7 @@ const ActivitiesTable = () => {
           <h4 className="fw-bold mb-0">Activities</h4>
           <div className="d-flex gap-2 flex-wrap">
             <button
-              className="btn btn-outline-primary btn-sm fw-semibold"
+              className="btn btn-outline-custom btn-sm fw-semibold"
               onClick={() => setShowManageCategories(true)}
             >
               Manage categories
