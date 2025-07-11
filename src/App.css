@@ -1119,3 +1119,15 @@ margin-top: auto;
 .cursor-pointer {
   cursor: pointer;
 }
+
+
+/* matter accodian css collapse  */
+
+/* Disable Accordion collapse animation to prevent flicker */
+.accordion .collapse {
+  display: block !important;
+  visibility: visible !important;
+  height: auto !important;
+  overflow: visible !important;
+  transition: none !important;
+}

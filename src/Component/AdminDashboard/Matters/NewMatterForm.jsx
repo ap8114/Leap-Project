@@ -1,6 +1,7 @@
 import React from 'react';
 import { Modal, Button, Container, Row, Col, Form, Accordion } from 'react-bootstrap';
 import { FaExternalLinkAlt } from 'react-icons/fa';
+import 'bootstrap/dist/css/bootstrap.min.css';
 const NewMatterForm = ({ show, onHide }) => {
   return (
     <Modal show={show} onHide={onHide} dialogClassName="modal-xxl" size="xl" centered scrollable>
