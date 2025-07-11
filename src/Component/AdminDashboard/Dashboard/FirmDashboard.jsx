@@ -339,19 +339,19 @@ const FirmDashboard = () => {
           <div className="btn-group btn-group-sm">
             <button
               onClick={() => setActiveUtilizationView('Hr.')}
-              className={`btn ${activeUtilizationView === 'Hr.' ? 'btn-primary' : 'btn-outline-secondary'}`}
+              className={`btn ${activeUtilizationView === 'Hr.' ? 'btn-custom' : 'btn-outline-secondary'}`}
             >
               Hr.
             </button>
             <button
               onClick={() => setActiveUtilizationView('$')}
-              className={`btn ${activeUtilizationView === '$' ? 'btn-primary' : 'btn-outline-secondary'}`}
+              className={`btn ${activeUtilizationView === '$' ? 'btn-custom' : 'btn-outline-secondary'}`}
             >
               $
             </button>
             <button
               onClick={() => setActiveUtilizationView('%')}
-              className={`btn ${activeUtilizationView === '%' ? 'btn-primary' : 'btn-outline-secondary'}`}
+              className={`btn ${activeUtilizationView === '%' ? 'btn-custom' : 'btn-outline-secondary'}`}
             >
               %
             </button>
@@ -448,19 +448,19 @@ const FirmDashboard = () => {
           <div className="btn-group btn-group-sm">
             <button
               onClick={() => setActiveRealizationView('Hr.')}
-              className={`btn ${activeRealizationView === 'Hr.' ? 'btn-primary' : 'btn-outline-secondary'}`}
+              className={`btn ${activeRealizationView === 'Hr.' ? 'btn-custom' : 'btn-outline-secondary'}`}
             >
               Hr.
             </button>
             <button
               onClick={() => setActiveRealizationView('$')}
-              className={`btn ${activeRealizationView === '$' ? 'btn-primary' : 'btn-outline-secondary'}`}
+              className={`btn ${activeRealizationView === '$' ? 'btn-custom' : 'btn-outline-secondary'}`}
             >
               $
             </button>
             <button
               onClick={() => setActiveRealizationView('%')}
-              className={`btn ${activeRealizationView === '%' ? 'btn-primary' : 'btn-outline-secondary'}`}
+              className={`btn ${activeRealizationView === '%' ? 'btn-custom' : 'btn-outline-secondary'}`}
             >
               %
             </button>
@@ -574,19 +574,19 @@ const FirmDashboard = () => {
           <div className="btn-group btn-group-sm">
             <button
               onClick={() => setActiveCollectionView('Hr.')}
-              className={`btn ${activeCollectionView === 'Hr.' ? 'btn-primary' : 'btn-outline-secondary'}`}
+              className={`btn ${activeCollectionView === 'Hr.' ? 'btn-custom' : 'btn-outline-secondary'}`}
             >
               Hr.
             </button>
             <button
               onClick={() => setActiveCollectionView('$')}
-              className={`btn ${activeCollectionView === '$' ? 'btn-primary' : 'btn-outline-secondary'}`}
+              className={`btn ${activeCollectionView === '$' ? 'btn-custom' : 'btn-outline-secondary'}`}
             >
               $
             </button>
             <button
               onClick={() => setActiveCollectionView('%')}
-              className={`btn ${activeCollectionView === '%' ? 'btn-primary' : 'btn-outline-secondary'}`}
+              className={`btn ${activeCollectionView === '%' ? 'btn-custom' : 'btn-outline-secondary'}`}
             >
               %
             </button>

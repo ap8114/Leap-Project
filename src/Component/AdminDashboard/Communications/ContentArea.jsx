@@ -33,7 +33,7 @@ const ContentArea = ({ activeNavItem, activeTab = 'All' }) => {
         </div>
         <h5 className="fw-semibold mb-3">{title}</h5>
         <p className="text-secondary mb-4">{description}</p>
-        <button className="btn btn-primary px-4 py-2">{buttonText}</button>
+        <button className="btn btn-custom px-4 py-2">{buttonText}</button>
       </div>
     </div>
   );

@@ -206,7 +206,7 @@ const TaskModal = ({ showTaskModal, setShowTaskModal, taskForm, handleTaskFormCh
           <div className="modal-footer">
             <button
               onClick={handleSaveTask}
-              className="btn btn-primary"
+              className="btn btn-custom"
             >
               Save task
             </button>

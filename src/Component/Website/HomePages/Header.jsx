@@ -365,7 +365,7 @@ const Header = () => {
                         >
                             Login
                         </Link>
-                        <Link to="#demo" className="btn btn-demo p-2">
+                        <Link to="#demo" className="btn btn-custom p-2">
                             REQUEST DEMO
                         </Link>
                     </div>

@@ -23,7 +23,7 @@ const Header = ({ activeNavItem, onToggleSidebar, isMobile, sidebarOpen }) => {
           <div className="position-relative">
             <button
               onClick={() => setNewDropdownOpen(!newDropdownOpen)}
-              className="btn btn-primary btn-sm d-flex align-items-center"
+              className="btn btn-custom btn-sm d-flex align-items-center"
             >
               <i className="fas fa-plus me-2"></i>
               <span className="fw-semibold">New</span>

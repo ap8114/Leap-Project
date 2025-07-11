@@ -173,9 +173,6 @@ const NewBills = () => {
                 <p className="text-muted mb-3" style={{ fontSize: '13px' }}>
                   Track time and/or expenses spent on your clients' matter before you generate bills.
                 </p>
-                <Button variant="link" className="p-0" style={{ fontSize: '13px' }}>
-                  Learn more about time and expense entries
-                </Button>
               </Alert>
             </Card.Body>
           </Card>

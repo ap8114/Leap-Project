@@ -36,7 +36,7 @@ const ExportModal = ({ onClose, onExport }) => {
             </button>
             <button 
               type="button" 
-              className="btn btn-primary" 
+              className="btn btn-custom" 
               onClick={() => {
                 const selectedFormat = document.querySelector('input[name="exportFormat"]:checked').value;
                 onExport(selectedFormat);
