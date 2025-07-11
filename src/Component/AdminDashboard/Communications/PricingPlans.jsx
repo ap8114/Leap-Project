@@ -20,7 +20,7 @@ const PricingPlans = () => {
 
       <h4 className="text-center mb-2">Choose your plan</h4>
       <p className="text-center">
-        Choose your plan and continue using Clio to help run your firm. <br />
+        Choose your plan and continue using Fasttrack to help run your firm. <br />
         <strong>You've been trialing Advanced.</strong>
       </p>
 

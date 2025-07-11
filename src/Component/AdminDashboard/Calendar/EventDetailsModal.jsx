@@ -103,7 +103,7 @@ const EventDetailsPage = () => {
             <Form.Group className="mb-3">
               <Form.Label className="fw-bold">Save to this calendar <span className="text-danger">*</span></Form.Label>
               <Form.Select>
-                <option>Aman</option>
+                <option>john</option>
               </Form.Select>
               <Form.Check
                 type="checkbox"

@@ -37,7 +37,7 @@ const NewEmailLogModal = ({ show, handleClose }) => {
             </Col>
             <Col md={6}>
               <Form.Label>To</Form.Label>
-              <Form.Control type="text" value="aman patidar" readOnly />
+              <Form.Control type="text" value="john smith" readOnly />
             </Col>
           </Row>
 

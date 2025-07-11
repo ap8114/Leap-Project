@@ -135,14 +135,14 @@ const NewTimeEntryModal = ({ show, onClose }) => {
                     borderRadius: '4px'
                   }}
                 >
-                  <span>aman patidar</span>
+                  <span>john smith</span>
                   <BsChevronDown size={14} />
                 </button>
                 {showFirmUserDropdown && (
                   <div className="dropdown-menu w-100 show" style={{ marginTop: '2px' }}>
                     <div className="px-2 py-1">
                       <input type="text" className="form-control form-control-sm mb-1" placeholder="Search users" />
-                      <div className="dropdown-item" style={{ fontSize: '14px' }}>aman patidar</div>
+                      <div className="dropdown-item" style={{ fontSize: '14px' }}>john smith</div>
                       <div className="dropdown-item" style={{ fontSize: '14px' }}>Other User 1</div>
                       <div className="dropdown-item" style={{ fontSize: '14px' }}>Other User 2</div>
                     </div>

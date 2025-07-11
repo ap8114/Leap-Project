@@ -62,7 +62,7 @@ const timeRows = [
     nonBillable: "—",
     billable: "—",
     date: "07/10/2025",
-    user: "aman patidar",
+    user: "john smith",
     invoiceStatus: "Unbilled",
     time: "00:00:03",
   },
@@ -77,7 +77,7 @@ const timeRows = [
     nonBillable: "—",
     billable: "—",
     date: "07/10/2025",
-    user: "aman patidar",
+    user: "john smith",
     invoiceStatus: "Unbilled",
     time: "00:00:05",
   },
@@ -695,7 +695,7 @@ const ActivitiesTable = () => {
             <input
               type="text"
               className="form-control"
-              value="aman patidar (me)"
+              value="john smith (me)"
               readOnly
             />
             <button

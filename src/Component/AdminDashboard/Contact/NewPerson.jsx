@@ -397,7 +397,7 @@ const NewPerson = () => {
                 </div>
                 <div className="alert alert-info py-2 mb-2">
                     <span className="me-2" style={{ display: 'inline-block', width: 18, height: 18, borderRadius: '50%', background: '#0099ff', border: '4px solid #e6f2fb', verticalAlign: 'middle' }}></span>
-                    <span className="ms-2">Add up to 50 tags to a contact for easier searching, filtering, and categorization. The tags will appear on a contact’s dashboard, the contacts table, related contacts section in matter’s dashboard, and contact selector drop-downs. <a href="https://help.clio.com/hc/en-us/articles/9290561867931-Contact-Tags" className="text-decoration-underline">How do I manage my contact tags?</a></span>
+                    <span className="ms-2">Add up to 50 tags to a contact for easier searching, filtering, and categorization. The tags will appear on a contact’s dashboard, the contacts table, related contacts section in matter’s dashboard, and contact selector drop-downs. <a href="https://help.Fasttrack.com/hc/en-us/articles/9290561867931-Contact-Tags" className="text-decoration-underline">How do I manage my contact tags?</a></span>
                 </div>
                 <Form.Group className="mb-3 position-relative">
                     <Form.Label>Contact tags</Form.Label>

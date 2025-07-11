@@ -19,7 +19,7 @@ const TaskPage = () => {
   const [taskName, setTaskName] = useState("");
   const [priority, setPriority] = useState("Normal");
   const [description, setDescription] = useState("");
-  const [assignee, setAssignee] = useState("aman patidar");
+  const [assignee, setAssignee] = useState("john smith");
   const [privateTask, setPrivateTask] = useState(true);
   const [taskType, setTaskType] = useState("");
   const [taskStatus, setTaskStatus] = useState("Pending");
@@ -36,7 +36,7 @@ const TaskPage = () => {
     setTaskName("");
     setPriority("Normal");
     setDescription("");
-    setAssignee("aman patidar");
+    setAssignee("john smith");
     setPrivateTask(true);
     setTaskType("");
     setTaskStatus("Pending");
@@ -113,8 +113,12 @@ const TaskPage = () => {
       <h3 className="fw-bold mt-4 ms-0 ms-md-4">Tasks</h3>
     </div>
     <div className="col-12 col-md d-flex flex-wrap justify-content-md-end gap-2 mt-3 mt-md-0">
+      <Link to="/taskfeed">
       <Button variant="outline-secondary" className="py-3 fw-light">Task types</Button>
+      </Link>
+      <Link to="/taskfeed">
       <Button variant="outline-secondary" className="py-3 fw-light">Task lists</Button>
+      </Link>
       <Link to="/taskfeed">
         <Button variant="outline-secondary" className="py-3 fw-light">Task feeds</Button>
       </Link>
@@ -149,16 +153,16 @@ const TaskPage = () => {
       <Form.Control
         type="text"
         placeholder="MM/DD/YYYY"
-        className="fw-light fs-5 h-100 border-custom flex-grow-1"
+        className="fw-light fs-6 h-100 border-custom flex-grow-1 mt-1"
         style={{ height: "40px", minWidth: "120px" }}
         onFocus={e => e.target.type = 'date'}
         onBlur={e => e.target.type = 'text'}
       />
-      <span className="fw-light fs-5 text-secondary mx-2">–</span>
+      <span className="fw-light fs-5 text-secondary mx-2 ">–</span>
       <Form.Control
         type="text"
         placeholder="MM/DD/YYYY"
-        className="fw-light fs-5 h-100 border-custom flex-grow-1"
+        className="fw-light fs-6 h-100 border-custom flex-grow-1 mt-1"
         style={{ height: "40px", minWidth: "120px" }}
         onFocus={e => e.target.type = 'date'}
         onBlur={e => e.target.type = 'text'}
@@ -166,10 +170,10 @@ const TaskPage = () => {
     </div>
 
     {/* Date Presets */}
-    <div className="col-12 col-md-auto">
+    <div className="col-12 col-md-auto mt-0 py-1">
       <Form.Select
-        className="fw-light fs-5 h-100 border-custom border-2 shadow-custom w-100"
-        style={{ height: "40px", minWidth: "160px" }}
+        className="fw-light fs-5 h-100 border-custom border-2 shadow-custom w-100  "
+        style={{ height: "30px", minWidth: "160px" }}
         defaultValue="All dates"
       >
         <option>Past due</option>
@@ -184,7 +188,7 @@ const TaskPage = () => {
     </div>
 
     {/* Search */}
-    <div className="col-12 col-md-auto">
+    <div className="col-12 col-md-auto py-1 mt-0">
       <Form.Control
         type="text"
         placeholder="Search"
@@ -194,13 +198,13 @@ const TaskPage = () => {
     </div>
 
     {/* Columns Dropdown */}
-    <div className="col-12 col-md-auto">
+    <div className="col-12 col-md-auto mt-0 py-1">
       <DropdownButton
         id="dropdown-columns-button"
         title="Columns"
         variant="light"
         className="rounded-3 border-custom border-2 h-100 w-100"
-        style={{ height: "40px" }}
+     
       >
         <Dropdown.Item>Action</Dropdown.Item>
         <Dropdown.Item>Due date</Dropdown.Item>
@@ -217,7 +221,7 @@ const TaskPage = () => {
     </div>
 
     {/* Filters Dropdown */}
-    <div className="col-12 col-md-auto">
+    <div className="col-12 col-md-auto mt-0 py-1">
       <Dropdown className="w-100">
         <Dropdown.Toggle
           variant="light"
@@ -237,7 +241,7 @@ const TaskPage = () => {
             <div className="d-flex flex-column">
               <Form.Check type="radio" name="assignedBy" label="Find a firm user" className="mb-2" />
               <Form.Check type="radio" name="assignedBy" label="Any firm user" className="mb-2" />
-              <Form.Check type="radio" name="assignedBy" label="aman patidar" />
+              <Form.Check type="radio" name="assignedBy" label="john smith" />
             </div>
           </div>
 
@@ -364,7 +368,7 @@ const TaskPage = () => {
                       onChange={e => setAssignee(e.target.value)}
                     />
                     <DropdownButton variant="light" title="" className="ms-2">
-                      <Dropdown.Item>aman patidar</Dropdown.Item>
+                      <Dropdown.Item>john smith</Dropdown.Item>
                       <Dropdown.Item>Other user</Dropdown.Item>
                     </DropdownButton>
                   </div>

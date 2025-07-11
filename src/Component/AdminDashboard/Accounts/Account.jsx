@@ -138,9 +138,9 @@ const Account = () => {
             <i className="bi bi-bank fs-2 "></i>
           </div>
         </div>
-        <h4 className="fw-bold">What are accounts in Clio Manage?</h4>
+        <h4 className="fw-bold">What are accounts in Fasttrack Manage?</h4>
         <p className="text-muted">
-          Accounts in Clio Manage are designed to mirror your real-life bank accounts at your financial institution for collecting bill payments and retaining trust funds.
+          Accounts in Fasttrack Manage are designed to mirror your real-life bank accounts at your financial institution for collecting bill payments and retaining trust funds.
         </p>
       
         <button

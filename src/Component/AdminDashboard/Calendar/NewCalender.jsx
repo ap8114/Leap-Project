@@ -155,7 +155,7 @@ const NewCalendar = () => {
     const renderFeedsTab = () => (
         <div >
             <p className="text-muted">
-                Calendar feeds allow you to view your Clio calendar events from third-party applications such as Outlook or iCal.
+                Calendar feeds allow you to view your Fasttrack calendar events from third-party applications such as Outlook or iCal.
                 For more information, you can read our support article on <a href="#" className="text-primary">what calendar feeds are, and how to use them</a>.
             </p>
             <hr />

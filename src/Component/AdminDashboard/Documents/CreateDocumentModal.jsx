@@ -47,8 +47,8 @@ const CreateDocumentModal = ({ show, onHide }) => {
 
           {/* Policy Info */}
           <div className="small text-muted mb-3">
-            Documents made from templates are created using <a href="#" target="_blank" rel="noopener noreferrer">Nintex</a>, an authorized Clio sub-processor. 
-            For further information, please refer to Clio’s 
+            Documents made from templates are created using <a href="#" target="_blank" rel="noopener noreferrer">Nintex</a>, an authorized Fasttrack sub-processor. 
+            For further information, please refer to Fasttrack’s 
             <a href="#" target="_blank" rel="noopener noreferrer"> Terms of Service</a>, 
             <a href="#" target="_blank" rel="noopener noreferrer"> Privacy Policy</a>, 
             and <a href="#" target="_blank" rel="noopener noreferrer">Nintex’s Privacy Policy</a>.

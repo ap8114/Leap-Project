@@ -80,19 +80,19 @@ const ResourceCenter = () => {
                     <div className="border-bottom py-2">
                       <div className="fw-semibold">Create Contacts</div>
                       <small className="text-muted">
-                        In Clio Manage, you can create person or company cont...
+                        In Fasttrack Manage, you can create person or company cont...
                       </small>
                     </div>
                     <div className="border-bottom py-2">
-                      <div className="fw-semibold">Set Up Clio Manage</div>
+                      <div className="fw-semibold">Set Up Fasttrack Manage</div>
                       <small className="text-muted">
-                        Clio Manage is a practice management software where y...
+                        Fasttrack Manage is a practice management software where y...
                       </small>
                     </div>
                     <div className="py-2">
                       <div className="fw-semibold">Create Matters</div>
                       <small className="text-muted">
-                        Matters in Clio are your legal cases. In Clio Manage, matt...
+                        Matters in Fasttrack are your legal cases. In Fasttrack Manage, matt...
                       </small>
                     </div>
                   </div>
@@ -192,7 +192,7 @@ const ResourceCenter = () => {
                   <Card.Body className="text-center">
                     <Card.Title>Live Training Sessions</Card.Title>
                     <Card.Text>
-                      Learn Clio faster with live, interactive training. Get the essential skills to manage your practice efficiently, whether you're just starting or refining your workflow.
+                      Learn Fasttrack faster with live, interactive training. Get the essential skills to manage your practice efficiently, whether you're just starting or refining your workflow.
                     </Card.Text>
                     <Button variant="custom">View Schedule</Button>
                   </Card.Body>
@@ -203,7 +203,7 @@ const ResourceCenter = () => {
                   <Card.Body className="text-center">
                     <Card.Title>customer Community</Card.Title>
                     <Card.Text>
-                      Connect with fellow Clio users, get answers to your questions, and stay informed about new features and pilot programs.
+                      Connect with fellow Fasttrack users, get answers to your questions, and stay informed about new features and pilot programs.
                     </Card.Text>
                     <Button variant="success">Join Community</Button>
                   </Card.Body>
@@ -212,9 +212,9 @@ const ResourceCenter = () => {
               <Col md={4} className="mb-4">
                 <Card className="h-100 border-warning">
                   <Card.Body className="text-center">
-                    <Card.Title>Clio Certification</Card.Title>
+                    <Card.Title>Fasttrack Certification</Card.Title>
                     <Card.Text>
-                      Build expertise in legal practice management with content designed to enhance your skills, improve efficiency, and deepen your understanding of Clio.
+                      Build expertise in legal practice management with content designed to enhance your skills, improve efficiency, and deepen your understanding of Fasttrack.
                     </Card.Text>
                     <Button variant="warning">Get Certified</Button>
                   </Card.Body>
