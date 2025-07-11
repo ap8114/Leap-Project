@@ -195,7 +195,7 @@ const Navbar = ({ toggleSidebar }) => {
   const [isTiming, setIsTiming] = useState(false);
   const [showTimekeeper, setShowTimekeeper] = useState(false);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
-const [activeDropdown, setActiveDropdown] = useState(null); // can be 'recents', 'notifications', etc.
+  const [activeDropdown, setActiveDropdown] = useState(null); // can be 'recents', 'notifications', etc.
 
   const [showCreate, setShowCreate] = useState(false);
   const [showRecents, setShowRecents] = useState(false);
@@ -212,39 +212,39 @@ const [activeDropdown, setActiveDropdown] = useState(null); // can be 'recents',
   const mobileMenuRef = useRef(null);
 
   useEffect(() => {
-  const handleOutsideClick = () => {
-    setActiveDropdown(null);
+    const handleOutsideClick = () => {
+      setActiveDropdown(null);
+    };
+    document.addEventListener('click', handleOutsideClick);
+    return () => {
+      document.removeEventListener('click', handleOutsideClick);
+    };
+  }, []);
+
+  // const toggleDropdown = (e, dropdownName) => {
+  //   e.stopPropagation();
+  //   e.preventDefault();
+
+  //   // Close all dropdowns first
+  //   const allDropdownsClosed = {
+  //     create: false,
+  //     recents: false,
+  //     notifications: false,
+  //     profile: false
+  //   };
+
+  //   // Only open the clicked dropdown if it wasn't already open
+  //   setShowCreate(dropdownName === 'create' ? !showCreate : false);
+  //   setShowRecents(dropdownName === 'recents' ? !showRecents : false);
+  //   setShowNotifications(dropdownName === 'notifications' ? !showNotifications : false);
+  //   setShowProfileDropdown(dropdownName === 'profile' ? !showProfileDropdown : false);
+  // };
+
+  const toggleDropdown = (e, dropdownName) => {
+    e.stopPropagation();
+    e.preventDefault();
+    setActiveDropdown(prev => (prev === dropdownName ? null : dropdownName));
   };
-  document.addEventListener('click', handleOutsideClick);
-  return () => {
-    document.removeEventListener('click', handleOutsideClick);
-  };
-}, []);
-
-// const toggleDropdown = (e, dropdownName) => {
-//   e.stopPropagation();
-//   e.preventDefault();
-
-//   // Close all dropdowns first
-//   const allDropdownsClosed = {
-//     create: false,
-//     recents: false,
-//     notifications: false,
-//     profile: false
-//   };
-
-//   // Only open the clicked dropdown if it wasn't already open
-//   setShowCreate(dropdownName === 'create' ? !showCreate : false);
-//   setShowRecents(dropdownName === 'recents' ? !showRecents : false);
-//   setShowNotifications(dropdownName === 'notifications' ? !showNotifications : false);
-//   setShowProfileDropdown(dropdownName === 'profile' ? !showProfileDropdown : false);
-// };
-
-const toggleDropdown = (e, dropdownName) => {
-  e.stopPropagation();
-  e.preventDefault();
-  setActiveDropdown(prev => (prev === dropdownName ? null : dropdownName));
-};
 
   useEffect(() => {
     if (isTiming) {
@@ -299,49 +299,54 @@ const toggleDropdown = (e, dropdownName) => {
   };
 
   const toggleMobileMenu = (e) => {
- 
-   
     setShowMobileMenu((prev) => (!prev));
   };
 
- 
+
 
   return (
     <nav className="navbar custom-navbar p-0 shadow-sm position-sticky top-0 w-100 bg-white">
       <div className="container-fluid d-flex align-items-center px-3 py-2">
         {/* Logo and Mobile Menu Button */}
-        <div className="d-flex align-items-center me-4">
+      <div className="d-flex align-items-center justify-content-between w-100 px-3">
+  {/* Left: Logo */}
+  <div className="d-flex align-items-center">
+    <img
+      src={logoFastTrack}
+      alt="Logo"
+      className="img-fluid"
+      style={{
+        height: "40px",
+        maxWidth: "140px",
+        objectFit: "contain",
+      }}
+    />
+  </div>
 
-          <img
-            src={logoFastTrack}
-            alt="Logo"
-            className="img-fluid"
-            style={{
-              height: "50px",
-              width: "auto",
-              maxWidth: "170px",
-              objectFit: "contain"
-            }}
-          />
+  {/* Toggle buttons: Only visible on tablet & mobile (<992px) */}
+  <div className="d-flex align-items-center d-lg-none">
+    {/* Sidebar toggle */}
+    <div
+      className="nav-toggle-icon me-3"
+      onClick={toggleSidebar}
+      style={{ cursor: "pointer" }}
+    >
+      <RiMenuUnfold2Line size={26} />
+    </div>
 
-          <div
-            className="nav-toggle-icon ms-2"
-            onClick={toggleSidebar}
-            style={{ cursor: "pointer" }}
-          >
-            <RiMenuUnfold2Line size={28} />
-          </div>
-          <button
+    {/* Mobile menu (hamburger) toggle */}
+    <button
+      className="navbar-toggler"
+      type="button"
+      onClick={toggleMobileMenu}
+      style={{ border: "none" }}
+    >
+      <i className="fas fa-bars fs-5"></i>
+    </button>
+  </div>
+</div>
 
 
-            className="navbar-toggler me-2 d-lg-none"
-            type="button"
-            onClick={toggleMobileMenu}
-            style={{ border: 'none', marginLeft: '130px' }}
-          >
-            <i className="fas fa-bars"></i>
-          </button>
-        </div>
 
         {/* Mobile Menu */}
         {showMobileMenu && (
@@ -443,7 +448,7 @@ const toggleDropdown = (e, dropdownName) => {
               >
                 Notifications <i className="fa-regular fa-bell"></i>
               </button>
-              {  activeDropdown === "notifications" && (
+              {activeDropdown === "notifications" && (
                 <div className="mt-2 p-2 border rounded">
                   <div className="fw-bold mb-2">Notifications</div>
                   <div className="text-muted">No new notifications.</div>
@@ -463,7 +468,7 @@ const toggleDropdown = (e, dropdownName) => {
               >
                 Profile <i className="fa-solid fa-circle-user"></i>
               </button>
-              {activeDropdown === "profile"  && (
+              {activeDropdown === "profile" && (
                 <div className="mt-2 p-2 border rounded">
                   <Link
                     className="dropdown-item d-block py-2"
