@@ -16,42 +16,58 @@ const ClassicReport = () => {
   return (
     <div className="container-fluid p-4">
       {/* Top Tabs + Controls */}
-      <div className="d-flex justify-content-between align-items-center border p-3 mb-3 flex-wrap gap-3">
-        <Tabs id="report-tabs" activeKey={key} onSelect={(k) => setKey(k)} className="mb-0">
-          <Tab eventKey="all" title="All" />
-          <Tab eventKey="presets" title="Presets only" />
-          <Tab eventKey="scheduled" title="Scheduled presets" />
-        </Tabs>
+     <div className="border p-3 mb-3 d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-3 flex-wrap">
+  {/* Tabs */}
+  <Tabs
+    id="report-tabs"
+    activeKey={key}
+    onSelect={(k) => setKey(k)}
+    className="mb-0"
+  >
+    <Tab eventKey="all" title="All" />
+    <Tab eventKey="presets" title="Presets only" />
+    <Tab eventKey="scheduled" title="Scheduled presets" />
+  </Tabs>
 
-        <div className="d-flex align-items-center gap-2 flex-nowrap">
-          <InputGroup size="sm" style={{ maxWidth: '300px' }}>
-            <Form.Control
-              placeholder="Search by Preset name"
-              style={{ height: '36px', fontSize: '0.875rem' }}
-            />
-          </InputGroup>
+  {/* Controls: Search + Dropdowns */}
+  <div className="d-flex flex-column flex-sm-row align-items-stretch gap-2 w-100 w-md-auto">
+    <InputGroup className="w-100" style={{ maxWidth: '300px' }}>
+      <Form.Control
+        placeholder="Search by Preset name"
+        style={{ height: '42px', fontSize: '0.875rem' }}
+      />
+    </InputGroup>
 
-          <Dropdown>
-            <Dropdown.Toggle variant="light" size="sm">
-              <BsColumns className="me-1" />
-              Columns
-            </Dropdown.Toggle>
-            <Dropdown.Menu>
-              <Dropdown.Item>Toggle Columns (Demo)</Dropdown.Item>
-            </Dropdown.Menu>
-          </Dropdown>
+    <Dropdown className="w-100 w-sm-auto">
+      <Dropdown.Toggle
+        variant="light"
+        size="sm"
+        className="d-flex align-items-center gap-2 w-100"
+      >
+        <BsColumns className="me-1" />
+        Columns
+      </Dropdown.Toggle>
+      <Dropdown.Menu>
+        <Dropdown.Item>Toggle Columns (Demo)</Dropdown.Item>
+      </Dropdown.Menu>
+    </Dropdown>
 
-          <Dropdown>
-            <Dropdown.Toggle variant="light" size="sm">
-              <BsFunnel className="me-1" />
-              Filters
-            </Dropdown.Toggle>
-            <Dropdown.Menu>
-              <Dropdown.Item>Filter Option (Demo)</Dropdown.Item>
-            </Dropdown.Menu>
-          </Dropdown>
-        </div>
-      </div>
+    <Dropdown className="w-100 w-sm-auto">
+      <Dropdown.Toggle
+        variant="light"
+        size="sm"
+        className="d-flex align-items-center gap-2 w-100"
+      >
+        <BsFunnel className="me-1" />
+        Filters
+      </Dropdown.Toggle>
+      <Dropdown.Menu>
+        <Dropdown.Item>Filter Option (Demo)</Dropdown.Item>
+      </Dropdown.Menu>
+    </Dropdown>
+  </div>
+</div>
+
 
       {/* Table below based on selected tab */}
       <ReportTable tabKey={key} />

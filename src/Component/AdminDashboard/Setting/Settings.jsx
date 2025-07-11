@@ -117,9 +117,9 @@ const Settings = () => (
       </div>
 
       {/* Bottom Card */}
-      <Container fluid className="px-0 py-4">
-        <Row className="justify-content-center">
-          <Col xs={12} md={10} lg={8}>
+      <div className="px-0 py-4">
+        <div className="justify-content-center">
+          <Col>
             <div className="d-flex flex-column flex-md-row align-items-start align-items-md-center justify-content-between p-4 rounded border bg-white">
               <div className="d-flex align-items-start gap-3 flex-grow-1 flex-wrap">
                 <FaCreditCard size={40} color="#0073E6" />
@@ -142,8 +142,8 @@ const Settings = () => (
               </div>
             </div>
           </Col>
-        </Row>
-      </Container>
+        </div>
+      </div>
     </Container>
   </div>
 );
