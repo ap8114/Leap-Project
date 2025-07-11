@@ -64,7 +64,7 @@ const Document = () => {
   ];
 
   return (
-    <div className="min-vh-100 bg-light">
+    <div className="min-vh-100 bg-light" style={{overflowX: 'hidden'}}>
       <Container fluid className="px-0 bg-white max-w-1440 mx-auto min-vh-100">
         {/* Header */}
         <Row className="align-items-center px-3 px-md-4 py-2 py-md-3 border-bottom">
