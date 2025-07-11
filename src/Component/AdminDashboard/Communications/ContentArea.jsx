@@ -1,7 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import NewClientPortalModal from './NewClientPortalModal';
+import NewInternalMessageModal from './NewInternalMessageModal';
 
 const ContentArea = ({ activeNavItem, activeTab = 'All' }) => {
-  // Sample data for all sections
+  const navigate = useNavigate();
+
+  // Modal states
+  const [showNewClientPortal, setShowNewClientPortal] = useState(false);
+  const [showInternalMessage, setShowInternalMessage] = useState(false);
+
+  const handleShowNewClientPortal = () => setShowNewClientPortal(true);
+  const handleCloseNewClientPortal = () => setShowNewClientPortal(false);
+
+  const handleShowInternalMessage = () => setShowInternalMessage(true);
+  const handleCloseInternalMessage = () => setShowInternalMessage(false);
+
+  // Sample data
   const clientPortalsData = {
     'My client portals': [],
     'All': []
@@ -23,7 +38,8 @@ const ContentArea = ({ activeNavItem, activeTab = 'All' }) => {
     'Matter threads': []
   };
 
-  const renderEmptyState = (icon, title, description, buttonText) => (
+  // Reusable empty state
+  const renderEmptyState = (icon, title, description, buttonText, onClick) => (
     <div className="flex-grow-1 d-flex flex-column align-items-center justify-content-center">
       <div className="text-center" style={{ maxWidth: '500px' }}>
         <div className="mb-5">
@@ -33,7 +49,9 @@ const ContentArea = ({ activeNavItem, activeTab = 'All' }) => {
         </div>
         <h5 className="fw-semibold mb-3">{title}</h5>
         <p className="text-secondary mb-4">{description}</p>
-        <button className="btn btn-primary px-4 py-2">{buttonText}</button>
+        <button className="btn btn-primary px-4 py-2" onClick={onClick}>
+          {buttonText}
+        </button>
       </div>
     </div>
   );
@@ -46,7 +64,7 @@ const ContentArea = ({ activeNavItem, activeTab = 'All' }) => {
             {Object.keys(clientPortalsData).map(tab => (
               <li key={tab} className="nav-item">
                 <button
-                  onClick={() => setActiveTab(tab)}
+                  onClick={() => {}}
                   className={`nav-link ${activeTab === tab ? 'active text-primary border-primary' : 'text-secondary'}`}
                 >
                   {tab}
@@ -61,7 +79,8 @@ const ContentArea = ({ activeNavItem, activeTab = 'All' }) => {
               'fa-folder',
               'No client portals found',
               'Share a message, document, bill or calendar event with your clients',
-              'New client portal'
+              'New client portal',
+              handleShowNewClientPortal
             )
           )}
         </div>
@@ -71,7 +90,7 @@ const ContentArea = ({ activeNavItem, activeTab = 'All' }) => {
             {Object.keys(textMessagesData).map(tab => (
               <li key={tab} className="nav-item">
                 <button
-                  onClick={() => setActiveTab(tab)}
+                  onClick={() => {}}
                   className={`nav-link ${activeTab === tab ? 'active text-primary border-primary' : 'text-secondary'}`}
                 >
                   {tab}
@@ -86,7 +105,8 @@ const ContentArea = ({ activeNavItem, activeTab = 'All' }) => {
               'fa-comment-dots',
               'Get quick responses when you need them',
               'Use text messages to send clients updates, event notifications, and automated reminders',
-              'Upgrade to turn on text messaging'
+              'Upgrade to turn on text messaging',
+              () => navigate('/pricingplan')
             )
           )}
         </div>
@@ -96,7 +116,7 @@ const ContentArea = ({ activeNavItem, activeTab = 'All' }) => {
             {Object.keys(internalMessagesData).map(tab => (
               <li key={tab} className="nav-item">
                 <button
-                  onClick={() => setActiveTab(tab)}
+                  onClick={() => {}}
                   className={`nav-link ${activeTab === tab ? 'active text-primary border-primary' : 'text-secondary'}`}
                 >
                   {tab}
@@ -121,7 +141,8 @@ const ContentArea = ({ activeNavItem, activeTab = 'All' }) => {
               'fa-envelope',
               'No internal messages found',
               'Keep track of every conversation',
-              'New internal message'
+              'New internal message',
+              handleShowInternalMessage
             )
           )}
         </div>
@@ -131,7 +152,7 @@ const ContentArea = ({ activeNavItem, activeTab = 'All' }) => {
             {Object.keys(logsData).map(tab => (
               <li key={tab} className="nav-item">
                 <button
-                  onClick={() => setActiveTab(tab)}
+                  onClick={() => {}}
                   className={`nav-link ${activeTab === tab ? 'active text-primary border-primary' : 'text-secondary'}`}
                 >
                   {tab}
@@ -174,6 +195,17 @@ const ContentArea = ({ activeNavItem, activeTab = 'All' }) => {
       ) : (
         <div>Select a section</div>
       )}
+
+      {/* Modals */}
+      <NewClientPortalModal
+        show={showNewClientPortal}
+        handleClose={handleCloseNewClientPortal}
+      />
+
+      <NewInternalMessageModal
+        show={showInternalMessage}
+        handleClose={handleCloseInternalMessage}
+      />
     </div>
   );
 };

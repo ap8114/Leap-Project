@@ -49,6 +49,7 @@ import CalendarUI from "./Component/AdminDashboard/Calendar/CalendarView";
 
 import Communication from "./Component/AdminDashboard/Communications/Communication";
 import MattersDashboard from "./Component/AdminDashboard/Matters/MatterDashboard";
+import PricingPlans from "./Component/AdminDashboard/Communications/PricingPlans";
 
 
 function App() {
@@ -188,6 +189,10 @@ function App() {
                 <Route path="/activity" element={<ActivitiesTable />} />
                 {/* communication routing */}
                 <Route path="/communications" element={<Communication />} />
+                <Route path="/pricingplan" element={<PricingPlans />} />
+
+
+                {/* account routing */}
                 <Route path="/accounts" element={<Account />} />
 
 
