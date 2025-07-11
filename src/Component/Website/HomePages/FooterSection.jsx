@@ -173,7 +173,7 @@ const FooterSection = () => {
 
           <div className="col-md-6">
             <div className="d-flex flex-wrap justify-content-center justify-content-md-end gap-3">
-              <Link to="/terms" className="text-decoration-none small hover-accent">Terms of Service</Link>
+              <Link to="/termsservices" className="text-decoration-none small hover-accent">Terms of Service</Link>
               {/* <Link to="/legal" className="text-decoration-none small hover-accent">Legal Service</Link> */}
               {/* <Link to="/trust" className="text-decoration-none small hover-accent">Trust Centre</Link> */}
               <Link to="/privacy" className="text-decoration-none small hover-accent">Privacy Policy</Link>

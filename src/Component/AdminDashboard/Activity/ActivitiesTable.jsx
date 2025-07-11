@@ -459,7 +459,7 @@ const ActivitiesTable = () => {
       {/* Header Section */}
       <div className="bg-white px-2 px-md-4 pt-4 pb-3 border-bottom">
         <div className="d-flex flex-wrap justify-content-between align-items-center gap-2">
-          <h3 className="fw-bold mb-0">Activities</h3>
+          <h1 className="fw-bold mb-0" style={{ fontSize: "2rem", fontWeight: "700" }}>Activities</h1>
           <div className="d-flex gap-2 flex-wrap">
             <button
               className="btn btn-outline-custom btn-sm fw-semibold"
@@ -484,10 +484,10 @@ const ActivitiesTable = () => {
       </div>
 
       {/* Filters Row */}
-     <div className="container-fluid px-2 px-md-4 py-3 bg-light">
-  <div className="d-flex flex-column flex-md-row align-items-center align-items-md-stretch gap-2 mb-2 overflow-auto">
+     <div className="container-fluid px-2 py-3 bg-light">
+  <div className="d-flex flex-column flex-md-row align-items-center align-items-md-stretch  mb-2 overflow-hidden">
     {/* Tabs */}
-    <div className="d-flex flex-nowrap gap-2 me-md-auto">
+    <div className="d-flex flex-nowrap mb-2  me-md-auto">
       {tabBtn("All", null, "All", "#1976d2")}
       {tabBtn("Time", <BsClock />, "Time", "#FFA646")}
       {tabBtn("Expense", <BsCurrencyDollar />, "Expense", "#7e3ff2")}

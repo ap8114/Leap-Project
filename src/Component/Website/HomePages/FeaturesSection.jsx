@@ -18,7 +18,7 @@ const FeaturesSection = () => {
                                         <i
                                             className="fas fa-calendar-alt"
                                             style={{
-                                                fontSize: "3rem",
+                                                fontSize: "2rem",
                                                 color: "var(--accent-color)",
                                                 opacity: "0.3"
                                             }}

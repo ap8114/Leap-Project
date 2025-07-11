@@ -36,7 +36,7 @@ const NewCalendar = () => {
 
     const renderNewCalendar = () => (
         <>
-            <h6 className="fw-bold mb-2">Calendar</h6>
+            <h1 className="fw-bold mb-2">Calendar</h1>
             <Card className="mb-4" style={{ maxWidth: '500px' }}>
                 <Card.Body>
                     <Form.Group>
@@ -103,7 +103,7 @@ const NewCalendar = () => {
 
     const renderSharingTab = () => (
         <>
-            <h6 className="fw-bold mb-2">Calendar</h6>
+            <h1 className="fw-bold mb-2">Calendar</h1>
             <Card className="mb-4">
                 <Card.Body>
                     <Form.Group className="mb-3">

@@ -69,7 +69,7 @@ const [showTemplates, setShowTemplates] = useState(false);
 
   return (
     <div  className="px-4 pt-3">
-      <h3 className="fw-bold mt-2 ms-1 mb-4" >Matters</h3>
+      <h1 className="fw-bold mt-2 ms-1 mb-4" style={{ fontSize: "2rem", fontWeight: "700" }}>Matters</h1>
       {/* Main Tabs + Buttons */}
       <Row className="align-items-center mb-3 justify-content-between">
         <Col>
@@ -304,7 +304,7 @@ const [showTemplates, setShowTemplates] = useState(false);
 
 
           {/* Table */}
-          <div className="border rounded" style={{ overflowX: "auto" }}>
+          <div className="border rounded custom-scroll" style={{ overflowX: "auto" }}>>
             <Table hover className="mb-0">
               <thead className="table-light text-nowrap">
                 <tr>
