@@ -84,8 +84,8 @@ const timeRows = [
 ];
 
 const ActivitiesTable = () => {
-    const [date, setDate] = useState("2025-07-10");
-       const dateRef = useRef(null);
+  const [date, setDate] = useState("2025-07-10");
+  const dateRef = useRef(null);
   const [showColumns, setShowColumns] = useState(false);
   const [showFilters, setShowFilters] = useState(false);
   const [visibleColumns, setVisibleColumns] = useState(defaultVisible);
@@ -484,288 +484,288 @@ const ActivitiesTable = () => {
       </div>
 
       {/* Filters Row */}
-     <div className="container-fluid px-2 py-3 bg-light">
-  <div className="d-flex flex-column flex-md-row align-items-center align-items-md-stretch  mb-2 overflow-hidden">
-    {/* Tabs */}
-    <div className="d-flex flex-nowrap mb-2  me-md-auto">
-      {tabBtn("All", null, "All", "#1976d2")}
-      {tabBtn("Time", <BsClock />, "Time", "#FFA646")}
-      {tabBtn("Expense", <BsCurrencyDollar />, "Expense", "#7e3ff2")}
-    </div>
+      <div className="container-fluid px-2 py-3 bg-light">
+        <div className="d-flex flex-column flex-md-row align-items-center align-items-md-stretch  mb-2 overflow-hidden">
+          {/* Tabs */}
+          <div className="d-flex flex-nowrap py-3 me-md-auto">
+            {tabBtn("All", null, "All", "#1976d2")}
+            {tabBtn("Time", <BsClock />, "Time", "#FFA646")}
+            {tabBtn("Expense", <BsCurrencyDollar />, "Expense", "#7e3ff2")}
+          </div>
 
-    {/* Date Range */}
-    <div className="d-flex align-items-center gap-2 flex-wrap flex-md-nowrap">
-      <div className="d-flex align-items-center gap-2">
-   <div
-      className="input-group input-group-sm"
-      style={{
-        minWidth: "180px",
-        height: "40px",
-      }}
-    >
-      <input
-        ref={dateRef}
-        type="date"
-        className="form-control"
-        value={date}
-        onChange={e => setDate(e.target.value)}
-        style={{
-          border: "1.5px solid #1A2744",
-          borderRight: "none",
-          borderRadius: "8px 0 0 8px",
-          height: "100%",
-          fontSize: "1rem",
-        }}
-      />
-      <div
-        className="input-group-text bg-white"
-        style={{
-          border: "1.5px solid #1A2744",
-          borderLeft: "none",
-          borderRadius: "0 8px 8px 0",
-          height: "100%",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          cursor: "pointer",
-        }}
-        onClick={() => {
-          // Focus input when calendar icon is clicked
-          dateRef.current?.showPicker?.(); // modern browsers
-          dateRef.current?.focus();
-        }}
-      >
-        
-      </div>
-    </div>
-
-        <span className="fw-bold d-none d-md-inline">-</span>
-   <div
-      className="input-group input-group-sm"
-      style={{
-        minWidth: "180px",
-        height: "40px",
-      }}
-    >
-      <input
-        type="date"
-        className="form-control"
-        value={date}
-        onChange={e => setDate(e.target.value)}
-        style={{
-          border: "1.5px solid #1A2744",
-          borderRight: "none",
-          borderRadius: "8px 0 0 8px",
-          height: "100%",
-          fontSize: "1rem",
-        }}
-      />
-      <span
-        className="input-group-text bg-white"
-        onClick={() => {
-          // Focus input on icon click
-          document.getElementById("dateInput").showPicker?.();
-        }}
-        style={{
-          border: "1.5px solid #1A2744",
-          borderLeft: "none",
-          borderRadius: "0 8px 8px 0",
-          height: "100%",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          cursor: "pointer",
-        }}
-      >
-        
-      </span>
-    </div>
-
-      </div>
-
-      {/* Pagination Arrows */}
-      <div className="d-flex gap-2">
-        <button className="btn btn-light btn-sm border px-2">
-          <BsChevronLeft />
-        </button>
-        <button className="btn btn-light btn-sm border px-2">
-          <BsChevronRight />
-        </button>
-      </div>
-
-      {/* Today Dropdown */}
-      <select
-        className="form-select form-select-sm"
-        style={{ minWidth: "110px" }}
-      >
-        <option>Today</option>
-        <option>This Week</option>
-        <option>This Month</option>
-        <option>This Year</option>
-      </select>
-
-      {/* Search */}
-      <input
-        type="text"
-        className="form-control form-control-sm"
-        placeholder="Filter by keyword"
-        style={{ minWidth: "150px" }}
-      />
-
-      {/* Columns Dropdown */}
-      <div className="dropdown">
-        <button
-          className="btn btn-sm fw-bold d-flex align-items-center border"
-          type="button"
-          aria-expanded={showColumns ? "true" : "false"}
-          onClick={() => {
-            setShowColumns((v) => !v);
-            setShowFilters(false);
-          }}
-          style={{ minWidth: "90px" }}
-        >
-          Columns <BsChevronDown className="ms-1" />
-        </button>
-        <ul
-          className="dropdown-menu p-3 border-0 shadow-sm"
-          style={{
-            minWidth: "220px",
-            maxHeight: "340px",
-            overflowY: "auto",
-            display: showColumns ? "block" : "none",
-          }}
-        >
-          <li className="mb-2 fw-bold fs-6">Visible columns</li>
-          {columnsList.map((col) => (
-            <li key={col} className="mb-1">
-              <div className="form-check">
+          {/* Date Range */}
+          <div className="d-flex align-items-center gap-2 flex-wrap flex-md-nowrap">
+            <div className="d-flex align-items-center gap-2">
+              <div
+                className="input-group input-group-sm"
+                style={{
+                  minWidth: "180px",
+                  height: "40px",
+                }}
+              >
                 <input
-                  className="form-check-input"
-                  type="checkbox"
-                  checked={visibleColumns.includes(col)}
-                  id={`col-${col}`}
-                  onChange={() => toggleColumn(col)}
+                  ref={dateRef}
+                  type="date"
+                  className="form-control"
+                  value={date}
+                  onChange={e => setDate(e.target.value)}
                   style={{
-                    borderColor: "#1976d2",
-                    backgroundColor: visibleColumns.includes(col)
-                      ? "#1976d2"
-                      : "#fff",
+                    border: "1.5px solid #1A2744",
+                    borderRight: "none",
+                    borderRadius: "8px 0 0 8px",
+                    height: "100%",
+                    fontSize: "1rem",
                   }}
                 />
-                <label className="form-check-label fs-6" htmlFor={`col-${col}`}>
-                  {col}
-                </label>
-              </div>
-            </li>
-          ))}
-        </ul>
-      </div>
+                <div
+                  className="input-group-text bg-white"
+                  style={{
+                    border: "1.5px solid #1A2744",
+                    borderLeft: "none",
+                    borderRadius: "0 8px 8px 0",
+                    height: "100%",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    cursor: "pointer",
+                  }}
+                  onClick={() => {
+                    // Focus input when calendar icon is clicked
+                    dateRef.current?.showPicker?.(); // modern browsers
+                    dateRef.current?.focus();
+                  }}
+                >
 
-      {/* Filters Dropdown */}
-      <div className="dropdown">
-        <button
-          className="btn btn-sm fw-bold d-flex align-items-center"
-          type="button"
-          aria-expanded={showFilters ? "true" : "false"}
-          onClick={() => {
-            setShowFilters((v) => !v);
-            setShowColumns(false);
-          }}
-          style={{
-            minWidth: "90px",
-            border: "1.5px solid #1976d2",
-            background: showFilters ? "#1976d2" : "#fff",
-            color: showFilters ? "#fff" : "#1976d2",
-            boxShadow: showFilters ? "0 0 0 3px #eaf2fd" : "",
-          }}
-        >
-          <BsFilter className="me-1" /> Filters{" "}
-          <BsChevronDown className="ms-1" />
-        </button>
-        <div
-          className="dropdown-menu p-3 border-0 shadow-sm"
-          style={{
-            minWidth: "260px",
-            maxWidth: "320px",
-            display: showFilters ? "block" : "none",
-          }}
-        >
-          <div className="mb-2 fw-bold fs-6">Firm user</div>
-          <div className="input-group input-group-sm mb-3">
-            <input
-              type="text"
-              className="form-control"
-              value="john smith (me)"
-              readOnly
-            />
-            <button
-              className="btn btn-outline-secondary"
-              tabIndex={-1}
-              type="button"
+                </div>
+              </div>
+
+              <span className="fw-bold d-none d-md-inline">-</span>
+              <div
+                className="input-group input-group-sm"
+                style={{
+                  minWidth: "180px",
+                  height: "40px",
+                }}
+              >
+                <input
+                  type="date"
+                  className="form-control"
+                  value={date}
+                  onChange={e => setDate(e.target.value)}
+                  style={{
+                    border: "1.5px solid #1A2744",
+                    borderRight: "none",
+                    borderRadius: "8px 0 0 8px",
+                    height: "100%",
+                    fontSize: "1rem",
+                  }}
+                />
+                <span
+                  className="input-group-text bg-white"
+                  onClick={() => {
+                    // Focus input on icon click
+                    document.getElementById("dateInput").showPicker?.();
+                  }}
+                  style={{
+                    border: "1.5px solid #1A2744",
+                    borderLeft: "none",
+                    borderRadius: "0 8px 8px 0",
+                    height: "100%",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    cursor: "pointer",
+                  }}
+                >
+
+                </span>
+              </div>
+
+            </div>
+
+            {/* Pagination Arrows */}
+            <div className="d-flex gap-2">
+              <button className="btn btn-light btn-sm border px-2">
+                <BsChevronLeft />
+              </button>
+              <button className="btn btn-light btn-sm border px-2">
+                <BsChevronRight />
+              </button>
+            </div>
+
+            {/* Today Dropdown */}
+            <select
+              className="form-select form-select-sm"
+              style={{ minWidth: "110px" }}
             >
-              ×
-            </button>
-          </div>
-          <div className="mb-2 fw-bold fs-6">Invoice status</div>
-          <select className="form-select form-select-sm mb-3">
-            <option>Select an option</option>
-          </select>
-          <div className="mb-2 fw-bold fs-6">Matter</div>
-          <div className="input-group input-group-sm mb-3">
+              <option>Today</option>
+              <option>This Week</option>
+              <option>This Month</option>
+              <option>This Year</option>
+            </select>
+
+            {/* Search */}
             <input
               type="text"
-              className="form-control"
-              placeholder="Find a matter"
+              className="form-control mt-4"
+              placeholder="Filter by keyword"
+              style={{ minWidth: "150px" }}
             />
-            <button
-              className="btn btn-outline-secondary dropdown-toggle"
-              type="button"
-              tabIndex={-1}
-            ></button>
-          </div>
-          <div className="mb-2 fw-bold fs-6">Expense attachments</div>
-          <select className="form-select form-select-sm mb-3">
-            <option>Select an option</option>
-          </select>
-          <div className="mb-2 fw-bold fs-6">Time entry category</div>
-          <div className="input-group input-group-sm mb-3">
-            <input
-              type="text"
-              className="form-control"
-              placeholder="Find a time entry category"
-            />
-            <button
-              className="btn btn-outline-secondary dropdown-toggle"
-              type="button"
-              tabIndex={-1}
-            ></button>
-          </div>
-          <div className="mb-2 fw-bold fs-6">Expense category</div>
-          <div className="input-group input-group-sm mb-3">
-            <input
-              type="text"
-              className="form-control"
-              placeholder="Find an expense category"
-            />
-            <button
-              className="btn btn-outline-secondary dropdown-toggle"
-              type="button"
-              tabIndex={-1}
-            ></button>
-          </div>
-          <div className="d-flex gap-2 mt-3">
-            <button className="btn btn-custom btn-sm flex-grow-1">
-              Apply filters
-            </button>
-            <button className="btn btn-outline-secondary btn-sm flex-grow-1">
-              Clear filters
-            </button>
+
+            {/* Columns Dropdown */}
+            <div className="dropdown">
+              <button
+                className="btn btn-sm fw-bold d-flex align-items-center border"
+                type="button"
+                aria-expanded={showColumns ? "true" : "false"}
+                onClick={() => {
+                  setShowColumns((v) => !v);
+                  setShowFilters(false);
+                }}
+                style={{ minWidth: "90px" }}
+              >
+                Columns <BsChevronDown className="ms-1" />
+              </button>
+              <ul
+                className="dropdown-menu p-3 border-0 shadow-sm"
+                style={{
+                  minWidth: "220px",
+                  maxHeight: "340px",
+                  overflowY: "auto",
+                  display: showColumns ? "block" : "none",
+                }}
+              >
+                <li className="mb-2 fw-bold fs-6">Visible columns</li>
+                {columnsList.map((col) => (
+                  <li key={col} className="mb-1">
+                    <div className="form-check">
+                      <input
+                        className="form-check-input"
+                        type="checkbox"
+                        checked={visibleColumns.includes(col)}
+                        id={`col-${col}`}
+                        onChange={() => toggleColumn(col)}
+                        style={{
+                          borderColor: "#1976d2",
+                          backgroundColor: visibleColumns.includes(col)
+                            ? "#1976d2"
+                            : "#fff",
+                        }}
+                      />
+                      <label className="form-check-label fs-6" htmlFor={`col-${col}`}>
+                        {col}
+                      </label>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Filters Dropdown */}
+            <div className="dropdown">
+              <button
+                className="btn btn-sm fw-bold d-flex align-items-center"
+                type="button"
+                aria-expanded={showFilters ? "true" : "false"}
+                onClick={() => {
+                  setShowFilters((v) => !v);
+                  setShowColumns(false);
+                }}
+                style={{
+                  minWidth: "90px",
+                  border: "1.5px solid #1976d2",
+                  background: showFilters ? "#1976d2" : "#fff",
+                  color: showFilters ? "#fff" : "#1976d2",
+                  boxShadow: showFilters ? "0 0 0 3px #eaf2fd" : "",
+                }}
+              >
+                <BsFilter className="me-1" /> Filters{" "}
+                <BsChevronDown className="ms-1" />
+              </button>
+              <div
+                className="dropdown-menu p-3 border-0 shadow-sm"
+                style={{
+                  minWidth: "260px",
+                  maxWidth: "320px",
+                  display: showFilters ? "block" : "none",
+                }}
+              >
+                <div className="mb-2 fw-bold fs-6">Firm user</div>
+                <div className="input-group input-group-sm mb-3">
+                  <input
+                    type="text"
+                    className="form-control"
+                    value="john smith (me)"
+                    readOnly
+                  />
+                  <button
+                    className="btn btn-outline-secondary"
+                    tabIndex={-1}
+                    type="button"
+                  >
+                    ×
+                  </button>
+                </div>
+                <div className="mb-2 fw-bold fs-6">Invoice status</div>
+                <select className="form-select form-select-sm mb-3">
+                  <option>Select an option</option>
+                </select>
+                <div className="mb-2 fw-bold fs-6">Matter</div>
+                <div className="input-group input-group-sm mb-3">
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder="Find a matter"
+                  />
+                  <button
+                    className="btn btn-outline-secondary dropdown-toggle"
+                    type="button"
+                    tabIndex={-1}
+                  ></button>
+                </div>
+                <div className="mb-2 fw-bold fs-6">Expense attachments</div>
+                <select className="form-select form-select-sm mb-3">
+                  <option>Select an option</option>
+                </select>
+                <div className="mb-2 fw-bold fs-6">Time entry category</div>
+                <div className="input-group input-group-sm mb-3">
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder="Find a time entry category"
+                  />
+                  <button
+                    className="btn btn-outline-secondary dropdown-toggle"
+                    type="button"
+                    tabIndex={-1}
+                  ></button>
+                </div>
+                <div className="mb-2 fw-bold fs-6">Expense category</div>
+                <div className="input-group input-group-sm mb-3">
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder="Find an expense category"
+                  />
+                  <button
+                    className="btn btn-outline-secondary dropdown-toggle"
+                    type="button"
+                    tabIndex={-1}
+                  ></button>
+                </div>
+                <div className="d-flex gap-2 mt-3">
+                  <button className="btn btn-custom btn-sm flex-grow-1">
+                    Apply filters
+                  </button>
+                  <button className="btn btn-outline-secondary btn-sm flex-grow-1">
+                    Clear filters
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</div>
 
       {/* Table */}
       <div

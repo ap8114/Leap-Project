@@ -201,7 +201,7 @@ const NewPerson = () => {
                 <h6 className="fw-bold mb-2 text-start">Email</h6>
                 {emails.map((email, idx) => (
                     <div className="row g-2 align-items-center mb-2" key={idx}>
-                        <div className="col-md-5">
+                        <div className="col-md-5 mt-4">
                             <Form.Control
                                 type="email"
                                 placeholder="Email address"
@@ -242,7 +242,7 @@ const NewPerson = () => {
                 <h6 className="fw-bold mb-2 text-start">Phone</h6>
                 {phones.map((phone, idx) => (
                     <div className="row g-2 align-items-center mb-2" key={idx}>
-                        <div className="col-md-5">
+                        <div className="col-md-5 mt-4">
                             <Form.Control
                                 type="text"
                                 placeholder="Phone number"
@@ -283,7 +283,7 @@ const NewPerson = () => {
                 <h6 className="fw-bold mb-2 text-start">Website</h6>
                 {websites.map((website, idx) => (
                     <div className="row g-2 align-items-center mb-2" key={idx}>
-                        <div className="col-md-6">
+                        <div className="col-md-6 mt-4">
                             <Form.Control
                                 type="text"
                                 placeholder="Web address"
@@ -324,7 +324,7 @@ const NewPerson = () => {
                 <h6 className="fw-bold mb-2 text-start">Address</h6>
                 {addresses.map((address, idx) => (
                     <div className="row g-2 align-items-center mb-2" key={idx}>
-                        <div className="col-md-4">
+                        <div className="col-md-4 mt-4">
                             <Form.Control
                                 type="text"
                                 placeholder="Street"
@@ -332,7 +332,7 @@ const NewPerson = () => {
                                 onChange={e => handleChange(setAddresses, addresses, idx, 'street', e.target.value)}
                             />
                         </div>
-                        <div className="col-md-2">
+                        <div className="col-md-2 mt-4">
                             <Form.Control
                                 type="text"
                                 placeholder="City"
@@ -340,7 +340,7 @@ const NewPerson = () => {
                                 onChange={e => handleChange(setAddresses, addresses, idx, 'city', e.target.value)}
                             />
                         </div>
-                        <div className="col-md-2">
+                        <div className="col-md-2 mt-4">
                             <Form.Control
                                 type="text"
                                 placeholder="State/Province"
@@ -348,7 +348,7 @@ const NewPerson = () => {
                                 onChange={e => handleChange(setAddresses, addresses, idx, 'state', e.target.value)}
                             />
                         </div>
-                        <div className="col-md-2">
+                        <div className="col-md-2 mt-4">
                             <Form.Control
                                 type="text"
                                 placeholder="Zip/Postal code"
@@ -356,7 +356,7 @@ const NewPerson = () => {
                                 onChange={e => handleChange(setAddresses, addresses, idx, 'zip', e.target.value)}
                             />
                         </div>
-                        <div className="col-md-1">
+                        <div className="col-md-2">
                             <Form.Select
                                 value={address.country}
                                 onChange={e => handleChange(setAddresses, addresses, idx, 'country', e.target.value)}
@@ -574,9 +574,9 @@ const NewPerson = () => {
                 <div className="d-flex flex-wrap gap-2 justify-content-end mt-3 bg-white pt-3 pb-2 sticky-bottom" style={{ zIndex: 10 }}>
                     <Button variant="custom" className="px-4 py-2 fw-bold" style={{ borderRadius: 8 }}>Save contact</Button>
                     <Button variant="outline-custom" className="px-4 py-2 fw-bold" style={{ borderRadius: 8 }}>Save and create new matter</Button>
-                    <Link to="/activity">
+                 
                     <Button variant="secondary" className="px-4 py-2 fw-bold" style={{ borderRadius: 8 }}>Cancel</Button>
-                    </Link>
+                   
                 </div>
             </Form>
 
