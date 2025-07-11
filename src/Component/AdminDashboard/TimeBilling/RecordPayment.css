@@ -1,0 +1,114 @@
+.record-payment-container {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  color: #333;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.record-payment-container h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.record-payment-container h2 {
+  font-size: 18px;
+  margin-top: 25px;
+  margin-bottom: 15px;
+}
+
+.form-section {
+  margin-bottom: 20px;
+}
+
+.form-row {
+  margin-bottom: 15px;
+}
+
+.record-payment-container label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.required:after {
+  content: " *";
+  color: red;
+}
+
+.record-payment-container input[type="text"],
+.record-payment-container input[type="date"],
+.record-payment-container select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.divider {
+  border-top: 1px solid #eee;
+  margin: 20px 0;
+}
+
+.payment-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+.payment-table, .payment-table th, .payment-table td {
+  border: 1px solid #ddd;
+}
+
+.payment-table th, .payment-table td {
+  padding: 10px;
+  text-align: left;
+}
+
+.summary-table {
+  width: 50%;
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+
+.summary-table, .summary-table th, .summary-table td {
+  border: 1px solid #ddd;
+}
+
+.summary-table th, .summary-table td {
+  padding: 10px;
+  text-align: left;
+}
+
+.button-container {
+  margin-top: 30px;
+}
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.btn-primary {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.btn-secondary {
+  background-color: #f1f1f1;
+  color: #333;
+  margin-right: 10px;
+}
+
+.btn-primary:hover {
+  background-color: #45a049;
+}
+
+.btn-secondary:hover {
+  background-color: #ddd;
+}

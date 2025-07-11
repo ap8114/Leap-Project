@@ -240,7 +240,7 @@ select.form-input {
   height: 95px;
   position: fixed;
   z-index: 5;
-  background-color: #ccf8db;
+  background-color: #e5e7eb;
   width: 100%;
   /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
 }
@@ -1072,4 +1072,32 @@ margin-top: auto;
 .custom-hover:hover {
   background-color: #f76b1c !important;
   color: white !important;
+}
+
+
+/* Custom styles for mobile sidebar  communication page*/
+@media (max-width: 991.98px) {
+  .ms-250 {
+    margin-left: 250px;
+  }
+  
+  .position-fixed {
+    position: fixed !important;
+  }
+  
+  .z-2 {
+    z-index: 1020;
+  }
+  
+  .z-3 {
+    z-index: 500;
+  }
+}
+
+.hover-bg-light:hover {
+  background-color: rgba(0, 0, 0, 0.05) !important;
+}
+
+.cursor-pointer {
+  cursor: pointer;
 }

@@ -228,3 +228,31 @@ background: linear-gradient(180deg, #1a2640 60%, #24355e 100%);
   border-radius: 6px;
 }
 
+
+/* new css for sidebar */
+
+.resource-icon {
+  background-color: #f75c3c;
+  color: white;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.resource-icon i {
+  color: white;
+}
+
+.resource-icon:hover {
+  background-color: white;
+  color: #f75c3c;
+}
+
+.resource-icon:hover i {
+  color: #f75c3c;
+}

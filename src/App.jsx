@@ -9,14 +9,13 @@ import ForgotPassword from "./Auth/ForgotPassword";
 
 import { useState } from "react";
 import Dashboard from "./Component/AdminDashboard/Dashboard/Dashboard";
-import Matter from "./Component/AdminDashboard/Matters/Matter";
 
 import Document from "./Component/AdminDashboard/Documents/Document";
-import Calendar from "./Component/AdminDashboard/Calendar/Calendar";
+
 import Timebilling from "./Component/AdminDashboard/TimeBilling/Timebilling";
 
 import Client from "./Component/AdminDashboard/Clientcrm/Client";
-import TasksWorkflow from "./Component/AdminDashboard/TasksWorkflow/TasksWorkflow";
+import TasksWorkflow from "./Component/AdminDashboard/Tasks/TasksWorkflow";
 import Settings from "./Component/AdminDashboard/Setting/Settings";
 import ReportsAnalytics from "./Component/AdminDashboard/ReportsAnalytics/ReportsAnalytics";
 import AdminPage from "./Component/AdminDashboard/Admin/AdminPage";
@@ -34,12 +33,22 @@ import PersonalInjury from "./Component/Website/Pages/Solutions/PersonalInjury";
 import ContactUs from "./Component/Website/ContactUs/ContactUs";
 import Company from "./Component/Website/Pages/Company/Company";
 import Resources from "./Component/Website/Pages/Resources/Resources";
-import { BiLogIn } from "react-icons/bi";
-import Activity from "./Component/AdminDashboard/Activity/Activity";
-import Communications from "./Component/AdminDashboard/Communications/Communications";
+
+
+
 import Account from "./Component/AdminDashboard/Accounts/Account";
-import Contact from "./Component/AdminDashboard/Contact/Contact";
-import TermsOfService from "./Component/Website/HomePages/TermsOfService";
+
+import RecordPayment from "./Component/AdminDashboard/TimeBilling/RecordPayment";
+import NewBills from "./Component/AdminDashboard/TimeBilling/NewBlls";
+import ResourceCenter from "./Component/AdminDashboard/ResourceCenter/ResourceCenter";
+import CategoriesTemplate from "./Component/AdminDashboard/Documents/CategoriesTemplate";
+import ActivitiesTable from "./Component/AdminDashboard/Activity/ActivitiesTable";
+import ContactPage from "./Component/AdminDashboard/Contact/ContactPage";
+import NewPerson from "./Component/AdminDashboard/Contact/NewPerson";
+import CalendarUI from "./Component/AdminDashboard/Calendar/CalendarView";
+
+import Communication from "./Component/AdminDashboard/Communications/Communication";
+import MattersDashboard from "./Component/AdminDashboard/Matters/MatterDashboard";
 
 
 function App() {
@@ -75,6 +84,7 @@ function App() {
     // "/thelawsociety",
     "/company",
     "/resources",
+    "/resourcecenter",
   ];
   const isNoLayoutPage = noLayoutRoutes.includes(location.pathname);
   // Hide layout (navbar/sidebar) only on login page
@@ -97,7 +107,10 @@ function App() {
     location.pathname === "/personalinjury" ||
     location.pathname === "/contactus" ||
     location.pathname === "/company" ||
-    location.pathname === "/resources";
+    location.pathname === "/resources" ||
+    location.pathname === "/recordpayment";
+
+  location.pathname === "/resourcecenter";
 
   //  location.pathname === "/thelawsociety";
 
@@ -144,6 +157,7 @@ function App() {
               {/* <Route path="/thelawsociety" element={<TheLawSociety />} /> */}
               <Route path="/company" element={< Company />} />
               <Route path="/resources" element={< Resources />} />
+              <Route path="/resourcecenter" element={<ResourceCenter />} />
 
               {/* Website Routes Ends */}
 
@@ -159,18 +173,27 @@ function App() {
               <Routes>
                 {/* AdminDashboard */}
                 <Route path="/dashboard" element={<Dashboard />} />
-                <Route path="/matter" element={<Matter />} />
+                <Route path="/recordpayment" element={<RecordPayment />} />
+                 <Route path="/newbills" element={<NewBills />} />
+                 {/* matter routing */}
+                <Route path="/matter" element={<MattersDashboard />} />
                 <Route path="/document" element={<Document />} />
+                <Route path="/categories" element={<CategoriesTemplate />} />
                 <Route path="/Client" element={<Client />} />
-                <Route path="/calendar" element={<Calendar />} />
+                {/* calendar routing  */}
+                <Route path="/calendar" element={<CalendarUI />} />
                 <Route path="/timebilling" element={<Timebilling />} />
                 <Route path="/tasksworkflow" element={<TasksWorkflow />} />
                 <Route path="/setting" element={<Settings />} />
-                <Route path="/activity" element={<Activity />} />
-                <Route path="/communications" element={<Communications />} />
+                <Route path="/activity" element={<ActivitiesTable />} />
+                {/* communication routing */}
+                <Route path="/communications" element={<Communication />} />
                 <Route path="/accounts" element={<Account />} />
-                <Route path="/contact" element={<Contact />} />
-                <Route path="/termsservices" element={<TermsOfService />} />
+
+
+                { /* contact routing  */}
+                <Route path="/contact" element={<ContactPage />} />
+                <Route path="/newperson" element={< NewPerson />} />
 
 
                 <Route

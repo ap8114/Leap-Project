@@ -76,14 +76,200 @@ const Conveyancing = () => {
           </div>
         </section>
 
-        {/* Feature Highlights */}
-        <section className="py-5 bg-white">
-          <div className="container">
-            <div className="text-center mb-5">
-              <span className="badge  text-white mb-3" style={{ backgroundColor: '#f76b1c', color: 'white' }}
-              >Features</span>
-              <h2 className="display-5 fw-bold mb-3 text-custom">
-                Complete property transaction software
+      {/* Transaction Tracking Dashboard */}
+      <section className="py-5 bg-light">
+        <div className="container">
+          <div className="text-center mb-5">
+            <span className="badge text-white mb-3" style={{backgroundColor: '#f76b1c' , color: 'white'}}
+>Dashboard</span>
+            <h2 className="display-5 fw-bold mb-3 text-custom">
+              Comprehensive Dashboard Overview
+            </h2>
+            <p className="lead text-muted mx-auto" style={{maxWidth: '700px'}}>
+              Track every aspect of your property transactions with our intuitive and powerful dashboard.
+            </p>
+          </div>
+
+          <div className="row align-items-center g-5">
+            <div className="col-lg-6">
+              <img 
+                className="img-fluid rounded shadow" 
+                src="https://readdy.ai/api/search-image?query=Professional%20conveyancing%20software%20dashboard%20showing%20property%20transaction%20details%2C%20progress%20tracking%2C%20and%20document%20status.%20Clean%20interface%20with%20blue%20and%20orange%20color%20scheme%20on%20a%20desktop%20screen&width=700&height=500&seq=5&orientation=landscape" 
+                alt="Transaction Dashboard" 
+              />
+            </div>
+            <div className="col-lg-6">
+              <h3 className="h2 fw-bold text-custom mb-4">Powerful transaction tracking capabilities</h3>
+              <ul className="list-unstyled">
+                <li className="d-flex mb-4">
+                  <div className="flex-shrink-0">
+                    <div className="d-flex align-items-center justify-content-center rounded-circle  text-white" style={{backgroundColor: '#f76b1c' , color: 'white' , width: '40px', height: '40px'}}>
+                      <i className="fas fa-check"></i>
+                    </div>
+                  </div>
+                  <div className="ms-4">
+                    <h4 className="h5 fw-bold text-custom">Visual Progress Tracking</h4>
+                    <p className="text-muted mb-0">Interactive progress bars show exactly where each transaction stands at a glance.</p>
+                  </div>
+                </li>
+                <li className="d-flex mb-4">
+                  <div className="flex-shrink-0">
+                    <div className="d-flex align-items-center justify-content-center rounded-circle text-white" style={{backgroundColor: '#f76b1c' , color: 'white', width: '40px', height: '40px', width: '40px', height: '40px'}} >
+                      <i className="fas fa-check"></i>
+                    </div>
+                  </div>
+                  <div className="ms-4">
+                    <h4 className="h5 fw-bold text-custom">Milestone Tracking</h4>
+                    <p className="text-muted mb-0">Clear timeline visualization of completed and upcoming transaction milestones.</p>
+                  </div>
+                </li>
+                <li className="d-flex mb-4">
+                  <div className="flex-shrink-0">
+                    <div className="d-flex align-items-center justify-content-center rounded-circle text-white" style={{backgroundColor: '#f76b1c' , color: 'white' , width: '40px', height: '40px'}} >
+                      <i className="fas fa-check"></i>
+                    </div>
+                  </div>
+                  <div className="ms-4">
+                    <h4 className="h5 fw-bold text-custom">Document Status Indicators</h4>
+                    <p className="text-muted mb-0">Color-coded indicators show which documents are pending, received, or require attention.</p>
+                  </div>
+                </li>
+                <li className="d-flex">
+                  <div className="flex-shrink-0">
+                    <div className="d-flex align-items-center justify-content-center rounded-circle  text-white" style={{backgroundColor: '#f76b1c' , color: 'white', width: '40px', height: '40px'}} >
+                      <i className="fas fa-check"></i>
+                    </div>
+                  </div>
+                  <div className="ms-4">
+                    <h4 className="h5 fw-bold text-custom">Client Communication Logs</h4>
+                    <p className="text-muted mb-0">Track all client interactions and communications in one centralized location.</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Document Management Section */}
+      <section className="py-5 bg-white">
+        <div className="container">
+          <div className="text-center mb-5">
+            <span className="badge text-white mb-3" style={{backgroundColor: '#f76b1c' , color: 'white'}}
+>Documents</span>
+            <h2 className="display-5 fw-bold mb-3 text-custom">
+              Streamlined Document Management
+            </h2>
+            <p className="lead text-muted mx-auto" style={{maxWidth: '700px'}}>
+              Securely manage all property transaction documents in one centralized system.
+            </p>
+          </div>
+
+          <div className="row align-items-center g-5">
+            <div className="col-lg-6 order-lg-2">
+              <img 
+                className="img-fluid rounded shadow" 
+                src="https://readdy.ai/api/search-image?query=Document%20management%20interface%20showing%20property%20transaction%20documents%2C%20secure%20file%20storage%2C%20and%20document%20templates.%20Professional%20UI%20with%20folder%20structure%20and%20document%20preview%20functionality%20on%20a%20clean%20background&width=700&height=500&seq=6&orientation=landscape" 
+                alt="Document Management System" 
+              />
+            </div>
+            <div className="col-lg-6 order-lg-1">
+              <h3 className="h2 fw-bold text-custom mb-4">Secure document handling features</h3>
+              <ul className="list-unstyled">
+                <li className="d-flex mb-4">
+                  <div className="flex-shrink-0">
+                    <div className="d-flex align-items-center justify-content-center rounded-circle text-white" style={{backgroundColor: '#f76b1c' , color: 'white', width: '40px', height: '40px'}} >
+                      <i className="fas fa-shield-alt"></i>
+                    </div>
+                  </div>
+                  <div className="ms-4">
+                    <h4 className="h5 fw-bold text-custom">Bank-Level Security</h4>
+                    <p className="text-muted mb-0">256-bit encryption ensures all sensitive property documents remain protected.</p>
+                  </div>
+                </li>
+                <li className="d-flex mb-4">
+                  <div className="flex-shrink-0">
+                    <div className="d-flex align-items-center justify-content-center rounded-circle text-white" style={{backgroundColor: '#f76b1c' , color: 'white' , width: '40px', height: '40px'}}>
+                      <i className="fas fa-signature"></i>
+                    </div>
+                  </div>
+                  <div className="ms-4">
+                    <h4 className="h5 fw-bold text-custom">Electronic Signatures</h4>
+                    <p className="text-muted mb-0">Legally binding e-signature capabilities for faster document execution.</p>
+                  </div>
+                </li>
+                <li className="d-flex mb-4">
+                  <div className="flex-shrink-0">
+                    <div className="d-flex align-items-center justify-content-center rounded-circletext-white" style={{backgroundColor: '#f76b1c' , color: 'white', width: '40px', height: '40px'}} >
+                      <i className="fas fa-file-alt"></i>
+                    </div>
+                  </div>
+                  <div className="ms-4">
+                    <h4 className="h5 fw-bold text-custom">Document Templates</h4>
+                    <p className="text-muted mb-0">Customizable templates for all standard conveyancing documents.</p>
+                  </div>
+                </li>
+                <li className="d-flex">
+                  <div className="flex-shrink-0">
+                    <div className="d-flex align-items-center justify-content-center rounded-circle text-white" style={{backgroundColor: '#f76b1c' , color: 'white', width: '40px', height: '40px'}}>
+                      <i className="fas fa-history"></i>
+                    </div>
+                  </div>
+                  <div className="ms-4">
+                    <h4 className="h5 fw-bold text-custom">Version Control</h4>
+                    <p className="text-muted mb-0">Track document changes with comprehensive version history and audit trails.</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-5 bg-light">
+        <div className="container">
+          <div className="text-center mb-5">
+            <span className="badge text-white mb-3" style={{backgroundColor: '#f76b1c' , color: 'white'}}
+>FAQ</span>
+            <h2 className="display-5 fw-bold mb-3 text-custom">
+              Frequently Asked Questions
+            </h2>
+            <p className="lead text-muted mx-auto" style={{maxWidth: '700px'}}>
+              Find answers to common questions about our conveyancing software.
+            </p>
+          </div>
+
+         <div className="space-y-4" id="faqAccordion">
+  {faqs.map((faq, index) => (
+    <div className="border rounded shadow-sm" key={index}>
+      
+        <button
+          className="w-full text-left px-4 py-3 font-medium bg-gray-100 hover:bg-gray-200 transition"
+          onClick={() => handleFaqToggle(index)}
+        >
+          {faq.question}
+        </button>
+      
+      {expandedFaq === index && (
+        <div className="px-4 py-3 text-gray-700 bg-white border-t">
+          {faq.answer}
+        </div>
+      )}
+    </div>
+  ))}
+</div>
+
+        </div>
+      </section>
+
+      {/* Contact Form Section */}
+      <section className="py-5 bg-custom text-dark">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-6 mb-5 mb-lg-0">
+              <h2 className="display-5 fw-bold mb-4">
+                Make property transactions seamless
               </h2>
               <p className="lead text-muted mx-auto" style={{ maxWidth: '700px' }}>
                 Our comprehensive solution handles every aspect of your conveyancing workflow, from client onboarding to completion.
@@ -160,6 +346,7 @@ const Conveyancing = () => {
                 </div>
               </div>
             </div>
+          </div>
           </div>
         </section>
 
