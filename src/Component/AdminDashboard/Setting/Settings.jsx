@@ -76,19 +76,19 @@ const labelToRoute = {
 
 const Settings = () => (
     <div style={{ background: '#f7f8fa', minHeight: '100vh', width: '100vw' }}>
-        <Container fluid className="px-0" style={{ maxWidth: '100%' }}>
+        <div  className="p-3" style={{ maxWidth: '100%' }}>
             {/* Top bar */}
             <div
-                className="border"
-                style={{ background: '#f7f8fa', borderColor: '#d3dbe3', borderTop: '1px solid #d3dbe3' }}
+                
+               
             >
                 <div className="ps-4 py-3 text-start">
-                    <span style={{ color: '#2074d4', fontWeight: 500, fontSize: 24 }}>Settings</span>
+                   <h3 className="fw-bold mb-2 ">Settings</h3>
                 </div>
             </div>
 
             {/* Tab headings */}
-            <div className="border" style={{ background: '#fff', borderBottom: '1px solid #d3dbe3' }}>
+            <div className="mb-1" style={{ background: '#fff', }}>
                 {/* Section headers row */}
                 <div className="border " style={{ background: '#fff', borderColor: '#d3dbe3', borderWidth: '0 0 1px 0', borderStyle: 'solid' }}>
                     <Row className="text-start" style={{ margin: 0 }}>
@@ -137,7 +137,7 @@ const Settings = () => (
                 ))}
             </Container>
 
-        </Container>
+        </div>
 
         {/* Responsive Container */}
         <div className="container-fluid px-3 py-3 text-start">

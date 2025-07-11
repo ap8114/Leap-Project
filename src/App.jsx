@@ -52,6 +52,7 @@ import MattersDashboard from "./Component/AdminDashboard/Matters/MatterDashboard
 import PricingPlans from "./Component/AdminDashboard/Communications/PricingPlans";
 import TaskPage from "./Component/AdminDashboard/Tasks/TaskPage";
 import TaskFeeds from "./Component/AdminDashboard/Tasks/TaskFeeds (1)";
+import NewCalendar from "./Component/AdminDashboard/Calendar/NewCalender";
 
 
 
@@ -187,6 +188,7 @@ function App() {
                 {/* calendar routing  */}
                 <Route path="/calendar" element={<CalendarUI />} />
                 <Route path="/timebilling" element={<Timebilling />} />
+                <Route path="/newcalender" element={<NewCalendar />} />
 
                 {/* tasks routing  */}
                 <Route path="/tasks" element={<TaskPage />} />
