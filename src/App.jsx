@@ -7,7 +7,7 @@ import Login from "./Auth/Login";
 import Signup from "./Auth/Signup";
 import ForgotPassword from "./Auth/ForgotPassword";
 
-import { useState } from "react";
+import { useState,useEffect} from "react";
 import Dashboard from "./Component/AdminDashboard/Dashboard/Dashboard";
 
 import Document from "./Component/AdminDashboard/Documents/Document";
@@ -58,9 +58,23 @@ import NewCalendar from "./Component/AdminDashboard/Calendar/NewCalender";
 
 function App() {
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
+
+ 
+
   const menusidebarcollaps = () => {
     setIsSidebarCollapsed(true);
   };
+
+   useEffect(() => {
+      const handleResize = () => {
+        setIsMobile(window.innerWidth < 768);
+      };
+      handleResize();
+      window.addEventListener("resize", handleResize);
+      return () => window.removeEventListener("resize", handleResize);
+    }, []);
+  
 
   const menuItemClick = () => {
     setIsSidebarCollapsed((prev) => !prev);

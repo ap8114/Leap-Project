@@ -170,6 +170,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import logoFastTrack from "../assets/logofasttrack.png";
+import { RiMenuUnfold2Line } from "react-icons/ri";
 import "./Navbar.css";
 
 const createOptions = [
@@ -187,18 +188,21 @@ const createOptions = [
   "Note",
 ];
 
-const Navbar = () => {
+const Navbar = ({ toggleSidebar }) => {
   const navigate = useNavigate();
 
   const [timer, setTimer] = useState(0);
   const [isTiming, setIsTiming] = useState(false);
   const [showTimekeeper, setShowTimekeeper] = useState(false);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
+const [activeDropdown, setActiveDropdown] = useState(null); // can be 'recents', 'notifications', etc.
 
   const [showCreate, setShowCreate] = useState(false);
   const [showRecents, setShowRecents] = useState(false);
   const [showNotifications, setShowNotifications] = useState(false);
   const [showProfileDropdown, setShowProfileDropdown] = useState(false);
+
+
 
   const timerInterval = useRef(null);
   const notificationRef = useRef(null);
@@ -206,6 +210,41 @@ const Navbar = () => {
   const recentsRef = useRef(null);
   const profileRef = useRef(null);
   const mobileMenuRef = useRef(null);
+
+  useEffect(() => {
+  const handleOutsideClick = () => {
+    setActiveDropdown(null);
+  };
+  document.addEventListener('click', handleOutsideClick);
+  return () => {
+    document.removeEventListener('click', handleOutsideClick);
+  };
+}, []);
+
+// const toggleDropdown = (e, dropdownName) => {
+//   e.stopPropagation();
+//   e.preventDefault();
+
+//   // Close all dropdowns first
+//   const allDropdownsClosed = {
+//     create: false,
+//     recents: false,
+//     notifications: false,
+//     profile: false
+//   };
+
+//   // Only open the clicked dropdown if it wasn't already open
+//   setShowCreate(dropdownName === 'create' ? !showCreate : false);
+//   setShowRecents(dropdownName === 'recents' ? !showRecents : false);
+//   setShowNotifications(dropdownName === 'notifications' ? !showNotifications : false);
+//   setShowProfileDropdown(dropdownName === 'profile' ? !showProfileDropdown : false);
+// };
+
+const toggleDropdown = (e, dropdownName) => {
+  e.stopPropagation();
+  e.preventDefault();
+  setActiveDropdown(prev => (prev === dropdownName ? null : dropdownName));
+};
 
   useEffect(() => {
     if (isTiming) {
@@ -233,7 +272,7 @@ const Navbar = () => {
         setShowProfileDropdown(false);
       }
       if (
-        mobileMenuRef.current && 
+        mobileMenuRef.current &&
         !mobileMenuRef.current.contains(e.target) &&
         !e.target.classList.contains('navbar-toggler')
       ) {
@@ -260,57 +299,19 @@ const Navbar = () => {
   };
 
   const toggleMobileMenu = (e) => {
-    e.stopPropagation();
-    setShowMobileMenu(!showMobileMenu);
+ 
+   
+    setShowMobileMenu((prev) => (!prev));
   };
 
-  const toggleDropdown = (e, dropdownName) => {
-    e.stopPropagation();
-    e.preventDefault();
-    
-    switch (dropdownName) {
-      case 'create':
-        setShowCreate(prev => !prev);
-        setShowRecents(false);
-        setShowNotifications(false);
-        setShowProfileDropdown(false);
-        break;
-      case 'recents':
-        setShowRecents(prev => !prev);
-        setShowCreate(false);
-        setShowNotifications(false);
-        setShowProfileDropdown(false);
-        break;
-      case 'notifications':
-        setShowNotifications(prev => !prev);
-        setShowCreate(false);
-        setShowRecents(false);
-        setShowProfileDropdown(false);
-        break;
-      case 'profile':
-        setShowProfileDropdown(prev => !prev);
-        setShowCreate(false);
-        setShowRecents(false);
-        setShowNotifications(false);
-        break;
-      default:
-        break;
-    }
-  };
+ 
 
   return (
     <nav className="navbar custom-navbar p-0 shadow-sm position-sticky top-0 w-100 bg-white">
       <div className="container-fluid d-flex align-items-center px-3 py-2">
         {/* Logo and Mobile Menu Button */}
         <div className="d-flex align-items-center me-4">
-          <button 
-            className="navbar-toggler me-2 d-lg-none" 
-            type="button"
-            onClick={toggleMobileMenu}
-            style={{ border: 'none' }}
-          >
-            <i className="fas fa-bars"></i>
-          </button>
+
           <img
             src={logoFastTrack}
             alt="Logo"
@@ -322,11 +323,29 @@ const Navbar = () => {
               objectFit: "contain"
             }}
           />
+
+          <div
+            className="nav-toggle-icon ms-2"
+            onClick={toggleSidebar}
+            style={{ cursor: "pointer" }}
+          >
+            <RiMenuUnfold2Line size={28} />
+          </div>
+          <button
+
+
+            className="navbar-toggler me-2 d-lg-none"
+            type="button"
+            onClick={toggleMobileMenu}
+            style={{ border: 'none', marginLeft: '130px' }}
+          >
+            <i className="fas fa-bars"></i>
+          </button>
         </div>
 
         {/* Mobile Menu */}
         {showMobileMenu && (
-          <div 
+          <div
             ref={mobileMenuRef}
             className="mobile-menu d-lg-none position-absolute top-100 start-0 bg-white w-100 p-3 shadow"
             style={{ zIndex: 1000 }}
@@ -355,7 +374,7 @@ const Navbar = () => {
                 Recents
                 <i className={`fas fa-chevron-${showRecents ? 'up' : 'down'}`}></i>
               </button>
-              {showRecents && (
+              {activeDropdown === "recents" && (
                 <div className="mt-2 p-2 border rounded">
                   <div className="text-center py-2 text-muted">
                     You don't have any recent items
@@ -381,7 +400,7 @@ const Navbar = () => {
               </button>
             </div>
 
-            <div className="mb-3">
+            {/* <div className="mb-3">
               <button
                 className="btn btn-light w-100 d-flex align-items-center justify-content-between"
                 style={{
@@ -410,7 +429,7 @@ const Navbar = () => {
                   ))}
                 </div>
               )}
-            </div>
+            </div> */}
 
             <div className="mb-3">
               <button
@@ -424,7 +443,7 @@ const Navbar = () => {
               >
                 Notifications <i className="fa-regular fa-bell"></i>
               </button>
-              {showNotifications && (
+              {  activeDropdown === "notifications" && (
                 <div className="mt-2 p-2 border rounded">
                   <div className="fw-bold mb-2">Notifications</div>
                   <div className="text-muted">No new notifications.</div>
@@ -444,11 +463,11 @@ const Navbar = () => {
               >
                 Profile <i className="fa-solid fa-circle-user"></i>
               </button>
-              {showProfileDropdown && (
+              {activeDropdown === "profile"  && (
                 <div className="mt-2 p-2 border rounded">
-                  <Link 
-                    className="dropdown-item d-block py-2" 
-                    to="/profile" 
+                  <Link
+                    className="dropdown-item d-block py-2"
+                    to="/profile"
                     onClick={(e) => {
                       e.stopPropagation();
                       setShowProfileDropdown(false);
@@ -457,9 +476,9 @@ const Navbar = () => {
                   >
                     <i className="bi bi-person-circle me-2"></i> Profile
                   </Link>
-                  <Link 
-                    className="dropdown-item d-block py-2" 
-                    to="/settings" 
+                  <Link
+                    className="dropdown-item d-block py-2"
+                    to="/settings"
                     onClick={(e) => {
                       e.stopPropagation();
                       setShowProfileDropdown(false);
@@ -469,8 +488,8 @@ const Navbar = () => {
                     <i className="bi bi-gear me-2"></i> Settings
                   </Link>
                   <hr className="dropdown-divider my-2" />
-                  <button 
-                    className="dropdown-item d-block py-2 w-100 text-start" 
+                  <button
+                    className="dropdown-item d-block py-2 w-100 text-start"
                     onClick={(e) => {
                       e.stopPropagation();
                       handleLogout();
@@ -560,7 +579,7 @@ const Navbar = () => {
             </div>
 
             {/* Create New */}
-            <div className="dropdown" ref={createRef}>
+            {/* <div className="dropdown" ref={createRef}>
               <button
                 className="btn btn-light d-flex align-items-center justify-content-center"
                 style={{
@@ -590,7 +609,7 @@ const Navbar = () => {
                   ))}
                 </div>
               )}
-            </div>
+            </div> */}
 
             {/* Notifications */}
             <div className="position-relative" ref={notificationRef}>
@@ -635,8 +654,8 @@ const Navbar = () => {
               {showProfileDropdown && (
                 <ul className="dropdown-menu show dropdown-menu-end mt-2">
                   <li>
-                    <Link 
-                      className="dropdown-item" 
+                    <Link
+                      className="dropdown-item"
                       to="/profile"
                       onClick={(e) => {
                         e.stopPropagation();
@@ -647,8 +666,8 @@ const Navbar = () => {
                     </Link>
                   </li>
                   <li>
-                    <Link 
-                      className="dropdown-item" 
+                    <Link
+                      className="dropdown-item"
                       to="/settings"
                       onClick={(e) => {
                         e.stopPropagation();
@@ -662,8 +681,8 @@ const Navbar = () => {
                     <hr className="dropdown-divider" />
                   </li>
                   <li>
-                    <button 
-                      className="dropdown-item" 
+                    <button
+                      className="dropdown-item"
                       onClick={(e) => {
                         e.stopPropagation();
                         handleLogout();
