@@ -113,7 +113,7 @@ function App() {
     location.pathname === "/contactus" ||
     location.pathname === "/company" ||
     location.pathname === "/resources" ||
-    location.pathname === "/recordpayment";
+    location.pathname === "/recordpayment"||
 
   location.pathname === "/resourcecenter";
 
