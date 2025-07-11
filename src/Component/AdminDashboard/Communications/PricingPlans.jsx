@@ -60,7 +60,7 @@ const PricingPlans = () => {
               <a href="#">See full feature list</a>
             </Card.Body>
             <Card.Footer className="bg-white border-0">
-              <Button variant="primary" className="w-100">Select</Button>
+              <Button variant="custom" className="w-100">Select</Button>
             </Card.Footer>
           </Card>
         </Col>
@@ -81,7 +81,7 @@ const PricingPlans = () => {
               <a href="#">See full feature list</a>
             </Card.Body>
             <Card.Footer className="bg-white border-0">
-              <Button variant="primary" className="w-100">Select</Button>
+              <Button variant="custom" className="w-100">Select</Button>
             </Card.Footer>
           </Card>
         </Col>
@@ -103,7 +103,7 @@ const PricingPlans = () => {
               <a href="#">See full feature list</a>
             </Card.Body>
             <Card.Footer className="bg-white border-0">
-              <Button variant="primary" className="w-100">Select</Button>
+              <Button variant="custom" className="w-100">Select</Button>
             </Card.Footer>
           </Card>
         </Col>
@@ -125,7 +125,7 @@ const PricingPlans = () => {
               <a href="#">See full feature list</a>
             </Card.Body>
             <Card.Footer className="bg-white border-0">
-              <Button variant="primary" className="w-100">Contact Us</Button>
+              <Button variant="custom" className="w-100">Contact Us</Button>
             </Card.Footer>
           </Card>
         </Col>

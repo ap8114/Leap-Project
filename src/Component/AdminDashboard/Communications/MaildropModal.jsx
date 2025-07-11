@@ -26,7 +26,7 @@ const MaildropModal = ({ show, handleClose }) => {
         <Button variant="light">
           Download Vcard
         </Button>
-        <Button variant="primary">
+        <Button variant="custom">
           Copy email
         </Button>
       </Modal.Footer>

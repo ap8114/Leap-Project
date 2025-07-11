@@ -43,13 +43,13 @@ const ContentArea = ({ activeNavItem, activeTab = 'All' }) => {
     <div className="flex-grow-1 d-flex flex-column align-items-center justify-content-center">
       <div className="text-center" style={{ maxWidth: '500px' }}>
         <div className="mb-5">
-          <div className="mx-auto mb-4 rounded-circle bg-primary bg-opacity-10 d-flex align-items-center justify-content-center" style={{ width: '128px', height: '128px' }}>
-            <i className={`fas ${icon} text-primary fs-3`}></i>
+          <div className="mx-auto mb-4 rounded-circle bg-custom bg-opacity-10 d-flex align-items-center justify-content-center" style={{ width: '128px', height: '128px' }}>
+            <i className={`fas ${icon} text-custom fs-3`}></i>
           </div>
         </div>
         <h5 className="fw-semibold mb-3">{title}</h5>
         <p className="text-secondary mb-4">{description}</p>
-        <button className="btn btn-primary px-4 py-2" onClick={onClick}>
+        <button className="btn btn-custom px-4 py-2" onClick={onClick}>
           {buttonText}
         </button>
       </div>
@@ -65,7 +65,7 @@ const ContentArea = ({ activeNavItem, activeTab = 'All' }) => {
               <li key={tab} className="nav-item">
                 <button
                   onClick={() => {}}
-                  className={`nav-link ${activeTab === tab ? 'active text-primary border-primary' : 'text-secondary'}`}
+                  className={`nav-link ${activeTab === tab ? 'active text-custom border-custom' : 'text-secondary'}`}
                 >
                   {tab}
                 </button>
@@ -91,7 +91,7 @@ const ContentArea = ({ activeNavItem, activeTab = 'All' }) => {
               <li key={tab} className="nav-item">
                 <button
                   onClick={() => {}}
-                  className={`nav-link ${activeTab === tab ? 'active text-primary border-primary' : 'text-secondary'}`}
+                  className={`nav-link ${activeTab === tab ? 'active text-custom border-custom' : 'text-secondary'}`}
                 >
                   {tab}
                 </button>
@@ -117,7 +117,7 @@ const ContentArea = ({ activeNavItem, activeTab = 'All' }) => {
               <li key={tab} className="nav-item">
                 <button
                   onClick={() => {}}
-                  className={`nav-link ${activeTab === tab ? 'active text-primary border-primary' : 'text-secondary'}`}
+                  className={`nav-link ${activeTab === tab ? 'active text-custom border-custom' : 'text-secondary'}`}
                 >
                   {tab}
                 </button>
@@ -153,7 +153,7 @@ const ContentArea = ({ activeNavItem, activeTab = 'All' }) => {
               <li key={tab} className="nav-item">
                 <button
                   onClick={() => {}}
-                  className={`nav-link ${activeTab === tab ? 'active text-primary border-primary' : 'text-secondary'}`}
+                  className={`nav-link ${activeTab === tab ? 'active text-custom border-custom' : 'text-secondary'}`}
                 >
                   {tab}
                 </button>

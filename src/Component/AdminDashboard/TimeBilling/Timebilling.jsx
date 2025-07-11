@@ -26,6 +26,7 @@ const Timebilling = () => {
 
   return (
     <div className="container-fluid p-0">
+      <h3 className="fw-bold mb-2 mt-4 ms-3">Time Billing</h3>
       {/* Header Section */}
       <div className="timebilling-header p-3 p-md-4 bg-white">
         <div className="row align-items-center">

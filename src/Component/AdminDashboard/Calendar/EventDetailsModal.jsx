@@ -160,8 +160,8 @@ const EventDetailsPage = () => {
         {/* Footer Action Buttons */}
         <div className="d-flex justify-content-end mt-4">
           <Button variant="light" className="me-2 border">Cancel</Button>
-          <Button variant="outline-primary" className="me-2">Save and create another</Button>
-          <Button variant="primary">Save event</Button>
+          <Button variant="outline-custom" className="me-2">Save and create another</Button>
+          <Button variant="custom">Save event</Button>
         </div>
       </Container>
     </div>

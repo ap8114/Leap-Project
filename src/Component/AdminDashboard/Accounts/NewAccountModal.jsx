@@ -102,7 +102,7 @@ const NewAccountModal = ({ show, onHide }) => {
           </Form.Group>
 
           <div className="d-flex gap-2">
-            <button className="btn btn-primary">Create New Bank Account</button>
+            <button className="btn btn-custom">Create New Bank Account</button>
             <button className='btn btn-secondary text-dark' onClick={onHide}>Cancel</button>
           </div>
         </Form>

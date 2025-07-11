@@ -53,7 +53,7 @@ const OutstandingBalance = () => {
     setShowDueDateDropdown(false);
   };
 
-  const dateRangeOptions = ["All dates", "Last 7 days", "Last 30 days", "Last 90 days", "Custom range"];
+  const dateRangeOptions = ["All dates", "Last 7 days", "Last 30 days", "Last 90 days", "custom range"];
   const attorneyOptions = ["All attorneys", "John Smith", "Sarah Johnson", "Michael Brown", "Emily Davis"];
 
   return (
@@ -197,7 +197,7 @@ const OutstandingBalance = () => {
                   
                   <div className="d-flex justify-content-between px-3 py-2 border-top">
                     <Button 
-                      variant="outline-primary" 
+                      variant="outline-custom" 
                       size="sm"
                       onClick={() => setShowFiltersDropdown(false)}
                     >
@@ -271,7 +271,7 @@ const OutstandingBalance = () => {
                 >
                   <div className="fw-bold fs-5 mb-2">No clients with outstanding balance found.</div>
                   <div className="text-muted mb-4">Start billing your clients!</div>
-                  <Button variant="primary" size="lg">New bills</Button>
+                  <Button variant="custom" size="lg">New bills</Button>
                 </td>
               </tr>
             </tbody>
@@ -288,7 +288,7 @@ const OutstandingBalance = () => {
             </Button>
             <span className="text-muted">No results found</span>
           </div>
-          <Button variant="outline-primary">Export</Button>
+          <Button variant="outline-custom">Export</Button>
         </div>
       </div>
     </Container>

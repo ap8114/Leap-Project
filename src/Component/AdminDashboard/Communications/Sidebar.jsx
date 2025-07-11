@@ -37,7 +37,7 @@ const Sidebar = ({ activeNavItem, setActiveNavItem, onClose, isMobile }) => {
             }}
             className={`d-flex align-items-center px-3 py-2 mb-1 cursor-pointer ${
               activeNavItem === item.name
-                ? 'bg-primary bg-opacity-10 text-primary'
+                ? 'bg-custom bg-opacity-10 text-custom'
                 : 'text-secondary hover-bg-light'
             }`}
           >

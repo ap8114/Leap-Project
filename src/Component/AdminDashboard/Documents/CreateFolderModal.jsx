@@ -28,7 +28,7 @@ const CreateFolderModal = ({ show, onHide }) => {
 
           {/* Action Buttons */}
           <div className="d-flex gap-2 justify-content-start">
-            <Button variant="primary">Create</Button>
+            <Button variant="custom">Create</Button>
             <Button variant="light" onClick={onHide}>Cancel</Button>
           </div>
         </Form>

@@ -17,7 +17,7 @@ const NewCategoryModal = ({ show, onHide }) => {
         </Form>
       </Modal.Body>
       <Modal.Footer>
-        <Button variant="primary">Save</Button>
+        <Button variant="custom">Save</Button>
         <Button variant="outline-secondary" onClick={onHide}>Cancel</Button>
       </Modal.Footer>
     </Modal>

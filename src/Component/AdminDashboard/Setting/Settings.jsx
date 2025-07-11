@@ -11,7 +11,7 @@ const settingsContent = [
     ],
     [
         { label: 'Manage Users', desc: 'Manage users associated with this account.' },
-        { label: 'Appearance', desc: 'Customize how Clio Manage looks on your device.' },
+        { label: 'Appearance', desc: 'customize how Clio Manage looks on your device.' },
         { label: 'Billing', desc: 'Edit your bill settings, themes, payment profiles, and UTBMS options...' },
     ],
     [
@@ -20,7 +20,7 @@ const settingsContent = [
         { label: 'Data Escrow', desc: 'Manage back-ups using Amazon S3 cloud storage.' },
     ],
     [
-        { label: 'Custom Fields', desc: 'Create individual custom fields or custom field sets.' },
+        { label: 'custom Fields', desc: 'Create individual custom fields or custom field sets.' },
         { label: 'Contact and Calendar Sync', desc: 'Connect your account to Google, Zoom or Microsoft 365.' },
         { label: 'Firm Feed', desc: 'Manage your Firm Feed s visibility.' },
 
@@ -58,7 +58,7 @@ const labelToRoute = {
     'Groups, Job Titles, and Permissions': '/settings/groups-permissions',
     'Clio Mobile App': '/settings/mobile-app',
     'Data Escrow': '/settings/data-escrow',
-    'Custom Fields': '/settings/custom-fields',
+    'custom Fields': '/settings/custom-fields',
     'Contact and Calendar Sync': '/settings/contact-calendar-sync',
     'Firm Feed': '/settings/firm-feed',
     'Security & Compliance': '/settings/security-compliance',
@@ -153,7 +153,7 @@ const Settings = () => (
                         </div>
 
                         <div style={{ fontSize: 14, color: '#202223' }}>
-                            <strong>You are the Primary Subscriber.</strong>{' '}
+                            <strong>You are the custom Subscriber.</strong>{' '}
                             You can administer the{' '}
                             <a
                                 href="#"
