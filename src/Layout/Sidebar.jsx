@@ -39,6 +39,7 @@ const Sidebar = ({ collapsed, menuItemClick }) => {
        { path: "/communications", icon: "fa-solid fa-comments", text: "Communications" },
         { path: "/reportsanalytics", icon: "fa-solid fa-chart-line", text: "Reports & Analytics" },
         { path: "/setting", icon: "fa-solid fa-gear", text: "Settings" }
+        //  { path: "/Profile", icon: "fa-solid fa-gear", text: "Profile" }
    
   ];
 
@@ -83,8 +84,8 @@ const Sidebar = ({ collapsed, menuItemClick }) => {
             {/* Resource Center */}
           {/* User Info */}
            {/* Collapse Button */}
-        {/* <div className="sidebar-bottom mt-auto px-2 pb-3">
-          <Link to="/resourcecenter" className="text-decoration-none">
+        <div className="sidebar-bottom mt-auto px-2 pb-3">
+          {/* <Link to="/resourcecenter" className="text-decoration-none">
              <div className="menu-link d-flex align-items-center mb-3" style={{ cursor: "pointer" }}>
             <div
               className="d-flex align-items-center justify-content-center resource-icon"
@@ -95,7 +96,7 @@ const Sidebar = ({ collapsed, menuItemClick }) => {
 
             {!collapsed && <span className="">Resource center</span>}
           </div>
-          </Link>
+          </Link> */}
        
           <div className="menu-link d-flex align-items-center mb-3" style={{ cursor: "pointer" }}>
             <div
@@ -111,7 +112,7 @@ const Sidebar = ({ collapsed, menuItemClick }) => {
           </div>
 
          
-          <div className=" menu-link d-flex align-items-center" style={{ cursor: "pointer" }} onClick={menuItemClick}>
+          {/* <div className=" menu-link d-flex align-items-center" style={{ cursor: "pointer" }} onClick={menuItemClick}>
             <div
               className="resource-icon d-flex align-items-center justify-content-center"
 
@@ -119,8 +120,8 @@ const Sidebar = ({ collapsed, menuItemClick }) => {
               <i className="fa-solid fa-arrow-left"></i>
             </div>
             {!collapsed && <span className="">Collapse</span>}
-          </div>
-        </div> */}
+          </div> */}
+        </div>
       </div>
     </div>
   );
