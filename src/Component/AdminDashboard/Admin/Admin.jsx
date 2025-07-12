@@ -44,7 +44,7 @@ const Admin = ({ visible, onClose, collapsed }) => {
           <p className="mb-1 text-muted small">
             Support code: 077-450-774-0288
           </p>
-          <a href="#profile" className="btn btn-outline-primary btn-sm mb-2">
+          <a href="/profile" className="btn btn-outline-custom btn-sm mb-2">
             View Profile
           </a>
         </div>

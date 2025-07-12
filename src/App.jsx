@@ -53,6 +53,8 @@ import TaskPage from "./Component/AdminDashboard/Tasks/TaskPage";
 import TaskFeeds from "./Component/AdminDashboard/Tasks/TaskFeeds (1)";
 import NewCalendar from "./Component/AdminDashboard/Calendar/NewCalender";
 import Admin from "./Component/AdminDashboard/Admin/Admin";
+import Profile from "./Component/AdminDashboard/Admin/Profile";
+import EditProfile from "./Component/AdminDashboard/Admin/EditProfile";
 
 
 
@@ -240,7 +242,8 @@ function App() {
 
                 {/* admin popup full routing */}
                 <Route path="/admin" element={<Admin />} />
-               
+                 <Route path="/profile" element={<Profile />} />
+                 <Route path="/editprofile" element={<EditProfile />} />
               </Routes>
             </div>
           )}
