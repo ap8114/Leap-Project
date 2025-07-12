@@ -237,7 +237,10 @@ function App() {
                   path="/reportsanalytics"
                   element={<ReportsAnalytics />}
                 />
+
+                {/* admin popup full routing */}
                 <Route path="/admin" element={<Admin />} />
+               
               </Routes>
             </div>
           )}
