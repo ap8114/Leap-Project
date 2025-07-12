@@ -227,9 +227,9 @@ const EditProfile = () => {
 <Form.Group className="mb-3">
   <Form.Label>Default Billing Rate</Form.Label>
  <InputGroup>
-  <InputGroup.Text className="py-0">$</InputGroup.Text>
-  <Form.Control type="number" placeholder="0.0" defaultValue={200.0} />
-  <InputGroup.Text className="py-0">/ Hr</InputGroup.Text>
+  <InputGroup.Text className="py-0 mb-5">$</InputGroup.Text>
+  <Form.Control type="number" className='mb-5' placeholder="0.0" defaultValue={200.0} />
+  <InputGroup.Text className="py-0 mb-5">/ Hr</InputGroup.Text>
 </InputGroup>
 
 </Form.Group>
@@ -238,9 +238,9 @@ const EditProfile = () => {
 <Form.Group className="mb-3">
   <Form.Label>Target Billings</Form.Label>
   <InputGroup>
-    <InputGroup.Text>$</InputGroup.Text>
-    <Form.Control type="number" placeholder="0.0" defaultValue={100000.0} />
-    <InputGroup.Text>/ Year</InputGroup.Text>
+    <InputGroup.Text className='mb-5' >$</InputGroup.Text>
+    <Form.Control type="number" className='mb-5' placeholder="0.0" defaultValue={100000.0} />
+    <InputGroup.Text className='mb-5'>/ Year</InputGroup.Text>
   </InputGroup>
 </Form.Group>
 
@@ -248,8 +248,8 @@ const EditProfile = () => {
 <Form.Group className="mb-3">
   <Form.Label>Working Days</Form.Label>
   <InputGroup>
-    <Form.Control type="number" placeholder="0" defaultValue={260} />
-    <InputGroup.Text>/ Year</InputGroup.Text>
+    <Form.Control className='mb-5' type="number" placeholder="0" defaultValue={260} />
+    <InputGroup.Text className='mb-5'>/ Year</InputGroup.Text>
   </InputGroup>
 </Form.Group>
 
