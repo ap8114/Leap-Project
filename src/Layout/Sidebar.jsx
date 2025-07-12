@@ -98,6 +98,8 @@ const Sidebar = ({ collapsed, menuItemClick }) => {
           </div>
           </Link> */}
        
+
+         <Link to="/admin">
           <div className="menu-link d-flex align-items-center mb-3" style={{ cursor: "pointer" }}>
             <div
               className=" resource-icon d-flex align-items-center justify-content-center"
@@ -106,10 +108,11 @@ const Sidebar = ({ collapsed, menuItemClick }) => {
             </div>
             {!collapsed && (
               <div className="">
-                <div className="" style={{ lineHeight: 1 }}>Admin</div>
+                <div className="" style={{ lineHeight: 1 }} >Admin</div>
               </div>
             )}
           </div>
+          </Link>
 
          
           {/* <div className=" menu-link d-flex align-items-center" style={{ cursor: "pointer" }} onClick={menuItemClick}>
