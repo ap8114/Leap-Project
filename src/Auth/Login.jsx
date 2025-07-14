@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import logoFastTrack from "../../src/assets/logoFastTrack.png";
 
 
@@ -72,7 +73,7 @@ const Login = () => {
 
         <div className="mt-4 text-center">
           <small className="text-muted">Don't have an account?</small>{' '}
-          {/* <a href="#" onClick={handleSignUp} className="text-warning fw-medium">Sign Up</a> */}
+          <Link to="/signup" onClick={handleSignUp} className="text-[#f76b1c] fw-medium">Sign Up</Link>
         </div>
 
         <div className="mt-4">
