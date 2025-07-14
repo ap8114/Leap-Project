@@ -17,7 +17,6 @@ import NewTimeEntryModal from "./NewTimeEntryModal";
 import NewExpenseModals from "./NewExpenseModals";
 import ExportModal from "./ExportModal";
 
-
 const columnsList = [
   "Actions",
   "Type",
