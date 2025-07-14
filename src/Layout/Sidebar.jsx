@@ -32,7 +32,7 @@ const Sidebar = ({ collapsed, menuItemClick }) => {
     { path: "/dashboard", icon: "fa-solid fa-gauge", text: "Dashboard" },
     { path: "/calendar", icon: "fa-solid fa-calendar-check", text: "Calendar" },
     { path: "/tasks", icon: "fa-solid fa-diagram-project", text: "Tasks" },
-    { path: "/usermanagement", icon: "fa-solid fa-users", text: "User Management" },
+    { path: "/clientmanagement", icon: "fa-solid fa-users", text: "Client Management" },
     { path: "/matter", icon: "fa-solid fa-scale-balanced", text: "Matters" },
     { path: "/contact", icon: "fa-solid fa-envelope", text: "Contact" },
     { path: "/activity", icon: "fa-solid fa-clock-rotate-left", text: "Activity" },

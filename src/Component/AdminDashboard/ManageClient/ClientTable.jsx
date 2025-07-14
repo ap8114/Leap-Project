@@ -3,6 +3,7 @@ import { Modal, Button, Form, Table, Dropdown, Pagination } from 'react-bootstra
 import ClientRow from './ClientRow';
 import ClientProfileModal from './ClientProfileModal';
 import DeleteConfirmModal from './DeleteConfirmModal';
+import AddClientModal from './AddClientModal';
 
 const ClientTable = () => {
   const [clients, setClients] = useState([
@@ -14,7 +15,7 @@ const ClientTable = () => {
       phone: '+1 (555) 123-4567',
       status: 'active',
       firmSize: 'Large (50+ attorneys)',
-      color: 'primary'
+      color: 'custom'
     },
     {
       id: 2,
@@ -106,7 +107,7 @@ const ClientTable = () => {
               </div>
             </div>
             <div className="col-md-4 text-md-end">
-              <Button variant="primary" onClick={() => setShowAddModal(true)}>
+              <Button variant="custom" onClick={() => setShowAddModal(true)}>
                 <i className="bi bi-plus me-2"></i>Add Client
               </Button>
             </div>
@@ -141,11 +142,11 @@ const ClientTable = () => {
           </Table>
         </div>
         <div className="card-footer d-flex justify-content-between align-items-center">
-          <div className="text-muted">
-            Showing <span className="fw-bold">1</span> to <span className="fw-bold">5</span> of{' '}
+          <div className="text-muted ">
+            Showing <span className="fw-bold ">1</span> to <span className="fw-bold">5</span> of{' '}
             <span className="fw-bold">47</span> results
           </div>
-          <Pagination>
+          <Pagination >
             <Pagination.Prev />
             <Pagination.Item active>{1}</Pagination.Item>
             <Pagination.Item>{2}</Pagination.Item>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Modal, Button, Form } from 'react-bootstrap';
+import { Modal, Button, Form , Dropdown} from 'react-bootstrap';
 
 const AddClientModal = ({ show, onHide, onSave }) => {
   const [formData, setFormData] = useState({
@@ -29,7 +29,7 @@ const AddClientModal = ({ show, onHide, onSave }) => {
       ...formData,
       initials,
       status: 'active',
-      color: 'primary'
+      color: 'custom'
     };
     onSave(newClient);
   };
@@ -109,7 +109,7 @@ const AddClientModal = ({ show, onHide, onSave }) => {
               <p className="text-muted mb-2">
                 Drag and drop files here, or click to browse
               </p>
-              <Button variant="link" className="text-primary">
+              <Button variant="link" className="text-custom">
                 Browse Files
               </Button>
               <Form.Control type="file" className="d-none" />
@@ -131,7 +131,7 @@ const AddClientModal = ({ show, onHide, onSave }) => {
           <Button variant="secondary" onClick={onHide}>
             Cancel
           </Button>
-          <Button variant="primary" type="submit">
+          <Button variant="custom" type="submit">
             Save Client
           </Button>
         </Modal.Footer>

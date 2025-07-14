@@ -44,7 +44,7 @@ const ClientRow = ({ client, onView, onStatusChange, onDelete }) => {
       <td>
         <div className="d-flex align-items-center">
           <button
-            className="btn btn-link text-primary p-0 me-3"
+            className="btn btn-link text-custom p-0 me-3 text-decoration-none"
             onClick={onView}
           >
             View

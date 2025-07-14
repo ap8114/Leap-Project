@@ -55,7 +55,8 @@ import NewCalendar from "./Component/AdminDashboard/Calendar/NewCalender";
 import Admin from "./Component/AdminDashboard/Admin/Admin";
 import Profile from "./Component/AdminDashboard/Admin/Profile";
 import EditProfile from "./Component/AdminDashboard/Admin/EditProfile";
-import UserManagement from "./Component/AdminDashboard/UserManagement/UserManagement";
+
+import ClientManagement from "./Component/AdminDashboard/ManageClient/ClientManagement";
 
 
 
@@ -219,7 +220,7 @@ function App() {
                 <Route path="/taskfeed" element={<TaskFeeds />} />
 
                 {/* User Management */}
-                <Route path="/usermanagement" element={<UserManagement />} />
+                <Route path="/clientmanagement" element={<ClientManagement />} />
 
                 <Route path="/setting" element={<Settings />} />
                 <Route path="/activity" element={<ActivitiesTable />} />

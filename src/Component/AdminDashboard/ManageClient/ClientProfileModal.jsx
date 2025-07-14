@@ -42,7 +42,7 @@ const ClientProfileModal = ({ client, onHide }) => {
             <div className="card">
               <div className="card-header d-flex justify-content-between align-items-center">
                 <h5 className="mb-0">Uploaded Files</h5>
-                <Button variant="link" className="text-primary p-0">
+                <Button variant="link" className="text-custom p-0">
                   <i className="bi bi-upload me-1"></i>Upload
                 </Button>
               </div>
@@ -67,7 +67,7 @@ const ClientProfileModal = ({ client, onHide }) => {
                   </div>
                   <div className="list-group-item d-flex justify-content-between align-items-center">
                     <div className="d-flex align-items-center">
-                      <i className="bi bi-filetype-docx text-primary fs-4 me-3"></i>
+                      <i className="bi bi-filetype-docx text-custom fs-4 me-3"></i>
                       <div>
                         <p className="mb-1">Case Summary.docx</p>
                         <small className="text-muted">1.8 MB • Uploaded 1 week ago</small>
@@ -107,14 +107,14 @@ const ClientProfileModal = ({ client, onHide }) => {
             <div className="card">
               <div className="card-header d-flex justify-content-between align-items-center">
                 <h5 className="mb-0">Work Timeline</h5>
-                <Button variant="link" className="text-primary p-0">
+                <Button variant="link" className="text-custom p-0">
                   <i className="bi bi-plus me-1"></i>Add Entry
                 </Button>
               </div>
               <div className="card-body">
                 <div className="timeline">
                   <div className="timeline-item">
-                    <div className="timeline-point timeline-point-primary"></div>
+                    <div className="timeline-point timeline-point-custom"></div>
                     <div className="timeline-event">
                       <div className="d-flex justify-content-between">
                         <h6 className="mb-1">Initial Consultation Completed</h6>
