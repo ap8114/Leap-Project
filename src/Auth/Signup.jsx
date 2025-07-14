@@ -6,12 +6,21 @@ import logoFastTrack from "../../src/assets/logoFastTrack.png";
 const Signup = () => {
   const navigate = useNavigate();
   const [name, setName] = useState('');
+  const [mobile, setMobile] = useState('');
   const [email, setEmail] = useState('');
+  const [firmSize, setFirmSize] = useState('');
   const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
 
   const handleSignUp = (e) => {
     e.preventDefault();
-    // You can add actual sign-up logic here
+
+    if (password !== confirmPassword) {
+      alert("Passwords do not match.");
+      return;
+    }
+
+    // Submit data logic here
     navigate('/dashboard');
   };
 
@@ -19,19 +28,16 @@ const Signup = () => {
     <Container fluid className="min-vh-100 d-flex flex-column flex-md-row p-0 overflow-hidden">
       {/* Left Panel - Sign Up Form */}
       <Col xs={12} md={6} className="d-flex flex-column justify-content-center align-items-center px-4 px-sm-5 py-4 vh-100 overflow-auto">
-        {/* Logo */}
         <div className="mb-4 d-flex align-items-center">
           <img src={logoFastTrack} alt="Logo" style={{ height: '60px' }} className="me-2" />
         </div>
 
-        {/* Heading */}
         <div className="text-center mb-4 px-2">
           <h2 className="fw-bold fs-3">Create your FastTrack Account</h2>
           <p className="text-muted mb-1 fs-6">Sign up to get started</p>
           <small className="text-muted">The most trusted legal practice management software</small>
         </div>
 
-        {/* Sign Up Form */}
         <Form className="w-100" style={{ maxWidth: '400px' }} onSubmit={handleSignUp}>
           <Form.Group className="mb-3" controlId="formName">
             <Form.Label>Full Name</Form.Label>
@@ -40,6 +46,17 @@ const Signup = () => {
               placeholder="Enter full name"
               value={name}
               onChange={(e) => setName(e.target.value)}
+              required
+            />
+          </Form.Group>
+
+          <Form.Group className="mb-3" controlId="formMobile">
+            <Form.Label>Mobile Number</Form.Label>
+            <Form.Control
+              type="tel"
+              placeholder="Enter mobile number"
+              value={mobile}
+              onChange={(e) => setMobile(e.target.value)}
               required
             />
           </Form.Group>
@@ -55,13 +72,44 @@ const Signup = () => {
             />
           </Form.Group>
 
+          <Form.Group className="mb-3" controlId="formFirmSize">
+            <Form.Label>Firm Size</Form.Label>
+            <Form.Select
+              value={firmSize}
+              onChange={(e) => setFirmSize(e.target.value)}
+              required
+            >
+              <option value="">Select...</option>
+              <option value="1">1</option>
+              <option value="2 to 4">2 to 4</option>
+              <option value="5 to 9">5 to 9</option>
+              <option value="10 to 19">10 to 19</option>
+              <option value="20 to 60">20 to 60</option>
+              <option value="61 to 200">61 to 200</option>
+              <option value="201 to 500">201 to 500</option>
+              <option value="501+">501+</option>
+              <option value="Not a Law Firm">Not a Law Firm</option>
+            </Form.Select>
+          </Form.Group>
+
           <Form.Group className="mb-3" controlId="formPassword">
-            <Form.Label>Create Password</Form.Label>
+            <Form.Label>Password</Form.Label>
             <Form.Control
               type="password"
-              placeholder="Password"
+              placeholder="Create password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+          </Form.Group>
+
+          <Form.Group className="mb-3" controlId="formConfirmPassword">
+            <Form.Label>Confirm Password</Form.Label>
+            <Form.Control
+              type="password"
+              placeholder="Confirm password"
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
               required
             />
           </Form.Group>
