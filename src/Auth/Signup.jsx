@@ -126,7 +126,7 @@ const Signup = () => {
         <div className="mt-4 text-center">
           <small className="text-muted">Already have an account?</small>{' '}
           {/* You can link back to login here */}
-          {/* <a href="#" onClick={() => navigate('/login')} className="text-warning fw-medium">Sign In</a> */}
+          <a href="#" onClick={() => navigate('/login')} className="text-warning fw-medium">Login</a> 
         </div>
 
         <div className="mt-4">
