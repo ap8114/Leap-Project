@@ -5,7 +5,7 @@ import "./Sidebar.css";
 import Admin from "../Component/AdminDashboard/Admin/Admin";
 
 const Sidebar = ({ collapsed, menuItemClick }) => {
-   const [showAdmin, setShowAdmin] = useState(false);
+  const [showAdmin, setShowAdmin] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
@@ -32,17 +32,18 @@ const Sidebar = ({ collapsed, menuItemClick }) => {
     { path: "/dashboard", icon: "fa-solid fa-gauge", text: "Dashboard" },
     { path: "/calendar", icon: "fa-solid fa-calendar-check", text: "Calendar" },
     { path: "/tasks", icon: "fa-solid fa-diagram-project", text: "Tasks" },
+    { path: "/usermanagement", icon: "fa-solid fa-users", text: "User Management" },
     { path: "/matter", icon: "fa-solid fa-scale-balanced", text: "Matters" },
-     { path: "/contact", icon: "fa-solid fa-envelope", text: "Contact" },
-      { path: "/activity", icon: "fa-solid fa-clock-rotate-left", text: "Activity" },
-       { path: "/timebilling", icon: "fa-solid fa-stopwatch", text: "Time & Billing" },
-       { path: "/accounts", icon: "fa-solid fa-file-invoice-dollar", text: "Accounts" },
-       { path: "/document", icon: "fa-solid fa-file-lines", text: "Documents" },
-       { path: "/communications", icon: "fa-solid fa-comments", text: "Communications" },
-        { path: "/reportsanalytics", icon: "fa-solid fa-chart-line", text: "Reports & Analytics" },
-        { path: "/setting", icon: "fa-solid fa-gear", text: "Settings" }
-        //  { path: "/Profile", icon: "fa-solid fa-gear", text: "Profile" }
-   
+    { path: "/contact", icon: "fa-solid fa-envelope", text: "Contact" },
+    { path: "/activity", icon: "fa-solid fa-clock-rotate-left", text: "Activity" },
+    { path: "/timebilling", icon: "fa-solid fa-stopwatch", text: "Time & Billing" },
+    { path: "/accounts", icon: "fa-solid fa-file-invoice-dollar", text: "Accounts" },
+    { path: "/document", icon: "fa-solid fa-file-lines", text: "Documents" },
+    { path: "/communications", icon: "fa-solid fa-comments", text: "Communications" },
+    { path: "/reportsanalytics", icon: "fa-solid fa-chart-line", text: "Reports & Analytics" },
+    { path: "/setting", icon: "fa-solid fa-gear", text: "Settings" }
+    //  { path: "/Profile", icon: "fa-solid fa-gear", text: "Profile" }
+
   ];
 
   return (
@@ -83,9 +84,9 @@ const Sidebar = ({ collapsed, menuItemClick }) => {
         </ul>
 
         {/* Bottom Section */}
-            {/* Resource Center */}
-          {/* User Info */}
-           {/* Collapse Button */}
+        {/* Resource Center */}
+        {/* User Info */}
+        {/* Collapse Button */}
         <div className="sidebar-bottom mt-auto px-2 pb-3">
           {/* <Link to="/resourcecenter" className="text-decoration-none">
              <div className="menu-link d-flex align-items-center mb-3" style={{ cursor: "pointer" }}>
@@ -99,29 +100,29 @@ const Sidebar = ({ collapsed, menuItemClick }) => {
             {!collapsed && <span className="">Resource center</span>}
           </div>
           </Link> */}
-       
 
-           <div
-        className="menu-link d-flex align-items-center mb-3"
-        style={{ cursor: "pointer" }}
-        onClick={() => setShowAdmin(true)}
-      >
-        <div className="resource-icon d-flex align-items-center justify-content-center">
-          Ad
-        </div>
-        {!collapsed && (
-          <div style={{ lineHeight: 1 }}>Admin</div>
-        )}
-      </div>
 
-      {/* Admin popup */}
-      <Admin
-        visible={showAdmin}
-        onClose={() => setShowAdmin(false)}
-        collapsed={collapsed}
-      />
-         
-         
+          <div
+            className="menu-link d-flex align-items-center mb-3"
+            style={{ cursor: "pointer" }}
+            onClick={() => setShowAdmin(true)}
+          >
+            <div className="resource-icon d-flex align-items-center justify-content-center">
+              Ad
+            </div>
+            {!collapsed && (
+              <div style={{ lineHeight: 1 }}>Admin</div>
+            )}
+          </div>
+
+          {/* Admin popup */}
+          <Admin
+            visible={showAdmin}
+            onClose={() => setShowAdmin(false)}
+            collapsed={collapsed}
+          />
+
+
           {/* <div className=" menu-link d-flex align-items-center" style={{ cursor: "pointer" }} onClick={menuItemClick}>
             <div
               className="resource-icon d-flex align-items-center justify-content-center"

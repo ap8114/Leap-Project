@@ -7,7 +7,7 @@ import Login from "./Auth/Login";
 import Signup from "./Auth/Signup";
 import ForgotPassword from "./Auth/ForgotPassword";
 
-import { useState,useEffect} from "react";
+import { useState, useEffect } from "react";
 import Dashboard from "./Component/AdminDashboard/Dashboard/Dashboard";
 
 import Document from "./Component/AdminDashboard/Documents/Document";
@@ -55,14 +55,15 @@ import NewCalendar from "./Component/AdminDashboard/Calendar/NewCalender";
 import Admin from "./Component/AdminDashboard/Admin/Admin";
 import Profile from "./Component/AdminDashboard/Admin/Profile";
 import EditProfile from "./Component/AdminDashboard/Admin/EditProfile";
+import UserManagement from "./Component/AdminDashboard/UserManagement/UserManagement";
 
 
 
 function App() {
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
-    const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
-  
+
 
   const menusidebarcollapse = () => {
     setIsSidebarCollapsed(true);
@@ -70,20 +71,20 @@ function App() {
 
 
   useEffect(() => {
-  if (isMobile) {
-    menusidebarcollapse();
-  }
-}, [isMobile]);
+    if (isMobile) {
+      menusidebarcollapse();
+    }
+  }, [isMobile]);
 
-   useEffect(() => {
-      const handleResize = () => {
-        setIsMobile(window.innerWidth < 768);
-      };
-      handleResize();
-      window.addEventListener("resize", handleResize);
-      return () => window.removeEventListener("resize", handleResize);
-    }, []);
-  
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
 
   const menuItemClick = () => {
     setIsSidebarCollapsed((prev) => !prev);
@@ -136,9 +137,9 @@ function App() {
     location.pathname === "/contactus" ||
     location.pathname === "/company" ||
     location.pathname === "/resources" ||
-    location.pathname === "/recordpayment"||
+    location.pathname === "/recordpayment" ||
 
-  location.pathname === "/resourcecenter";
+    location.pathname === "/resourcecenter";
 
   //  location.pathname === "/thelawsociety";
 
@@ -202,12 +203,12 @@ function App() {
                 {/* AdminDashboard */}
                 <Route path="/dashboard" element={<Dashboard />} />
                 <Route path="/recordpayment" element={<RecordPayment />} />
-                 <Route path="/newbills" element={<NewBills />} />
-                 {/* matter routing */}
+                <Route path="/newbills" element={<NewBills />} />
+                {/* matter routing */}
                 <Route path="/matter" element={<MattersDashboard />} />
                 <Route path="/document" element={<Document />} />
                 <Route path="/categories" element={<CategoriesTemplate />} />
-               
+
                 {/* calendar routing  */}
                 <Route path="/calendar" element={<CalendarUI />} />
                 <Route path="/timebilling" element={<Timebilling />} />
@@ -215,9 +216,10 @@ function App() {
 
                 {/* tasks routing  */}
                 <Route path="/tasks" element={<TaskPage />} />
-                 <Route path="/taskfeed" element={<TaskFeeds />} />
+                <Route path="/taskfeed" element={<TaskFeeds />} />
 
-
+                {/* User Management */}
+                <Route path="/usermanagement" element={<UserManagement />} />
 
                 <Route path="/setting" element={<Settings />} />
                 <Route path="/activity" element={<ActivitiesTable />} />
@@ -242,8 +244,8 @@ function App() {
 
                 {/* admin popup full routing */}
                 <Route path="/admin" element={<Admin />} />
-                 <Route path="/profile" element={<Profile />} />
-                 <Route path="/editprofile" element={<EditProfile />} />
+                <Route path="/profile" element={<Profile />} />
+                <Route path="/editprofile" element={<EditProfile />} />
               </Routes>
             </div>
           )}
