@@ -73,7 +73,7 @@ const Login = () => {
 
         <div className="mt-4 text-center">
           <small className="text-muted">Don't have an account?</small>{' '}
-          <Link to="/signup" onClick={handleSignUp} className="text-[#f76b1c] fw-medium">Sign Up</Link>
+          <Link to="/signup" className="text-[#f76b1c] fw-medium">Sign Up</Link>
         </div>
 
         <div className="mt-4">
