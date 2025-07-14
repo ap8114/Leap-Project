@@ -2,8 +2,10 @@ import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "./Sidebar.css";
+import Admin from "../Component/AdminDashboard/Admin/Admin";
 
 const Sidebar = ({ collapsed, menuItemClick }) => {
+   const [showAdmin, setShowAdmin] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
@@ -45,7 +47,7 @@ const Sidebar = ({ collapsed, menuItemClick }) => {
 
   return (
     <div className={`sidebar-container ${collapsed ? "collapsed" : ""}`}>
-      <div className="sidebar ">
+      <div className="sidebar  ">
         <ul className="menu">
           {adminMenuItems.map((item) => (
             <li
@@ -98,19 +100,27 @@ const Sidebar = ({ collapsed, menuItemClick }) => {
           </div>
           </Link> */}
        
-          <div className="menu-link d-flex align-items-center mb-3" style={{ cursor: "pointer" }}>
-            <div
-              className=" resource-icon d-flex align-items-center justify-content-center"
-            >
-              Ad
-            </div>
-            {!collapsed && (
-              <div className="">
-                <div className="" style={{ lineHeight: 1 }}>Admin</div>
-              </div>
-            )}
-          </div>
 
+           <div
+        className="menu-link d-flex align-items-center mb-3"
+        style={{ cursor: "pointer" }}
+        onClick={() => setShowAdmin(true)}
+      >
+        <div className="resource-icon d-flex align-items-center justify-content-center">
+          Ad
+        </div>
+        {!collapsed && (
+          <div style={{ lineHeight: 1 }}>Admin</div>
+        )}
+      </div>
+
+      {/* Admin popup */}
+      <Admin
+        visible={showAdmin}
+        onClose={() => setShowAdmin(false)}
+        collapsed={collapsed}
+      />
+         
          
           {/* <div className=" menu-link d-flex align-items-center" style={{ cursor: "pointer" }} onClick={menuItemClick}>
             <div

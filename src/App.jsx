@@ -18,7 +18,7 @@ import Timebilling from "./Component/AdminDashboard/TimeBilling/Timebilling";
 
 import Settings from "./Component/AdminDashboard/Setting/Settings";
 import ReportsAnalytics from "./Component/AdminDashboard/ReportsAnalytics/ReportsAnalytics";
-import AdminPage from "./Component/AdminDashboard/Admin/AdminPage";
+
 import TimeRecordingBilling from "./Component/Website/Pages/Features/TimeRecordingBilling";
 import ClientAndMatterManagement from "./Component/Website/Pages/Features/ClientAndMatterManagement";
 import DocumentAutomation from "./Component/Website/Pages/Features/DocumentAutomation";
@@ -52,6 +52,9 @@ import PricingPlans from "./Component/AdminDashboard/Communications/PricingPlans
 import TaskPage from "./Component/AdminDashboard/Tasks/TaskPage";
 import TaskFeeds from "./Component/AdminDashboard/Tasks/TaskFeeds (1)";
 import NewCalendar from "./Component/AdminDashboard/Calendar/NewCalender";
+import Admin from "./Component/AdminDashboard/Admin/Admin";
+import Profile from "./Component/AdminDashboard/Admin/Profile";
+import EditProfile from "./Component/AdminDashboard/Admin/EditProfile";
 
 
 
@@ -236,7 +239,11 @@ function App() {
                   path="/reportsanalytics"
                   element={<ReportsAnalytics />}
                 />
-                <Route path="/adminpage" element={<AdminPage />} />
+
+                {/* admin popup full routing */}
+                <Route path="/admin" element={<Admin />} />
+                 <Route path="/profile" element={<Profile />} />
+                 <Route path="/editprofile" element={<EditProfile />} />
               </Routes>
             </div>
           )}

@@ -80,7 +80,7 @@ const Navbar = ({ toggleSidebar }) => {
           {/* Desktop search bar */}
           <input
             type="text"
-            className="search-bar d-none d-md-block"
+            className="search-bar text-dark d-none d-md-block"
             placeholder="Search"
             style={{ minWidth: 200, maxWidth: 350 }}
           />
