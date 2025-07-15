@@ -14,7 +14,7 @@ const ClientProfileModal = ({ client, onHide }) => {
               <div className="card-body">
                 <div className="d-flex align-items-center mb-4">
                   <div
-                    className={`avatar avatar-xl bg-${client.color} text-white rounded-circle me-3`}
+                    className={`avatar avatar-xl bg-${client.color} text-white rounded-circle me-3 `}
                   >
                     {client.initials}
                   </div>

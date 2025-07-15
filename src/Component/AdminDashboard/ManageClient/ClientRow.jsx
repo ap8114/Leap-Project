@@ -24,7 +24,7 @@ const ClientRow = ({ client, onView, onStatusChange, onDelete }) => {
       <td>
         <div className="d-flex align-items-center">
           <div
-            className={`avatar avatar-sm bg-${client.color} text-white rounded-circle me-3`}
+            className={`avatar avatar-sm bg-${client.color} text-white rounded-circle me-3 p-2`}
           >
             {client.initials}
           </div>
