@@ -47,7 +47,7 @@ const ClientRow = ({ client, onView, onStatusChange, onDelete }) => {
             className="btn btn-link text-custom p-0 me-3 text-decoration-none"
             onClick={onView}
           >
-            View
+             <i className="bi bi-eye"></i>
           </button>
           <Dropdown onSelect={handleStatusSelect}>
             <Dropdown.Toggle variant="link" className="text-muted p-0 me-3">

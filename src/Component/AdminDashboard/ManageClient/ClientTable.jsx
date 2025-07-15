@@ -94,9 +94,9 @@ const ClientTable = () => {
           <div className="row">
             <div className="col-md-8 mb-3 mb-md-0">
               <div className="input-group">
-                <span className="input-group-text">
+                {/* <span className="input-group-text">
                   <i className="bi bi-search"></i>
-                </span>
+                </span> */}
                 <input
                   type="text"
                   className="form-control"

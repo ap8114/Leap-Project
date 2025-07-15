@@ -7,12 +7,12 @@ const ClientManagement = () => {
       <div className="row mb-4">
         <div className="col-12">
           <h1 className="h2">Client Management</h1>
-          <nav aria-label="breadcrumb">
+          {/* <nav aria-label="breadcrumb">
             <ol className="breadcrumb">
               <li className="breadcrumb-item"><a href="#">Dashboard</a></li>
               <li className="breadcrumb-item active" aria-current="page">Clients</li>
             </ol>
-          </nav>
+          </nav> */}
         </div>
       </div>
       <ClientTable />

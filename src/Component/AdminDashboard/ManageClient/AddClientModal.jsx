@@ -81,9 +81,9 @@ const AddClientModal = ({ show, onHide, onSave }) => {
             />
           </Form.Group>
           <Form.Group className="mb-3">
-            <Form.Label>Firm Size</Form.Label>
+            <Form.Label >Firm Size</Form.Label>
             <Dropdown>
-              <Dropdown.Toggle variant="outline-secondary" className="w-100 text-start">
+              <Dropdown.Toggle variant="outline-secondary" className="btn btn-secondary w-100 text-start text-dark">
                 {selectedFirmSize}
               </Dropdown.Toggle>
               <Dropdown.Menu className="w-100">
@@ -128,9 +128,9 @@ const AddClientModal = ({ show, onHide, onSave }) => {
           </Form.Group>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={onHide}>
+          <button className='btn btn-secondary text-dark' onClick={onHide}>
             Cancel
-          </Button>
+          </button>
           <Button variant="custom" type="submit">
             Save Client
           </Button>
