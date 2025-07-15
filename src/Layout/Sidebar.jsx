@@ -19,12 +19,42 @@ const Sidebar = ({ collapsed, menuItemClick }) => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  useEffect(() => {
+    const menuItems = document.querySelectorAll(".menu-item");
+
+    const handleMouseEnter = (e) => {
+      const active = document.querySelector(".menu-item.active");
+      if (active && active !== e.currentTarget) {
+        active.classList.add("menu-hovered");
+      }
+    };
+
+    const handleMouseLeave = () => {
+      const active = document.querySelector(".menu-item.active");
+      if (active) {
+        active.classList.remove("menu-hovered");
+      }
+    };
+
+    menuItems.forEach((item) => {
+      item.addEventListener("mouseenter", handleMouseEnter);
+      item.addEventListener("mouseleave", handleMouseLeave);
+    });
+
+    return () => {
+      menuItems.forEach((item) => {
+        item.removeEventListener("mouseenter", handleMouseEnter);
+        item.removeEventListener("mouseleave", handleMouseLeave);
+      });
+    };
+  }, []);
+
   const isActive = (path) => location.pathname === path;
 
   const handleNavigation = (path) => {
     navigate(path);
     if (isMobile) {
-      menuItemClick(); // Close sidebar on mobile
+      menuItemClick();
     }
   };
 
@@ -42,13 +72,11 @@ const Sidebar = ({ collapsed, menuItemClick }) => {
     { path: "/communications", icon: "fa-solid fa-comments", text: "Communications" },
     { path: "/reportsanalytics", icon: "fa-solid fa-chart-line", text: "Reports & Analytics" },
     { path: "/setting", icon: "fa-solid fa-gear", text: "Settings" }
-    //  { path: "/Profile", icon: "fa-solid fa-gear", text: "Profile" }
-
   ];
 
   return (
     <div className={`sidebar-container ${collapsed ? "collapsed" : ""}`}>
-      <div className="sidebar  ">
+      <div className="sidebar">
         <ul className="menu">
           {adminMenuItems.map((item) => (
             <li
@@ -83,25 +111,7 @@ const Sidebar = ({ collapsed, menuItemClick }) => {
           ))}
         </ul>
 
-        {/* Bottom Section */}
-        {/* Resource Center */}
-        {/* User Info */}
-        {/* Collapse Button */}
         <div className="sidebar-bottom mt-auto px-2 pb-3">
-          {/* <Link to="/resourcecenter" className="text-decoration-none">
-             <div className="menu-link d-flex align-items-center mb-3" style={{ cursor: "pointer" }}>
-            <div
-              className="d-flex align-items-center justify-content-center resource-icon"
-
-            >
-              <i className="fa-solid fa-question"></i>
-            </div>
-
-            {!collapsed && <span className="">Resource center</span>}
-          </div>
-          </Link> */}
-
-
           <div
             className="menu-link d-flex align-items-center mb-3"
             style={{ cursor: "pointer" }}
@@ -115,23 +125,11 @@ const Sidebar = ({ collapsed, menuItemClick }) => {
             )}
           </div>
 
-          {/* Admin popup */}
           <Admin
             visible={showAdmin}
             onClose={() => setShowAdmin(false)}
             collapsed={collapsed}
           />
-
-
-          {/* <div className=" menu-link d-flex align-items-center" style={{ cursor: "pointer" }} onClick={menuItemClick}>
-            <div
-              className="resource-icon d-flex align-items-center justify-content-center"
-
-            >
-              <i className="fa-solid fa-arrow-left"></i>
-            </div>
-            {!collapsed && <span className="">Collapse</span>}
-          </div> */}
         </div>
       </div>
     </div>

@@ -107,12 +107,28 @@ background: linear-gradient(180deg, #1a2640 60%, #24355e 100%);
 }
 
 /* Active & Hover State */
-.menu-item.active .menu-link,
-.menu-link:hover {
-  background:#f75c3c;
+/* Normal active state */
+.menu-item.active .menu-link {
+  background: #f75c3c;
+  color: #fff;
+  font-weight: 600;
+  box-shadow: 0 2px 12px 0 #3b82f633;
+  background-size: 400% 100%;
+  animation: wave-shine 4s ease-in-out infinite;
+}
+  
+/* Hovering another item makes the active one lighter */
+.menu-item.active.menu-hovered .menu-link {
+  background: #f9927b; /* lighter orange */
+}
+
+/* Hover on non-active menu item */
+.menu-item:not(.active):hover .menu-link {
+  background: #f75c3c;
   color: #fff;
   box-shadow: 0 2px 12px 0 #3b82f633;
 }
+
 
 .menu-item.active .menu-link {
   font-weight: 600;
