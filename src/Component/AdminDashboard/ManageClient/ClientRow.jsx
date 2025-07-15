@@ -24,7 +24,7 @@ const ClientRow = ({ client, onView, onStatusChange, onDelete }) => {
       <td>
         <div className="d-flex align-items-center">
           <div
-            className={`avatar avatar-sm bg-${client.color} text-white rounded-circle me-3`}
+            className={`avatar avatar-sm bg-${client.color} text-white rounded-circle me-3 p-2`}
           >
             {client.initials}
           </div>
@@ -47,7 +47,7 @@ const ClientRow = ({ client, onView, onStatusChange, onDelete }) => {
             className="btn btn-link text-custom p-0 me-3 text-decoration-none"
             onClick={onView}
           >
-            View
+             <i className="bi bi-eye"></i>
           </button>
           <Dropdown onSelect={handleStatusSelect}>
             <Dropdown.Toggle variant="link" className="text-muted p-0 me-3">
