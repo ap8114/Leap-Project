@@ -3,22 +3,11 @@ import "./App.css";
 import Navbar from "./Layout/Navbar";
 import Sidebar from "./Layout/Sidebar"
 import Login from "./Auth/Login";
-
 import Signup from "./Auth/Signup";
 import ForgotPassword from "./Auth/ForgotPassword";
-
 import { useState, useEffect } from "react";
-import Dashboard from "./Component/AdminDashboard/Dashboard/Dashboard";
 
-import Document from "./Component/AdminDashboard/Documents/Document";
-
-import Timebilling from "./Component/AdminDashboard/TimeBilling/Timebilling";
-
-
-
-import Settings from "./Component/AdminDashboard/Setting/Settings";
-import ReportsAnalytics from "./Component/AdminDashboard/ReportsAnalytics/ReportsAnalytics";
-
+// Website Pages
 import TimeRecordingBilling from "./Component/Website/Pages/Features/TimeRecordingBilling";
 import ClientAndMatterManagement from "./Component/Website/Pages/Features/ClientAndMatterManagement";
 import DocumentAutomation from "./Component/Website/Pages/Features/DocumentAutomation";
@@ -33,43 +22,17 @@ import PersonalInjury from "./Component/Website/Pages/Solutions/PersonalInjury";
 import ContactUs from "./Component/Website/ContactUs/ContactUs";
 import Company from "./Component/Website/Pages/Company/Company";
 import Resources from "./Component/Website/Pages/Resources/Resources";
-
-
-import Account from "./Component/AdminDashboard/Accounts/Account";
-
-import RecordPayment from "./Component/AdminDashboard/TimeBilling/RecordPayment";
-import NewBills from "./Component/AdminDashboard/TimeBilling/NewBlls";
-import ResourceCenter from "./Component/AdminDashboard/ResourceCenter/ResourceCenter";
-import CategoriesTemplate from "./Component/AdminDashboard/Documents/CategoriesTemplate";
-import ActivitiesTable from "./Component/AdminDashboard/Activity/ActivitiesTable";
-import ContactPage from "./Component/AdminDashboard/Contact/ContactPage";
-import NewPerson from "./Component/AdminDashboard/Contact/NewPerson";
-import CalendarUI from "./Component/AdminDashboard/Calendar/CalendarView";
-
-import Communication from "./Component/AdminDashboard/Communications/Communication";
-import MattersDashboard from "./Component/AdminDashboard/Matters/MatterDashboard";
-import PricingPlans from "./Component/AdminDashboard/Communications/PricingPlans";
-import TaskPage from "./Component/AdminDashboard/Tasks/TaskPage";
-import TaskFeeds from "./Component/AdminDashboard/Tasks/TaskFeeds (1)";
-import NewCalendar from "./Component/AdminDashboard/Calendar/NewCalender";
-import Admin from "./Component/AdminDashboard/Admin/Admin";
-import Profile from "./Component/AdminDashboard/Admin/Profile";
-import EditProfile from "./Component/AdminDashboard/Admin/EditProfile";
-
-import ClientManagement from "./Component/AdminDashboard/ManageClient/ClientManagement";
-
+import AdminDashboard from "./Component/Admin/Dashboard/AdminDashboard";
+import UserDashboard from "./Component/User/Dashboard/UserDashboard";
 
 
 function App() {
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
-
-
   const menusidebarcollapse = () => {
     setIsSidebarCollapsed(true);
   };
-
 
   useEffect(() => {
     if (isMobile) {
@@ -86,7 +49,6 @@ function App() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-
   const menuItemClick = () => {
     setIsSidebarCollapsed((prev) => !prev);
   };
@@ -94,7 +56,7 @@ function App() {
     setIsSidebarCollapsed((prev) => !prev);
   };
   const location = useLocation();
-  // Inside component
+
   const noLayoutRoutes = [
     "/",
     "/signup",
@@ -111,46 +73,18 @@ function App() {
     "/employment",
     "/personalinjury",
     "/contactus",
-    // "/thelawsociety",
     "/company",
     "/resources",
     "/resourcecenter",
   ];
+
   const isNoLayoutPage = noLayoutRoutes.includes(location.pathname);
-  // Hide layout (navbar/sidebar) only on login page
-  // ...existing code...
-  // Hide layout (navbar/sidebar) only on login, signup, forgotpassword, and client-and-matter-management pages
-  const hideLayout =
-    location.pathname === "/" ||
-    location.pathname === "/forgotpassword" ||
-    location.pathname === "/signup" ||
-    location.pathname === "/login" ||
-    location.pathname === "/client-and-matter-management" ||
-    location.pathname === "/document-automation" ||
-    location.pathname === "/timerecordingbilling" ||
-    location.pathname === "/reporting" ||
-    location.pathname === "/clientservice" ||
-    location.pathname === "/conveyancing" ||
-    location.pathname === "/estateprobate" ||
-    location.pathname === "/family" ||
-    location.pathname === "/employment" ||
-    location.pathname === "/personalinjury" ||
-    location.pathname === "/contactus" ||
-    location.pathname === "/company" ||
-    location.pathname === "/resources" ||
-    location.pathname === "/recordpayment" ||
 
-    location.pathname === "/resourcecenter";
+  const hideLayout = isNoLayoutPage;
 
-  //  location.pathname === "/thelawsociety";
-
-  // ...existing code...
   return (
     <>
-      {/* navbar */}
       {!hideLayout && <Navbar toggleSidebar={toggleSidebar} />}
-      {/* navbar end */}
-      {/* sidebar start */}
       <div className={`main-content${hideLayout ? "" : ""}`}>
         {!hideLayout && (
           <Sidebar
@@ -158,101 +92,49 @@ function App() {
             menuItemClick={menuItemClick}
           />
         )}
-        {/* sidebar end */}
-        {/* right side  */}
         <>
-          {isNoLayoutPage ? (
-            <Routes>
-              {/* Website Routes Starts */}
-              <Route path="/" element={<Home />} />
-              <Route
-                path="/client-and-matter-management"
-                element={<ClientAndMatterManagement />}
-              />
-              <Route
-                path="/document-automation"
-                element={<DocumentAutomation />}
-              />
-              <Route
-                path="/timerecordingbilling"
-                element={<TimeRecordingBilling />} />
-              <Route path="/reporting" element={<Reporting />} />
-              <Route path="/clientservice" element={<ClientService />} />
-              <Route path="/conveyancing" element={<Conveyancing />} />
-              <Route path="/estateprobate" element={<EstateProbate />} />
-              <Route path="/family" element={< Family />} />
-              <Route path="/employment" element={< Employment />} />
-              <Route path="/personalinjury" element={< PersonalInjury />} />
-              <Route path="/contactus" element={< ContactUs />} />
-              {/* <Route path="/thelawsociety" element={<TheLawSociety />} /> */}
-              <Route path="/company" element={< Company />} />
-              <Route path="/resources" element={< Resources />} />
-              <Route path="/resourcecenter" element={<ResourceCenter />} />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route
+              path="/client-and-matter-management"
+              element={<ClientAndMatterManagement />}
+            />
+            <Route
+              path="/document-automation"
+              element={<DocumentAutomation />}
+            />
+            <Route
+              path="/timerecordingbilling"
+              element={<TimeRecordingBilling />} />
+            <Route path="/reporting" element={<Reporting />} />
+            <Route path="/clientservice" element={<ClientService />} />
+            <Route path="/conveyancing" element={<Conveyancing />} />
+            <Route path="/estateprobate" element={<EstateProbate />} />
+            <Route path="/family" element={< Family />} />
+            <Route path="/employment" element={< Employment />} />
+            <Route path="/personalinjury" element={< PersonalInjury />} />
+            <Route path="/contactus" element={< ContactUs />} />
+            <Route path="/company" element={< Company />} />
+            <Route path="/resources" element={< Resources />} />
 
-              {/* Website Routes Ends */}
-
-              <Route path="/login" element={<Login />} />
-              <Route path="/signup" element={<Signup />} />
-              <Route path="/forgotpassword" element={<ForgotPassword />} />
-            </Routes>
-          ) : (
-            <div
-              className={`right-side-content${isSidebarCollapsed ? " collapsed" : ""
-                }`}
-            >
-              <Routes>
-                {/* AdminDashboard */}
-                <Route path="/dashboard" element={<Dashboard />} />
-                <Route path="/recordpayment" element={<RecordPayment />} />
-                <Route path="/newbills" element={<NewBills />} />
-                {/* matter routing */}
-                <Route path="/matter" element={<MattersDashboard />} />
-                <Route path="/document" element={<Document />} />
-                <Route path="/categories" element={<CategoriesTemplate />} />
-
-                {/* calendar routing  */}
-                <Route path="/calendar" element={<CalendarUI />} />
-                <Route path="/timebilling" element={<Timebilling />} />
-                <Route path="/newcalender" element={<NewCalendar />} />
-
-                {/* tasks routing  */}
-                <Route path="/tasks" element={<TaskPage />} />
-                <Route path="/taskfeed" element={<TaskFeeds />} />
-
-                {/* User Management */}
-                <Route path="/clientmanagement" element={<ClientManagement />} />
-
-                <Route path="/setting" element={<Settings />} />
-                <Route path="/activity" element={<ActivitiesTable />} />
-                {/* communication routing */}
-                <Route path="/communications" element={<Communication />} />
-                <Route path="/pricingplan" element={<PricingPlans />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/forgotpassword" element={<ForgotPassword />} />
 
 
-                {/* account routing */}
-                <Route path="/accounts" element={<Account />} />
+            {/* Admin Dashboard */}
+             <Route path="/admin-dashboard" element={<AdminDashboard/>} />
 
 
-                { /* contact routing  */}
-                <Route path="/contact" element={<ContactPage />} />
-                <Route path="/newperson" element={< NewPerson />} />
 
-                {/* report analytics routes */}
-                <Route
-                  path="/reportsanalytics"
-                  element={<ReportsAnalytics />}
-                />
+                {/* User Dashboard */}
 
-                {/* admin popup full routing */}
-                <Route path="/admin" element={<Admin />} />
-                <Route path="/profile" element={<Profile />} />
-                <Route path="/editprofile" element={<EditProfile />} />
-              </Routes>
-            </div>
-          )}
+                  <Route path="/user-dashboard" element={<UserDashboard/>} />
+          </Routes>
         </>
       </div>
     </>
   );
 }
+
 export default App;

@@ -2,13 +2,19 @@ import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "./Sidebar.css";
-import Admin from "../Component/AdminDashboard/Admin/Admin";
 
 const Sidebar = ({ collapsed, menuItemClick }) => {
   const [showAdmin, setShowAdmin] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [role, setRole] = useState(null);
+
   const navigate = useNavigate();
   const location = useLocation();
+
+  useEffect(() => {
+    const storedRole = localStorage.getItem("userRole");
+    setRole(storedRole);
+  }, []);
 
   useEffect(() => {
     const handleResize = () => {
@@ -58,8 +64,9 @@ const Sidebar = ({ collapsed, menuItemClick }) => {
     }
   };
 
+  // Define role-based menu items
   const adminMenuItems = [
-    { path: "/dashboard", icon: "fa-solid fa-gauge", text: "Dashboard" },
+    { path: "admin-dashboard", icon: "fa-solid fa-gauge", text: "Dashboard" },
     { path: "/calendar", icon: "fa-solid fa-calendar-check", text: "Calendar" },
     { path: "/tasks", icon: "fa-solid fa-diagram-project", text: "Tasks" },
     { path: "/clientmanagement", icon: "fa-solid fa-users", text: "Client Management" },
@@ -74,11 +81,21 @@ const Sidebar = ({ collapsed, menuItemClick }) => {
     { path: "/setting", icon: "fa-solid fa-gear", text: "Settings" }
   ];
 
+  const userMenuItems = [
+    { path: "/dashboard", icon: "fa-solid fa-gauge", text: "Dashboard" },
+    { path: "/tasks", icon: "fa-solid fa-diagram-project", text: "Tasks" },
+    { path: "/contact", icon: "fa-solid fa-envelope", text: "Contact" },
+    { path: "/document", icon: "fa-solid fa-file-lines", text: "Documents" },
+    { path: "/communications", icon: "fa-solid fa-comments", text: "Communications" },
+  ];
+
+  const menuToRender = role === "admin" ? adminMenuItems : userMenuItems;
+
   return (
     <div className={`sidebar-container ${collapsed ? "collapsed" : ""}`}>
       <div className="sidebar">
         <ul className="menu">
-          {adminMenuItems.map((item) => (
+          {menuToRender.map((item) => (
             <li
               key={item.path}
               className={`menu-item ${isActive(item.path) ? "active" : ""}`}
@@ -111,26 +128,24 @@ const Sidebar = ({ collapsed, menuItemClick }) => {
           ))}
         </ul>
 
-        <div className="sidebar-bottom mt-auto px-2 pb-3">
-          <div
-            className="menu-link d-flex align-items-center mb-3"
-            style={{ cursor: "pointer" }}
-            onClick={() => setShowAdmin(true)}
-          >
-            <div className="resource-icon d-flex align-items-center justify-content-center">
-              Ad
+        {role === "admin" && (
+          <div className="sidebar-bottom mt-auto px-2 pb-3">
+            <div
+              className="menu-link d-flex align-items-center mb-3"
+              style={{ cursor: "pointer" }}
+              onClick={() => setShowAdmin(true)}
+            >
+              <div className="resource-icon d-flex align-items-center justify-content-center">
+                Ad
+              </div>
+              {!collapsed && (
+                <div style={{ lineHeight: 1 }}>Admin</div>
+              )}
             </div>
-            {!collapsed && (
-              <div style={{ lineHeight: 1 }}>Admin</div>
-            )}
-          </div>
 
-          <Admin
-            visible={showAdmin}
-            onClose={() => setShowAdmin(false)}
-            collapsed={collapsed}
-          />
-        </div>
+           
+          </div>
+        )}
       </div>
     </div>
   );
