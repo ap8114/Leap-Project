@@ -26,7 +26,7 @@ import Resources from "./Component/Website/Pages/Resources/Resources";
 
 // Admin & User
 import AdminDashboard from "./Component/Admin/Dashboard/AdminDashboard";
-import UserDashboard from "./Component/User/Dashboard/UserDashboard";
+
 import Clientmanagement from "./Component/Admin/ClientManagement/Clientmanagement";
 import LeadManagement from "./Component/Admin/LeadManagement/LeadManagement";
 import MessageCenter from "./Component/Admin/Communication/MessageCenter";
@@ -34,6 +34,13 @@ import AppointmentScheduler from "./Component/Admin/Appointment/AppointmentSched
 import ReportandAnalytics from "./Component/Admin/Reports &Analytics/ReportandAnalytics";
 import Integrations from "./Component/Admin/Integrations/Integrations";
 import RoleAndPermission from "./Component/Admin/Setting/RoleandPermision";
+import MyProfile from "./Component/User/Myprofile/MyProfile";
+import MyCase from "./Component/User/MyCase/MyCase";
+import Messages from "./Component/User/Message/Messages";
+
+import Appointments from "./Component/User/Appointment/Appointments";
+import Documents from "./Component/User/Document/Documents";
+import Feedback from "./Component/User/Feedback/Feedback";
 
 function App() {
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
@@ -86,7 +93,15 @@ function App() {
     location.pathname.startsWith("/appointement") ||
     location.pathname.startsWith("/reports") ||
     location.pathname.startsWith("/integration") ||
-    location.pathname.startsWith("/setting");
+    location.pathname.startsWith("/setting") ||
+    location.pathname.startsWith("/user-myprofile") ||
+    location.pathname.startsWith("/mycase") ||
+     location.pathname.startsWith("/message")||
+     location.pathname.startsWith("/appointment")||
+     location.pathname.startsWith("/documents")||
+     location.pathname.startsWith("/feedback");
+    
+
 
   const showLayout = !noLayoutRoutes.includes(location.pathname) || isDashboardRoute;
 
@@ -125,7 +140,12 @@ function App() {
       <Route path="/setting" element={<RoleAndPermission />} />
 
       {/* User Dashboard */}
-      <Route path="/user-dashboard" element={<UserDashboard />} />
+      <Route path="/user-myprofile" element={<MyProfile/>} />
+      <Route path="/mycase" element={<MyCase/>} />
+       <Route path="/message" element={<Messages/>} />
+        <Route path="/appointments" element={<Appointments/>} />
+         <Route path="/documents" element={<Documents/>} />
+          <Route path="/feedback" element={<Feedback/>} />
     </Routes>
   );
 

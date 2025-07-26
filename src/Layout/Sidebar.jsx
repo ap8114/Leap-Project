@@ -74,13 +74,16 @@ const adminMenuItems = [
 ];
 
 
-  const userMenuItems = [
-    { path: "/user-dashboard", icon: "fa-solid fa-gauge", text: "Dashboard" },
-    { path: "/tasks", icon: "fa-solid fa-diagram-project", text: "Tasks" },
-    { path: "/contacts", icon: "fa-solid fa-envelope", text: "Contacts" },
-    { path: "/documents", icon: "fa-solid fa-file-lines", text: "Documents" },
-    { path: "/communications", icon: "fa-solid fa-comments", text: "Communications" },
-  ];
+ const userMenuItems = [
+  { path: "/user-myprofile", icon: "fa-solid fa-user", text: "My Profile" },
+  { path: "/mycase", icon: "fa-solid fa-scale-balanced", text: "My Case" },
+  { path: "/message", icon: "fa-solid fa-envelope", text: "Message" },
+  { path: "/appointments", icon: "fa-solid fa-calendar-check", text: "Appointments" },
+  { path: "/documents", icon: "fa-solid fa-file-alt", text: "Documents" },
+  { path: "/feedback", icon: "fa-solid fa-headset", text: "Feedback & Support" }
+];
+
+
 
   const menuToRender = role === "admin" ? adminMenuItems : userMenuItems;
 

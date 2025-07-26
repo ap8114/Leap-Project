@@ -82,3 +82,56 @@
 .bg-purple {
   background-color: #6f42c1;
 }
+
+.calendar-grid-month {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+  margin-top: 1rem;
+}
+
+.calendar-month-header {
+  font-weight: bold;
+  text-align: center;
+  font-size: 0.85rem;
+  padding: 0.25rem 0;
+}
+
+.calendar-month-day {
+  border: 1px solid #dee2e6;
+  padding: 0.25rem;
+  min-height: 80px;
+  font-size: 0.85rem;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.calendar-month-day-empty {
+  background-color: #f8f9fa;
+}
+
+.calendar-month-day-current {
+  border: 2px solid #0d6efd;
+  background-color: #e7f1ff;
+}
+
+.calendar-month-day-number {
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+}
+
+.calendar-month-event {
+  font-size: 0.75rem;
+  padding: 2px 4px;
+  margin-bottom: 2px;
+  border-radius: 3px;
+}
+
+.event-card {
+  padding: 0.5rem;
+  border-left-width: 4px !important;
+  border-radius: 0.5rem;
+  font-size: 0.85rem;
+  position: relative;
+  margin-bottom: 0.5rem;
+}
