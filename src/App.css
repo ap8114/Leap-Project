@@ -220,10 +220,11 @@ select.form-input {
 
 /* maindashbord start */
 .main-content {
-  display: flex;
+  
   justify-content: center;
   align-items: center;
   margin-top: -5px;
+  margin-left: 250px;
 }
 
 /* maindashbord end */

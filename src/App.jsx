@@ -1,7 +1,7 @@
 import { Route, Routes, useLocation } from "react-router-dom";
 import "./App.css";
 import Navbar from "./Layout/Navbar";
-import Sidebar from "./Layout/Sidebar"
+import Sidebar from "./Layout/Sidebar";
 import Login from "./Auth/Login";
 import Signup from "./Auth/Signup";
 import ForgotPassword from "./Auth/ForgotPassword";
@@ -24,7 +24,8 @@ import Company from "./Component/Website/Pages/Company/Company";
 import Resources from "./Component/Website/Pages/Resources/Resources";
 import AdminDashboard from "./Component/Admin/Dashboard/AdminDashboard";
 import UserDashboard from "./Component/User/Dashboard/UserDashboard";
-
+import Clientmanagement from "./Component/Admin/ClientManagement/Clientmanagement";
+import LeadManagement from "./Component/Admin/LeadManagement/LeadManagement";
 
 function App() {
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
@@ -85,7 +86,7 @@ function App() {
   return (
     <>
       {!hideLayout && <Navbar toggleSidebar={toggleSidebar} />}
-      <div className={`main-content${hideLayout ? "" : ""}`}>
+      <div className="main-content">
         {!hideLayout && (
           <Sidebar
             collapsed={isSidebarCollapsed}
@@ -105,31 +106,31 @@ function App() {
             />
             <Route
               path="/timerecordingbilling"
-              element={<TimeRecordingBilling />} />
+              element={<TimeRecordingBilling />}
+            />
             <Route path="/reporting" element={<Reporting />} />
             <Route path="/clientservice" element={<ClientService />} />
             <Route path="/conveyancing" element={<Conveyancing />} />
             <Route path="/estateprobate" element={<EstateProbate />} />
-            <Route path="/family" element={< Family />} />
-            <Route path="/employment" element={< Employment />} />
-            <Route path="/personalinjury" element={< PersonalInjury />} />
-            <Route path="/contactus" element={< ContactUs />} />
-            <Route path="/company" element={< Company />} />
-            <Route path="/resources" element={< Resources />} />
+            <Route path="/family" element={<Family />} />
+            <Route path="/employment" element={<Employment />} />
+            <Route path="/personalinjury" element={<PersonalInjury />} />
+            <Route path="/contactus" element={<ContactUs />} />
+            <Route path="/company" element={<Company />} />
+            <Route path="/resources" element={<Resources />} />
 
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/forgotpassword" element={<ForgotPassword />} />
 
-
             {/* Admin Dashboard */}
-             <Route path="/admin-dashboard" element={<AdminDashboard/>} />
+            <Route path="/admin-dashboard" element={<AdminDashboard />} />
+            <Route path="/Clientmanagement" element={<Clientmanagement />} />
+            <Route path="/leadmanagement" element={<LeadManagement />} />
 
+            {/* User Dashboard */}
 
-
-                {/* User Dashboard */}
-
-                  <Route path="/user-dashboard" element={<UserDashboard/>} />
+            <Route path="/user-dashboard" element={<UserDashboard />} />
           </Routes>
         </>
       </div>

@@ -67,8 +67,8 @@ const Sidebar = ({ collapsed, menuItemClick }) => {
   // Define role-based menu items
   const adminMenuItems = [
     { path: "admin-dashboard", icon: "fa-solid fa-gauge", text: "Dashboard" },
-    { path: "/calendar", icon: "fa-solid fa-calendar-check", text: "Calendar" },
-    { path: "/tasks", icon: "fa-solid fa-diagram-project", text: "Tasks" },
+    { path: "/clientmanagement", icon: "fa-solid fa-calendar-check", text: "Client Management" },
+    { path: "/leadmanagement", icon: "fa-solid fa-diagram-project", text: "Lead Management" },
     { path: "/clientmanagement", icon: "fa-solid fa-users", text: "Client Management" },
     { path: "/matter", icon: "fa-solid fa-scale-balanced", text: "Matters" },
     { path: "/contact", icon: "fa-solid fa-envelope", text: "Contact" },
@@ -92,7 +92,7 @@ const Sidebar = ({ collapsed, menuItemClick }) => {
   const menuToRender = role === "admin" ? adminMenuItems : userMenuItems;
 
   return (
-    <div className={`sidebar-container ${collapsed ? "collapsed" : ""}`}>
+    <div className={`sidebar-container  ${collapsed ? "collapsed" : ""}`}>
       <div className="sidebar">
         <ul className="menu">
           {menuToRender.map((item) => (
