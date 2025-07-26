@@ -86,10 +86,10 @@ const Integrations = () => {
 
   return (
     <div className="min-vh-100 bg-light">
-      <div className="container py-5">
+      <div className=" p-4">
         {/* Header Section */}
-        <div className="text-center mb-5">
-          <h1 className="display-4 fw-bold text-dark mb-3">Integrations</h1>
+        <div className="text-start mb-3">
+          <h2 className="fw-bold text-dark mb-2">Integrations</h2>
           <p className="lead text-muted mb-4">Connect your favorite tools seamlessly</p>
         </div>
         
@@ -144,22 +144,7 @@ const Integrations = () => {
         </div>
       </div>
 
-      {/* Custom CSS for hover effect and purple text */}
-      <style>{`
-        .hover-shadow:hover {
-          box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
-          transition: box-shadow 0.2s ease;
-        }
-        .text-purple {
-          color: #6f42c1;
-        }
-        .hover-text-dark:hover {
-          color: #212529 !important;
-        }
-        .cursor-pointer {
-          cursor: pointer;
-        }
-      `}</style>
+    
     </div>
   );
 };

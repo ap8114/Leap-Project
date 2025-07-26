@@ -1,91 +1,84 @@
+// Sidebar.js
 import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "./Sidebar.css";
 
 const Sidebar = ({ collapsed, menuItemClick }) => {
-  const [showAdmin, setShowAdmin] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
-  const [role, setRole] = useState(null);
-
+  const [role, setRole] = useState(localStorage.getItem("userRole") || "user");
   const navigate = useNavigate();
   const location = useLocation();
 
   useEffect(() => {
-    const storedRole = localStorage.getItem("userRole");
-    setRole(storedRole);
-  }, []);
-
-  useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
+      if (window.innerWidth < 768) {
+        menuItemClick(true);
+      }
     };
-    handleResize();
+    
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  useEffect(() => {
-    const menuItems = document.querySelectorAll(".menu-item");
-
-    const handleMouseEnter = (e) => {
-      const active = document.querySelector(".menu-item.active");
-      if (active && active !== e.currentTarget) {
-        active.classList.add("menu-hovered");
-      }
-    };
-
-    const handleMouseLeave = () => {
-      const active = document.querySelector(".menu-item.active");
-      if (active) {
-        active.classList.remove("menu-hovered");
-      }
-    };
-
-    menuItems.forEach((item) => {
-      item.addEventListener("mouseenter", handleMouseEnter);
-      item.addEventListener("mouseleave", handleMouseLeave);
-    });
-
-    return () => {
-      menuItems.forEach((item) => {
-        item.removeEventListener("mouseenter", handleMouseEnter);
-        item.removeEventListener("mouseleave", handleMouseLeave);
-      });
-    };
-  }, []);
+  }, [menuItemClick]);
 
   const isActive = (path) => location.pathname === path;
 
   const handleNavigation = (path) => {
     navigate(path);
-    if (isMobile) {
-      menuItemClick();
+    if (window.innerWidth < 768) {
+      menuItemClick(true);
     }
   };
 
-  // Define role-based menu items
-  const adminMenuItems = [
-    { path: "admin-dashboard", icon: "fa-solid fa-gauge", text: "Dashboard" },
-    { path: "/clientmanagement", icon: "fa-solid fa-calendar-check", text: "Client Management" },
-    { path: "/leadmanagement", icon: "fa-solid fa-diagram-project", text: "Lead Management" },
-    { path: "/clientmanagement", icon: "fa-solid fa-users", text: "Client Management" },
-    { path: "/matter", icon: "fa-solid fa-scale-balanced", text: "Matters" },
-    { path: "/contact", icon: "fa-solid fa-envelope", text: "Contact" },
-    { path: "/activity", icon: "fa-solid fa-clock-rotate-left", text: "Activity" },
-    { path: "/timebilling", icon: "fa-solid fa-stopwatch", text: "Time & Billing" },
-    { path: "/accounts", icon: "fa-solid fa-file-invoice-dollar", text: "Accounts" },
-    { path: "/document", icon: "fa-solid fa-file-lines", text: "Documents" },
-    { path: "/communications", icon: "fa-solid fa-comments", text: "Communications" },
-    { path: "/reportsanalytics", icon: "fa-solid fa-chart-line", text: "Reports & Analytics" },
-    { path: "/setting", icon: "fa-solid fa-gear", text: "Settings" }
-  ];
+  // Updated menu items with correct paths
+const adminMenuItems = [
+  {
+    path: "/admin-dashboard",
+    icon: "fa-solid fa-chart-line", // Dashboard
+    text: "Dashboard",
+  },
+  {
+    path: "/clientmanagement",
+    icon: "fa-solid fa-user-tie", // Client Management
+    text: "Client Management",
+  },
+  {
+    path: "/leadmanagement",
+    icon: "fa-solid fa-briefcase", // Lead Management
+    text: "Lead Management",
+  },
+  {
+    path: "/communication",
+    icon: "fa-solid fa-comments", // Communication
+    text: "Communication",
+  },
+  {
+    path: "/appointement",
+    icon: "fa-solid fa-calendar-check", // Appointment
+    text: "Appointment",
+  },
+  {
+    path: "/reports",
+    icon: "fa-solid fa-chart-pie", // Reports & Analytics
+    text: "Reports & Analytics",
+  },
+  {
+    path: "/integration",
+    icon: "fa-solid fa-plug", // Integrations
+    text: "Integrations",
+  },
+  {
+    path: "/setting",
+    icon: "fa-solid fa-gear", // Settings
+    text: "Setting",
+  },
+];
+
 
   const userMenuItems = [
-    { path: "/dashboard", icon: "fa-solid fa-gauge", text: "Dashboard" },
+    { path: "/user-dashboard", icon: "fa-solid fa-gauge", text: "Dashboard" },
     { path: "/tasks", icon: "fa-solid fa-diagram-project", text: "Tasks" },
-    { path: "/contact", icon: "fa-solid fa-envelope", text: "Contact" },
-    { path: "/document", icon: "fa-solid fa-file-lines", text: "Documents" },
+    { path: "/contacts", icon: "fa-solid fa-envelope", text: "Contacts" },
+    { path: "/documents", icon: "fa-solid fa-file-lines", text: "Documents" },
     { path: "/communications", icon: "fa-solid fa-comments", text: "Communications" },
   ];
 
@@ -94,6 +87,9 @@ const Sidebar = ({ collapsed, menuItemClick }) => {
   return (
     <div className={`sidebar-container  ${collapsed ? "collapsed" : ""}`}>
       <div className="sidebar">
+        <div className="sidebar-header">
+          
+        </div>
         <ul className="menu">
           {menuToRender.map((item) => (
             <li
@@ -101,49 +97,21 @@ const Sidebar = ({ collapsed, menuItemClick }) => {
               className={`menu-item ${isActive(item.path) ? "active" : ""}`}
             >
               <div
-                className="menu-link d-flex align-items-center"
-                style={{
-                  padding: "12px 16px",
-                  cursor: "pointer",
-                  justifyContent: collapsed ? "center" : "flex-start",
-                  width: "100%",
-                }}
+                className="menu-link"
                 onClick={() => handleNavigation(item.path)}
               >
-                <i
-                  className={`fas ${item.icon}`}
-                  style={{
-                    fontSize: "1.25rem",
-                    minWidth: "24px",
-                    textAlign: "center"
-                  }}
-                ></i>
-                {!collapsed && (
-                  <span className="menu-text ms-2" style={{ fontSize: "1rem" }}>
-                    {item.text}
-                  </span>
-                )}
+                <i className={`fas ${item.icon}`}></i>
+                {!collapsed && <span>{item.text}</span>}
               </div>
             </li>
           ))}
         </ul>
 
-        {role === "admin" && (
-          <div className="sidebar-bottom mt-auto px-2 pb-3">
-            <div
-              className="menu-link d-flex align-items-center mb-3"
-              style={{ cursor: "pointer" }}
-              onClick={() => setShowAdmin(true)}
-            >
-              <div className="resource-icon d-flex align-items-center justify-content-center">
-                Ad
-              </div>
-              {!collapsed && (
-                <div style={{ lineHeight: 1 }}>Admin</div>
-              )}
+        {role === "admin" && !collapsed && (
+          <div className="sidebar-bottom">
+            <div className="admin-section">
+             
             </div>
-
-           
           </div>
         )}
       </div>

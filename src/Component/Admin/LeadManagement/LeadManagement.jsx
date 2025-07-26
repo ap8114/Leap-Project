@@ -145,32 +145,38 @@ const LeadManagement = () => {
   }
 
   return (
-    <div className="container-fluid bg-light" style={{ minHeight: '100vh' }}>
+    <div className="p-4 py-2 bg-light" style={{ minHeight: '100vh' }}>
       {/* Header */}
-      <div className="bg-white shadow-sm border-bottom">
-        <div className="container py-4">
-          <div className="d-flex justify-content-between align-items-center">
-            <div>
-              <nav className="mb-2">
-                <span className="text-muted">Dashboard</span>
-                <i className="fas fa-chevron-right mx-2 text-muted"></i>
-                <span className="text-dark">Lead Management</span>
-              </nav>
-              <h1 className="h2 text-dark">Lead Management</h1>
-            </div>
-            <button
-              onClick={() => setShowAddForm(true)}
-              className="btn btn-primary"
-            >
-              <i className="fas fa-plus mr-2"></i>Add New Lead
-            </button>
-          </div>
-          
-          <LeadStats />
-        </div>
+     <div className="bg-light ">
+  <div className="container py-4">
+    <div className="row align-items-center">
+      {/* Left Side: Breadcrumb + Heading */}
+      <div className="col-12 col-md-8 mb-3 mb-md-0">
+        <nav className="mb-2">
+          <span className="text-muted">Dashboard</span>
+          <i className="fas fa-chevron-right mx-2 text-muted"></i>
+          <span className="text-dark">Lead Management</span>
+        </nav>
+        <h1 className="h4 text-dark mb-0">Lead Management</h1>
       </div>
 
-      <div className="container py-4">
+      {/* Right Side: Button */}
+      <div className="col-12 col-md-4 text-md-end">
+        <button
+          onClick={() => setShowAddForm(true)}
+          className="btn btn-primary w-auto"
+        >
+          <i className="fas fa-plus me-2"></i>Add New Lead
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      <LeadStats />
+
+      <div className=" py-4">
         <div className="row">
           {/* Main Content */}
           <div className="col-md-8">

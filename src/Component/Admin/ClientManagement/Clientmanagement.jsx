@@ -147,7 +147,7 @@ const Clientmanagement = () => {
   return (
     <div className="min-vh-100 bg-light">
       {/* Header */}
-      <div className="bg-white shadow-sm border-bottom">
+      <div className="bg-white  border-bottom">
         <div className="container-fluid py-3">
           <div className="d-flex align-items-center justify-content-between">
             <h1 className="h2 mb-0 text-dark">Client Management</h1>

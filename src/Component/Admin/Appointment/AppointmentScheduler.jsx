@@ -4,6 +4,7 @@ import AppointmentHeader from './AppointmentHeader';
 import Sidebar from './Sidebar';
 import CalendarView from './CalendarView';
 import NewAppointmentModal from './NewAppointmentModal';
+import './Appointement.css';
 
 const AppointmentScheduler = () => {
   const [currentView, setCurrentView] = useState('week');
