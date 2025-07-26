@@ -25,7 +25,7 @@ const Login = () => {
   };
 
   return (
-    <Container fluid className="min-vh-100 d-flex flex-column flex-md-row p-1 overflow-hidden">
+    <Container fluid className="min-vh-100 d-flex flex-column flex-md-row p-0 overflow-hidden">
       {/* Left Panel - Login Form */}
       <Col xs={12} md={6} className="d-flex flex-column justify-content-center align-items-center px-4 px-sm-5 py-4 vh-100 overflow-auto">
         {/* Logo */}

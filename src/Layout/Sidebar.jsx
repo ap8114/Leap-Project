@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "./Sidebar.css";
-import Admin from "../Component/AdminDashboard/Admin/Admin";
 
 const Sidebar = ({ collapsed, menuItemClick }) => {
   const [showAdmin, setShowAdmin] = useState(false);
@@ -67,7 +66,7 @@ const Sidebar = ({ collapsed, menuItemClick }) => {
 
   // Define role-based menu items
   const adminMenuItems = [
-    { path: "/dashboard", icon: "fa-solid fa-gauge", text: "Dashboard" },
+    { path: "admin-dashboard", icon: "fa-solid fa-gauge", text: "Dashboard" },
     { path: "/calendar", icon: "fa-solid fa-calendar-check", text: "Calendar" },
     { path: "/tasks", icon: "fa-solid fa-diagram-project", text: "Tasks" },
     { path: "/clientmanagement", icon: "fa-solid fa-users", text: "Client Management" },
@@ -144,11 +143,7 @@ const Sidebar = ({ collapsed, menuItemClick }) => {
               )}
             </div>
 
-            <Admin
-              visible={showAdmin}
-              onClose={() => setShowAdmin(false)}
-              collapsed={collapsed}
-            />
+           
           </div>
         )}
       </div>
