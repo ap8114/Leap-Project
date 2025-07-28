@@ -35,7 +35,7 @@ const ContactInfo = ({ data, setData, editing, onEdit, onSave, onCancel }) => {
         <div className="mb-3">
           <label className="form-label d-flex align-items-center">
             <i className="fas fa-phone text-muted me-2"></i>
-            Phone
+            Telephone
           </label>
           {editing ? (
             <input

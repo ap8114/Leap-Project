@@ -28,9 +28,9 @@ const RescheduleModal = ({ appointment, onClose }) => {
             {appointment && (
               <div className="alert alert-info mb-4">
                 <h6 className="alert-heading">Current Appointment</h6>
-                <p className="mb-1 small">{appointment.lawyer} - {appointment.specialty}</p>
+                <p className="mb-1 small">{appointment.lawyer} - {appointment.speciality}</p>
                 <p className="mb-0 small">
-                  {new Date(appointment.date).toLocaleDateString('en-US', {
+                  {new Date(appointment.date).toLocaleDateString('en-GB', {
                     weekday: 'long',
                     year: 'numeric',
                     month: 'long',

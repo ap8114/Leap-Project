@@ -22,7 +22,7 @@ const Messages = () => {
             </div>
             <div>
               <div className="bg-light rounded p-3">
-                <p className="small mb-0">Hi John, I've reviewed the medical records you submitted. They look comprehensive and will be very helpful for our case. I'll be in touch soon with next steps.</p>
+                <p className="small mb-0">Hi John, I’ve reviewed the medical records you submitted. They look comprehensive and will be very helpful for our case. I’ll be in touch soon with next steps.</p>
               </div>
               <p className="small text-muted mt-1">Sarah Johnson • 1 day ago</p>
             </div>
@@ -32,7 +32,7 @@ const Messages = () => {
           <div className="d-flex align-items-start gap-2 justify-content-end">
             <div className="text-end">
               <div className="bg-primary text-white rounded p-3">
-                <p className="small mb-0">Thank you for the update. I have some additional documentation from my physical therapy sessions. Should I upload those as well?</p>
+                <p className="small mb-0">Thank you for the update. I have some additional documentation from my physiotherapy sessions. Should I upload those as well?</p>
               </div>
               <p className="small text-muted mt-1 text-end">You • 2 hours ago</p>
             </div>

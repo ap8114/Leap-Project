@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 
-
 const Messages = () => {
   const [message, setMessage] = useState('');
   const [isTyping, setIsTyping] = useState(false);
@@ -36,7 +35,7 @@ const Messages = () => {
     {
       id: 4,
       sender: 'You',
-      content: ".Sure, I'll attach the updated files right now.",
+      content: "Sure, I'll attach the updated files right now.",
       timestamp: '2:40 PM',
       isSent: true,
       isRead: false,
@@ -59,27 +58,38 @@ const Messages = () => {
 
   return (
     <div className="container-fluid bg-light min-vh-100 d-flex flex-column py-3 px-2">
-      <div className="bg-white p-3 rounded shadow-sm mb-3">
-        <div className="d-flex justify-content-between align-items-center flex-wrap">
-          <div className="d-flex align-items-center gap-3">
-            <h5 className="mb-0 me-3">Messages</h5>
-            <span className="badge bg-success">Encrypted Chat <i className="fas fa-lock ms-1"></i></span>
-            <span className="text-muted small"><i className="fas fa-clock me-1"></i>Response ETA: 5 mins</span>
-          </div>
-          <div className="d-flex align-items-center gap-3 mt-2 mt-md-0">
-            <button className="btn btn-primary btn-sm">
-              <i className="fas fa-download me-2"></i>Download PDF
-            </button>
-            <button className="btn btn-outline-secondary btn-sm">
-              <i className="fas fa-paperclip me-2"></i>Attach Docs
-            </button>
-            <div className="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" style={{ width: '40px', height: '40px' }}>
-              <i className="fas fa-user"></i>
-            </div>
-          </div>
-        </div>
-        <hr />
-        <div className="d-flex align-items-center gap-3">
+      <div className=" p-3 rounded shadow-sm mb-3">
+       <div className="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center flex-wrap gap-3">
+  {/* Left Side: Title & Info */}
+  <div className="d-flex flex-column flex-sm-row align-items-start align-items-sm-center gap-3">
+    <h2 className="mb-0 fw-semibold me-sm-3">Messages</h2>
+    <span className="badge bg-success">
+      Encrypted Chat <i className="fas fa-lock ms-1"></i>
+    </span>
+    <span className="text-muted small">
+      <i className="fas fa-clock me-1"></i>Response ETA: 5 mins
+    </span>
+  </div>
+
+  {/* Right Side: Buttons & Icon */}
+  <div className="d-flex flex-wrap align-items-center gap-1">
+    <button className="btn btn-primary btn-sm">
+      <i className="fas fa-download me-2"></i>Download PDF
+    </button>
+    <button className="btn btn-outline-secondary btn-sm">
+      <i className="fas fa-paperclip me-2"></i>Attach Documents
+    </button>
+    <div
+      className="bg-primary  text-white rounded-circle d-flex align-items-center justify-content-center"
+      style={{ width: '40px', height: '40px' }}
+    >
+      <i className="fas fa-user "></i>
+    </div>
+  </div>
+</div>
+
+    
+        <div className="d-flex align-items-center mt-4 gap-3">
           <div className="bg-secondary text-white rounded-circle d-flex align-items-center justify-content-center" style={{ width: '32px', height: '32px' }}>
             <i className="fas fa-user"></i>
           </div>

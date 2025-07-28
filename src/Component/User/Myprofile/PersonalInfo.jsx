@@ -39,7 +39,7 @@ const PersonalInfo = ({ data, setData, editing, onEdit, onSave, onCancel }) => {
               onChange={(e) => setData({...data, dateOfBirth: e.target.value})}
             />
           ) : (
-            <p className="form-control-plaintext">{new Date(data.dateOfBirth).toLocaleDateString()}</p>
+            <p className="form-control-plaintext">{new Date(data.dateOfBirth).toLocaleDateString('en-GB')}</p>
           )}
         </div>
         

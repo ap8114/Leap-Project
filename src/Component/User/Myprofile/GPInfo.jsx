@@ -3,7 +3,7 @@ import React from 'react';
 const GPInfo = ({ data, setData, editing, onEdit, onSave, onCancel }) => {
   return (
     <div className="card">
-      <div className="card-header d-flex justify-content-between align-items-center">
+      <div className="card-header d-flex justify-content-between align-items-centre">
         <h2 className="h5 mb-0">
           <i className="fas fa-user-md text-primary me-2"></i>
           GP & Emergency Details
@@ -48,7 +48,7 @@ const GPInfo = ({ data, setData, editing, onEdit, onSave, onCancel }) => {
             </div>
             
             <div className="mb-3">
-              <label className="form-label">Phone</label>
+              <label className="form-label">Telephone</label>
               {editing ? (
                 <input
                   type="tel"
@@ -80,7 +80,7 @@ const GPInfo = ({ data, setData, editing, onEdit, onSave, onCancel }) => {
             </div>
             
             <div className="mb-3">
-              <label className="form-label">Phone</label>
+              <label className="form-label">Telephone</label>
               {editing ? (
                 <input
                   type="tel"

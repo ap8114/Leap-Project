@@ -34,7 +34,7 @@ const Documents = () => {
         {/* Upload Zone */}
         <Card className="mb-5">
           <Card.Body>
-            <h2 className="h4 mb-4">Upload Zone</h2>
+            <h2 className=" mb-4 fw-semibold">Upload Zone</h2>
             <div className="border border-2 border-secondary border-dashed p-5 text-center bg-light">
               <Form.Group controlId="file-upload">
                 <Form.Label className="d-block">
@@ -53,7 +53,7 @@ const Documents = () => {
         {/* Document List */}
         <Card className="mb-5">
           <Card.Body>
-            <h2 className="h4 mb-4">List of All Shared Docs</h2>
+            <h2 className="h4 mb-4">List of All Shared Documents</h2>
             {uploadedFiles.map((file, index) => (
               <div
                 key={file.id}
@@ -66,14 +66,15 @@ const Documents = () => {
                     <small className="text-muted">Uploaded on {file.uploadDate} • {file.size}</small>
                   </div>
                 </div>
-                <div>
-                  <Button variant="success" className="me-2">
-                    <i className="fas fa-download me-1"></i> Download
-                  </Button>
-                  <Button variant="danger" onClick={() => handleDeleteFile(file.id)}>
-                    <i className="fas fa-trash me-1"></i> Delete
-                  </Button>
-                </div>
+            <div className="d-flex ms-2 flex-column flex-md-row gap-2">
+  <Button variant="success">
+    <i className="fas fa-download me-1"></i> Download
+  </Button>
+  <Button variant="danger" onClick={() => handleDeleteFile(file.id)}>
+    <i className="fas fa-trash me-1"></i> Delete
+  </Button>
+</div>
+
               </div>
             ))}
           </Card.Body>

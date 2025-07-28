@@ -15,7 +15,7 @@ const Timeline = () => {
             <div>
               <h4 className="h6 mb-1">Accident Occurred</h4>
               <p className="small text-muted mb-1">Motor vehicle collision at Main St & Oak Ave</p>
-              <p className="small text-muted mb-0">January 8, 2024</p>
+              <p className="small text-muted mb-0">8 January 2024</p>
             </div>
           </div>
           <div className="d-flex align-items-start gap-3">
@@ -26,8 +26,8 @@ const Timeline = () => {
             </div>
             <div>
               <h4 className="h6 mb-1">Medical Treatment</h4>
-              <p className="small text-muted mb-1">Initial emergency room visit and ongoing therapy</p>
-              <p className="small text-muted mb-0">January 8 - February 15, 2024</p>
+              <p className="small text-muted mb-1">Initial accident & emergency visit and ongoing therapy</p>
+              <p className="small text-muted mb-0">8 January – 15 February 2024</p>
             </div>
           </div>
           <div className="d-flex align-items-start gap-3">
@@ -38,8 +38,8 @@ const Timeline = () => {
             </div>
             <div>
               <h4 className="h6 mb-1">Case Filed</h4>
-              <p className="small text-muted mb-1">Personal injury lawsuit filed against defendant</p>
-              <p className="small text-muted mb-0">March 15, 2024</p>
+              <p className="small text-muted mb-1">Personal injury claim filed against defendant</p>
+              <p className="small text-muted mb-0">15 March 2024</p>
             </div>
           </div>
         </div>

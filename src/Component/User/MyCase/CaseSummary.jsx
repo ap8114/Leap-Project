@@ -17,7 +17,7 @@ const CaseSummary = () => {
             </div>
             <div className="d-flex justify-content-between mb-2">
               <span className="text-muted">Date Filed:</span>
-              <span className="fw-bold">March 15, 2024</span>
+              <span className="fw-bold">15 March 2024</span>
             </div>
             <div className="d-flex justify-content-between">
               <span className="text-muted">Status:</span>
@@ -33,15 +33,15 @@ const CaseSummary = () => {
             <h3 className="h5 card-title mb-3">Key Dates</h3>
             <div className="d-flex justify-content-between mb-2">
               <span className="text-muted">Next Hearing:</span>
-              <span className="fw-bold">August 12, 2024</span>
+              <span className="fw-bold">12 August 2024</span>
             </div>
             <div className="d-flex justify-content-between mb-2">
               <span className="text-muted">Discovery Deadline:</span>
-              <span className="fw-bold">September 30, 2024</span>
+              <span className="fw-bold">30 September 2024</span>
             </div>
             <div className="d-flex justify-content-between">
               <span className="text-muted">Trial Date:</span>
-              <span className="fw-bold">November 18, 2024</span>
+              <span className="fw-bold">18 November 2024</span>
             </div>
           </div>
         </div>
@@ -52,7 +52,7 @@ const CaseSummary = () => {
           <div className="card-body">
             <h3 className="h5 card-title mb-3">Case Description</h3>
             <p className="card-text">
-              This personal injury case involves a motor vehicle accident that occurred on January 8, 2024, at the intersection of Main Street and Oak Avenue. The plaintiff sustained injuries including whiplash, back strain, and emotional distress. We are seeking compensation for medical expenses, lost wages, pain and suffering, and property damage to the vehicle.
+              This personal injury case involves a motor vehicle accident that occurred on 8 January 2024, at the intersection of Main Street and Oak Avenue. The claimant sustained injuries including whiplash, back strain, and emotional distress. We are seeking compensation for medical expenses, lost earnings, pain and suffering, and property damage to the vehicle.
             </p>
           </div>
         </div>

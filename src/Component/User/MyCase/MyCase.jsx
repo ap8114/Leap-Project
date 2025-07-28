@@ -63,7 +63,7 @@ const MyCase = () => {
       {/* Header */}
       <div className="mb-4">
         <div className="d-flex justify-content-between align-items-center mb-4">
-          <h1 className="h2">My Case</h1>
+          <h2 className="fw-semibold">My Case</h2>
           <div className="d-flex gap-2">
             <div className="position-relative">
               <input
@@ -113,7 +113,7 @@ const MyCase = () => {
         {isUploading && (
           <div className="card mb-4">
             <div className="card-body">
-              <div className="d-flex align-items-center gap-3">
+              <div className="d-flex align-items-centre gap-3">
                 <i className="fas fa-file-upload text-primary"></i>
                 <div className="flex-grow-1">
                   <div className="d-flex justify-content-between mb-1">

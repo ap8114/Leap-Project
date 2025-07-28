@@ -17,7 +17,7 @@ const PasswordChange = ({ formData, setFormData }) => {
               type="password"
               className="form-control"
               value={formData.current}
-              onChange={(e) => setFormData({...formData, current: e.target.value})}
+              onChange={(e) => setFormData({ ...formData, current: e.target.value })}
             />
           </div>
           
@@ -27,7 +27,7 @@ const PasswordChange = ({ formData, setFormData }) => {
               type="password"
               className="form-control"
               value={formData.new}
-              onChange={(e) => setFormData({...formData, new: e.target.value})}
+              onChange={(e) => setFormData({ ...formData, new: e.target.value })}
             />
           </div>
           
@@ -37,7 +37,7 @@ const PasswordChange = ({ formData, setFormData }) => {
               type="password"
               className="form-control"
               value={formData.confirm}
-              onChange={(e) => setFormData({...formData, confirm: e.target.value})}
+              onChange={(e) => setFormData({ ...formData, confirm: e.target.value })}
             />
           </div>
           

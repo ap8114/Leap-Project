@@ -13,7 +13,7 @@ const Appointments = () => {
       date: '2025-07-28',
       time: '09:00 AM',
       lawyer: 'Mr. William Bennett',
-      specialty: 'Corporate Law',
+      speciality: 'Corporate Law',
       location: 'London Office - Meeting Room A',
       status: 'confirmed',
       statusColor: 'bg-success'
@@ -23,7 +23,7 @@ const Appointments = () => {
       date: '2025-07-30',
       time: '02:30 PM',
       lawyer: 'Ms. Elizabeth Clarke',
-      specialty: 'Property Law',
+      speciality: 'Property Law',
       location: 'Manchester Office - Conference Room 2',
       status: 'pending',
       statusColor: 'bg-warning'
@@ -33,7 +33,7 @@ const Appointments = () => {
       date: '2025-08-02',
       time: '11:15 AM',
       lawyer: 'Mr. James Harrison',
-      specialty: 'Employment Law',
+      speciality: 'Employment Law',
       location: 'Birmingham Office - Client Suite',
       status: 'confirmed',
       statusColor: 'bg-success'
@@ -43,7 +43,7 @@ const Appointments = () => {
       date: '2025-08-05',
       time: '04:00 PM',
       lawyer: 'Ms. Victoria Palmer',
-      specialty: 'Family Law',
+      speciality: 'Family Law',
       location: 'Leeds Office - Meeting Room C',
       status: 'rescheduled',
       statusColor: 'bg-primary'
@@ -82,7 +82,7 @@ const Appointments = () => {
         {currentView === 'list' && (
           <div className="row">
             <div className="col-12">
-              <h2 className="h3 mb-4">Upcoming Consultations</h2>
+              <h2 className="fw-semibold mb-4">Upcoming Consultations</h2>
               <div className="row g-3">
                 {appointments.map((appointment) => (
                   <div key={appointment.id} className="col-12">
@@ -106,7 +106,7 @@ const Appointments = () => {
                           </div>
                           <div className="col-md-5 mb-3 mb-md-0">
                             <h3 className="h5 mb-1">{appointment.lawyer}</h3>
-                            <p className="text-muted small mb-1">{appointment.specialty}</p>
+                            <p className="text-muted small mb-1">{appointment.speciality}</p>
                             <p className="text-muted small mb-0">
                               <i className="fas fa-building me-1"></i>
                               {appointment.location}

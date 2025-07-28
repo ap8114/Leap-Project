@@ -15,7 +15,7 @@ const Documents = ({ documents }) => {
       </div>
       <div className="card-body">
         {/* Upload Area */}
-        <div className="border border-2 border-dashed rounded p-5 text-center mb-4">
+        <div className="border border-2 border-dashed rounded p-5 text-centre mb-4">
           <i className="fas fa-cloud-upload-alt fa-3x text-muted mb-3"></i>
           <h4 className="h5 mb-2">Drag & Drop files here</h4>
           <p className="text-muted mb-3">or click to browse</p>
@@ -30,7 +30,7 @@ const Documents = ({ documents }) => {
             <div key={doc.id} className="col-md-6 col-lg-4">
               <div className="card h-100">
                 <div className="card-body">
-                  <div className="d-flex justify-content-between align-items-center mb-3">
+                  <div className="d-flex justify-content-between align-items-centre mb-3">
                     <i className={`${getFileIcon(doc.type)} fa-2x`}></i>
                     <div className="btn-group">
                       <button className="btn btn-sm btn-outline-primary">
@@ -43,7 +43,7 @@ const Documents = ({ documents }) => {
                   </div>
                   <h5 className="card-title text-truncate">{doc.name}</h5>
                   <p className="card-text text-muted small">
-                    {new Date(doc.date).toLocaleDateString()}
+                    {new Date(doc.date).toLocaleDateString('en-GB')}
                   </p>
                 </div>
               </div>

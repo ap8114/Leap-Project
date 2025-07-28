@@ -57,8 +57,8 @@ const MyProfile = () => {
     <div className="container-fluid min-vh-100 bg-light">
       <div className="container py-4">
         <div className="mb-4">
-          <h1 className="display-4">My Profile</h1>
-          <p className="lead text-muted">Manage your personal information and documents</p>
+          <h2 className="fw-semibold ">My Profile </h2>
+      
         </div>
         
         <div className="row">

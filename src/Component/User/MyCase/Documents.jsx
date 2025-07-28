@@ -12,7 +12,7 @@ const Documents = () => {
             <div className="d-flex align-items-center gap-3">
               <i className="fas fa-file-pdf text-danger fs-4"></i>
               <div>
-                <p className="mb-0 fw-bold">Medical Records - Emergency Room</p>
+                <p className="mb-0 fw-bold">Medical Records – Accident & Emergency</p>
                 <p className="small text-muted mb-0">Uploaded 2 hours ago • 2.4 MB</p>
               </div>
             </div>
@@ -40,7 +40,7 @@ const Documents = () => {
             <div className="d-flex align-items-center gap-3">
               <i className="fas fa-file-image text-primary fs-4"></i>
               <div>
-                <p className="mb-0 fw-bold">Accident Scene Photos</p>
+                <p className="mb-0 fw-bold">Photographs of Accident Scene</p>
                 <p className="small text-muted mb-0">Uploaded 3 days ago • 5.2 MB</p>
               </div>
             </div>

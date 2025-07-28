@@ -14,8 +14,8 @@ const Appointments = () => {
                 <h4 className="h6 mb-1">Court Hearing</h4>
                 <p className="small text-muted mb-2">Pre-trial conference with judge</p>
                 <div className="d-flex flex-wrap gap-3 small text-muted">
-                  <span><i className="fas fa-calendar me-1"></i>August 12, 2024</span>
-                  <span><i className="fas fa-clock me-1"></i>10:00 AM</span>
+                  <span><i className="fas fa-calendar me-1"></i>12 August 2024</span>
+                  <span><i className="fas fa-clock me-1"></i>10:00 am</span>
                   <span><i className="fas fa-map-marker-alt me-1"></i>Courthouse Room 3A</span>
                 </div>
               </div>
@@ -30,8 +30,8 @@ const Appointments = () => {
                 <h4 className="h6 mb-1">Client Meeting</h4>
                 <p className="small text-muted mb-2">Case strategy discussion with Sarah Johnson</p>
                 <div className="d-flex flex-wrap gap-3 small text-muted">
-                  <span><i className="fas fa-calendar me-1"></i>August 5, 2024</span>
-                  <span><i className="fas fa-clock me-1"></i>2:00 PM</span>
+                  <span><i className="fas fa-calendar me-1"></i>5 August 2024</span>
+                  <span><i className="fas fa-clock me-1"></i>2:00 pm</span>
                   <span><i className="fas fa-map-marker-alt me-1"></i>Law Office</span>
                 </div>
               </div>
@@ -46,9 +46,9 @@ const Appointments = () => {
                 <h4 className="h6 mb-1">Medical Examination</h4>
                 <p className="small text-muted mb-2">Independent medical evaluation</p>
                 <div className="d-flex flex-wrap gap-3 small text-muted">
-                  <span><i className="fas fa-calendar me-1"></i>July 30, 2024</span>
-                  <span><i className="fas fa-clock me-1"></i>9:00 AM</span>
-                  <span><i className="fas fa-map-marker-alt me-1"></i>Medical Center</span>
+                  <span><i className="fas fa-calendar me-1"></i>30 July 2024</span>
+                  <span><i className="fas fa-clock me-1"></i>9:00 am</span>
+                  <span><i className="fas fa-map-marker-alt me-1"></i>Medical Centre</span>
                 </div>
               </div>
               <span className="badge bg-warning text-dark">Pending</span>

@@ -27,7 +27,7 @@ const Feedback = () => {
     },
     {
       title: 'Document Management',
-      description: 'Organize and store legal documents securely',
+      description: 'Organise and store legal documents securely',
       articles: 15,
       icon: 'fa-file-alt'
     },
@@ -38,7 +38,7 @@ const Feedback = () => {
       icon: 'fa-pound-sign'
     },
     {
-      title: 'Calendar & Scheduling',
+      title: 'Diary & Scheduling',
       description: 'Schedule appointments and court dates',
       articles: 6,
       icon: 'fa-calendar-alt'
@@ -58,7 +58,7 @@ const Feedback = () => {
     },
     {
       question: 'How can I track billable hours?',
-      answer: 'Use the time tracking feature in each case view. Click the timer icon to start recording your time. You can also manually enter hours, add descriptions, and categorize the type of work. The system automatically calculates billable amounts based on your hourly rate.'
+      answer: 'Use the time tracking feature in each case view. Click the timer icon to start recording your time. You can also manually enter hours, add descriptions, and categorise the type of work. The system automatically calculates billable amounts based on your hourly rate.'
     },
     {
       question: 'How do I share documents with clients?',
@@ -66,7 +66,7 @@ const Feedback = () => {
     },
     {
       question: 'How can I set up automated reminders?',
-      answer: 'Go to the Calendar section and click "Create Reminder." You can set up reminders for court dates, document deadlines, and client meetings. Choose the frequency, notification method, and recipients for each reminder.'
+      answer: 'Go to the Diary section and click "Create Reminder." You can set up reminders for court dates, document deadlines, and client meetings. Choose the frequency, notification method, and recipients for each reminder.'
     },
     {
       question: 'How do I generate reports?',
@@ -100,8 +100,8 @@ const Feedback = () => {
             <div className="card shadow-sm">
               <div className="card-body p-4 p-md-5">
                 <div className="text-center mb-4">
-                  <h1 className="h2 mb-2">Leave Your Feedback</h1>
-                  <p className="text-muted">Help us improve our CRM system for your law firm</p>
+                  <h2 className="h2 mb-2 fw-semibold">Leave Your Feedback</h2>
+               
                 </div>
                 
                 <div className="mb-4">
