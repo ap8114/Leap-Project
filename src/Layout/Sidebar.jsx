@@ -30,37 +30,68 @@ const Sidebar = ({ collapsed, menuItemClick }) => {
   };
 
   // Updated menu items with correct paths
-  const adminMenuItems = [
-    { path: "/admin-dashboard", icon: "fa-solid fa-gauge", text: "Dashboard" },
-    { path: "/calendar", icon: "fa-solid fa-calendar-check", text: "Calendar" },
-    { path: "/tasks", icon: "fa-solid fa-diagram-project", text: "Tasks" },
-    { path: "/client-management", icon: "fa-solid fa-users", text: "Client Management" },
-    { path: "/matters", icon: "fa-solid fa-scale-balanced", text: "Matters" },
-    { path: "/contacts", icon: "fa-solid fa-envelope", text: "Contacts" },
-    { path: "/activity", icon: "fa-solid fa-clock-rotate-left", text: "Activity" },
-    { path: "/time-billing", icon: "fa-solid fa-stopwatch", text: "Time & Billing" },
-    { path: "/accounts", icon: "fa-solid fa-file-invoice-dollar", text: "Accounts" },
-    { path: "/documents", icon: "fa-solid fa-file-lines", text: "Documents" },
-    { path: "/communications", icon: "fa-solid fa-comments", text: "Communications" },
-    { path: "/reports-analytics", icon: "fa-solid fa-chart-line", text: "Reports & Analytics" },
-    { path: "/settings", icon: "fa-solid fa-gear", text: "Settings" }
-  ];
+const adminMenuItems = [
+  {
+    path: "/admin-dashboard",
+    icon: "fa-solid fa-chart-line", // Dashboard
+    text: "Dashboard",
+  },
+  {
+    path: "/clientmanagement",
+    icon: "fa-solid fa-user-tie", // Client Management
+    text: "Client Management",
+  },
+  {
+    path: "/leadmanagement",
+    icon: "fa-solid fa-briefcase", // Lead Management
+    text: "Lead Management",
+  },
+  {
+    path: "/communication",
+    icon: "fa-solid fa-comments", // Communication
+    text: "Communication",
+  },
+  {
+    path: "/appointement",
+    icon: "fa-solid fa-calendar-check", // Appointment
+    text: "Appointment",
+  },
+  {
+    path: "/reports",
+    icon: "fa-solid fa-chart-pie", // Reports & Analytics
+    text: "Reports & Analytics",
+  },
+  {
+    path: "/integration",
+    icon: "fa-solid fa-plug", // Integrations
+    text: "Integrations",
+  },
+  {
+    path: "/setting",
+    icon: "fa-solid fa-gear", // Settings
+    text: "Setting",
+  },
+];
 
-  const userMenuItems = [
-    { path: "/user-dashboard", icon: "fa-solid fa-gauge", text: "Dashboard" },
-    { path: "/tasks", icon: "fa-solid fa-diagram-project", text: "Tasks" },
-    { path: "/contacts", icon: "fa-solid fa-envelope", text: "Contacts" },
-    { path: "/documents", icon: "fa-solid fa-file-lines", text: "Documents" },
-    { path: "/communications", icon: "fa-solid fa-comments", text: "Communications" },
-  ];
+
+ const userMenuItems = [
+  { path: "/user-myprofile", icon: "fa-solid fa-user", text: "My Profile" },
+  { path: "/mycase", icon: "fa-solid fa-scale-balanced", text: "My Case" },
+  { path: "/message", icon: "fa-solid fa-envelope", text: "Message" },
+  { path: "/appointments", icon: "fa-solid fa-calendar-check", text: "Appointments" },
+  { path: "/documents", icon: "fa-solid fa-file-alt", text: "Documents" },
+  { path: "/feedback", icon: "fa-solid fa-headset", text: "Feedback & Support" }
+];
+
+
 
   const menuToRender = role === "admin" ? adminMenuItems : userMenuItems;
 
   return (
-    <div className={`sidebar-container ${collapsed ? "collapsed" : ""}`}>
+    <div className={`sidebar-container  ${collapsed ? "collapsed" : ""}`}>
       <div className="sidebar">
         <div className="sidebar-header">
-          {!collapsed && <h3>Navigation</h3>}
+          
         </div>
         <ul className="menu">
           {menuToRender.map((item) => (
@@ -82,8 +113,7 @@ const Sidebar = ({ collapsed, menuItemClick }) => {
         {role === "admin" && !collapsed && (
           <div className="sidebar-bottom">
             <div className="admin-section">
-              <div className="admin-icon">Ad</div>
-              <span>Admin Panel</span>
+             
             </div>
           </div>
         )}
