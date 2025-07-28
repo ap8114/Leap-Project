@@ -1,7 +1,8 @@
+// App.js
 import { Route, Routes, useLocation } from "react-router-dom";
 import "./App.css";
 import Navbar from "./Layout/Navbar";
-import Sidebar from "./Layout/Sidebar"
+import Sidebar from "./Layout/Sidebar";
 import Login from "./Auth/Login";
 import Signup from "./Auth/Signup";
 import ForgotPassword from "./Auth/ForgotPassword";
@@ -25,43 +26,35 @@ import Resources from "./Component/Website/Pages/Resources/Resources";
 import AdminDashboard from "./Component/Admin/Dashboard/AdminDashboard";
 import UserDashboard from "./Component/User/Dashboard/UserDashboard";
 
-
 function App() {
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
-  const menusidebarcollapse = () => {
-    setIsSidebarCollapsed(true);
-  };
-
-  useEffect(() => {
-    if (isMobile) {
-      menusidebarcollapse();
-    }
-  }, [isMobile]);
-
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 768);
+      if (window.innerWidth < 768) {
+        setIsSidebarCollapsed(true);
+      }
     };
+
     handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const menuItemClick = () => {
-    setIsSidebarCollapsed((prev) => !prev);
-  };
   const toggleSidebar = () => {
-    setIsSidebarCollapsed((prev) => !prev);
+    setIsSidebarCollapsed(prev => !prev);
   };
+
   const location = useLocation();
 
+  // Define routes that shouldn't show layout (navbar/sidebar)
   const noLayoutRoutes = [
     "/",
+    "/login",
     "/signup",
     "/forgotpassword",
-    "/login",
     "/client-and-matter-management",
     "/document-automation",
     "/timerecordingbilling",
@@ -74,64 +67,55 @@ function App() {
     "/personalinjury",
     "/contactus",
     "/company",
-    "/resources",
-    "/resourcecenter",
+    "/resources"
   ];
 
-  const isNoLayoutPage = noLayoutRoutes.includes(location.pathname);
-
-  const hideLayout = isNoLayoutPage;
+  const isDashboardRoute = location.pathname.includes("dashboard");
+  const showLayout = !noLayoutRoutes.includes(location.pathname) || isDashboardRoute;
 
   return (
     <>
-      {!hideLayout && <Navbar toggleSidebar={toggleSidebar} />}
-      <div className={`main-content${hideLayout ? "" : ""}`}>
-        {!hideLayout && (
+      {showLayout && <Navbar toggleSidebar={toggleSidebar} />}
+      <div className="main-container">
+        {showLayout && (
           <Sidebar
             collapsed={isSidebarCollapsed}
-            menuItemClick={menuItemClick}
+            menuItemClick={toggleSidebar}
           />
+
+          
         )}
-        <>
+        <div
+          className={`right-side-content ${isSidebarCollapsed ? "collapsed" : ""
+            }`}
+        >
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route
-              path="/client-and-matter-management"
-              element={<ClientAndMatterManagement />}
-            />
-            <Route
-              path="/document-automation"
-              element={<DocumentAutomation />}
-            />
-            <Route
-              path="/timerecordingbilling"
-              element={<TimeRecordingBilling />} />
+            <Route path="/client-and-matter-management" element={<ClientAndMatterManagement />} />
+            <Route path="/document-automation" element={<DocumentAutomation />} />
+            <Route path="/timerecordingbilling" element={<TimeRecordingBilling />} />
             <Route path="/reporting" element={<Reporting />} />
             <Route path="/clientservice" element={<ClientService />} />
             <Route path="/conveyancing" element={<Conveyancing />} />
             <Route path="/estateprobate" element={<EstateProbate />} />
-            <Route path="/family" element={< Family />} />
-            <Route path="/employment" element={< Employment />} />
-            <Route path="/personalinjury" element={< PersonalInjury />} />
-            <Route path="/contactus" element={< ContactUs />} />
-            <Route path="/company" element={< Company />} />
-            <Route path="/resources" element={< Resources />} />
+            <Route path="/family" element={<Family />} />
+            <Route path="/employment" element={<Employment />} />
+            <Route path="/personalinjury" element={<PersonalInjury />} />
+            <Route path="/contactus" element={<ContactUs />} />
+            <Route path="/company" element={<Company />} />
+            <Route path="/resources" element={<Resources />} />
 
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/forgotpassword" element={<ForgotPassword />} />
 
-
             {/* Admin Dashboard */}
-             <Route path="/admin-dashboard" element={<AdminDashboard/>} />
+            <Route path="/admin-dashboard" element={<AdminDashboard />} />
 
-
-
-                {/* User Dashboard */}
-
-                  <Route path="/user-dashboard" element={<UserDashboard/>} />
+            {/* User Dashboard */}
+            <Route path="/user-dashboard" element={<UserDashboard />} />
           </Routes>
-        </>
+        </div>
       </div>
     </>
   );
