@@ -1,14 +1,13 @@
-// LeadsTable.jsx
 import React from 'react';
 
 const LeadsTable = ({ leads, onEdit, getStatusColor }) => {
   return (
     <div className="card">
       <div className="card-header d-flex justify-content-between align-items-center">
-        <h2 className="h5 mb-0">Recent Leads</h2>
+        <h2 className="h5 mb-0">Recent Enquiries</h2>
         <div className="d-flex">
           <select className="form-select form-select-sm me-2">
-            <option>All Status</option>
+            <option>All Statuses</option>
             <option>New</option>
             <option>Contacted</option>
             <option>In Progress</option>
@@ -25,7 +24,7 @@ const LeadsTable = ({ leads, onEdit, getStatusColor }) => {
           <thead>
             <tr>
               <th>Name</th>
-              <th>Contact</th>
+              <th>Contact Method</th>
               <th>Source</th>
               <th>Type</th>
               <th>Status</th>
@@ -54,13 +53,14 @@ const LeadsTable = ({ leads, onEdit, getStatusColor }) => {
                     <button
                       onClick={() => onEdit(lead)}
                       className="btn btn-sm btn-link text-primary"
+                      title="Edit Enquiry"
                     >
                       <i className="fas fa-edit"></i>
                     </button>
-                    <button className="btn btn-sm btn-link text-success">
+                    <button className="btn btn-sm btn-link text-success" title="Assign to Client">
                       <i className="fas fa-user-plus"></i>
                     </button>
-                    <button className="btn btn-sm btn-link text-danger">
+                    <button className="btn btn-sm btn-link text-danger" title="Delete Enquiry">
                       <i className="fas fa-trash"></i>
                     </button>
                   </div>

@@ -5,9 +5,9 @@ const IntakeFormGenerator = () => {
   return (
     <div className="card">
       <div className="card-body">
-        <h3 className="card-title h5">Custom Intake Form Generator</h3>
+        <h3 className="card-title h5">Custom Intake Form Builder</h3>
         <div className="mt-3">
-          <div className="border border-2 border-dashed rounded p-4 text-center mb-3">
+          <div className="border border-2 border-dashed rounded p-4 text-centre mb-3">
             <i className="fas fa-plus text-muted fs-4 mb-2"></i>
             <p className="small text-muted">Drag and drop form fields here</p>
           </div>
@@ -24,12 +24,12 @@ const IntakeFormGenerator = () => {
             </div>
             <div className="col-6">
               <button className="btn btn-outline-secondary w-100">
-                <i className="fas fa-check-square me-1"></i>Checkbox
+                <i className="fas fa-check-square me-1"></i>Tick Box
               </button>
             </div>
             <div className="col-6">
               <button className="btn btn-outline-secondary w-100">
-                <i className="fas fa-calendar me-1"></i>Date
+                <i className="fas fa-calendar me-1"></i>Date Picker
               </button>
             </div>
           </div>

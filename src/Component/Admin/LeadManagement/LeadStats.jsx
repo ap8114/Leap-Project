@@ -1,14 +1,13 @@
-// LeadStats.jsx
 import React from 'react';
 
 const LeadStats = () => {
   return (
-    <div className="row mt-3">
+    <div className="row mt-1">
       <div className="col-md-3 mb-3">
         <div className="card bg-primary text-white">
           <div className="card-body">
             <h5 className="card-title">124</h5>
-            <p className="card-text">Total Leads</p>
+            <p className="card-text">Total Enquiries</p>
           </div>
         </div>
       </div>

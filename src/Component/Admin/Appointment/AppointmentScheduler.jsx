@@ -1,4 +1,3 @@
-// AppointmentScheduler.jsx
 import React, { useState } from 'react';
 import AppointmentHeader from './AppointmentHeader';
 import Sidebar from './Sidebar';
@@ -17,10 +16,10 @@ const AppointmentScheduler = () => {
   });
 
   const staffMembers = [
-    { id: 'all', name: 'All Staff', color: 'bg-secondary' },
-    { id: '1', name: 'Dr. Sarah Johnson', color: 'bg-primary' },
-    { id: '2', name: 'Dr. Michael Chen', color: 'bg-success' },
-    { id: '3', name: 'Dr. Emily Davis', color: 'bg-purple' }
+    { id: 'all', name: 'All Staff', colour: 'bg-secondary' },
+    { id: '1', name: 'Dr. Sarah Johnson', colour: 'bg-primary' },
+    { id: '2', name: 'Dr. Michael Chen', colour: 'bg-success' },
+    { id: '3', name: 'Dr. Emily Davis', colour: 'bg-purple' }
   ];
 
   const upcomingAppointments = [
@@ -37,20 +36,20 @@ const AppointmentScheduler = () => {
     const daysInMonth = lastDay.getDate();
     const startingDayOfWeek = firstDay.getDay();
     const days = [];
-    
+
     for (let i = 0; i < startingDayOfWeek; i++) {
       days.push(null);
     }
-    
+
     for (let day = 1; day <= daysInMonth; day++) {
       days.push(day);
     }
-    
+
     return days;
   }
 
   function formatDate(date) {
-    return date.toLocaleDateString('en-US', {
+    return date.toLocaleDateString('en-GB', {
       weekday: 'long',
       year: 'numeric',
       month: 'long',
@@ -62,19 +61,19 @@ const AppointmentScheduler = () => {
     const days = [];
     const startOfWeek = new Date(selectedDate);
     startOfWeek.setDate(selectedDate.getDate() - selectedDate.getDay());
-    
+
     for (let i = 0; i < 7; i++) {
       const day = new Date(startOfWeek);
       day.setDate(startOfWeek.getDate() + i);
       days.push(day);
     }
-    
+
     return days;
   }
 
   function handleDateNavigation(direction) {
     const newDate = new Date(selectedDate);
-    
+
     if (currentView === 'day') {
       newDate.setDate(newDate.getDate() + (direction === 'next' ? 1 : -1));
     } else if (currentView === 'week') {
@@ -82,7 +81,7 @@ const AppointmentScheduler = () => {
     } else if (currentView === 'month') {
       newDate.setMonth(newDate.getMonth() + (direction === 'next' ? 1 : -1));
     }
-    
+
     setSelectedDate(newDate);
   }
 

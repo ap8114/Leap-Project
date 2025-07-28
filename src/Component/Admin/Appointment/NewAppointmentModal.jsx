@@ -1,4 +1,3 @@
-// NewAppointmentModal.jsx
 import React from 'react';
 
 const NewAppointmentModal = ({ show, onHide, staffMembers }) => {
@@ -7,7 +6,7 @@ const NewAppointmentModal = ({ show, onHide, staffMembers }) => {
       <div className="modal-dialog">
         <div className="modal-content">
           <div className="modal-header">
-            <h5 className="modal-title">New Appointment</h5>
+            <h5 className="modal-title">New Booking</h5>
             <button type="button" className="btn-close" onClick={onHide}></button>
           </div>
           <div className="modal-body">
@@ -52,7 +51,7 @@ const NewAppointmentModal = ({ show, onHide, staffMembers }) => {
               <input
                 type="text"
                 className="form-control"
-                placeholder="Search cases..."
+                placeholder="Search cases…"
               />
             </div>
             <div className="mb-3">
@@ -80,7 +79,7 @@ const NewAppointmentModal = ({ show, onHide, staffMembers }) => {
               onClick={onHide}
               className="btn btn-primary"
             >
-              Create Appointment
+              Confirm Booking
             </button>
           </div>
         </div>

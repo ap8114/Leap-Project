@@ -19,7 +19,7 @@ const Integrations = () => {
       id: 1,
       name: 'Microsoft Outlook / 365',
       category: 'Calendar & Email',
-      description: 'Sync your calendar events and manage emails seamlessly with Microsoft Office suite integration.',
+      description: 'Synchronise your calendar events and manage emails effortlessly with Microsoft Office suite integration.',
       icon: faEnvelope,
       connected: true,
       color: 'text-primary'
@@ -28,7 +28,7 @@ const Integrations = () => {
       id: 2,
       name: 'Google Calendar',
       category: 'Calendar & Email',
-      description: 'Connect your Google Calendar to automatically sync appointments and schedule meetings.',
+      description: 'Connect your Google Calendar to automatically synchronise appointments and schedule meetings.',
       icon: faGoogle,
       connected: false,
       color: 'text-danger'
@@ -55,7 +55,7 @@ const Integrations = () => {
       id: 5,
       name: 'Mailchimp',
       category: 'Communication',
-      description: 'Create and send targeted email campaigns to engage with your customers effectively.',
+      description: 'Create and send targeted email campaigns to engage with your clients effectively.',
       icon: faMailBulk,
       connected: true,
       color: 'text-warning'
@@ -64,7 +64,7 @@ const Integrations = () => {
       id: 6,
       name: 'DocuSign',
       category: 'Document Management',
-      description: 'Enable secure electronic signatures and document workflow automation for your business.',
+      description: 'Enable secure electronic signatures and automate document workflows for your business.',
       icon: faFileSignature,
       connected: false,
       color: 'text-purple'
@@ -73,7 +73,7 @@ const Integrations = () => {
       id: 7,
       name: 'Adobe Sign',
       category: 'Document Management',
-      description: 'Digitally sign documents and automate approval processes with Adobe\'s trusted platform.',
+      description: 'Digitally sign documents and automate approval workflows with Adobe’s trusted platform.',
       icon: faPenFancy,
       connected: false,
       color: 'text-danger'
@@ -86,13 +86,13 @@ const Integrations = () => {
 
   return (
     <div className="min-vh-100 bg-light">
-      <div className=" p-4">
+      <div className="p-4">
         {/* Header Section */}
         <div className="text-start mb-3">
-          <h2 className="fw-bold text-dark mb-2">Integrations</h2>
-          <p className="lead text-muted mb-4">Connect your favorite tools seamlessly</p>
+          <h2 className="fw-semibold text-dark mb-2">Integrations</h2>
+          <p className="lead text-muted mb-4">Connect your favourite tools effortlessly</p>
         </div>
-        
+
         {/* Integration Grid */}
         <div className="row g-4">
           {integrations.map((integration) => (
@@ -110,22 +110,22 @@ const Integrations = () => {
                       </div>
                     </div>
                     <div className="d-flex align-items-center">
-                      <FontAwesomeIcon 
-                        icon={faCircle} 
-                        className={`me-2 ${integration.connected ? 'text-success' : 'text-secondary'}`} 
-                        size="xs" 
+                      <FontAwesomeIcon
+                        icon={faCircle}
+                        className={`me-2 ${integration.connected ? 'text-success' : 'text-secondary'}`}
+                        size="xs"
                       />
-                      <FontAwesomeIcon 
-                        icon={faInfoCircle} 
-                        className="text-muted cursor-pointer hover-text-dark" 
+                      <FontAwesomeIcon
+                        icon={faInfoCircle}
+                        className="text-muted cursor-pointer hover-text-dark"
                       />
                     </div>
                   </div>
-                  
+
                   <p className="text-muted mb-4">
                     {integration.description}
                   </p>
-                  
+
                   <div className="d-flex justify-content-between align-items-center">
                     <span className={`small fw-medium ${integration.connected ? 'text-success' : 'text-muted'}`}>
                       {integration.connected ? 'Connected' : 'Available'}
@@ -143,8 +143,6 @@ const Integrations = () => {
           ))}
         </div>
       </div>
-
-    
     </div>
   );
 };
