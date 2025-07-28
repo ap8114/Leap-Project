@@ -1,4 +1,3 @@
-// LeadFormModal.jsx
 import React from 'react';
 
 const LeadFormModal = ({ show, onHide, isEditing, formData, onInputChange, onSubmit }) => {
@@ -7,13 +6,13 @@ const LeadFormModal = ({ show, onHide, isEditing, formData, onInputChange, onSub
       <div className="modal-dialog modal-lg">
         <div className="modal-content">
           <div className="modal-header">
-            <h5 className="modal-title">{isEditing ? 'Edit Lead' : 'Add New Lead'}</h5>
+            <h5 className="modal-title">{isEditing ? 'Edit Enquiry' : 'Add New Enquiry'}</h5>
             <button type="button" className="btn-close" onClick={onHide}></button>
           </div>
           <form onSubmit={onSubmit}>
             <div className="modal-body">
               <div className="mb-3">
-                <label className="form-label">Lead Name</label>
+                <label className="form-label">Enquirer Name</label>
                 <input
                   type="text"
                   name="leadName"
@@ -24,7 +23,7 @@ const LeadFormModal = ({ show, onHide, isEditing, formData, onInputChange, onSub
                 />
               </div>
               <div className="mb-3">
-                <label className="form-label">Contact Method</label>
+                <label className="form-label">Preferred Contact Method</label>
                 <select
                   name="contactMethod"
                   value={formData.contactMethod}
@@ -36,7 +35,7 @@ const LeadFormModal = ({ show, onHide, isEditing, formData, onInputChange, onSub
                 </select>
               </div>
               <div className="mb-3">
-                <label className="form-label">Source</label>
+                <label className="form-label">Source of Enquiry</label>
                 <div>
                   <div className="form-check">
                     <input
@@ -77,7 +76,7 @@ const LeadFormModal = ({ show, onHide, isEditing, formData, onInputChange, onSub
                 </div>
               </div>
               <div className="mb-3">
-                <label className="form-label">Enquiry Type</label>
+                <label className="form-label">Type of Enquiry</label>
                 <select
                   name="enquiryType"
                   value={formData.enquiryType}
@@ -98,11 +97,11 @@ const LeadFormModal = ({ show, onHide, isEditing, formData, onInputChange, onSub
                   onChange={onInputChange}
                   rows="4"
                   className="form-control"
-                  placeholder="Enter any initial notes about the lead..."
+                  placeholder="Enter any initial notes about the enquiry..."
                 />
               </div>
               <div className="mb-3">
-                <label className="form-label">Lead Status</label>
+                <label className="form-label">Enquiry Status</label>
                 <select
                   name="leadStatus"
                   value={formData.leadStatus}
@@ -129,7 +128,7 @@ const LeadFormModal = ({ show, onHide, isEditing, formData, onInputChange, onSub
                 type="submit"
                 className="btn btn-primary"
               >
-                Save Lead
+                Save Enquiry
               </button>
             </div>
           </form>

@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { 
   faPlus, faSearch, faChevronDown, faSort, faEdit, faEye, 
@@ -7,7 +6,7 @@ import {
   faChevronUp
 } from '@fortawesome/free-solid-svg-icons';
 
-const Clientmanagement = () => {
+const ClientManagement = () => {
   const [showModal, setShowModal] = useState(false);
   const [showViewModal, setShowViewModal] = useState(false);
   const [modalMode, setModalMode] = useState('add'); // 'add' or 'edit'
@@ -147,10 +146,10 @@ const Clientmanagement = () => {
   return (
     <div className="min-vh-100 bg-light">
       {/* Header */}
-      <div className="bg-white  border-bottom">
+      <div className="bg-light ">
         <div className="container-fluid py-3">
           <div className="d-flex align-items-center justify-content-between">
-            <h1 className="h2 mb-0 text-dark">Client Management</h1>
+            <h2 className=" fw-semibold mb-0 text-dark">Client Management</h2>
             <button
               onClick={() => setShowModal(true)}
               className="btn btn-primary"
@@ -170,9 +169,7 @@ const Clientmanagement = () => {
             <div className="row g-3 align-items-center">
               <div className="col-md-5">
                 <div className="input-group">
-                  <span className="input-group-text">
-                    <FontAwesomeIcon icon={faSearch} />
-                  </span>
+                  
                   <input
                     type="text"
                     placeholder="Search clients..."
@@ -190,7 +187,7 @@ const Clientmanagement = () => {
               </div>
               <div className="col-md-2">
                 <select className="form-select">
-                  <option>All Status</option>
+                  <option>All Statuses</option>
                   <option>Active</option>
                   <option>Archived</option>
                 </select>
@@ -235,7 +232,7 @@ const Clientmanagement = () => {
                         {client.caseCategory}
                       </span>
                     </td>
-                    <td>{new Date(client.dateAdded).toLocaleDateString()}</td>
+                    <td>{new Date(client.dateAdded).toLocaleDateString('en-GB')}</td>
                     <td>
                       <span className={`badge ${client.status === 'Active' ? 'bg-success bg-opacity-10 text-success' : 'bg-secondary bg-opacity-10 text-secondary'}`}>
                         {client.status}
@@ -291,7 +288,7 @@ const Clientmanagement = () => {
           {/* Pagination */}
           <div className="card-footer d-flex justify-content-between align-items-center">
             <div className="text-muted">
-              Showing 1 to {clients.length} of {clients.length} results
+              Showing 1 to {clients.length} of {clients.length} entries
             </div>
             <div className="d-flex gap-2">
               <button className="btn btn-outline-secondary btn-sm">
@@ -331,7 +328,7 @@ const Clientmanagement = () => {
                     <p>{selectedClient.email}</p>
                   </div>
                   <div className="col-md-6">
-                    <label className="form-label text-muted">Contact</label>
+                    <label className="form-label text-muted">Contact Number</label>
                     <p>{selectedClient.contact}</p>
                   </div>
                   <div className="col-md-6">
@@ -424,7 +421,7 @@ const Clientmanagement = () => {
                               onChange={(e) => handleInputChange('address', e.target.value)}
                               className="form-control"
                               rows={3}
-                              placeholder="Enter full address"
+                              placeholder="Enter full address including postcode"
                             />
                           </div>
                           <div className="col-md-6">
@@ -478,7 +475,7 @@ const Clientmanagement = () => {
                               />
                             </div>
                             <div className="col-md-4">
-                              <label className="form-label">Contact</label>
+                              <label className="form-label">Contact Number</label>
                               <input
                                 type="tel"
                                 value={formData.nextOfKin.contact}
@@ -488,13 +485,13 @@ const Clientmanagement = () => {
                               />
                             </div>
                             <div className="col-md-4">
-                              <label className="form-label">Relation</label>
+                              <label className="form-label">Relationship</label>
                               <input
                                 type="text"
                                 value={formData.nextOfKin.relation}
                                 onChange={(e) => handleInputChange('relation', e.target.value, 'nextOfKin')}
                                 className="form-control"
-                                placeholder="Relationship"
+                                placeholder="Relationship to client"
                               />
                             </div>
                           </div>
@@ -523,13 +520,13 @@ const Clientmanagement = () => {
                               />
                             </div>
                             <div className="col-12">
-                              <label className="form-label">GP Address</label>
+                              <label className="form-label">GP Practice Address</label>
                               <textarea
                                 value={formData.gpDetails.address}
                                 onChange={(e) => handleInputChange('address', e.target.value, 'gpDetails')}
                                 className="form-control"
                                 rows={2}
-                                placeholder="GP practice address"
+                                placeholder="GP practice address including postcode"
                               />
                             </div>
                           </div>
@@ -541,7 +538,7 @@ const Clientmanagement = () => {
                             onChange={(e) => handleInputChange('hospitalDetails', e.target.value)}
                             className="form-control"
                             rows={2}
-                            placeholder="Hospital name and address"
+                            placeholder="Hospital name and address including postcode"
                           />
                         </div>
                       </div>
@@ -578,7 +575,7 @@ const Clientmanagement = () => {
                               value={formData.accidentDetails.location}
                               onChange={(e) => handleInputChange('location', e.target.value, 'accidentDetails')}
                               className="form-control"
-                              placeholder="Accident location"
+                              placeholder="Accident location including postcode"
                             />
                           </div>
                           <div className="col-12">
@@ -602,7 +599,7 @@ const Clientmanagement = () => {
                                 onChange={(e) => handleInputChange('shortTerm', e.target.value, 'injuries')}
                                 className="form-control"
                                 rows={2}
-                                placeholder="Short-term injuries"
+                                placeholder="Short-term injuries sustained"
                               />
                             </div>
                             <div className="col-md-6">
@@ -612,7 +609,7 @@ const Clientmanagement = () => {
                                 onChange={(e) => handleInputChange('longTerm', e.target.value, 'injuries')}
                                 className="form-control"
                                 rows={2}
-                                placeholder="Long-term injuries"
+                                placeholder="Long-term injuries sustained"
                               />
                             </div>
                             <div className="col-md-6">
@@ -622,7 +619,7 @@ const Clientmanagement = () => {
                                 onChange={(e) => handleInputChange('description', e.target.value, 'injuries')}
                                 className="form-control"
                                 rows={2}
-                                placeholder="Detailed injury description"
+                                placeholder="Detailed medical description of injuries"
                               />
                             </div>
                             <div className="col-md-6">
@@ -678,17 +675,17 @@ const Clientmanagement = () => {
                                 value={formData.thirdPartyDetails.regNumber}
                                 onChange={(e) => handleInputChange('regNumber', e.target.value, 'thirdPartyDetails')}
                                 className="form-control"
-                                placeholder="Vehicle reg number"
+                                placeholder="Vehicle registration number"
                               />
                             </div>
                             <div className="col-md-4">
-                              <label className="form-label">Contact Info</label>
+                              <label className="form-label">Contact Information</label>
                               <input
                                 type="text"
                                 value={formData.thirdPartyDetails.contactInfo}
                                 onChange={(e) => handleInputChange('contactInfo', e.target.value, 'thirdPartyDetails')}
                                 className="form-control"
-                                placeholder="Contact information"
+                                placeholder="Contact details"
                               />
                             </div>
                           </div>
@@ -703,7 +700,7 @@ const Clientmanagement = () => {
                                 value={formData.ownInsurance.policyNumber}
                                 onChange={(e) => handleInputChange('policyNumber', e.target.value, 'ownInsurance')}
                                 className="form-control"
-                                placeholder="Policy number"
+                                placeholder="Insurance policy number"
                               />
                             </div>
                             <div className="col-md-4">
@@ -757,7 +754,7 @@ const Clientmanagement = () => {
                                 value={formData.vehicleDetails.regNumber}
                                 onChange={(e) => handleInputChange('regNumber', e.target.value, 'vehicleDetails')}
                                 className="form-control"
-                                placeholder="Reg number"
+                                placeholder="Vehicle registration number"
                               />
                             </div>
                             <div className="col-md-3">
@@ -767,7 +764,7 @@ const Clientmanagement = () => {
                                 value={formData.vehicleDetails.year}
                                 onChange={(e) => handleInputChange('year', e.target.value, 'vehicleDetails')}
                                 className="form-control"
-                                placeholder="Year"
+                                placeholder="Manufacture year"
                               />
                             </div>
                           </div>
@@ -822,7 +819,7 @@ const Clientmanagement = () => {
                                 value={formData.pastAccidents.policeReport}
                                 onChange={(e) => handleInputChange('policeReport', e.target.value, 'pastAccidents')}
                                 className="form-control"
-                                placeholder="Police report reference"
+                                placeholder="Police report reference number"
                               />
                             </div>
                           </div>
@@ -833,7 +830,7 @@ const Clientmanagement = () => {
                               onChange={(e) => handleInputChange('summary', e.target.value, 'pastAccidents')}
                               className="form-control"
                               rows={3}
-                              placeholder="Summary of past accidents"
+                              placeholder="Summary of past accidents and claims"
                             />
                           </div>
                         </div>
@@ -887,4 +884,4 @@ const Clientmanagement = () => {
   );
 };
 
-export default Clientmanagement;
+export default ClientManagement;

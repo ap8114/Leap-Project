@@ -3,7 +3,11 @@ import React from 'react';
 
 const NewMessageModal = ({ show, onHide, newMessage, onChange, onSend }) => {
   return (
-    <div className={`modal fade ${show ? 'show d-block' : ''}`} tabIndex="-1" style={{ backgroundColor: show ? 'rgba(0,0,0,0.5)' : '' }}>
+    <div
+      className={`modal fade ${show ? 'show d-block' : ''}`}
+      tabIndex="-1"
+      style={{ backgroundColor: show ? 'rgba(0,0,0,0.5)' : '' }}
+    >
       <div className="modal-dialog modal-lg">
         <div className="modal-content">
           <div className="modal-header">
@@ -19,7 +23,7 @@ const NewMessageModal = ({ show, onHide, newMessage, onChange, onSend }) => {
                 value={newMessage.to}
                 onChange={onChange}
                 className="form-control"
-                placeholder="Enter recipient email"
+                placeholder="Enter recipient email address"
               />
             </div>
             <div className="mb-3">
@@ -30,7 +34,7 @@ const NewMessageModal = ({ show, onHide, newMessage, onChange, onSend }) => {
                 value={newMessage.subject}
                 onChange={onChange}
                 className="form-control"
-                placeholder="Enter subject"
+                placeholder="Enter message subject"
               />
             </div>
             <div className="mb-3">
@@ -41,7 +45,7 @@ const NewMessageModal = ({ show, onHide, newMessage, onChange, onSend }) => {
                 onChange={onChange}
                 rows={6}
                 className="form-control"
-                placeholder="Type your message here..."
+                placeholder="Type your message here…"
               ></textarea>
             </div>
           </div>

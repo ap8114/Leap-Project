@@ -1,4 +1,3 @@
-// Sidebar.jsx
 import React from 'react';
 
 const Sidebar = ({
@@ -37,7 +36,7 @@ const Sidebar = ({
       {/* Staff Filter */}
       <div className="card mb-3">
         <div className="card-body">
-          <h5 className="card-title">Staff Filter</h5>
+          <h5 className="card-title">Staff Member Filter</h5>
           <select
             value={selectedStaff}
             onChange={(e) => onStaffChange(e.target.value)}
@@ -51,13 +50,13 @@ const Sidebar = ({
           </select>
         </div>
       </div>
-      
+
       {/* Mini Calendar */}
       <div className="card mb-3">
         <div className="card-body">
-          <div className="d-flex justify-content-between align-items-center mb-3">
+          <div className="d-flex justify-content-between align-items-centre mb-3">
             <h5 className="card-title mb-0">
-              {selectedDate.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}
+              {selectedDate.toLocaleDateString('en-GB', { month: 'long', year: 'numeric' })}
             </h5>
             <div>
               <button onClick={handlePrevMonth} className="btn btn-sm btn-outline-secondary me-1">
@@ -68,12 +67,12 @@ const Sidebar = ({
               </button>
             </div>
           </div>
-          
+
           <div className="calendar-grid">
             {['S', 'M', 'T', 'W', 'T', 'F', 'S'].map((day) => (
               <div key={day} className="calendar-header">{day}</div>
             ))}
-            
+
             {getDaysInMonth(selectedDate).map((day, index) => (
               <div
                 key={index}
@@ -92,15 +91,15 @@ const Sidebar = ({
           </div>
         </div>
       </div>
-      
+
       {/* Upcoming Appointments */}
       <div className="card mb-3">
         <div className="card-body">
-          <h5 className="card-title">Upcoming Appointments</h5>
+          <h5 className="card-title">Upcoming Bookings</h5>
           <div className="list-group list-group-flush">
             {upcomingAppointments.map((appointment, index) => (
               <div key={index} className="list-group-item">
-                <div className="d-flex align-items-center">
+                <div className="d-flex align-items-centre">
                   <div className="bg-primary rounded-circle me-3" style={{ width: '8px', height: '8px' }}></div>
                   <div className="flex-grow-1">
                     <h6 className="mb-1">{appointment.client}</h6>
@@ -113,28 +112,28 @@ const Sidebar = ({
           </div>
         </div>
       </div>
-      
+
       {/* Quick Access */}
       <div className="card mb-3">
         <div className="card-body">
-          <h5 className="card-title">Quick Access</h5>
+          <h5 className="card-title">Quick Links</h5>
           <div className="d-grid gap-2">
             <button className="btn btn-outline-secondary text-start">
               <i className="fas fa-folder-open me-2"></i>
-              Client Cases
+              Client Files
             </button>
             <button className="btn btn-outline-secondary text-start">
               <i className="fas fa-users me-2"></i>
-              Staff Schedule
+              Staff Timetable
             </button>
           </div>
         </div>
       </div>
-      
+
       {/* Reminder Settings */}
       <div className="card">
         <div className="card-body">
-          <h5 className="card-title">Reminder Preferences</h5>
+          <h5 className="card-title">Reminder Settings</h5>
           <div className="form-check">
             <input
               type="checkbox"
@@ -151,7 +150,7 @@ const Sidebar = ({
               checked={reminderSettings.sms}
               onChange={(e) => onReminderSettingsChange({ ...reminderSettings, sms: e.target.checked })}
             />
-            <label className="form-check-label">SMS Reminders</label>
+            <label className="form-check-label">SMS Text Alerts</label>
           </div>
         </div>
       </div>

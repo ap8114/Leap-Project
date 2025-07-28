@@ -1,11 +1,11 @@
-// MessageCenter.jsx
+// MessageCentre.jsx
 import React, { useState } from 'react';
 import MessageHeader from './MessageHeader';
 import MessageTabs from './MessageTabs';
 import MessageList from './MessageList';
 import NewMessageModal from './NewMessageModal';
 
-const MessageCenter = () => {
+const MessageCentre = () => {
   const [activeTab, setActiveTab] = useState('inbox');
   const [searchQuery, setSearchQuery] = useState('');
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -68,7 +68,7 @@ const MessageCenter = () => {
         sender: 'Emma Davis',
         subject: 'Project Requirements',
         preview: 'Here are the updated project requirements...',
-        timestamp: '30 mins ago',
+        timestamp: '30 minutes ago',
         isRead: false,
         isClient: true
       },
@@ -145,4 +145,4 @@ const MessageCenter = () => {
   );
 };
 
-export default MessageCenter;
+export default MessageCentre;

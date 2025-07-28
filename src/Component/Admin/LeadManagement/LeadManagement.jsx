@@ -1,4 +1,3 @@
-// LeadManagement.jsx
 import React, { useState } from 'react';
 import LeadFormModal from './LeadFormModal';
 import LeadStats from './LeadStats';
@@ -11,6 +10,7 @@ const LeadManagement = () => {
   const [showAddForm, setShowAddForm] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
   const [selectedLead, setSelectedLead] = useState(null);
+
   const [leads, setLeads] = useState([
     {
       id: 1,
@@ -70,7 +70,6 @@ const LeadManagement = () => {
   function handleSubmit(e) {
     e.preventDefault();
     if (isEditing && selectedLead) {
-      // Update existing lead
       const updatedLeads = leads.map(lead =>
         lead.id === selectedLead.id ? {
           ...lead,
@@ -84,7 +83,6 @@ const LeadManagement = () => {
       );
       setLeads(updatedLeads);
     } else {
-      // Add new lead
       const newLead = {
         id: leads.length + 1,
         name: formData.leadName,
@@ -97,6 +95,7 @@ const LeadManagement = () => {
       };
       setLeads([...leads, newLead]);
     }
+
     setShowAddForm(false);
     setIsEditing(false);
     setSelectedLead(null);
@@ -124,7 +123,7 @@ const LeadManagement = () => {
     setShowAddForm(true);
   }
 
-  function getStatusColor(status) {
+  function getStatusColour(status) {
     switch (status) {
       case 'New': return 'bg-primary';
       case 'Contacted': return 'bg-warning';
@@ -135,7 +134,7 @@ const LeadManagement = () => {
     }
   }
 
-  function getPriorityColor(priority) {
+  function getPriorityColour(priority) {
     switch (priority) {
       case 'High': return 'bg-danger';
       case 'Medium': return 'bg-warning';
@@ -147,61 +146,56 @@ const LeadManagement = () => {
   return (
     <div className="p-4 py-2 bg-light" style={{ minHeight: '100vh' }}>
       {/* Header */}
-     <div className="bg-light ">
-  <div className="container py-4">
-    <div className="row align-items-center">
-      {/* Left Side: Breadcrumb + Heading */}
-      <div className="col-12 col-md-8 mb-3 mb-md-0">
-        <nav className="mb-2">
-          <span className="text-muted">Dashboard</span>
-          <i className="fas fa-chevron-right mx-2 text-muted"></i>
-          <span className="text-dark">Lead Management</span>
-        </nav>
-        <h1 className="h4 text-dark mb-0">Lead Management</h1>
-      </div>
+      <div className="bg-light">
+        <div className="container py-4">
+          <div className="row align-items-centre">
+            {/* Left Side: Breadcrumb + Heading */}
+            <div className="col-12 col-md-8 mb-3 mb-md-0">
+           
+              <h2 className=" fw-semibold text-dark mb-0">Enquiry Management</h2>
+            </div>
 
-      {/* Right Side: Button */}
-      <div className="col-12 col-md-4 text-md-end">
-        <button
-          onClick={() => setShowAddForm(true)}
-          className="btn btn-primary w-auto"
-        >
-          <i className="fas fa-plus me-2"></i>Add New Lead
-        </button>
+            {/* Right Side: Button */}
+            <div className="col-12 col-md-4 text-md-end">
+              <button
+                onClick={() => setShowAddForm(true)}
+                className="btn btn-primary w-auto"
+              >
+                <i className="fas fa-plus me-2"></i>Add New Enquiry
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</div>
-
 
       <LeadStats />
 
-      <div className=" py-4">
+      <div className="py-2">
         <div className="row">
           {/* Main Content */}
           <div className="col-md-8">
             <LeadFunnel />
-            <LeadsTable 
-              leads={leads} 
-              onEdit={handleEdit} 
-              getStatusColor={getStatusColor} 
+            <LeadsTable
+              leads={leads}
+              onEdit={handleEdit}
+              getStatusColor={getStatusColour}
             />
           </div>
-          
+
           {/* Sidebar */}
           <div className="col-md-4">
-            <TasksReminder 
-              tasks={tasks} 
-              getPriorityColor={getPriorityColor} 
+            <TasksReminder
+              tasks={tasks}
+              getPriorityColor={getPriorityColour}
             />
             <IntakeFormGenerator />
           </div>
         </div>
       </div>
 
-      {/* Add New Lead Modal */}
-      <LeadFormModal 
-        show={showAddForm} 
+      {/* Enquiry Modal */}
+      <LeadFormModal
+        show={showAddForm}
         onHide={() => setShowAddForm(false)}
         isEditing={isEditing}
         formData={formData}

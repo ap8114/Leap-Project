@@ -35,7 +35,7 @@ const RoleAndPermission = () => {
       name: 'Super Administrator',
       description: 'Full system access with all permissions',
       users: 2,
-      created: '2024-01-15',
+      created: '15/01/2024', // UK date format
       status: 'Active'
     },
     {
@@ -43,15 +43,15 @@ const RoleAndPermission = () => {
       name: 'Content Manager',
       description: 'Manage content and user-generated materials',
       users: 8,
-      created: '2024-02-20',
+      created: '20/02/2024', // UK date format
       status: 'Active'
     },
     {
       id: 3,
       name: 'User Support',
-      description: 'Handle user inquiries and basic support tasks',
+      description: 'Handle user enquiries and basic support tasks', // UK spelling
       users: 15,
-      created: '2024-03-10',
+      created: '10/03/2024', // UK date format
       status: 'Active'
     },
     {
@@ -59,7 +59,7 @@ const RoleAndPermission = () => {
       name: 'Analytics Viewer',
       description: 'View reports and analytics data only',
       users: 5,
-      created: '2024-03-25',
+      created: '25/03/2024', // UK date format
       status: 'Inactive'
     }
   ];
@@ -392,7 +392,7 @@ const RoleAndPermission = () => {
           <div className="card-footer d-flex justify-content-between align-items-center">
             <div className="text-muted">
               Showing <span className="fw-bold">1</span> to <span className="fw-bold">{filteredRoles.length}</span> of{' '}
-              <span className="fw-bold">{roles.length}</span> results
+              <span className="fw-bold">{roles.length}</span> entries
             </div>
             <div className="d-flex gap-2">
               <button className="btn btn-outline-secondary btn-sm" disabled>

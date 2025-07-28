@@ -8,10 +8,7 @@ const MessageHeader = ({ onNewMessage }) => {
         <div className="row align-items-center">
           {/* Logo & Title */}
           <div className="col-12 col-md-6 d-flex align-items-center mb-3 mb-md-0">
-            <div className="bg-primary rounded p-2 me-2 text-white d-flex justify-content-center align-items-center" style={{ width: '40px', height: '40px' }}>
-              <i className="fas fa-comments"></i>
-            </div>
-            <h1 className="h5 mb-0 text-nowrap">MessageCenter</h1>
+            <h2 className=" fw-semibold mb-0 text-nowrap">Message Centre</h2>
           </div>
 
           {/* Actions */}
@@ -23,9 +20,6 @@ const MessageHeader = ({ onNewMessage }) => {
               <i className="fas fa-plus me-2"></i>
               <span className="d-none d-sm-inline">New Message</span>
             </button>
-            <div className="bg-light rounded-circle p-2 d-flex justify-content-center align-items-center" style={{ width: '40px', height: '40px' }}>
-              <i className="fas fa-user text-muted"></i>
-            </div>
           </div>
         </div>
       </div>

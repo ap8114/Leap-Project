@@ -1,4 +1,3 @@
-// CalendarView.jsx
 import React from 'react';
 import './Appointement.css'; // optional for custom styles
 
@@ -91,7 +90,7 @@ const CalendarView = ({
   function renderMonthView() {
     return (
       <div className="calendar-grid-month">
-        {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map((day) => (
+        {['Sun', 'Mon', 'Tues', 'Wed', 'Thurs', 'Fri', 'Sat'].map((day) => (
           <div key={day} className="calendar-month-header">{day}</div>
         ))}
         {getDaysInMonth(selectedDate).map((day, index) => (
@@ -139,7 +138,7 @@ const CalendarView = ({
             <i className="fas fa-chevron-left"></i>
           </button>
           <button onClick={() => onDateNavigation('today')} className="btn btn-sm btn-outline-primary">
-            Today
+            Today’s Date
           </button>
           <button onClick={() => onDateNavigation('next')} className="btn btn-sm btn-outline-secondary">
             <i className="fas fa-chevron-right"></i>
@@ -164,7 +163,7 @@ const CalendarView = ({
               </div>
               <div className="progress" style={{ height: '8px' }}>
                 <div
-                  className={`progress-bar ${staff.color}`}
+                  className={`progress-bar ${staff.colour}`}
                   style={{ width: `${Math.random() * 60 + 40}%` }}
                 ></div>
               </div>
